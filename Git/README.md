@@ -84,3 +84,6 @@
     - cd desktop
     - git clone {remote_repo}
     - start . → 현재 위치 폴더 열어줌
+- git pull
+    - remote repo가 더 최신인 경우
+    - conflict이 발생할 경우 <<<>>> 부분을 알맞게 수정
