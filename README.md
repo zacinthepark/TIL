@@ -4,5 +4,4 @@
 ## Index
 * [Markdown](Markdown/README.md)
 * [Git](Git/README.md)
-
-### push test
+* [CLI](CLI/README.md)
