@@ -5,4 +5,4 @@
 - [Markdown](Markdown/README.md)
 - [Git](Git/README.md)
 - [CLI](CLI/README.md)
-- [Jupyter Notebook](Jupyter\Notebook/README.md)
+- [Jupyter Notebook](Jupyter_Notebook/README.md)
