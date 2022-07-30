@@ -6,3 +6,4 @@
 - [Git](Git/README.md)
 - [CLI](CLI/README.md)
 - [Jupyter Notebook](Jupyter_Notebook/README.md)
+- [Python Basics](Python/README.md)
