@@ -131,11 +131,11 @@ if __name__ == '__main__':
     # {'cast': ['Song Kang-ho', 'Lee Sun-kyun', ..., 'Jang Hye-jin'], 'crew': ['Bong Joon-ho', 'Park Hyun-cheol', ..., 'Yoon Young-woo']}
     pprint(credits('검색할 수 없는 영화'))
     # None
-```
+'''
 - 마찬가지로 search해서 id값 받아준다
 - 해당 id값을 바탕으로 Get Credits API를 통해 출연진과 스태프들 데이터를 받아온다
 - 검색 결과가 없는 경우 None을 반환하도록 중간에 예외 처리를 해준다
-```
+'''
 if search_results == []:
         return None
     searched_movie = search_results[0]
