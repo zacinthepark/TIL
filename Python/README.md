@@ -33,7 +33,7 @@
 ### 파이썬 개발 환경
 
 - IDE(Intergrated Development Environment)
-    - 통화 개발 환경의 약자로 개발에 필요한 다양하고 강력한 기능들을 모아놓은 프로그램
+    - 통합 개발 환경의 약자로 개발에 필요한 다양하고 강력한 기능들을 모아놓은 프로그램
 - 문법 연습 → Jupyter Notebook, VS code
 - 코드 → VS code
 - 알고리즘 → Pycharm
@@ -43,7 +43,7 @@
 ### 코드 스타일 가이드
 
 - 파이썬은 공식 문서에서 권장해주는 스타일 가이드가 있음
-- PEP8 (https://www.python.org/dev/peps/pep-0008/)
+- PEP8 [PEP 8 - Style Guide for Python](https://www.python.org/dev/peps/pep-0008/)
     - 들여쓰기
         - 문장을 구분할 때 중괄호{} 대신 indentation 사용
         - space 4번 or tab
@@ -53,7 +53,7 @@
         - 코드에 대한 설명
         - 주석을 다는 습관은 초기부터 들여야 할 중요한 습관
         - 한 줄 주석
-            - #
+            - ' # '
         - 여러 줄 주석
             - ‘’’ or “”” 으로 묶어주기
 
@@ -91,12 +91,13 @@ print(x, y) # 20 10
 ### 연산자(Operator)
 
 - 산술 연산자
-    - + 덧셈
-    - - 뺄셈
-    - * 곱셉
-    - / 나눗셈
-    - // 몫
-    - ** 거듭제곱
+    - '+' 덧셈
+    - '-' 뺄셈
+    - '*' 곱셉
+    - '/' 나눗셈
+    - '//' 몫
+    - '**' 거듭제곱
+    - '%' 모듈러 연산자
 - 연산자의 우선순위는 기본적으로 수학의 우선순위와 같음
 
 ## 자료형(Datatype)
@@ -109,7 +110,7 @@ print(x, y) # 20 10
     - 여러 진수 표현 가능
         - 0b(2진수), 0o(8진수), 0x(16진수)를 숫자 앞에 붙이면 해당 진수 숫자로 인식
     
-    ```jsx
+    ```python
     print(0b10) # 2
     print(0o30) # 24
     print(0x10) # 16
@@ -154,8 +155,12 @@ print(x, y) # 20 10
     - \0 Null
     
     ```python
-    print('철수 \'안녕\'')
+    print('철수 \'안녕\'') # 철수 '안녕'
     print('이 다음은 엔터. \n 그리고 탭\t탭')
+    '''
+    이 다음은 엔터.
+     그리고 탭      탭
+    '''
     ```
     
 - 문자열 연산
@@ -178,7 +183,7 @@ print(x, y) # 20 10
     
     # 2. str.format()
     name = 'Kim'
-    score - 4.5
+    score = 4.5
     
     print('Hello, {}! 성적은 {}'.format(name, score))
     # Hello, Kim! 성적은 4.5
@@ -221,14 +226,14 @@ print(x, y) # 20 10
     - 비교 연산자
         - 주로 조건문에 사용
         - 결과는 True / False 값을 리턴함
-        - <   #미만
-        - <=   #이하
-        - >   #초과
-        - >=   #이상
-        - ==   #같음
-        - !=   #같지 않음
-        - is   #객체 아이덴티티(OOP)
-        - is not   #객체 아이덴티티가 아닌 경우
+        - '<' :   미만
+        - '<=' :  이하
+        - '>'  :  초과
+        - '>=' :  이상
+        - '==' : 같음
+        - '!=' : 같지 않음
+        - 'is' :  객체 아이덴티티(OOP)
+        - 'is not' : 객체 아이덴티티가 아닌 경우
         
         ```python
         print(3 > 6) # False
@@ -242,9 +247,9 @@ print(x, y) # 20 10
         - 여러가지 조건이 있을 때
             - 모든 조건을 만족하거나(and), 여러 조건 중 하나만 만족해도 될 때(or) 특정 코드를 실행하고 싶을 때 사용
             - 일반적으로 비교 연산자와 함께 사용됨
-            - A and B   #A와 B 모두 True시, True
-            - A or B.  #A와 B 모두 False시, False
-            - Not   #True를 False로, False를 True로
+            - 'A and B' : A와 B 모두 True시, True
+            - 'A or B' :  A와 B 모두 False시, False
+            - 'Not' : True를 False로, False를 True로
             
             ```python
             # 22시가 지나고 졸리면 True, 졸리지 않다면 False인 코드?
@@ -266,7 +271,6 @@ print(x, y) # 20 10
                 - 0은 불이 꺼짐, False / 1은 불이 켜짐, True로 취급된다
             - 논리 연산자도 우선순위가 존재
                 - not, and, or 순으로 우선순위가 높음
-                - 
                 
                 ```python
                 print(not True) # False
@@ -285,7 +289,7 @@ print(x, y) # 20 10
                 - 0은 False, 1은 True
                 
                 ```python
-                print(3 and 5) # 5 #and는 둘다 맞는지 확인하는 연산자 #3을 먼저보고 True가 정해지지 않아서 5까지 본 것
+                print(3 and 5) # 5 # and는 둘다 맞는지 확인하는 연산자 # 3을 먼저보고 True가 정해지지 않아서 5까지 본 것
                 print(3 and 0) # 0
                 print(0 and 3) # 0
                 print(0 and 0) # 0
@@ -316,7 +320,7 @@ print(x, y) # 20 10
 ## 컨테이너
 
 - 여러 개의 값(데이터)을 담을 수 있는 것(객체)으로, 서로 다른 자료형을 저장할 수 있음
-    - 예시: List
+    - ex) List
     - 파이썬의 특징이며 그렇지 않은 언어도 있다
 - 컨테이너의 분류
     - 순서가 있는 데이터(Ordered) / 순서가 없는 데이터(Unordered)
@@ -354,7 +358,7 @@ location = ['서울', '대전', '구미', '광주', '부울경']
 print(type(location)) = # <class 'list'>
 print(location[0]) # 서울
 
-#mutable
+# mutable
 location[0] = '양양'
 print(location) # ['양양', '대전', '구미', '광주', '부울경']
 ```
@@ -440,7 +444,7 @@ print(x, y) # 1 2
 
 # 실제로 tuple로 처리
 x, y = (1, 2)
-print(x, y) # 1, 2
+print(x, y) # 1 2
 ```
 
 ---
@@ -590,10 +594,10 @@ print(set(my_list)) # {'광주', '서울', '부산', '대전'}
 
 ### 셋 연산자
 
-- | : 합집합 (해당 키는 pipeline이라 부름)
-- & : 교집합
-- - : 차집합
-- ^ : 대칭차집합 (합집합 - 교집합)
+- '|' : 합집합 (해당 키는 pipeline이라 부름)
+- '&' : 교집합
+- '-' : 차집합
+- '^' : 대칭차집합 (합집합 - 교집합)
 - 여집합은 없음
 
 ```python
@@ -658,7 +662,7 @@ print(dict_b) # {'a': 'apple', 'b': 'banana', 'list': [1, 2, 3]}
 - numeric type(int, float)
 
 ```python
-print(True + 3) # 4 # +연산자를 통해 true를 암시적으로 1로 변환
+print(True + 3) # 4 # + 연산자를 통해 true를 암시적으로 1로 변환
 print(3 + 5.0) # 8.0 # 3은 int이지만 5.0으로 인해 3.0이라는 float로 형 변환
 ```
 
@@ -678,7 +682,7 @@ print(3 + 5.0) # 8.0 # 3은 int이지만 5.0으로 인해 3.0이라는 float로 
     # 정수 형식이 아닌 경우 타입 변환할 수 없음
     print(int('3.5') + 5) # ValueError: invalid literal for int() with base 10: '3.5'
     
-    print('3' + str(4)) # 34 #string concatenation
+    print('3' + str(4)) # 34 # string concatenation
     ```
     
 - float
@@ -718,7 +722,7 @@ print(3 + 5.0) # 8.0 # 3은 int이지만 5.0으로 인해 3.0이라는 float로 
     ```python
     number = input('아무 숫자나 입력하세요.')
     
-    #111 222 입력
+    # 111 222 입력
     print(number) # 111 222
     print(type(number)) # <class 'str'>
     map(int, input().split()) # map(함수, 시퀀스) # 받은 문자열을 쪼개서 각각 int로 형 변환
@@ -850,9 +854,9 @@ name = '
 ```python
 num = int(input('숫자 입력: '))
 if num % 2: # if num % 2 == 1:
-		print('홀수입니다.')
+	print('홀수입니다.')
 else:
-		print('짝수입니다.')
+	print('짝수입니다.')
 ```
 
 ### 복수 조건문
@@ -862,13 +866,13 @@ else:
 ```python
 dust = 80
 if dust > 150:
-		print('매우 나쁨')
+	print('매우 나쁨')
 elif dust > 80:
-		print('나쁨')
+	print('나쁨')
 elif dust > 30:
-		print('보통')
+	print('보통')
 else:
-		print('좋음')
+	print('좋음')
 print('미세먼지 확인 완료')
 
 '''
@@ -887,17 +891,17 @@ print('미세먼지 확인 완료')
 ```python
 dust = 500
 if dust > 150:
-		print('매우 나쁨')
-		if dus > 300:
-				print('실외 활동을 자제하세요.')
+	print('매우 나쁨')
+	if dus > 300:
+			print('실외 활동을 자제하세요.')
 elif dust > 80:
-		print('나쁨')
+	print('나쁨')
 elif dust > 30:
-		print('보통')
+	print('보통')
 elif: dust >= 0:
-		print('좋음')
+	print('좋음')
 else:
-		print('값이 잘못 되었습니다.')
+	print('값이 잘못 되었습니다.')
 
 '''
 매우나쁨
@@ -925,9 +929,9 @@ else:
     '''
     num = 2
     if num % 2: # if num % 2 == 1:
-    		print('홀수입니다.')
+    	print('홀수입니다.')
     else:
-    		print('짝수입니다.')
+    	print('짝수입니다.')
     '''
     
     num = 2
@@ -958,8 +962,8 @@ else:
     ```python
     a = 0
     while a < 3:
-    		print(a)
-    		a += 1
+    	print(a)
+    	a += 1
     print('끝')
     ```
     
@@ -987,11 +991,11 @@ chars = input()
 
 # 1
 for char in chars:
-		print(char)
+	print(char)
 
 # 2
 for idx in range(len(chars)):
-		print(char[idx])
+	print(char[idx])
 
 # happy 입력
 '''
@@ -1011,7 +1015,7 @@ y
 grades = {'john': 80, 'eric': 90}
 
 for student in grades:
-		print(student)
+	print(student)
 
 '''
 john
@@ -1019,7 +1023,7 @@ eric
 '''
 
 for student in grades:
-		print(student, grades[studnet])
+	print(student, grades[studnet])
 
 '''
 john 80
@@ -1038,7 +1042,7 @@ eric 90
 grades = {'john': 80, 'eric': 90}
 
 for student, grade in grades.items():
-		print(student, grade)
+	print(student, grade)
 
 '''
 john 80
@@ -1076,7 +1080,7 @@ print(list(enumerate(members,start=1))) # [(1, '민수'), (2, '영희'), (3, '�
 # 1~3의 세제곱 결과가 담긴 리스트 만들기
 cubic_list = []
 for number in range(1, 4):
-		cubic_list.append(number ** 3)
+	cubic_list.append(number ** 3)
 print(cubic_list)
 
 # [1, 8, 27]
@@ -1107,7 +1111,7 @@ print(cubic_list)
 # 1~3의 세제곱 결과가 담긴 딕셔너리 만들기
 cubic_dict = {}
 for number in range(1,4):
-		cubic_dict[number] = number *** 3
+	cubic_dict[number] = number *** 3
 print(cubic_dict)
 
 # {1: 1, 2: 8, 3: 27}
@@ -1145,10 +1149,10 @@ print(cubic_dict)
 ```python
 n = 0
 while True:
-		if n == 3:
-				break
-		print(n)
-		n += 1
+	if n == 3:
+		break
+	print(n)
+	n += 1
 
 '''
 0
@@ -1157,10 +1161,10 @@ while True:
 '''
 
 for i in range(10):
-		if i > 1:
-				print('0과 1만 필요해!')
-				break
-		print(i)
+	if i > 1:
+		print('0과 1만 필요해!')
+		break
+	print(i)
 
 '''
 0
@@ -1175,9 +1179,9 @@ for i in range(10):
 
 ```python
 for i in range(6):
-		if i % 2 == 0:
-				continue
-		print(i)
+	if i % 2 == 0:
+		continue
+	print(i)
 
 '''
 1
@@ -1196,9 +1200,9 @@ for i in range(6):
 # i가 2일때 pass
 
 for i in range(4):
-		if i == 2:
-				pass
-		print(i)
+	if i == 2:
+		pass
+	print(i)
 
 '''
 0
@@ -1209,9 +1213,9 @@ for i in range(4):
 
 # i가 2일때 continue
 for i in range(4):
-		if i == 2:
-				continue
-		print(i)
+	if i == 2:
+		continue
+	print(i)
 
 '''
 0
@@ -1228,20 +1232,20 @@ for i in range(4):
 
 ```python
 for char in 'apple':
-		if char == 'b':
-				print('b!')
-				break
+	if char == 'b':
+		print('b!')
+		break
 else:
-		print('b가 없습니다.')
+	print('b가 없습니다.')
 
 # b가 없습니다.
 
 for char in 'banana':
-		if char == 'b':
-				print('b!')
-				break
+	if char == 'b':
+		print('b!')
+		break
 else:
-		print('b가 없습니다.')
+	print('b가 없습니다.')
 
 # b!
 ```
@@ -1265,8 +1269,8 @@ else:
     result = 0
     count = 0
     for num in numbers:
-    		result += num
-    		count += 1
+    	result += num
+    	count += 1
     print(result / count) # 2.0
     
     # 2
@@ -1279,7 +1283,7 @@ else:
     numbers = [1, 2, 3]
     
     def average(numbers):
-    		return sum(numbers) / len(numbers)
+    	return sum(numbers) / len(numbers)
     
     print(average(numbers)) # 2.0
     
@@ -1337,8 +1341,8 @@ else:
 
 ```python
 def function_name(parameter):
-		# code block
-		return returning_value
+	# code block
+	return returning_value
 ```
 
 - 함수는 호출되면 코드를 실행하고 return 값을 반환하며 종료된다
@@ -1347,11 +1351,11 @@ def function_name(parameter):
 num1 = 0
 num2 = 1
 def func1(a, b):
-		return a + b
+	return a + b
 def func2(a, b):
-		return a - b
+	return a - b
 def func3(a, b):
-		return func1(a, 5) + func2(5, b)
+	return func1(a, 5) + func2(5, b)
 
 result = func3(num1, num2)
 print(result) # 9
@@ -1384,7 +1388,7 @@ float('3.14') # 3.14
 ```python
 # Void function 예시
 def void_product(x, y):
-		print(f'{x} x {y} = {x * y}')
+	print(f'{x} x {y} = {x * y}')
 
 void_product(4, 5) # 4 x 5 = 20
 ans = void_product(4, 5) # 4 x 5 = 20
@@ -1392,7 +1396,7 @@ print(ans) # None
 
 # Value returning function 예시
 def value_returning_product(x, y):
-		return x * y
+	return x * y
 
 value_returning_product(4, 5)
 ans = value_returning_product(4, 5)
@@ -1407,8 +1411,8 @@ print(ans) # 20
 ```python
 # return문을 2개 사용하여 잘못됨
 def minus_and_product(x, y):
-		return x - y
-		return x * y
+	return x - y
+	return x * y
 
 y = minus_and_product(4, 5)
 print(y) # -1
@@ -1420,7 +1424,7 @@ print(y) # -1
 
 ```python
 def minus_and_product(x, y):
-		return x - y, x * y
+	return x - y, x * y
 
 y = minus_and_product(4, 5)
 print(y) # (-1, 20)
@@ -1437,11 +1441,11 @@ print(type(y)) # <class 'tuple'>
 # 똑바로 읽어도 거꾸로 읽어도 같은 단어를 찾는 함수
 word_list = ['우영우', '기러기', '별똥별', '파이썬']
 def is_palindrome(word_list):
-		palindrome_list = []
-		for word in word_list:
-				if word == word[::-1]:
-						palindrome_list.append(word)
-		return palindrome_list
+	palindrome_list = []
+	for word in word_list:
+		if word == word[::-1]:
+			palindrome_list.append(word)
+	return palindrome_list
 print(is_palindrome(word_list))
 # ['우영우', '기러기', '별똥별']
 ```
@@ -1475,7 +1479,7 @@ print(is_palindrome(word_list))
 
 ```python
 def add(x, y):
-		return x + y
+	return x + y
 
 add(x=2, y=5) # 가능
 add(2, y=5) # 가능
@@ -1489,7 +1493,7 @@ add(x=2, 5) # Error
 
 ```python
 def add(x, y=0):
-		return x + y
+	return x + y
 
 add(2)
 # x에 2가 들어감
@@ -1517,8 +1521,8 @@ print('you', 'need', 'python') # you need python
 
 ```python
 def add(*args):
-		for arg in args:
-				print(arg)
+	for arg in args:
+		print(arg)
 
 add(2)
 add(2, 3, 4, 5)
@@ -1572,8 +1576,8 @@ print(rest) # [2, 3, 4]
     
     ```python
     def func(*args):
-    		print(args)
-    		print(type(args))
+    	print(args)
+    	print(type(args))
     
     func(1, 2, 3, 'a', 'b')
     '''
@@ -1589,10 +1593,10 @@ print(rest) # [2, 3, 4]
 # packing을 통해 받은 모든 숫자들의 합을 구하는 함수 만들기
 
 def sum_all(*numbers):
-		result = 0
-		for number in numbers:
-				result += number
-		return result
+	result = 0
+	for number in numbers:
+		result += number
+	return result
 
 print(sum_all(1, 2, 3)) # 6
 print(sum_all(1, 2, 3, 4, 5, 6)) # 21
@@ -1602,11 +1606,11 @@ print(sum_all(1, 2, 3, 4, 5, 6)) # 21
 # 반드시 받아야하는 인자와, 추가적인 인자를 구분해서 사용할 수 있음
 
 def print_family_name(father, mother, *pets):
-		print(f'아버지 : {father}')
-		print(f'어머니 : {mother}')
-		print('반려동물들..')
-		for name in pets:
-				print(f'반려동물: {name}')
+	print(f'아버지 : {father}')
+	print(f'어머니 : {mother}')
+	print('반려동물들..')
+	for name in pets:
+		print(f'반려동물: {name}')
 
 print_family_name('아부지', '어무니', '멍멍이', '냥냥이')
 
@@ -1626,8 +1630,8 @@ print_family_name('아부지', '어무니', '멍멍이', '냥냥이')
 
 ```python
 def family(**kwargs):
-		for key, value in kwargs.items():
-				print(key, ":", value)
+	for key, value in kwargs.items():
+		print(key, ":", value)
 
 family(father = '아부지', mother = '어무니', baby = '아기')
 
@@ -1640,12 +1644,12 @@ baby : 아기
 
 ```python
 def print_family_name(father, mother, **pets):
-		print("아버지 :", father)
-		print("어머니 :", mother)
-		if pets:
-				print("반려동물들..")
-				for species, name in pets.items():
-						print(f'{species} : {name}')
+	print("아버지 :", father)
+	print("어머니 :", mother)
+	if pets:
+		print("반려동물들..")
+		for species, name in pets.items():
+			print(f'{species} : {name}')
 
 print_family_name('아부지', '어무이', dog = '멍멍이', cat = '냥냥이')
 
@@ -1664,12 +1668,12 @@ cat : 냥냥이
 
 ```python
 def print_family_name(*parents, **pets):
-		print("아버지 :", parents[0])
-		print("어머니 :", parents[1])
-		if pets:
-				print("반려동물들..")
-				for title, name in pets.items():
-						print('{} : {}'.format(title, name))
+	print("아버지 :", parents[0])
+	print("어머니 :", parents[1])
+	if pets:
+		print("반려동물들..")
+		for title, name in pets.items():
+			print('{} : {}'.format(title, name))
 
 print_family_name('아부지', '어무이', dog = '멍멍이', cat = '냥냥이')
 
@@ -1708,8 +1712,8 @@ cat : 냥냥이
 
 ```python
 def func():
-		a = 20
-		print('local', a)
+	a = 20
+	print('local', a)
 
 func() # local 20
 print('global', a) # NameError: name 'a' is not defined
@@ -1729,7 +1733,7 @@ print('global', a) # NameError: name 'a' is not defined
 ### LEGB 예시 1
 
 ```python
-print(sum) # <built-in functino sum>
+print(sum) # <built-in function sum>
 print(sum(range(2))) # 1
 sum = 5
 print(sum) # 5
@@ -1745,12 +1749,12 @@ print(sum(range(2))) # TypeError: 'int' object is not callable
 a = 0
 b = 1
 def enclosed():
-		a = 10
-		c = 3
-		def local(c):
-				print(a, b, c) # 10 1 300
-		local(300)
-		print(a, b, c) # 10 1 3
+	a = 10
+	c = 3
+	def local(c):
+		print(a, b, c) # 10 1 300
+	local(300)
+	print(a, b, c) # 10 1 3
 enclosed()
 print(a, b) # 0 1
 ```
@@ -1759,7 +1763,7 @@ print(a, b) # 0 1
 
 - 현재 코드 블록 전체에 적용되며, 나열된 식별자(이름)이 global variable임을 나타냄
     - global에 나열된 이름은 같은 코드 블록에서 global 앞에 등장할 수 없음
-    - global에 나열된 이름은 parameter, for 루프 대상, 클래스/함수 정의 등으로 정의되지 않아야 함
+    - global에 나열된 이름은 parameter, for 루프 대상, 클래스 / 함수 정의 등으로 정의되지 않아야 함
 
 ### global 예시
 
@@ -1767,8 +1771,8 @@ print(a, b) # 0 1
 # 함수 내부에서 글로벌 변수 변경하기
 a = 10
 def func1():
-		global a
-		a = 3
+	global a
+	a = 3
 
 print(a) # 10
 func1()
@@ -1784,9 +1788,9 @@ print(a) # 3
 # global 주의사항
 a = 10
 def func1():
-		print(a) # global a 선언 전에 사용
-		global a
-		a = 3
+	print(a) # global a 선언 전에 사용
+	global a
+	a = 3
 
 print(3)
 func1()
@@ -1797,8 +1801,8 @@ print(a)
 # global 주의사항
 a = 10
 def func1(a):
-		global a # parameter에 global 사용 불가
-		a = 3
+	global a # parameter에 global 사용 불가
+	a = 3
 
 print(a)
 func1(3)
@@ -1811,7 +1815,7 @@ $ SyntaxError: name 'a' is parameter and global
 
 - global을 제외하고 가장 가까운(둘러싸고 있는) scope의 변수를 연결하도록 함
     - nonlocal에 나열된 이름은 같은 코드 블록에서 nonlocal 앞에 등장할 수 없음
-    - nonlocal에 나열된 이름은 parameter, for 루프 대상, 클래스/함수 정의 등으로 정의되지 않아야 함
+    - nonlocal에 나열된 이름은 parameter, for 루프 대상, 클래스 / 함수 정의 등으로 정의되지 않아야 함
 - global과는 달리 이미 존재하는 이름과의 연결만 가능함
 
 ### nonlocal 예시
@@ -1820,12 +1824,12 @@ $ SyntaxError: name 'a' is parameter and global
 # nonlocal 예시
 x = 0
 def func1():
-		x = 1
-		def func2():
-				nonlocal x
-				x = 2
-		func2()
-		print(x) # 2
+	x = 1
+	def func2():
+		nonlocal x
+		x = 2
+	func2()
+	print(x) # 2
 
 func1()
 print(x) # 0
@@ -1838,19 +1842,19 @@ print(x) # 0
 ```python
 # 선언된 적 없는 변수의 활용
 def func1():
-		global out
-		out = 3
+	global out
+	out = 3
 
 func1()
 print(out) # 3
 
 # 선언된 적 없는 변수의 활용
 def func1():
-		def func2():
-				nonlocal y
-				y = 2
-		func2()
-		print(y)
+	def func2():
+		nonlocal y
+		y = 2
+	func2()
+	print(y)
 
 func1()
 
@@ -1898,7 +1902,7 @@ print(list(result)) # ['1', '2', '3']
 
 ```python
 n, m = map(int, input().split()) # 3 5를 입력하면
-print(n, m) # 3, 5
+print(n, m) # 3 5
 print(type(n), type(m)) # <class 'int'> <class 'int'>
 ```
 
@@ -1910,7 +1914,7 @@ print(type(n), type(m)) # <class 'int'> <class 'int'>
 
 ```python
 def odd(n):
-		return n % 2
+	return n % 2
 numbers = [1, 2, 3]
 result = filter(odd, numbers)
 print(result, type(result)) # <filter object at 0x000001FB4B217F40> <class 'filter'>
@@ -1952,7 +1956,7 @@ print(list(pair)) # [('jane', 'justin'), ('ashley', 'eric')]
 ```python
 # 삼각형의 넓이를 구하는 공식 - def
 def triangle_area(b, h):
-		return 0.5 * b * h
+	return 0.5 * b * h
 print(triangle_area(5, 6)) # 15.0
 
 # 삼각형의 넓이를 구하는 공식 - lambda
@@ -1973,21 +1977,21 @@ print(triangle_area(5, 6)) # 15.0
 
 ```python
 def factorial(n):
-		if n ==0 or n == 1:
-				return 1
-		else:
-				return n * factorial(n-1)
+	if n ==0 or n == 1:
+		return 1
+	else:
+		return n * factorial(n-1)
 
 print(factorial(4)) # 24
 
 # 반복문으로 작성한다면?
 
 def fact(n):
-		result = 1
-		while n > 1:
-				result *= n
-				n -= 1
-		return result
+	result = 1
+	while n > 1:
+		result *= n
+		n -= 1
+	return result
 
 print(fact(4)) # 24
 ```
@@ -1998,9 +2002,9 @@ print(fact(4)) # 24
 # 입력된 10진수를 2진수로 반환하는 함수를 작성하라
 
 def dec_to_bin(n):
-		if n < 2:
-				return str(n)
-		return dec_to_bin(n // 2) + dec_to_bin(n % 2)
+	if n < 2:
+		return str(n)
+	return dec_to_bin(n // 2) + dec_to_bin(n % 2)
 
 # 2진수는 0, 1로 구성되므로 base case를 n이 0, 1이 될 때로 설정
 # 2진수는 0110101과 같은 식으로 붙어야 되므로 str으로 형변환하여 더해줌
@@ -2145,10 +2149,10 @@ from package.module import var, function, Class
 # calculator/tools.py
 
 def add(num1, num2):
-		return num1 + num2
+	return num1 + num2
 
 def minus(num1, num2):
-		return num1 - num2
+	return num1 - num2
 ```
 
 ### 모듈 활용하기 - check
@@ -3046,21 +3050,21 @@ my_dict = {'apple': '사과', 'banana': '바나나'}
 
 # 기본적으로 key를 순회
 for key in my_dict:
-		print(key)
+	print(key)
 '''
 apple
 banana
 '''
 # values()
 for value in my_dict.values():
-		print(value)
+	print(value)
 '''
 사과
 바나나
 '''
 # items()
 for key, value in my_dict.items():
-		print(f'key: {key} / value: {value}')
+	print(f'key: {key} / value: {value}')
 '''
 key: apple / value: 사과
 key: banana / value: 바나나
@@ -3131,8 +3135,7 @@ key: banana / value: 바나나
     b = a[:]
     print(a, b) # [1, 2, 3] [1, 2, 3]
     b[0] = 5
-    print(a, b) # [1, 2, 3][5, 2, 3]numbers = ['hi', 1, 2, 3]
-    print(numbers) # ['hi', 1, 2, 3]
+    print(a, b) # [1, 2, 3][5, 2, 3]
     ```
     
     <img width="525" alt="python_28" src="https://user-images.githubusercontent.com/86648892/181937468-1ca06e80-138c-4838-a3c8-b95ad8677f16.png">
@@ -3288,7 +3291,6 @@ print(f'a = {a}, b = {b}') # a = 5, b = 3
     
     ```python
     class Person:
-    		
     	def __init__(self, name, gender):
     		self.name = name
     		self.gender = gender
@@ -3371,7 +3373,7 @@ my_instance.my_method() # 메서드 호출
 my_instance.my_attribute # 속성
 
 class Person:
-		pass
+	pass
 print(type(Person)) # <class 'type'>
 
 person1 = Person()
@@ -3438,7 +3440,6 @@ print(person1.name) # 지민
 
 ```python
 class Person:
-
 	def __init__(self, name, mbti): # 인스턴스 변수 정의
 		self.name = name
 		self.mbti = mbti
@@ -3544,7 +3545,6 @@ print(c2.pi) # 5 # 새로운 인스턴스 변수가 생성됨
 
 ```python
 class Person:
-
 	def talk(self):
 		print('안녕')
 
@@ -3581,8 +3581,7 @@ person1.eat('치킨') # 치킨를 냠냠
 
 ```python
 class MyClass:
-
-		def instance_method(self, arg1, ...):
+	def instance_method(self, arg1, ...):
 
 my_instance = MyClass()
 my_instance.instance_method(arg1, ...)
@@ -3604,14 +3603,12 @@ my_instance.instance_method(arg1, ...)
     
     ```python
     class Person:
-    
     	def __init__(self):
     		print('인스턴스가 생성되었습니다.')
     
     person1 = Person() # 인스턴스가 생성되었습니다.
     
     class Person:
-    
     	def __init__(self, name):
     		print(f'인스턴스가 생성되었습니다. {name}')
     
@@ -3686,7 +3683,6 @@ print(a, b, c, test1) # 1 hi [1, 2, 3] Hello, my name is fox
 
 ```python
 class Circle:
-
 	def __init__(self, r):
 		self.r = r
 
@@ -3715,7 +3711,6 @@ print(c1 < c2) # False
 
 ```python
 class Person:
-
 	def __del__(self):
 		print('인스턴스가 사라졌습니다.')
 
@@ -3757,6 +3752,22 @@ person1 = Person('아이유')
 person2 = Person('이찬혁')
 print(Person.count) # 2
 ```
+```python
+class Person:
+    # 생성자를 통한 인스턴스 생성
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    # details 클래스 메서드를 통한 인스턴스 생성
+    @classmethod
+    def details(cls, name, year):
+        return cls(name, 2022 - year) # name, 2022 - year를 __init__()의 name과 age에 넘겨줌
+
+    # 19세 기준 미성년자 판별
+    def check_age(self, age):
+        return self.age < 19
+```
 
 ## 데코레이터
 
@@ -3771,7 +3782,7 @@ print(Person.count) # 2
 
 ```python
 def hello():
-		print('hello')
+	print('hello')
 
 # 데코레이팅 함수
 def add_print(original): # 파라미터로 함수를 받는다
@@ -3927,7 +3938,6 @@ print(p2.name) # Kim
 
 ```python
 class MyClass:
-
 	def method(self):
 		return 'instance method', self
 
@@ -4045,7 +4055,7 @@ class Person:
 
 ```python
 class ChildClass(ParentClass):
-	    pass
+	pass
 ```
 
 - 하위 클래스는 상위 클래스에 정의된 속성, 행동, 관계 및 제약 조건을 모두 상속받음
@@ -4147,13 +4157,13 @@ s1.talk() # 반갑습니다. 김학생입니다.
     
     ```python
     class Person:
-    		pass
+    	pass
     
     class Professor:
-    		pass
+    	pass
     
     class Student:
-    		pass
+    	pass
     
     # 인스턴스 생성
     p1 = Professor()
@@ -4167,13 +4177,13 @@ s1.talk() # 반갑습니다. 김학생입니다.
     print(isinstance(s1, Student)) # True
     
     class Person:
-    		pass
+    	pass
     
     class Professor(Person):
-    		pass
+    	pass
     
     class Student(Person):
-    		pass
+    	pass
     
     # 인스턴스 생성
     p1 = Professor()
@@ -4193,13 +4203,13 @@ s1.talk() # 반갑습니다. 김학생입니다.
     
     ```python
     class Person:
-    		pass
+    	pass
     
     class Professor(Person):
-    		pass
+    	pass
     
     class Student(Person):
-    		pass
+    	pass
     
     # 인스턴스 생성
     p1 = Professor()
@@ -4280,7 +4290,7 @@ class Mom(Person):
 	gene = 'XX'
 
 	def swim(self):
-				return '엄마가 수영'
+		return '엄마가 수영'
 
 class Dad(Person):
 	gene = 'XY'
@@ -4424,7 +4434,6 @@ s1.talk()
 
 ```python
 class Person:
-
 	def __init__(self, name, age):
 		self.name = name
 		self.age = 30
@@ -4444,7 +4453,6 @@ print(p1.age) # 30
 
 ```python
 class Person:
-
 	def __init__(self, name, age):
 		self.name = name
 		self._age = age
@@ -4469,10 +4477,10 @@ print(p1._age) # 30
 그러면 p1._age = 30과 같이 직접적으로 설정하는 것이 아닌
 set_age()와 같은 것을 통해 적어도 한 단계는 거치도록 하고 싶은 것
 물론
-		def set_age(self):
-				p1._age = 30
-				print('~~ 변경됨')
-				나이에 따라 변경되는 또 다른 연계 정보들 처리
+	def set_age(self):
+		p1._age = 30
+		print('~~ 변경됨')
+		나이에 따라 변경되는 또 다른 연계 정보들 처리
 과 같이 구현 내용은 결국 같겠지만
 이 절차를 통해서 바꾸면 위와 같이 나이를 바꿨을 때 다른 처리도 하도록 할 수 있고 그렇다
 '''
@@ -4487,7 +4495,6 @@ set_age()와 같은 것을 통해 적어도 한 단계는 거치도록 하고 �
 
 ```python
 class Person:
-
 	def __init__(self, name, age):
 		self.name = name
 		self.__age = age
@@ -4525,7 +4532,6 @@ print(p1.__age)
 
 ```python
 class Person:
-
 	def __init__(self, age):
 		self._age = age
 
@@ -4667,8 +4673,8 @@ if else
 
 '''
 File "...", line 1
-		if else
-			 ^
+	if else
+		 ^
 
 SyntaxError: invalid syntax
 '''
@@ -4917,13 +4923,13 @@ for i in range(3):
 ```python
 '''
 try:
-		try 명령문
+	try 명령문
 except 예외그룹 1 as 변수 1:
-		예외처리 명령문 1
+	예외처리 명령문 1
 except 예외그룹 2 as 변수 2:
-		예외처리 명령문 2
+	예외처리 명령문 2
 finally:
-		finally 명령문
+	finally 명령문
 '''
 
 try:
