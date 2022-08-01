@@ -11,7 +11,7 @@
 - [Python Basics](Python/README.md)
 - [Algorithm](Algorithm/README.md)
 - [Algorithm Practices](Algorithm_Practices/README.md)
-- [Web](Web/README.md)
+- [HTML / CSS](html_css/README.md)
 - [Javascript](Javascript/README.md)
 - [Django](Django/README.md)
 - [Vue.js](Vue_js/README.md)
