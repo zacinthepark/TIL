@@ -54,7 +54,27 @@
     - ctrl + d
 - 파일 settings
     - ctrl + ,
+- 전체 settings
+    - ctrl + shift + p
 - 터미널 열기
     - ctrl + shift + `
 - 시작화면
     - ctrl + k → f
+
+---
+
+## HTML / CSS
+
+- [Emmet Documentation](https://docs.emmet.io/cheat-sheet/)
+- ‘!’ + tab
+    - html document 구조 생성
+- tag’*’숫자
+    - 숫자만큼 태그 생성
+- tag1‘>’tag2
+    - tag1 아래 하위 tag2 생성
+- ctrl + ‘/’
+    - 주석 처리
+- shift + 스크롤
+    - 옆으로 스크롤
+
+---
