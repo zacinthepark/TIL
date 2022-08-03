@@ -490,3 +490,178 @@
     - 누가 앞에 오고 뒤로 갈지는 z-index를 활용
 - sticky
     - 처음 내가 생성된 위치를 기준으로 해서 화면상에 그대로 stick!
+
+---
+## Flexbox (Flexible Box!)
+
+- 행과 열 형태로 아이템들을 배치하는 1차원 레이아웃 모델
+    - z-index는 차원 간 배치
+- 정렬을 하는 느낌
+- ie에서 부분지원됨
+- `display:flex`
+    - flex-container에서 선언
+    - 이 객체가 flex-container라 선언하는 것이고
+        - 그 바로 아래 레벨이 flex items가 된다
+- `display: inline flex`
+    - 인라인과 블록의 차이처럼 요소의 테두리가 줄어듬
+- 인라인처럼 사용할 수 있고, 내용물의 크기만큼만 차지
+- `flex-direction`
+    - 요소를 배치할 방향
+        - row
+        - row-reverse
+        - column
+        - column-reverse
+- main axis라는 꽂이에 레이아웃을 꽂는다고 생각
+    - cross axis는 main axis에 수직인 축
+- 부모 요소 Flex Container
+    - 자식 요소 Flex Item
+    - 부모 요소에 Flex를 적용
+    - 아이템에 적용하는 것이 아니다
+
+## Flex 속성
+
+- 공간 나누기는 꽂고 남은 공간을 어떻게 나눌 것인가? 배치할 것인가?
+
+### flex-direction
+
+- main axis
+- 역방향의 경우 눈으로 보이는 것과 코드 실행 순서가 다를 수 있으니 주의
+
+### flex-wrap
+
+- nowrap은 한 줄안에 크기를 조정해서라도 끼워넣고 싶을 때
+    - 기본값
+- wrap은 크기 그대로 보장하여 줄바꿈을 통해 끼워넣고 싶을 때
+- wrap-reverse는 최신글이 위에 오도록 하고 싶을 때 쓰면 좋을듯
+
+### flex flow
+
+- `flex-flow: row nowrap;`
+    - 이처럼 direction과 wrap의 shorthand
+
+### justify-content
+
+- main axis를 기준으로 공간 배분
+
+### align-content
+
+- cross axis를 기준으로 공간 배분
+- stretch는 늘리는 것
+- 글자들은 baseline을 가짐
+
+### align-self
+
+- 각 아이템들 배치
+
+### 기타 속성
+
+- flex-grow
+    - 남은 여백을 grow값이 있는 요소들끼리 나눠가짐
+- order
+    - 배치 순서
+    - 눈에 보이는 순서대로 코드가 실행되지 않아 꼬일 수도 있어서 자주 사용하지 않음
+
+---
+
+# Bootstrap
+
+정형화된 css 컨텐츠를 편리하게 사용할 수 있도록 모아놓은 것
+
+쉽게 말해 css 코드 덩어리다
+
+- UI를 빠르게 빌드할 수 있다
+- 반응형 웹을 편리하게 구현할 수 있다
+- 그리드 시스템의 핵심은 화면을 12칸으로 보고 어떤 식으로 분할할지 선택하는 것
+
+## CDN
+
+- Content Delivery Network
+- import와 비슷한 개념
+- CDN via jsDelivr
+    - link는 </head> 앞에
+    - script는 </body> 앞에
+        - 코드의 실행 속도를 위해
+
+## Bootstrap의 기본 원리
+
+### Spacing
+
+- margin
+- padding
+- css는 부트스트랩 개발자들이 만들어놓았기에 클래스 지정만 하면됨
+- mt-3
+    - m은 property, t는 sides, 3은 size
+- property
+    - m - margin
+    - p - padding
+- sides
+    - s - start
+        - margin left나 padding left
+    - e - end
+        - right
+    - x - 양 옆
+    - y - 위 아래
+    - blank - 4방향 전부
+- size
+    - 0, 1, 2, 3, 4, 5, auto
+        - 1은 0.25rem
+            - 1rem은 16px
+            - rem의 장점은 html 기준으로 바로 적용 가능
+
+### Color
+
+- 텍스트 컬러, 백그라운드 컬러 모두 적용 가능
+
+### Text
+
+- text-decoration-none 많이 사용한다
+
+### Position
+
+### Display
+
+- `d-`
+- d-none은 코드는 있는데 보이지 않음
+- `d-md-none`
+    - 반응형
+- `d-sm-none`
+    - 반응형
+
+### Components
+
+- Button
+- Dropdown
+- Navbar
+    - 많이 사용함!
+    - 구조 살펴보면 d-flex로 배치해놓은거임
+- Carousel
+    - 회전목마돌듯이 누르면 사진이 넘어가는 UI
+- Modal
+    - 실수 많이 한다
+    - 팝업은 보통 x를 눌러야 사라지고 modal 해당 동작이 아닌 다른 곳을 클릭해도 사라진다는 차이점
+    - data-bs-target에 다른 곳에 지정해준 객체의 id를 넣어주면 연결됨!
+    - 중첩해서 들어가있으면 안됨
+        - Modals use `position: fixed`, which can sometimes be a bit particular about its rendering. Whenever possible, place your modal HTML in a top-level position to avoid potential interference from other elements. You’ll likely run into issues when nesting a `.modal` within another fixed element
+
+### Flexbox in Bootstrap
+
+### Grid Card
+
+- 반응형은 `<div *class*="row row-cols-1 row-cols-md-3 g-4">` 덕분에 이루어짐
+
+---
+
+## Grid System
+
+- 12개의 column
+- 6개의 breakpoint
+- column 사이의 공간을 gutter라고 함
+
+![스크린샷 2022-08-03 오후 3.32.50.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f7d799f5-ebc9-42af-b9e3-7ce69ed150f2/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-03_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_3.32.50.png)
+
+- div w-100은 텅빈 width 100짜리이므로 줄바꿈의 한 방법
+    - 그냥 row 구획을 하나 더 만들어주는게 좋다
+- 원하는 비율을 col-숫자로 넣어준다
+- 1짜리 13개면 1개가 다음 줄로 넘어간다
+    - 12칸이 넘어가는 순간의 객체는 줄바꿈이 되어 넘어감
+- offset은 비우고싶을 때 사용
