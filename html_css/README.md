@@ -665,3 +665,89 @@
 - 1짜리 13개면 1개가 다음 줄로 넘어간다
     - 12칸이 넘어가는 순간의 객체는 줄바꿈이 되어 넘어감
 - offset은 비우고싶을 때 사용
+
+---
+
+## 추가 정리
+
+- 레이아웃을 따로 지정하지 않으면 normal flow로 인라인 요소는 좌에서 우로, 블록 요소는 위에서 아래로 배치
+- html의 모든 요소는 box model
+    - 4가지 영역으로 구성됨
+        - content
+        - padding
+        - border
+        - margin
+- Display
+    - inline, block, none 3가지
+    - inline
+        - div, form, header, footer 등
+    - block
+        - a, span 등
+    - none
+        - display none은 DOM 트리에조차 생성되지 않는 것
+        - visibility hidden은 자리는 차지하고 있으나 보이지 않는 것
+- padding이 box의 크기에 영향을 주는 경우 box-sizing을 border box로 설정
+- margin 한 줄로 표현
+    - `margin 0 auto;` 는 위아래 0, 양옆 마진은 알아서 잘 배분
+        - 블록 수평 정렬
+    - `width ;` 를 화면보다 크게 주면 가로 스크롤이 생김
+        - `max-width ;` 로 하면 최대크기 이상으로 가지 않고, 화면이 작아지면 그에 따라 반응형으로 너비 줄어듬
+- 블록 안에 인라인 요소를 수평 정렬하고 싶다면 해당 블록의 속성 중 `text-align` 에 center 부여
+- DRY에 따라 공통적인 부분이 보인다면 class로 묶어주자
+- 아래로 이동
+    - 위 마진 부여
+    - `position: relative;` `top: ;`
+- 수직 정렬을 위해서 `line-height: ;` 속성 사용 가능
+- margin이 겹칠 경우 값이 더 큰 것을 줌
+
+- [https://flexboxfroggy.com/#ko](https://flexboxfroggy.com/#ko)
+
+---
+
+box를 통한 positioning 연습
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="box_style.css">
+</head>
+<body>
+  <div id="box-01" class="box"></div>
+  <div id="box-02" class="box"></div>
+  <div id="box-03" class="box">
+    <button>inline elem</button>
+  </div>
+  <div id="box-04" class="box">
+    <div id="box-05" class="box"></div>
+  </div>
+</body>
+</html>
+```
+
+```css
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="box_style.css">
+</head>
+<body>
+  <div id="box-01" class="box"></div>
+  <div id="box-02" class="box"></div>
+  <div id="box-03" class="box">
+    <button>inline elem</button>
+  </div>
+  <div id="box-04" class="box">
+    <div id="box-05" class="box"></div>
+  </div>
+</body>
+</html>
+```
