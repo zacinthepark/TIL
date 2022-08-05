@@ -751,3 +751,213 @@ box를 통한 positioning 연습
 </body>
 </html>
 ```
+Bootstrap practice
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="01_nav_footer.css">
+  <link rel="stylesheet" href="03_community.css">
+  <title>Community</title>
+</head>
+<body>
+  <!-- 01_nav_footer에서 작성한 Navigation bar & Modal & Footer 코드를 적절한 위치에 사용합니다. -->
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a href="/02_home.html">
+        <img src="/images/logo.png" alt="logo image" height="45">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="/02_home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/03_community.html">Community</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#loginModal" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!-- Modal Info -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-1">
+          <label for="exampleFormControlInput1" class="form-label fw-bold">Email adress</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <h6>We'll never share your email with anyone else.</h6>
+        <div class="my-3">
+          <label for="exampleFormControlTextarea1" class="form-label fw-bold">Password</label>
+          <input type="password" class="form-control" id="exampleFormControlTextarea1">
+        </div>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Check me out
+          </label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- 03_community.html -->
+  <main class="container-fluid w-100 py-3">
+    <h1 class="fw-semibold fst-italic fix_left_margin">Community</h1>
+    <div class="row fix_left_margin">
+      <!-- Aside - 게시판 목록 -->
+      <aside class="list-group col col-12 col-lg-2">
+        <li class="list-group-item">
+          <a href="#" class="text-decoration-none">Boxoffice</a>
+        </li>
+        <li class="list-group-item">
+          <a href="#" class="text-decoration-none">Movies</a>
+        </li>
+        <li class="list-group-item">
+          <a href="#" class="text-decoration-none">Genres</a>
+        </li>
+        <li class="list-group-item">
+          <a href="#" class="text-decoration-none">Actors</a>
+        </li>
+      </aside>
+      <!-- Section - 게시판 -->
+      <section class="container col col-12 col-lg-10">
+        <div class="d-none d-lg-block">
+          <table class="table table-striped">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Movie Titles</th>
+                <th scope="col">Posts</th>
+                <th scope="col">Username</th>
+                <th scope="col">Uploaded</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="fst-italic">The ShawShank Redemption</th>
+                <td>Run!</td>
+                <td>Zac</td>
+                <td>1 minute ago</td>
+              </tr>
+              <tr>
+                <th scope="row" class="fst-italic">Joker</th>
+                <td>Grrrrrrrrrr</td>
+                <td>Aiden</td>
+                <td>1 minute ago</td>
+              </tr>
+              <tr>
+                <th scope="row" class="fst-italic">Top Gun: Maverick</th>
+                <td>Pew</td>
+                <td>Jin</td>
+                <td>1 minute ago</td>
+              </tr>
+              <tr>
+                <th scope="row" class="fst-italic">500 Days of Summer</th>
+                <td>Hi there!</td>
+                <td>Katie</td>
+                <td>1 minute ago</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="d-lg-none">
+          <article class="list-group">
+            <li class="list-group-item">
+              <div>
+                <p class="mb-2 fst-italic fw-semibold fs-3">The ShawShank Redemption</p>
+                <p class="mb-2 fs-5">Run!</p>
+                <div class="mb-1">
+                  Zac
+                </div>
+                <div>
+                  <small>1 minute ago</small>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div>
+                <p class="mb-2 fst-italic fw-semibold fs-3">Joker</p>
+                <p class="mb-2 fs-5">Grrrrrrrrrr</p>
+                <div class="mb-1">
+                  Aiden
+                </div>
+                <div>
+                  <small>1 minute ago</small>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div>
+                <p class="mb-2 fst-italic fw-semibold fs-3">Top Gun: Maverick</p>
+                <p class="mb-2 fs-5">Pew</p>
+                <div class="mb-1">
+                  Jin
+                </div>
+                <div>
+                  <small>1 minute ago</small>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div>
+                <p class="mb-2 fst-italic fw-semibold fs-3">500 Days of Summer</p>
+                <p class="mb-2 fs-5">Hi there!</p>
+                <div class="mb-1">
+                  Katie
+                </div>
+                <div>
+                  <small>1 minute ago</small>
+                </div>
+              </div>
+            </li>
+          </article>
+        </div>
+      </section>
+    </div>
+    <div class="d-flex justify-content-center my-4">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </nav>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="d-flex fixed-bottom justify-content-center mx-auto">
+      <p>Web-bootstrap PJT, by JINWOO PARK</p>
+    </div>
+  </footer>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
+
+```
