@@ -961,3 +961,62 @@ Bootstrap practice
 </html>
 
 ```
+## Bootstrap practice
+
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body>
+  <!-- 1. Nav -->
+  <nav class="d-flex fixed-top justify-content-between align-items-center bg-dark">
+    <a href="#">
+      <img src="images/logo.png" alt="Logo Image">
+    </a>
+    <div>
+      <a href="#" class="text-decoration-none text-white me-2">Home</a>
+      <a href="#" class="text-decoration-none text-white me-2">Community</a>
+      <a href="#" class="text-decoration-none text-white me-2">Login</a>
+    </div>
+  </nav>
+
+  <!-- 2. Header -->
+  <header class="d-flex flex-column justify-content-center align-items-center">
+      <h1 class="display-2 text-white fw-bold">Cinema</h1>
+      <h1 class="display-2 text-white fw-bold">Community</h1>
+      <a href="#" class="btn btn-primary btn-lg my-5">Let's Go</a>
+  </header>
+
+  <!-- 3. Section -->
+  <section>
+    <h2 class="d-flex justify-content-center my-5">Used Skills</h2>
+    <article class="d-flex justify-content-evenly">
+      <div class="d-flex flex-column align-items-center">
+        <img src="images/web.png" alt="Web Image">
+        <p>Web</p>
+      </div>
+      <div class="d-flex flex-column align-items-center">
+        <img src="images/html5.png" alt="HTML5 Image">
+        <p>HTML5</p>
+      </div>
+      <div class="d-flex flex-column align-items-center">
+        <img src="images/css3.png" alt="CSS3 Image">
+        <p>CSS3</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- 4. Footer -->
+  <footer class="d-flex fixed-bottom justify-content-center align-items-center bg-primary text-white">
+    <p>HTML & CSS project. Created by JINWOO PARK</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
+```
