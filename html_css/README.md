@@ -30,7 +30,7 @@
 - 웹 페이지는 글, 그림, 동영상 등 여러가지 정보를 담고 있으며, 마우스로 클릭하면 다른 웹 페이지로 이동하는 ‘링크'들이 있음
     - ‘링크'를 통해 여러 웹 페이지를 연결한 것을 웹 사이트라고 함
 
-![htm1_1.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/25d1a685-cb7e-4268-b072-fda8824f5fb0/htm1_1.png)
+<img width="895" alt="html_1" src="https://user-images.githubusercontent.com/86648892/183297271-36c0afda-5de3-4cec-8b7c-15b463aebeba.png">
 
 - HTML은 구조를 담당
     - 처리나 계산과 같은 동작을 하는건 아니어서 엄밀히 따지면 프로그래밍 언어가 아니다
@@ -55,7 +55,7 @@
 - 크로스 브라우징
     - 어떤 브라우저든 웹 페이지가 동일하게 보이도록 함
 
-![html_2.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/beb37743-e2bc-46f6-9f21-ef6807c04ba2/html_2.png)
+<img width="799" alt="html_2" src="https://user-images.githubusercontent.com/86648892/183297274-38e16723-8b56-47b0-891e-9b7e8cec63c6.png">
 
 - W3C는 웹 표준을 만드는 단체
     - 회원사가 많아 결정이 느림
@@ -100,7 +100,7 @@
 - 태그 + 구조!
 - ex) HTML, Markdown
 
-![html_3.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2a86d8c1-85ad-412a-8a03-877f241470b7/html_3.png)
+<img width="1137" alt="html_3" src="https://user-images.githubusercontent.com/86648892/183297276-2e5ed0e9-ddf2-4b6e-aaeb-20c4481da5f6.png">
 
 ## HTML
 
@@ -132,9 +132,9 @@
 - <script> : 스크립트 요소 (Javascript 파일 / 코드)
 - <style> : CSS 직접 작성
 
-![html_4.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/78366c7a-e2ac-4053-990a-4b27036cde1c/html_4.png)
+<img width="405" alt="html_4" src="https://user-images.githubusercontent.com/86648892/183297278-196527ad-5267-4f90-ac31-f4fcee0822b8.png">
 
-![html_5.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f14346a3-5b73-4f88-9b5d-88e6da7ee263/html_5.png)
+<img width="612" alt="html_5" src="https://user-images.githubusercontent.com/86648892/183297279-5b9dcff5-48fb-4d5a-9300-164e0fac2f96.png">
 
 ## head의 또 다른 예시 : Open Graph Protocol
 
@@ -145,7 +145,7 @@
         - 썸네일 같은 것들을 OG protocol을 사용하여 메타데이터 표현함
         - 이런 메타데이터 부분도 실제 개발자들이 다 개발하는 것
 
-![html_6.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/923ccc3d-0c64-4318-891a-c60a04ee1380/html_6.png)
+<img width="494" alt="html_6" src="https://user-images.githubusercontent.com/86648892/183297282-7b7178ea-65de-40eb-bfca-0f6977c5ab62.png">
 
 ## HTML 요소(element)
 
@@ -171,7 +171,7 @@
 - 개발자 도구를 통해 원하는 elements를 선택하여 탐색 가능
     - 복잡한 형태의 경우 Elements 탭에서 HTML 구조를 추가 탐색
 
-![html_7.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/30311d5e-107d-4bbd-be64-d7ab35e1ba75/html_7.png)
+<img width="824" alt="html_7" src="https://user-images.githubusercontent.com/86648892/183297284-1403b96f-f827-44df-a164-28bacdaf98ec.png">
 
 ## HTML 속성(attribute)
 
@@ -203,7 +203,7 @@
     - title : 요소에 대한 추가 정보 지정
     - tabindex : 요소의 탭 순서
 
-![html_8.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ab38124d-cb75-4f70-8bc3-effced583866/html_8.png)
+<img width="639" alt="html_8" src="https://user-images.githubusercontent.com/86648892/183297286-f8f18222-24f0-412e-97a4-ae2c00e92159.png">
 
 ## HTML 코드 예시
 
@@ -225,7 +225,7 @@
 
 ```
 
-![html_9.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5c98a810-e75e-42d3-b9dd-3d19274b66cd/html_9.png)
+<img width="707" alt="html_9" src="https://user-images.githubusercontent.com/86648892/183297289-d166855c-9295-41ba-a529-4e0cb0957372.png">
 
 ## 시맨틱 태그
 
@@ -245,21 +245,21 @@
     - article : 문서, 페이지, 사이트 안에서 독립적으로 구분되는 영역
     - footer : 문서 전체나 섹션의 푸터(마지막 부분)
     
-    ![html_10.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0740dde6-3c79-4198-bef7-7b0e1cbf55f4/html_10.png)
+    <img width="421" alt="html_10" src="https://user-images.githubusercontent.com/86648892/183297290-0f74f310-0813-4db2-8068-f8b60b3c1f65.png">
     
 - 왼쪽 오른쪽은 똑같이 작동하더라도 코드를 봤을 때 시맨틱 태그가 의미를 알기 쉬움
 
-![html_11.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/62353d17-cca0-472c-adad-7c1827c2a5c8/html_11.png)
+<img width="807" alt="html_11" src="https://user-images.githubusercontent.com/86648892/183297291-038b78d8-587c-4beb-8f86-a8753f515a5d.png">
 
 - 구글 뉴스 상단의 메뉴는 Header 태그를 통해서 명확하게 표현하고 있음
 
-![html_12.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1f4128ef-e288-4cbf-ab0e-3718759394f4/html_12.png)
+<img width="662" alt="html_12" src="https://user-images.githubusercontent.com/86648892/183297292-4f639c8a-ba17-411f-8bec-78ed6a0e0274.png">
 
-![html_13.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d71355af-c145-482c-a6b6-472a01317c01/html_13.png)
+<img width="816" alt="html_13" src="https://user-images.githubusercontent.com/86648892/183297293-ba2669de-2d9e-4b09-b677-0c0371792508.png">
 
-![html_14.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6a24c25c-8cda-4f6c-933c-e1a0f85d8630/html_14.png)
+<img width="858" alt="html_14" src="https://user-images.githubusercontent.com/86648892/183297295-4110f3f4-df5e-4e3b-9c4a-6b8f7be89ffc.png">
 
-![html_15.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1e8f52fe-18b2-42ce-84ac-b475b875ac0b/html_15.png)
+<img width="892" alt="html_15" src="https://user-images.githubusercontent.com/86648892/183297296-ea5e241d-7912-4a43-88e3-892e49fcc35e.png">
 
 ## WHY 시맨틱 태그?
 
@@ -281,9 +281,9 @@
     - HTML 문서 내의 각 요소에 접근 / 수정에 필요한 프로퍼티와 메서드를 제공함
 - DOM에 따라 잘라서 기억해놨다가 화면에 그리는 느낌이라 생각하면 편하다
 
-![html_16.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2ea8aadc-1c49-46de-9c15-d9a7c9177216/html_16.png)
+<img width="303" alt="html_16" src="https://user-images.githubusercontent.com/86648892/183297297-a42b81ea-73d7-46e5-94bd-311c1851a945.png">
 
-![html_17.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1804254c-b7f3-4ceb-a5bf-c2a6c18b9298/html_17.png)
+<img width="888" alt="html_17" src="https://user-images.githubusercontent.com/86648892/183297300-e8c4f002-4717-4efc-8257-2ad250879f00.png">
 
 ---
 
@@ -326,7 +326,7 @@
 <!-- 의미없는 인라인 컨테이너 -->
 ```
 
-![html_18.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d395948f-fee0-4d96-983c-4b51fd9f5af2/html_18.png)
+<img width="541" alt="html_18" src="https://user-images.githubusercontent.com/86648892/183297302-2cb61fe9-a928-4672-aa73-2e09fd05610a.png">
 
 ## 그룹 컨텐츠(Block)
 
@@ -357,7 +357,7 @@
 <!-- 의미없는 블록 레벨 컨테이너 -->
 ```
 
-![html_19.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/71030760-36e9-4666-918c-b7d4bebee6d8/html_19.png)
+<img width="538" alt="html_19" src="https://user-images.githubusercontent.com/86648892/183297303-e38757d0-9c97-48a8-8bbd-1d555595d1a4.png">
 
 - div와 span은 다른 작업을 위한 일종의 투명한 쇼핑백과 같은 것이다
 
@@ -378,7 +378,7 @@
     - input의 `id`와 label의 `for` 연결
     - form의 action은 URL path parameter에 추가되는 내용 input의 name, value 쌍은 query string에 들어가는 내용이라 생각하자
 
-![스크린샷 2022-08-07 오후 2.40.19.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e49fd16c-6259-4a19-a08a-568a57c2f658/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_2.40.19.png)
+<img width="768" alt="html_20" src="https://user-images.githubusercontent.com/86648892/183297305-ce34aabe-f525-412d-af6e-2066017d4f85.png">
 
 ### input
 
@@ -404,7 +404,7 @@
     - number: min, max, step 속성을 활용하여 숫자 범위 설정 가능
     - file: accept 속성을 활용하여 파일 타입 지정 가능
     
-    ![스크린샷 2022-08-07 오후 1.20.29.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/196529db-e01f-4b95-9979-3addd3199659/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1.20.29.png)
+    <img width="376" alt="html_21" src="https://user-images.githubusercontent.com/86648892/183297306-442aca48-1248-4364-bf41-e2bf44d52ef3.png">
     
 
 ### input 유형 (항목 중 선택)
@@ -423,7 +423,7 @@
 - hidden input을 활용하여 사용자 입력을 받지 않고 서버에 전송되어야 하는 값을 설정
     - hidden: 사용자에게 보이지 않는 input
 
-![스크린샷 2022-08-07 오후 2.37.21.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/786ac33d-c999-49e3-965e-97b4ad47d6d3/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_2.37.21.png)
+<img width="262" alt="html_22" src="https://user-images.githubusercontent.com/86648892/183297307-217b953f-9fff-4def-9a15-6bfa4fdd1dc2.png">
 
 ### input 유형 (종합)
 
@@ -478,7 +478,7 @@
 </html>
 ```
 
-![스크린샷 2022-08-07 오후 2.54.40.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8b6ac79e-8845-4ed0-b733-859f805a7a06/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_2.54.40.png)
+<img width="262" alt="html_23" src="https://user-images.githubusercontent.com/86648892/183297308-3ab6f19a-366b-4d81-ad36-a872865048ae.png">
 
 ```html
 <div>
@@ -493,7 +493,7 @@
 </div>
 ```
 
-![스크린샷 2022-08-07 오후 2.59.18.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/66ab23cc-0cd3-4768-9570-41fbb99fab40/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_2.59.18.png)
+<img width="365" alt="html_24" src="https://user-images.githubusercontent.com/86648892/183297310-5b7052ed-228b-406a-827e-c2f5f3a8a57d.png">
 
 ```html
 <!DOCTYPE html>
@@ -546,7 +546,7 @@
 </html>
 ```
 
-![스크린샷 2022-08-07 오후 3.58.56.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2f57bdc1-a5d1-4e59-9921-f9b1dca717f3/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_3.58.56.png)
+<img width="357" alt="html_25" src="https://user-images.githubusercontent.com/86648892/183297312-ef6d7ed3-942e-4d35-b7fb-ee5398c6f6bb.png">
 
 ---
 
@@ -560,7 +560,7 @@
             - 속성(Property): 어떤 스타일 기능을 변경할지 결정
             - 값(Value): 어떻게 스타일 기능을 변경할지 결정
 
-![스크린샷 2022-08-07 오후 4.03.35.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/909a493d-e3de-459e-92c4-52576cfc57ce/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_4.03.35.png)
+<img width="812" alt="html_26" src="https://user-images.githubusercontent.com/86648892/183297313-9c8749ef-3df0-4e71-ad25-169e924f7d92.png">
 
 ## CSS 정의 방법
 
@@ -686,7 +686,7 @@
 </body>
 ```
 
-![스크린샷 2022-08-07 오후 4.55.04.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/89ec3922-8049-478b-aac2-338fe37a0f00/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_4.55.04.png)
+<img width="482" alt="html_27" src="https://user-images.githubusercontent.com/86648892/183297314-bcbd1322-1f61-413e-b918-e1b2fbc2a888.png">
 
 ---
 
@@ -707,11 +707,11 @@
     - `+`
     - selector A의 형제 요소 중 바로 뒤에 위치하는 selector B 요소를 선택
 
-![스크린샷 2022-08-07 오후 5.33.26.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5afc79e3-9d31-4eec-9e98-7c7232a717a3/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.33.26.png)
+<img width="1057" alt="html_28" src="https://user-images.githubusercontent.com/86648892/183297315-cf517923-a9f7-4c0c-8887-d98eea927ba8.png">
 
-![스크린샷 2022-08-07 오후 5.33.57.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/05fb5b80-23be-4e0a-b1c4-3dad3604dd0e/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.33.57.png)
+<img width="1030" alt="html_29" src="https://user-images.githubusercontent.com/86648892/183297316-80d96606-0033-4877-b25b-f72c4303cbd1.png">
 
-![스크린샷 2022-08-07 오후 5.34.10.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7f2efe84-6f52-4fc0-aa5b-5ff4f89fe72c/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.34.10.png)
+<img width="1036" alt="html_30" src="https://user-images.githubusercontent.com/86648892/183297317-fff0bc59-91cd-4faa-b0a2-2671ae28fa74.png">
 
 ---
 
@@ -780,7 +780,7 @@ p {
         - position 관련 요소(position, top/right/bottom/left, z-index) 등
 - 상속 여부 MDN에서 확인하기
 
-![스크린샷 2022-08-07 오후 5.15.09.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/930f59a3-ad96-4421-baac-a2f35d012b67/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.15.09.png)
+<img width="1107" alt="html_31" src="https://user-images.githubusercontent.com/86648892/183297319-61534e1e-5323-49d4-ac73-1acd8a1afc79.png">
 
 ---
 
@@ -808,9 +808,9 @@ p {
 - vw, vh, vmin, vmax
     - vw는 가로, vh는 세로
 
-![스크린샷 2022-08-07 오후 5.22.03.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f569a226-e377-4afd-9b88-8d0554292b38/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.22.03.png)
+<img width="1019" alt="html_32" src="https://user-images.githubusercontent.com/86648892/183297320-de2571cd-6789-46b2-a59d-be3258827e94.png">
 
-![스크린샷 2022-08-07 오후 5.22.32.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d50c42ed-a80e-4f19-a2d0-11bc87de1426/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.22.32.png)
+<img width="804" alt="html_33" src="https://user-images.githubusercontent.com/86648892/183297322-8df2269c-b8a5-46b5-8dd0-ca2d7310bf01.png">
 
 - px는 브라우저의 크기를 변경해도 그대로 고정되어있고
 - vw는 브라우저 가로를 줄였다 늘였다하면 그에 따라 50%를 차지함
@@ -866,15 +866,15 @@ p {
 
 ### margin
 
-![스크린샷 2022-08-07 오후 6.01.04.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6ca5981f-9f5f-4e8f-8180-4de3845df5ae/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.01.04.png)
+<img width="540" alt="html_34" src="https://user-images.githubusercontent.com/86648892/183297323-ccf84b25-f80d-448f-a8bd-fcf5a2ea8011.png">
 
 ### margin and padding
 
-![스크린샷 2022-08-07 오후 6.01.42.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7fe67e8e-4bfc-4eaa-bb3a-e6c39503742a/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.01.42.png)
+<img width="554" alt="html_35" src="https://user-images.githubusercontent.com/86648892/183297324-de8ad5cb-b73a-4c45-8d8f-616258c27bd6.png">
 
 ### border
 
-![스크린샷 2022-08-07 오후 6.02.08.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d210f7ba-ca58-4c82-acde-de9b64b3ea7a/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.02.08.png)
+<img width="684" alt="html_36" src="https://user-images.githubusercontent.com/86648892/183297325-22ffbf7a-5ffb-4c26-8307-42c49828e8a1.png">
 
 ## shorthand 문법
 
@@ -892,13 +892,13 @@ p {
 - 넷 쓰면
     - 시계방향
 
-![스크린샷 2022-08-07 오후 6.04.15.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/59c32482-e906-4ccf-bd49-2b56ca7a44f4/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.04.15.png)
+<img width="1145" alt="html_37" src="https://user-images.githubusercontent.com/86648892/183297327-62b5f0e8-4f9b-4967-a299-c618e266ba4d.png">
 
 ### border
 
 - 한 줄로 표현 가능
 
-![스크린샷 2022-08-07 오후 6.04.45.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/76994850-b367-45d9-a794-87f465c90a48/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.04.45.png)
+<img width="729" alt="html_38" src="https://user-images.githubusercontent.com/86648892/183297329-78d3cb6a-a4cd-4929-9646-caafa13afbef.png">
 
 ### box-sizing
 
@@ -907,7 +907,7 @@ p {
 - 일반적으로 영역을 볼 때 border까지의 너비를 100px로 보는 것을 원함
     - 그 경우 `box-sizing: border-box;` 로 설정
 
-![스크린샷 2022-08-07 오후 6.44.23.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e6364257-28f0-4bce-91ad-d94c0d467947/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.44.23.png)
+<img width="1160" alt="html_39" src="https://user-images.githubusercontent.com/86648892/183297330-fe4004cd-43c5-43e8-93f4-387350355449.png">
 
 ---
 
@@ -948,13 +948,13 @@ p {
 - 인라인
     - span / a / img / input, label / b, em , i , strong 등
 
-![스크린샷 2022-08-07 오후 6.50.38.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/073a6558-7595-49b8-8c98-9975caa56136/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.50.38.png)
+<img width="1045" alt="html_40" src="https://user-images.githubusercontent.com/86648892/183297331-69361cd4-5ba1-4f30-a734-a187f25b28b2.png">
 
 - text-align은 블록 요소에만 적용이 가능
 
-![스크린샷 2022-08-07 오후 6.56.47.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5f94274b-57f5-48f2-a1c2-b890cbfc1d22/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.56.47.png)
+<img width="1025" alt="html_41" src="https://user-images.githubusercontent.com/86648892/183297332-a7e408f1-9637-4a64-84f8-a1705ded71c1.png">
 
-![스크린샷 2022-08-07 오후 6.57.11.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2c135df8-6fc6-45c1-b0dc-6f853bb246e3/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.57.11.png)
+<img width="703" alt="html_42" src="https://user-images.githubusercontent.com/86648892/183297336-47031e63-6082-477f-8ce0-0576e9c5b9d6.png">
 
 - 중간에 흰색 공간은 3이 공간을 차지하고 있는 것
 
@@ -994,11 +994,11 @@ p {
 
 - 형에게 `top: 100px; left: 100px;` 을 적용했을 때 absolute와 relative의 차이는?
 
-![스크린샷 2022-08-07 오후 7.16.23.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/523f6556-1ea5-4ba8-a6bd-7a0b2d931a07/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_7.16.23.png)
+<img width="424" alt="html_43" src="https://user-images.githubusercontent.com/86648892/183297338-2c70dc32-e7bd-419d-93c3-0506fbf74918.png">
 
-![스크린샷 2022-08-07 오후 7.16.57.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/60eea3c9-1388-470f-b956-cb6f9c1b18bb/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_7.16.57.png)
+<img width="1030" alt="html_44" src="https://user-images.githubusercontent.com/86648892/183297341-56792d67-2f8b-48f8-9936-6b6be8b245c7.png">
 
-![스크린샷 2022-08-07 오후 7.17.25.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/434aae8f-6bcb-46e1-a16a-ff2f909ab833/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_7.17.25.png)
+<img width="993" alt="html_45" src="https://user-images.githubusercontent.com/86648892/183297342-cc3fb217-d4ca-4d2a-ad7b-1a590f7c490e.png">
 
 ---
 
