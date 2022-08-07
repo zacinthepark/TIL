@@ -126,11 +126,11 @@
 
 ## head 예시
 
-- <title> : 브라우저 상단 타이틀
-- <meta> : 문서 레벨 메타데이터 요소
-- <link> : 외부 리소스 연결 요소 (CSS 파일, favicon 등)
-- <script> : 스크립트 요소 (Javascript 파일 / 코드)
-- <style> : CSS 직접 작성
+- `<title>` : 브라우저 상단 타이틀
+- `<meta>` : 문서 레벨 메타데이터 요소
+- `<link>` : 외부 리소스 연결 요소 (CSS 파일, favicon 등)
+- `<script>` : 스크립트 요소 (Javascript 파일 / 코드)
+- `<style>` : CSS 직접 작성
 
 <img width="405" alt="html_4" src="https://user-images.githubusercontent.com/86648892/183297278-196527ad-5267-4f90-ac31-f4fcee0822b8.png">
 
@@ -363,9 +363,9 @@
 
 ## form
 
-- <form>은 정보(데이터)를 서버에 제출하기 위해 사용하는 태그
+- `<form>`은 정보(데이터)를 서버에 제출하기 위해 사용하는 태그
     - 즉, 사용자가 브라우저를 통해 서버에 데이터를 전송하고 싶을 때 사용
-- <form> 기본 속성
+- `<form>` 기본 속성
     - action: form을 처리할 서버의 URL(데이터를 보낼 곳)
     - method: form을 제출할 때 사용할 HTTP 메서드(GET or POST)
     - enctype: method가 post인 경우 데이터의 유형
@@ -383,7 +383,7 @@
 ### input
 
 - 다양한 타입을 가지는 입력 데이터 유형과 위젯이 제공됨
-- <input> 대표 속성
+- `<input>` 대표 속성
     - name: form control에 적용되는 이름 (이름 / 값 페어로 전송됨)
     - value: form control에 적용되는 값 (이름 / 값 페어로 전송됨)
     - required, readonly, autofocus, autocomplete, disabled 등
@@ -393,7 +393,7 @@
 - label을 클릭하여 input 자체의 초점을 맞추거나 활성화시킬 수 있음
     - 사용자는 선택할 수 있는 영역이 늘어나 웹 / 모바일(터치) 환경에서 편하게 사용할 수 있음
     - label과 input 입력의 관계가 시각적 뿐만 아니라 화면리더기에서도 label을 읽어 쉽게 내용을 확인할 수 있도록 함
-- <input>에 id 속성을, <label>에는 for 속성을 활용하여 상호 연관을 시킴
+- `<input>`에 id 속성을, `<label>`에는 for 속성을 활용하여 상호 연관을 시킴
 
 ### input 유형 (입력)
 
@@ -565,14 +565,14 @@
 ## CSS 정의 방법
 
 - 인라인(inline)
-    - html 요소 태그 안에 직접 <style> 지정
+    - html 요소 태그 안에 직접 `<style>` 지정
 - 내부 참조(embedding)
-    - <head>안에
-        - <style>지정
+    - `<head>`안에
+        - `<style>`지정
         - 선택자 사용
 - 외부 참조(link file)
     - 분리된 CSS 파일
-    - <head>안에
+    - `<head>`안에
         - `<link rel=”stylesheet” hreft=”mystyle.css”>` 와 같이 선언하여 mystyle.css파일 참조하도록 지정
 
 ### CSS with 개발자 도구
@@ -798,22 +798,25 @@ p {
 - `em`
     - 바로 위 부모 요소의 크기에 대한 상대적인 사이즈 지정
 - `rem`
+    - `root em`의 약자
     - 최상위 요소(html)에 비한 상대적인 사이즈 지정
     - 기본 브라우저 설정 사이즈 16px
+    - html tag의 font-size를 base로 함
+    - html tag에 font-size가 정의되지 않았다면, 브라우저 기본 설정을 따라감
 
 ### 크기 단위 (viewport)
 
 - 보이는 화면을 기준으로 사이즈가 결정됨
 - 웹페이지를 방문한 유저의 디바이스 화면을 기준으로 상대적 사이즈 결정
-- vw, vh, vmin, vmax
-    - vw는 가로, vh는 세로
+- `vw`, `vh`, `vmin`, `vmax`
+    - `vw`는 가로, `vh`는 세로
 
 <img width="1019" alt="html_32" src="https://user-images.githubusercontent.com/86648892/183297320-de2571cd-6789-46b2-a59d-be3258827e94.png">
 
 <img width="804" alt="html_33" src="https://user-images.githubusercontent.com/86648892/183297322-8df2269c-b8a5-46b5-8dd0-ca2d7310bf01.png">
 
-- px는 브라우저의 크기를 변경해도 그대로 고정되어있고
-- vw는 브라우저 가로를 줄였다 늘였다하면 그에 따라 50%를 차지함
+- `px`는 브라우저의 크기를 변경해도 그대로 고정되어있고
+- `vw`는 브라우저 가로를 줄였다 늘였다하면 그에 따라 50%를 차지함
 
 ### 색상 단위
 
@@ -1390,8 +1393,8 @@ p {
         - 외부 서버를 활용함으로써 본인 서버의 부하가 적어짐
 - import와 비슷한 개념
 - CDN via jsDelivr
-    - link는 </head> 앞에
-    - script는 </body> 앞에
+    - link는 `</head>` 앞에
+    - script는 `</body>` 앞에
         - 코드의 실행 속도를 위해
 
 ---
@@ -1506,7 +1509,7 @@ p {
 - 현재 열려있는 페이지 위에 또 다른 레이어를 띄움
 - 페이지를 이동하면 자연스럽게 사라짐
     - 팝업은 보통 x를 눌러야 사라지고, modal은 다른 곳을 클릭해도 사라짐
-- data-bs0target에 다른 곳에 지정해준 객체의 id를 넣어주어 연결
+- data-bs-target에 다른 곳에 지정해준 객체의 id를 넣어주어 연결
 - 중첩해서 들어가있으면 안됨
     - Modals use `position: fixed`, which can sometimes be a bit particular about its rendering. Whenever possible, place your modal HTML in a top-level position to avoid potential interference from other elements. You’ll likely run into issues when nesting a `.modal` within another fixed element
 
@@ -1707,6 +1710,869 @@ p {
 <img width="1116" alt="html_103" src="https://user-images.githubusercontent.com/86648892/183300065-9f56db52-3003-4d7d-a322-a580f1748262.png">
 <img width="1150" alt="html_104" src="https://user-images.githubusercontent.com/86648892/183300067-36eb6cd1-ffe2-4b5e-95a6-b736921d7c53.png">
 <img width="1136" alt="html_105" src="https://user-images.githubusercontent.com/86648892/183300072-a9ba4025-bcf4-4369-a469-231dbb935965.png">
+
+---
+
+## nth-child와 nth-of-type
+
+### 1) 아래의 코드를 작성하고 결과를 확인하시오.
+```html
+<html>
+    <head>
+        <title>0801 workshop</title>
+        <style>
+            #ssafy > p:nth-child(2) {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="ssafy">
+            <h2>어떻게 선택 될까?</h2>
+            <p>첫번째 단락</p>
+            <p>두번째 단락</p>
+            <p>세번째 단락</p>
+            <p>네번째 단락</p>
+        </div>
+    </body>
+</html>
+```
+첫번째 단락만 빨갛게 표시됨
+### 2) nth-child를 nth-of-type으로 변경하고 결과를 확인하시오.
+```html
+<html>
+    <head>
+        <title>0801 workshop</title>
+        <style>
+            #ssafy > p:nth-of-type(2) {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="ssafy">
+            <h2>어떻게 선택 될까?</h2>
+            <p>첫번째 단락</p>
+            <p>두번째 단락</p>
+            <p>세번째 단락</p>
+            <p>네번째 단락</p>
+        </div>
+    </body>
+</html>
+```
+두번째 단락만 빨갛게 표시됨
+### 3) 작성한 코드를 참고하여 nth-child()와 nth-of-type()의 차이점을 작성하시오.
+nth-child()는 자식 요소 중 유형을 고려하지 않은 것이며, nth-of-type()은 자식 요소 중 유형을 고려한 순서를 뜻한다. `#ssafy > p:nth-child(2)`는 ssafy라는 id를 가진 태그의 두번째 자식이 p태그이면 해당 태그에 정의된 css를 적용해달라는 것이다. 만약 두번째 자식이 p태그가 아니라면 해당 css는 적용되지 않는다. 반면 `#ssafy > p:nth-of-type(2)`는 ssafy라는 id를 가진 태그의 자식들 중 두번째로 나오는 p태그에 해당 css를 적용해달라는 것이다.
+
+---
+## Bootstrap Components 예제 코드 (Button, Navbar, Pagination 만들기)
+
+### 1.Button 만들기 
+
+##### (a) btn 
+
+##### (b) btn-primary
+
+```html
+<button type="submit" class="btn btn-primary" width="40rem;">Submit</button>
+```
+
+
+
+### 2. NavBar 만들기
+
+##### (a) `light`
+
+##### (b) `navbar-nav`
+
+##### (c) `navbarBreakfast`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">
+	      <img src="my_ssafy.png" alt="ssafy" width="70" height="30" class="d-inline-block align-top">
+	    </a>
+	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" 
+				aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+		 </button>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				<ul class="navbar-nav">
+	        <li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarBreakfast" role="button" data-bs-toggle="dropdown" 
+							aria-expanded="false">아침
+						</a>
+						<ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarBreakfast">
+							<li><a class="dropdown-item" href="#">오믈렛</a></li>
+							<li><a class="dropdown-item" href="#">샌드위치</a></li>
+							<li><a class="dropdown-item" href="#">팬케이크</a></li>
+							<li><a class="dropdown-item" href="#">김밥</a></li>
+							<li><a class="dropdown-item" href="#">주먹밥</a></li>
+						</ul>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarLunch" role="button" data-bs-toggle="dropdown" 
+							aria-expanded="false">점심 
+						</a>
+						<ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLunch">
+							<li><a class="dropdown-item" href="#">샐러드</a></li>
+							<li><a class="dropdown-item" href="#">떡볶이</a></li>
+								<li><a class="dropdown-item" href="#">햄버거</a></li>
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" href="#">저녁</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link disable" href="#">야식</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</body>
+</html>
+```
+
+
+
+### 3. PageNation 만들기
+
+##### (a) - `pagination`
+
+##### (b) - `disabled`
+
+##### (c) - `active`
+
+```html
+<nav aria-label="...">
+      <ul class="pagination">
+          <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Prev</a>
+          </li>
+          <li class="page-item active" aria-current="page">
+              <a class="page-link" href="#">1</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+          </li>
+      </ul>
+  </nav>
+```
+
+---
+
+## Web Page Build Practice
+<img width="1897" alt="html_106" src="https://user-images.githubusercontent.com/86648892/183303666-a5ac2acc-81d2-4dbc-a026-d465e9358642.png">
+<img width="1897" alt="html_107" src="https://user-images.githubusercontent.com/86648892/183303672-37a48639-267a-43f0-8881-c0d4ca6bd025.png">
+
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body>
+  <!-- 1. Nav -->
+  <nav class="d-flex fixed-top justify-content-between align-items-center bg-dark">
+    <a href="#">
+      <img src="images/logo.png" alt="Logo Image">
+    </a>
+    <div>
+      <a href="#" class="text-decoration-none text-white me-2">Home</a>
+      <a href="#" class="text-decoration-none text-white me-2">Community</a>
+      <a href="#" class="text-decoration-none text-white me-2">Login</a>
+    </div>
+  </nav>
+
+  <!-- 2. Header -->
+  <header class="d-flex flex-column justify-content-center align-items-center">
+      <h1 class="display-2 text-white fw-bold">Cinema</h1>
+      <h1 class="display-2 text-white fw-bold">Community</h1>
+      <a href="#" class="btn btn-primary btn-lg my-5">Let's Go</a>
+  </header>
+
+  <!-- 3. Section -->
+  <section>
+    <h2 class="d-flex justify-content-center my-5">Used Skills</h2>
+    <article class="d-flex justify-content-evenly">
+      <div class="d-flex flex-column align-items-center">
+        <img src="images/web.png" alt="Web Image">
+        <p>Web</p>
+      </div>
+      <div class="d-flex flex-column align-items-center">
+        <img src="images/html5.png" alt="HTML5 Image">
+        <p>HTML5</p>
+      </div>
+      <div class="d-flex flex-column align-items-center">
+        <img src="images/css3.png" alt="CSS3 Image">
+        <p>CSS3</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- 4. Footer -->
+  <footer class="d-flex fixed-bottom justify-content-center align-items-center bg-primary text-white">
+    <p>HTML & CSS project. Created by JINWOO PARK</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
+```
+
+---
+
+## Web Page Build Practice 2
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Merienda+One&family=Nunito:wght@200;300;400;500;600&display=swap');
+
+/* 스크롤을 부드럽게 설정합니다. */
+html{
+  scroll-behavior: smooth;
+}
+
+/* 기본 글꼴 설정 */
+body {
+  font-family: 'Nunito', sans-serif;
+  /* 창 크기가 줄어도 최소 1280px의 너비를 유지합니다. 
+  디바이스의 화면 크기가 더 작다면 스크롤이 생성됩니다. */
+  min-width: 1280px;
+  color: #333333;
+}
+
+/*내비게이션 바 */
+.nav-bar {
+  display: flex;
+  /* 서비스명과 메뉴 버튼이 서로 멀어지게 합니다. */
+  justify-content: space-between;
+  align-items: center;
+  /* 내비게이션 바는 상단에 붙어 있습니다. */
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2rem;
+  padding: 1rem 2rem; 
+  /* sticky를 사용하는 경우 배경색을 지정해줘야 합니다. */
+  background-color: white;
+  height: 48px;
+}
+
+.service-name {
+  font-size: large;
+  font-family: 'Merienda One';
+  margin-bottom: 0;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: black;
+  margin-left: 1rem;
+}
+
+/* 호버 시 색상 변화 */
+.nav-menu a:hover {
+  color: #5F98D1;
+}
+
+.banner {
+  background: url(../assets/apparel.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+}
+
+/* 상단 이동 버튼 */
+.pageup-btn {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  background: url(../assets/up-arrow.png);
+  width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* 본문 영역 */
+.container {
+  width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 본문의 한 영역을 담당합니다. */
+.section {
+  display: flex;
+  padding: 0 3rem;
+  margin: 3rem 0;
+}
+
+/* 각각의 타이틀입니다. */
+.section-title {
+  text-align: center;
+  font-family: 'Merienda One';
+  font-size: xx-large;
+  margin-bottom: 0;
+}
+
+/* 제목과 콘텐츠의 세로 배치 */
+.about {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.section-description {
+  font-size: large;
+  margin-top: 1rem;
+  line-height: 2rem;
+}
+
+/* 이미지의 크기 및 테두리 깎기. */
+.info-img {
+  width: 500px;
+  border-radius: 1rem;
+}
+
+.contact-wrap {
+  justify-content: space-around;
+}
+
+/* colmn 배치로 inline 요소들이 세로로 쌓이도록 조정합니다. */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  font-size: large;
+  border: .2rem solid #333333;
+  padding: 1rem;
+}
+
+.form-label {
+  margin: 0.8rem 0;
+}
+
+.contact-form input {
+  width: 400px;
+  height: 2rem;
+  padding: 0.5rem;
+  border: 0.05rem solid #333333;
+}
+
+/* 버튼 호버 시 색상 변화 및 위치 조정. */
+.form-button {
+  width: 100px;
+  margin: 1.5rem auto auto auto;
+  background: none;
+  cursor: pointer;
+  border: 0.05rem solid #333;
+}
+
+.contact-form button:hover {
+  background-color: #5F98D1;
+}
+
+.contact-img {
+  width: 400px;
+  height: 100%;
+}
+
+/* More 영역 */
+.icon-wrap {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* 이미지, 타이틀, 콘텐츠가 세로로 쌓이도록 조정합니다. */
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+}
+
+.icon-text {
+  margin-top: 1rem;
+}
+
+/* 푸터 영역 */
+.footer-content {
+  margin-top: 3rem;
+  /* 위 테두리 선 긋기. */
+  border-top: 0.1rem solid #333333;
+  padding: 1rem;
+  font-size: large;
+  text-align: center;
+}
+
+/* PRODUCT PAGE */
+.product-title {
+  font-family: 'Merienda One';
+  font-size: x-large;
+  border-bottom: 0.1rem solid #333333;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0;
+}
+
+.card-columns {
+  display: flex;
+  /* wrap 속성을 주어 넘치면 다음 줄로 가게끔 설정. */
+  flex-wrap: wrap;
+}
+
+/* 각각의 카드 내부는 세로로 레이아웃 됩니다. */
+.card {
+  display: flex;
+  flex-direction: column;
+  /* 한 줄에 3개씩 배치되도록 조정 */
+  margin: 1%;
+  width: 31%;
+  height: 350px;
+  border: 0.05rem solid black;  
+}
+
+.card-img {
+  padding: 0.5rem;
+  width: 100%;
+  height: 150px;
+}
+
+.card-title {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+}
+
+.card-content {
+  padding: 0.5rem;
+  line-height: 1.5rem;
+}
+```
+
+<img width="1900" alt="html_108" src="https://user-images.githubusercontent.com/86648892/183304249-701bd497-80e0-46f9-8fa9-9f76eaf25aec.png">
+<img width="1898" alt="html_109" src="https://user-images.githubusercontent.com/86648892/183304251-3d40638c-ca4c-417d-9808-2f817d0f6d74.png">
+<img width="1904" alt="html_110" src="https://user-images.githubusercontent.com/86648892/183304252-6368e8e2-3fff-471a-b548-c7976b7c0ecc.png">
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>SSAFY APPAREL</title>
+</head>
+<body>
+  <!-- 네비게이션 영역 -->
+  <nav class="nav-bar" id="nav-bar">
+    <h1 class="service-name">SSAFY APPAREL</h1>
+    <div class="nav-menu">
+      <a href="index.html">HOME</a>
+      <a href="products.html">PRODUCTS</a>
+    </div>
+  </nav>
+  <!-- 이미지 배너 -->
+  <div class="banner" id="banner"></div>
+
+  <!-- 오른쪽 하단의 상단 이동 버튼 -->
+  <a href="#banner" class="pageup-btn"></a>
+
+  <!-- 본문 영역 -->
+  <div class="container">
+    <!-- About Our Company -->
+    <div class="section">
+      <img src="./assets/apparel2.jpeg" alt="apparel2" class="info-img">
+      <article class="about">
+        <h2 class="section-title">About Our Company</h2>
+        <p class="section-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque deleniti facilis recusandae non aspernatur nam rerum repellat reiciendis inventore iste, molestiae necessitatibus, voluptas nulla, quibusdam ducimus atque aliquid adipisci minus!
+        Recusandae debitis velit reprehenderit praesentium repellendus modi est, blanditiis neque consequatur in libero rerum saepe voluptatibus sit at ducimus suscipit consectetur eum incidunt nostrum aut vel, laborum quis temporibus. Tempore!</p>
+      </article>
+    </div>
+
+    <!-- Contacts -->
+    <h2 class="section-title">Contact Us</h2>
+    <div class="section contact-wrap">
+      <form class="contact-form">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" id="username" placeholder="Username" required>
+        <label for="email" class="form-label">Email</label>
+        <input type="email" placeholder="Email" required>
+        <button class="form-button">Send</button>
+      </form>
+      <img class="contact-img" src="assets/contact.jpg" alt="contact">
+    </div>
+
+    <!-- More -->
+    <h2 class="section-title">More</h2>
+    <div class="section icon-wrap">
+      <div class="icon-box">
+        <img src="./assets/email.png" alt="icon" class="icon">
+        <span class="icon-text">Email Address</span>
+        <span class="icon-text">ssafy@ssafy.com</span>
+      </div>
+      <div class="icon-box">
+        <img src="./assets/telephone.png" alt="icon" class="icon">
+        <span class="icon-text">Phone Number</span>
+        <span class="icon-text">010-1234-5678</span>
+      </div>
+      <div class="icon-box">
+        <img src="./assets/location.png" alt="icon" class="icon">
+        <span class="icon-text">Location</span>
+        <span class="icon-text">서울특별시 역삼동</span>
+      </div>
+      <div class="icon-box">
+        <img src="./assets/clock.png" alt="icon" class="icon">
+        <span class="icon-text">Working Hours</span>
+        <span class="icon-text">9am ~ 6pm</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 푸터 영역 -->
+  <footer class="container">
+    <div class="footer-content">
+      <span>© Copyright 2022 By SSAFY | All Rights Reserved</span>
+    </div>
+  </footer>
+</body>
+</html>
+```
+
+<img width="1900" alt="html_111" src="https://user-images.githubusercontent.com/86648892/183304314-b88af945-baac-4c09-b5aa-097d9117633f.png">
+<img width="1900" alt="html_112" src="https://user-images.githubusercontent.com/86648892/183304325-79598149-a224-49f6-8487-88ed984452d6.png">
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>SSAFY APPAREL</title>
+</head>
+<body>
+  <!-- 네비게이션 영역 -->
+  <nav class="nav-bar">
+    <h1 class="service-name">SSAFY APPAREL</h1>
+    <div class="nav-menu">
+      <a href="index.html">HOME</a>
+      <a href="products.html">PRODUCTS</a>
+    </div>
+  </nav>
+</header>
+
+  <!-- 제품 영역 -->
+  <div class="container">
+    <div class="section">
+      <h2 class="product-title">Our Products</h2>
+    </div>
+    <div class="section card-columns">
+      <div class="card">
+        <img src="assets/t-shirt.jpg" class="card-img">
+        <span class="card-title">T-shirts</span>
+        <span class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique temporibus nihil cupiditate non porro, nesciunt, natus delectus, aliquam rerum quisquam animi ipsa quaerat aspernatur ea a? Fugit odio deleniti nemo?</span>
+      </div>
+      <div class="card">
+        <img src="assets/coats.jpg" class="card-img">
+        <span class="card-title">Coats</span>
+        <span class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique temporibus nihil cupiditate non porro, nesciunt, natus delectus, aliquam rerum quisquam animi ipsa quaerat aspernatur ea a? Fugit odio deleniti nemo?</span>
+      </div>
+      <div class="card">
+        <img src="assets/jeans.jpg" class="card-img">
+        <span class="card-title">Jeans</span>
+        <span class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique temporibus nihil cupiditate non porro, nesciunt, natus delectus, aliquam rerum quisquam animi ipsa quaerat aspernatur ea a? Fugit odio deleniti nemo?</span>
+      </div>
+      <div class="card">
+        <img src="assets/shoes.jpg" class="card-img">
+        <span class="card-title">Shoes</span>
+        <span class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique temporibus nihil cupiditate non porro, nesciunt, natus delectus, aliquam rerum quisquam animi ipsa quaerat aspernatur ea a? Fugit odio deleniti nemo?</span>
+      </div>
+      <div class="card">
+        <img src="assets/suits.jpg" class="card-img">
+        <span class="card-title">Suits</span>
+        <span class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique temporibus nihil cupiditate non porro, nesciunt, natus delectus, aliquam rerum quisquam animi ipsa quaerat aspernatur ea a? Fugit odio deleniti nemo?</span>
+      </div>
+      <div class="card">
+        <img src="assets/accesories.jpg" class="card-img">
+        <span class="card-title">Accessories</span>
+        <span class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique temporibus nihil cupiditate non porro, nesciunt, natus delectus, aliquam rerum quisquam animi ipsa quaerat aspernatur ea a? Fugit odio deleniti nemo?</span>
+      </div>
+    </div>
+  </div>
+
+   <!-- 푸터 영역 -->
+   <footer class="container">
+    <div class="footer-content">
+      <span>© Copyright 2022 By SSAFY | All Rights Reserved</span>
+    </div>
+  </footer>
+</body>
+</html>
+```
+
+---
+
+## Grid Breakpoint Practice
+
+<img width="1319" alt="html_113" src="https://user-images.githubusercontent.com/86648892/183305234-10b33cbe-6363-43b2-ae3f-0b7837995e61.png">
+
+```html
+
+<!-- 01_grid.html -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>01_grid</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>Bootstrap Grid System 1</h1>
+      </div>
+    </div>
+
+    <!-- 1. -->
+    <div class="row">
+      <div class="item col-4">
+        <p>4</p>
+      </div>
+      <div class="item col-4">
+        <p>4</p>
+      </div>
+      <div class="item col-4">
+        <p>4</p>
+      </div>
+    </div>
+
+    <!-- 2. -->
+    <div class="row">
+      <div class="item col-6">
+        <p>6</p>
+      </div>
+      <div class="item col-6">
+        <p>6</p>
+      </div> 
+    </div>
+
+    <!-- 3. -->
+    <div class="row">
+      <div class="item col-3">
+        <p>3</p>
+      </div>
+      <div class="item col-6">
+        <p>6</p>
+      </div>
+      <div class="item col-3">
+        <p>3</p>
+      </div>
+    </div> 
+
+    <!-- 4. -->
+    <div class="row">
+      <div class="item col-2">
+        <p>2</p>
+      </div>
+      <div class="item col-9">
+        <p>9</p>
+      </div>
+      <div class="item col-1">
+        <p>1</p>
+      </div> 
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
+
+```
+
+<img width="1318" alt="html_114" src="https://user-images.githubusercontent.com/86648892/183305236-7a8baba2-c1a7-4a69-a439-c3ebaac64fa3.png">
+
+```html
+
+<!-- 02_grid.html -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>02_grid</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>Bootstrap Grid System 2</h1>
+      </div>
+    </div>
+
+    <!-- 1. -->
+    <div class="row">
+      <div class="item col-4 col-sm-2">
+        <p>576px 미만 4 <br> 576px 이상 2</p>
+      </div>
+      <div class="item col-4 col-sm-5">
+        <p>576px 미만 4 <br> 576px 이상 5</p>
+      </div>
+      <div class="item col-4 col-sm-5">
+        <p>576px 미만 4 <br> 576px 이상 5</p>
+      </div>
+    </div>
+
+    <!-- 2. -->
+    <div class="row">
+      <div class="item col-1 col-md-2">
+        <p>768px 미만 1 <br> 768px 이상 2</p>
+      </div>
+      <div class="item col-3 col-md-3">
+        <p>768px 미만 3 <br> 768px 이상 3</p>
+      </div>
+      <div class="item col-4 col-md-3">
+        <p>768px 미만 4 <br> 768px 이상 3</p>
+      </div>
+      <div class="item col-1 col-md-2">
+        <p>768px 미만 1 <br> 768px 이상 2</p>
+      </div>
+      <div class="item col-3 col-md-2">
+        <p>768px 미만 3 <br> 768px 이상 2</p>
+      </div>
+    </div>
+
+    <!-- 3. -->
+    <div class="row">
+      <div class="item col-4 col-sm-3 col-md-6">
+        <p>576px 미만 4 <br> 768px 미만 3 <br> 768px 이상 6</p>
+      </div>
+      <div class="item col-6  col-sm-3 col-md-6">
+        <p>576px 미만 6 <br> 768px 미만 3 <br> 768px 이상 6</p>
+      </div>
+      <div class="item col-2 col-sm-6 col-md-12">
+        <p>576px 미만 2 <br> 768px 미만 6 <br> 768px 이상 12</p>
+      </div>
+    </div>
+
+    <!-- 4. -->
+    <div class="row">
+      <div class="item col-12 col-md-4 col-xl-2">
+        <p>768px 미만 12 <br> 768px 이상 4 <br> 1200px 이상 2</p>
+      </div>
+      <div class="item col-12 col-md-4 col-xl-2">
+        <p>768px 미만 12 <br> 768px 이상 4 <br> 1200px 이상 2</p>
+      </div>
+      <div class="item col-12 col-md-4 col-xl-12">
+        <p>768px 미만 12 <br> 768px 이상 4 <br> 1200px 이상 12</p>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
+
+```
+
+<img width="1138" alt="html_115" src="https://user-images.githubusercontent.com/86648892/183305243-00568a73-7e59-47ce-ae30-cc97be4869ca.png">
+
+```html
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>03_grid</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>Bootstrap Grid System 3</h1>
+      </div>
+    </div>
+
+    <!-- 1. -->
+    <div class="row">
+      <div class="item col-4 col-md-4">
+        <p>item1</p>
+      </div>
+      <div class="item col-8 col-md-4 offset-md-4">
+        <p>item2</p>
+      </div>
+    </div>
+
+    <!-- 2. -->
+    <div class="row">
+      <div class="item col-4 col-md-4 offset-md-4 col-lg-5 offset-lg-7">
+        <p>item1</p>
+      </div>
+      <div class="item col-4 offset-4 col-md-4 offset-md-0 col-lg-8 offset-lg-2">
+      <!-- <div class="item col-4 offset-4 col-md-4 col-lg-8 offset-lg-2"> -->
+        <!-- 위 line에 offset-md-0을 주는 이유는 offset-4가 선언되어있기에 md의 경우 다른 offset을 부여하고 싶다면 offset-md-0과 같이 새로 선언해줘야함 -->
+        <p>item2</p>
+      </div>
+    </div>
+    
+    <!-- 3. -->
+    <div class="row">
+      <div class="item col-12 col-md-3 col-lg-3">
+        item1
+      </div>
+      <div class="item col-12 col-md-9 col-lg-9">
+        <div class="row">
+          <div class="item col-6 col-md-6 col-lg-3">item2</div>
+          <div class="item col-6 col-md-6 col-lg-3">item3</div>
+          <div class="item col-6 col-md-6 col-lg-3">item4</div>
+          <div class="item col-6 col-md-6 col-lg-3">item5</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
+
+```
 
 ---
 
