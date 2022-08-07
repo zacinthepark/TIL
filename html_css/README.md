@@ -60,7 +60,7 @@
 - W3C는 웹 표준을 만드는 단체
     - 회원사가 많아 결정이 느림
         - 이에 따라 WHATWG가 HTML 5라는 표준을 제안했고, 현재 대세
-- [https://caniuse.com/](https://caniuse.com/)
+- [caniuse](https://caniuse.com/)
     - 사용하고 싶은 기술을 검색하면 브라우저 호환성을 확인할 수 있음
 
 ---
@@ -429,7 +429,7 @@
 
 - <input> 요소의 동작은 type에 따라 달라지므로, 각각의 내용을 숙지할 것
 - 지정하지 않을 경우 기본값은 `text`
-- [https://developer.mozilla.org/ko/docs/Web/HTML/Element/Input](https://developer.mozilla.org/ko/docs/Web/HTML/Element/Input)
+- [MDN docs input](https://developer.mozilla.org/ko/docs/Web/HTML/Element/Input)
 
 ---
 
@@ -939,7 +939,7 @@ p {
     - `visibility: hidden`
         - 마찬가지로 화면 표시는 되지 않으나, 공간은 차지한다는 점에서 다름
         - 나중에 보여줄 일이 있으면 hidden, 그럴 일이 없으면 none을 사용
-- [https://developer.mozilla.org/ko/docs/Web/CSS/display](https://developer.mozilla.org/ko/docs/Web/CSS/display)
+- [MDN docs display](https://developer.mozilla.org/ko/docs/Web/CSS/display)
 
 ### 블록 레벨 요소와 인라인 레벨 요소
 
@@ -1213,9 +1213,9 @@ p {
 - left: 요소를 왼쪽으로 띄움
 - right: 요소를 오른쪽으로 띄움
 
-![스크린샷 2022-08-03 오전 9.28.16.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6c0016a1-cda9-44aa-a4b9-ac073a9e7b9d/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-03_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_9.28.16.png)
+<img width="579" alt="html_46" src="https://user-images.githubusercontent.com/86648892/183298287-57c2a123-31eb-4b2c-874d-93f8870c818d.png">
 
-![스크린샷 2022-08-03 오전 9.28.41.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cfb99000-7b4a-4573-a33f-ca78cd94e3e6/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-03_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_9.28.41.png)
+<img width="474" alt="html_47" src="https://user-images.githubusercontent.com/86648892/183298291-96b28ff9-8bc3-4a09-a27d-f93e31f85d7d.png">
 
 ---
 
@@ -1270,7 +1270,7 @@ p {
         - column-reverse
 - 역방향의 경우 HTML 태그 선언 순서와 시각적으로 다르니 유의 (웹 접근성에 영향)
 
-![스크린샷 2022-08-07 오후 8.47.50.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/036ca08b-35f3-4a9b-9bb9-8f256c56093a/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_8.47.50.png)
+<img width="1205" alt="html_48" src="https://user-images.githubusercontent.com/86648892/183298292-b0952e0f-80f4-41c4-a2e9-c6a1608e232c.png">
 
 ## Flex 속성: flex-wrap
 
@@ -1282,7 +1282,7 @@ p {
         - wrap-reverse
             - 최신글이 위에 오도록 하고싶을 때와 같은 경우에 사용
             
-            ![스크린샷 2022-08-07 오후 9.02.16.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6bd1f62c-be95-4861-89dc-0d7c9168f0a4/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_9.02.16.png)
+            <img width="755" alt="html_49" src="https://user-images.githubusercontent.com/86648892/183298295-e837be2d-ca62-4683-94a6-cb021f079c2a.png">
             
 
 ## Flex 속성: flex-flow (direction + wrap)
@@ -1295,13 +1295,13 @@ p {
 
 - Main axis를 기준으로 공간 배분
 
-![스크린샷 2022-08-07 오후 9.05.42.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ddda3657-b675-4cca-a3a5-897d5d9c9063/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_9.05.42.png)
+<img width="1173" alt="html_50" src="https://user-images.githubusercontent.com/86648892/183298296-3d0ae692-b0cb-4f89-817e-16405fb589cd.png">
 
 ## Flex 속성: align-content
 
 - Cross axis를 기준으로 공간 배분 (아이템이 한 줄로 배치되는 경우 확인할 수 없음)
 
-![스크린샷 2022-08-07 오후 9.06.50.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/91d53a44-5dd2-4e33-b73f-1c56d46ce9ed/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_9.06.50.png)
+<img width="999" alt="html_51" src="https://user-images.githubusercontent.com/86648892/183298297-cd548a61-82d5-45f1-8f30-a6d5e5a1508c.png">
 
 ## Flex 속성: justify-content & align-content
 
@@ -1324,14 +1324,14 @@ p {
 
 - 모든 아이템을 Cross axis 기준으로 정렬
 
-![스크린샷 2022-08-07 오후 9.10.13.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/543b239d-1a27-4adf-a78c-d752835f8f50/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_9.10.13.png)
+<img width="1152" alt="html_52" src="https://user-images.githubusercontent.com/86648892/183298298-68296744-f7cb-4fb2-9467-3fe6584927ad.png">
 
 ## Flex 속성: align-self
 
 - 개별 아이템을 Cross axis 기준으로 정렬
 - 주의! 해당 속성은 컨테이너에 적용하는 것이 아니라 개별 아이템에 적용하는 것
 
-![스크린샷 2022-08-07 오후 9.11.23.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ee89d08f-27bb-4e18-abd3-c53bcd95e2d8/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_9.11.23.png)
+<img width="1172" alt="html_53" src="https://user-images.githubusercontent.com/86648892/183298300-91a2f43f-a0b0-45ba-bd70-812abe8fa8c7.png">
 
 ## Flex 속성: align-items & align-self
 
@@ -1355,17 +1355,17 @@ p {
 - order
     - 배치 순서
 
-![스크린샷 2022-08-07 오후 9.53.58.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/38e5d30b-d3df-4791-875e-d18975205821/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_9.53.58.png)
+<img width="810" alt="html_54" src="https://user-images.githubusercontent.com/86648892/183298301-47bda5d5-7327-4b45-9c05-5f92a0a4fa36.png">
 
 ## Flexbox 활용
 
 ### 수직 수평 가운데 정렬
 
-![스크린샷 2022-08-07 오후 9.55.38.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fdd2104d-ae34-46d0-a3e7-1afd30998d17/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_9.55.38.png)
+<img width="831" alt="html_55" src="https://user-images.githubusercontent.com/86648892/183298302-e1a802df-9b6c-4c55-bd41-80a3f95b3c91.png">
 
 ### 카드 배치
 
-![스크린샷 2022-08-07 오후 9.56.40.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9768e6b7-4a82-40a1-a938-bb543dfd9b9d/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_9.56.40.png)
+<img width="940" alt="html_56" src="https://user-images.githubusercontent.com/86648892/183298304-ecce7748-2da6-401c-9083-66d04f478adc.png">
 
 ---
 
@@ -1404,11 +1404,11 @@ p {
 - mt-3
     - m은 property, t는 sides, 3은 size
 
-![스크린샷 2022-08-07 오후 10.03.18.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5e6f8786-d732-4718-af53-c78de8208111/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.03.18.png)
+<img width="749" alt="html_57" src="https://user-images.githubusercontent.com/86648892/183298305-d8649a14-b78f-4709-a4bc-06759f2e0224.png">
 
-![스크린샷 2022-08-07 오후 10.03.43.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9dd0ed19-5991-4770-9b3d-1a2b2080d3f0/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.03.43.png)
+<img width="994" alt="html_58" src="https://user-images.githubusercontent.com/86648892/183298308-87707fb6-f813-42b6-a7d8-bd75de7fa254.png">
 
-![스크린샷 2022-08-07 오후 10.03.59.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b94085db-abaa-4faa-86cf-3454b172dbdb/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.03.59.png)
+<img width="919" alt="html_59" src="https://user-images.githubusercontent.com/86648892/183298309-77fcd87b-eb8e-423c-b454-c7c594b39045.png">
 
 - 1은 0.25rem
     - 1rem은 16px
@@ -1420,25 +1420,25 @@ p {
     - py-0
         - 위아래 padding을 0으로
 
-![스크린샷 2022-08-07 오후 10.14.11.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f58dc53e-8bc7-4671-b0a7-fcf02b089db0/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.14.11.png)
+<img width="1083" alt="html_60" src="https://user-images.githubusercontent.com/86648892/183298310-977fde4a-c644-4077-9d6d-7eccd12b8f97.png">
 
-![스크린샷 2022-08-07 오후 10.15.43.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a4f2b429-87bb-4f19-82eb-448d9c8d5655/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.15.43.png)
+<img width="809" alt="html_61" src="https://user-images.githubusercontent.com/86648892/183298311-13101685-1bf4-4f40-a208-34ddce99c95d.png">
 
 ## Color
 
 - 텍스트 컬러, 백그라운드 컬러 모두 적용 가능
 
-![스크린샷 2022-08-07 오후 10.18.48.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1abff4ab-b965-4a57-a481-082f34f9a933/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.18.48.png)
+<img width="1056" alt="html_62" src="https://user-images.githubusercontent.com/86648892/183298312-215eee19-d84d-4186-8f38-de1f676590ef.png">
 
-![스크린샷 2022-08-07 오후 10.19.46.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/717e20e1-e9dc-42aa-8931-f6b2dbf28ecf/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.19.46.png)
+<img width="1084" alt="html_63" src="https://user-images.githubusercontent.com/86648892/183298313-087004bb-ba89-49ad-a4af-5cc01f266550.png">
 
 ## Text
 
-![스크린샷 2022-08-07 오후 10.20.53.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dcd25b8e-1b0d-4086-a201-1d64ce8e874f/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.20.53.png)
+<img width="850" alt="html_64" src="https://user-images.githubusercontent.com/86648892/183298316-12b6904b-7dd9-4808-8a23-7664c5236e23.png">
 
 ## Display
 
-![스크린샷 2022-08-07 오후 10.22.36.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7f9f7014-f7ee-4163-b0b4-35c0dd65811f/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.22.36.png)
+<img width="1095" alt="html_65" src="https://user-images.githubusercontent.com/86648892/183298317-8750b7fc-33c8-428a-a8b2-c8ba407bd5c2.png">
 
 - `d-`
     - `d-inline` 은 inline으로 취급하겠다는 것
@@ -1453,7 +1453,7 @@ p {
 
 ## Position
 
-![스크린샷 2022-08-07 오후 10.27.36.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cdaefc48-35b1-4cd9-abce-b6afebcefba1/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.27.36.png)
+<img width="589" alt="html_66" src="https://user-images.githubusercontent.com/86648892/183298318-4a824fc0-869f-4381-82b7-df2df617c53b.png">
 
 ---
 
@@ -1468,37 +1468,37 @@ p {
 
 - 클릭했을 때 어떤 동작이 일어나도록 하는 요소
 
-![스크린샷 2022-08-07 오후 10.31.10.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f0db07de-fb14-4f94-9ace-61e0ab2e5190/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.31.10.png)
+<img width="962" alt="html_67" src="https://user-images.githubusercontent.com/86648892/183298319-241cbd9a-95ce-4f0c-9f7f-d0a3f7bb6581.png">
 
 ### Dropdowns
 
 - dropdown, dropdown-menu, dropdown-item 클래스를 활요해 옵션 메뉴를 만들 수 있음
 
-![스크린샷 2022-08-07 오후 10.32.16.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0893d5ef-df0f-430f-8734-50e8f87af0d7/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.32.16.png)
+<img width="950" alt="html_68" src="https://user-images.githubusercontent.com/86648892/183298320-2c307d76-878f-43bf-9c5c-59a8733c18f6.png">
 
-![스크린샷 2022-08-07 오후 10.32.37.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/51aac68e-b8df-4244-87ed-48e438b19393/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.32.37.png)
+<img width="1228" alt="html_69" src="https://user-images.githubusercontent.com/86648892/183298323-4233bba7-fa00-409d-8c7a-0ead9f9ab509.png">
 
 ### Forms > Form controls
 
 - form-control 클래스를 사용해 <input> 및 <form> 태그를 스타일링할 수 있음
 
-![스크린샷 2022-08-07 오후 10.34.33.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/18be7ef2-e28d-486f-923e-a6bb4a9cedb7/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.34.33.png)
+<img width="1046" alt="html_70" src="https://user-images.githubusercontent.com/86648892/183298325-fc4b27ff-b752-4214-8ee6-d0abb6b98e1b.png">
 
-![스크린샷 2022-08-07 오후 10.34.49.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1d5c59f6-924b-48e4-8313-67cd16a69808/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.34.49.png)
+<img width="1176" alt="html_71" src="https://user-images.githubusercontent.com/86648892/183298326-3ae44e94-c54b-4789-b924-8e1889307f77.png">
 
 ### Navbar
 
 - navbar 클래스를 활용하면 네비게이션 바를 제작할 수 있음
 
-![스크린샷 2022-08-07 오후 10.36.38.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a8dc16c5-884e-4a56-883a-e79561d80db8/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.36.38.png)
+<img width="1059" alt="html_72" src="https://user-images.githubusercontent.com/86648892/183298328-2d72cf1d-bcd2-4c9d-a9c5-bf2e72048853.png">
 
-![스크린샷 2022-08-07 오후 10.36.52.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8ac35f66-5235-4616-9fac-31b047ccbb5c/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.36.52.png)
+<img width="1162" alt="html_73" src="https://user-images.githubusercontent.com/86648892/183298329-745b35c9-e43f-4c1f-a534-0ba6cea93dff.png">
 
 ### Carousel
 
 - 콘텐츠(사진)를 순환시키기 위한 슬라이드쇼
 
-![스크린샷 2022-08-07 오후 10.39.51.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a3fb91e4-07a0-41a0-9599-a6053833505c/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.39.51.png)
+<img width="1122" alt="html_74" src="https://user-images.githubusercontent.com/86648892/183298330-305329e6-5dda-40f6-ac3a-f43fe1922f00.png">
 
 ### Modal
 
@@ -1510,19 +1510,19 @@ p {
 - 중첩해서 들어가있으면 안됨
     - Modals use `position: fixed`, which can sometimes be a bit particular about its rendering. Whenever possible, place your modal HTML in a top-level position to avoid potential interference from other elements. You’ll likely run into issues when nesting a `.modal` within another fixed element
 
-![스크린샷 2022-08-07 오후 10.43.19.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/747eab15-8d7d-4e19-b76c-1006f6814b04/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.43.19.png)
+<img width="1109" alt="html_75" src="https://user-images.githubusercontent.com/86648892/183298331-7bd64685-d208-4249-86b9-82af4762a8dc.png">
 
-![스크린샷 2022-08-07 오후 10.43.39.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b17a8947-7b0e-4b08-9b7a-0c68beb54419/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.43.39.png)
+<img width="1006" alt="html_76" src="https://user-images.githubusercontent.com/86648892/183298332-44c98ff5-1e8e-4e43-91f1-369b34c466df.png">
 
 ### Flexbox in Bootstrap
 
-![스크린샷 2022-08-07 오후 10.48.09.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2cfc4144-4e6c-4073-a21e-1b06d058826b/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.48.09.png)
+<img width="647" alt="html_77" src="https://user-images.githubusercontent.com/86648892/183298334-697e30db-3c22-4409-9bd5-caffd1ff225d.png">
 
 ### Grid Card
 
-![스크린샷 2022-08-07 오후 10.54.30.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/183b3b9e-52ac-43f8-bd8a-2e19ecd04ca5/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.54.30.png)
+<img width="826" alt="html_78" src="https://user-images.githubusercontent.com/86648892/183298335-b9a472ee-e2c5-44c3-966e-47d0000c7ff6.png">
 
-![스크린샷 2022-08-07 오후 10.54.56.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/308a8a73-2788-4c83-aae4-f9922cea13c6/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.54.56.png)
+<img width="1122" alt="html_79" src="https://user-images.githubusercontent.com/86648892/183298337-59517f61-2033-4f01-91a4-09cd09ce6e5c.png">
 
 - 반응형은 `<div *class*="row row-cols-1 row-cols-md-3 g-4">` 덕분에 이루어짐
     - g-4는 gutter를 뜻함
@@ -1555,27 +1555,27 @@ p {
     - 12개의 column
     - 6개의 grid breakpoints
 
-![스크린샷 2022-08-07 오후 11.18.41.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8e0a826c-4e49-487b-ac3a-37e5db82dcba/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.18.41.png)
+<img width="459" alt="html_80" src="https://user-images.githubusercontent.com/86648892/183298338-4cfbe979-6d06-462d-a520-8c5891c3acca.png">
 
 ## Grid system breakpoints
 
-![스크린샷 2022-08-07 오후 11.19.21.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3c92e014-52d0-4e8c-83e1-131d9b1f088f/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.19.21.png)
+<img width="754" alt="html_81" src="https://user-images.githubusercontent.com/86648892/183298339-9c2a2680-e63e-444c-b219-1ca9836e11a4.png">
 
-![스크린샷 2022-08-07 오후 11.22.44.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1c40fee0-3ab1-435c-b489-818dcd94d106/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.22.44.png)
+<img width="819" alt="html_82" src="https://user-images.githubusercontent.com/86648892/183298340-7be12875-60d6-439b-8e62-2c000f38d879.png">
 
-![스크린샷 2022-08-07 오후 11.22.50.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ead6cd6c-b276-4cbd-85a5-4899eedbba6c/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.22.50.png)
+<img width="1092" alt="html_83" src="https://user-images.githubusercontent.com/86648892/183298341-0efa1414-d8d8-4d77-9a38-bd60143d77d4.png">
 
-![스크린샷 2022-08-07 오후 11.29.21.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3264972a-767d-4c82-8936-5ec5b7ad6d47/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.29.21.png)
+<img width="779" alt="html_84" src="https://user-images.githubusercontent.com/86648892/183298342-d142f7ad-644c-4a76-a76d-673c1fd38f6e.png">
 
-![스크린샷 2022-08-07 오후 11.29.37.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ffb3c4db-996f-427d-814e-c0b728658655/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.29.37.png)
+<img width="1054" alt="html_85" src="https://user-images.githubusercontent.com/86648892/183298344-faef7e36-66ce-4123-ad19-e59e86499703.png">
 
-![스크린샷 2022-08-07 오후 11.29.55.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1aeb3342-b47b-4fdd-ba7c-c8b30ce880bc/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.29.55.png)
+<img width="767" alt="html_86" src="https://user-images.githubusercontent.com/86648892/183298345-8bf23303-8f57-4e46-8cbd-6f14e50b72fe.png">
 
-![스크린샷 2022-08-07 오후 11.30.02.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/16f08564-47db-4e73-ab60-e2399b76fca5/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.30.02.png)
+<img width="1089" alt="html_87" src="https://user-images.githubusercontent.com/86648892/183298346-9f162998-d6a2-4678-b565-9c2c8a6ddfad.png">
 
-![스크린샷 2022-08-07 오후 11.30.38.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/523534b4-ed7f-4ca8-8ef3-4b77db177fb6/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.30.38.png)
+<img width="832" alt="html_88" src="https://user-images.githubusercontent.com/86648892/183298348-04d636e1-ebdf-4561-a9b6-60dd451a9ace.png">
 
-![스크린샷 2022-08-07 오후 11.30.47.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a094e04d-c6a7-4afa-b56e-bb42f70f80b8/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.30.47.png)
+<img width="1072" alt="html_89" src="https://user-images.githubusercontent.com/86648892/183298350-5bc7b8fd-8500-47c6-8676-2159c34ce904.png">
 
 - div w-100은 텅빈 width 100짜리이므로 줄바꿈의 한 방법
     - 그냥 row 구획을 하나 더 만들어주는게 좋다
@@ -1586,13 +1586,13 @@ p {
     - `offset-`
     - 왼쪽에 offset을 줌
 
-![스크린샷 2022-08-07 오후 11.34.25.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/28833636-8879-476d-8b20-13b240f9da4d/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.34.25.png)
+<img width="995" alt="html_90" src="https://user-images.githubusercontent.com/86648892/183298351-f1aa3398-d051-4af1-bb45-4c16df584438.png">
 
-![스크린샷 2022-08-07 오후 11.34.31.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/484afacb-954a-4323-8037-a77e1d06dfa7/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.34.31.png)
+<img width="704" alt="html_91" src="https://user-images.githubusercontent.com/86648892/183298352-de2aa2f8-78e7-481d-bbc2-8565dcccf740.png">
 
-![스크린샷 2022-08-07 오후 11.34.35.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6c440651-2c24-4c6a-b405-5541fc1d0071/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.34.35.png)
+<img width="783" alt="html_92" src="https://user-images.githubusercontent.com/86648892/183298354-4c89294b-4c42-46b9-9523-e143b2ff7904.png">
 
-![스크린샷 2022-08-07 오후 11.34.39.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/652729dd-1a22-4339-bcd7-267dc175d0b9/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.34.39.png)
+<img width="769" alt="html_93" src="https://user-images.githubusercontent.com/86648892/183298355-2311d9bf-aea7-489f-bfcd-a9bb79ff5bd3.png">
 
 ---
 
@@ -1627,10 +1627,6 @@ p {
     - `position: relative;` `top: ;`
 - 수직 정렬을 위해서 `line-height: ;` 속성 사용 가능
 - margin이 겹칠 경우 값이 더 큰 것을 줌
-
-- [https://flexboxfroggy.com/#ko](https://flexboxfroggy.com/#ko)
-- [https://ko.learnlayout.com/display.html](https://ko.learnlayout.com/display.html)
-- [https://roseee.tistory.com/entry/Bootstrap-그리드-시스템-Grid-System](https://roseee.tistory.com/entry/Bootstrap-%EA%B7%B8%EB%A6%AC%EB%93%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C-Grid-System)
 
 ---
 
@@ -1694,4 +1690,13 @@ p {
 }
 ```
 
-![스크린샷 2022-08-07 오후 11.41.01.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ee55788b-9dd7-41ee-bf97-fc8dc8a6fed5/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.41.01.png)
+<img width="1062" alt="html_94" src="https://user-images.githubusercontent.com/86648892/183298357-04168023-7b45-49b5-9ff2-8517686180b7.png">
+
+---
+
+# CHECK THESE SITES!
+- [CSS Diner](https://flukeout.github.io/)
+- [Flexbox Froggy](https://flexboxfroggy.com/#ko)
+- [CSS Layout 정리](https://ko.learnlayout.com/display.html)
+- [Grid System 정리](https://roseee.tistory.com/entry/Bootstrap-%EA%B7%B8%EB%A6%AC%EB%93%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C-Grid-System)
+- [Emmet Cheatsheet](https://docs.emmet.io/cheat-sheet/)
