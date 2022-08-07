@@ -1694,6 +1694,22 @@ p {
 
 ---
 
+## web page practice
+
+<img width="1089" alt="html_95" src="https://user-images.githubusercontent.com/86648892/183300044-d27bacf1-7115-4e3d-a16a-8a5d077e8f4e.png">
+<img width="950" alt="html_96" src="https://user-images.githubusercontent.com/86648892/183300050-f763570d-f00f-4037-a220-a74a19c2ee31.png">
+<img width="1085" alt="html_97" src="https://user-images.githubusercontent.com/86648892/183300053-01d653c9-b54f-4626-8505-d1be52097bce.png">
+<img width="1113" alt="html_98" src="https://user-images.githubusercontent.com/86648892/183300055-adf053c1-87c2-41de-b935-5b3a537704d2.png">
+<img width="1141" alt="html_99" src="https://user-images.githubusercontent.com/86648892/183300057-0069da65-052b-4811-9cc0-ff52fa84ffc5.png">
+<img width="1182" alt="html_100" src="https://user-images.githubusercontent.com/86648892/183300059-4eecc7e7-b2c6-40b1-9cdb-a3110f15ee8c.png">
+<img width="1148" alt="html_101" src="https://user-images.githubusercontent.com/86648892/183300060-2b9e5b33-c951-49fe-9dd9-ae52c55f1c83.png">
+<img width="853" alt="html_102" src="https://user-images.githubusercontent.com/86648892/183300062-2efff550-0c2d-451d-992a-a3e1da073aa2.png">
+<img width="1116" alt="html_103" src="https://user-images.githubusercontent.com/86648892/183300065-9f56db52-3003-4d7d-a322-a580f1748262.png">
+<img width="1150" alt="html_104" src="https://user-images.githubusercontent.com/86648892/183300067-36eb6cd1-ffe2-4b5e-95a6-b736921d7c53.png">
+<img width="1136" alt="html_105" src="https://user-images.githubusercontent.com/86648892/183300072-a9ba4025-bcf4-4369-a469-231dbb935965.png">
+
+---
+
 # CHECK THESE SITES!
 - [CSS Diner](https://flukeout.github.io/)
 - [Flexbox Froggy](https://flexboxfroggy.com/#ko)
