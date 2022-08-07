@@ -67,6 +67,23 @@
 
 # 개발환경 설정(Chrome)
 
+- VSCode Extensions 추천
+    - open in browser
+    - auto rename tag
+    - highlight matching tag
+    - live server
+- Chrome 개발자 도구
+    - F12 or 우클릭 후 검사
+    - Elements
+        - DOM 탐색 및 CSS 확인 및 변경
+        - Styles
+            - 요소에 적용된 CSS 확인
+        - Computed
+            - 스타일이 계산된 최종 결과
+        - Event Listeners
+            - 해당 요소에 적용된 이벤트 (Javascript)
+    - Sources, Network, Performance, Application, Security, Audits 등
+
 ---
 
 # HTML(Hyper Text Markup Language)
@@ -94,7 +111,7 @@
 - HTML이란
     - 태그를 이용하여 구조를 만들고
         - 브라우저로 실행하는 문서
-            - 태그, 구조, 브라우저, 문서
+            - **태그, 구조, 브라우저, 문서**
 
 ## HTML 기본 구조
 
@@ -109,11 +126,11 @@
 
 ## head 예시
 
-- '<title>' : 브라우저 상단 타이틀
-- '<meta>' : 문서 레벨 메타데이터 요소
-- '<link>' : 외부 리소스 연결 요소 (CSS 파일, favicon 등)
-- '<script>' : 스크립트 요소 (Javascript 파일 / 코드)
-- '<style>' : CSS 직접 작성
+- <title> : 브라우저 상단 타이틀
+- <meta> : 문서 레벨 메타데이터 요소
+- <link> : 외부 리소스 연결 요소 (CSS 파일, favicon 등)
+- <script> : 스크립트 요소 (Javascript 파일 / 코드)
+- <style> : CSS 직접 작성
 
 ![html_4.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/78366c7a-e2ac-4053-990a-4b27036cde1c/html_4.png)
 
@@ -131,6 +148,8 @@
 ![html_6.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/923ccc3d-0c64-4318-891a-c60a04ee1380/html_6.png)
 
 ## HTML 요소(element)
+
+- HTML 요소 == 태그와 내용
 
 ```html
 <h1>contents</h1>
@@ -157,7 +176,7 @@
 ## HTML 속성(attribute)
 
 ```html
-<a href = "https://google.com"></a>
+<a href="https://google.com"></a>
 
 <!-- 위 코드에서 href는 속성명, "https://google.com"은 속성값 -->
 <!-- 태그별로 사용할 수 있는 속성은 다르다 -->
@@ -190,7 +209,7 @@
 
 ```html
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
@@ -214,7 +233,8 @@
     - 예를 들어 h1 태그는 “이 페이지에서 최상위 제목"인 텍스트를 감싸는 역할(또는 의미)을 나타냄
 - Non semantic 요소
     - div, span
-        - div : 콘텐츠의 구획을 나타냄
+        - div : 콘텐츠의 구획을 나타냄(블록 요소)
+        - span: 인라인 요소
 - a, form, table 태그들도 시맨틱 태그로 볼 수 있음
 - HTML 5에서는 기존에 단순히 콘텐츠의 구획을 나타내기 위해 사용한 div 태그르 대체하여 사용하기 위해 의미론적 요소를 담은 태그들이 추가됨
 - 대표적인 시맨틱 태그 목록
@@ -252,7 +272,7 @@
 ## 렌더링(Rendering)
 
 - 텍스트로 작성된 코드가 어떻게 웹 사이트가 되는걸까?
-- 웹 사이트 코드를 사용자가 보게 되는 웹 사이트로 바꾸는 과정을 렌더링이라 한다
+- 웹사이트 코드를 사용자가 보게 되는 웹사이트로 바꾸는 과정을 렌더링이라 한다
 
 ## DOM(Document Object Model) 트리
 
@@ -265,6 +285,8 @@
 
 ![html_17.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1804254c-b7f3-4ceb-a5bf-c2a6c18b9298/html_17.png)
 
+---
+
 # HTML 문서 구조화
 
 ## 인라인 / 블록 요소
@@ -274,7 +296,7 @@
 - 블록 요소는 한 줄 모두 사용
 - <태그>내용</태그>로 표현되는 HTML 요소를 분류하자면 인라인, 블록 요소로 구분할 수 있다는 것이다
 
-## 텍스트 요소
+## 텍스트 요소(Inline)
 
 ```html
 <!-- 태그 -->
@@ -306,7 +328,7 @@
 
 ![html_18.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d395948f-fee0-4d96-983c-4b51fd9f5af2/html_18.png)
 
-## 그룹 컨텐츠
+## 그룹 컨텐츠(Block)
 
 ```html
 <!-- 태그 -->
@@ -339,7 +361,665 @@
 
 - div와 span은 다른 작업을 위한 일종의 투명한 쇼핑백과 같은 것이다
 
+## form
+
+- <form>은 정보(데이터)를 서버에 제출하기 위해 사용하는 태그
+    - 즉, 사용자가 브라우저를 통해 서버에 데이터를 전송하고 싶을 때 사용
+- <form> 기본 속성
+    - action: form을 처리할 서버의 URL(데이터를 보낼 곳)
+    - method: form을 제출할 때 사용할 HTTP 메서드(GET or POST)
+    - enctype: method가 post인 경우 데이터의 유형
+        - application/x-www-form-urlencoded: 기본값
+        - multipart/form-data: 파일 전송 시(input type이 file인 경우)
+        - text/plain: HTML 5 디버깅용(잘 사용되지 않음)
+- form안에 input 태그들을 넣어서 입력을 받는다
+- input 태그는 label 태그와 함께 사용
+    - input 태그에 대한 상세한 설명을 label에 붙임
+    - input의 `id`와 label의 `for` 연결
+    - form의 action은 URL path parameter에 추가되는 내용 input의 name, value 쌍은 query string에 들어가는 내용이라 생각하자
+
+![스크린샷 2022-08-07 오후 2.40.19.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e49fd16c-6259-4a19-a08a-568a57c2f658/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_2.40.19.png)
+
+### input
+
+- 다양한 타입을 가지는 입력 데이터 유형과 위젯이 제공됨
+- <input> 대표 속성
+    - name: form control에 적용되는 이름 (이름 / 값 페어로 전송됨)
+    - value: form control에 적용되는 값 (이름 / 값 페어로 전송됨)
+    - required, readonly, autofocus, autocomplete, disabled 등
+
+### input label
+
+- label을 클릭하여 input 자체의 초점을 맞추거나 활성화시킬 수 있음
+    - 사용자는 선택할 수 있는 영역이 늘어나 웹 / 모바일(터치) 환경에서 편하게 사용할 수 있음
+    - label과 input 입력의 관계가 시각적 뿐만 아니라 화면리더기에서도 label을 읽어 쉽게 내용을 확인할 수 있도록 함
+- <input>에 id 속성을, <label>에는 for 속성을 활용하여 상호 연관을 시킴
+
+### input 유형 (입력)
+
+- 입력 타입별로 HTML 기본 검증 및 추가 속성 활용이 가능
+    - text: 일반 텍스트 입력
+    - password: 입력 시 값이 보이지 않고 문자를 특수기호’*’로 표현
+    - email: 이메일 형식이 아닌 경우 form 제출 불가
+    - number: min, max, step 속성을 활용하여 숫자 범위 설정 가능
+    - file: accept 속성을 활용하여 파일 타입 지정 가능
+    
+    ![스크린샷 2022-08-07 오후 1.20.29.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/196529db-e01f-4b95-9979-3addd3199659/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1.20.29.png)
+    
+
+### input 유형 (항목 중 선택)
+
+- checkbox, radio
+- 일반적으로 label 태그와 함께 사용하여 선택 항목을 작성함
+- 동일 항목에 대해서는 name을 지정하고 선택된 항목에 대한 value를 지정해야함
+    - checkbox: 다중 선택
+    - radio: 단일 선택
+
+### input 유형 (기타)
+
+- picker
+    - color: color picker
+    - date: date picker
+- hidden input을 활용하여 사용자 입력을 받지 않고 서버에 전송되어야 하는 값을 설정
+    - hidden: 사용자에게 보이지 않는 input
+
+![스크린샷 2022-08-07 오후 2.37.21.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/786ac33d-c999-49e3-965e-97b4ad47d6d3/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_2.37.21.png)
+
+### input 유형 (종합)
+
+- <input> 요소의 동작은 type에 따라 달라지므로, 각각의 내용을 숙지할 것
+- 지정하지 않을 경우 기본값은 `text`
+- [https://developer.mozilla.org/ko/docs/Web/HTML/Element/Input](https://developer.mozilla.org/ko/docs/Web/HTML/Element/Input)
+
 ---
+
+## HTML 마크업 예시
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Form 활용 실습</h1>
+    <form action="">
+      <!-- autofocus 및 label 확인 -->
+      <!-- autofocus는 브라우저 실행 시 커서가 해당 부분에 자동 설정 -->
+      <div class="input-group">
+        <label for="username">아이디</label>
+      </div>
+      <input type="text" name="username" id="username" autofocus>
+
+      <!-- disabled 및 value 확인 -->
+      <!-- disabled는 해당 input 입력 불가 상태, value는 기본으로 들어가있는 값 -->
+      <div class="input-group">
+        <label for="name">이름</label>
+      </div>
+      <input type="text" name="name" value="홍길동" id="name" disabled>
+
+      <!-- label 확인 -->
+      <!-- checked는 기본적으로 체크되어있는 상태로 설정 -->
+      <div class="input-group">
+        <label for="agreement">개인정보 수집에 동의합니다.</label>
+      </div>
+      <input type="checkbox" name="agreement" id="agreement" checked>
+      <div class="input-group">
+        <label>최종 제출을 확인합니다.</label>
+      </div>
+      <input type="checkbox">
+    </form>
+    <!-- 제출 버튼 -->
+    <input type="submit" value="제출">
+</body>
+</html>
+```
+
+![스크린샷 2022-08-07 오후 2.54.40.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8b6ac79e-8845-4ed0-b733-859f805a7a06/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_2.54.40.png)
+
+```html
+<div>
+ <p>checkbox</p>
+ <input type="checkbox" id="html" name="language" value="html" checked>
+ <label for="html">HTML</label>
+ <input type="checkbox" id="python" name="language" value="python" checked>
+ <label for="python">Python</label>
+ <input type="checkbox" id="java" name="language" value="java">
+ <label for="java">Java</label>
+  <hr>
+</div>
+```
+
+![스크린샷 2022-08-07 오후 2.59.18.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/66ab23cc-0cd3-4768-9570-41fbb99fab40/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_2.59.18.png)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <a href="https://www.ssafy.com">
+      <img src="ssafy.png" alt="main img" width="300">
+    </a>
+    <h1>SSAFY 학생 건강설문</h1>
+  </header>
+  <section>
+    <form action="#">
+      <div>
+        <label for="name">이름을 기재해주세요.</label><br>
+        <input type="text" id="name" name="name" autofocus>
+      </div>
+      <!-- required는 반드시 값을 선택해야 넘어갈 수 있음 -->
+      <div>
+        <label for="region">지역을 선택해주세요.</label><br>
+        <select name="region" id="region" required>
+          <option value="">선택</option>
+          <option value="서울">서울</option>
+          <option value="대전">대전</option>
+          <option value="광주">광주</option>
+          <option value="구미">구미</option>
+          <option value="강원" disabled>강원</option>
+        </select>
+      </div>
+      <div>
+        <p>오늘의 체온을 선택해주세요.</p>
+        <input type="radio" name="body-heat" id="normal" value="normal" checked>
+        <label for="normal">37도 미만</label><br>
+        <input type="radio" name="body-heat" id="warning" value="warning">
+        <label for="warning">37도 이상</label>
+      </div>
+      <input type="submit" value="제출">
+    </form>
+  </section>
+  <footer>
+    Google 설문지를 통해 비밀번호를 제출하지 마시오.
+  </footer>
+</body>
+</html>
+```
+
+![스크린샷 2022-08-07 오후 3.58.56.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2f57bdc1-a5d1-4e59-9921-f9b1dca717f3/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_3.58.56.png)
+
+---
+
+# CSS
+
+- Cascading Styel Sheets
+- 선택하고, 스타일을 지정한다
+- CSS 구문은 선택자를 통해 스타일을 지정할 HTML 요소를 선택
+    - 중괄호 안에서는 속성과 값, 하나의 쌍으로 이루어진 선언을 진행
+        - 각 쌍은 선택한 요소의 속성, 속성에 부여할 값을 의미
+            - 속성(Property): 어떤 스타일 기능을 변경할지 결정
+            - 값(Value): 어떻게 스타일 기능을 변경할지 결정
+
+![스크린샷 2022-08-07 오후 4.03.35.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/909a493d-e3de-459e-92c4-52576cfc57ce/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_4.03.35.png)
+
+## CSS 정의 방법
+
+- 인라인(inline)
+    - html 요소 태그 안에 직접 <style> 지정
+- 내부 참조(embedding)
+    - <head>안에
+        - <style>지정
+        - 선택자 사용
+- 외부 참조(link file)
+    - 분리된 CSS 파일
+    - <head>안에
+        - `<link rel=”stylesheet” hreft=”mystyle.css”>` 와 같이 선언하여 mystyle.css파일 참조하도록 지정
+
+### CSS with 개발자 도구
+
+- Styles: 해당 요소에 선언된 모든 CSS
+- Computed: 해당 요소에 최종 계산된 CSS
+
+---
+
+## CSS Selectors
+
+### 선택자(Selector) 유형
+
+- 기본 선택자
+    - 전체 선택자, 요소 선택자
+    - 클래스 선택자, 아이디 선택자, 속성 선택자
+- 결합자(Combinators)
+    - 자손 결합자, 자식 결합자
+        - 자손
+            - 공백
+        - 자식
+            - `>`
+    - 일반 형제 결합자, 인접 형제 결합자
+        - 일반 형제 결합자
+            - `~`
+        - 인접 형제 결합자
+            - `+`
+- 의사 클래스 / 요소(Pseudo Class)
+    - 링크, 동적 의사 클래스
+    - 구조적 의사 클래스, 기타 의사 클래스, 의사 엘리먼트, 속성 선택자
+
+### 기본 선택자
+
+- 전체 선택자
+    - `*`
+- 요소 선택자
+    - HTML 태그를 직접 선택
+- 클래스(class) 선택자
+    - `.`
+    - 마침표(.)문자로 시작하며, 해당 클래스가 적용된 항목을 선택
+- 아이디(id) 선택자
+    - `#`
+    - 해당 아이디가 적용된 항목을 선택
+    - 일반적으로 하나의 문서에 1번만 사용
+    - 여러번 사용해도 동작하지만, 단일 id 사용을 권장
+
+### 예시
+
+```css
+<style>
+	/* 전체 선택자 */
+	* {
+			color: red;
+	}
+
+	/* 요소 선택자 */
+	h2 {
+		color: orange;
+	}
+
+	h3, h4 {
+		font-size: 10px;
+	}
+
+	/* 클래스 선택자 */
+	.green {
+		color: green;
+	}
+
+	/* id 선택자 */
+	#purple {
+		color: purple;
+	}
+
+	/* 자식 결합자 */
+	.box > p {
+		font-size: 30px;
+	}
+
+	/* 자손 결합자 */
+	.box p {
+		color: blue;
+	}
+</style>
+```
+
+```html
+<body>
+	<!-- .green 적용됨 -->
+	<h1 class="green">SSAFY</h1>
+  <!-- 전체 선택자 적용됨 -->
+  <h2>선택자 연습</h2>
+  <div class="green box">
+    box contents
+    <!-- green이 적용되는 것은 <div>자체임. 지역 목록은 .box p에 의해 파란색, 서울, 강원, 경기는 전체 선택자에 의해 빨강, 인천은 #purple에 의해 보라색 -->
+    <div>
+      <p>지역 목록</p>
+      <ul>
+        <li>서울</li>
+        <li id="purple">인천</li>
+        <li>강원</li>
+        <li>경기</li>
+      </ul>
+    </div>
+    <!-- .box p외에도 box 클래스 바로 하위 레벨의 p이므로 .box > p도 적용됨 -->
+    <p>lorem + tab : 랜덤한 문자열 자동 생성!</p>
+  </div>
+  <!-- 전체 선택자 적용 -->
+  <h3>HELLO</h3>
+  <h4>CSS</h4>
+</body>
+```
+
+![스크린샷 2022-08-07 오후 4.55.04.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/89ec3922-8049-478b-aac2-338fe37a0f00/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_4.55.04.png)
+
+---
+
+## Selectors 심화
+
+### 결합자(Combinators)
+
+- 자손 결합자
+    - 공백
+    - selector A 하위의 모든 selector B 요소
+- 자식 결합자
+    - `>`
+    - selector A 바로 아래의 selector B 요소
+- 일반 형제 결합자
+    - `~`
+    - selector A의 형제 요소 중 뒤에 오는 selector B 요소를 모두 선택
+- 인접 형제 결합자
+    - `+`
+    - selector A의 형제 요소 중 바로 뒤에 위치하는 selector B 요소를 선택
+
+![스크린샷 2022-08-07 오후 5.33.26.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5afc79e3-9d31-4eec-9e98-7c7232a717a3/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.33.26.png)
+
+![스크린샷 2022-08-07 오후 5.33.57.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/05fb5b80-23be-4e0a-b1c4-3dad3604dd0e/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.33.57.png)
+
+![스크린샷 2022-08-07 오후 5.34.10.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7f2efe84-6f52-4fc0-aa5b-5ff4f89fe72c/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.34.10.png)
+
+---
+
+## CSS 적용 우선순위 (cascading order)
+
+### 범위가 좁을수록 강하다
+
+1. 중요도(importance)
+    - `!important`
+    - 사용시 주의
+2. 우선 순위(specificity)
+    - 인라인 > id > class, 속성, pseudo-class > 요소, pseudo-element
+3. CSS 파일 로딩 순서
+
+```css
+h2 {
+	color: darkviolet !imporant;
+}
+
+p {
+	color: orange;
+}
+
+.blue {
+	color: blue;
+}
+
+.green {
+	color: green;
+}
+
+#red {
+	color: red;
+}
+```
+
+```html
+<body>
+  <p>1</p>
+  <p class="blue">2</p>
+  <p class="blue green">3</p>
+  <p class="green blue">4</p>
+  <p class="blue" id="red">5</p>
+  <h2 class="blue" id="red">6</h2>
+  <p class="blue" id="red" style="color: yellow;">7</p>
+  <h2 class="blue" id="red" style="color: yellow;">8</h2>
+</body>
+
+<!-- 1은 p에 의해 오렌지, 2는 .blue에 의해 파랑 -->
+<!-- 3과 4는 모두 초록, 동일한 레벨일 경우 뒤에 오는 것 적용 -->
+<!-- 6, 8은 !important 선언에 의해 무조건 보라 -->
+<!-- 5는 id 우선 적용으로 빨강, 7은 인라인 우선 적용으로 노랑 -->
+```
+
+---
+
+## CSS 상속
+
+- CSS는 상속을 통해 부모 요소의 속성을 자식에게 상속
+    - 속성(프로퍼티) 중에는 상속이 되는 것과 되지 않는 것들이 있음
+    - 상속되는 것
+        - text 관련 요소(font, color, text-align), opacity, visibility 등
+    - 상속되지 않는 것
+        - 여백, 레이아웃과 관련된 것
+        - box model 관련 요소(width, height, margin, padding, border, box-sizing, display)
+        - position 관련 요소(position, top/right/bottom/left, z-index) 등
+- 상속 여부 MDN에서 확인하기
+
+![스크린샷 2022-08-07 오후 5.15.09.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/930f59a3-ad96-4421-baac-a2f35d012b67/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.15.09.png)
+
+---
+
+## CSS 기본 스타일
+
+### 크기 단위
+
+- `px`
+    - 픽셀
+    - 모니터 해상도의 한 화소인 픽셀 기준
+    - 픽셀의 크기는 변하지 않기에 고정적인 단위
+- `%`
+    - 백분율 단위
+    - 가변적인 레이아웃에서 자주 사용
+- `em`
+    - 바로 위 부모 요소의 크기에 대한 상대적인 사이즈 지정
+- `rem`
+    - 최상위 요소(html)에 비한 상대적인 사이즈 지정
+    - 기본 브라우저 설정 사이즈 16px
+
+### 크기 단위 (viewport)
+
+- 보이는 화면을 기준으로 사이즈가 결정됨
+- 웹페이지를 방문한 유저의 디바이스 화면을 기준으로 상대적 사이즈 결정
+- vw, vh, vmin, vmax
+    - vw는 가로, vh는 세로
+
+![스크린샷 2022-08-07 오후 5.22.03.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f569a226-e377-4afd-9b88-8d0554292b38/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.22.03.png)
+
+![스크린샷 2022-08-07 오후 5.22.32.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d50c42ed-a80e-4f19-a2d0-11bc87de1426/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.22.32.png)
+
+- px는 브라우저의 크기를 변경해도 그대로 고정되어있고
+- vw는 브라우저 가로를 줄였다 늘였다하면 그에 따라 50%를 차지함
+
+### 색상 단위
+
+- 색상 키워드(`background-color: red;` )
+    - 대소문자를 구분하지 않음
+    - red, blue, black과 같은 특정 색을 직접 글자로 나타냄
+- RGB 색상(`background-color: rgb(0, 255, 0);` )
+    - 16진수 표기법 혹은 함수형 표기법을 사용해서 특정 색을 표현하는 방식
+    - 16진수 표기법
+        - `#000000`
+    - 함수형 표기법
+        - `rgb(0, 0, 0)`
+        - `rgba(0, 0, 0, 0.5)`
+        - alpha는 투명도
+            - 0~1 값 사용
+- HSL 색상(`background-color: hsl(0, 100%, 50%);` )
+    - 색상, 채도, 명도를 통해 특정 색을 표현하는 방식
+
+### 문서 표현
+
+- 텍스트
+    - 서체(font-family), 서체 스타일(font-style, font-weight 등)
+    - 자간(letter-spacing), 단어 간격(word-spacing), 행간(line-height) 등
+- 컬러(color), 배경(background-image, background-color)
+- 기타 HTML 태그별 스타일링
+    - 목록(li), 표(table)
+
+---
+
+## CSS Box model
+
+- 모든 HTML 요소는 박스 모델이고
+    - 하나의 박스는 4가지 영역으로 구성
+        - margin
+            - 테두리 바깥의 외부 여백
+            - 배경색 지정 불가
+            - `margin: auto;` 는 빈 공간을 알아서 margin으로 줌
+        - border
+            - 테두리
+        - padding
+            - 테두리 안쪽의 내부 여백
+            - 요소에 적용된 배경색, 이밎는 padding까지 적용
+        - content
+            - 글이나 이미지 등 요소의 실제 내용
+- 좌측 상단에서 시작하여
+- 위에서 아래 (block)
+- 왼쪽에서 오른쪽 (inline)
+- 방향으로 쌓인다
+- 그리고 이것을 Normal Flow라 부른다
+
+### margin
+
+![스크린샷 2022-08-07 오후 6.01.04.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6ca5981f-9f5f-4e8f-8180-4de3845df5ae/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.01.04.png)
+
+### margin and padding
+
+![스크린샷 2022-08-07 오후 6.01.42.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7fe67e8e-4bfc-4eaa-bb3a-e6c39503742a/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.01.42.png)
+
+### border
+
+![스크린샷 2022-08-07 오후 6.02.08.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d210f7ba-ca58-4c82-acde-de9b64b3ea7a/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.02.08.png)
+
+## shorthand 문법
+
+### margin and padding
+
+- 하나만 쓰면
+    - 상하좌우
+- 둘 쓰면
+    - 상하
+        - 좌우
+- 셋 쓰면
+    - 상
+        - 좌우
+            - 하
+- 넷 쓰면
+    - 시계방향
+
+![스크린샷 2022-08-07 오후 6.04.15.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/59c32482-e906-4ccf-bd49-2b56ca7a44f4/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.04.15.png)
+
+### border
+
+- 한 줄로 표현 가능
+
+![스크린샷 2022-08-07 오후 6.04.45.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/76994850-b367-45d9-a794-87f465c90a48/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.04.45.png)
+
+### box-sizing
+
+- 기본적으로 모든 요소의 box-sizing은 content-box
+    - padding을 제외한 순수 contents 영역만을 box로 지정
+- 일반적으로 영역을 볼 때 border까지의 너비를 100px로 보는 것을 원함
+    - 그 경우 `box-sizing: border-box;` 로 설정
+
+![스크린샷 2022-08-07 오후 6.44.23.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e6364257-28f0-4bce-91ad-d94c0d467947/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.44.23.png)
+
+---
+
+## CSS Display
+
+- Display에 따라 크기와 배치가 달라진다
+- 네모로 쌓인 박스들을 디스플레이에 따라 배치
+- 레이아웃 관련
+
+### 대표적으로 활용되는 display
+
+- `display: block`
+    - 줄 바꿈이 일어나는 요소
+    - 화면 크기 전체의 가로 폭을 차지
+    - 블록 레벨 요소 안에 인라인 레벨 요소 들어갈 수 있음
+- `display: inline`
+    - 줄 바꿈이 일어나지 않는 행의 일부 요소
+    - content 너비만큼 가로 폭을 차지
+    - width, height, margin-top, margin-bottom 지정할 수 없음
+    - 상하 여백은 `line-height` 로 지정
+        - 좌우 수평 정렬은 부모 블록 요소에서 `text-align: center;` 지정
+        - 상하 수평 정렬은 `line-height` 값을 부모 블록 높이의 절반 정도 주면 됨
+- `display: inline-block`
+    - block과 inline 레벨 요소의 특징을 모두 가짐
+        - inline처럼 한 줄에 표시할 수 있고
+        - block처럼 width, height, margin 속성을 모두 지정할 수 있음
+- `display: none`
+    - 해당 요소를 화면에 표시하지 않고, 공간조차 부여되지 않음
+    - `visibility: hidden`
+        - 마찬가지로 화면 표시는 되지 않으나, 공간은 차지한다는 점에서 다름
+        - 나중에 보여줄 일이 있으면 hidden, 그럴 일이 없으면 none을 사용
+- [https://developer.mozilla.org/ko/docs/Web/CSS/display](https://developer.mozilla.org/ko/docs/Web/CSS/display)
+
+### 블록 레벨 요소와 인라인 레벨 요소
+
+- 블록
+    - div / ul, ol, li / p / hr / form 등
+- 인라인
+    - span / a / img / input, label / b, em , i , strong 등
+
+![스크린샷 2022-08-07 오후 6.50.38.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/073a6558-7595-49b8-8c98-9975caa56136/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.50.38.png)
+
+- text-align은 블록 요소에만 적용이 가능
+
+![스크린샷 2022-08-07 오후 6.56.47.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5f94274b-57f5-48f2-a1c2-b890cbfc1d22/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.56.47.png)
+
+![스크린샷 2022-08-07 오후 6.57.11.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2c135df8-6fc6-45c1-b0dc-6f853bb246e3/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.57.11.png)
+
+- 중간에 흰색 공간은 3이 공간을 차지하고 있는 것
+
+---
+
+## CSS Position
+
+- 레이아웃 관련
+- 문서 상 요소의 위치를 지정
+- static, relative, absolute, fixed, sticky
+- static
+    - 모든 태그의 기본 값 (기준 위치)
+        - Normal Flow를 따름 (좌측 상단)
+        - 부모 요소 내에서 배치될 때는 부모 요소의 위치를 기준으로 배치됨
+- 좌표 프로퍼티(top, bottom, left, right)를 사용하여 이동 가능
+    - relative
+    - absolute
+    - fixed
+    - sticky
+- relative: 상대 위치
+    - 자기 자신의 static 위치를 기준으로 이동 (normal flow 유지)
+    - 레이아웃에서 요소가 차지하는 공간은 static일 때와 같음
+- absolute: 절대 위치
+    - 요소를 일반적인 문서 흐름에서 제거 후
+        - 레이아웃에 공간을 차지하지 않음 (normal flow에서 벗어남)
+    - **static이 아닌** 가장 가까이 있는 부모 요소를 기준으로 이동 (없는 경우 브라우저 화면 기준으로 이동)
+- fixed: 고정 위치
+    - 요소를 일반적인 문서 흐름에서 제거 후
+        - 레이아웃에 공간을 차지하지 않음 (normal flow에서 벗어남)
+    - 부모 요소와 관계없이 viewport를 기준으로 이동
+        - 스크롤 시에도 항상 같은 곳에 위치
+- sticky: 스크롤에 따라 static → fixed로 변경
+    - 평소엔 static position
+        - 스크롤 위치가 임계점에 이르면 fixed position처럼 박스를 화면에 고정할 수 있음
+
+### 예시
+
+- 형에게 `top: 100px; left: 100px;` 을 적용했을 때 absolute와 relative의 차이는?
+
+![스크린샷 2022-08-07 오후 7.16.23.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/523f6556-1ea5-4ba8-a6bd-7a0b2d931a07/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_7.16.23.png)
+
+![스크린샷 2022-08-07 오후 7.16.57.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/60eea3c9-1388-470f-b956-cb6f9c1b18bb/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_7.16.57.png)
+
+![스크린샷 2022-08-07 오후 7.17.25.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/434aae8f-6bcb-46e1-a16a-ff2f909ab833/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_7.17.25.png)
+
+---
+
+## CSS 원칙 정리
+
+- CSS 원칙
+    - I : Normal Flow
+        - 모든 요소는 박스 모델이고, 좌측상단에 배치
+    - II: Display
+        - display에 따라 크기와 배치 변경
+    - III: Position
+        - position에 따라 위치의 기준을 변경
+            - relative: 본인의 원래 위치
+            - absolute: 특정 부모의 위치
+            - fixed: 화면의 위치
+            - sticky: 기본적으로 static이지만 스크롤 이동에 따라 fixed로 변경
+
+---
+
+# 추가 정리
+
 ### HTML
 
 - HTML 기본 구조를 채워주지 않으면 브라우저가 필요한 부분을 알아서 채워줬음을 알 수 있다
@@ -454,13 +1134,13 @@
 - 박스 모델을 크게 하는 것과 padding이나 margin을 더 주는 것과는 같게 보일 수도 있으나 엄연히 다르다
 - 백그라운드 영역은 padding까지
 - box model shorthand 문법
-    - `.margin-1 {}`
+    - `.margin-1 {margin: 10px;}`
         - 전부
-    - `.margin-2 {}`
+    - `.margin-2 {margin: 10px 20px;}`
         - 상하, 좌우
-    - `.margin-3 {}`
+    - `.margin-3 {margin: 10px 20px 30px;}`
         - 나누기 모양
-    - `.margin-4 {}`
+    - `.margin-4 {margin: 10px 20px 30px 40px;}`
         - 시계 방향
 - content-box와 border-box 만들면서 비교해볼 것
 - box-sizing은 기본적으로 content-box
@@ -488,176 +1168,414 @@
     - 부모 요소의 왼쪽 상단을 기준으로 옮겨간 것
     - 원래 자리에선 사라짐 (붕 뜬 느낌)
     - 누가 앞에 오고 뒤로 갈지는 z-index를 활용
+    - 부모 중 static이 아닌 것을 기준
+        - 부모에 relative를 주지 않으면 브라우저를 기준으로 움직임
 - sticky
     - 처음 내가 생성된 위치를 기준으로 해서 화면상에 그대로 stick!
 
 ---
-## Flexbox (Flexible Box!)
+
+# 목차
+
+- CSS Layout
+    - float
+    - flexbox
+    - grid
+- bootstrap
+    - bootstrap grid system
+- Responsive web
+
+---
+
+# CSS Layout
+
+## CSS Layout Techniques
+
+- Display
+- Position
+- Float (1996)
+- Flexbox (2012)
+- Grid (2017)
+- 기타
+    - Responsive Web Design (2010), Media Queries (2012)
+
+---
+
+# Float
+
+- 박스를 왼쪽 혹은 오른쪽으로 이동시켜 텍스트를 포함한 인라인 요소들이 주변을 wrapping하도록 함
+- 그 주변을 물 흐르듯이 감싸라는 것
+- 요소가 Normal flow를 벗어나도록 함
+
+## Float 속성
+
+- none: 기본값
+- left: 요소를 왼쪽으로 띄움
+- right: 요소를 오른쪽으로 띄움
+
+![스크린샷 2022-08-03 오전 9.28.16.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6c0016a1-cda9-44aa-a4b9-ac073a9e7b9d/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-03_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_9.28.16.png)
+
+![스크린샷 2022-08-03 오전 9.28.41.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cfb99000-7b4a-4573-a33f-ca78cd94e3e6/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-03_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_9.28.41.png)
+
+---
+
+# Flexbox
 
 - 행과 열 형태로 아이템들을 배치하는 1차원 레이아웃 모델
     - z-index는 차원 간 배치
-- 정렬을 하는 느낌
-- ie에서 부분지원됨
+- display 속성으로 flex를 선언한다는 것은 ‘이제부터 난 축을 기준으로 배치할거야'라는 선언
+- 축
+    - main axis
+        - 기본 direction은 가로(row)
+    - cross axis
+- Why Flexbox?
+    - 이전까지 Normal Flow를 벗어나는 수단은 Float 혹은 Position
+    - 수동값 부여없이 수직정렬이나 아이템 간 간격 등을 동일하게 배치하는 것이 어려웠음
+
+## Flexbox 구성 요소
+
+- Flex Container (부모 요소)
+    - 부모 요소에 flex를 적용함!
+    - flex item들이 놓여있는 영역
+    - display 속성을 flex 혹은 inline-flex로 지정
+- Flex Item (자식 요소)
+    - 컨테이너에 속해있는 컨텐츠(박스)
 - `display:flex`
     - flex-container에서 선언
     - 이 객체가 flex-container라 선언하는 것이고
         - 그 바로 아래 레벨이 flex items가 된다
 - `display: inline flex`
     - 인라인과 블록의 차이처럼 요소의 테두리가 줄어듬
-- 인라인처럼 사용할 수 있고, 내용물의 크기만큼만 차지
+    - 인라인처럼 사용할 수 있고, 내용물의 크기만큼만 차지
+
+## Flex 속성
+
+- 배치 설정
+    - flex-direction
+    - flex-wrap
+- 공간 나누기
+    - justify-content (main axis)
+    - align-content (cross axis)
+- 정렬
+    - align-items (모든 아이템을 cross axis 기준으로)
+    - align-self (개별 아이템)
+
+## Flex 속성: flex-direction
+
 - `flex-direction`
     - 요소를 배치할 방향
         - row
         - row-reverse
         - column
         - column-reverse
-- main axis라는 꽂이에 레이아웃을 꽂는다고 생각
-    - cross axis는 main axis에 수직인 축
-- 부모 요소 Flex Container
-    - 자식 요소 Flex Item
-    - 부모 요소에 Flex를 적용
-    - 아이템에 적용하는 것이 아니다
+- 역방향의 경우 HTML 태그 선언 순서와 시각적으로 다르니 유의 (웹 접근성에 영향)
 
-## Flex 속성
+![스크린샷 2022-08-07 오후 8.47.50.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/036ca08b-35f3-4a9b-9bb9-8f256c56093a/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_8.47.50.png)
 
-- 공간 나누기는 꽂고 남은 공간을 어떻게 나눌 것인가? 배치할 것인가?
+## Flex 속성: flex-wrap
 
-### flex-direction
+- `flex-wrap`
+    - 아이템이 컨테이너를 벗어나는 경우의 설정
+        - wrap
+        - nowrap
+            - 기본값
+        - wrap-reverse
+            - 최신글이 위에 오도록 하고싶을 때와 같은 경우에 사용
+            
+            ![스크린샷 2022-08-07 오후 9.02.16.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6bd1f62c-be95-4861-89dc-0d7c9168f0a4/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_9.02.16.png)
+            
 
-- main axis
-- 역방향의 경우 눈으로 보이는 것과 코드 실행 순서가 다를 수 있으니 주의
-
-### flex-wrap
-
-- nowrap은 한 줄안에 크기를 조정해서라도 끼워넣고 싶을 때
-    - 기본값
-- wrap은 크기 그대로 보장하여 줄바꿈을 통해 끼워넣고 싶을 때
-- wrap-reverse는 최신글이 위에 오도록 하고 싶을 때 쓰면 좋을듯
-
-### flex flow
+## Flex 속성: flex-flow (direction + wrap)
 
 - `flex-flow: row nowrap;`
-    - 이처럼 direction과 wrap의 shorthand
+- direction과 wrap 속성의 shorthand
+    - flex-direction과 flex-wrap에 대한 설정을 차례로 작성
 
-### justify-content
+## Flex 속성: justify-content
 
-- main axis를 기준으로 공간 배분
+- Main axis를 기준으로 공간 배분
 
-### align-content
+![스크린샷 2022-08-07 오후 9.05.42.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ddda3657-b675-4cca-a3a5-897d5d9c9063/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_9.05.42.png)
 
-- cross axis를 기준으로 공간 배분
-- stretch는 늘리는 것
-- 글자들은 baseline을 가짐
+## Flex 속성: align-content
 
-### align-self
+- Cross axis를 기준으로 공간 배분 (아이템이 한 줄로 배치되는 경우 확인할 수 없음)
 
-- 각 아이템들 배치
+![스크린샷 2022-08-07 오후 9.06.50.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/91d53a44-5dd2-4e33-b73f-1c56d46ce9ed/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_9.06.50.png)
 
-### 기타 속성
+## Flex 속성: justify-content & align-content
+
+- 공간 배분
+    - flex-start
+        - 기본값
+        - 아이템들을 axis 시작점으로
+    - flex-end
+        - 아이템들을 axis 끝 쪽으로
+    - center
+        - 아이템들을 axis 중앙으로
+    - space-between
+        - 아이템 사이의 간격을 균일하게 분배
+    - space-around
+        - 아이템을 둘러싼 영역을 균일하게 분배
+    - space-evenly
+        - 전체 영역에서 아이템 간 간격을 균일하게 분배
+
+## Flex 속성: align-items
+
+- 모든 아이템을 Cross axis 기준으로 정렬
+
+![스크린샷 2022-08-07 오후 9.10.13.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/543b239d-1a27-4adf-a78c-d752835f8f50/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_9.10.13.png)
+
+## Flex 속성: align-self
+
+- 개별 아이템을 Cross axis 기준으로 정렬
+- 주의! 해당 속성은 컨테이너에 적용하는 것이 아니라 개별 아이템에 적용하는 것
+
+![스크린샷 2022-08-07 오후 9.11.23.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ee89d08f-27bb-4e18-abd3-c53bcd95e2d8/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_9.11.23.png)
+
+## Flex 속성: align-items & align-self
+
+- Cross axis를 중심으로
+    - stretch
+        - 기본값
+        - 컨테이너를 가득 채움
+    - flex-start
+        - 위
+    - flex-end
+        - 아래
+    - center
+        - 가운데
+    - baseline
+        - 텍스트 baseline에 기준선을 맞춤
+
+## Flex 기타 속성
 
 - flex-grow
-    - 남은 여백을 grow값이 있는 요소들끼리 나눠가짐
+    - 남은 영역을 아이템에 분배
 - order
     - 배치 순서
-    - 눈에 보이는 순서대로 코드가 실행되지 않아 꼬일 수도 있어서 자주 사용하지 않음
+
+![스크린샷 2022-08-07 오후 9.53.58.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/38e5d30b-d3df-4791-875e-d18975205821/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_9.53.58.png)
+
+## Flexbox 활용
+
+### 수직 수평 가운데 정렬
+
+![스크린샷 2022-08-07 오후 9.55.38.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fdd2104d-ae34-46d0-a3e7-1afd30998d17/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_9.55.38.png)
+
+### 카드 배치
+
+![스크린샷 2022-08-07 오후 9.56.40.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9768e6b7-4a82-40a1-a938-bb543dfd9b9d/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_9.56.40.png)
 
 ---
 
 # Bootstrap
 
-정형화된 css 컨텐츠를 편리하게 사용할 수 있도록 모아놓은 것
+- 정형화된 css 컨텐츠를 편리하게 사용할 수 있도록 모아놓은 것
+    - 쉽게 말해 css 코드 덩어리다
+- Quickly design and customize
+    - UI를 빠르게 빌드할 수 있다
+- Responsive
+    - 반응형 웹을 편리하게 구현할 수 있다
+- Grid System
+    - 그리드 시스템의 핵심은 화면을 12칸으로 보고 어떤 식으로 분할할지 선택하는 것
+- Prebuilt Components
+    - 다양한 component 사용 가능
 
-쉽게 말해 css 코드 덩어리다
+## CDN via jsDelivr
 
-- UI를 빠르게 빌드할 수 있다
-- 반응형 웹을 편리하게 구현할 수 있다
-- 그리드 시스템의 핵심은 화면을 12칸으로 보고 어떤 식으로 분할할지 선택하는 것
-
-## CDN
-
-- Content Delivery Network
+- Content Delivery(Distribution) Network
+    - 컨텐츠(CSS, JS, Image, Text 등)을 효율적으로 전달하기 위해 여러 노드에 가진 네트워크에 데이터를 제공하는 시스템
+        - 개별 end-user의 가까운 서버를 통해 빠르게 전달 가능
+        - 외부 서버를 활용함으로써 본인 서버의 부하가 적어짐
 - import와 비슷한 개념
 - CDN via jsDelivr
     - link는 </head> 앞에
     - script는 </body> 앞에
         - 코드의 실행 속도를 위해
 
-## Bootstrap의 기본 원리
+---
 
-### Spacing
+# Bootstrap의 기본 원리
 
-- margin
-- padding
+## Spacing (margin and padding)
+
 - css는 부트스트랩 개발자들이 만들어놓았기에 클래스 지정만 하면됨
 - mt-3
     - m은 property, t는 sides, 3은 size
-- property
-    - m - margin
-    - p - padding
-- sides
-    - s - start
-        - margin left나 padding left
-    - e - end
-        - right
-    - x - 양 옆
-    - y - 위 아래
-    - blank - 4방향 전부
-- size
-    - 0, 1, 2, 3, 4, 5, auto
-        - 1은 0.25rem
-            - 1rem은 16px
-            - rem의 장점은 html 기준으로 바로 적용 가능
 
-### Color
+![스크린샷 2022-08-07 오후 10.03.18.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5e6f8786-d732-4718-af53-c78de8208111/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.03.18.png)
+
+![스크린샷 2022-08-07 오후 10.03.43.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9dd0ed19-5991-4770-9b3d-1a2b2080d3f0/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.03.43.png)
+
+![스크린샷 2022-08-07 오후 10.03.59.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b94085db-abaa-4faa-86cf-3454b172dbdb/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.03.59.png)
+
+- 1은 0.25rem
+    - 1rem은 16px
+    - rem의 장점은 html 기준으로 바로 적용 가능
+    - mx-0
+        - 가로 margin을 0으로
+    - mx-auto
+        - 가로 가운데 정렬
+    - py-0
+        - 위아래 padding을 0으로
+
+![스크린샷 2022-08-07 오후 10.14.11.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f58dc53e-8bc7-4671-b0a7-fcf02b089db0/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.14.11.png)
+
+![스크린샷 2022-08-07 오후 10.15.43.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a4f2b429-87bb-4f19-82eb-448d9c8d5655/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.15.43.png)
+
+## Color
 
 - 텍스트 컬러, 백그라운드 컬러 모두 적용 가능
 
-### Text
+![스크린샷 2022-08-07 오후 10.18.48.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1abff4ab-b965-4a57-a481-082f34f9a933/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.18.48.png)
 
-- text-decoration-none 많이 사용한다
+![스크린샷 2022-08-07 오후 10.19.46.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/717e20e1-e9dc-42aa-8931-f6b2dbf28ecf/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.19.46.png)
 
-### Position
+## Text
 
-### Display
+![스크린샷 2022-08-07 오후 10.20.53.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dcd25b8e-1b0d-4086-a201-1d64ce8e874f/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.20.53.png)
+
+## Display
+
+![스크린샷 2022-08-07 오후 10.22.36.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7f9f7014-f7ee-4163-b0b4-35c0dd65811f/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.22.36.png)
 
 - `d-`
-- d-none은 코드는 있는데 보이지 않음
-- `d-md-none`
-    - 반응형
-- `d-sm-none`
-    - 반응형
+    - `d-inline` 은 inline으로 취급하겠다는 것
+    - `d-block` 은 block으로 취급하겠다는 것
+    - `d-none`은 코드는 있는데 보이지 않음
+        - `d-sm-none d-md-block`
+            - 반응형
+            - grid system 기준 sm까지는 보이지 않다가 md부터 보임
+        - `d-sm-none`
+            - 반응형
+            - grid system 기준 md까지 보이지 않다가 xl부터 보임
 
-### Components
+## Position
 
-- Button
-- Dropdown
-- Navbar
-    - 많이 사용함!
-    - 구조 살펴보면 d-flex로 배치해놓은거임
-- Carousel
-    - 회전목마돌듯이 누르면 사진이 넘어가는 UI
-- Modal
-    - 실수 많이 한다
-    - 팝업은 보통 x를 눌러야 사라지고 modal 해당 동작이 아닌 다른 곳을 클릭해도 사라진다는 차이점
-    - data-bs-target에 다른 곳에 지정해준 객체의 id를 넣어주면 연결됨!
-    - 중첩해서 들어가있으면 안됨
-        - Modals use `position: fixed`, which can sometimes be a bit particular about its rendering. Whenever possible, place your modal HTML in a top-level position to avoid potential interference from other elements. You’ll likely run into issues when nesting a `.modal` within another fixed element
-
-### Flexbox in Bootstrap
-
-### Grid Card
-
-- 반응형은 `<div *class*="row row-cols-1 row-cols-md-3 g-4">` 덕분에 이루어짐
+![스크린샷 2022-08-07 오후 10.27.36.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cdaefc48-35b1-4cd9-abce-b6afebcefba1/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.27.36.png)
 
 ---
 
+## Bootstrap Components
+
+### Components
+
+- Bootstrap의 다양한 UI 요소를 활용할 수 있음
+- 기본 제공된 Components를 변환해서 활용
+
+### Button
+
+- 클릭했을 때 어떤 동작이 일어나도록 하는 요소
+
+![스크린샷 2022-08-07 오후 10.31.10.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f0db07de-fb14-4f94-9ace-61e0ab2e5190/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.31.10.png)
+
+### Dropdowns
+
+- dropdown, dropdown-menu, dropdown-item 클래스를 활요해 옵션 메뉴를 만들 수 있음
+
+![스크린샷 2022-08-07 오후 10.32.16.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0893d5ef-df0f-430f-8734-50e8f87af0d7/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.32.16.png)
+
+![스크린샷 2022-08-07 오후 10.32.37.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/51aac68e-b8df-4244-87ed-48e438b19393/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.32.37.png)
+
+### Forms > Form controls
+
+- form-control 클래스를 사용해 <input> 및 <form> 태그를 스타일링할 수 있음
+
+![스크린샷 2022-08-07 오후 10.34.33.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/18be7ef2-e28d-486f-923e-a6bb4a9cedb7/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.34.33.png)
+
+![스크린샷 2022-08-07 오후 10.34.49.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1d5c59f6-924b-48e4-8313-67cd16a69808/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.34.49.png)
+
+### Navbar
+
+- navbar 클래스를 활용하면 네비게이션 바를 제작할 수 있음
+
+![스크린샷 2022-08-07 오후 10.36.38.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a8dc16c5-884e-4a56-883a-e79561d80db8/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.36.38.png)
+
+![스크린샷 2022-08-07 오후 10.36.52.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8ac35f66-5235-4616-9fac-31b047ccbb5c/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.36.52.png)
+
+### Carousel
+
+- 콘텐츠(사진)를 순환시키기 위한 슬라이드쇼
+
+![스크린샷 2022-08-07 오후 10.39.51.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a3fb91e4-07a0-41a0-9599-a6053833505c/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.39.51.png)
+
+### Modal
+
+- 사용자와 상호작용하기 위해 사용하며, 긴급 상황을 알리는데 주로 사용
+- 현재 열려있는 페이지 위에 또 다른 레이어를 띄움
+- 페이지를 이동하면 자연스럽게 사라짐
+    - 팝업은 보통 x를 눌러야 사라지고, modal은 다른 곳을 클릭해도 사라짐
+- data-bs0target에 다른 곳에 지정해준 객체의 id를 넣어주어 연결
+- 중첩해서 들어가있으면 안됨
+    - Modals use `position: fixed`, which can sometimes be a bit particular about its rendering. Whenever possible, place your modal HTML in a top-level position to avoid potential interference from other elements. You’ll likely run into issues when nesting a `.modal` within another fixed element
+
+![스크린샷 2022-08-07 오후 10.43.19.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/747eab15-8d7d-4e19-b76c-1006f6814b04/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.43.19.png)
+
+![스크린샷 2022-08-07 오후 10.43.39.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b17a8947-7b0e-4b08-9b7a-0c68beb54419/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.43.39.png)
+
+### Flexbox in Bootstrap
+
+![스크린샷 2022-08-07 오후 10.48.09.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2cfc4144-4e6c-4073-a21e-1b06d058826b/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.48.09.png)
+
+### Grid Card
+
+![스크린샷 2022-08-07 오후 10.54.30.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/183b3b9e-52ac-43f8-bd8a-2e19ecd04ca5/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.54.30.png)
+
+![스크린샷 2022-08-07 오후 10.54.56.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/308a8a73-2788-4c83-aae4-f9922cea13c6/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_10.54.56.png)
+
+- 반응형은 `<div *class*="row row-cols-1 row-cols-md-3 g-4">` 덕분에 이루어짐
+    - g-4는 gutter를 뜻함
+    - 이 div는 grid system상 row에 해당하는데 md이상이 아닌 경우에는 1개의 column을, md이상인 경우 3개의 column을 나타내겠다는 것
+
+### Responsive Web Design
+
+- 다양한 화면 크기를 가진 디바이스들이 등장함에 따라 responsive web design 개념이 등장
+- 반응형 웹은 별도의 기술 이름이 아닌 웹 디자인에 대한 접근 방식, 반응형 레이아웃 작성에 도움이 되는 사례들의 모음 등을 기술하는데 사용되는 용어
+- 예시
+    - Media Queries, Flexbox, Bootstrap Grid System, The viewport meta tag
+
+---
+
+# Bootstrap Grid System
+
 ## Grid System
 
-- 12개의 column
-- 6개의 breakpoint
-- column 사이의 공간을 gutter라고 함
+- 요소들의 디자인 및 배치에 도움을 주는 시스템
+- 기본 요소
+    - Column: 실제 컨텐츠를 포함하는 부분
+    - Gutter: 칼럼과 칼럼 사이의 공간 (사이 간격)
+    - Container: Column들을 담고 있는 공간
 
-![스크린샷 2022-08-03 오후 3.32.50.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f7d799f5-ebc9-42af-b9e3-7ce69ed150f2/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-03_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_3.32.50.png)
+## Bootstrap Grid System
+
+- Bootstrap Grid system은 flexbox로 제작됨
+- container, rows, columns로 컨텐츠를 배치하고 정렬
+- 반드시 기억할 것
+    - 12개의 column
+    - 6개의 grid breakpoints
+
+![스크린샷 2022-08-07 오후 11.18.41.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8e0a826c-4e49-487b-ac3a-37e5db82dcba/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.18.41.png)
+
+## Grid system breakpoints
+
+![스크린샷 2022-08-07 오후 11.19.21.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3c92e014-52d0-4e8c-83e1-131d9b1f088f/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.19.21.png)
+
+![스크린샷 2022-08-07 오후 11.22.44.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1c40fee0-3ab1-435c-b489-818dcd94d106/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.22.44.png)
+
+![스크린샷 2022-08-07 오후 11.22.50.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ead6cd6c-b276-4cbd-85a5-4899eedbba6c/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.22.50.png)
+
+![스크린샷 2022-08-07 오후 11.29.21.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3264972a-767d-4c82-8936-5ec5b7ad6d47/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.29.21.png)
+
+![스크린샷 2022-08-07 오후 11.29.37.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ffb3c4db-996f-427d-814e-c0b728658655/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.29.37.png)
+
+![스크린샷 2022-08-07 오후 11.29.55.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1aeb3342-b47b-4fdd-ba7c-c8b30ce880bc/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.29.55.png)
+
+![스크린샷 2022-08-07 오후 11.30.02.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/16f08564-47db-4e73-ab60-e2399b76fca5/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.30.02.png)
+
+![스크린샷 2022-08-07 오후 11.30.38.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/523534b4-ed7f-4ca8-8ef3-4b77db177fb6/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.30.38.png)
+
+![스크린샷 2022-08-07 오후 11.30.47.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a094e04d-c6a7-4afa-b56e-bb42f70f80b8/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.30.47.png)
 
 - div w-100은 텅빈 width 100짜리이므로 줄바꿈의 한 방법
     - 그냥 row 구획을 하나 더 만들어주는게 좋다
@@ -665,10 +1583,20 @@
 - 1짜리 13개면 1개가 다음 줄로 넘어간다
     - 12칸이 넘어가는 순간의 객체는 줄바꿈이 되어 넘어감
 - offset은 비우고싶을 때 사용
+    - `offset-`
+    - 왼쪽에 offset을 줌
+
+![스크린샷 2022-08-07 오후 11.34.25.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/28833636-8879-476d-8b20-13b240f9da4d/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.34.25.png)
+
+![스크린샷 2022-08-07 오후 11.34.31.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/484afacb-954a-4323-8037-a77e1d06dfa7/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.34.31.png)
+
+![스크린샷 2022-08-07 오후 11.34.35.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6c440651-2c24-4c6a-b405-5541fc1d0071/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.34.35.png)
+
+![스크린샷 2022-08-07 오후 11.34.39.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/652729dd-1a22-4339-bcd7-267dc175d0b9/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.34.39.png)
 
 ---
 
-## 추가 정리
+# 추가 정리
 
 - 레이아웃을 따로 지정하지 않으면 normal flow로 인라인 요소는 좌에서 우로, 블록 요소는 위에서 아래로 배치
 - html의 모든 요소는 box model
@@ -701,10 +1629,12 @@
 - margin이 겹칠 경우 값이 더 큰 것을 줌
 
 - [https://flexboxfroggy.com/#ko](https://flexboxfroggy.com/#ko)
+- [https://ko.learnlayout.com/display.html](https://ko.learnlayout.com/display.html)
+- [https://roseee.tistory.com/entry/Bootstrap-그리드-시스템-Grid-System](https://roseee.tistory.com/entry/Bootstrap-%EA%B7%B8%EB%A6%AC%EB%93%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C-Grid-System)
 
 ---
 
-box를 통한 positioning 연습
+### box를 통한 positioning 연습
 
 ```html
 <!DOCTYPE html>
@@ -730,293 +1660,38 @@ box를 통한 positioning 연습
 ```
 
 ```css
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="box_style.css">
-</head>
-<body>
-  <div id="box-01" class="box"></div>
-  <div id="box-02" class="box"></div>
-  <div id="box-03" class="box">
-    <button>inline elem</button>
-  </div>
-  <div id="box-04" class="box">
-    <div id="box-05" class="box"></div>
-  </div>
-</body>
-</html>
+.box {
+  width: 300px;
+  height: 200px;
+  border: 2px solid black;
+  box-sizing: border-box;
+  margin: 10px auto;
+}
+
+#box-01 {
+  background-color: rgba(131, 211, 184, 80%);
+}
+
+#box-02 {
+  background-color: rgba(253, 247 ,163, 0.8);
+}
+
+#box-03 {
+  text-align: center;
+  line-height: 12;
+}
+
+#box-04 {
+  background-color: rgb(255, 218, 252);
+}
+
+#box-05 {
+  position: relative;
+  top: 50px;
+  width: 100px;
+  height: 100px;
+  background-color: rgb(255, 192, 192);
+}
 ```
-Bootstrap practice
-```html
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="01_nav_footer.css">
-  <link rel="stylesheet" href="03_community.css">
-  <title>Community</title>
-</head>
-<body>
-  <!-- 01_nav_footer에서 작성한 Navigation bar & Modal & Footer 코드를 적절한 위치에 사용합니다. -->
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a href="/02_home.html">
-        <img src="/images/logo.png" alt="logo image" height="45">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" href="/02_home.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="/03_community.html">Community</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#loginModal" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-<!-- Modal Info -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="mb-1">
-          <label for="exampleFormControlInput1" class="form-label fw-bold">Email adress</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1">
-        </div>
-        <h6>We'll never share your email with anyone else.</h6>
-        <div class="my-3">
-          <label for="exampleFormControlTextarea1" class="form-label fw-bold">Password</label>
-          <input type="password" class="form-control" id="exampleFormControlTextarea1">
-        </div>
-        <div class="form-check mb-3">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-          <label class="form-check-label" for="flexCheckDefault">
-            Check me out
-          </label>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit</button>
-      </div>
-    </div>
-  </div>
-</div>
-  <!-- 03_community.html -->
-  <main class="container-fluid w-100 py-3">
-    <h1 class="fw-semibold fst-italic fix_left_margin">Community</h1>
-    <div class="row fix_left_margin">
-      <!-- Aside - 게시판 목록 -->
-      <aside class="list-group col col-12 col-lg-2">
-        <li class="list-group-item">
-          <a href="#" class="text-decoration-none">Boxoffice</a>
-        </li>
-        <li class="list-group-item">
-          <a href="#" class="text-decoration-none">Movies</a>
-        </li>
-        <li class="list-group-item">
-          <a href="#" class="text-decoration-none">Genres</a>
-        </li>
-        <li class="list-group-item">
-          <a href="#" class="text-decoration-none">Actors</a>
-        </li>
-      </aside>
-      <!-- Section - 게시판 -->
-      <section class="container col col-12 col-lg-10">
-        <div class="d-none d-lg-block">
-          <table class="table table-striped">
-            <thead class="table-dark">
-              <tr>
-                <th scope="col">Movie Titles</th>
-                <th scope="col">Posts</th>
-                <th scope="col">Username</th>
-                <th scope="col">Uploaded</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row" class="fst-italic">The ShawShank Redemption</th>
-                <td>Run!</td>
-                <td>Zac</td>
-                <td>1 minute ago</td>
-              </tr>
-              <tr>
-                <th scope="row" class="fst-italic">Joker</th>
-                <td>Grrrrrrrrrr</td>
-                <td>Aiden</td>
-                <td>1 minute ago</td>
-              </tr>
-              <tr>
-                <th scope="row" class="fst-italic">Top Gun: Maverick</th>
-                <td>Pew</td>
-                <td>Jin</td>
-                <td>1 minute ago</td>
-              </tr>
-              <tr>
-                <th scope="row" class="fst-italic">500 Days of Summer</th>
-                <td>Hi there!</td>
-                <td>Katie</td>
-                <td>1 minute ago</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="d-lg-none">
-          <article class="list-group">
-            <li class="list-group-item">
-              <div>
-                <p class="mb-2 fst-italic fw-semibold fs-3">The ShawShank Redemption</p>
-                <p class="mb-2 fs-5">Run!</p>
-                <div class="mb-1">
-                  Zac
-                </div>
-                <div>
-                  <small>1 minute ago</small>
-                </div>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div>
-                <p class="mb-2 fst-italic fw-semibold fs-3">Joker</p>
-                <p class="mb-2 fs-5">Grrrrrrrrrr</p>
-                <div class="mb-1">
-                  Aiden
-                </div>
-                <div>
-                  <small>1 minute ago</small>
-                </div>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div>
-                <p class="mb-2 fst-italic fw-semibold fs-3">Top Gun: Maverick</p>
-                <p class="mb-2 fs-5">Pew</p>
-                <div class="mb-1">
-                  Jin
-                </div>
-                <div>
-                  <small>1 minute ago</small>
-                </div>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div>
-                <p class="mb-2 fst-italic fw-semibold fs-3">500 Days of Summer</p>
-                <p class="mb-2 fs-5">Hi there!</p>
-                <div class="mb-1">
-                  Katie
-                </div>
-                <div>
-                  <small>1 minute ago</small>
-                </div>
-              </div>
-            </li>
-          </article>
-        </div>
-      </section>
-    </div>
-    <div class="d-flex justify-content-center my-4">
-      <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-      </nav>
-    </div>
-  </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="d-flex fixed-bottom justify-content-center mx-auto">
-      <p>Web-bootstrap PJT, by JINWOO PARK</p>
-    </div>
-  </footer>
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-</body>
-</html>
-
-```
-## Bootstrap practice
-
-```html
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-</head>
-<body>
-  <!-- 1. Nav -->
-  <nav class="d-flex fixed-top justify-content-between align-items-center bg-dark">
-    <a href="#">
-      <img src="images/logo.png" alt="Logo Image">
-    </a>
-    <div>
-      <a href="#" class="text-decoration-none text-white me-2">Home</a>
-      <a href="#" class="text-decoration-none text-white me-2">Community</a>
-      <a href="#" class="text-decoration-none text-white me-2">Login</a>
-    </div>
-  </nav>
-
-  <!-- 2. Header -->
-  <header class="d-flex flex-column justify-content-center align-items-center">
-      <h1 class="display-2 text-white fw-bold">Cinema</h1>
-      <h1 class="display-2 text-white fw-bold">Community</h1>
-      <a href="#" class="btn btn-primary btn-lg my-5">Let's Go</a>
-  </header>
-
-  <!-- 3. Section -->
-  <section>
-    <h2 class="d-flex justify-content-center my-5">Used Skills</h2>
-    <article class="d-flex justify-content-evenly">
-      <div class="d-flex flex-column align-items-center">
-        <img src="images/web.png" alt="Web Image">
-        <p>Web</p>
-      </div>
-      <div class="d-flex flex-column align-items-center">
-        <img src="images/html5.png" alt="HTML5 Image">
-        <p>HTML5</p>
-      </div>
-      <div class="d-flex flex-column align-items-center">
-        <img src="images/css3.png" alt="CSS3 Image">
-        <p>CSS3</p>
-      </div>
-    </article>
-  </section>
-
-  <!-- 4. Footer -->
-  <footer class="d-flex fixed-bottom justify-content-center align-items-center bg-primary text-white">
-    <p>HTML & CSS project. Created by JINWOO PARK</p>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-</body>
-</html>
-```
+![스크린샷 2022-08-07 오후 11.41.01.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ee55788b-9dd7-41ee-bf97-fc8dc8a6fed5/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-08-07_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.41.01.png)
