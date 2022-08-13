@@ -81,6 +81,9 @@
 
 ## PyCharm
 
+### 디버거 실행
+- `shift + F9`
+
 ### Stepping Tools
 - 디버깅을 수행할 때 유용한 다양한 도구
 
