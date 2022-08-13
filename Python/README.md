@@ -5131,3 +5131,146 @@ AssertionError: 정수 아닌 값이 있네
 '''
 ```
 ---
+# Python 가상환경 설정
+- Venv module
+- Python Interpreter 설정 in vscode
+---
+## Venv module
+- `Git Bash`에서 동작하게 하려면, `python 3.7.2` 이상 필요
+- `Git Bash` 사전 설치 필수
+
+**생성 및 활성화**
+
+![python_48](https://user-images.githubusercontent.com/86648892/184476402-85a55990-ce7c-48b9-9945-0f658e2ad644.png)
+
+```bash
+$ python -m venv [가상환경이름]
+$ source [가상환경이름]/Scripts/activate
+
+(가상환경이름)
+$
+```
+
+**터미널 별 활성화 방법** 
+
+- Git Bash
+    
+    ```bash
+    $ source [가상환경이름]\Scripts\activate
+    ```
+    
+- CMD
+    
+    ```bash
+    $ source [가상환경이름]\Scripts\activate.bat
+    ```
+    
+- PowerShell
+    
+    ```bash
+    $ source [가상환경이름]\Scripts\Activate.ps1
+    ```
+    
+- macOS
+    
+    ```bash
+    $ source [가상환경이름]/bin/activate
+    ```
+    
+
+**비활성화**
+
+```bash
+$ deactivate
+```
+
+**pip 를 통해 현재 가상환경인지 확인**
+
+```bash
+$ pip list 
+```
+
+---
+
+## Python Interpreter 설정 in vscode
+
+- VSCode에서 현재 사용중인 Python 환경(혹은 가상환경)을 알 수 있도록 설정하기
+- macOS는 ctrl을 command로 대체
+
+- 가상환경 폴더가 있는 곳에서 마우스 우측 버튼
+→ `Code(으)로 열기`
+    
+    ![python_49](https://user-images.githubusercontent.com/86648892/184476403-bc984975-7fa9-4162-8057-44184bdac453.png)
+    
+
+**반드시 vscode 내에 터미널이 켜져있지않은 상태로 진행**
+
+- 순서대로 진행
+    
+    ![python_50](https://user-images.githubusercontent.com/86648892/184476405-cd5dbe35-8fc9-40ed-a240-218650a7d0b7.png)
+    
+    ![python_51](https://user-images.githubusercontent.com/86648892/184476409-ea9c0972-1e04-4e76-9266-30b4b6205e5a.png)
+    
+    ![python_52](https://user-images.githubusercontent.com/86648892/184476410-a7a11021-5c00-4a6d-b546-7ed6b8c8cf9b.png)
+    
+    좌측 최하단에서 설정된 환경 확인
+    
+    ![python_53](https://user-images.githubusercontent.com/86648892/184476412-fe173779-a1da-4314-98a0-b781f2a29388.png)
+    
+    `View` → `Terminal`을 통해 터미널 생성
+    
+    ![python_54](https://user-images.githubusercontent.com/86648892/184476413-18def760-2e65-4cfc-bc7d-f015d7889e3f.png)
+    
+    가상환경이 자동으로 활성화 된 터미널인지 확인
+    
+
+- `ctrl + shift + p` 시에 생성한 가상환경이 출력되지 않는 경우
+    
+    ![python_55](https://user-images.githubusercontent.com/86648892/184476414-0b534532-831f-49c4-8f51-bc36d2e3f88d.png)
+    
+    ![python_56](https://user-images.githubusercontent.com/86648892/184476415-b85c1170-e3fb-4f2a-90a3-d16edf89dfed.png)
+    
+    ![python_57](https://user-images.githubusercontent.com/86648892/184476416-ee3272a8-a553-4b06-80af-7dc3f0c9d6af.png)
+    
+    ![python_58](https://user-images.githubusercontent.com/86648892/184476418-618b6f8b-960b-489f-914c-a19298a2e373.png)
+    
+    ![python_59](https://user-images.githubusercontent.com/86648892/184476419-4d6030db-71cc-406f-9022-ed0d6b094f21.png)
+    
+    ![python_60](https://user-images.githubusercontent.com/86648892/184476420-b6d9dd60-3f3f-4edc-bc5c-732eba6868f9.png)
+    
+    ![python_61](https://user-images.githubusercontent.com/86648892/184476421-fb38ed2b-6564-4890-8c83-0d766fc43b88.png)
+    
+    ![python_62](https://user-images.githubusercontent.com/86648892/184476422-1e277765-f417-4c00-966a-245609595ce9.png)
+
+---
+
+# Python 개발환경 관리
+- `pip freeze`
+- Usage
+
+---
+
+## pip freeze
+
+- 설치된 패키지를 requirements 포맷 형식으로 출력
+- 패키지는 대소문자를 구별하지 않는 정렬 형식으로 나열 됨 (case-insensitive sorted order)
+
+**Generate a requirements file**
+
+```bash
+$ pip freeze > requirements.txt
+```
+
+## Usage
+
+- `requirements.txt`에 있는 내용을 가지고 자동으로 패키지를 설치해줌으로써 
+해당 프로젝트가 어떤 버전의 패키지를 썼는지 기억하지 않아도 개발환경을 설정 할 수 있음
+- github에서 프로젝트를 받게되는 사람도 해당 파일이 있으면 가상환경 설정 후 바로 설치가 가능
+- **python 버전은 README에 별도로 명시하는 것이 좋음**
+
+**Install from it in another environment**
+```bash
+$ pip install -r requirements.txt
+```
+
+---
