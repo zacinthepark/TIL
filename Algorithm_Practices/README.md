@@ -1,13 +1,13 @@
 # APS
 
-## APS 환경설정
+## APS 환경설정 (PyCharm)
 
 ---
 
 ## 1. PyCharm 설치
 
 - **pycharm-community-2020.3.5.exe** 받기
-    - [jetbrains](https://www.jetbrains.com/) → 개발자도구(Developer Tools) → PyCharm → Download → 기타버전
+    - [Jetbrains](https://www.jetbrains.com/) → 개발자도구(Developer Tools) → PyCharm → Download → 기타버전
         
         ![aps_1](https://user-images.githubusercontent.com/86648892/184478746-aaef594f-6a66-4c18-8076-5c57f6ca33e3.png)
         
@@ -179,5 +179,223 @@ print(f'{result}')
 - **최종적으로 위와 같은 구조로 진행**
     
     ![aps_29](https://user-images.githubusercontent.com/86648892/184478779-5f6c18d1-4c6f-4724-9702-8a7d31183fec.png)
+
+---
+
+## APS 디버깅 (PyCharm)
+
+---
+
+## 디버깅(Debugging)
+
+디버깅(혹은 디버그)는 컴퓨터 프로그램 개발 단계 중에 발생하는 시스템의 논리적인 오류나 
+비정상적 연산(버그)을 찾아내고 그 원인을 밝히고 수정하는 작업 과정
+
+### [디버거 도구창](https://www.jetbrains.com/help/pycharm/debug-tool-window.html#steptoolbar)
+
+### 실행
+
+1. `.py` 파일에서 `우클릭` → `Debug 파일 이름` 클릭
+2. 우측 상단의 벌레 아이콘 클릭
+3. `shift + F9` 클릭
+
+![aps_30](https://user-images.githubusercontent.com/86648892/184479544-a223c9c8-f6d0-4c2e-bcda-dada2fae2810.png)
+
+### 1. Stepping Tools
+
+- 디버깅을 수행할 때 유용한 다양한 도구
+
+![aps_31](https://user-images.githubusercontent.com/86648892/184479545-17d7412e-a520-45d9-8c67-9998c689dfbd.png)
+
+|번호   |도구의 기능   |단축키   |설명   |
+|---|---|---|---|
+|1   |Show Execution Point   |`Alt + F10`   |현재 실행 지점을 가리킴   |
+|2  |Step Over   |`F8`   |현재 실행 지점이 있는 경우 해당 함수(메서드) 또는 파일의 다음 줄까지 이동<br>함수를 만나면 함수 안으로 들어가지 않고 함수의 실행 결과 뒷줄로 바로 이동   |
+|3   |Step Into   |`F7`   |디버거가 순차적으로 실행되다가 함수(메서드)를 만나면 해당 함수 내부로 들어감   |
+|4   |Step Into My Code   |`Alt + Shift + F7`   |라이브러리 소스 코드가 아닌 내가 작성한 코드의 라인만 디버거를 실행하고 싶은 경우   |
+|5   |Force Step Into   |`Alt + Shift + F7`   |   |
+|6   |Step Out   |`Shift + F8`   |현재 함수(메서드) 바로 뒤에 실행되는 줄로 이동<br>함수 안으로 들어갔는데 해당 밖으로 밖으로 나오고 싶은 경우 사용   |
+|7   |Run to Cursor   |`Alt + F9`   |현재 커서가 위치한 줄로 바로 이동<br>단, 중간에 다른 Breakpoint가 있는 경우 해당 위치에서 멈추게 됨   |
+|8   |Evaluate Expression   |`Alt + F8`   |   |
+
+### 2. Frame
+
+- 각 스레드의 콜스택을 살펴볼 수 있게 시각화된 형태로 제공
+
+### 3. Variables
+
+- 현재 실행 맥락에서 활성화된 변수를 보여주며 이를 통해 디버깅을 가능하게 하고 실시간으로 수정하며 디버깅을 할 수 있는 기능을 제공
+
+### 4. Watches
+
+- 특정한 맥락 변수
+
+### 5. Console
+
+- 종단점을 기준으로 디버거의 실행 결과 확인
+
+## Breakpoint
+
+### 의미
+
+> "Breakpoints are special markers that suspend program execution at a specific point. 
+This lets you examine the program state and behavior."
+>
+- 종단점은 특정한 순간에서의 프로그램 실행을 중단 시키는 특수한 마커이며 이를 통해 프로그램의 상태 및 동작을 검사할 수 있다. 
+- 종단점만 잘 걸어도 매우 효율적인 디버깅이 가능하다.
+
+- 예제 코드
+    
+    ```
+    3
+    2
+    2 2 4 4 1
+    3 3 6 6 2
+    3
+    1 2 3 3 1
+    3 6 6 8 1
+    2 3 5 6 2
+    3
+    1 4 8 5 1
+    1 8 3 9 1
+    3 2 5 8 2
+    ```
+    
+    ```python
+    import sys
+    
+    sys.stdin = open('input.txt')
+    
+    T = int(input())
+    
+    def solve(N):
+        for k in range(N):
+            r1, c1, r2, c2, color = map(int, input().split())
+            for i in range(r1, r2 + 1):
+                for j in range(c1, c2 + 1):
+                    boxes[i][j] += color
+    
+    for tc in range(1, T + 1):
+        boxes = [[0] * 10 for _ in range(10)]
+        n = int(input())
+        cnt = 0
+    
+        solve(n)
+    
+        for i in range(10):
+            for j in range(10):
+                if boxes[i][j] == 3:
+                    cnt += 1
+    
+        print('#{} {}'.format(tc, cnt))
+    ```
+    
+
+### 실행
+
+- 프로그램의 실행이 중단되길 원하는 지점의 숫자 옆 공백을 클릭하고 디버거 실행
+    
+    <img width="961" alt="aps_32" src="https://user-images.githubusercontent.com/86648892/184479546-9ccffce8-659a-4025-9b93-31ca2595668f.png">
+    
+
+- 파일을 실행하면 아래와 같이 해당 지점에서 프로그램의 실행이 멈추게된다.
+    
+    ![aps_33](https://user-images.githubusercontent.com/86648892/184479548-42404023-b422-41b3-a0b2-11b95fcf4274.png)
+    
+
+### 재실행 및 종료
+
+- 디버거 세션의 재실행은 `ctrl + F5`
+- 디버거 세션의 종료는 `ctrl + F2`
+
+## 디버깅 활용 예제
+
+### 1️. Breakpoint 설정
+
+![aps_34](https://user-images.githubusercontent.com/86648892/184479550-7eb99508-eafa-4eb6-8516-2deb899bbf18.png)
+
+디버깅을 원하는 지점(라인)의 오른쪽 공백 부분을 체크하여 Breakpoint를 걸어줍니다.
+
+### 2️. Step Into(`F7`)
+
+**종단점에서 실행이 중지된 프로그램에서 `F7`을 누르면 다음 실행 될 라인으로 이동**
+
+이때 `Variables`를 보면 현재 실행 환경(전역)의 변수 목록을 확인할 수 있음
+
+![aps_35](https://user-images.githubusercontent.com/86648892/184479551-cfae5b53-f17a-4fa1-868c-1be5c0dada59.png)
+
+**만약 코드의 실행 과정에서 함수를 만나면 함수 내부로 이동**
+
+- 이때 `Frames`를 보면 현재 실행 환경이 전역 → 함수 내부로 이동 했기 때문에 
+변수 목록이 변경 된 것을 확인할 수 있음
+    
+    <img width="961" alt="aps_36" src="https://user-images.githubusercontent.com/86648892/184479553-e275d413-838a-4246-8772-8713565e204e.png">
+    
+    전역 
+    
+    <img width="961" alt="aps_37" src="https://user-images.githubusercontent.com/86648892/184479555-58cf5a3f-ce71-4115-852f-fbd9e49780d1.png">
+    
+    함수 내부
+    
+
+### 3️. Step out(`Shift + F8`)
+
+**함수 내부에서 결과를 실행하는 과정을 종료하고 싶다면 Step out 기능을 사용**
+
+<img width="961" alt="aps_38" src="https://user-images.githubusercontent.com/86648892/184479557-91ec7443-8472-4fe9-b649-092e3ddcf50f.png">
+
+함수 내부에서 디버거 실행 중
+
+<img width="961" alt="aps_39" src="https://user-images.githubusercontent.com/86648892/184479558-2e8094e3-93d1-43cf-b555-527cc30ce79c.png">
+
+Step out을 통해 함수 바깥으로 빠져나온 모습
+
+### 4️. Step over(`F8`)
+
+**특정한 함수의 실행 과정을 거치지 않고 바로 다음으로 넘어가고 싶은 경우 Step over 기능을 사용**
+
+<img width="961" alt="aps_40" src="https://user-images.githubusercontent.com/86648892/184479559-4a96b3c2-8a5a-44c8-ab6c-7943f0653d9c.png">
+
+여기서 F7를 사용하게되면 `solve` 함수 내부로 들어가게 됨
+
+<img width="961" alt="aps_41" src="https://user-images.githubusercontent.com/86648892/184479560-300acd17-2280-44ee-966d-b3bc52271c1c.png">
+
+하지만 Step over(`F8`)를 사용하게 되면 함수의 실행 결과를 거친 이후 바로 다음 줄로 넘어가 실행 가능
+
+### 5️. Run to cursor(`Alt + F9`)
+
+**현재 실행 중인 지점으로부터 특정한 지점으로 바로 이동하고 싶은 경우 Run to cursor 기능을 사용**
+
+- 이동하고 싶은 라인의 코드의 일부분을 드래그 한 후 Run to cursor 버튼 클릭
+- (c.f. 모든 상황에 적용 가능한 것은 아님)
+    
+    <img width="961" alt="aps_42" src="https://user-images.githubusercontent.com/86648892/184479561-28a05027-d4f7-439c-8a6b-742f55fca5b8.png">
+    
+    14번째 줄에서 19번째 줄로 바로 이동하고 싶다!
+    
+    <img width="961" alt="aps_43" src="https://user-images.githubusercontent.com/86648892/184479562-675c6e43-e57d-4177-a33c-73a54fbdacbf.png">
+    
+    Run to cursor 기능을 통해 바로 이동 가능
+    
+
+### 6️. Watches
+
+**특정한 함수의 맥락에서 다른 (ex. 전역) 맥락의 변수 등을 확인하고 싶은 경우 Watches를 활용**
+
+<img width="961" alt="aps_44" src="https://user-images.githubusercontent.com/86648892/184479565-92140094-678a-4cd1-b144-931a188f2cfa.png">
+
+<img width="961" alt="aps_45" src="https://user-images.githubusercontent.com/86648892/184479567-991143d7-3f2f-4ce6-8861-3955ad50fe08.png">
+
+### 7️. 이차원 배열 편하게 보기
+
+왼쪽의 토글 버튼을 클릭하면 2차원 배열에서 각 행에 해당하는 리스트를 한 줄로 펼쳐서 보여주기 때문에 매우 편하게 확인 가능
+
+![aps_46](https://user-images.githubusercontent.com/86648892/184479569-eb82bf06-4ebf-4264-a5e3-c114f9f98176.png)
+
+## 참고 자료
+
+[Debug Wikipedia](https://ko.wikipedia.org/wiki/%EB%94%94%EB%B2%84%EA%B7%B8)
+
+[Jetbrains Debug PyCharm](https://www.jetbrains.com/help/pycharm/debugging-code.html)
 
 ---
