@@ -319,7 +319,8 @@ This lets you examine the program state and behavior."
 
 ![aps_34](https://user-images.githubusercontent.com/86648892/184479550-7eb99508-eafa-4eb6-8516-2deb899bbf18.png)
 
-디버깅을 원하는 지점(라인)의 오른쪽 공백 부분을 체크하여 Breakpoint를 걸어줍니다.
+- 디버깅을 원하는 지점(라인)의 오른쪽 공백 부분을 체크하여 Breakpoint를 걸어줌
+- **condition에 `i==1 and j==1` 과 같이 breakpoint 조건을 넣을 수 있음**
 
 ### 2️. Step Into(`F7`)
 
