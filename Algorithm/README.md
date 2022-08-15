@@ -1,4 +1,4 @@
-# Algorithm Live
+# Algorithm Concepts
 
 [Algorithm이란](#algorithm)<br>
 [Array](#array)<br>
@@ -15,6 +15,11 @@
 [순차 검색(Sequential Search)](#순차-검색-sequential-search)<br>
 [이진 검색(Binary Search)](#이진-검색-binary-search)<br>
 [인덱스](#인덱스)<br>
+[문자열(String)](#문자열string)<br>
+[문자열의 분류 및 처리](#문자열의-분류-및-처리)<br>
+[문자열 Pattern Matching](#pattern-matching)<br>
+[문자열 암호화](#문자열-암호화)<br>
+[문자열 압축](#문자열-압축)<br>
 
 ---
 
@@ -848,5 +853,232 @@ for test_case in range(1, T+1):
     - 이러한 대량 데이터의 성능 저하 문제를 해결하기 위해 배열 인덱스를 사용할 수 있음
 
 <img width="886" alt="a_50" src="https://user-images.githubusercontent.com/86648892/184628827-d69d2f75-7a08-439f-b985-2bf9e27a4b4a.png">
+
+---
+
+# 문자열(String)
+
+- 문자열
+- 패턴 매칭
+- 문자열 암호화
+- 문자열 압축
+
+---
+
+## 문자의 표현
+
+### 컴퓨터에서의 문자표현
+
+- 글자 A를 메모리에 저장하는 방법?
+- 메모리는 숫자만을 저장할 수 있기에 A라는 글자 모양 그대로 비트맵으로 저장하는 방법을 사용하지 않는 한(메모리 낭비가 심하다) 각 문자에 대해서 대응되는 숫자를 정해 놓고 이것을 메모리에 저장하는 방법을 사용
+- 영어가 대소문자 합쳐서 52이므로 6비트(64가지)면 모두 표현할 수 있음
+    - 이를 코드체계라 한다
+    - 가령 00000은 ‘a’, 000001은 ‘b’를 나타냄
+    - 네트워크가 발전되기 전 미국의 각 지역 별 코드체계를 정해놓고 사용했지만
+    - 네트워크(인터넷: 인터넷은 미국에서 발전했다)의 발전으로 인해 서로 정보를 주고 받을 때 정보를 달리 해석한다는 문제 발생
+    - 혼동을 피하기 위해 표준안을 만들기로 함
+    - 그렇게 1967년 미국에서 ASCII(American Standard Code for Information Interchange)라는 문자 인코딩 표준이 제정됨
+- ASCII는 7bit 인코딩으로 128문자를 표현하며 33개의 출력 불가능한 제어 문자들과 공백을 비롯한 95개의 출력 가능한 문자들로 이루어져 있음
+
+### ASCII
+
+<img width="1135" alt="a_58" src="https://user-images.githubusercontent.com/86648892/184694444-b485df0a-d3df-4233-9a7a-bb220f26a901.png">
+
+<img width="1184" alt="a_59" src="https://user-images.githubusercontent.com/86648892/184694466-fdf641d1-510a-4f59-af3a-5ad27aef6861.png">
+
+<img width="1103" alt="a_60" src="https://user-images.githubusercontent.com/86648892/184694473-c05e02dd-1a36-47e8-8463-a611d3426f72.png">
+
+### UNICODE
+
+- 오늘날 대부분의 컴퓨터는 문자를 읽고 쓰는데 ASCII형식을 사용
+- 그런데 컴퓨터의 발전에 따라 미국 외 국가에서도 컴퓨터가 발전하여 각 국가들은 자국의 문자를 표현하기 위해 코드체계를 만들어 사용하게 됨
+    - 우리나라도 예전에 한글 코드체계를 만들어 사용했고, 조합형, 완성형 두 종류를 가지고 있었음
+- 인터넷이 전 세계로 발전하면서 ASCII를 만들었을 때의 문제와 같은 문제가 국가 간에 정보를 주고 받을 때 발생함
+- 다국어 처리를 위해 표준을 마련했고, 이를 유니코드라 한다
+
+<img width="1060" alt="a_61" src="https://user-images.githubusercontent.com/86648892/184694477-0ea5fe8d-649c-4e5d-8d6e-43d7e5901788.png">
+
+<img width="1145" alt="a_62" src="https://user-images.githubusercontent.com/86648892/184694482-0b31ee50-2c61-49cb-a9ae-423d177a521a.png">
+
+<img width="1091" alt="a_63" src="https://user-images.githubusercontent.com/86648892/184694486-c81534a6-48c8-4b23-907f-6af467f46811.png">
+
+- 엔디언(Endianess)은 컴퓨터의 메모리와 같은 1차원의 공간에 여러 개의 연속된 대상을 배열하는 방법을 뜻함
+    - 바이트를 배열하는 방법을 특히 바이트 순서(Byte order)라 한다
+- 엔디언은 보통 큰 단위가 앞에 나오는 Big-endian과 작은 단위가 앞에 나오는 Little-endian으로 나눌 수 있음
+    - 빅 엔디언은 사람이 숫자를 쓰는 방법과 같이 큰 단위의 바이트가 앞에 오는 방법
+    - 리틀 엔디언은 반대로 작은 단위의 바이트가 앞에 오는 방법
+    
+    <img width="626" alt="a_64" src="https://user-images.githubusercontent.com/86648892/184694491-7e652c99-d3cf-4f68-83b1-b2c6755640c7.png">
+    
+    <img width="614" alt="a_65" src="https://user-images.githubusercontent.com/86648892/184694493-fe3e0d1f-ecb2-47cd-a7c5-99ed7a26e23c.png">
+    
+
+<img width="1179" alt="a_66" src="https://user-images.githubusercontent.com/86648892/184694497-e52805f8-fcf9-4e5e-bec1-b7a20c73d6f2.png">
+
+<img width="1177" alt="a_67" src="https://user-images.githubusercontent.com/86648892/184694501-9254ae4f-26e4-450f-8c88-9c0c99139d59.png">
+
+---
+
+## 문자열의 분류 및 처리
+
+<img width="1030" alt="a_68" src="https://user-images.githubusercontent.com/86648892/184694505-743c4dd7-92b1-4a5b-bc5d-2d2383b43714.png">
+
+<img width="1115" alt="a_69" src="https://user-images.githubusercontent.com/86648892/184694509-54dbe87c-92d6-4867-bd20-269f65bbd3bc.png">
+
+<img width="1098" alt="a_70" src="https://user-images.githubusercontent.com/86648892/184694510-aea7cd4a-e334-4fa0-875e-8b9c05d91cbc.png">
+
+<img width="1164" alt="a_71" src="https://user-images.githubusercontent.com/86648892/184694512-cfb0b734-e2a0-4c2a-b7c8-9b6a77c06e00.png">
+
+---
+
+### **문자열 뒤집기**
+
+<img width="1117" alt="a_72" src="https://user-images.githubusercontent.com/86648892/184694516-63e222fc-c021-49e8-8b7e-8ef4b515eb30.png">
+
+<img width="1151" alt="a_73" src="https://user-images.githubusercontent.com/86648892/184694517-4e5c5a74-e885-43a1-b424-b4578379328d.png">
+
+```python
+string = 'Reverse this strings'
+reversed_str = ''
+for i in string:
+    reversed_str = i + reversed_str
+print(reversed_str) # sgnirts siht esreveR
+```
+
+---
+
+### **문자열 비교**
+
+<img width="1186" alt="a_74" src="https://user-images.githubusercontent.com/86648892/184694518-57cb1287-055d-4126-9bde-113bb528efcf.png">
+
+```python
+s1 = 'abc'
+s2 = 'abc'
+s3 = 'def'
+s4 = s1
+s5 = s1[:2] + 'c'
+
+print(s1==s2) # True
+print(s1==s3) # False
+print(s1==s4) # True
+print(s1==s5) # True
+print(s1 is s2) # True
+print(s1 is s3) # False
+print(s1 is s4) # True
+print(s1 is s5) # False
+```
+
+---
+
+### **문자열 숫자를 정수로 변환하기**
+
+<img width="1133" alt="a_75" src="https://user-images.githubusercontent.com/86648892/184694520-fbf73c40-ab17-4a2f-b4cf-9379cd030ad8.png">
+
+### int()와 같은 atoi()함수, str()과 같은 itoa()함수 구현
+
+```python
+# int(str) 구현
+def atoi(s):
+    i = 0
+    for char in s:
+        i = i * 10 + ord(char) - ord('0') # 1 -> 10으로, 10 + 2 -> 12 -> 120으로, 120 + 3 -> 123
+    return i
+
+# str(int) 구현
+# 나머지 연산자를 활용하여 뒤에서부터 잘라주기
+def itoa(i):
+    st = ''
+    while i > 0:
+        st = chr(i%10 + ord('0')) + st
+        i //= 10
+    return st
+
+num = 123
+word = '123'
+atoi(word)
+print(atoi(word)) # 123
+print(type(atoi(word))) # <class 'int'>
+print(itoa(num)) # 123
+print(type(itoa(num))) # <class 'str'>
+```
+
+---
+
+# Pattern Matching
+
+## 고지식한 알고리즘(Brute Force)
+
+- 완전탐색을 하는 방법
+- 할 수 있어야 함
+
+<img width="1089" alt="a_76" src="https://user-images.githubusercontent.com/86648892/184694522-23be5ca3-da15-4ad2-aae3-43e245b66335.png">
+
+<img width="1109" alt="a_77" src="https://user-images.githubusercontent.com/86648892/184694526-926eab52-7c5f-4417-aaaf-26172e85328d.png">
+
+<img width="1171" alt="a_78" src="https://user-images.githubusercontent.com/86648892/184694527-ab30a33e-f6d2-4d07-83e5-b7475a14f386.png">
+
+<img width="1147" alt="a_79" src="https://user-images.githubusercontent.com/86648892/184694530-f92da276-693b-4e35-9d14-3c120f458a13.png">
+
+- 최악의 경우 텍스트의 모든 위치에서 패턴을 비교해야함
+    - 시간복잡도 `O(MN`)
+- 비교횟수를 줄이는 방법은?
+
+---
+
+## KMP 알고리즘
+
+<img width="1191" alt="a_80" src="https://user-images.githubusercontent.com/86648892/184694531-de771e4a-877d-42ae-8181-bb0090672dca.png">
+
+<img width="1167" alt="a_81" src="https://user-images.githubusercontent.com/86648892/184694533-b1f442e0-6012-4221-a9b8-328efdd66119.png">
+
+<img width="1179" alt="a_82" src="https://user-images.githubusercontent.com/86648892/184694534-3f5d5d15-4f22-4c6f-b74b-4e603f26a622.png">
+
+---
+
+## 보이어-무어 알고리즘
+
+<img width="1203" alt="a_83" src="https://user-images.githubusercontent.com/86648892/184694536-03166f09-d9af-430b-af62-55c3a97ad269.png">
+
+<img width="1210" alt="a_84" src="https://user-images.githubusercontent.com/86648892/184694539-a95eeec8-c113-4af8-97ff-2f0b809ce15e.png">
+
+<img width="1214" alt="a_85" src="https://user-images.githubusercontent.com/86648892/184694542-39f51a85-132b-427a-8bd5-e35a04cc1503.png">
+
+---
+
+## 문자열 패턴 매칭 알고리즘 비교
+
+<img width="1199" alt="a_86" src="https://user-images.githubusercontent.com/86648892/184694545-88478e1f-4460-4330-befa-3ec31eba1384.png">
+
+<img width="1204" alt="a_87" src="https://user-images.githubusercontent.com/86648892/184694548-74063d3c-b9f3-4ec2-83f9-2d978ecbd4e3.png">
+
+---
+
+# 문자열 암호화
+
+## 시저 암호(Casesar cipher)
+
+<img width="1129" alt="a_88" src="https://user-images.githubusercontent.com/86648892/184694550-3a351b32-024b-4bf3-88f2-6026c848d676.png">
+
+<img width="1098" alt="a_89" src="https://user-images.githubusercontent.com/86648892/184694554-999fc674-0fc3-4d3a-910c-8463c3631733.png">
+
+<img width="1030" alt="a_90" src="https://user-images.githubusercontent.com/86648892/184694558-e4b76a71-d3aa-4d34-b7be-0cef9c5cdf23.png">
+
+## 단일 치환 암호
+
+<img width="940" alt="a_91" src="https://user-images.githubusercontent.com/86648892/184694559-ad74d7d1-62d9-4a57-b535-081377433e30.png">
+
+<img width="1097" alt="a_92" src="https://user-images.githubusercontent.com/86648892/184694560-d4130919-8764-4854-bc39-eff7f58a35d0.png">
+
+- 복호화는 decoding을 의미함
+
+## bit열의 암호화
+
+<img width="1008" alt="a_93" src="https://user-images.githubusercontent.com/86648892/184694562-62d56ec2-25c9-4347-9e8a-10c822b5c0c6.png">
+
+---
+
+# 문자열 압축
+
+<img width="1055" alt="a_94" src="https://user-images.githubusercontent.com/86648892/184694564-ece2dd13-f825-4baa-845a-06c7866077ce.png">
 
 ---
