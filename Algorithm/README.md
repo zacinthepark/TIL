@@ -2,11 +2,19 @@
 
 [Algorithm이란](#algorithm)<br>
 [Array](#array)<br>
+[2차원배열](#2차원-배열)<br>
 [정렬](#정렬)<br>
 [Bubble Sort](#버블-정렬bubble-sort)<br>
 [Counting Sort](#카운팅-정렬counting-sort)<br>
+[Selection Sort](#선택-정렬selection-sort)<br>
 [완전 검색(Exhaustive Search)](#완전검색-exhaustive-search)<br>
 [탐욕(Greedy) 알고리즘](#탐욕greedy-알고리즘)<br>
+[부분집합의 합](#부분집합의-합-subset-sum)<br>
+[비트 연산자](#비트-연산자)<br>
+[검색(Search)](#검색-search)<br>
+[순차 검색(Sequential Search)](#순차-검색-sequential-search)<br>
+[이진 검색(Binary Search)](#이진-검색-binary-search)<br>
+[인덱스](#인덱스)<br>
 
 ---
 
@@ -172,7 +180,128 @@ for test_case in range(1, T + 1):
 
 ---
 
-## 정렬
+# 2차원 배열
+
+## 2차원 배열의 선언
+
+- 1차원 List를 묶어놓은 List
+- 2차원 이상의 다차원 List는 차원에 따라 Index를 선언
+- 2차원 List의 선언
+    - 세로길이(행의 개수)와 가로길이(열의 개수)를 필요로 함
+- Python에서는 데이터 초기화를 통해 변수선언과 초기화가 가능함
+
+<img width="886" alt="a_25" src="https://user-images.githubusercontent.com/86648892/184616746-f4f318a6-6f04-4be0-ab62-530355a7ff15.png">
+
+<img width="882" alt="a_26" src="https://user-images.githubusercontent.com/86648892/184616761-7130e17e-f1b6-4aaa-a141-3e4a330121cb.png">
+
+```python
+# 2차원 배열 생성
+N, M = int(input())
+arr = [list(map(int, input())) for _ in range(N)]
+
+# 2차원 배열 값 접근
+for i in range(N): # 각 행에 대해
+    for j in range(M): # 각 열에 접근해봐
+        print(arr[i][j], end=' ')
+    print()
+
+# 2차원 배열 값 접근 2
+N, M = int(input())
+arr = [list(map(int, input())) for _ in range(N)]
+
+for i in range(len(arr)):
+    for j in range(len(arr[0])):
+        print(arr[i][j], end=' ')
+    print()
+```
+
+## 2차원 배열의 접근
+
+### 행 우선 / 열 우선 / 지그재그 순회
+
+<img width="1032" alt="a_27" src="https://user-images.githubusercontent.com/86648892/184616765-ebb8ad6c-556e-4886-a06b-50ffa207cd1a.png">
+
+<img width="1020" alt="a_28" src="https://user-images.githubusercontent.com/86648892/184616774-4e6becbc-2d5b-49ff-852d-1fab3ea0414e.png">
+
+- 위 지그재그의 경우
+    - `i%2`는 짝수의 경우 나머지가 0이 되므로 짝수행에 대해 `(m-1-2*j)*(i%2)` 를 날려줌
+    - `(m-1-2*j)` 인 이유는 j와 더해서 `Array[i][m-1-j]` 를 만들어주기 위함
+        - `m-1-j` 인 이유는 가로 인덱스가 0에서 m-1까지인데 j가 0, 1, 2, 3 증가함에 따라 인덱스는 3, 2, 1, 0처럼 변화시키기 위함
+
+### 델타를 이용한 2차 배열 탐색
+
+<img width="826" alt="a_29" src="https://user-images.githubusercontent.com/86648892/184616783-075c5697-9c0b-4d28-b84d-cb738b86bc46.png">
+
+- 어떤 원소를 중심으로 상하좌우 주변 원소들을 탐색하는 방법
+- 오른쪽부터 시계방향으로 각각 0, 1, 2, 3 방향이라 가정
+    - 순서는 정하기 나름이다
+    - 혹은 문제의 조건에서 제시
+- `di` 는 i에 더해주는 값
+- `dj` 는 j에 더해주는 값
+- `for i : 1 -> N-1`와 `for j : 1 -> N-1`은 `0 -> N-1` 로 수정할 것
+- `ni` `nj` 은 이웃한 것의 좌표 위치
+- 인덱스 검사하기
+- `test(arr[ni][nj])` 는 접근한 이웃좌표에서 수행할 작업
+
+<img width="378" alt="a_30" src="https://user-images.githubusercontent.com/86648892/184616786-23bff7ee-601f-4b5a-9ea8-2dff5cc5a1b9.png">
+
+<img width="414" alt="a_31" src="https://user-images.githubusercontent.com/86648892/184616789-4701a805-5261-4141-b7fa-c4862a18c9bc.png">
+
+```python
+# 1
+di = [0, 1, 0, -1]
+dj = [1, 0, -1, 0]
+N = 3
+M = 4
+arr = [[1, 2, 3, 4], [4, 5, 6, 8]]
+for i in range(N):
+    for j in range(M):
+        for k in range(4):
+            ni = i + di[k]
+            nj = j + dj[k]
+            if 0<=ni<N and 0<=nj<M:
+                print(ni, nj)
+
+# 2
+di = [0, 1, 0, -1]
+dj = [1, 0, -1, 0]
+N = 3
+M = 4
+arr = [[1, 2, 3, 4], [4, 5, 6, 8]]
+for i in range(N):
+    for j in range(M):
+        for di, dj in [[0, 1], [1, 0], [0, -1], [-1, 0]]:
+            ni, nj = i + di, j + dj
+            if 0<=ni<N and 0<=nj<M:
+                print(ni, nj)
+
+# 3 (파리퇴치)
+di = [0, 1, 0, -1]
+dj = [1, 0, -1, 0]
+N = 3
+M = 4
+arr = [[1, 2, 3, 4], [5, 6, 7, 8]]
+for i in range(N):
+    for j in range(M):
+        for k in range(4):
+            for d in range(1, 3): # 4방향 기준 1, 2, 3칸까지 탐색
+                ni = i + di[k]*d
+                nj = j + dj[k]*d
+                if 0<=ni<N and 0<=nj<M:
+                    print(ni, nj)
+```
+
+---
+
+## 2차원 배열의 활용
+
+### 전치 행렬
+
+<img width="856" alt="a_33" src="https://user-images.githubusercontent.com/86648892/184616796-6fc3349f-37a9-45f7-9314-c6dec893e1af.png">
+
+---
+
+# 정렬
 
 - 2개 이상의 자료를 특정 기준에 의해 작은 값부터 큰 값(오름차순: ascending), 혹은 그 반대의 순서대로(내림차순: descending) 재배열하는 것
 - 키
@@ -306,6 +435,168 @@ print(CountingSort(arr2, tmp, k))
 
 ---
 
+## 선택 정렬(Selection Sort)
+
+- 주어진 자료들 중 가장 작은 값의 원소부터 차례대로 선택하여 위치를 교환하는 방식
+- 정렬 과정
+    - 주어진 리스트 중에서 최소값을 찾음
+        - 오름차순 기준
+    - 그 값을 리스트의 맨 앞에 위치한 값과 교환
+    - 맨 처음 위치를 제외한 나머지 리스트를 대상으로 위의 과정을 반복
+- 시간 복잡도
+    - `O(n2)`
+
+<img width="1169" alt="a_51" src="https://user-images.githubusercontent.com/86648892/184630913-fe0f0adf-ddd1-4ce2-81dc-40e69b90bee3.png">
+
+<img width="1187" alt="a_52" src="https://user-images.githubusercontent.com/86648892/184630927-689319ee-b724-4856-8433-f384213b643e.png">
+
+<img width="843" alt="a_53" src="https://user-images.githubusercontent.com/86648892/184630938-9f420741-c52c-422d-87dd-d387b4c8e763.png">
+
+## 셀렉션 알고리즘(Selection Algorithm)
+
+- 저장되어 있는 자료로부터 k번째로 큰 혹은 작은 원소를 찾는 방법을 셀렉션 알고리즘이라 함
+    - 최소값, 최대값, 혹은 중간값을 찾는 알고리즘을 의미하기도 함
+- 선택 과정
+    - 셀렉션은 아래와 같은 과정을 통해 이루어짐
+        - 정렬 알고리즘을 이용하여 자료 정렬
+        - 원하는 순서에 있는 원소 가져오기
+
+<img width="1208" alt="a_54" src="https://user-images.githubusercontent.com/86648892/184630940-be2b8e12-7603-4f69-a178-cc892bcc63af.png">
+
+## **달팽이 숫자**
+
+<img width="649" alt="a_55" src="https://user-images.githubusercontent.com/86648892/184632687-d64302a9-1ba1-40fc-8538-2979c4f8717d.png">
+
+<img width="766" alt="a_56" src="https://user-images.githubusercontent.com/86648892/184632696-e7c6d66d-237d-4ed4-89fd-41954c164239.png">
+
+<img width="917" alt="a_57" src="https://user-images.githubusercontent.com/86648892/184632703-6e8f5747-1657-446a-a686-998e6803f3d0.png">
+
+```python
+'''
+수업 풀이를 통한 개선점
+1) array에서 값을 빼내 출력할 때 언패킹 연산자(*) 활용
+2) % 연산자를 활용한 방향 전환
+3) di, dj 초기화 위치
+4) cnt += 1을 while 바깥에 한번 진행해주고 while의 범위를 <=으로 설정하여 직관성 상승
+'''
+
+T = int(input())
+for test_case in range(1, T+1):
+    N = int(input())
+    # 초기 배열 생성
+    arr = [[0] * N for _ in range(N)]
+    # direction은 우->하->좌->상 순 시계방향으로 0, 1, 2, 3
+    direction = 0
+    i, j = 0, 0
+    di = [0, 1, 0, -1]
+    dj = [1, 0, -1, 0]
+    # 출발 지점에 1을 놓고 cnt도 1인 상태로 시작
+    cnt = 1
+    arr[0][0] = 1
+    # cnt 값을 최신화하고 넣어주는 logic이니까 가령 4*4인 경우 15일 때까지만 loop 허용(안에 들어가서 16이 될테니)
+    while cnt < N*N:
+        # 현재 방향 기준으로 다음 좌표 설정
+        ni = i + di[direction]
+        nj = j + dj[direction]
+        # 좌표가 전체 범위를 넘지 않는다면
+        if 0 <= ni < N and 0 <= nj < N:
+            # 그리고 도착할 다음 좌표의 값이 0이라면 (아직 도착하지 않은 곳이라면)
+            if arr[ni][nj] == 0:
+                # 카운트 값을 올려주고 해당 값을 도착할 값에 부여, 그리고 새로운 좌표를 기준점으로 업데이트
+                cnt += 1
+                arr[ni][nj] = cnt
+                i, j = ni, nj
+            # 조건이 만족하지 않는 경우 (도착할 값이 0이 아닌 경우)
+            else:
+                # 방향이 위로 향하고 있는 경우
+                if direction == 3:
+                    # 잘못 최신화된 ni, nj 좌표를 다시 바로 잡아주고
+                    ni -= di[direction]
+                    nj -= dj[direction]
+                    # 상 -> 우로 방향 전환
+                    direction = 0
+                    # 다시 ni, nj 최신화
+                    ni += di[direction]
+                    nj += dj[direction]
+                    # 이동 작업 수행
+                    cnt += 1
+                    arr[ni][nj] = cnt
+                    i, j = ni, nj
+                # 다른 방향인 경우
+                else:
+                    ni -= di[direction]
+                    nj -= dj[direction]
+                    # 방향값에 1을 더해주어 시계방향으로 방향 전환
+                    direction += 1
+                    ni += di[direction]
+                    nj += dj[direction]
+                    cnt += 1
+                    arr[ni][nj] = cnt
+                    i, j = ni, nj
+        # 조건이 만족하지 않는 경우 (범위를 초과한 경우)
+        else:
+            if direction == 3:
+                ni -= di[direction]
+                nj -= dj[direction]
+                direction = 0
+                ni += di[direction]
+                nj += dj[direction]
+                cnt += 1
+                arr[ni][nj] = cnt
+                i, j = ni, nj
+            else:
+                ni -= di[direction]
+                nj -= dj[direction]
+                direction += 1
+                ni += di[direction]
+                nj += dj[direction]
+                cnt += 1
+                arr[ni][nj] = cnt
+                i, j = ni, nj
+    print(f'#{test_case}')
+    for line in arr:
+        for number in line:
+            print(number, end = ' ')
+        print()
+
+'''
+교수님 풀이
+
+# 고정된 값이니 한 번만 초기화하는게 속도에 유리하므로 밖으로 빼주자
+di = [0, 1, 0, -1]
+dj = [1, 0, -1, 0]
+
+T = int(input())
+# T = 10
+for test_case in range(1, T+1):
+    N = int(input())
+    arr = [[0]*N for _ in range(N)]
+
+    i = j = dr = 0
+    cnt = 1
+    arr[i][j] = cnt
+    # 내 풀이와는 다르게 밖에서 cnt += 1을 해주고 while 범위에 =을 붙여줌
+    cnt += 1
+
+    while cnt <= N*N:
+        ni, nj = i+di[dr], j+dj[dr] # 이동할 좌표계산
+        if 0<=ni<N and 0<=nj<N and arr[ni][nj]==0: # 기록가능: 범위내이고 0이면
+            i, j = ni, nj # 현재좌표 이동
+            arr[i][j] = cnt
+            cnt += 1
+        else: # 불가능 -> 방향전환 후 기록
+            # dr을 %를 통해 바꾸는 방법 알아두자
+            dr = (dr+1)%4
+
+    print(f'#{test_case}')
+    for lst in arr:
+        # 언패킹 연산자(asterisk) 활용
+        print(*lst)
+'''
+```
+
+---
+
 ## 완전검색 (Exhaustive Search)
 
 - 완전 검색 방법은 문제의 해법으로 생각할 수 있는 모든 경우의 수를 나열해보고 확인하는 기법
@@ -374,5 +665,188 @@ print(CountingSort(arr2, tmp, k))
 <img width="1172" alt="a_23" src="https://user-images.githubusercontent.com/86648892/184608310-caece9f2-4755-4872-b8da-772fd4394ab6.png">
 
 <img width="1191" alt="a_24" src="https://user-images.githubusercontent.com/86648892/184608311-770adbf0-1c69-4e77-a84f-697775186f92.png">
+
+---
+
+## 부분집합의 합 (Subset Sum)
+
+- 유한 개의 정수로 이루어진 집합이 있을 때, 이 집합의 부분집합 중에서 그 집합의 원소를 모두 더한 값이 0이 되는 경우가 있는지를 알아내는 문제
+- `[-7, -3, -2, 5, 8]` 은 -3, -2, 5의 경우로 인해 참
+- 완전검색 기법으로 부분집합 합 문제를 풀기 위해서는, 우선 집합의 모든 부분집합을 생성한 후에 각 부분집합의 합을 계산해야 함
+- 집합의 원소가 n개일 때, 공집합을 포함한 부분집합의 수
+    - `2^n`
+
+<img width="1210" alt="a_34" src="https://user-images.githubusercontent.com/86648892/184624699-53c9118d-4ab9-4165-b0b7-4dd915599872.png">
+
+---
+
+## 비트 연산자
+
+<img width="1118" alt="a_35" src="https://user-images.githubusercontent.com/86648892/184624725-c71d4102-7400-4225-be06-5ad907232d7e.png">
+
+- 비트는 메모리 상에서 정보를 구분할 수 있는 최소 단위
+- 주소로 구분되는 최소 단위는 바이트
+    - 8bit는 1Byte
+    - bit는 binary digit의 약자 (이진수)
+- 비트 연산자는 같은 비트끼리 연산을 함
+
+<img width="352" alt="a_36" src="https://user-images.githubusercontent.com/86648892/184624729-638c4085-88b2-431b-a381-5853b96e4cef.png">
+
+- `1<<n` 은 1을 n번 왼쪽으로 옮기라는 것
+- 비트 쉬프트
+
+<img width="592" alt="a_37" src="https://user-images.githubusercontent.com/86648892/184624730-f7bd27e1-b464-42c2-90f5-29f97e4d03b2.png">
+
+- `&`
+    - 필요한 비트만 1로 유지시키고 나머지는 0으로 만들기 위해 and 연산 사용
+    - 비트마스킹
+
+<img width="696" alt="a_38" src="https://user-images.githubusercontent.com/86648892/184624734-4cf8dccc-0f35-4c15-933d-881596f348ad.png">
+
+- i의 j번 비트를 검사
+    - `i&(1<<j)`
+
+### **비트연산자로 부분집합 구현**
+
+```python
+'''
+10개의 정수를 입력 받아 부분집합의 합이 0이 되는 것이 존재하는지를 계산하는 함수를 작성해보자.
+입력
+2
+19 6 16 19 15 16 8 13 16 10
+-20 -6 -13 3 -19 -9 19 -3 9 4
+출력
+#1 0
+#2 1
+'''
+# 합해서 특정값 k가 된다고 생각해보자
+# 해당 index의 값을 사용하지 않는다(0), 사용한다(1)로 각각의 원소에 적용할 수 있음
+
+# 1) bit는 2^n-1까지의 이진수들 # 그리고 이 bit는 각각의 부분집합을 나타내는 숫자 (사용여부 0, 1로 나타내는)
+# 2) 부분집합 합이 0이 되는지 판단하기 위해 sm 초기화
+# 3) bit >> i # bit 수를 i만큼 오른쪽으로 shift하여 해당 자리 수의 비트 값만 남겨놓고 1과 & 연산
+# 3-1) 해당 자리의 비트 수가 1이면, 즉 있으면 True, 그리고 해당 값을 sm에 더해줌
+# 3-2) 해당 자리의 비트 수가 0이면, 즉 없으면 False, 그리고 해당 값을 sm에 더해주지 않음
+# List의 Index는 편의상 뒤에서부터 부여하자 (N-1, N-2, ... , 3, 2, 1, 0)
+T = int(input())
+for test_case in range(1, T+1):
+    lst = list(map(int, input().split()))
+    N = len(lst) #N bit (Lst member: N)
+    ans = 0
+    k = 0 # 찾아야 될 숫자를 k라 가정
+    '''
+    for i in range(1<<N):
+        sm = 0
+        # 내가 보려는 자리를 지칭
+        for j in range(N):
+            if i & (1<<j):
+                sm += lst[j]
+    '''
+    for bit in range(1, 2**N): # == 1 << N
+        sm = 0
+        for i in range(0, N): # every Lst index
+            if (bit>>i) & 1: # i만큼 shift하여 해당 인덱스 값만 판단
+                sm += lst[i] # 부분집합에 있으면 더해줌
+        if sm == k: # 부분집합의 합이 목표값(0)과 같다면
+            ans += 1 # 맞음을 표시하는 1 표시
+            break
+    print(f'#{test_case} {ans}')
+```
+
+---
+
+# 검색(Search)
+
+- 저장되어 있는 자료 중에서 원하는 항목을 찾는 작업
+- 목적하는 탐색 키를 가진 항목을 찾는 것
+    - 탐색 키(search key): 자료를 구별하여 인식할 수 있는 키
+- 검색의 종류
+    - 순차 검색(sequential search)
+    - 이진 검색(binary search)
+    - 해쉬(hash)
+
+## 순차 검색(Sequential Search)
+
+- 일렬로 되어있는 자료를 순서대로 검색하는 방법
+    - 가장 간단하고 직관적인 검색 방법
+    - 배열이나 연결 리스트 등 순차구조로 구현된 자료구조에서 원하는 항목을 찾을 때 유용
+    - 알고리즘이 단순하여 구현이 쉽지만
+        - 검색 대상의 수가 많은 경우 수행시간이 급격히 증가하여 비효율적
+- 2가지 경우
+    - 정렬되어 있지 않은 경우
+    - 정렬되어 있는 경우
+
+### 정렬되어 있지 않은 경우
+
+- 검색 과정
+    - 첫번째 원소부터 순서대로 검색 대상과 키 값이 같은 원소가 있는지 비교하며 찾음
+    - 키 값이 동일한 원소를 찾으면 그 원소의 인덱스를 반환
+    - 자료구조의 마지막에 이를 때까지 검색 대상을 찾지 못하면 검색 실패
+
+<img width="771" alt="a_39" src="https://user-images.githubusercontent.com/86648892/184626689-60635380-080d-4839-8d21-eae29c00050a.png">
+
+<img width="780" alt="a_40" src="https://user-images.githubusercontent.com/86648892/184626695-ba4fd636-3e5d-4606-a625-2ce1c97c46ee.png">
+
+<img width="865" alt="a_41" src="https://user-images.githubusercontent.com/86648892/184626697-3b764b8d-b447-47ab-8304-223909a61217.png">
+
+### 정렬되어 있는 경우
+
+- 검색 과정
+    - 자료가 오름차순으로 정렬된 상태에서 검색을 실시한다고 가정
+    - 자료를 순차적으로 검색하면서 키 값을 비교하여, 원소의 키 값이 검색 대상의 키 값보다 크면 찾는 원소가 없다는 것이므로 더 이상 검색하지 않고 검색을 종료
+
+<img width="820" alt="a_42" src="https://user-images.githubusercontent.com/86648892/184626700-c3304dac-424f-4752-8e4b-2eaa8d2b8e73.png">
+
+<img width="817" alt="a_43" src="https://user-images.githubusercontent.com/86648892/184626702-11621a31-b69c-4b7e-8ec9-7f6f2968e673.png">
+
+<img width="849" alt="a_44" src="https://user-images.githubusercontent.com/86648892/184626705-e2bd30a4-e671-4304-a0f4-c566dbe6e767.png">
+
+---
+
+## 이진 검색(Binary Search)
+
+- 자료의 가운데에 있는 항목의 키 값과 비교하여 다음 검색의 위치를 결정하고 검색을 계속 진행하는 방법
+    - 목적 키를 찾을 때까지 이진 검색을 순환적으로 반복 수행함으로써 검색 범위를 반으로 줄여가면서 보다 빠르게 검색을 수행함
+- 이진 검색을 하기 위해서는 자료가 정렬된 상태여야 함
+- 검색 과정
+    - 자료의 중앙에 있는 원소를 고름
+    - 중앙 원소의 값과 찾고자 하는 목표 값을 비교
+    - 목표 값이 중앙 원소의 값보다 작으면 자료의 왼쪽 반에 대해서 새로 검색을 수행
+        - 크다면 자료의 오른쪽 반에 대해서 새로 검색을 수행
+    - 찾고자 하는 값을 찾을 때까지 위의 과정을 반복
+
+<img width="805" alt="a_45" src="https://user-images.githubusercontent.com/86648892/184626706-f2fb79d5-700e-4386-ab32-749409b85007.png">
+
+<img width="839" alt="a_46" src="https://user-images.githubusercontent.com/86648892/184626708-b1c6ba28-bd0e-474a-a194-e1f722c8f4c4.png">
+
+<img width="1013" alt="a_47" src="https://user-images.githubusercontent.com/86648892/184626710-d10f6a54-7859-44c9-98f4-ec47cd98a39a.png">
+
+- 검색 범위의 시작점과 종료점을 이용하여 검색을 반복 수행함
+- **이진 검색의 경우, 자료에 삽입이나 삭제가 발생했을 때 배열의 상태를 항상 정렬 상태로 유지하는 추가 작업이 필요함**
+
+<img width="837" alt="a_48" src="https://user-images.githubusercontent.com/86648892/184626711-91a1d632-cf9f-4d22-8a0c-408a9c68a95d.png">
+
+- `start<=end` 에서 등호가 들어가야 함
+    - start와 end가 같아지는 경우, 원소가 하나 남은 경우도 작업을 수행해야 하기 때문
+
+### 재귀함수를 이용한 이진검색 구현
+
+<img width="843" alt="a_49" src="https://user-images.githubusercontent.com/86648892/184626714-9c7daf0f-c312-4091-b47f-4b151c537bdd.png">
+
+- 재귀로 이진탐색 구현이 가능하다 정도
+- 효율이 떨어지므로 기본적인 반복구조로 이진탐색을 구현하자
+
+---
+
+# 인덱스
+
+- 인덱스라는 용어는 Database에서 유래했으며, 테이블에 대한 동작 속도를 높여주는 자료구조를 일컫는다. Database 분야가 아닌 곳에서는 Look up table 등의 용어를 사용하기도 한다
+- 인덱스를 저장하는데 필요한 디스크 공간은 보통 테이블을 저장하는데 필요한 디스크 공간보다 작음
+    - 왜냐하면 보통 인덱스는 키-필드만 갖고 있고, 테이블의 다른 세부 항목들은 갖고 있지 않기 때문
+- 배열을 사용한 인덱스
+    - 대량의 데이터를 매번 정렬하면, 프로그램의 반응은 느려질 수 밖에 없음
+    - 이러한 대량 데이터의 성능 저하 문제를 해결하기 위해 배열 인덱스를 사용할 수 있음
+
+<img width="886" alt="a_50" src="https://user-images.githubusercontent.com/86648892/184628827-d69d2f75-7a08-439f-b985-2bf9e27a4b4a.png">
 
 ---
