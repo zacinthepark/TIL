@@ -1023,6 +1023,48 @@ print(type(itoa(num))) # <class 'str'>
     - 시간복잡도 `O(MN`)
 - 비교횟수를 줄이는 방법은?
 
+### Brute Force 코드 예시
+
+```python
+def matched(st, p, N, M, start):
+    for j in range(M): # j만큼 (p가 포함되어있는지 끝까지 순회하는동안)
+        if p[j] != st[start+j]: # 다른 것이 나오면 매칭이 안된 것
+            return 0
+    return 1 # p를 순회하는동안 다른 것이 안나왔으므로 매칭 # 이것을 start를 옮겨가며 반복
+
+# A가 전체 텍스트 B가 포함되어있는지 확인할 텍스트
+A, B = input().split()
+N, M = len(A), len(B)
+cnt = 0 # B가 A에 포함되어 있는 수 # pattern matching
+
+# B가 포함되어 있는 수 산출
+for start in range(N-M+1):
+    if matched(A, B, N, M, start):
+        cnt += 1
+
+print(cnt)
+
+'''
+입력
+asakusa sa
+banana bana
+saaaa aa
+aaaas aa
+aaaaa aa
+'''
+
+'''
+출력
+2
+1
+3
+3
+4
+'''
+
+# 위 접근은 해당 패턴을 중복해서 세기 때문에 중복을 허용하지 않는 경우 조건을 추가하거나 다른 접근 방법을 고려하자
+```
+
 ---
 
 ## KMP 알고리즘
