@@ -20,6 +20,11 @@
 [문자열 Pattern Matching](#pattern-matching)<br>
 [문자열 암호화](#문자열-암호화)<br>
 [문자열 압축](#문자열-압축)<br>
+[Stack](#스택)<br>
+[재귀호출](#재귀호출)<br>
+[Memoization](#memoization)<br>
+[Dynamic Programming](#dpdynamic-programming)<br>
+[DFS](#dfs깊이우선탐색)<br>
 
 ---
 
