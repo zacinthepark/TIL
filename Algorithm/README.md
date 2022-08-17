@@ -1275,7 +1275,7 @@ for test_case in range(1, T + 1):
     stk = []
     ans = 1
     for ch in st:
-        if ch == '(':       # '('인경우 스택에 push
+        if ch == '(':       # '('인 경우 스택에 push
             stk.append(ch)
         else:   # 현재는 ')'인 경우 pop
             if stk:         # pop할때는 반드시 스택 empty확인
