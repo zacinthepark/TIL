@@ -1124,3 +1124,719 @@ aaaaa aa
 <img width="1055" alt="a_94" src="https://user-images.githubusercontent.com/86648892/184694564-ece2dd13-f825-4baa-845a-06c7866077ce.png">
 
 ---
+
+# 스택
+
+- 스택
+- 재귀호출
+- Memoization
+- DP
+- DFS
+
+---
+
+## 스택(stack)의 특성
+
+- 물건을 쌓아 올리듯 자료를 쌓아 올린 형태의 자료구조
+- 스택에 저장된 자료는 선형 구조를 갖는다
+    - 선형구조: 자료 간의 관계가 1대1의 관계를 갖는다
+    - 비선형구조: 자료 간의 관계가 1대N의 관계를 갖는다
+        - ex) 트리
+- 스택에 자료를 삽입하거나 스택에서 자료를 꺼낼 수 있음
+- LIFO(Last-In-First-Out)
+    - 후입선출
+    - 마지막에 삽입한 자료를 가장 먼저 꺼낸다
+
+## 스택의 구현
+
+### 자료구조
+
+- 자료를 선형으로 저장할 저장소
+- 배열을 사용할 수 있음
+- 저장소 자체를 스택이라 부르기도 한다
+    - 우리가 구현한 것 외에 컴퓨터 메모리 중 스택으로 동작하는 것이 있음
+- 스택에서 마지막 삽입된 원소의 위치를 top이라 부름
+    - stack pointer
+
+### 연산
+
+- 삽입
+    - push
+    - 저장소에 자료를 저장
+- 삭제
+    - pop
+    - 저장소에서 자료를 꺼냄
+    - 꺼낸 자료는 삽입한 자료의 역순으로 꺼냄
+- isEmpty
+    - 스택이 공백인지 아닌지를 확인하는 연산
+    - 스택이 비어있는데 pop하면 안되므로 그 때 사용
+- peek
+    - 스택의 top에 있는 item(원소)을 반환하는 연산
+
+### 스택의 삽입 / 삭제 과정
+
+<img width="882" alt="a_95" src="https://user-images.githubusercontent.com/86648892/185070245-74c63a50-6a17-44bb-8851-c5e753d3604e.png">
+
+- push는 2개의 동작
+    - top을 증가시키고
+    - 해당 데이터를 넣음
+- pop도 2개의 동작
+    - top을 감소시키고
+    - 해당 데이터를 뺌
+
+### 스택의 push 알고리즘
+
+<img width="885" alt="a_96" src="https://user-images.githubusercontent.com/86648892/185070269-673195e7-60ed-4e4f-ad19-b53868318dae.png">
+
+<img width="868" alt="a_97" src="https://user-images.githubusercontent.com/86648892/185070270-d7ab906e-ca85-419e-adc5-3c6f881a59f9.png">
+
+- 스택의 size와 stack pointer를 지정하자
+    - 보통 size를 우선 지정하고 초기화
+    - top 역시 지하를 가리키도록 -1로 초기화
+- `if top==size` 를 통해 오버플로우를 방지
+    - 일종의 디버깅용
+- 아이템 삽입
+    - `push(10, size)` 과 같이 호출을 통해 삽입
+    - `top += 1` 과 `stack[top] = 20` 2줄로 삽입 구현 가능
+
+### 스택의 pop 알고리즘
+
+<img width="903" alt="a_98" src="https://user-images.githubusercontent.com/86648892/185070275-4a8f348b-27d5-4e9b-a0ec-c13dacf64db0.png">
+
+<img width="891" alt="a_99" src="https://user-images.githubusercontent.com/86648892/185070277-c00cfc77-7eee-4415-8155-3e929ca28a2c.png">
+
+- LIFO이므로 `s.pop(-1)`
+- `top -= 1` 과 `stack[top+1]` 로도 구현 가능
+    - top이 지정하는 위치를 하나 줄여주고
+    - 그 전에 지정하던(1칸 위) 아이템을 반환
+- 마지막 줄 `stack[top]` 은 `stack[top+1]` 로 수정
+
+```python
+stackSize = 10
+stack = [0] * stackSize
+top = -1
+
+# push(1)
+top += 1
+stack[top] = 1
+
+# push(2)
+top += 1
+stack[top] = 2
+
+# push(3)
+top += 1
+stack[top] = 3
+
+# pop(3)
+top -= 1
+temp = stack[top+1]
+print(temp) # 3
+
+# pop(2)
+top -= 1
+temp = stack[top+1]
+print(temp) # 2
+
+#pop(1)
+top -= 1
+temp = stack[top+1]
+print(temp) # 1
+```
+
+## 스택 구현 고려 사항
+
+<img width="904" alt="a_100" src="https://user-images.githubusercontent.com/86648892/185070281-85490fe9-5e4a-4647-8271-867d8a989480.png">
+
+- 알고리즘 문제풀이에서는 1차원 배열을 사용하고 스택의 크기를 예측해서 지정하면 된다
+    - 오류가 난다면
+        - 크기 예측이 실패했거나
+        - 코드상 로직에 오류가 있을 것
+
+## 스택의 응용1: 괄호검사
+
+<img width="903" alt="a_101" src="https://user-images.githubusercontent.com/86648892/185070288-8abae206-4f1a-4e17-b1a8-024937aa2ea2.png">
+
+<img width="885" alt="a_102" src="https://user-images.githubusercontent.com/86648892/185070290-fee7ef62-cf18-4654-9313-67b41b232766.png">
+
+- 문자열에 있는 괄호를 차례대로 조사하면서 왼쪽 괄호를 만나면 스택에 삽입, 오른쪽 괄호를 만나면 스택에서 top 괄호를 삭제한 후 오른쪽 괄호와 짝이 맞는지를 검사
+- 이 때, 스택이 비어 있으면 조건 1 또는 조건 2에 위배되고 괄호의 짝이 맞지 않으면 조건 3에 위배
+- 마지막 괄호까지를 조사한 후에도 스택에 괄호가 남아있으면 조건 1에 위배
+
+```python
+T = int(input())
+for test_case in range(1, T + 1):
+    st = input()
+    stk = []
+    ans = 1
+    for ch in st:
+        if ch == '(':       # '('인경우 스택에 push
+            stk.append(ch)
+        else:   # 현재는 ')'인 경우 pop
+            if stk:         # pop할때는 반드시 스택 empty확인
+                stk.pop()
+            else:
+                ans = 0 # 수식오류 [1] : '(' 짝이 없는데 ')'이 닫힌 경우
+                break
+    if stk:
+        ans = 0 # 수식오류 [2] : 모든 기호 처리 종료후 스택에 push한 데이터가 남은 경우
+
+    print(f'#{test_case} {ans}')
+```
+
+## 스택의 응용2: Function Call
+
+- 프로그램에서의 함수 호출과 복귀에 따른 수행 순서를 관리
+    - 가장 마지막에 호출된 함수가 가장 먼저 실행을 완료하고 복귀하는 LIFO 구조이므로, ***후입선출 구조의 스택을 이용하여 수행순서 관리***
+        - 함수를 호출한다는 것은 사실 만들어놓은 함수에 찾아간다는 것
+    - ***함수 호출이 발생***하면 호출한 함수 수행에 필요한 ***지역변수, 매개변수 및 수행 후 복귀할 주소 등의 정보를 스택 프레임(stack frame)에 저장***하여 ***시스템 스택에 삽입***
+    - ***함수의 실행이 끝나면*** 시스템 스택의 ***top 원소(스택 프레임)를 삭제(pop)***하면서 프레임에 저장되어 있던 ***복귀주소를 확인하고 복귀***
+    - 함수 호출과 복귀에 따라 이 과정을 반복하여 ***전체 프로그램 수행이 종료***되면 시스템 스택은 ***공백 스택***이 된다
+
+<img width="948" alt="a_103" src="https://user-images.githubusercontent.com/86648892/185070291-20c5c1bb-55be-4eb5-8f0d-26643d809096.png">
+
+---
+
+## 재귀호출
+
+<img width="946" alt="a_104" src="https://user-images.githubusercontent.com/86648892/185070294-6cf0a664-a5ea-4a0e-aa38-0dc5ae0b9c63.png">
+
+- 동일한 동작, 서로 다른 메모리 영역
+- 끝에서부터 반환되서 나온다!
+- 매번 똑같은 동작을 하는 함수를 호출하다보니 이를 하나의 함수로 정의하고
+- 불러올 때마다(엄밀히 따지면 이동) 서로 다른 메모리 영역을 사용할 뿐
+    - 영역이 몇 개가 생기고(호출된 수만큼) 각각에 변수에 어떤 값이 저장되는지 고려
+- 루프처럼 생각하지 말자
+
+### 팩토리얼
+
+<img width="921" alt="a_105" src="https://user-images.githubusercontent.com/86648892/185070296-1a2c4c09-4cce-4ea4-99bb-7b894389a4f5.png">
+
+<img width="708" alt="a_106" src="https://user-images.githubusercontent.com/86648892/185070300-89108e1c-06ee-4618-a946-5b34571ac37f.png">
+
+```python
+def f(n):           # 팩토리얼 n!
+    if n == 1:      # 1! = 1
+        return 1
+    else:
+        return n * f(n-1)
+
+for i in range(1, 21):  # 0!을 포함하지 않도록 주의
+    print(i, f(i))
+
+'''
+1 1
+2 2
+3 6
+4 24
+5 120
+6 720
+7 5040
+8 40320
+9 362880
+10 3628800
+11 39916800
+12 479001600
+13 6227020800
+14 87178291200
+15 1307674368000
+16 20922789888000
+17 355687428096000
+18 6402373705728000
+19 121645100408832000
+20 2432902008176640000
+'''
+```
+
+### 피보나치
+
+<img width="939" alt="a_107" src="https://user-images.githubusercontent.com/86648892/185070303-5cf8475d-68f4-4953-9eba-36b07aafdf37.png">
+
+```python
+def fibo(n):
+    if n < 2:
+        return n
+    else:
+        return fibo(n-1) + fibo(n-2)
+
+for i in range(21):
+    print(i, fibo(i))
+
+'''
+0 0
+1 1
+2 1
+3 2
+4 3
+5 5
+6 8
+7 13
+8 21
+9 34
+10 55
+11 89
+12 144
+13 233
+14 377
+15 610
+16 987
+17 1597
+18 2584
+19 4181
+20 6765
+'''
+```
+
+### 스택과 재귀
+
+- `f(i, N)`
+    - i는 현재 단계
+    - N은 목표치
+
+<img width="655" alt="a_108" src="https://user-images.githubusercontent.com/86648892/185070306-8c804eaa-e617-4225-8e99-47d7e7a3eca2.png">
+
+<img width="378" alt="a_109" src="https://user-images.githubusercontent.com/86648892/185070308-e4b97475-9f62-4ea6-bb4a-f6cf4ffa4a4c.png">
+
+```python
+def f(i, N):    # i 현재 단계, N 목표 단계
+    if i == N:
+        print(i)
+        return
+    else:
+        print(i)
+        f(i+1, N)
+
+f(0, 3)
+
+'''
+0
+1
+2
+3
+'''
+```
+
+```python
+# 1
+# 크기가 N인 배열의 모든 원소에 접근하는 재귀함수
+def f(i, N):
+    if i == N:          # 배열을 벗어남
+        return
+
+    else:               # 남은 원소가 있는 경우
+        print(A[i])
+        f(i+1, N)       # 다음 원소로 이동
+
+N = 3
+A = [1, 2, 3]
+f(0, N)                 # 0번 원소부터 N개의 원소에 접근
+
+'''
+1
+2
+3
+'''
+
+# 2
+# 크기가 N인 배열의 모든 원소에 접근하는 재귀함수
+def f(i, N):
+    if i == N:          # 배열을 벗어남
+        return
+
+    else:               # 남은 원소가 있는 경우
+        B[i] = A[i]
+        f(i+1, N)       # 다음 원소로 이동
+
+N = 3
+A = [1, 2, 3]
+B = [0] * N
+f(0, N)                 # 0번 원소부터 N개의 원소에 접근
+print(B)
+
+'''
+[1, 2, 3]
+'''
+```
+
+---
+
+## Memoization
+
+<img width="929" alt="a_110" src="https://user-images.githubusercontent.com/86648892/185070310-c50ddc16-5d59-49bc-8364-56c27ffca068.png">
+
+- 이러한 재귀호출은 엄청난 중복 호출이 존재한다는 문제가 있음
+- Memoization으로 해결해보자
+
+### Memoization
+
+- 메모이제이션(memoization)은 컴퓨터 프로그램을 실행할 때 ***이전에 계산한 값을 메모리에 저장***해서 ***매번 다시 계산하지 않도록*** 하여 전체적인 실행속도를 빠르게 하는 기술
+- ***동적 계획법의 핵심***이 되는 기술
+- ‘memoization’은 글자 그대로 해석하면 ‘메모리에 넣기(to put in memory)’라는 의미이며 ‘기억되어야 할 것'이라는 뜻의 라틴어 memorandum에서 파생되었음
+    - memorization과 흔히 혼동하는데 memoize를 동사형으로 갖는 memoization이다
+
+<img width="933" alt="a_111" src="https://user-images.githubusercontent.com/86648892/185070313-f193504a-3548-43ca-bb24-cd76cf7288cc.png">
+
+- `global memo` 는 없어도 됨
+- `if n >= 2 and len(memo) <= n:` 은 아직 안 만들어진 경우
+- `return memo[n]`
+    - 이미 저장되어 있는 값이면 바로 해당 인덱스의 값을 리턴
+
+```python
+def fibo(n):
+    if memo[n] == -1:   # 계산된 적이 없으면
+        memo[n] = fibo(n-1) + fibo(n-2)    # 계산
+    return memo[n]
+
+memo = [-1]*101         # -1은 계산된 적이 없음을 나타내는 임의의 숫자
+memo[0] = 0
+memo[1] = 1
+
+for i in range(21):
+    print(i, fibo(i))
+
+'''
+0 0
+1 1
+2 1
+3 2
+4 3
+5 5
+6 8
+7 13
+8 21
+9 34
+10 55
+11 89
+12 144
+13 233
+14 377
+15 610
+16 987
+17 1597
+18 2584
+19 4181
+20 6765
+'''
+
+# 중복호출이 없어서 훨씬 빠르다!
+```
+
+---
+
+## DP(Dynamic Programming)
+
+- 동적 계획(Dynamic Programming) 알고리즘은 그리디 알고리즘과 같이 ***최적화 문제***를 해결하는 알고리즘
+- 동적 계획 알고리즘은 먼저 ***입력 크기가 작은 부분 문제들***을 모두 해결한 후에
+    - 그 해들을 이용하여 ***보다 큰 크기의 부분 문제들***을 해결하여
+        - 최종적으로 원래 ***주어진 입력의 문제를 해결***하는 알고리즘이다
+
+<img width="957" alt="a_112" src="https://user-images.githubusercontent.com/86648892/185070316-03d0f32b-3b59-458d-be00-4cf2678646a0.png">
+
+<img width="945" alt="a_113" src="https://user-images.githubusercontent.com/86648892/185070319-d9e9e89a-bd84-4532-9081-4a37bbe7c6e6.png">
+
+<img width="927" alt="a_114" src="https://user-images.githubusercontent.com/86648892/185070320-9ef53d64-8c7a-47fb-9c2c-4575602d905e.png">
+
+```python
+# N이 주어지고, 피보니치(N)을 구하시오라는 문제라면?
+
+def fibo_dp(n):
+    table[0] = 0
+    table[1] = 1
+    for i in range(2, n+1):
+        table[i] = table[i-1] + table[i-2]
+    return
+
+# 미리 fibo_dp()를 통해 피보나치 수들을 채워넣음
+table = [0]*101
+fibo_dp(100)
+print(table[20])    # 6765
+
+# table에서 가져와서 출력
+T = int(input())
+for test_case in range(1, T+1):
+    N = int(input())
+    print(f'#{test_case} {table[N]}')
+
+# 위 fibo_dp()는 다음과 같은 형식으로도 구현이 가능하다
+
+a = 0
+b = 1
+n = 20
+for _ in range(n-1):
+    a, b = b, a+b
+print(b)            # 6765
+```
+
+<img width="951" alt="a_115" src="https://user-images.githubusercontent.com/86648892/185070323-d7ee24b2-c8ff-4fff-8c22-10adb68fd2fe.png">
+
+- 함수 자체가 긴 것은 어차피 함수로 추상화하는 것이기에 괜찮다
+- 함수 호출이 많아져 함수 호출이 깊어지는 것이 비효율적이다
+
+---
+
+# DFS(깊이우선탐색)
+
+<img width="934" alt="a_116" src="https://user-images.githubusercontent.com/86648892/185070324-99586642-82c7-465c-9f05-b6f204a75ffb.png">
+
+- 1:1 구조
+    - 선형구조
+- 1:n 구조
+    - 트리
+- n:n 구조
+    - 그래프
+    - 현실세계에 근접한 구조
+
+## DFS란
+
+- 시작 정점(탐색할 목적지)의 한 방향으로 갈 수 있는 경로가 있는 곳까지 깊이 탐색해 가다가 더 이상 갈 곳이 없게 되면, 가장 마지막에 만났던 갈림길 간선이 있는 정점으로 되돌아와서 다른 방향의 정점으로 탐색을 계속 반복하여 결국 모든 정점을 방문하는 순회방법
+- 가장 마지막에 만났던 갈림길의 정점으로 되돌아가서 다시 깊이 우선 탐색을 반복해야 하므로 LIFO 구조의 스택을 사용
+    - 스택으로 지나온 경로를 저장
+    - 스택 외에 재귀호출로도 저장 가능
+
+## DFS 알고리즘
+
+<img width="963" alt="a_117" src="https://user-images.githubusercontent.com/86648892/185070325-badfeb5b-03a2-4307-9244-d5b01ea82e91.png">
+
+- 인접한 정점은 갈 수 있는 정점을 의미
+
+<img width="954" alt="a_118" src="https://user-images.githubusercontent.com/86648892/185070327-e6b964f1-62a4-4717-9be5-4b33d801c06c.png">
+
+## DFS 예시
+
+<img width="940" alt="a_119" src="https://user-images.githubusercontent.com/86648892/185070331-bfa8d3f1-9c73-4029-a2bb-1b84ca392abf.png">
+
+### Code
+
+- 기본
+
+```python
+# 기본적인 DFS를 통한 전체 탐색 구현
+
+# A~G -> 0~6
+
+adjList = [[1, 2],      # 0
+            [0, 3, 4],  # 1
+            [0, 4],     # 2
+            [1, 5],     # 3
+            [1, 2, 5],  # 4
+            [3, 4, 6],  # 5
+            [5]]        # 6
+
+N = 7
+visited = [0]*N     # visited 생성
+stack = [0]*N       # stack 생성 (이전 탐색 지점)
+
+# v는 시작지점 N은 정점개수
+def dfs(v, N):
+    top = -1            # stack top 초기화
+    print(v)            # 방문해서 할 일
+    visited[v] = 1      # A~G 중 시작점 방문 표시
+    while True:
+        for w in adjList[v]:        # 시작점의 인접 정점 검사
+            if visited[w] == 0:     # 아직 탐색하지 않은 곳이라면 탐색
+                top += 1            # top 인덱스 추가
+                stack[top] = v      # 이전 지점인 v를 스택에 모아놓음
+                v = w               # 현재 위치를 w로 변경
+                print(v)            # 방문해서 할 일
+                visited[w] = 1      # 탐색했으므로 1로 변경
+                break
+        else:
+            if top != -1:           # 스택이 비어있지 않은 경우
+                v = stack[top]      # pop
+                top -= 1
+            else:                   # 스택이 비어있으면
+                break               # while 종료
+
+dfs(1, N)
+
+'''
+1
+0
+2
+4
+5
+3
+6
+'''
+```
+
+- 인접원소 리스트 input으로 받기
+
+```python
+# 인접원소 리스트를 input으로 받아 DFS를 통한 전체 탐색
+
+'''
+0번부터 N번까지, E개의 간선
+6 8
+0 1
+0 2
+1 3
+1 4
+2 4
+3 5
+4 5
+5 6
+'''
+
+# input 받기
+V, E = map(int, input().split())
+N = V+1
+
+# 인접원소 리스트 생성
+adjList = [[] for _ in range(N)]
+for _ in range(E):
+    a, b = map(int, input().split())
+    adjList[a].append(b)
+    adjList[b].append(a)
+
+visited = [0]*N     # visited 생성
+stack = [0]*N       # stack 생성 (이전 탐색 지점)
+
+# v는 시작지점 N은 정점개수
+def dfs(v, N):
+    top = -1            # stack top 초기화
+    print(v)            # 방문해서 할 일
+    visited[v] = 1      # A~G 중 시작점 방문 표시
+    while True:
+        for w in adjList[v]:        # 시작점의 인접 정점 검사
+            if visited[w] == 0:     # 아직 탐색하지 않은 곳이라면 탐색
+                top += 1            # top 인덱스 추가
+                stack[top] = v      # 이전 지점인 v를 스택에 모아놓음
+                v = w               # 현재 위치를 w로 변경
+                print(v)            # 방문해서 할 일
+                visited[w] = 1      # 탐색했으므로 1로 변경
+                break
+        else:
+            if top != -1:           # 스택이 비어있지 않은 경우
+                v = stack[top]      # pop
+                top -= 1
+            else:                   # 스택이 비어있으면
+                break               # while 종료
+
+dfs(1, N)
+
+'''
+입력
+
+6 8
+0 1
+0 2
+1 3
+1 4
+2 4
+3 5
+4 5
+5 6
+
+출력
+
+1
+0
+2
+4
+5
+3
+6
+'''
+```
+
+- 재귀함수를 통한 DFS 구현
+
+<img width="438" alt="a_120" src="https://user-images.githubusercontent.com/86648892/185070332-9d712fae-875a-49c1-ae19-eace856d3597.png">
+
+```python
+# 재귀함수를 통한 DFS 구현
+
+'''
+0번부터 N번까지, E개의 간선
+6 8
+0 1
+0 2
+1 3
+1 4
+2 4
+3 5
+4 5
+5 6
+'''
+
+# input 받기
+V, E = map(int, input().split())
+N = V+1
+
+# 인접원소 리스트 생성
+adjList = [[] for _ in range(N)]
+for _ in range(E):
+    a, b = map(int, input().split())
+    adjList[a].append(b)
+    adjList[b].append(a)
+
+visited = [0]*N     # visited 생성
+stack = [0]*N       # stack 생성 (이전 탐색 지점)
+
+# v는 시작지점 N은 정점개수
+def dfs(v):
+    print(v)                    # 방문해서 할 일
+    visited[v] = 1
+    for w in adjList[v]:
+        if visited[w] == 0:     # 방문하지 않은 곳이라면 이동
+            dfs(w)
+
+dfs(1)
+
+'''
+입력
+
+6 8
+0 1
+0 2
+1 3
+1 4
+2 4
+3 5
+4 5
+5 6
+
+출력
+
+1
+0
+2
+4
+5
+3
+6
+'''
+```
+
+### Logic
+
+<img width="957" alt="a_121" src="https://user-images.githubusercontent.com/86648892/185070335-6cee6b0e-a0fb-4b1a-9f10-f717c6e43bf0.png">
+
+<img width="910" alt="a_122" src="https://user-images.githubusercontent.com/86648892/185070338-9565025a-0425-409e-957d-4ca62b3cf824.png">
+
+<img width="927" alt="a_123" src="https://user-images.githubusercontent.com/86648892/185070341-7256a619-5cf4-4369-b142-0206e7f00a32.png">
+
+<img width="919" alt="a_124" src="https://user-images.githubusercontent.com/86648892/185070344-b8e687f4-3e49-469e-a366-08fb9ea76691.png">
+
+<img width="945" alt="a_125" src="https://user-images.githubusercontent.com/86648892/185070345-f037872b-ead6-4d96-9f12-bc3f08e4d9b2.png">
+
+<img width="958" alt="a_126" src="https://user-images.githubusercontent.com/86648892/185070346-ccfe213a-2964-4bd7-838d-1bef96456ea3.png">
+
+<img width="940" alt="a_127" src="https://user-images.githubusercontent.com/86648892/185070348-93f0f9b8-95ee-4d02-b3aa-3a598acf80b8.png">
+
+<img width="951" alt="a_128" src="https://user-images.githubusercontent.com/86648892/185070352-2605189c-5e7f-459b-831f-0a0f896d3411.png">
+
+<img width="935" alt="a_129" src="https://user-images.githubusercontent.com/86648892/185070356-56a4f775-83d6-4f26-b380-338a37e8ce3d.png">
+
+<img width="937" alt="a_130" src="https://user-images.githubusercontent.com/86648892/185070359-157fd20a-327c-4093-836a-fecc5cd44914.png">
+
+<img width="926" alt="a_131" src="https://user-images.githubusercontent.com/86648892/185070362-c581e0ef-d35b-422d-99f6-b5c4f677f981.png">
+
+<img width="938" alt="a_132" src="https://user-images.githubusercontent.com/86648892/185070368-6801fd67-c5d9-4cee-84fb-b3cca98b8fc5.png">
+
+<img width="943" alt="a_133" src="https://user-images.githubusercontent.com/86648892/185070372-408b1b2f-10e8-4bef-9999-8d6a6376dbb5.png">
+
+<img width="928" alt="a_134" src="https://user-images.githubusercontent.com/86648892/185070374-5a66acf0-4f7d-4f10-bcfc-ba1a0f7dd4c1.png">
+
+---
