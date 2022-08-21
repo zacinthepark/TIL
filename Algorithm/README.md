@@ -13,7 +13,7 @@
 [비트 연산자](#비트-연산자)<br>
 [검색(Search)](#검색-search)<br>
 [순차 검색(Sequential Search)](#순차-검색-sequential-search)<br>
-[이진 검색(Binary Search)](#이진-검색-binary-search)<br>
+[이진 검색(Binary Search)](#이진-검색binary-search)<br>
 [인덱스](#인덱스)<br>
 [문자열(String)](#문자열string)<br>
 [문자열의 분류 및 처리](#문자열의-분류-및-처리)<br>
