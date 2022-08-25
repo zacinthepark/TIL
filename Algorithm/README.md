@@ -35,7 +35,7 @@
 [원형 큐](#원형-큐)<br>
 [우선순위 큐](#우선순위-큐priority-queue)<br>
 [큐의 활용: 버퍼](#큐의-활용-버퍼buffer)<br>
-[큐의 활용: 마이쮸](#마이쮸-시뮬레이션)<br>
+[큐의 활용: 마이쮸 시뮬레이션](#마이쮸-시뮬레이션)<br>
 [BFS(Breadth-First Search)](#bfsbreadth-first-search)<br>
 [BFS 연습문제](#bfs-연습문제)<br>
 [DFS-BFS](#dfs--bfs-정리)<br>
