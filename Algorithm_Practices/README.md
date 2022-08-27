@@ -2,6 +2,65 @@
 
 [APS 환경설정 (Pycharm)](#aps-환경설정-pycharm)<br>
 [APS 문제풀이 Guidelines](#aps-문제풀이-guidelines)<br>
+[APS 유형 Reminder](#aps-유형-reminder)<br>
+[View (List 1)](#view-list1)<br>
+[Gravity (List 1)](#gravity-list-1)<br>
+[Baby-Gin Game (List 1)](#baby-gin-game-list-1)<br>
+[min max (List 1)](#min-max-list-1)<br>
+[구간합 (List 1)](#구간합-list-1)<br>
+[숫자카드 (List 1)](#숫자-카드-list-1)<br>
+[전기버스 (List 1)](#전기버스-list-1)<br>
+[Flatten (List 1)](#flatten-list-1)<br>
+[정렬연습 (List 1)](#정렬-연습-list-1)<br>
+[델타검색 (List 2)](#델타검색-list-2)<br>
+[부분집합 합 (비트연산) (List 2)](#부분집합-합-비트연산-list-2)<br>
+[달팽이 숫자 (List 2)](#달팽이-숫자-list-2)<br>
+[Sum 행열대각선합 (List 2)](#sum-행열대각선합-list-2)<br>
+[색칠하기 (List 2)](#색칠하기-list-2)<br>
+[원소의 합이 K인 부분집합 개수 (비트연산) (List 2)](#원소의-합이-k인-부분집합-개수-비트연산-list-2)<br>
+[코딩반 이진탐색 (List 2)](#코딩반-이진탐색-list-2)<br>
+[특별한 정렬 (List 2)](#특별한-정렬-list-2)<br>
+[Ladder 1 (List 2)](#ladder-1-list-2)<br>
+[이진탐색 연습 (List 2)](#이진탐색-연습-list-2)<br>
+[문자열 검색 (String)](#문자열-검색-string)<br>
+[GNS (String)](#gns-string)<br>
+[간단한 소인수분해 (IM)](#간단한-소인수분해-im)<br>
+[현주의 상자 바꾸기 (IM)](#현주의-상자-바꾸기-im)<br>
+[삼성시의 버스 노선 (IM)](#삼성시의-버스-노선-im)<br>
+[파리 퇴치 (IM)](#파리-퇴치-im)<br>
+[어디에 단어가 들어갈 수 있을까 (IM)](#어디에-단어가-들어갈-수-있을까-im)<br>
+[스도쿠 검증 (IM)](#스도쿠-검증-im)<br>
+[자기 방으로 돌아가기 (IM)](#자기-방으로-돌아가기-im)<br>
+[파리 퇴치 3 (IM)](#파리-퇴치-3-im)<br>
+[회문 2 (String)](#회문-2-string)<br>
+[문자열 비교 (String)](#문자열-비교-string)<br>
+[회문 (String)](#회문-string)<br>
+[글자수 (String)](#글자수-string)<br>
+[가장 빠른 문자열 타이핑 (String)](#가장-빠른-문자열-타이핑-string)<br>
+[괄호검사 (Stack 1)](#괄호검사-stack-1)<br>
+[깊이우선탐색 (Stack 1)](#깊이우선탐색-stack-1)<br>
+[파스칼의 삼각형 (Stack 1)](#파스칼의-삼각형-stack-1)<br>
+[종이붙이기 (Stack 1)](#종이붙이기-stack-1)<br>
+[괄호검사 2 (Stack 1)](#괄호검사-2-stack-1)<br>
+[그래프 경로 (Stack 1)](#그래프-경로-stack-1)<br>
+[반복문자 지우기 (Stack 1)](#반복문자-지우기-stack-1)<br>
+[길찾기 (DFS and BFS)](#길찾기-dfs-and-bfs)<br>
+[의석이의 세로로 말해요 (IM)](#의석이의-세로로-말해요-im)<br>
+[쇠막대기 자르기 (IM)](#쇠막대기-자르기-im)<br>
+[백만장자 프로젝트 (IM)](#백만장자-프로젝트-im)<br>
+[비밀번호 (IM)](#비밀번호-im)<br>
+[농작물 수확하기 (IM)](#농작물-수확하기-im)<br>
+[Ladder 2 (IM)](#ladder-2-im)<br>
+[후위표기법 변환 (Stack 2)](#후위표기법-변환-stack-2)<br>
+[원소의 합이 K인 부분집합 개수 (Stack 2)](#원소의-합이-k인-부분집합-개수-stack-2)<br>
+[계산기2 (후위표기식 변환 및 계산) (Stack 2)](#계산기2-후위표기식-변환-및-계산-stack-2)<br>
+[Forth (Stack 2)](#forth-stack-2)<br>
+[미로 (DFS and BFS)](#미로-dfs-and-bfs)<br>
+[토너먼트 카드게임 (재귀, lookup table)](#토너먼트-카드게임-재귀-lookup-table)<br>
+[배열 최소 합 (DFS)](#배열-최소-합-dfs)<br>
+[계산기 3 (후위표기식 변환 및 계산) (icp, isp) (Stack 2)](#계산기-3-후위표기식-변환-및-계산-icp-isp-stack-2)<br>
+[너비우선탐색 (Queue)](#너비우선탐색-queue)<br>
+[암호생성기 (Queue)](#암호생성기-queue)<br>
 
 ---
 
@@ -532,3 +591,3530 @@ Step out을 통해 함수 바깥으로 빠져나온 모습
 - **DFS**와 **BFS**
 
 ---
+
+## View (List 1)
+
+<img width="934" alt="aps_51" src="https://user-images.githubusercontent.com/86648892/187015959-412ee432-8878-4f18-a83a-18dc6555e97b.png">
+
+<img width="926" alt="aps_52" src="https://user-images.githubusercontent.com/86648892/187015968-2098c172-7630-4220-9562-c1f25435366c.png">
+
+```python
+for test_case in range(1, 11):
+    N = int(input())
+    buildings = list(map(int, input().split()))
+    ans = 0
+    # 양쪽 2씩 건물이 없으므로 인덱스 범위는 2에서 N-3
+    for i in range(2, N - 2):
+        # 가운데 빌딩이 가장 큰 경우에만 조망권 세대 존재
+        if buildings[i] > buildings[i - 1] and buildings[i] > buildings[i - 2] and buildings[i] > buildings[i + 1] and buildings[i] > buildings[i + 2]:
+            # 양옆 건물들 중 가장 높은 건물과의 차이가 조망권 세대 수
+            d1 = buildings[i] - buildings[i - 1]
+            d2 = buildings[i] - buildings[i - 2]
+            d3 = buildings[i] - buildings[i + 1]
+            d4 = buildings[i] - buildings[i + 2]
+            min_d = d1
+            for j in [d1, d2, d3, d4]:
+                if j < min_d:
+                    min_d = j
+            ans += min_d
+    print(f'#{test_case} {ans}')
+```
+
+---
+## Gravity (List 1)
+
+<img width="903" alt="aps_53" src="https://user-images.githubusercontent.com/86648892/187016073-c3f08130-e40f-45c0-bef0-b785fc4d65c2.png">
+
+<img width="915" alt="aps_54" src="https://user-images.githubusercontent.com/86648892/187016076-b8416751-c948-4c24-bfce-1094c3455ad7.png">
+
+```python
+# 더 작은 애가 있는만큼 떨어질 것이니 우측에 더 작은 애가 있는만큼 cnt를 올려주면 됨
+
+T = int(input())
+for test_case in range(1, T + 1):
+    N = int(input())
+    lst = list(map(int, input().split()))
+    ans = 0
+    for i in range(N):
+        cnt = 0
+        for j in range(i+1, N):
+            if lst[i] > lst[j]:
+                cnt += 1
+        if ans < cnt:
+                ans = cnt
+    print(f'#{test_case} {ans}')
+```
+
+---
+
+## Baby-Gin Game (List 1)
+
+<img width="900" alt="aps_55" src="https://user-images.githubusercontent.com/86648892/187016138-84a403eb-f2d0-4fb2-85cb-60d544598fdd.png">
+
+```python
+T = int(input())
+for testcase in range(1, T+1):
+    lst = list(map(int, input()))
+    cnts = [0]*12
+
+    ans = 0
+    # cnts 배열에 빈도수 표기
+    for n in lst:
+        cnts[n] += 1
+
+    # tri, run 찾기
+    i = 0
+    while i < 10:
+        if cnts[i] >= 3:
+            ans += 1
+            cnts[i] -= 3
+        elif cnts[i]>=1 and cnts[i+1]>=1 and cnts[i+2]>=1:
+            ans += 1
+            cnts[i] -= 1
+            cnts[i + 1] -= 1
+            cnts[i + 2] -= 1
+        else:
+            i += 1
+    print(f'#{testcase} {ans//2}')
+```
+
+---
+
+## min max (List 1)
+
+<img width="903" alt="aps_56" src="https://user-images.githubusercontent.com/86648892/187016319-a2a2fdc9-646e-4323-9074-adf7a4ce6e2d.png">
+
+```python
+T = int(input())
+for test_case in range(1, T + 1):
+    N = int(input())
+    lst = list(map(int, input().split()))
+
+    # 초기값 설정: 주어진 조건 확인
+    # 주어지는 수의 범위가 1이상 1000000이하
+    # mx에 0을 주고 mn이 1000000을 주면 갱신될 수 밖에 없음
+    mx = 0
+    mn = 1000000
+    for n in lst:
+        if mx < n:
+            mx = n
+        if mn > n:
+            mn = n
+    print(f'#{test_case} {mx - mn}')
+```
+
+---
+
+## 구간합 (List 1)
+
+<img width="907" alt="aps_57" src="https://user-images.githubusercontent.com/86648892/187016392-d388d951-9aa2-4646-87d2-c5e0bdcd80cd.png">
+
+<img width="921" alt="aps_58" src="https://user-images.githubusercontent.com/86648892/187016396-1d880ee4-58df-4c47-acea-1ec670b452aa.png">
+
+```python
+T = int(input())
+for test_case in range(1, T+1):
+    N, M = map(int, input().split())
+    lst = list(map(int, input().split()))
+    
+    # (2) 추가 / 제거되는 연산만 수행
+    sm = 0
+    for i in range(M):
+        sm += lst[i]
+    mn = mx = sm
+
+    for i in range(M, N):
+        sm = sm + lst[i] - lst[i-M]
+        if mx < sm:
+            mx = sm
+        if mn > sm:
+            mn = sm
+
+    # (1) 모든 합을 구하는 방법
+    '''
+    mx = 0
+    mn = 10000*M
+    for i in range(N-M+1):
+        sm = 0
+        for j in range(i, i+M):
+            sm += lst[j]
+        if mx < sm:
+            mx = sm
+        if mn > sm:
+            mn = sm
+    '''
+    print(f'#{test_case} {mx-mn}')
+
+'''
+T = int(input())
+for test_case in range(1, T+1):
+    N, M = map(int, input().split())
+    lst = list(map(int, input().split()))
+
+    mx = 0
+    mn = 10000*M
+    for i in range(N-M+1):
+        sm = 0
+        for j in range(i, i+M):
+            sm += lst[j]
+        if mx < sm:
+            mx = sm
+        if mn > sm:
+            mn = sm
+    print(f'{test_case} {mx-mn}')
+'''
+```
+
+---
+
+## 숫자 카드 (List 1)
+
+<img width="895" alt="aps_59" src="https://user-images.githubusercontent.com/86648892/187016482-3aa13418-3336-4dc1-a609-0d795c09d5ec.png">
+
+```python
+T = int(input())
+for test_case in range(1, T+1):
+    N = int(input())
+    lst = list(map(int, input()))
+
+    # 0부터 9까지의 카운트 배열 생성
+    cnts = [0] * 10
+    # lst의 값을 꺼내서 cnts 값을 1씩 추가
+    for i in lst:
+        cnts[i] += 1
+    # 0부터 9중의 가장 높은 숫자의 인덱스를 찾아야함
+    # 초기값 0으로 설정
+    idx = 0
+    for i in range(1, 10):
+        # 현재의 최대값보다 더 큰 값이 나온다면 (같은 값일 경우 더 큰 값을 기준으로 하라고 했으니 = 추가)
+        if cnts[idx] <= cnts[i]:
+            idx = i
+    # count의 인덱스: 해당 숫자, count의 인덱스 값: 장 수
+    print(f'#{test_case} {idx} {cnts[idx]}')
+```
+
+---
+
+## 전기버스 (List 1)
+
+<img width="901" alt="aps_60" src="https://user-images.githubusercontent.com/86648892/187016561-b6d824c9-8045-4bcd-85b1-213c23bcc7cd.png">
+
+<img width="897" alt="aps_61" src="https://user-images.githubusercontent.com/86648892/187016566-658829ae-23a9-4d7b-bd2f-09cf68c3c3d6.png">
+
+```python
+T = int(input())
+for test_case in range(1, T+1):
+    K, N, M = map(int, input().split())
+    lst = list(map(int, input().split()))
+
+    # 출발점을 포함한 정류장 표현 배열 생성
+    busstop = [0] * (N+1)
+
+    # 충전기 위치 1로 표시
+    for i in lst:
+        busstop[i] += 1
+
+    # charge는 충전기 개수, start는 버스 출발 지점, cnt는 필요 충전횟수
+    charge = M
+    start = 0
+    cnt = 0
+
+    # 충전기가 더 남아있지 않을 때는 판단 멈춤
+    while charge > 0:
+        # 출발지점 기준 이동가능 위치 슬라이싱
+        if 1 in busstop[start+1 : start+K+1]:
+            # 아직 도착하지 않을 거리라면 (충전기가 더 필요할테니까)
+            if start + K < N:
+                cnt += 1
+                # 해당 부분 가장 오른쪽 정류장 idx를 새로운 출발 지점(start)으로 지정
+                # 또한 해당 부분 안에 있는 충전기 수만큼 충전기 수 빼주기
+                idx = 0
+                for i in range(start+1, start+K+1):
+                    if busstop[i] == 1:
+                        charge -= 1
+                        idx = i
+                start = idx
+            else:
+                break
+        else:
+            # 필요 거리 내에 충전기 없을 시 cnt를 0으로 부여, charge=0은 while loop 종료용
+            charge = 0
+            cnt = 0
+    print(f'#{test_case} {cnt}')
+```
+
+---
+
+## Flatten (List 1)
+
+<img width="907" alt="aps_62" src="https://user-images.githubusercontent.com/86648892/187016650-94ae1631-544b-4c5b-be98-1ecb07003ff4.png">
+
+<img width="870" alt="aps_63" src="https://user-images.githubusercontent.com/86648892/187016652-ec368f6b-ea7e-4653-8d72-ab1431197267.png">
+
+<img width="875" alt="aps_64" src="https://user-images.githubusercontent.com/86648892/187016655-61a6f889-110d-4890-9135-f36b11ea1a6f.png">
+
+<img width="934" alt="aps_65" src="https://user-images.githubusercontent.com/86648892/187016656-2269e9fb-23e7-4f16-b93e-54943f8c2808.png">
+
+```python
+for test_case in range(1, 11):
+    N = int(input())
+    lst = list(map(int, input().split()))
+
+    # 가장 높은 블록과 낮은 블록의 차이값
+    ans = 0
+    # N만큼 dump (마지막 dump시 lst[mx_idx] - lst[mn_idx]가 0이나 1이 되는 경우를 위해 =을 추가)
+    while N >= 0:
+        # 가장 높은 블록과 낮은 블록의 인덱스 값 초기화
+        mx_idx = 0
+        mn_idx = 0
+
+        # 주어진 블록 길이만큼 왼쪽부터 차례대로 해당 작업을 수행
+        for i in range(1, len(lst)):
+            # 오른쪽 블록이 더 크거나 같으면 해당 블록이 max 인덱스 지점
+            if lst[mx_idx] <= lst[i]:
+                mx_idx = i
+            # 오른쪽 블록이 더 작거나 같으면 해당 블록이 min 인덱스 지점
+            if lst[mn_idx] >= lst[i]:
+                mn_idx = i
+
+        # dump를 계속 진행하기 위해서는 가장 높은 블록과 낮은 블록의 차이가 2이상 이어야함
+        # 그렇지 않을 경우 현재 max와 min값의 차이를 반환하고 dump 종료
+        if lst[mx_idx] - lst[mn_idx] > 1:
+            # 현재 dump상황까지의 max min 차이 저장
+            ans = lst[mx_idx] - lst[mn_idx]
+            # 가장 높은 블록 하나 빼주고
+            lst[mx_idx] -= 1
+            # 가장 낮은 블록 하나 더해주고
+            lst[mn_idx] += 1
+            # dump 횟수 차감
+            N -= 1
+        else:
+            ans = lst[mx_idx] - lst[mn_idx]
+            break
+    print(f'#{test_case} {ans}')
+```
+
+---
+
+## 정렬 연습 (List 1)
+
+<img width="911" alt="aps_66" src="https://user-images.githubusercontent.com/86648892/187016709-5be3b54c-0ca8-4c59-a801-6ee26cc05302.png">
+
+```python
+# Bubble Sort
+def BubbleSort(a, N):
+    for i in range(N-1, 0, -1): # 구간의 맨 끝 인덱스부터 비교 시작
+        for j in range(i): # 인접 원소 중 왼쪽 원소 인덱스까지 비교
+            if a[j] > a[j+1]: # 오름차순, 더 큰 수를 오른쪽으로
+                a[j], a[j+1] = a[j+1], a[j]
+    return a
+
+N = int(input())
+arr1 = [55, 7, 78, 12, 42]
+print(BubbleSort(arr1, N))
+
+# Counting Sort
+# 입력된 배열의 카운트 값을 누적시킨 후
+# 입력된 값을 인덱스로 활용 -> 해당 값에 해당하는 누적 카운트에 접근
+# 접근한 누적 카운트를 인덱스로 활용 -> 해당 인덱스에 정렬용 배열 속으로 데이터 삽입
+def CountingSort(A, B, k):
+    # A는 입력할 배열 (k는 데이터 최대값)
+    # B는 정렬된 배열
+    # C는 카운트 배열
+    C = [0]*(k+1) # 해당 인덱스에 k까지의 수를 나타내야 하므로 인덱스는 k+1까지
+    
+    # 카운트 배열 값 채우기
+    for i in range(0, len(A)):
+        C[A[i]] += 1
+
+    # 카운트 배열 누적으로 전환
+    for i in range(1, len(C)):
+        C[i] += C[i-1]
+    
+    # 원본을 뒤에서부터 빼주면서 정렬
+    # 왼쪽 끝의 값까지 확인해야 하므로 end 범위는 -1까지
+    for i in range(len(B)-1, -1, -1):
+        C[A[i]] -= 1
+        # 해당 카운트의 위치에 값 삽입
+        B[C[A[i]]] = A[i]
+    return B
+
+k = int(input())
+arr2 = [4, 3, 1, 1, 7, 6, 7, 5, 7]
+tmp = [0]*len(arr2)
+print(CountingSort(arr2, tmp, k))
+
+# Selection Sort
+
+def SelectionSort(a, N):
+    for i in range(N-1):
+        minIdx = i
+        for j in range(i+1, N):
+            if a[minIdx] > a[j]:
+                minIdx = j
+        a[i], a[minIdx] = a[minIdx], a[i]
+    return a
+
+N = int(input())
+arr3 = [55, 7, 78, 12, 42]
+print(SelectionSort(arr3, N))
+```
+
+---
+
+## 델타검색 (List 2)
+
+<img width="894" alt="aps_67" src="https://user-images.githubusercontent.com/86648892/187016794-826ddd4e-ed9a-43ef-b341-fda55498cd7d.png">
+
+```python
+T = int(input())
+for test_case in range(1, T+1):
+    N = int(input())
+    lst = [list(map(int, input().split())) for _ in range(N)]
+    di = [0, 1, 0, -1]
+    dj = [1, 0, -1, 0]
+    ans = 0
+    for i in range(N):
+        for j in range(N):
+            for k in range(4):
+                ni = i + di[k]
+                nj = j + dj[k]
+                if 0<=ni<N and 0<=nj<N:
+                    ans += abs(lst[i][j] - lst[ni][nj])
+    print(f'#{test_case} {ans}')
+
+'''
+T = int(input())
+for test_case in range(1, T+1):
+    N = int(input())
+    lst = [list(map(int, input().split())) for _ in range(N)]
+    ans = 0
+    for i in range(N):
+        for j in range(N):
+            for di, dj in ((-1,0), (1,0), (0,-1), (0,1)):
+                ni, nj = i+di, j+dj
+                if 0<=ni<N and 0<=nj<N:
+                    ans += abs(lst[i][j]-lst[ni][nj])
+    print(f'#{test_case} {ans}')
+'''
+```
+
+---
+
+## 부분집합 합 (비트연산) (List 2)
+
+<img width="902" alt="aps_68" src="https://user-images.githubusercontent.com/86648892/187016909-511c7562-ffda-4c0f-acd3-52cd4896310f.png">
+
+```python
+'''
+10개의 정수를 입력 받아 부분집합의 합이 0이 되는 것이 존재하는지를 계산하는 함수를 작성해보자.
+입력
+2
+19 6 16 19 15 16 8 13 16 10
+-20 -6 -13 3 -19 -9 19 -3 9 4
+출력
+#1 0
+#2 1
+'''
+# 합해서 특정값 k가 된다고 생각해보자
+# 해당 index의 값을 사용하지 않는다(0), 사용한다(1)로 각각의 원소에 적용할 수 있음
+
+# 1) bit는 2^n-1까지의 이진수들 # 그리고 이 bit는 각각의 부분집합을 나타내는 숫자 (사용여부 0, 1로 나타내는)
+# 2) 부분집합 합이 0이 되는지 판단하기 위해 sm 초기화
+# 3) bit >> i # bit 수를 i만큼 오른쪽으로 shift하여 해당 자리 수의 비트 값만 남겨놓고 1과 & 연산
+# 3-1) 해당 자리의 비트 수가 1이면, 즉 있으면 True, 그리고 해당 값을 sm에 더해줌
+# 3-2) 해당 자리의 비트 수가 0이면, 즉 없으면 False, 그리고 해당 값을 sm에 더해주지 않음
+# List의 Index는 편의상 뒤에서부터 부여하자 (N-1, N-2, ... , 3, 2, 1, 0)
+T = int(input())
+for test_case in range(1, T+1):
+    lst = list(map(int, input().split()))
+    N = len(lst) #N bit (Lst member: N)
+    ans = 0
+    k = 0 # 찾아야 될 숫자를 k라 가정
+    '''
+    for i in range(1<<N):
+        sm = 0
+        # 내가 보려는 자리를 지칭
+        for j in range(N):
+            if i & (1<<j):
+                sm += lst[j]
+    '''
+    for bit in range(1, 2**N): # == 1 << N
+        sm = 0
+        for i in range(0, N): # every Lst index
+            if (bit>>i) & 1: # i만큼 shift하여 해당 인덱스 값만 판단
+                sm += lst[i] # 부분집합에 있으면 더해줌
+        if sm == k: # 부분집합의 합이 목표값(0)과 같다면
+            ans += 1 # 맞음을 표시하는 1 표시
+            break
+    print(f'#{test_case} {ans}')
+```
+
+---
+
+## 달팽이 숫자 (List 2)
+
+<img width="894" alt="aps_69" src="https://user-images.githubusercontent.com/86648892/187016995-74284499-0331-475a-b066-f1d726ee3251.png">
+
+<img width="897" alt="aps_70" src="https://user-images.githubusercontent.com/86648892/187017002-b407e939-4ff1-45ce-89e8-1b153f478b88.png">
+
+```python
+'''
+수업 풀이를 통한 개선점
+1) array에서 값을 빼내 출력할 때 언패킹 연산자(*) 활용
+2) % 연산자를 활용한 방향 전환
+3) di, dj 초기화 위치
+4) cnt += 1을 while 바깥에 한번 진행해주고 while의 범위를 <=으로 설정하여 직관성 상승
+'''
+
+T = int(input())
+for test_case in range(1, T+1):
+    N = int(input())
+    # 초기 배열 생성
+    arr = [[0] * N for _ in range(N)]
+    # direction은 우->하->좌->상 순 시계방향으로 0, 1, 2, 3
+    direction = 0
+    i, j = 0, 0
+    di = [0, 1, 0, -1]
+    dj = [1, 0, -1, 0]
+    # 출발 지점에 1을 놓고 cnt도 1인 상태로 시작
+    cnt = 1
+    arr[0][0] = 1
+    # cnt 값을 최신화하고 넣어주는 logic이니까 가령 4*4인 경우 15일 때까지만 loop 허용(안에 들어가서 16이 될테니)
+    while cnt < N*N:
+        # 현재 방향 기준으로 다음 좌표 설정
+        ni = i + di[direction]
+        nj = j + dj[direction]
+        # 좌표가 전체 범위를 넘지 않는다면
+        if 0 <= ni < N and 0 <= nj < N:
+            # 그리고 도착할 다음 좌표의 값이 0이라면 (아직 도착하지 않은 곳이라면)
+            if arr[ni][nj] == 0:
+                # 카운트 값을 올려주고 해당 값을 도착할 값에 부여, 그리고 새로운 좌표를 기준점으로 업데이트
+                cnt += 1
+                arr[ni][nj] = cnt
+                i, j = ni, nj
+            # 조건이 만족하지 않는 경우 (도착할 값이 0이 아닌 경우)
+            else:
+                # 방향이 위로 향하고 있는 경우
+                if direction == 3:
+                    # 잘못 최신화된 ni, nj 좌표를 다시 바로 잡아주고
+                    ni -= di[direction]
+                    nj -= dj[direction]
+                    # 상 -> 우로 방향 전환
+                    direction = 0
+                    # 다시 ni, nj 최신화
+                    ni += di[direction]
+                    nj += dj[direction]
+                    # 이동 작업 수행
+                    cnt += 1
+                    arr[ni][nj] = cnt
+                    i, j = ni, nj
+                # 다른 방향인 경우
+                else:
+                    ni -= di[direction]
+                    nj -= dj[direction]
+                    # 방향값에 1을 더해주어 시계방향으로 방향 전환
+                    direction += 1
+                    ni += di[direction]
+                    nj += dj[direction]
+                    cnt += 1
+                    arr[ni][nj] = cnt
+                    i, j = ni, nj
+        # 조건이 만족하지 않는 경우 (범위를 초과한 경우)
+        else:
+            if direction == 3:
+                ni -= di[direction]
+                nj -= dj[direction]
+                direction = 0
+                ni += di[direction]
+                nj += dj[direction]
+                cnt += 1
+                arr[ni][nj] = cnt
+                i, j = ni, nj
+            else:
+                ni -= di[direction]
+                nj -= dj[direction]
+                direction += 1
+                ni += di[direction]
+                nj += dj[direction]
+                cnt += 1
+                arr[ni][nj] = cnt
+                i, j = ni, nj
+    print(f'#{test_case}')
+    for line in arr:
+        for number in line:
+            print(number, end = ' ')
+        print()
+
+'''
+교수님 풀이
+
+# 고정된 값이니 한 번만 초기화하는게 속도에 유리하므로 밖으로 빼주자
+di = [0, 1, 0, -1]
+dj = [1, 0, -1, 0]
+
+T = int(input())
+# T = 10
+for test_case in range(1, T+1):
+    N = int(input())
+    arr = [[0]*N for _ in range(N)]
+
+    i = j = dr = 0
+    cnt = 1
+    arr[i][j] = cnt
+    # 내 풀이와는 다르게 밖에서 cnt += 1을 해주고 while 범위에 =을 붙여줌
+    cnt += 1
+
+    while cnt <= N*N:
+        ni, nj = i+di[dr], j+dj[dr] # 이동할 좌표계산
+        if 0<=ni<N and 0<=nj<N and arr[ni][nj]==0: # 기록가능: 범위내이고 0이면
+            i, j = ni, nj # 현재좌표 이동
+            arr[i][j] = cnt
+            cnt += 1
+        else: # 불가능 -> 방향전환 후 기록
+            # dr을 %를 통해 바꾸는 방법 알아두자
+            dr = (dr+1)%4
+
+    print(f'#{test_case}')
+    for lst in arr:
+        # 언패킹 연산자(asterisk) 활용
+        print(*lst)
+'''
+```
+
+---
+
+## Sum 행열대각선합 (List 2)
+
+<img width="860" alt="aps_71" src="https://user-images.githubusercontent.com/86648892/187017088-91aea57b-3048-475b-ba49-ec613c8e4ac4.png">
+
+<img width="935" alt="aps_72" src="https://user-images.githubusercontent.com/86648892/187017089-b97d78fe-3440-4a87-a50b-59e7896a092a.png">
+
+```python
+T = int(input())
+for test_case in range(1, T+1):
+    N = 100
+    arr = [list(map(int, input().split())) for _ in range(N)]
+
+    rsMax = 0 # 행의 합 최대
+    lsMax = 0 # 열의 합 최대
+    dsMax = 0 # 대각선 합 최대
+    ans = 0
+
+    # 행 최대 합 구하기
+    for i in range(N):
+        rs = 0
+        for j in range(N):
+            rs += arr[i][j]
+            if rs > rsMax:
+                rsMax = rs
+
+    # 열 최대 합 구하기
+    for i in range(N):
+        ls = 0
+        for j in range(N):
+            ls += arr[j][i]
+            if ls > lsMax:
+                lsMax = ls
+
+    # 대각선 최대 합 구하기
+    ds1 = 0 # 좌->우 대각선
+    ds2 = 0 # 우->좌 대각선
+    for i in range(N):
+        ds1 += arr[i][i]
+        ds2 += arr[N-1-i][i]
+        if ds1 >= ds2:
+            dsMax = ds1
+        else:
+            dsMax = ds2
+
+    # 셋 중 최대 구하기
+    if rsMax >= lsMax and rsMax >= dsMax:
+        ans = rsMax
+    elif lsMax >= rsMax and lsMax >= dsMax:
+        ans = lsMax
+    else:
+        ans = dsMax
+
+    print(f'#{test_case} {ans}')
+
+'''
+# 같은 logic (행, 열, 각 대각선 합 구하고 비교)
+# 더 간단한 표기
+
+T = int(input())
+for test_case in range(1,T+1):
+    N = 100
+    arr = [list(map(int, input().split())) for _ in range(N)]
+
+    ans = s3 = s4 = 0
+    for i in range(N):
+        s1 = s2 = 0
+        for j in range(N):
+            s1 += arr[i][j] # 행의 합
+            s2 += arr[j][i] # 열의 합
+        if ans < s1: ans = s1
+        if ans < s2: ans = s2
+
+        s3 += arr[i][j] # 좌 -> 우 대각선 합
+        s4 += arr[i][N-1-i] # 우 -> 좌 대각선 합
+    if ans < s3: ans = s3
+    if ans < s4: ans = s4
+
+    print(f'#{test_case} {ans}')
+'''
+
+'''
+# 합 구하기 및 최대합 비교를 위해 max(), sum() 활용
+# 대각선 합을 구하기 위해 list comprehension 활용
+# 행과 열을 바꿔주기 위해 zip() 활용
+
+T = int(input())
+for test_case in range(1,T+1):
+    N = 100
+    arr = [list(map(int, input().split())) for _ in range(N)]
+
+    # 양 대각선의 합을 list comprehension과 sum()을 통해 구하고, 이 중 더 큰 값을 ans에 넣어줌
+    ans = max(sum([arr[i][i] for i in range(N)]), sum([arr[i][N-1-i] for i in range(N)]))
+    # 행과 열에 대해 판단할 것으로 2번 진행
+    for _ in range(2):
+        # 처음은 각 행의 값 리스트에 대해 판단
+        for lst in arr:
+            sm = sum(lst)
+            ans = max(ans, sm)
+        # 각 행들에 대한 판단이 끝난 후, *를 통해 arr의 각 행을 언패킹하고, 각 행들의 모음을 list(zip())함으로써 arr의 열들에 있던 순자의 순서를 행으로 변경
+        # 그리고 이 바뀐 arr(열 판단용)를 다시 for문을 통해 각 열의 합 구해주고, 최대합 여부 판단
+        arr = list(zip(*arr))
+
+    print(f'#{test_case} {ans}')
+'''
+'''
+# zip 예시
+
+arr = [[1,2,3,4], [5,6,7,8], [9,10,11,12], [13,14,15,16]]
+print(list(zip(*arr))) # [(1, 5, 9, 13), (2, 6, 10, 14), (3, 7, 11, 15), (4, 8, 12, 16)]
+'''
+```
+
+---
+
+## 색칠하기 (List 2)
+
+<img width="916" alt="aps_73" src="https://user-images.githubusercontent.com/86648892/187022100-4b866dd0-66c3-449e-8367-bc878212459a.png">
+
+<img width="932" alt="aps_74" src="https://user-images.githubusercontent.com/86648892/187022103-b1ec7954-17fe-4df1-9917-993d4698ada3.png">
+
+```python
+T = int(input())
+for test_case in range(1, T+1):
+    C = int(input())
+    N = 10
+    arr = [[0]*(N) for _ in range(N)]
+    ans = 0
+    for _ in range(C):
+        r1, c1, r2, c2, color = map(int, input().split())
+        for i in range(r1, r2+1):
+            for j in range(c1, c2+1):
+                arr[i][j] += color
+    for i in range(N):
+        for j in range(N):
+            if arr[i][j]==3:
+                ans += 1
+    print(f'#{test_case} {ans}')
+```
+
+---
+
+## 원소의 합이 K인 부분집합 개수 (비트연산) (List 2)
+
+<img width="905" alt="aps_75" src="https://user-images.githubusercontent.com/86648892/187022183-9bb4da5f-d767-4ea9-afe4-d201d08faf2f.png">
+
+```python
+T = int(input())
+for test_case in range(1, T+1):
+    N, K = map(int, input().split()) # N 원소의 길이 # K 찾아야 될 숫자
+
+    arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] # 주어진 배열
+    ans = 0
+
+    for bit in range(1<<12): # 모든 부분집합의 경우의 수를 나타내는 bit 생성
+        sm = 0 # 합
+        cnt = 0 # 비트상 1로 표시되는 개수 (부분집합의 원소의 개수)
+        # 합 구해놓기
+        for i in range(0, 12):
+            if (bit>>i) & 1:
+                sm += arr[i]
+        # 원소 개수 판별
+        # bit가 0이 될때까지 끝의 자리 판별하고, 왼쪽으로 shift 후 다시 끝의 자리 판별 반복
+        while bit:
+            cnt += bit & 1
+            bit = bit >> 1
+        # 조건 만족 여부
+        if cnt == N and sm == K:
+            ans += 1
+    print(f'#{test_case} {ans}')
+
+'''
+# 풀이
+# 1) 굳이 while을 넣어줄 필요가 없었다 # (bit>>i) & 1이 True일 때 어차피 원소가 있는 것이므로 그 때 cnt += 1 해주면 됨
+# 2) [1, 2, 3, 4, ... , 12]라고 선언하는 것보다 list comprehension을 활용하자
+# 3) if sm==k and cnt==N과 같이 and 조건을 쓸 때는 확률이 희박한 것부터 앞에 써주는 것이 효율에 좋다 (short circuit)
+
+T = int(input())
+for test_case in range(1, T + 1):
+    N, K = map(int, input().split())
+    M = 12
+    lst = [i for i in range(1, M+1)]
+    ans = 0
+    for bits in range(1, 1<<M):
+        sm = cnt = 0
+        for i in range(M):
+            if (bits>>i) & 1 == 1:
+                sm += lst[i]
+                cnt += 1
+        if sm==K and cnt==N:
+            ans += 1
+    print(f'#{test_case} {ans}')
+'''
+```
+
+---
+
+## 코딩반 이진탐색 (List 2)
+
+<img width="912" alt="aps_76" src="https://user-images.githubusercontent.com/86648892/187022396-bb403737-51e2-4d4c-bb95-e2c3a1a6f7e8.png">
+
+<img width="911" alt="aps_77" src="https://user-images.githubusercontent.com/86648892/187022402-16e30a96-181e-47d1-b533-99e04e0b4cc4.png">
+
+```python
+def bin_search(s, e, d):
+    cnt = 0
+    while s<=e:
+        cnt += 1
+        m = (s+e)//2
+        if m == d: # 찾는 데이터 발견
+            return cnt
+        elif m < d: # 찾는데이터가 오른쪽(더 큰쪽)
+            s = m
+        else: # 왼쪽 탐색
+            e = m
+    return -1 # 이 문제에서는 이 코드 실행되지 않음
+
+T = int(input())
+for test_case in range(1, T + 1):
+    P, A, B = map(int, input().split())
+
+    a_cnt = bin_search(1, P, A)
+    b_cnt = bin_search(1, P, B)
+
+    if a_cnt<b_cnt:
+        ans = 'A'
+    elif a_cnt>b_cnt:
+        ans = 'B'
+    else:
+        ans = '0'
+    print(f'#{test_case} {ans}')
+
+# 나의 풀이
+
+'''
+T = int(input())
+for test_case in range(1, T+1):
+    # 페이지 수이므로 정렬은 항상 되어있는 상태로 가정
+    P, Pa, Pb = map(int, input().split())
+    arr = [i for i in range(1, P+1)]
+    s_idx = 0
+    e_idx = P-1
+    cnt1 = 0 # A 검색 횟수
+    cnt2 = 0 # B 검색 횟수
+    ans = 0 # 출력 값
+    # 페이지를 못 찾는 경우는 없을 것
+    # A
+    while s_idx <= e_idx:
+        cnt1 += 1
+        m_idx = (s_idx+e_idx) // 2
+        if arr[m_idx] == Pa:
+            break
+        elif arr[m_idx] > Pa:
+            e_idx = m_idx
+        else:
+            s_idx = m_idx
+    # B (s_idx와 e_idx 다시 초기화해줄 것)
+    s_idx = 0
+    e_idx = P-1
+    while s_idx <= e_idx:
+        cnt2 += 1
+        m_idx = (s_idx+e_idx) // 2
+        if arr[m_idx] == Pb:
+            break
+        elif arr[m_idx] > Pb:
+            e_idx = m_idx
+        else:
+            s_idx = m_idx
+    # A B 비교
+    if cnt1 < cnt2:
+        ans = 'A'
+    elif cnt2 < cnt1:
+        ans = 'B'
+    
+    print(f'#{test_case} {ans}')
+'''
+```
+
+---
+
+## 특별한 정렬 (List 2)
+
+<img width="905" alt="aps_78" src="https://user-images.githubusercontent.com/86648892/187022531-7f95f76c-6fb9-48dd-a71c-5525d43268f7.png">
+
+<img width="909" alt="aps_79" src="https://user-images.githubusercontent.com/86648892/187022533-c0a7be93-8303-4be0-846f-7c7c2d57af4c.png">
+
+```python
+T = int(input())
+for test_case in range(1, T+1):
+    N = int(input())
+    arr = list(map(int, input().split()))
+    ans = [0]*10 # 10개까지만 출력
+    # selection sort 내림차순 정렬
+    for i in range(N-1):
+        maxIdx = i
+        for j in range(i+1, N):
+            if arr[maxIdx] < arr[j]:
+                maxIdx = j
+        arr[i], arr[maxIdx] = arr[maxIdx], arr[i]
+
+    # 인덱스를 (0, 1), (2, 3), ...와 같이 쌍을 지어
+    # 2로 나눈 몫만큼
+    # 인덱스가 짝수라면 앞에서(큰 값부터), 인덱스가 홀수라면 뒤에서(작은 값부터) 가져와 배치
+    for i in range(10): # 10개까지만 출력
+        if i % 2 == 0:
+            ans[i] = arr[i//2]
+        else:
+            ans[i] = arr[N-1-(i//2)]
+    print(f'#{test_case}', end = ' ')
+    print(*ans)
+
+'''
+T = int(input())
+for test_case in range(1, T + 1):
+    N = int(input())
+    lst = list(map(int, input().split()))
+
+    # [1] 오름차순 정렬
+    # bubble sort
+    for i in range(N-1, 0, -1):
+        for j in range(i):
+            if lst[j]>lst[j+1]:
+                lst[j], lst[j+1] = lst[j+1], lst[j]
+
+    sols = []
+    for i in range(5):
+        sols.append(lst[-1-i])
+        sols.append(lst[i])
+
+    print(f'#{test_case}', *sols)
+'''
+
+'''
+# 만약 주어지는 정렬이 너무나도 길고 크다면?
+# 전부 정렬하는 것은 무식한 것일 수 있음
+# 그러므로 필요한 부분만 사용하는 방법을 알아보자
+
+T = int(input())
+for test_case in range(1, T + 1):
+    N = int(input())
+    lst = list(map(int, input().split()))
+
+    # [0] 전체를 정렬하지 않고, 5번만 찾기
+    for i in range(0, 10, 2):
+        # i ~ 끝 중에서 가장 큰/작은값 index 찾기
+        i_min = i_max = i
+        for j in range(i, N):
+            if lst[i_min]>lst[j]:   i_min=j
+            if lst[i_max]<lst[j]:   i_max=j
+
+        lst[i_max], lst[i] = lst[i], lst[i_max]
+        if i_min == i: # i_min 가리키고 있던 값 이동
+            i_min = i_max
+        lst[i_min], lst[i+1] = lst[i+1], lst[i_min]
+
+    print(f'#{test_case}', *lst[:10])
+
+    # # [1] 오름차순 정렬
+    # for i in range(N-1, 0, -1):
+    #     for j in range(i):
+    #         if lst[j]>lst[j+1]:
+    #             lst[j], lst[j+1] = lst[j+1], lst[j]
+    #
+    # sols = []
+    # for i in range(5):
+    #     sols.append(lst[-1-i])
+    #     sols.append(lst[i])
+    #
+    # print(f'#{test_case}', *sols)
+'''
+```
+
+---
+
+## Ladder 1 (List 2)
+
+<img width="917" alt="aps_80" src="https://user-images.githubusercontent.com/86648892/187022669-3884b53a-0707-4f02-963c-2e34127bd1de.png">
+
+<img width="884" alt="aps_81" src="https://user-images.githubusercontent.com/86648892/187022672-a4284406-49db-4184-9cf9-d600bd938034.png">
+
+<img width="964" alt="aps_82" src="https://user-images.githubusercontent.com/86648892/187022673-db66d302-e56c-4675-bd89-82a6ef9641fb.png">
+
+<img width="929" alt="aps_83" src="https://user-images.githubusercontent.com/86648892/187022675-66ff032f-a41e-49cd-afc1-5e61b9f86161.png">
+
+```python
+T = int(input())
+for test_case in range(1, T+1):
+    # 세방향 탐색 시 index out of range를 방지하기 위해 양쪽에 0으로 벽 하나씩 세우기
+    arr = [[0] + list(map(int, input().split())) + [0] for _ in range(100)]
+    di = [-1, 0, 0] # 상 좌 우
+    dj = [0, -1, 1]
+    dr = 0 # 상 방향으로 초기화
+    # 출발 인덱스 초기화
+    ci = 99
+    cj = 1
+    # 출발점 찾기 (2가 적혀있는 곳)
+    for i in range(1, 101):
+        if arr[ci][i] == 2:
+            cj = i
+    # i가 0이 되는 순간 종료
+    while ci > 0:
+        ni = ci + di[dr]
+        nj = cj + dj[dr]
+
+        if dr == 0: # 위로 가는 중일 때
+            if arr[ni][nj-1] == 1: # 왼쪽에 1이 있다면 방향 왼쪽으로
+                ci = ni
+                cj = nj
+                dr = 1
+            elif arr[ni][nj+1] == 1: # 오른쪽에 1이 있다면 방향 오른쪽으로
+                ci = ni
+                cj = nj
+                dr = 2
+            else: # 둘다 없다면 그대로 방향 위로
+                ci = ni
+                cj = nj
+        elif dr == 1: # 왼쪽으로 가는 중일 때
+            if arr[ni][nj-1] == 0: # 다음 왼쪽 칸이 0으로 막혀있다면 방향 위로
+                ci = ni
+                cj = nj
+                dr = 0
+            else: # 다음에도 갈 곳이 있다면 그대로 진행
+                ci = ni
+                cj = nj
+        elif dr == 2: # 오른쪽으로 가는 중일 때
+            if arr[ni][nj+1] == 0: # 다음 오른쪽 칸이 0으로 막혀있다면 방향 위로
+                ci = ni
+                cj = nj
+                dr = 0
+            else:
+                ci = ni
+                cj = nj
+    # 벽을 깬 인덱스로 반환
+    ans = cj - 1
+    print(f'#{test_case} {ans}')
+
+'''
+# 1) 2를 찾아서 시작
+# 2) 이동 법칙
+# 2-1) 좌 / 우에 길이 있는 경우: 그 쪽 우선이동
+# 2-2) else: 위쪽 이동
+# 2-3) 지나온 지도를 0으로 표시
+# 3) 이동
+# 3-1) i가 0이 될 때 멈춤
+# 3-2) index error 방지
+# 3-2-1) j가 0보다 크고(왼쪽으로 갈 곳이 있고) 왼쪽에 길이 있다면: 왼쪽으로 이동 + 지나온 지도 0으로 표시
+# 3-2-2) j가 99보다 작고(오른쪽으로 갈 곳이 있고) 오른쪽에 길이 있다면: 오른쪽으로 이동 + 지나온 지도 0으로 표시
+# 3-3-3) 둘다 아니라면 위로 이동
+
+T = 10
+# T = int(input())
+for test_case in range(1, T + 1):
+    _ = int(input())
+    N = 100
+    arr = [list(map(int, input().split())) for _ in range(N)]
+
+    # 초기값 설정
+    i, j = N-1, 0
+    # [1] 목적지(출발지) arr[][] == 2
+    for tj in range(N):
+        if arr[i][tj]==2:
+            j = tj;
+            break
+
+    while i>0:
+        if j>0 and arr[i][j-1]==1:    #왼쪽에 이동가능한 길이 있음
+            arr[i][j]=0
+            j-=1
+        elif j<99 and arr[i][j+1]==1:   # 오른쪽방향 이동가능 체크
+            arr[i][j]=0
+            j+=1
+        else:
+            i-=1
+
+    print(f'#{test_case} {j}')
+'''
+```
+
+---
+
+## 이진탐색 연습 (List 2)
+
+<img width="839" alt="aps_84" src="https://user-images.githubusercontent.com/86648892/187022791-de5a14c1-54ed-4032-8f42-ae03e4a3fa2c.png">
+
+<img width="907" alt="aps_85" src="https://user-images.githubusercontent.com/86648892/187022793-51330416-e945-4b68-b2bc-ba957bb38f60.png">
+
+```python
+def bin_search(lst, s, e, d):
+    while s <= e:                           # s, e가 같아질 때도 수행
+        m = (s+e)//2                        # 중앙값 인덱스
+        if lst[m] == d:                     # 찾고자 하는 값과 같다면
+            return m+1                      # 찾는 위치는 인덱스 + 1
+        elif lst[m] > d:                    # 찾고자 하는 값이 왼쪽에 있다면
+            e = m-1                         # end index를 중앙에서 한 칸 왼쪽으로
+        else:                               # 찾고자 하는 값이 오른쪽에 있다면
+            s = m+1                         # start index를 중앙에서 한 칸 오른쪽으로
+    return 0
+T = int(input())
+for test_case in range(1, T+1):
+    N, D = map(int, input().split())        # N은 숫자 개수, M은 타겟 넘버
+    lst = list(map(int, input().split()))   # 숫자 목록
+    ans = bin_search(lst, 0, N-1, D)        # 끝 인덱스는 리스트 길이의 -1
+    print(f'#{test_case} {ans}')
+```
+
+---
+
+## 문자열 검색 (String)
+
+<img width="904" alt="aps_86" src="https://user-images.githubusercontent.com/86648892/187022891-706f35d8-01b3-4d06-b1fb-c2a014d85862.png">
+
+<img width="896" alt="aps_87" src="https://user-images.githubusercontent.com/86648892/187022893-d94f77f3-f920-4ca7-97d4-9c6fc0c51fbb.png">
+
+```python
+def cmp(src, N, tar, M, i):
+        for j in range(M):          # 타겟의 각 글자 검사
+            if src[i+j] != tar[j]:  # 전체 문자열에서 시작지점인 i에서 j만큼 간 부분과, 타겟 문자열에서 j만큼 간 부분 비교
+                return 0            # 비교 중 다르다면 매칭하지 않는 것이므로 해당 시작지점 i에서는 불일치, 0 반환
+        return 1                    # 순회가 끝날 동안 다른 부분이 없다면 1 반환
+T = 10
+for test_case in range(1, T+1):
+    _ = int(input())
+    tar = input()   # 타겟 문자열
+    src = input()   # 전체 문자열
+    N = len(src)
+    M = len(tar)
+    ans = 0
+    for i in range(N-M+1):          # 타겟이 전체를 넘지 않는 범위, i는 시작지점
+        if cmp(src, N, tar, M, i):  # 일치한다면
+            ans += 1                # 일치 횟수 증가
+    print(f'#{test_case} {ans}')
+```
+
+---
+
+## GNS (String)
+
+<img width="881" alt="aps_88" src="https://user-images.githubusercontent.com/86648892/187023033-8546bb09-5214-41f4-aa98-e4ca51d02ed9.png">
+
+<img width="913" alt="aps_89" src="https://user-images.githubusercontent.com/86648892/187023037-b0529c7f-25b8-436b-a50f-08f78976ccb6.png">
+
+```python
+nums = [i for i in range(10)]
+chars = ['ZRO', 'ONE', 'TWO', 'THR', 'FOR', 'FIV', 'SIX', 'SVN', 'EGT', 'NIN']
+
+# 숫자 -> 문자 함수
+def num_to_chars(n):
+    for i in range(10):
+        if nums[i] == n:
+            return chars[i]
+        else:
+            continue
+
+# 문자 -> 숫자 함수
+def chars_to_num(s):
+    for i in range(10):
+        if chars[i] == s:
+            return nums[i]
+        else:
+            continue
+
+T = int(input())
+for _ in range(T):
+    case_num, case_len = input().split()
+    ans = list(input().split())
+    # 문자 -> 숫자
+    for i in range(len(ans)):
+        ans[i] = chars_to_num(ans[i])
+    # 오름차순 sort
+    for i in range(len(ans)-1):
+        min_idx = i
+        for j in range(i+1, len(ans)):
+            if ans[min_idx] > ans[j]:
+                min_idx = j
+        ans[min_idx], ans[i] = ans[i], ans[min_idx]
+    # 숫자 -> 문자
+    for i in range(len(ans)):
+        ans[i] = num_to_chars(ans[i])
+    print(case_num)
+    print(*ans)
+
+'''
+# sorting을 하면 c에서는 아마 시간초과가 날 것이다
+# 1) 카운트 배열을 만들어주고
+# 2) dictionary를 만들어, 이를 통해 카운트 배열에 해당 개수를 cnt에 추가
+# 3) 카운트 개수만큼 ZRO, ONE, ...를 추가
+
+# lookup table 생성
+tbl = ['ZRO', 'ONE', 'TWO', 'THR', 'FOR', 'FIV', 'SIX', 'SVN', 'EGT', 'NIN']
+# dictionary comprehension으로 딕셔너리 생성
+dct = {tbl[n]: n for n in range(10)}
+
+T = int(input())
+for test_case in range(1, T+1):
+    _, N = input().split()
+    lst = list(input().split())
+
+    # 카운트 배열 생성
+    cnts = [0]*10
+    for st in lst:
+        cnts[dct[st]] += 1 # 해당 문자의 자리에 카운트 누적
+
+    # 출력할 결과에 cnts 개수만큼 str 붙이기
+    sols = []
+    for i in range(10):
+        sols.append((tbl[i]+' ') * cnts[i]) # 사이사이 공백이 있어야 하므로 공백 더해줌 # 룩업테이블의 해당 값을 해당 값의 카운트 배열 값 개수만큼 추가
+    
+    print(f'#{test_case}')
+    print(*sols)
+'''
+```
+
+---
+
+## 간단한 소인수분해 (IM)
+
+<img width="910" alt="aps_90" src="https://user-images.githubusercontent.com/86648892/187023106-0dd0d688-3cef-4fd2-88cd-48727b064cdf.png">
+
+<img width="907" alt="aps_91" src="https://user-images.githubusercontent.com/86648892/187023108-e7ca505e-cfb1-4fc3-870d-83067697ce34.png">
+
+```python
+T = int(input())
+for test_case in range(1, T+1):
+    N = int(input())
+    ans = [0] * 5
+    divs = [2, 3, 5, 7, 11]
+    while N > 1:
+        for i in range(5):
+            if N % divs[i] == 0:
+                ans[i] += 1
+                N = N / divs[i]
+    print(f'#{test_case}', end = ' ')
+    print(*ans)
+    
+'''
+# print(f'#{test_case}', *ans) 로 표기 가능
+# while N % divs[i] == 0으로 조건 주고
+# N = N // divs[i]로 설정하는 방법도 있음
+# divs는 밖으로 빼주자
+
+divs = [2, 3, 5, 7, 11]
+
+T = int(input())
+for test_case in range(1, T + 1):
+    N = int(input())
+    cnts = [0]*5
+    for i in range(5):
+        while N % divs[i] == 0:
+            cnts[i] += 1
+            N //= divs[i]
+
+    print(f'#{test_case}', *cnts)
+'''
+```
+
+---
+
+## 현주의 상자 바꾸기 (IM)
+
+<img width="914" alt="aps_92" src="https://user-images.githubusercontent.com/86648892/187023163-285f1545-da3d-445c-844a-0bc2b01d321a.png">
+
+<img width="897" alt="aps_93" src="https://user-images.githubusercontent.com/86648892/187023165-3bbc6962-6776-4dc2-b365-95aeca6e7152.png">
+
+```python
+# start, end 인덱스 활용
+T = int(input())
+for test_case in range(1, T+1):
+    N, Q = map(int, input().split())        # N 상자의 개수, Q 작업 횟수
+    ans = [0]*N                             # 상자들 0으로 초기화
+
+    for i in range(1, Q+1):                 # 1부터 Q까지의 숫자로 작업
+        s, e = map(int, input().split())    # 작업할 부분 인덱스
+        for j in range(s-1, e):             # 해당 부분에 작업
+            ans[j] = i
+    print(f'#{test_case}', *ans)
+```
+
+---
+
+## 삼성시의 버스 노선 (IM)
+
+<img width="904" alt="aps_94" src="https://user-images.githubusercontent.com/86648892/187023219-032a2ece-5273-4ef9-b855-02c3b5cf9e7b.png">
+
+<img width="925" alt="aps_95" src="https://user-images.githubusercontent.com/86648892/187023224-235dd07c-a46f-4e06-9e17-16acdcb7fbc1.png">
+
+```python
+T = int(input())
+for test_case in range(1, T+1):
+    N = int(input()) # 버스의 수
+    bus = [list(map(int, input().split())) for _ in range(N)]
+    P = int(input()) # 정류장의 수
+    station = [int(input()) for _ in range(P)]
+    cnts = [0] * (P+1)
+
+    for i in range(N):
+        start, end = bus[i][0], bus[i][1]
+        for j in range(start, end+1):
+            cnts[j] += 1
+
+    print(f'#{test_case}', *cnts[1:])
+
+'''
+T = int(input())
+for test_case in range(1, T + 1):
+    N = int(input())
+    cnts = [0]*5001
+    for _ in range(N):
+        S, E = map(int, input().split())
+        for i in range(S, E+1):
+            cnts[i] += 1
+
+    sols = []
+    P = int(input())
+    for _ in range(P):
+        n = int(input())
+        sols.append(cnts[n])
+
+    print(f'#{test_case}', *sols)
+'''
+```
+
+---
+
+## 파리 퇴치 (IM)
+
+<img width="976" alt="aps_96" src="https://user-images.githubusercontent.com/86648892/187023309-20c9ed43-e547-4662-a596-aedcbdd57963.png">
+
+<img width="921" alt="aps_97" src="https://user-images.githubusercontent.com/86648892/187023313-a6a9d24a-68c5-436a-976b-d2c85fcd5ec6.png">
+
+<img width="918" alt="aps_98" src="https://user-images.githubusercontent.com/86648892/187023314-54fafc79-75c8-43c6-ace5-f805ab2484ec.png">
+
+```python
+# 이 문제는 파리퇴치이지만 네방향 탐색은 아님 (di, dj로 접근 x)
+T = int(input())
+for test_case in range(1, T+1):
+    N, M = map(int, input().split())
+    arr = [list(map(int, input().split())) for _ in range(N)]
+    ans = 0
+
+    for si in range(N):             # 모든 출발점 탐색
+        for sj in range(N):
+            cnt = 0                 # 아래 for문 순회에서 ni = si + 0, nj = sj + 0인 경우도 포함(즉, 시작점 파리수도 더해지므로 cnt는 0으로 초기화)
+            for i in range(M):      # 출발점을 기준으로 길이 M만큼의 2차원 리스트 범위 탐색
+                for j in range(M):
+                    ni = si + i     # 이동
+                    nj = sj + j
+                    if 0 <= ni < N and 0 <= nj < N:     # 범위 안이라면
+                        cnt += arr[ni][nj]              # 파리 퇴치 수 추가
+            if ans < cnt:           # 최대 cnt로 ans 업데이트
+                ans = cnt
+
+    print(f'#{test_case} {ans}')
+
+# 교수님 풀이
+# 1) 나는 if 0 <= ni < N and 0 <= nj < N을 조건으로 넣은데 반해, 교수님은 애초에 si, sj에 대한 가능한 범위를 range(N-M+1)로 설정
+# 2) 나는 ni = si + i, nj = sj + j로 설정한 반면, 교수님은 si와 sj 좌표를 기준으로 range(si, si+M), range(sj, sj+M)으로 설정하여 접근
+'''
+T = int(input())
+for test_case in range(1, T + 1):
+    N, M = map(int, input().split())
+    arr = [list(map(int, input().split())) for _ in range(N)]
+
+    mx = 0
+    for si in range(N-M+1):
+        for sj in range(N-M+1): # si, sj 좌표 기준으로
+            sm = 0
+            for i in range(si, si+M):
+                for j in range(sj, sj+M):
+                    sm += arr[i][j]
+            if mx < sm:
+                mx = sm
+
+    print(f'#{test_case} {mx}')
+'''
+```
+
+---
+
+## 어디에 단어가 들어갈 수 있을까 (IM)
+
+<img width="1040" alt="aps_99" src="https://user-images.githubusercontent.com/86648892/187023374-5b7b611b-db58-4aa2-b0a9-b4e83a35874b.png">
+
+<img width="939" alt="aps_100" src="https://user-images.githubusercontent.com/86648892/187023378-5ac9e0c9-c0fe-4a3e-95cc-0579a373d75a.png">
+
+<img width="951" alt="aps_101" src="https://user-images.githubusercontent.com/86648892/187023379-eb67d2bd-0875-4a0a-8e90-2f6124765c5f.png">
+
+```python
+T = int(input())
+for test_case in range(1, T+1):
+    N, K = map(int, input().split())
+    arr = [list(map(int, input().split())) for _ in range(N)]
+    cnt = 0     # 해당 열이나 행에서 현재 누적 칸 길이 수
+    ans = 0     # 단어와 같은 길이의 칸 수
+    # 1) 1이 나온다면 cnt를 추가해준다
+    # 2) 0이 나오는 경우 그 시점 cnt(칸 길이)가 K와 일치하면 ans에 1을 추가해주고 cnt(칸 길이)를 0으로 초기화
+    # 3) 다만 끝자리에 1이 나오는 경우 해당 행이나 열이 끝나는 것이기에 누적 cnt를 확인해주고, cnt를 0으로 초기화하는 작업을 해줘야함
+    for i in range(N):
+        # 가로 검사
+        for j in range(N):
+            if arr[i][j] == 1 and j == N-1: # 3)
+                if cnt == K-1:              # 해당 1을 포함한 길이가 K가 되어야 하므로 이전까지 누적 cnt는 K-1
+                    ans += 1
+                cnt = 0
+            elif arr[i][j] == 1:            # 2)
+                cnt += 1
+            else:
+                if cnt == K:                # 1)
+                    ans += 1
+                cnt = 0
+        cnt = 0                             # 행이나 열이 끝날 때마다 cnt는 0으로 초기화
+        # 세로 검사
+        for j in range(N):
+            if arr[j][i] == 1 and j == N-1:
+                if cnt == K-1:
+                    ans += 1
+                cnt = 0
+            elif arr[j][i] == 1:
+                cnt += 1
+            else:
+                if cnt == K:
+                    ans += 1
+                cnt = 0
+    print(f'#{test_case} {ans}')
+
+# 교수님 풀이
+# 1) 나는 맨 오른쪽에 1이 오는 경우 cnt값이 추가되지 않는 경우를 방지하기 위해 if 조건을 하나 더 걸어준 반면, 교수님은 0으로 padding하는 방법 선택
+# 2) 나는 arr[i][j], arr[j][i]를 통해 가로, 세로 검사를 진행한 것에 반해 교수님은 zip을 사용
+'''
+T = int(input())
+for test_case in range(1, T + 1):
+    N, K = map(int, input().split())
+    arr = [list(map(int, input().split())) + [0] for _ in range(N)] + [[0]*(N+1)]
+    ans = 0
+    for _ in range(2):
+        for i in range(N+1):
+            cnt = 0
+            for j in range(N+1):
+                if arr[i][j]==1:
+                    cnt += 1
+                else:
+                    if cnt == K:
+                        ans += 1
+                    cnt = 0
+        arr = list(zip(*arr))
+
+    print(f'#{test_case} {ans}')
+'''
+```
+
+---
+
+## 스도쿠 검증 (IM)
+
+<img width="936" alt="aps_102" src="https://user-images.githubusercontent.com/86648892/187023472-cf87681a-5e8c-4523-976f-a68213303c8f.png">
+
+<img width="923" alt="aps_103" src="https://user-images.githubusercontent.com/86648892/187023475-99b0c19f-9a5b-4294-a7db-37e8e7963363.png">
+
+<img width="935" alt="aps_104" src="https://user-images.githubusercontent.com/86648892/187023476-16fd4093-5216-42d3-8721-d8820a09b26d.png">
+
+```python
+T = int(input())
+for test_case in range(1, T+1):
+    arr = [list(map(int, input().split())) for _ in range(9)]   #sudoku
+    cnt = [0]*9 # n-1에 해당하는 인덱스에 카운트를 표시
+    ans = 1
+    si = sj = 0
+
+    # 가로 검사
+    for lst in arr:
+        for i in range(9):
+            cnt[lst[i]-1] += 1
+        if 2 in cnt:                    # cnt에 2가 있다는 것은 곧 중복된 것이 있다는 의미
+            ans = 0
+            break                       # 해당 행 검사 종료
+        else:
+            cnt = [0]*9                 # 한 행 검사 후 cnt 초기화
+
+    # 세로 검사
+    for i in range(9):
+        for lst in arr:
+            cnt[lst[i]-1] += 1
+        if 2 in cnt:
+            ans = 0
+            break                       # 해당 열 검사 종료
+        else:
+            cnt = [0]*9                 # 한 열 검사 후 cnt 초기화
+
+    # 3x3 검사
+    for si in range(0, 9, 3):           # si, sj는 각각 0, 3, 6에서 시작
+        for sj in range(0, 9, 3):
+            for i in range(si, si+3):   # 각 si, sj에 대해 3칸씩 검사
+                for j in range(sj, sj+3):
+                    cnt[arr[i][j]-1] += 1
+            if 2 in cnt:
+                ans = 0
+                break                   # 해당 박스 검사 종료
+            else:
+                cnt = [0]*9             # 한 박스 검사 후 cnt 초기화
+    
+    print(f'#{test_case} {ans}')
+
+# 교수님 풀이
+# 1) 나는 카운트 배열을 만들어 2가 있냐 없냐로 판단했다면, 교수님은 check 리스트를 만들고, not in 연산자 활용
+# 2) 함수로 묶어줌
+# 3) range(0, 9, 3)과 같이 step 활용하는 것 기억!!
+'''
+def solve():
+    for i in range(N):  # 행 체크
+        chk = []
+        for j in range(N):
+            if arr[i][j] not in chk:    # chk[] 없는 경우: 추가
+                chk.append(arr[i][j])
+            else:                       # 이미 있는경우: 실패
+                return 0
+
+    for j in range(N):  # 열 체크
+        chk = []
+        for i in range(N):
+            if arr[i][j] not in chk:    # chk[] 없는 경우: 추가
+                chk.append(arr[i][j])
+            else:                       # 이미 있는경우: 실패
+                return 0
+
+    for si in range(0, 9, 3):
+        for sj in range(0, 9, 3):
+            chk = []
+            for i in range(si, si+3):
+                for j in range(sj, sj+3):
+                    if arr[i][j] not in chk:  # chk[] 없는 경우: 추가
+                        chk.append(arr[i][j])
+                    else:  # 이미 있는경우: 실패
+                        return 0
+    return 1
+
+# T = 3
+T = int(input())
+for test_case in range(1, T + 1):
+    N = 9
+    arr = [list(map(int, input().split())) for _ in range(N)]
+
+    ans = solve()
+
+    print(f'#{test_case} {ans}')
+'''
+```
+
+---
+
+## 자기 방으로 돌아가기 (IM)
+
+<img width="937" alt="aps_105" src="https://user-images.githubusercontent.com/86648892/187023544-7282df58-6a7e-4595-bb80-af9f3ebdd812.png">
+
+<img width="918" alt="aps_106" src="https://user-images.githubusercontent.com/86648892/187023551-84f576c3-90c8-4d3d-8c22-b39d74f8491d.png">
+
+```python
+# (1, 2), (3, 4), ... 가 복도 내에서 같은 칸을 사용
+# room (1, 2)는 복도의 index 0, room(3, 4)는 복도의 index 2 ... 각 수가 해당 인덱스로 배당되려면 (N-1) // 2
+# 가운데 복도를 카운트 배열로 생성하여 복도 칸 중 가장 많이 지나가진 카운트 수만큼 동선이 겹칠 것이므로 카운트 배열의 최댓값이 답
+T = int(input())
+for test_case in range(1, T+1):
+    N = int(input())
+    cnts = [0]*200      # 복도 (학생이 지나간 수 카운트 배열)
+    ans = 0             # 필요 단위 시간
+
+    for _ in range(N):  # 학생 수 만큼 실행
+        s, e = map(int, input().split())        # 시작점 도착점
+        if s > e:                               # 시작점이 더 오른쪽에 있을 시 카운트에 추가안되는 것을 방지
+            s, e = e, s
+        for i in range((s-1)//2, ((e-1)//2)+1): # 방 번호 s, e가 카운트 배열에서 가리키는 인덱스 값은 (N-1) // 2
+            cnts[i] += 1                        # 시작부터 도착방까지 가는동안 지나는 복도에 카운트 1 추가
+
+    for n in cnts:                              # cnts 중 최대값 구하기
+        if ans < n:
+            ans = n
+
+    print(f'#{test_case} {ans}')
+```
+
+---
+
+## 파리 퇴치 3 (IM)
+
+<img width="928" alt="aps_107" src="https://user-images.githubusercontent.com/86648892/187023622-9c9a6744-952d-4090-a806-eefde5f5f781.png">
+
+<img width="923" alt="aps_108" src="https://user-images.githubusercontent.com/86648892/187023626-dcf65264-6c11-40cb-b34a-39097343f174.png">
+
+```python
+di1 = [0, 1, 0, -1]     # 우 하 좌 상
+dj1 = [1, 0, -1, 0]
+di2 = [-1, 1, 1, -1]    # 우상 우하 좌하 좌상 (대각선)
+dj2 = [1, 1, -1, -1]
+T = int(input())
+for test_case in range(1, T+1):
+    N, M = map(int, input().split())    # N은 사각형 크기, M은 스프레이 범위
+    arr = [list(map(int, input().split())) for _ in range(N)]
+    ans = 0                             # 최대 파리퇴치 수
+    # 모든 출발점에 대하여 검사
+    # 십자가 모양
+    for si in range(N):
+        for sj in range(N):
+            cnt = arr[si][sj]           # 시작좌표가 바뀔 때 시작지점 파리퇴치 가능 수 초기화
+            for mul in range(1, M):     # 스프레이 범위만큼 검사
+                for n in range(4):      # 우 하 좌 상 (mul만큼 이동)
+                    ni = si + di1[n]*mul
+                    nj = sj + dj1[n]*mul
+                    if 0 <= ni < N and 0 <= nj < N:     # 다음 이동 좌표가 범위 내라면
+                        cnt += arr[ni][nj]
+            if ans < cnt:               # 가장 큰 cnt라면 ans 업데이트
+                ans = cnt
+    # X 모양
+    for si in range(N):
+        for sj in range(N):
+            cnt = arr[si][sj]           # 시작좌표가 바뀔 때 시작지점 파리퇴치 가능 수 초기화
+            for mul in range(1, M):     # 스프레이 범위만큼 검사
+                for n in range(4):      # 우상 우하 좌하 좌상 (mul만큼 이동)
+                    ni = si + di2[n]*mul
+                    nj = sj + dj2[n]*mul
+                    if 0 <= ni < N and 0 <= nj < N:     # 다음 이동 좌표가 범위 내라면
+                        cnt += arr[ni][nj]
+            if ans < cnt:               # 가장 큰 cnt라면 ans 업데이트
+                ans = cnt
+    print(f'#{test_case} {ans}')
+
+# 교수님 풀이
+# di, dj를 따로 리스트로 만들지 않고 for문에 튜플 쌍을 넣어서 풀이
+'''
+T = int(input())
+for test_case in range(1, T + 1):
+    N, M = map(int, input().split())
+    arr = [list(map(int, input().split())) for _ in range(N)]
+    ans = 0
+
+    # 십자가 모양 기준
+    for si in range(N):
+        for sj in range(N): # 기준좌표 si, sj
+
+            cnt = arr[si][sj] # 기준점 기준 파리 개수
+            for mul in range(1, M):
+                for di,dj in ((-1,0),(1,0),(0,-1),(0,1)):
+                    ni,nj = si+di*mul, sj+dj*mul
+                    if 0<=ni<N and 0<=nj<N:
+                        cnt += arr[ni][nj]
+            if ans<cnt:
+                ans = cnt
+
+    # X 모양 기준
+    for si in range(N):
+        for sj in range(N):  # 기준좌표 si, sj
+
+            cnt = arr[si][sj]
+            for mul in range(1, M):
+                for di, dj in ((-1,-1), (-1, 1), (1, -1), (1, 1)):
+                    ni, nj = si + di * mul, sj + dj * mul
+                    if 0 <= ni < N and 0 <= nj < N:
+                        cnt += arr[ni][nj]
+            if ans < cnt:
+                ans = cnt
+
+    print(f'#{test_case} {ans}')
+'''
+```
+
+---
+
+## 회문 2 (String)
+
+<img width="898" alt="aps_109" src="https://user-images.githubusercontent.com/86648892/187023791-b5dbed54-ced9-440b-9292-8966a731980d.png">
+
+<img width="914" alt="aps_110" src="https://user-images.githubusercontent.com/86648892/187023792-632c8e48-825f-4f87-8e44-b340fcc8fb5d.png">
+
+<img width="915" alt="aps_111" src="https://user-images.githubusercontent.com/86648892/187023794-9518141f-5fec-4035-893d-49cee2b3ff89.png">
+
+```python
+# maxLen을 반환
+# 아래풀이와 비교해 시간 단축
+# 2,591 ms
+# 여기서 더 시간 단축하는 것은 4번 풀이 참고
+
+def palindrome_max_length(N, arr):
+    maxLen = 1
+    for i in range(N):  # 각 행에 대하여
+        for j in range(N, maxLen, -1):  # 회문길이를 최댓값부터 줘서 거꾸로 검사 # 여기서 maxLen은 범위 넣을 때 정해지니 1로 고정 # N에서 2까지 갈 때 회문이 없으면 어차피 maxLen은 1로 유지됨
+            if maxLen > j: # 밑에서 회문을 찾아 maxLen이 업데이트되었다면 그 아래 j는 검사하지 않음(break) <-- 이를 통해 시간 단축
+                break
+            for k in range(N-j+1):  # 해당 행에서 한 칸씩 이동하면서 회문여부 검사
+                test_arr = arr[i][k:k+j]
+                if test_arr == test_arr[::-1]:  # 회문이라면 maxLen을 업데이트
+                    if len(test_arr) > maxLen:
+                        maxLen = len(test_arr)
+    return maxLen
+
+T = 10
+for _ in range (1, T+1):
+    N = 100
+    test_case = input()
+    rows = [list(input()) for _ in range(N)]
+    cols = list(map(list, zip(*rows)))
+    maxLen = 1
+
+    row_max = palindrome_max_length(N, rows)
+    col_max = palindrome_max_length(N, cols)
+
+    if row_max >= col_max:
+        maxLen = row_max
+    else:
+        maxLen = col_max
+
+    print(f'#{test_case} {maxLen}')
+
+# 1
+
+'''
+# rows와 cols를 만들고 -> 회문길이 1~100에 대하여 회문인지를 판별하고 -> 회문이라면 해당 lengths에 해당 회문의 길이를 추가
+# 이후 lengths에서 최대 길이를 구함
+
+#회문의 각 length들을 가지고 있는 배열 반환
+def palindrome_length(N, rows):
+    lengths = []
+    cols = list(map(list, zip(*rows))) # 전치 행렬
+
+    for i in range(N): # 각 행과 열에 대해
+        for j in range(N, 0, -1): # 회문 길이 1~100
+            for k in range(N-j+1): # 각 행과 열에 있는 회문 길이 lengths에 추가
+                row_arr = rows[i][k:k+j]
+                col_arr = cols[i][k:k+j]
+                if row_arr == row_arr[::-1]:
+                    lengths.append(j)
+                if col_arr == col_arr[::-1]:
+                    lengths.append(j)
+    return lengths
+
+T = 10
+for _ in range (1, T+1):
+    N = 100
+    test_case = input()
+    rows = [list(input()) for _ in range(N)]
+    maxIdx = 0 # 최대 길이 index
+    maxLen = 1 # maxIdx의 길이
+
+    # 회문들
+    lengths = palindrome_length(N, rows)
+
+    # 각 회문의 길이 비교 및 최대 길이 구하기
+    for i in range(len(lengths)):
+        if lengths[i] > lengths[maxIdx]:
+            maxIdx = i
+    maxLen = lengths[maxIdx]
+
+    print(f'#{test_case} {maxLen}')
+'''
+
+# 2
+
+'''
+# rows와 cols를 만들고 -> 회문길이 1~100에 대하여 회문인지를 판별하고
+# 회문이라면 rows의 경우 maxLen1(가로행에서의 회문 중 최대길이)와 비교하여 더 긴 회문이라면 해당 길이를 최댓값으로 업데이트
+# cols의 회문 중 가장 긴 길이를 마찬가지로 maxLen2로 업데이트
+# maxLen1(가로행 회문 길이 중 최대)과 maxLen2(세로열 회문 길이 중 최대)을 비교하여 최종적으로 가장 큰 길이 반환
+
+def palindrome_max_length(N, rows):
+    maxLen1, maxLen2 = 1, 1
+    cols = list(map(list, zip(*rows))) # 전치 행렬
+
+    for i in range(N): # 각 행과 열에 대해
+        for j in range(N, 0, -1): # 회문 길이 1~100
+            for k in range(N-j+1): # 각 행과 열에 있는 회문 길이 lengths에 추가
+                row_arr = rows[i][k:k+j]
+                col_arr = cols[i][k:k+j]
+                if row_arr == row_arr[::-1]:
+                    if len(row_arr) > maxLen1:
+                        maxLen1 = len(row_arr)
+                if col_arr == col_arr[::-1]:
+                    if len(col_arr) > maxLen2:
+                        maxLen2 = len(col_arr)
+    if maxLen1 >= maxLen2:
+        return maxLen1
+    else:
+        return maxLen2
+
+T = 10
+for _ in range (1, T+1):
+    N = 100
+    test_case = input()
+    rows = [list(input()) for _ in range(N)]
+
+    maxLen = palindrome_max_length(N, rows)
+
+    print(f'#{test_case} {maxLen}')
+'''
+
+# 3 (교수님 풀이) 2,690 ms
+
+'''
+def solve():
+    for leng in range(N, 1, -1):    # 길이 N부터 1씩 줄이면서 확인
+        for lst in arr1:
+            for i in range(N-leng+1):   # 시작위치
+                if lst[i:i+leng] == lst[i:i+leng][::-1]:
+                    return leng
+
+        for lst in arr2:
+            for i in range(N-leng+1):   # 시작위치
+                if lst[i:i+leng] == lst[i:i+leng][::-1]:
+                    return leng
+    return leng
+
+T = 10
+# T = int(input())
+for test_case in range(1, T + 1):
+    _ = input()
+    N = 100
+    arr1 = [input() for _ in range(N)]
+    arr2 = list(zip(*arr1))
+
+    ans = solve()
+
+    print(f'#{test_case} {ans}')
+'''
+
+# 4 (속도가 개선된 코드) 519 ms
+# 기존 아이디어: 회문 리스트를 거꾸로 뒤집어 전부 비교
+# 새로운 아이디어: 회문 리스트를 N // 2 만큼 반으로 잘라 좌우를 비교
+
+'''
+# 대칭 여부 파악
+def is_sym(arr, length):
+    for lst in arr:
+        for i in range(N-length+1):     # 시작위치
+            for j in range(length//2):  # 절반만 검사
+                if lst[i+j] != lst[i+length-1-j]:   # 양쪽이 대칭이 아니라면
+                    break
+            else: # 절반을 순회하는 동안 break를 안했다는 것은 대칭이라는 것
+                return True
+    return False
+
+T = 10
+for test_case in range(1, T+1):
+    _ = input()
+    N = 100
+    rows = [input() for _ in range(N)]
+    cols = list(zip(*rows))
+
+    for ans in range(N, 1, -1): # 회문 길이를 100부터 검사
+        if is_sym(rows, ans) or is_sym(cols, ans):  # 가로나 세로에서 회문이 나온다면
+            break   # 그 즉시 순회를 멈추고
+    
+    # ans에는 순회를 멈춘 순간의 회문 길이(최대값)가 들어가 있을 것임
+    print(f'#{test_case} {ans}')
+'''
+```
+
+---
+
+## 문자열 비교 (String)
+
+<img width="930" alt="aps_112" src="https://user-images.githubusercontent.com/86648892/187024014-e2e83a95-5faa-42a2-9560-6f57209f0cfa.png">
+
+<img width="915" alt="aps_113" src="https://user-images.githubusercontent.com/86648892/187024016-778e775d-c4e2-40b8-8c08-017375ebab79.png">
+
+```python
+def match(p, t):
+    i = 0 # 전체 문자열 t의 인덱스
+    j = 0 # 안에 속할 문자열 p의 인덱스
+    while j < len(p) and i < len(t):
+        if t[i] != p[j]: # 만약 일치에 실패한다면
+            i = i-j # i는 j와 비교를 시작한 부분에서 한 칸 더 오른쪽으로 시작점을 옮김
+            j = -1 # j는 처음부터 (인덱스 0부터) 비교 시작
+        i = i+1
+        j = j+1
+    # 1 일치한다면 j가 len(p)까지 상승하여 (j의 끝까지 일치확인)
+    # 2 일치하지 않는다면 결국 i가 len(t)까지 상승하여
+    # while문이 종료될 것
+    # 1의 경우
+    if j == len(p):
+        return 1
+    # 2의 경우
+    else:
+        return 0
+
+T = int(input())
+for test_case in range(1, T+1):
+    p = input()
+    t = input()
+    ans = match(p, t)
+    print(f'#{test_case} {ans}')
+```
+
+---
+
+## 회문 (String)
+
+<img width="903" alt="aps_114" src="https://user-images.githubusercontent.com/86648892/187024127-f86ee1d8-26b1-46dd-b6c2-dab0fbd476bc.png">
+
+<img width="909" alt="aps_115" src="https://user-images.githubusercontent.com/86648892/187024130-b1c810e7-65f0-49c8-9eb3-f8ddc92dd89f.png">
+
+<img width="914" alt="aps_116" src="https://user-images.githubusercontent.com/86648892/187024133-b0ef44dc-97a3-4c71-8763-81fe7585d776.png">
+
+```python
+# N*N 크기 글자판에서 길이가 M인 회문 찾기
+def palindrome(N, M, rows):
+    # 행 탐색
+    for i in range(N):
+        for j in range(N-M+1):
+            if rows[i][j:j+M] == rows[i][j:j+M][::-1]:
+                return ''.join(rows[i][j:j+M]) # array를 join 메서드를 통해 문자열로 변환
+    # 열 탐색
+    cols = list(map(list, zip(*rows))) # zip을 통해 전치 행렬을 만드는 법
+    for i in range(N):
+        for j in range(N-M+1):
+            if cols[i][j:j+M] == cols[i][j:j+M][::-1]: # 슬라이싱을 통해 역순이 같은지 확인
+                return ''.join(cols[i][j:j+M])
+
+T = int(input())
+for test_case in range(1, T+1):
+    N, M = map(int, input().split())
+    rows = [list(input()) for _ in range(N)]
+    ans = palindrome(N, M, rows)
+    print(f'#{test_case} {ans}')
+```
+
+---
+
+## 글자수 (String)
+
+<img width="912" alt="aps_117" src="https://user-images.githubusercontent.com/86648892/187024202-a5637ea2-e099-417f-8132-1dd768463a25.png">
+
+```python
+T = int(input())
+for test_case in range(1, T+1):
+    str1 = input()
+    str2 = input()
+    # str1 기준 lookup table 생성
+    tbl = []
+    for i in str1:
+        if i in tbl:
+            continue
+        else:
+            tbl.append(i)
+    # dictionary 생성 (카운트 배열 인덱스용)
+    dct = {tbl[n]: n for n in range(len(tbl))}
+    # 카운트 배열 생성
+    cnts = [0]*len(tbl)
+    # str2를 순회하여 포함되는 카운트 누적
+    for i in str2:
+        if i in tbl:
+            cnts[dct[i]] += 1
+    # 최대 카운트 도출
+    ans = 0
+    for i in range(len(cnts)):
+        if ans < cnts[i]:
+            ans = cnts[i]
+    print(f'#{test_case} {ans}')
+```
+
+---
+
+## 가장 빠른 문자열 타이핑 (String)
+
+<img width="907" alt="aps_118" src="https://user-images.githubusercontent.com/86648892/187024274-a34f0f62-2993-430e-9176-075fdbfd6d66.png">
+
+<img width="908" alt="aps_119" src="https://user-images.githubusercontent.com/86648892/187024280-4806c359-3247-4707-886a-d74d4a63dcb6.png">
+
+```python
+T = int(input())
+for test_case in range(1, T+1):
+    src, tar = input().split() # source 문자열과 target 문자열
+    N, M = len(src), len(tar)
+    i = 0 # src에서 탐색할 출발점 인덱스 초기화
+    ans = 0
+
+    # src에서 탐색할 출발 인덱스이므로 len(src)보다 작아야함
+    while i < N:
+        if src[i:i+M] == tar: # 해당 출발지점에서 target과 매칭한 결과 매칭한다면
+            i += M # 다음 탐색 때 겹치는 부분이 없도록 출발점을 target의 길이만큼 이동
+        else:
+            i += 1 # 매칭이 되지 않는다면 brute force 방식으로 1만큼 이동
+        ans += 1 # 매칭하면 M만큼, 매칭하지 않는다면 1만큼 움직이고, 움직일 때마다 타이핑 1회와 마찬가지이므로 ans += 1
+    
+    print(f'#{test_case} {ans}')
+```
+
+---
+
+## 괄호검사 (Stack 1)
+
+<img width="906" alt="aps_120" src="https://user-images.githubusercontent.com/86648892/187024344-a85d6345-48db-46d8-a650-90b091328e62.png">
+
+```python
+T = int(input())
+for test_case in range(1, T + 1):
+    st = input()
+    stk = []
+    ans = 1
+    for ch in st:
+        if ch == '(':       # '('인 경우 스택에 push
+            stk.append(ch)
+        else:   # 현재는 ')'인 경우 pop
+            if stk:         # pop할때는 반드시 스택 empty확인
+                stk.pop()
+            else:
+                ans = 0 # 수식오류 [1] : '(' 짝이 없는데 ')'이 닫힌 경우
+                break
+    if stk:
+        ans = 0 # 수식오류 [2] : 모든 기호 처리 종료후 스택에 push한 데이터가 남은 경우
+
+    print(f'#{test_case} {ans}')
+
+'''
+나의 풀이
+
+T = int(input())
+for test_case in range(1, T+1):
+    arr = list(input())
+    stackSize = len(arr)
+    stack = [0]*stackSize
+    top = -1
+    ans = 0
+    cnt1 = 0                                    # '('의 개수
+    cnt2 = 0                                    # ')'의 개수
+
+    for i in arr:                               # 괄호 각각의 개수 구하기
+        if i == '(':
+            cnt1 += 1
+        elif i == ')':
+            cnt2 += 1
+
+    for i in range(len(arr)):
+        if arr[i] == '(':                       # push
+            top += 1
+            stack[top] = arr[i]
+        elif arr[i] == ')' and i == 0:          # 맨 처음에 ')'인 경우 pop 불가
+            ans = 0
+            break
+        elif arr[i] == ')' and stack[top] == 0: # '('가 없는 경우 ')' pop 불가
+            ans = 0
+            break
+        elif arr[i] == ')':
+            stack[top] = 0
+            top -= 1
+
+    if cnt1 == cnt2:                            # pop 후 '('가 남아있다면 짝이 안맞는 것
+        ans = 1
+    else:
+        ans = 0
+
+    print(f'#{test_case} {ans}')
+'''
+```
+
+---
+
+## 깊이우선탐색 (Stack 1)
+
+<img width="912" alt="aps_121" src="https://user-images.githubusercontent.com/86648892/187024477-468ad958-1752-411d-a730-57f8b0e04ca5.png">
+
+<img width="906" alt="aps_122" src="https://user-images.githubusercontent.com/86648892/187024481-51f9fefc-9666-4f22-89b6-88c5277d76ee.png">
+
+```python
+# v는 시작지점 N은 정점개수+1 (1부터 노드번호가 있기에 인덱스 맞추기)
+def dfs(v, N):
+    ans = []
+    top = -1            # stack top 초기화
+    ans.append(v)            # 방문해서 할 일
+    visited[v] = 1      # A~G 중 시작점 방문 표시
+    while True:
+        for w in adjList[v]:        # 시작점의 인접 정점 검사
+            if visited[w] == 0:     # 아직 탐색하지 않은 곳이라면 탐색
+                top += 1            # top 인덱스 추가
+                stack[top] = v      # 이전 지점인 v를 스택에 모아놓음
+                v = w               # 현재 위치를 w로 변경
+                ans.append(v)            # 방문해서 할 일
+                visited[w] = 1      # 탐색했으므로 1로 변경
+                break
+        else:
+            if top != -1:           # 스택이 비어있지 않은 경우
+                v = stack[top]      # pop
+                top -= 1
+            else:                   # 스택이 비어있으면
+                break               # while 종료
+    return ans
+
+T = int(input())
+for test_case in range(1, T+1):
+    V, E = map(int, input().split())
+    N = V+1
+
+    # 인접원소 리스트 생성
+    adjList = [[] for _ in range(N)]
+    for _ in range(E):
+        a, b = map(int, input().split())
+        adjList[a].append(b)
+        adjList[b].append(a)
+
+    visited = [0]*N     # visited 생성
+    stack = [0]*N       # stack 생성 (이전 탐색 지점)
+    ans = dfs(1, N)
+    print(f'#{test_case}', *ans)
+```
+
+---
+
+## 파스칼의 삼각형 (Stack 1)
+
+<img width="913" alt="aps_123" src="https://user-images.githubusercontent.com/86648892/187024542-d45f7243-d924-448d-b9f2-7bc59a33e8d7.png">
+
+<img width="907" alt="aps_124" src="https://user-images.githubusercontent.com/86648892/187024543-1b2c5707-a672-4298-8575-4dedc96b20b3.png">
+
+```python
+# 1 반으로 나누고 stack을 사용하여 나머지 반을 채우는 방식
+
+T = int(input())
+for test_case in range(1, T+1):
+    N = int(input())
+    tri = [[0]*(n+1) for n in range(N)]     # 삼각형 배열 0으로 초기화
+    stack = []      # 왼쪽과 대칭인 오른쪽 부분에 넣을 값을 stack으로 저장 (LIFO)
+    for i in range(N):      # 삼각형의 각 행 접근
+        if i == 0:          # 첫 행 1
+            tri[i][0] = 1
+        elif i == 1:        # 둘째 행 1 1
+            tri[i][0] = 1
+            tri[i][1] = 1
+        else:
+            # 각 행들 가운데 기준 왼쪽 값들
+            # 홀수 개수일 경우 가운데 값 포함
+            for j in range((i//2)+1):
+                if j == 0:
+                    tri[i][j] = 1               # 첫 값은 1로 고정
+                    stack.append(tri[i][j])     # 오른쪽에 넣을 stack 값에 포함
+                else:
+                    tri[i][j] = tri[i-1][j-1] + tri[i-1][j]     # 가운데 기준 왼쪽 값들 구함
+                    stack.append(tri[i][j])                     # stack에 포함
+
+            # 각 행들 가운데 기준 오른쪽 값들
+            # 홀수 개수일 경우 가운데 값에 스택에 있는 똑같은 값을 다시 넣음
+            for k in range(((i//2)+(i%2)), len(tri[i])):
+                tri[i][k] = stack.pop()
+
+    print(f'#{test_case}')
+    for lst in tri:
+        print(*lst)
+
+# 2 왼쪽과 위에 여유공간을 추가하고 arr[1][1]엔 1을 넣어주고 그 밑부터 왼쪽 위 + 위의 값을 더해주어 채워나가는 방식
+
+'''
+T = int(input())
+for test_case in range(1, T + 1):
+    N = int(input())
+    arr = [[0]*(N+1) for _ in range(N+1)]
+
+    arr[1][1] = 1
+    for i in range(2, N+1):
+        for j in range(1, i+1):
+            arr[i][j] = arr[i-1][j-1]+arr[i-1][j]
+
+    print(f'#{test_case}')
+    for i in range(1, N+1):
+        for j in range(1, i+1):
+            print(arr[i][j], end=' ')
+        print()
+'''
+```
+
+---
+
+## 종이붙이기 (Stack 1)
+
+<img width="915" alt="aps_125" src="https://user-images.githubusercontent.com/86648892/187024636-ed6b5cf6-d721-43bd-a2a5-9b72f1a6f6b2.png">
+
+<img width="920" alt="aps_126" src="https://user-images.githubusercontent.com/86648892/187024637-402cefa0-aee9-4caa-a0ef-c7d4f4436ada.png">
+
+```python
+# 리스트에 N마다의 값을 기록해두고 접근 (memoization)
+
+T = int(input())
+for test_case in range(1, T+1):
+    N = int(input()) // 10
+    # 각 N마다 종이를 붙일 수 있는 경우의 수를 기록해놓을 리스트
+    # 편의상 N과 인덱스를 일치시키기 위해 N+1 길이만큼
+    memo = [0] * (N+1)
+    # 초기값
+    memo[1] = 1
+    memo[2] = 3
+    # 점화식을 활용하여 결과값 기록
+    # N번째 경우의 수는 N-1의 경우에 10x20짜리를 붙인 것 + N-2의 경우에 20x20짜리를 붙인 것
+    # 정사각형의 경우 2개로 분할된 경우까지 고려해야 하므로 N의 경우의 수 == N-1의 경우의 수 + N-2의 경우의 수 * 2
+    for i in range(3, N+1):
+        memo[i] = memo[i-1] + memo[i-2]*2
+
+    print(f'#{test_case} {memo[N]}')
+```
+
+---
+
+## 괄호검사 2 (Stack 1)
+
+<img width="906" alt="aps_127" src="https://user-images.githubusercontent.com/86648892/187024711-9904fb06-a19d-43a3-b410-65118964a85a.png">
+
+```python
+T = int(input())
+for test_case in range(1, T+1):
+    st = input()
+    st_bracket = []
+    stack = []
+    ans = 1
+
+    # 괄호만 있는 list 생성
+    for char in st:
+        if char=='(' or char==')' or char=='{' or char=='}':
+            st_bracket.append(char)
+
+    # stack을 이용해 판별
+    for char in st_bracket:
+        if char == '(' or char == '{':
+            stack.append(char)
+        else:
+            if stack:   # 스택이 empty가 아님을 반드시 확인
+                if char == ')' and stack[-1] == '(':
+                    stack.pop()
+                elif char == '}' and stack[-1] == '{':
+                    stack.pop()
+                else:   # 오류[1]: '('나 '{'가 남아있지만 매칭되지 않는 ')'나 '}'가 들어온 경우
+                    ans = 0
+                    break
+            else:   # 오류[2]: ')'나 '}'가 들어왔지만 왼쪽 괄호가 없는 경우
+                ans = 0
+                break
+    if stack:   # 오류[3]: 왼쪽 괄호가 남아있는 경우
+        ans = 0
+
+    print(f'#{test_case} {ans}')
+
+# dictionary를 활용한 풀이
+# 아이디어: 딕셔너리는 쌍이라는 점을 활용하여 괄호열기에 해당하는 괄호닫기를 스택에 추가하고, 괄호닫기가 나올 경우 해당 스택에서 pop된 것과 매칭이되야함을 이용
+'''
+T = int(input())
+for test_case in range(1, T+1):
+    dct = {'(': ')', '{': '}'}
+    tbl = '})'
+    st = input()
+    ans = 1
+    stack = []
+
+    for char in st:
+        if char in dct:                 # 괄호열기일 경우 (키 값)
+            stack.append(dct[char])     # 해당 짝의 괄호닫기 추가
+        elif char in tbl:               # 괄호닫기일 경우
+            if stack and char == stack.pop():   # stack이 남아있고(내 코드 오류[2]에 해당), 들어온 괄호닫기가 stack에 있는 괄호열기와 쌍을 이루는 괄호닫기와 동일한 경우(내 코드 오류[1]에 해당)
+                pass                    # 위의 stack.pop()은 값을 반환하여 비교에도 사용되지만, 그와 동시에 stack도 pop한 상태로 업데이트
+            else:
+                ans = 0
+                break
+    if stack:                           # 괄호열기가 남아있는 경우(내 코드 오류[3]에 해당)
+        ans = 0
+    
+    print(f'#{test_case} {ans}')
+'''
+```
+
+---
+
+## 그래프 경로 (Stack 1)
+
+<img width="934" alt="aps_128" src="https://user-images.githubusercontent.com/86648892/187024819-8d8506aa-dec5-4e5a-b71a-604bcfacfc12.png">
+
+<img width="912" alt="aps_129" src="https://user-images.githubusercontent.com/86648892/187024820-6f30e44f-649e-43d7-8838-df9a4735d143.png">
+
+```python
+# dfs를 통한 경로 존재여부 탐색
+# v는 출발지점, N은 정점개수+1 (1부터 노드번호가 있기에 인덱스 맞추기)
+def dfs(v, N):
+    arr = []
+    top = -1
+    arr.append(v)
+    visited[v] = 1 # 시작점 방문 표시
+    while True:
+        for w in adjList[v]:        # 출발점의 인접 노드 검사
+            if visited[w] == 0:     # 방문하지 않았다면
+                top += 1
+                stack[top] = v      # 이전 방문 지점에 S 추가
+                v = w               # 출발점을 v로 변경
+                arr.append(v)       # 경로에 값 추가
+                visited[w] = 1      # v를 방문한 곳으로 변경
+                break
+        else:                       # 갈 곳이 없으면
+            if top != -1:           # 그리고 돌아갈 곳이 있다면
+                v = stack[top]      # 출발점 되돌리기 (pop)
+                top -= 1
+            else:                   # 돌아갈 곳도 없다면
+                break               # 경로 탐색 종료
+    return arr
+
+T = int(input())
+for test_case in range(1, T+1):
+    V, E = map(int, input().split()) # 노드 개수, 간선 개수
+    N = V+1
+    adjList = [[] for _ in range(N)] # 인접원소 리스트 생성
+    for _ in range(E):
+        a, b = map(int, input().split())
+        # 일방향 (양방향 아님)
+        adjList[a].append(b)
+    S, G = map(int, input().split()) # 출발 노드, 도착 노드
+
+    visited = [0] * N # 방문 여부 표시
+    stack = [0] * N # 이전 탐색 지점 저장용 스택
+
+    # 경로 내에 G가 있다면 S에서 G로 가는 경로가 있는 것
+    arr = dfs(S, N)     # test case #1의 경우 1에서 출발 G를 6으로 받음 # 결과는 arr = [1, 4, 6, 3] # 이는 1에서 일방향으로 갈 수 있는 지점을 담아놓은 것
+    if G in arr:
+        ans = 1
+    else:
+        ans = 0
+
+    print(f'#{test_case} {ans}')
+
+# 교수님 풀이
+
+#1 stack 사용
+
+'''
+def dfs(s):
+    stk = []
+
+    visited[s] = 1
+
+    while True:
+        for e in adjL[s]:
+            if not visited[e]:
+                stk.append(s)   # 되돌아올 위치 push
+
+                s = e
+                visited[s]=1
+                break
+        else:
+            if stk:
+                s = stk.pop()
+            else:
+                break
+
+# T = 10
+T = int(input())
+for test_case in range(1, T + 1):
+    V, E = map(int, input().split())
+
+    adjL = [[] for _ in range(V+1)] # 인접리스트로 연결상태 저장
+    for _ in range(E):
+        s, e = map(int, input().split())
+        adjL[s].append(e)
+
+    s, g = map(int, input().split())
+
+    visited = [0]*(V+1)
+    dfs(s)
+
+    print(f'#{test_case} {visited[g]}')
+'''
+
+#2 재귀호출(recursive) 사용
+# 라이브러리 사용하듯이 무슨 일을 시키는건지만 생각하자 (흐름을 따라가려 하다보면 망한다)
+# 종료조건만 잘 설정하자
+
+'''
+def dfs_recur(s):
+    # 기준에서 연결된 방문안한 노드 찾으면 방문
+    # 일단 s를 방문하고
+    for e in adjL[s]:           # s에서 갈 수 있는 곳 중
+        if not visited[e]:      # 아직 안 간 곳을
+            visited[e]=1        # (방문한 것으로 표시해주고)
+            dfs_recur(e)        # 방문해줘
+
+# T = 10
+T = int(input())
+for test_case in range(1, T + 1):
+    V, E = map(int, input().split())
+
+    adjL = [[] for _ in range(V+1)] # 인접리스트로 연결상태 저장
+    for _ in range(E):
+        s, e = map(int, input().split())
+        adjL[s].append(e)
+
+    s, g = map(int, input().split())
+
+    visited = [0]*(V+1)
+    dfs_recur(s)
+
+    print(f'#{test_case} {visited[g]}')
+'''
+```
+
+---
+
+## 반복문자 지우기 (Stack 1)
+
+<img width="905" alt="aps_130" src="https://user-images.githubusercontent.com/86648892/187026037-237a357f-9dfe-41e1-91c3-8d8cf7893cb3.png">
+
+<img width="901" alt="aps_131" src="https://user-images.githubusercontent.com/86648892/187026041-e68b96e2-e963-4842-90e2-3aa7e6fab75a.png">
+
+```python
+T = int(input())
+for test_case in range(1, T+1):
+    word = input()
+    stack = []
+
+    for char in word:                   # 모든 문자열을 stack에 넣어주는 과정에서
+        if stack:                       # stack이 빈 상태가 아니라면
+            if char == stack[-1]:       # stack에 가장 최근 들어간 문자와 같다면 (연속된 것이므로)
+                stack.pop()             # 제거해준다
+            else:                       # stack에 가장 최근 들어간 문자와 같지 않다면 (연속되지 않은 것이므로)
+                stack.append(char)      # 넣어준다
+        else:                           # stack이 빈 상태라면
+            stack.append(char)          # 넣어준다
+
+    ans = len(stack)
+    print(f'#{test_case} {ans}')
+
+# 아래는 처음 풀었던 풀이
+# 1) stack[-1]로 접근한 점은 좋았다
+# 2) 어차피 문자열 역시 하나의 list이므로 chars = list(word)는 굳이 불필요하다
+# 3) if stack: 을 통해 stack이 빈 상태가 아니라면 이라는 조건이 필요하다
+# 3-1) 이런 조건을 걸면 자연스레 index error를 방지하고자 stack 맨 앞에 0을 넣고, stack[1:]을 출력할 필요도 없다
+
+'''
+T = int(input())
+for test_case in range(1, T+1):
+    word = input()
+    chars = list(word)
+    stack = [0]                         # index error 방지
+
+    for i in range(len(chars)):         # 모든 문자열을 stack에 넣어주는 과정에서
+        if chars[i] != stack[-1]:       # stack에 가장 최근 들어간 문자와 같지 않다면 (연속되지 않은 것이므로)
+            stack.append(chars[i])      # 넣어준다
+        else:                           # stack에 가장 최근 들어간 문자와 같다면 (연속된 것이므로)
+            stack.pop()                 # 제거해준다
+
+    ans = len(stack[1:])                # index error 방지용으로 넣었던 0을 뺀 원소의 수
+    print(f'#{test_case} {ans}')
+'''
+```
+
+---
+
+## 길찾기 (DFS and BFS)
+
+<img width="926" alt="aps_132" src="https://user-images.githubusercontent.com/86648892/187026156-4a7f3793-ce0a-4c36-8530-38090ea031b2.png">
+
+<img width="935" alt="aps_133" src="https://user-images.githubusercontent.com/86648892/187026157-285c7df1-7672-4d63-b92d-831270ffb2f9.png">
+
+<img width="921" alt="aps_134" src="https://user-images.githubusercontent.com/86648892/187026158-49afbc0c-7d1b-47a4-a499-1f21f7b18261.png">
+
+<img width="924" alt="aps_135" src="https://user-images.githubusercontent.com/86648892/187026159-3e137f25-afb6-483b-80ca-06a14d11e46f.png">
+
+<img width="907" alt="aps_136" src="https://user-images.githubusercontent.com/86648892/187026160-dbccce60-db34-45ae-8199-1628e1048a01.png">
+
+### DFS
+```python
+def dfs(s):
+    stack = []
+    visited[s] = 1
+
+    while True:
+        for e in adjList[s]:
+            if not visited[e]:
+                stack.append(s)
+                s = e
+                visited[s] = 1
+                break
+        else:
+            if stack:
+                s = stack.pop()
+            else:
+                break
+
+T = 10
+for test_case in range(1, T+1):
+    _, E = map(int, input().split())
+    adjList1 = [0]*100
+    adjList2 = [0]*100
+    edges = list(map(int, input().split()))
+    # 연결상태 저장(adjList1, adjList2)
+    for i in range(E*2):
+        if i % 2 == 0:
+            if adjList1[edges[i]] == 0:
+                adjList1[edges[i]] = edges[i+1]
+            else:
+                adjList2[edges[i]] = edges[i+1]
+    adjList = list(map(list, zip(adjList1, adjList2)))
+
+    visited = [0]*100
+    dfs(0)
+
+    print(f'#{test_case} {visited[99]}')
+```
+
+### BFS
+```python
+def bfs(v, N, t):   # v는 시작정점, N은 마지막정점, t는 찾는정점
+    # visited 배열, queue 생성
+    visited = [0]*(N+1)
+    queue = []
+    # 시작정점 기본작업
+    queue.append(v)
+    visited[v] = 1
+    while queue:
+        v = queue.pop(0)
+        # 정점에 대한 작업
+        if v == t:              # 목표 정점을 발견하면 1을 반환하고 종료 (목표 노드가 있는지 찾는 문제)
+            return 1            # 목표 노드까지의 경로 여부 반환
+            #return visited[t]  # 목표 노드까지 도달했을 때 경로의 길이 반환
+        for w in adjList[v]:    # v에 인접한 원소 접근
+            if visited[w] == 0: # 미방문지라면 이동
+                queue.append(w)
+                visited[w] = visited[v]+1
+    return 0                # 목표 노드를 못찾으면 0 반환
+
+T = 10
+for _ in range(T):
+    test_case, E = map(int, input().split())
+    arr = list(map(int, input().split()))
+
+    # 단방향 인접리스트 생성
+    adjList = [[] for _ in range(100)]
+    for i in range(E):
+        a, b = arr[i*2], arr[i*2+1]
+        adjList[a].append(b)
+
+    ans = bfs(0, 99, 99)  # 시작, 마지막정점, 목표 정점번호
+
+    print(f'#{test_case} {ans}')
+```
+
+---
+
+## 의석이의 세로로 말해요 (IM)
+
+<img width="902" alt="aps_137" src="https://user-images.githubusercontent.com/86648892/187026362-c6ad39e0-0b40-4bcb-b4ad-98d15d222b19.png">
+
+<img width="933" alt="aps_138" src="https://user-images.githubusercontent.com/86648892/187026365-ffbecd5f-f60e-4a50-93be-75ec554a728f.png">
+
+<img width="890" alt="aps_139" src="https://user-images.githubusercontent.com/86648892/187026369-5737178e-8705-4b6a-bccd-e56f9c9aff39.png">
+
+```python
+# 하기 코드의 가능한 개선방향
+# 2차원 리스트를 활용하고, 좌표에 조건을 걸어 해당하지 않는 것은 수행하지 않음
+# try-except를 활용
+
+def pop_reverse_st(n):
+    for i in range(5):
+        if reverse_st[i]:
+            result.append(reverse_st[i].pop())
+
+T = int(input())
+for test_case in range(1, T+1):
+    st = [list(input()) for _ in range(5)]
+    reverse_st = []
+    result = [] # 세로로 읽은 결과 저장 리스트
+    maxLen = 0
+
+    # stack처럼 pop해주기 위해 역순으로된 문자열 리스트 생성
+    for i in range(5):
+        reverse_st.append(st[i][::-1])
+
+    # 문자열 중 가장 긴 길이
+    for arr in reverse_st:
+        temp = len(arr)
+        if temp > maxLen:
+            maxLen = temp
+
+    # 가장 긴 길이만큼 세로순으로 pop 시도
+    for i in range(maxLen):
+        pop_reverse_st(5)
+
+    ans = ''.join(result)
+    print(f'#{test_case} {ans}')
+```
+
+---
+
+## 쇠막대기 자르기 (IM)
+
+<img width="970" alt="aps_140" src="https://user-images.githubusercontent.com/86648892/187029457-da7bcede-bc44-4906-bd8e-d031f5263a13.png">
+
+<img width="904" alt="aps_141" src="https://user-images.githubusercontent.com/86648892/187029459-4b041246-2a5b-4018-b842-a3c426d6df01.png">
+
+```python
+T = int(input())
+for test_case in range(1, T+1):
+    st = input()
+    i = 0
+    num = 0     # 쌓여있는 막대기 개수
+    total = 0   # 조각의 개수
+
+    # [1] '()' 레이저라면 현재 쌓여있는 막대기 수만큼 조각 수를 늘림
+    # [2] '(' 라면 현재 쌓여있는 막대기에 하나를 더하고, 조각 수도 하나 늘림
+    # [3] ')' 라면 현재 쌓여있는 막대기를 하나 없앰
+
+    while i < len(st):
+        if st[i] == '(' and st[i+1] == ')': # [1]이라면 시작위치를 2만큼 이동 (레이저는 두 글자이므로)
+            total += num
+            i += 2
+        elif st[i] == '(':                  # [2]라면 시작위치를 1만큼 이동
+            total += 1
+            num += 1
+            i += 1
+        elif st[i] == ')':                  # [3]이라면 시작위치를 1만큼 이동
+            num -= 1
+            i += 1
+    print(f'#{test_case} {total}')
+
+    # 인덱스가 넘어가는 경우를 생각하기 싫어서 while을 사용하였지만
+    # for문을 사용하면서 적절히 슬라이싱하거나 index를 가지고 놀아주는 생각도 해보자
+```
+
+---
+
+## 백만장자 프로젝트 (IM)
+
+<img width="908" alt="aps_142" src="https://user-images.githubusercontent.com/86648892/187029533-530a0f18-0e01-4cd4-9fc1-d83f31fc7b08.png">
+
+<img width="909" alt="aps_143" src="https://user-images.githubusercontent.com/86648892/187029538-dd4a64d1-f3a1-4fca-aecf-e06f0be33854.png">
+
+```python
+# 이익 = 가장 큰 값을 가지는 값의 인덱스 기준 왼쪽 인덱스들의 값들과 가장 큰 값의 차이들의 합
+# 가장 큰 값의 인덱스의 오른쪽으로 출발 지점을 업데이트
+T = int(input())
+for test_case in range(1, T+1):
+    N = int(input())
+    arr = list(map(int, input().split()))
+    s = 0       # 출발 인덱스
+    ans = 0     # 이익의 합
+    while s < N:
+        max_idx = s                         # 처음엔 0, 이후엔 바뀌어진 max_idx 반영
+        for i in range(s+1, N):             # 처음엔 0부터, 이후엔 계산된 최대값 이후부터 다시 계산
+            if arr[i] > arr[max_idx]:       # 최대값의 인덱스 업데이트
+                max_idx = i
+        for i in range(s, max_idx):         # 출발 지점부터 최대값이 있는 곳 전까지 각각의 값에 대하여
+            ans += (arr[max_idx] - arr[i])  # 최대값과의 차(이익)를 ans(이익의 합)에 더해줌
+        s = max_idx + 1                     # 출발 지점을 최대값 이후로 업데이트 (최대값 위치에 변화가 없었다면 출발 지점을 오른쪽으로 +1)
+    print(f'#{test_case} {ans}')
+```
+
+---
+
+## 비밀번호 (IM)
+
+<img width="912" alt="aps_144" src="https://user-images.githubusercontent.com/86648892/187029629-d60ad175-f91d-4828-97e7-c09fffb4b6e7.png">
+
+<img width="913" alt="aps_145" src="https://user-images.githubusercontent.com/86648892/187029630-87eded9e-7864-46eb-ac32-fcdf71f71bb7.png">
+
+<img width="910" alt="aps_146" src="https://user-images.githubusercontent.com/86648892/187029631-c8542f60-22a4-4e7a-9537-8699b6ddc842.png">
+
+```python
+T = 10
+for test_case in range(1, T+1):
+    n, st = input().split()
+    N = int(n)
+    stack = []
+    for num in st:
+        if stack:
+            if num == stack[-1]:
+                stack.pop()
+            else:
+                stack.append(num)
+        else:
+            stack.append(num)
+
+    ans = ''.join(stack)
+    print(f'#{test_case} {ans}')
+```
+
+---
+
+## 농작물 수확하기 (IM)
+
+<img width="931" alt="aps_147" src="https://user-images.githubusercontent.com/86648892/187029689-cd8e8707-847f-4b55-9c26-ad17978c83a9.png">
+
+<img width="927" alt="aps_148" src="https://user-images.githubusercontent.com/86648892/187029693-45f13fd6-9400-4974-8755-65aa433993ac.png">
+
+```python
+T = int(input())
+for test_case in range(1, T+1):
+    N = int(input())
+    farm = [list(map(int, input())) for _ in range(N)]
+    farm_reverse = []
+    for i in range(N):
+        farm_reverse.append(farm[i][::-1])
+    total = 0
+    total_l = 0
+    total_r = 0
+
+    # 전체 수익
+    for i in range(N):
+        for j in range(N):
+            total += farm[i][j]
+
+    # 왼쪽 빠지는 부분 수익 (from farm)
+    for i in range(N):
+        temp = abs((N//2) - i)
+        for j in range(temp):
+            total_l += farm[i][j]
+
+    # 오른쪽 빠지는 부분 수익 (from farm_reverse)
+    for i in range(N):
+        temp = abs((N//2) - i)
+        for j in range(temp):
+            total_r += farm_reverse[i][j]
+
+    # 수익 = 전체가능수익 - 빠지는 수익
+    ans = total - total_l - total_r
+    print(f'#{test_case} {ans}')
+
+'''
+M = N // 2
+
+# 1 기본적인 방법 (i좌표와 j좌표 간의 규칙성 찾기) (이를 통해 해당 부분 더해주기)
+
+T = int(input())
+for test_case in range(1, T + 1):
+    N = int(input())
+    arr = [list(map(int, input())) for _ in range(N)]
+    M = N//2
+    ans = 0
+
+    for i in range(N):
+        if i<=M:
+            for j in range(M-i, M+i+1):
+                ans += arr[i][j]
+        else:
+            for j in range(i-M, N-(i-M)):
+                ans += arr[i][j]
+    print(f'#{test_case} {ans}')
+'''
+
+'''
+M = N // 2
+s = 행의 해당 부분 출발점
+e = 행의 해당 부분 끝점
+
+# 2 start index와 end index를 조절하는 방법
+
+T = int(input())
+for test_case in range(1, T + 1):
+    N = int(input())
+    arr = [list(map(int, input())) for _ in range(N)]
+    s = e = M = N//2
+    ans = 0
+
+    for i in range(N):
+        for j in range(s, e+1):
+            ans += arr[i][j]
+        if i<M:
+            s -= 1
+            e += 1
+        else:
+            s += 1
+            e -= 1
+    print(f'#{test_case} {ans}')
+'''
+```
+
+---
+
+## Ladder 2 (IM)
+
+<img width="923" alt="aps_149" src="https://user-images.githubusercontent.com/86648892/187029796-14f23620-d62c-4b0a-80ba-b30d5782239b.png">
+
+<img width="920" alt="aps_150" src="https://user-images.githubusercontent.com/86648892/187029800-c24618bd-8824-45bc-8f09-804f3bdf7b16.png">
+
+<img width="935" alt="aps_151" src="https://user-images.githubusercontent.com/86648892/187029803-389afd74-092e-452e-a0b9-5522e527506b.png">
+
+<img width="917" alt="aps_152" src="https://user-images.githubusercontent.com/86648892/187029804-214f58ee-37f9-42d2-ac8a-c0971d059a39.png">
+
+```python
+T = 10
+for test_case in range(1, T+1):
+    N = int(input())
+    # 양쪽에 0으로 padding
+    ladder = [[0] + list(map(int, input().split())) + [0] for _ in range(100)]
+    di = [1, 0, 0]  # 하 좌 우
+    dj = [0, -1, 1]
+    dr = 0          # 하 방향으로 초기화
+    start = []      # 가능한 출발지점
+    cnts = dict()         # x와 거리
+    cnt = 0
+
+    # 출발 가능한 x 파악
+    for x in range(1, 101):
+        if ladder[0][x] == 1:
+            start.append(x)
+
+    # 각 출발 지점에 대하여
+    for x in start:
+        # 출발 인덱스
+        ci = 0
+        cj = x
+        cnt = 0
+
+        # 이동
+        while ci < 99:
+            ni = ci + di[dr]
+            nj = cj + dj[dr]
+
+            if dr == 0:             # 아래로 가는 중
+                if ladder[ni][nj-1] == 1:   # 왼쪽에 1이 있다면
+                    ci = ni
+                    cj = nj
+                    dr = 1
+                    cnt += 1
+                elif ladder[ni][nj+1] == 1: # 오른쪽에 1이 있다면
+                    ci = ni
+                    cj = nj
+                    dr = 2
+                    cnt += 1
+                else:                       # 둘다 없다면 그대로 아래로 진행
+                    ci = ni
+                    cj = nj
+                    cnt += 1
+            elif dr == 1:           # 왼쪽으로 가는 중
+                if ladder[ni][nj-1] == 0:
+                    ci = ni                 # 다음 왼쪽 칸이 0으로 막혀있다면
+                    cj = nj
+                    dr = 0
+                    cnt += 1
+                else:                       # 갈 곳이 있다면 그대로 진행
+                    ci = ni
+                    cj = nj
+                    cnt += 1
+            elif dr == 2:           # 오른쪽으로 가는 중
+                if ladder[ni][nj+1] == 0:   # 다음 오른쪽 칸이 0으로 막혀있다면
+                    ci = ni
+                    cj = nj
+                    dr = 0
+                    cnt += 1
+                else:                       # 갈 곳이 있다면 그대로 진행
+                    ci = ni
+                    cj = nj
+                    cnt += 1
+        cnts[x] = cnt
+
+    # 최단거리 찾기
+    min_x = start[0]
+    for x in cnts:
+        if cnts[x] <= cnts[min_x]:
+            min_x = x
+
+    # padding을 줬으므로 x좌표 -1
+    ans = min_x - 1
+    print(f'#{test_case} {ans}')
+
+'''
+# 교수님 풀이
+# 같은 아이디어
+# 개선점
+# 1) 출발해야되는 x좌표를 따로 리스트에 저장하는 것이 아니라 for문에서 continue를 사용하여 해당하지 않는 x좌표의 경우 for문 이하 코드를 실행하지 않도록 설정
+# 2) 코드 간소화
+
+T = 10
+# T = int(input())
+for test_case in range(1, T + 1):
+    _ = input()
+    arr = [[0]+list(map(int, input().split()))+[0] for _ in range(100)]
+    mx = 100*100
+
+    # j==1부터 100까지 1을 만나면 탐색시작
+    for sj in range(1, 101):
+        if arr[0][sj] == 0:
+            continue
+
+        cj = sj
+        ci = cnt = dj = 0
+        while ci < 99:
+            cnt += 1
+            if dj == 0: # 아래방향: 이동 후 방향 설정
+                ci += 1   # [1] 이동
+                if arr[ci][cj-1]==1:    # 좌측에 길 있음
+                    dj = -1
+                elif arr[ci][cj+1]==1:  # 우측에 길
+                    dj = 1
+            else:       # 좌 / 우 방향
+                cj += dj    # [1] 이동
+                if arr[ci][cj+dj]==0:   # 막다른 길 -> 아래
+                    dj = 0
+        if mx >= cnt:  # 같은 거리면 높은 좌표값이 정답
+            mx, ans = cnt, sj-1
+
+    print(f'#{test_case} {ans}') # 정답은 -1한 좌표
+'''
+```
+
+---
+
+## 후위표기법 변환 (Stack 2)
+
+<img width="900" alt="aps_153" src="https://user-images.githubusercontent.com/86648892/187029956-3abeaf85-b71e-4a7e-b86c-211248f77b07.png">
+
+```python
+T = int(input())
+for test_case in range(1, T+1):
+    st = input()                    # 입력받은 문자열
+    priority = {'*': 2, '+': 1}     # 우선순위 설정
+    stack = []                      # 연산자용 스택
+    ans = ''                        # 출력할 문자열
+    for i in range(len(st)):        # 문자열 길이만큼 수행
+        if st[i] == '*' or st[i] == '+':    # 연산자라면
+            while stack and priority[st[i]] <= priority[stack[-1]]: # 현재 연산자가 스택에 있는 연산자보다 우선순위가 크지 않을 때까지
+                ans += stack.pop()                                  # 스택의 연산자가 더 우선순위가 높으므로 pop하여 추가
+            stack.append(st[i])                                     # 우선순위가 더 높은 연산자 다 빼주고 스택에 현제 연산자 추가
+        else:                       # 숫자라면 출력용 문자열에 추가
+            ans += st[i]
+    while len(stack) != 0:          # stack에 남아있는 연산자 추가
+        ans += stack.pop()
+
+    print(f'#{test_case} {ans}')
+
+# 교수님 풀이
+'''
+pri = {'+':1, '*':2}
+# T = 10
+T = int(input())
+for test_case in range(1, T + 1):
+    # _ = input()
+    st = input()
+
+    equ = ''
+    stk = []
+    # [1] 중위표기식 -> 후위표기식
+    for ch in st:
+        if ch.isdigit():    # 숫자인 경우: equ에 추가
+            equ += ch
+        else:   # 연산자인 경우
+            if not stk:
+                stk.append(ch)
+            else:
+                if pri[ch] > pri[stk[-1]]:
+                    stk.append(ch)
+                else:
+                    while stk and pri[ch] <= pri[stk[-1]]:
+                        equ += stk.pop()
+                    stk.append(ch)
+
+    # [2] 남은 연산자를 순서대로 pop, equ에 추가
+    while stk:
+        equ += stk.pop()
+
+    print(f'#{test_case} {equ}')
+'''
+
+# 교수님 풀이 2
+'''
+pri = {'+':1, '*':2}
+# T = 10
+T = int(input())
+for test_case in range(1, T + 1):
+    # _ = input()
+    st = input()
+
+    equ = ''
+    stk = []
+    # [1] 중위표기식 -> 후위표기식
+    for ch in st:
+        if ch.isdigit():    # 숫자인 경우: equ에 추가
+            equ += ch
+        else:   # 연산자인 경우
+            while stk and pri[ch] <= pri[stk[-1]]:
+                equ += stk.pop()
+            stk.append(ch)
+
+    # [2] 남은 연산자를 순서대로 pop, equ에 추가
+    while stk:
+        equ += stk.pop()
+
+    print(f'#{test_case} {equ}')
+'''
+```
+
+---
+
+## 원소의 합이 K인 부분집합 개수 (Stack 2)
+
+<img width="907" alt="aps_154" src="https://user-images.githubusercontent.com/86648892/187030033-2102b251-18e9-4085-8345-cfdf914f1b0a.png">
+
+```python
+# 부분집합의 인덱스 0번 원소부터 시작
+# 인덱스 0번 원소에서 출발 -> 아직 N이 아니네? -> 해당 0번 원소를 포함 / 비포함으로 나누어 각각 해당 경우로 다시 함수 실행
+# 0번 원소가 포함된 경우에서 1번 원소가 포함 / 비포함으로 쪼개지고, 0번 원소가 포함되지 않은 경우에서 1번 원소가 포함 / 비포함으로 쪼개짐
+# 이를 반복하여 N-1까지 갈 경우(끝 원소) 해당 원소에 대해 다시 포함 / 비포함으로 나누고
+# 여기서 i+1을 하면 이제 i == N에 걸림
+# 모든 부분집합의 케이스들에 대하여 i == N 이하의 항목이 실행됨
+
+def search_subset(i, N):
+    global ans                          # ans값을 변경시켜줘야하므로 global
+    if i == N:                          # 모든 원소에 대해 판단 (재귀가 N까지 도달할 때까지)
+        s = 0                           # 합 (각 케이스 검사 시 0으로 초기화)
+        for i in range(N):              # 해당 케이스 각 비트 검사 (포함 여부 검사)
+            if bit[i] == 1:             # 해당 원소가 포함이라면
+                s += lst[i]             # 합에 추가
+        if s == K:                      # 해당 케이스 합이 K와 같다면
+            ans += 1                    # 경우의 수 +1
+    else:                               # 모든 원소에 아직 접근한 것이 아니라면
+        bit[i] = 1                      # 해당 원소(lst[i]) 포함하는 경우
+        search_subset(i+1, N)           # 해당 원소를 포함하는 경우로 recursion
+        bit[i] = 0                      # 해당 원소(lst[i]) 포함하지 않는 경우
+        search_subset(i+1, N)           # 해당 원소를 포함하지 않는 경우로 recursion
+
+T = int(input())
+for test_case in range(1, T+1):
+    N, K = map(int, input().split())        # N은 전체 리스트 길이, K는 부분집합의 합 타겟값
+    lst = list(map(int, input().split()))
+    bit = [0] * N                           # 각 원소의 포함 여부
+    ans = 0                                 # 부분집합의 합 K와 일치 횟수
+    search_subset(0, N)
+    print(f'#{test_case} {ans}')
+
+# 교수님 풀이
+# 1) 나는 포함여부를 나타내는 bit를 사용했다면, 교수님은 바로 sum으로 재귀
+# 2) return을 잘 써주자
+'''
+def dfs(n, sm):
+    global ans
+
+    # 종료조건
+    if n==N:
+        if sm == K:
+            ans += 1
+        return
+
+    # dfs(n+1) 호출
+    dfs(n+1, sm+lst[n]) # 사용하는 경우
+    dfs(n+1, sm)        # 사용하지 않는 경우
+
+# T = 10
+T = int(input())
+for test_case in range(1, T + 1):
+    N, K = map(int, input().split())
+    lst = list(map(int, input().split()))
+    ans = 0
+
+    dfs(0, 0)
+
+    print(f'#{test_case} {ans}')
+'''
+
+# 교수님 풀이2 (가지치기)
+# 가지치기는 테스트 케이스의 수가 클 때 필수
+'''
+def dfs(n, sm):
+    global ans
+
+    # 가지치기는 제일 위에서, 제일 마지막 순서로
+    if sm > K:  # 이미 K값 초과해서 답을 찾을 가능성이 없는 경우
+        return
+
+    # 종료조건
+    if n==N:
+        if sm == K:
+            ans += 1
+        return
+
+    # dfs(n+1) 호출
+    dfs(n+1, sm+lst[n]) # 사용하는 경우
+    dfs(n+1, sm)        # 사용하지 않는 경우
+
+# T = 10
+T = int(input())
+for test_case in range(1, T + 1):
+    N, K = map(int, input().split())
+    lst = list(map(int, input().split()))
+    ans = 0
+
+    dfs(0, 0)
+
+    print(f'#{test_case} {ans}')
+'''
+```
+
+---
+
+## 계산기2 (후위표기식 변환 및 계산) (Stack 2)
+
+<img width="913" alt="aps_155" src="https://user-images.githubusercontent.com/86648892/187030135-87511529-f5d0-4f29-90bb-c8546306252c.png">
+
+```python
+T = 10
+for test_case in range(1, T+1):
+    N = int(input())
+    st = input()
+    priority = {'*': 2, '+': 1}     # 우선순위 설정
+    stack1 = []                     # 연산자용 스택
+    stack2 = []                     # 피연산자용 스택
+    postfix = ''                    # 후위표기식
+
+    # 후위표기식 생성
+    for i in range(N):        # 문자열 길이만큼 수행
+        if st[i] == '*' or st[i] == '+':    # 연산자라면
+            while stack1 and priority[st[i]] <= priority[stack1[-1]]:   # 현재 연산자가 스택에 있는 연산자보다 우선순위가 크지 않을 때까지
+                postfix += stack1.pop()                                 # 스택의 연산자가 더 우선순위가 높으므로 pop하여 추가
+            stack1.append(st[i])                                        # 우선순위가 더 높은 연산자 다 빼주고 스택에 현제 연산자 추가
+        else:                       # 숫자라면 후위표기 문자열에 바로 추가
+            postfix += st[i]
+    while len(stack1) != 0:         # stack에 남아있는 연산자 추가
+        postfix += stack1.pop()
+
+    # 후위표기식 계산
+    for char in postfix:
+        if char == '*':     # '*' 연산자라면 피연산자의 최근 2개의 숫자를 곱하고 다시 push
+            temp = int(stack2.pop()) * int(stack2.pop())
+            stack2.append(str(temp))
+        elif char == '+':   # '+' 연산자라면 피연산자의 최근 2개의 숫자를 더하고 다시 push
+            temp = int(stack2.pop()) + int(stack2.pop())
+            stack2.append(str(temp))
+        else:               # 피연산자라면 stack2(피연산자용 스택)에 추가
+            stack2.append(char)
+
+    ans = stack2.pop()      # 마지막에 남은 값이 계산된 값
+    print(f'#{test_case} {ans}')
+
+# 교수님 풀이
+# 1) 어차피 후위표기식을 만들 때 사용하는 스택은 결국 모두 원소를 빼낼 것이므로 피연산자용 스택을 따로 만들 필요 없음
+# 2) operand의 순서를 잘 설정해놓자
+'''
+pri = {'+':1, '*':2}
+T = 10
+# T = int(input())
+for test_case in range(1, T + 1):
+    _ = input()
+    st = input()
+
+    equ = ''
+    stk = []
+    # [1] 중위표기식 -> 후위표기식
+    for ch in st:
+        if ch.isdigit():    # 숫자인 경우: equ에 추가
+            equ += ch
+        else:   # 연산자인 경우
+            while stk and pri[ch] <= pri[stk[-1]]:
+                equ += stk.pop()
+            stk.append(ch)
+
+    # 잊지말고 처리: 남은 연산자를 순서대로 pop, equ에 추가
+    while stk:
+        equ += stk.pop()
+
+    # [2] 후위표기식 계산
+    for ch in equ:
+        if ch.isdigit():
+            stk.append(int(ch))         # 계산을 위해 int로 변형하여 append
+        else:
+            op2 = stk.pop()             # operand
+            op1 = stk.pop()
+            if ch == '+':
+                stk.append(op1+op2)     # 순서는 op1+op2라는 것을 명심 ('-' 나 '/'일 경우 값이 달라짐) # 먼저 들어가있는 것(스택에서 나중에 pop되는 것)이 연산에서 앞의 항
+            elif ch == '*':
+                stk.append(op1*op2)
+
+    print(f'#{test_case} {stk.pop()}')
+'''
+```
+
+---
+
+## Forth (Stack 2)
+
+<img width="940" alt="aps_156" src="https://user-images.githubusercontent.com/86648892/187030236-0f967772-141e-4181-97b1-0dba973cb4bc.png">
+
+<img width="916" alt="aps_157" src="https://user-images.githubusercontent.com/86648892/187030237-ad40ed47-12af-4302-95de-399179781dfe.png">
+
+```python
+# error가 발생하는 경우 [1] 연산자 pop을 했는데 스택이 empty인 경우 [2] 모든 동작을 종료했는데 스택에 값이 남아있는 경우
+# try-except를 사용하지 않을 것이면 pop()하는 위치마다 에러처리를 해주면 된다
+T = int(input())
+for test_case in range(1, T+1):
+    postfix = input().split()
+    stk = []
+    for char in postfix:
+        # 숫자일 경우
+        if char.isdigit():
+            stk.append(int(char))
+        # 연산자일 경우
+        else:
+            # [1] 처리
+            try:
+                if char == '.':
+                    ans = stk.pop()
+                else:
+                    op2 = stk.pop()
+                    op1 = stk.pop()
+                    if char == '+':
+                        stk.append(op1+op2)
+                    elif char == '-':
+                        stk.append(op1-op2)
+                    elif char == '*':
+                        stk.append(op1*op2)
+                    elif char == '/':
+                        stk.append(op1//op2)
+                    else:
+                        ans = 'error'
+                        break
+            except:
+                ans = 'error'
+    # [2] 처리
+    if stk:
+        ans = 'error'
+    print(f'#{test_case} {ans}')
+```
+
+---
+
+## 미로 (DFS and BFS)
+
+<img width="935" alt="aps_158" src="https://user-images.githubusercontent.com/86648892/187030307-defad46d-75fe-43eb-acaf-b0c74933d03d.png">
+
+<img width="923" alt="aps_159" src="https://user-images.githubusercontent.com/86648892/187030308-c675c353-6395-4eda-87ee-f2e4213f114f.png">
+
+### DFS, 경로 여부
+```python
+# 그래프 경로는 연결리스트로 dfs 수행
+# 미로는 4방향으로 dfs 수행
+# dfs에서의 단위작업은 1) 기준점 s잡기 2) visited[s]를 방문 표시 3) 스택 생성 및 돌아갈 지점 push 4) 그 외 할일
+
+def dfs(si, sj):
+    stk = []
+    visited[si][sj] = 1
+
+    while True:
+        # 상하좌우 네방향에 대하여, 미방문지이고, 길이면(벽이 아니라면)
+        for di, dj in ((-1,0), (1,0), (0,-1), (0,1)):
+            ni, nj = si+di, sj+dj   # 다음에 갈 지점
+            if 0<=ni<N and 0<=nj<N and not visited[ni][nj] and arr[ni][nj]!='1':
+                stk.append((si, sj))
+
+                si, sj = ni, nj     # 탐색 기준점 변경
+                visited[ni][nj] = 1 # 방문 표시
+                break
+        # 갈 곳을 못찾았다면(네방향 모두 갈 곳이 없다면)
+        else:
+            if stk:     # 이전 지점으로 간다
+                si, sj = stk.pop()
+            else:       # 갈 곳도 없고 이전 지점도 없다면 경로 탐색을 종료
+                break
+
+# 재귀함수
+# 재귀는 일종의 라이브러리처럼 사용해라 (뒤에 일은 너에게 맡긴다)
+def dfs_recur(si, sj):
+    for di, dj in ((-1, 0), (1, 0), (0, -1), (0, 1)):
+        ni, nj = si + di, sj + dj
+        if 0 <= ni < N and 0 <= nj < N and not visited[ni][nj] and arr[ni][nj] != '1':      # 상하좌우로 이동가능한 곳에 이동하여
+            visited[ni][nj] = 1     # 이동한 곳에 방문표시
+            dfs_recur(ni,nj)        # 이동가능한 곳에 관하여 다시 이동가능한 곳 탐색하여 방문표시 (이렇게 하면 이동가능한 모든 경우에 대해 반복적으로 이동, 방문표시 수행) (목표지점이 이동가능한 경우라면 이 곳 역시 방문표시가 1로 변경되어있을 것)
+
+T = int(input())
+for test_case in range(1, T+1):
+    N = int(input())
+    arr = [input() for _ in range(N)]
+
+    # [1] 출발지, 목적지 찾기
+    for i in range(N):
+        for j in range(N):
+            if arr[i][j] == '2':
+                si, sj = i, j
+            elif arr[i][j] == '3':
+                ei, ej = i, j
+    
+    # [2] visited 배열 초기화 후 전체 방문표시
+    visited = [[0]*N for _ in range(N)]
+    dfs(si, sj)
+    #dfs_recur(si, sj)
+
+    # visited[ei][ej]에 도달했다면 1일 것이고, 아니면 0일 것
+    print(f'#{test_case} {visited[ei][ej]}')
+```
+
+### BFS, 경로 여부
+```python
+def bfs(si, sj, N):
+    visited = [[0]*N for _ in range(N)]
+    queue = []
+    # 시작점
+    queue.append((si, sj))
+    visited[si][sj] = 1
+    # 모두 순회할동안 타겟을 찾으면 1 반환 그렇지 않다면 0 반환
+    while queue:
+        ci, cj = queue.pop(0)
+        # 목표작업 수행
+        if maze[ci][cj] == 3:       # 도착좌표에 도착했다면
+            return 1               # 1 반환하고 종료 (경로 있음)
+        for di, dj in ((-1,0), (1,0), (0,-1), (0,1)):   # 4방향 탐색
+            ni, nj = ci+di, cj+dj
+            # 범위 내, 벽이 아니고, 미방문지라면
+            if 0<=ni<N and 0<=nj<N and maze[ni][nj]!=1 and visited[ni][nj]==0:
+                queue.append((ni, nj))
+                visited[ni][nj] = visited[ci][cj] + 1
+    return 0                       # 0 반환하고 종료 (경로 없음)
+
+T = int(input())
+for test_case in range(1, T+1):
+    N = int(input())
+    maze = [list(map(int, input())) for _ in range(N)]
+    
+    # 시작점 찾기
+    si, sj = -1, -1
+    for i in range(N):
+        for j in range(N):
+            if maze[i][j] == 2:
+                si, sj = i, j
+                break
+        if si != -1:
+            break
+    
+    ans = bfs(si, sj, N)
+    print(f'#{test_case} {ans}')
+```
+
+---
+
+## 토너먼트 카드게임 (재귀, lookup table)
+
+<img width="951" alt="aps_160" src="https://user-images.githubusercontent.com/86648892/187030625-04f9af99-c990-485e-bd2e-29fe3e60c10e.png">
+
+<img width="924" alt="aps_161" src="https://user-images.githubusercontent.com/86648892/187030629-814e29da-d70f-4eef-b3ad-18d9c7e31d56.png">
+
+```python
+# 재귀라면
+# 1) 항상 종료조건이 있어야 한다
+# 2) 하부호출(나를 쪼개서 호출한다!), 그리고 최소한의 단위작업 (단위작업은 트리 구조에 있어 여러 개의 덩어리 중 한 덩어리) (이 한 덩어리를 코드로 구현해주면 된다!)
+# 3) 나머지는 라이브러리처럼 다음 기준에게 맡김
+
+# 가위바위보 토너먼트
+# 1) s == e가 되는 경우가 종료조건
+# 2) 단위작업은 왼쪽의 승자, 오른쪽의 승자를 찾는 것
+# 3) 하부호출
+
+# lookup table (가위바위보 승리판별용) 1은 가위, 2는 바위, 3은 보
+tbl = [0, 2, 3, 1]
+def rsp(s, e):
+    # [1] 종료조건 (s, e가 같아진다는 것은 승리자가 한 명이 남았을 때)
+    if s == e:
+        return s
+    
+    # [2] 하부호출, 단위작업: 2등분해서 왼쪽과 오른쪽 각각의 승자를 가리고, 둘 간 최종승자를 가림
+    l_winner = rsp(s, (s+e)//2)     # 밑의 친구야 왼쪽의 승자를 찾아줘
+    r_winner = rsp((s+e)//2+1, e)   # 밑의 친구야 오른쪽의 승자를 찾아줘
+
+    # 밑에서 불러온 왼쪽 승자, 오른쪽 승자를 바탕으로 최종승자 판별
+    if tbl[lst[l_winner]] == lst[r_winner]: # b가 이긴 경우
+        return r_winner
+    else:                                   # 비기거나 a가 이긴 경우 a가 승자 (조건에서 비긴 경우 왼쪽 승자를 반환하기로 함)
+        return l_winner
+
+T = int(input())
+for test_case in range(1, T+1):
+    N = int(input())
+    lst = [0] + list(map(int, input().split())) # 인덱스와 사람 번호를 맞추기 위해 [0] 앞에 추가
+
+    ans = rsp(1, N) # 1 ~ N 사이의 최종 승리자의 index를 리턴 (rsp가 하는 일)
+
+    print(f'#{test_case} {ans}')
+```
+
+---
+
+## 배열 최소 합 (DFS)
+
+<img width="906" alt="aps_162" src="https://user-images.githubusercontent.com/86648892/187030700-0114b8a3-0758-4854-a21e-3e6d1413d571.png">
+
+<img width="909" alt="aps_163" src="https://user-images.githubusercontent.com/86648892/187030702-a0e7791c-366b-4949-ac5f-bfaa953ee996.png">
+
+```python
+# dfs(i, sm)은 합 정보 sm을 담은 채 i으로 가라는 것
+# 필요한 작업만 해주고 (열 중복 방지)
+# dfs(i+1, sm+arr[i][j])는 새로운 합 정보 sm+arr[i][j]를 담은 채 i+1로 가라는 것, 가고 나서는 너에게 맡긴다 느낌
+# 가지치기를 하지 않을 경우 시간초과로 runtime error가 발생할 수 있다!
+# 가지치기는 이 문제와 같이 최소값을 구하는 문제가 많다
+
+def dfs(i, sm):
+    global ans              # ans 업데이트를 위해 global 선언
+    # 가지치기
+    if ans <= sm:           # 현재 합이 이미 ans보다 큰 경우: 정답 갱신 가능성 없음
+        return
+    # 종료조건
+    if i == N:
+        if ans > sm:        # 해당 케이스의 합이 현재 ans보다 작을 경우 최소값 최신화
+            ans = sm
+        return
+    # 하부호출, 단위작업
+    for j in range(N):              # 해당 행의 각 칸(열)에 위치한 경우
+        if not visited[j]:          # 해당 열이 이전 행과 중복되지 않는 경우에만 수행
+            visited[j] = 1          # 다음 행에서 중복을 방지
+            dfs(i+1, sm+arr[i][j])  # sm에 행의 값을 담은 채 다음 행으로 이동 (N-1행까지 도달할 때까지 이동, 모든 케이스 생성)
+            visited[j] = 0          # 위에서 해당 j가 1인 경우를 이미 dfs()로 뿌려줬으니, 다른 j가 for문에 들어올 경우는 또 다른 케이스이므로 0으로 최신화해놓아야 함
+
+
+T = int(input())
+for test_case in range(1, T+1):
+    N = int(input())
+    arr = [list(map(int, input().split())) for _ in range(N)]
+    visited = [0]*N     # 열의 개수만큼 필요 (이미 방문한 열은 제외하기 위해)
+    ans = 10*N          # 3 <= N <= 10이므로 가능한 최대합은 10*N
+    dfs(0, 0)           # i==0 (0행), sum = 0
+
+    print(f'#{test_case} {ans}')
+```
+
+---
+
+## 계산기 3 (후위표기식 변환 및 계산) (icp, isp) (Stack 2)
+
+<img width="902" alt="aps_164" src="https://user-images.githubusercontent.com/86648892/187030752-3fce88a8-8b68-4d23-8bc0-672657498968.png">
+
+<img width="900" alt="aps_165" src="https://user-images.githubusercontent.com/86648892/187030758-eea0b6dc-7a79-48f5-99d8-bedd236d9a13.png">
+
+```python
+icp = {'(': 3, '*': 2, '+': 1}  # 입력되는 연산자의 우선순위
+isp = {'(': 0, '*': 2, '+': 1}  # 스택에 있는 연산자의 우선순위
+T = 10
+for test_case in range(1, T+1):
+    N = int(input())
+    st = input()
+
+    postfix = ''
+    stack = []
+
+    # 중위표기식 -> 후위표기식
+    for char in st:
+        if char.isdigit():  # 숫자인 경우 postfix에 추가
+            postfix += char
+        elif char == ')':   # 닫는 괄호일 경우
+            while stack and stack[-1] != '(':   # 여는 괄호를 만날 때까지
+                postfix += stack.pop()          # 연산자를 모두 처리
+            stack.pop()                         # 닫는 괄호와 쌍을 이루는 여는 괄호 버림
+        else:               # 이외 연산자일 경우
+            while stack and icp[char] <= isp[stack[-1]]:    # 들어오는 연산자와 스택 내 연산자의 우선순위 비교
+                postfix += stack.pop()                      # 스택 내 우선순위가 더 높은 연산자 우선 처리 후
+            stack.append(char)                              # 들어오는 연산자 스택에 추가
+    # 남은 연산자 처리
+    while stack:
+        postfix += stack.pop()
+
+    # 후위표기식 계산
+    for char in postfix:
+        if char.isdigit():
+            stack.append(int(char))     # 계산을 위해 int로 변형
+        else:
+            op2 = stack.pop()           # operand
+            op1 = stack.pop()
+            if char == '+':
+                stack.append(op1+op2)
+            elif char == '*':
+                stack.append(op1*op2)
+
+    # 마지막에 스택에 남아있는 숫자가 연산 결과
+    ans = stack.pop()
+    print(f'#{test_case} {ans}')
+```
+
+---
+
+## 너비우선탐색 (Queue)
+
+<img width="909" alt="aps_166" src="https://user-images.githubusercontent.com/86648892/187030842-de1e74cb-7ef5-4847-bf2f-603eb649027f.png">
+
+<img width="934" alt="aps_167" src="https://user-images.githubusercontent.com/86648892/187030847-48d78a7d-cb1b-47fb-ac31-f5221edcf293.png">
+
+```python
+def bfs(s):
+    # [1] q, visited, 필요한 flag 초기화
+    q = []
+    visited = [0]*(V+1)
+
+    # [2] 초기데이터(들)를 q에 삽입 (+ 단위작업: visited 표시, sols 처리 등)
+    q.append(s)
+    visited[s] = 1
+    sols.append(s)
+
+    while q:    # q에 데이터가 있는 동안 반복
+        s = q.pop(0)    # 제일 앞(FIFO)에서 데이터 꺼냄
+        # 정답처리가 필요한 경우 이 자리에서..
+
+        # [3] 4방향, 8방향, 연결된 노드 등 미방문, 조건에 맞는 곳이면 작업 수행
+        for e in range(1, V+1):
+            if e in adjL[s] and not visited[e]:
+                q.append(e)
+                visited[e] = 1
+                sols.append(e)
+T = int(input())
+for test_case in range(1, T+1):
+    V, E = map(int, input().split())
+    # 인접리스트에 연결된 노드 추가 (양방향)
+    adjL = [[]*(V+1) for _ in range(V+1)]
+    for _ in range(E):
+        s, e = map(int, input().split())
+        adjL[s].append(e)
+        adjL[e].append(s)
+
+    sols = []
+    bfs(1)  # 시작지점 1, 방문 순서대로 sols에 추가
+    print(f'#{test_case}', *sols)
+```
+
+---
+
+## 암호생성기 (Queue)
+
+<img width="904" alt="aps_168" src="https://user-images.githubusercontent.com/86648892/187031070-f98157d0-3444-45ae-8a30-2bb949079f82.png">
+
+<img width="905" alt="aps_169" src="https://user-images.githubusercontent.com/86648892/187031072-a4988b19-5d07-40ac-8ca5-9a082f1accb3.png">
+
+<img width="911" alt="aps_170" src="https://user-images.githubusercontent.com/86648892/187031074-32ed8cfb-c49d-433b-97b2-a463e01e3a2e.png">
+
+<img width="909" alt="aps_171" src="https://user-images.githubusercontent.com/86648892/187031079-9c66f2ab-a20a-4ebb-b690-cd761e91abf7.png">
+
+```python
+#from collections import deque              # deque() 사용시 필요
+T = 10
+for test_case in range(1, T+1):
+    _ = int(input())
+    queue = list(map(int, input().split())) # queue 생성
+    #arr = list(map(int, input().split()))
+    #queue = deque(arr)                     # deque 객체 생성
+
+    # 작업 수행
+    i = 1
+    while True:
+        if i > 5:                   # 사이클 완료 시 빼주는 값 1로 초기화
+            i = 1
+        temp = queue.pop(0) - i     # 맨 앞의 값에서 i만큼 빼주고
+        if temp <= 0:               # 그 결과가 0이하가 되면
+            queue.append(0)         # 끝에 0을 추가
+            break                   # 종료
+        queue.append(temp)          # 0이하가 아니라면 빼준 값을 뒤에 다시 추가
+        i += 1                      # 빼주는 i값은 1 증가
+
+    print(f'#{test_case}', end= ' ')
+    print(*queue)
+```
+
+---
+
