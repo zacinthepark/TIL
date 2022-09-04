@@ -227,7 +227,7 @@
 
 ### 서버 실행
 
-- `python [manage.py](http://manage.py) runserver`
+- `python manage.py runserver`
     - url을 `ctrl+클릭` 하면 로켓화면 확인가능
     - 서버종료는 `ctrl+c`
 
@@ -238,7 +238,7 @@
 - `manage.py`
     - Django 프로젝트 전반에 대한 명령을 내릴 수 있는 파일
     - Django 프로젝트와 다양한 방법으로 상호작용하는 커맨드라인 유틸리티
-    - `$ python [manage.py](http://manage.py) <command> [options]`
+    - `$ python manage.py <command> [options]`
 - `firstpjt`
     - `__init__.py`
         - 패키지로 인식시키는 파일
@@ -270,10 +270,10 @@
 - 프로젝트 내에 기능 단위로 여러 개의 앱이 들어갈 수 있다
     - ex) 회원 관련, 게시글 관련, 결제 관련 등등
     - 싱글앱, 멀티앱은 개발방식 선호의 차이
-- `$ python [manage.py](http://manage.py) startapp articles`
+- `$ python manage.py startapp articles`
     - articles라는 앱을 만든다
     - 일반적으로 어플리케이션의 이름은 ‘복수형'으로 작성하는 것을 권장
-- `[settings.py](http://settings.py)` 의 `INSTALLED_APPS` 에 추가
+- `settings.py` 의 `INSTALLED_APPS` 에 추가
     - 참고) third party apps는 `pip install` 해서 받은 것들
 
 ### 어플리케이션 구조
@@ -345,7 +345,7 @@
 
 <img width="491" alt="dj_11" src="https://user-images.githubusercontent.com/86648892/188303747-52599cb4-44be-4bf7-8c68-42c10296c0ba.png">
 
-- browser의 url → `[urls.py](http://urls.py)` → `[views.py](http://views.py)` → `index()`
+- browser의 url → `urls.py` → `views.py` → `index()`
     - `index(request)` 내의 request 파라미터에 django가 알아서 request를 넣어서 넘겨줌
 - HTTP 요청을 수신하고 HTTP 응답을 반환하는 함수 작성
 - Template에게 HTTP 응답 서식을 맡김
@@ -356,7 +356,7 @@
 - `return render(request, 'index.html')`
     - 해당 request에 대하여 index.html파일을 렌더링해줘
     - context는 data라고 생각하자
-    - `[settings.py](http://settings.py)` 에 TEMPLATES
+    - `settings.py` 에 TEMPLATES
         - 여기에 `APP_DIRS` 에 `True` 가 기본값으로 설정되어있어 articles 앱 내부의 template을 인식할 수 있음
         - ***그 외 따로 디렉토리를 만들어 인식시켜주고 싶을 경우 `DIRS`에 정의***
 
@@ -517,7 +517,7 @@
 
 <img width="1210" alt="dj_21" src="https://user-images.githubusercontent.com/86648892/188303760-b489e68f-b076-4cc7-ab55-d86415d65756.png">
 
-- `[settings.py](http://settings.py)` 의 DIRS에 추가하여 너 templates 찾을 때 이쪽도 찾아달라고 명령
+- `settings.py` 의 DIRS에 추가하여 너 templates 찾을 때 이쪽도 찾아달라고 명령
     - `BASE_DIR` 은 프로젝트 홈 디렉토리를 가리키도록 설정해놓은 값
     - `BASE_DIR / templates`
         - 홈 디렉토리 바로 하위에 있는 templates
@@ -527,7 +527,7 @@
 
 - `settings.py`
     - `BASE_DIR = Path(__file__).resolve().parent.parent`
-    - `[settings.py](http://settings.py)` 에서 특정 경로를 절대경로로 편하게 작성할 수 있도록 Django에서 미리 지정해둔 경로 값
+    - `settings.py` 에서 특정 경로를 절대경로로 편하게 작성할 수 있도록 Django에서 미리 지정해둔 경로 값
     - “객체 지향 파일 시스템 경로”
         - 운영체제별로 파일 경로 표기법이 다르기 때문에 어떤 운영체제에서 실행되더라도 각 운영체제 표기법에 맞게 해석될 수 있도록 하기 위해 사용
         - [Python Docs Pathlib](https://docs.python.org/3/library/pathlib.html)
@@ -663,11 +663,11 @@
 
 # App URL Mapping
 
-- 앱이 많아졌을 때 `[urls.py](http://urls.py)` 를 각 app에 매핑하는 방법
-    - app의 view 함수가 많아지면서 사용하는 `path()` 가 많아지고, app 또한 더 많이 작성되기에 프로젝트의 `[urls.py](http://urls.py)` 에서 모두 관리하는 것은 프로젝트 유지보수에 좋지 않음
-- `python [manage.py](http://manage.py/) startapp pages`
+- 앱이 많아졌을 때 `urls.py` 를 각 app에 매핑하는 방법
+    - app의 view 함수가 많아지면서 사용하는 `path()` 가 많아지고, app 또한 더 많이 작성되기에 프로젝트의 `urls.py` 에서 모두 관리하는 것은 프로젝트 유지보수에 좋지 않음
+- `python manage.py startapp pages`
     - pages 앱 생성
-        - `[settings.py](http://settings.py)` → `INSTALLED_APPS` 에 pages 추가
+        - `settings.py` → `INSTALLED_APPS` 에 pages 추가
 - `include()` 를 통해 분기 처리
     - `path('articles/', include('articles.urls'))`
         - `articles/` 로 끝나는 것을 보자마자 `include` 내에 있는 것으로 위임
