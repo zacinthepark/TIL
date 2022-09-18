@@ -2482,7 +2482,7 @@ class ArticleForm(forms.Form):
     - 회원가입
 2. UserChangeForm
     - 회원정보수정
-- 두 form 모두 `class Meta: model = User` 가 등록된 form이기에 반듣시 커스텀(확장)해야함
+- 두 form 모두 `class Meta: model = User` 가 등록된 form이기에 반드시 커스텀(확장)해야함
 
 ## CustomUserCreationForm()
 
