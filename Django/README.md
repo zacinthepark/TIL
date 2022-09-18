@@ -2159,7 +2159,7 @@ class ArticleForm(forms.Form):
     - 프로젝트 시작 시 설정하기 위한 것이며, 참조하는 모델은 첫번째 마이그레이션에서 사용할 수 있어야함
         - 즉, 첫번째 마이그레이션 이전에 확정지어야하는 값
 - settings의 로드 구조
-    - `settings.py` 에 기본값으로 `AUTH_USER_MODEL = 'auth.User` 을 가지고 있음
+    - `settings.py` 에 기본값으로 `AUTH_USER_MODEL = 'auth.User'` 을 가지고 있음
         - AUTH_USER_MODEL은 `settings.py` 에 보이지 않는데 어디에 기본값이 작성되어 있는걸까?
             - 우리가 작성하는 `settings.py` 는 `global_settings.py` 를 상속받아 재정의하는 파일
                 - [Django Github - global_settings.py](https://github.com/sebleier/django/blob/master/django/conf/global_settings.py)
