@@ -337,7 +337,7 @@
 
 - `path('index/', views.index)`
     - index라는 경로로 들어오면 views에 있는 기능을 수행해주면 된다는 명령
-    - `views.index` 를 사용하기 위해 `from articls import views` 필요
+    - `views.index` 를 사용하기 위해 `from articles import views` 필요
 
 ### View
 
