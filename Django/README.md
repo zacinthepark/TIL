@@ -2262,7 +2262,7 @@ class ArticleForm(forms.Form):
 
 # 쿠키(Cookie)
 
-- HTTP 쿠키는 ***“상태가 있는 세션”***을 만들도록 해줌
+- HTTP 쿠키는 “상태가 있는 세션”을 만들도록 해줌
 
 ## 개념
 
