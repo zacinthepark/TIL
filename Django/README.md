@@ -451,7 +451,7 @@
             - name 변수를 모두 소문자로 출력
     - 60개의 built-in template filters를 제공
     - chained가 가능하며 일부 필터는 인자를 받기도 함
-        - `{{ name|truncateworkds:30 }}`
+        - `{{ name|truncatewords:30 }}`
 
 ### Tags
 
