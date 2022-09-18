@@ -581,7 +581,7 @@
 - `type` 속성에 따라 동작 방식이 달라짐
     - input 요소의 동작 방식은 type 특성에 따라 현격히 달라지므로 MDN 문서 참고하여 사용
     - 지정하지 않은 경우 기본값은 text
-- <label>과 주로 함께 사용하여 label의 `for` 과 input의 `id` 가 연결
+- `<label>`과 주로 함께 사용하여 label의 `for` 과 input의 `id` 가 연결
 - input의 `name` 속성
     - form을 통해 데이터를 제출(submit)했을 때 name 속성에 설정된 값을 서버로 전송하고, 서버는 name 속성에 설정된 값을 통해 사용자가 입력한 데이터 값에 접근할 수 있음
         - 즉, name 속성이 요청 데이터의 key값이 됨
