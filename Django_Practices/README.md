@@ -1,3 +1,10 @@
+# INDEX
+
+[Django Practice 1](#django-practice-1-templates-views-models-admin-account)<br>
+[Django Practice 2](#django-practice-2-modeling-db-bootstrap)<br>
+
+---
+
 # Django Practice 1 (Templates, Views, Models, admin account)
 
 ## Django Framework를 통한 데이터베이스 활용 및 영화 페이지 구현
@@ -1026,3 +1033,387 @@ def delete(request, pk):
 - css나 bootstrap 활용이 아직 미숙한 것 같다. 개인적으로 django를 통해 모델링하고, crud하는 과정이 더 재밌게 느껴진다.
 
 - 전체 영화 데이터를 조회하는 목록 페이지의 경우 bootstrap의 card component를 활용하였다.
+
+---
+
+# Django Practice 2 (Modeling, DB, Bootstrap)
+
+## Django Framework를 통한 DB CRUD 및 영화 페이지 구현
+
+- Modeling에 대한 이해
+    - `models.py`
+    - `forms.py`
+- Django Framework를 활용한 CRUD 구현
+    - MTV Structure
+- Bootstrap 및 CSS 활용한 페이지 꾸미기
+
+---
+
+## 결과 사진
+
+---
+
+### 영화 목록 페이지 (전체 영화 데이터를 조회)
+### /movies/index.html
+
+<img width="1343" alt="index" src="https://user-images.githubusercontent.com/86648892/194557989-4e89d0e4-a759-4e05-a081-5098d0c89397.png">
+
+---
+
+### 영화 생성 페이지 (생성 페이지 렌더링 및 새로운 영화 데이터 생성)
+### /movies/create.html
+
+<img width="1352" alt="create1" src="https://user-images.githubusercontent.com/86648892/194557963-7517a74e-bb7d-42c8-b3e4-b552bea217a0.png">
+<img width="1335" alt="create2" src="https://user-images.githubusercontent.com/86648892/194557969-147125f4-5bba-4f79-9dd6-5f75a1f84faa.png">
+
+---
+
+### 영화 상세정보 페이지 (선택한 영화의 상세정보)
+### /movies/detail.html
+
+<img width="1405" alt="detail1" src="https://user-images.githubusercontent.com/86648892/194557972-a38600f9-3995-4b77-bcda-50b01134b285.png">
+<img width="1391" alt="detail2" src="https://user-images.githubusercontent.com/86648892/194557988-6bf29749-b4ba-49a1-963e-aac2e09456d0.png">
+
+---
+
+### 영화 정보수정 페이지 (기존 영화 데이터 수정)
+### /movies/update.html
+
+<img width="1379" alt="update1" src="https://user-images.githubusercontent.com/86648892/194557996-f2e5fdde-2f3d-4303-8731-9dd1aa3c76b9.png">
+<img width="1364" alt="update2" src="https://user-images.githubusercontent.com/86648892/194558000-6063678d-2533-483d-82c9-8a0d4c0a5288.png">
+
+---
+
+## 핵심 코드
+
+---
+
+### /movies/models.py
+
+```python
+from django.db import models
+
+class Movie(models.Model):
+    title = models.CharField(max_length=20) # 영화 제목
+    audience = models.IntegerField()        # 관객 수
+    release_date = models.DateField()       # 개봉일
+    genre = models.CharField(max_length=30) # 장르
+    score = models.FloatField()             # 평점
+    poster_url = models.TextField()         # 포스터 경로
+    description = models.TextField()        # 줄거리
+
+    def __str__(self):
+        return self.title
+```
+
+---
+
+### /movies/forms.py
+
+```python
+from django import forms
+from .models import Movie
+
+class MovieForm(forms.ModelForm):
+
+    class Meta:
+        model = Movie
+        fields = '__all__'
+
+    # 영화제목 위젯
+    title = forms.CharField(
+        label='영화 제목',
+        widget=forms.TextInput(
+            attrs={
+                'class': 'form-control',
+                'placeholder': '제목을 입력하세요.',
+                'max_length': 20,
+            }
+        ),
+    )
+
+    # 관객수 위젯
+    audience = forms.CharField(
+        label='관객 수',
+        widget=forms.NumberInput(
+            attrs={
+                'class': 'form-control',
+                'placeholder': '관객 수를 입력하세요.',
+            }
+        ),
+    )
+
+    # 개봉일 위젯
+    release_date = forms.DateField(
+        label='개봉일',
+        widget=forms.DateInput(
+            format=('%Y-%m-%d'),
+            attrs={
+                'class': 'form-control',
+                'type': 'date',
+            }
+        ),
+    )
+
+    # 장르 위젯
+    GENRE = [
+        ('Comedy', '코미디'),
+        ('Horror', '호러'),
+        ('Romance', '로맨스'),
+        ('Drama', '드라마'),
+        ('Action', '액션'),
+        ('SF', 'SF'),
+        ('Noir', '느와르'),
+    ]
+    genre = forms.ChoiceField(
+        choices=GENRE,
+        label='장르',
+        widget=forms.Select(
+            attrs={
+                'class': 'form-control',
+            }
+        ),
+    )
+
+    # 평점 위젯
+    score = forms.CharField(
+        label='평점',
+        widget=forms.NumberInput(
+            attrs={
+                'step': 0.5,
+                'min': 0,
+                'max': 5,
+                'class': 'form-control',
+                'placeholder': '0점~5점 중 평점을 입력하세요.',
+            }
+        ),
+    )
+
+    # 포스터 경로 위젯
+    poster_url = forms.CharField(
+        label='포스터 경로',
+        initial='https://web.yonsei.ac.kr/_ezaid/board/_skin/albumRecent/3/no_image.gif',
+        widget=forms.Textarea(
+            attrs={
+                'class': 'form-control',
+            }
+        ),
+    )
+
+    # 줄거리 위젯
+    description = forms.CharField(
+        label='줄거리',
+        widget=forms.Textarea(
+            attrs={
+                'class': 'form-control',
+                'placeholder': '줄거리를 입력하세요.',
+            }
+        ),
+    )
+```
+
+---
+
+### /movies/views.py
+
+```python
+from django.shortcuts import render, redirect
+from django.views.decorators.http import require_http_methods, require_safe, require_POST
+from .models import Movie
+from .forms import MovieForm
+
+
+@require_safe
+def index(request):
+    movies = Movie.objects.all()
+    context = {
+        'movies': movies,
+    }
+    return render(request, 'movies/index.html', context)
+
+
+@require_http_methods(['GET', 'POST'])
+def create(request):
+    if request.method=="POST":
+        form = MovieForm(request.POST)
+        if form.is_valid():
+            movie = form.save()
+            return redirect('movies:detail', movie.pk)
+    else:
+        form = MovieForm()
+    context = {
+        'form': form,
+    }
+    return render(request, 'movies/create.html', context)
+
+
+@require_safe
+def detail(request, pk):
+    movie = Movie.objects.get(pk=pk)
+    context = {
+        'movie': movie,
+    }
+    return render(request, 'movies/detail.html', context)
+
+
+@require_http_methods(['GET', 'POST'])
+def update(request, pk):
+    movie = Movie.objects.get(pk=pk)
+    if request.method == "POST":
+        form = MovieForm(request.POST, instance=movie)
+        if form.is_valid():
+            form.save()
+            return redirect('movies:detail', movie.pk)
+    else:
+        form = MovieForm(instance=movie)
+    context = {
+        'form': form,
+        'movie': movie,
+    }
+    return render(request, 'movies/update.html', context)
+
+
+@require_POST
+def delete(request, pk):
+    movie = Movie.objects.get(pk=pk)
+    movie.delete()
+    return redirect('movies:index')
+```
+
+---
+
+### /movies/index.html
+
+```html
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<div>
+  <h1 class='text-center' style='font-weight: bolder'>INDEX</h1>
+  <a href="{% url 'movies:create' %}">
+    <button type="button" class="btn btn-primary">CREATE</button>
+  </a>
+</div>
+<hr>
+
+<div class='row row-cols-1 row-cols-md-5 g-4'>
+  {% for movie in movies %}
+    <div class='col'>
+      <div class='card h-200'>
+        <a href="{% url 'movies:detail' movie.pk %}">
+          <img src="{{ movie.poster_url }}" class='card-img-top' alt="그림">
+        </a>
+        <div class='card-body'>
+          <h5 class='text-center' style='font-weight: bold'>{{ movie.title }}</h5>
+          <h6 class='text-center' style='font-weight: bold'>{{ movie.genre }} / {{ movie.score }}</h6>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock content %}
+```
+
+---
+
+### /movies/create.html
+
+```html
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>CREATE</h1>
+
+  <form action="{% url 'movies:create' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="CREATE" style="background-color:rgb(0, 100, 255)">
+  </form>
+  <hr>
+
+  <a href="{% url 'movies:index' %}">
+    <button type="button" class="btn btn-warning">BACK</button>
+  </a>
+{% endblock content %}
+```
+
+---
+
+### /movies/detail.html
+
+```html
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1 class='text-center' style="margin:100 auto">DETAIL</h1>
+  <hr>
+
+  <div class='container row' style="margin:100 auto;">
+    <div class="col-md-5" style="margin:0 auto;">
+      <img src="{{ movie.poster_url }}" class="align-items-center" style="width: 30rem;" alt="사진">
+      <hr>
+      <h4 style='font=weight: bold'> {{ movie.title }}</h4><br>
+      <p> Audience : {{ movie.audience }}</p>
+      <p> Release Dates : {{ movie.release_date }}</p>
+      <p> Genre : {{ movie.genre }}</p>
+      <p> Score : {{ movie.score }}</p>
+      <p> {{ movie.description }} </p>
+      <hr>
+
+      <a href="{% url 'movies:update' movie.pk %}" style="margin:1%;">
+        <button type="button" style="background-color:rgb(0, 100, 255)">UPDATE</button>
+      </a>
+      <form action="{% url 'movies:delete' movie.pk %}" method='POST' style="margin:1%;">
+        {% csrf_token %}
+        <input type="submit" value="DELETE" style="background-color:rgb(255, 0, 50)">
+      </form>
+      <hr>
+
+      <a href="{% url 'movies:index' %}" style="margin:1%;;">
+        <button type="button" class="btn btn-warning">BACK</button>
+      </a>
+    </div>
+  </div>
+{% endblock content %}
+```
+
+---
+
+### /movies/update.html
+
+```html
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>UPDATE</h1>
+
+  <form action="{% url 'movies:update' movie.pk %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="UPDATE" style="background-color:rgb(0, 100, 255)">
+    <input type="reset" value="CANCEL" style="background-color:rgb(0, 100, 255)">
+  </form>
+  <hr>
+
+  <a href="{% url 'movies:detail' movie.pk %}">
+    <button type="button" class="btn btn-warning">BACK</button>
+  </a>
+{% endblock content %}
+```
+
+---
+
+## 후기 및 느낀 점
+
+- 버튼을 구현하는 과정에 있어서 단순히 링크를 이동하는 `<a>` 태그에 `<button>` 태그를 넣어서 버튼 모양을 구현하고, 여기에 bootstrap class를 활용한 버튼 스타일을 구현했다.
+
+- 반면 DB를 건드리게 되는 POST 요청을 수행하는 버튼들의 경우 `<form>` 태그 내의 `<input type="submit">` 태그로 구현했다. POST 요청을 하지 않는 버튼과 달리 bootstrap class를 통해 구현하려고 했을 때는 정상작동하지 않았다.
+
+- ModelForm의 다양한 위젯을 활용해볼 수 있었다. 문서를 조금 더 찾아보자.
+
+- css나 bootstrap 활용이 아직 미숙한 것 같다. 개인적으로 django를 통해 모델링하고, crud하는 과정이 더 재밌게 느껴진다.
+
+- 전체 영화 데이터를 조회하는 목록 페이지의 경우 bootstrap의 card component를 활용하였다.
+
+---
