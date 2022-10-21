@@ -2,6 +2,7 @@
 
 [Django Practice 1](#django-practice-1-templates-views-models-admin-account)<br>
 [Django Practice 2](#django-practice-2-modeling-db-bootstrap)<br>
+[Django Practice 3](#django-rest-framework를-통한-restful-api-서버-구현)<br>
 
 ---
 
@@ -1415,5 +1416,294 @@ def delete(request, pk):
 - css나 bootstrap 활용이 아직 미숙한 것 같다. 개인적으로 django를 통해 모델링하고, crud하는 과정이 더 재밌게 느껴진다.
 
 - 전체 영화 데이터를 조회하는 목록 페이지의 경우 bootstrap의 card component를 활용하였다.
+
+---
+
+# Django Practice 3
+
+## Django REST Framework를 통한 RESTful API 서버 구현
+
+---
+
+- Django REST Framwork를 통한 CRUD 구현
+- serializers에 대한 이해
+- Postman을 활용한 API 결과 확인
+
+---
+
+### 모델링
+
+```python
+from django.db import models
+
+# Create your models here.
+class Actor(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
+class Movie(models.Model):
+    title = models.CharField(max_length=100)
+    overview = models.TextField()
+    release_date = models.DateTimeField()
+    poster_path = models.TextField()
+
+    actors = models.ManyToManyField(Actor, related_name='movies')
+
+    def __str__(self):
+        return self.title
+
+
+class Review(models.Model):
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+
+    def __str__(self):
+        return self.title
+```
+
+---
+
+### URL 구성
+
+#### mypjt/urls.py
+
+```python
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api/v1/', include('movies.urls')),
+]
+```
+
+#### movies/urls.py
+
+```python
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('actors/', views.actor_list),
+    path('actors/<int:actor_pk>/', views.actor_detail),
+    path('movies/', views.movie_list),
+    path('movies/<int:movie_pk>/', views.movie_detail),
+    path('reviews/', views.review_list),
+    path('reviews/<int:review_pk>/', views.review_detail),
+    path('movies/<int:movie_pk>/reviews/', views.create_review),
+]
+```
+
+---
+
+### custom serializer 생성
+
+#### movies/serializers.py
+
+```python
+from rest_framework import serializers
+from .models import Actor, Movie, Review
+
+class ActorNameSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Actor
+        fields = ('name',)
+
+
+class MovieTitleSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Movie
+        fields = ('title',)
+
+
+class ReviewSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Review
+        fields = ('title', 'content',)
+
+
+class ReviewDetailSerializer(serializers.ModelSerializer):
+    movie = MovieTitleSerializer(read_only=True)
+
+    class Meta:
+        model = Review
+        fields = '__all__'
+
+
+class ReviewListSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Review
+        fields = ('title', 'content',)
+
+
+class MovieSerializer(serializers.ModelSerializer):
+    review_set = ReviewSerializer(many=True, read_only=True)
+    actors = ActorNameSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Movie
+        fields = '__all__'
+
+
+class MovieListSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Movie
+        fields = ('title', 'overview',)
+
+
+class ActorSerializer(serializers.ModelSerializer):
+    movies = MovieTitleSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Actor
+        fields = '__all__'
+
+
+class ActorListSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Actor
+        fields = '__all__'
+```
+
+---
+
+### view 함수 정의 및 API 요청 결과
+
+#### movies/views.py
+
+```python
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from rest_framework import status
+
+from django.shortcuts import get_object_or_404, get_list_or_404
+
+from .models import Actor, Movie, Review
+from .serializers import ActorListSerializer, ActorSerializer, MovieListSerializer, MovieSerializer, ReviewListSerializer, ReviewDetailSerializer
+```
+
+---
+
+#### 전체 배우 목록 제공
+![get_actors](https://user-images.githubusercontent.com/86648892/197134623-0042f606-12ee-45c6-ac90-5b7e844b7a53.png)
+
+```python
+@api_view(['GET'])
+def actor_list(request):
+    actors = get_list_or_404(Actor)
+    serializer = ActorListSerializer(actors, many=True)
+    return Response(serializer.data)
+
+```
+
+#### 단일 배우 정보 제공 (출연 영화 제목 포함)
+![get_actor](https://user-images.githubusercontent.com/86648892/197134625-b8fa1d20-c092-4f8c-8445-4b1b7f674941.png)
+
+```python
+@api_view(['GET'])
+def actor_detail(request, actor_pk):
+    actor = get_object_or_404(Actor, pk=actor_pk)
+    serializer = ActorSerializer(actor)
+    return Response(serializer.data)
+```
+
+#### 전체 영화 목록 제공
+![get_movies](https://user-images.githubusercontent.com/86648892/197134627-7c93fd3c-2913-4774-89c1-87eccd689028.png)
+
+```python
+def movie_list(request):
+    movies = get_list_or_404(Movie)
+    serializer = MovieListSerializer(movies, many=True)
+    return Response(serializer.data)
+```
+
+#### 단일 영화 정보 제공 (출연 배우 이름과 리뷰 목록 포함)
+![get_movie](https://user-images.githubusercontent.com/86648892/197134605-9820906d-c75b-45e4-b192-b769214b033c.png)
+
+```python
+@api_view(['GET'])
+def movie_detail(request, movie_pk):
+    movie = get_object_or_404(Movie, pk=movie_pk)
+    serializer = MovieSerializer(movie)
+    return Response(serializer.data)
+```
+
+#### 전체 리뷰 목록 제공
+![get_reviews](https://user-images.githubusercontent.com/86648892/197134611-60c8f756-6fb9-4bb7-be5d-c237e6582887.png)
+
+```python
+@api_view(['GET'])
+def review_list(request):
+    reviews = get_list_or_404(Review)
+    serializer = ReviewListSerializer(reviews, many=True)
+    return Response(serializer.data)
+```
+
+#### 단일 리뷰 조회 & 수정 & 삭제 (출연 영화 제목 포함)
+![get_review](https://user-images.githubusercontent.com/86648892/197134615-b4bba543-43bf-4478-85f8-74a7b1538cd7.png)
+![put_review](https://user-images.githubusercontent.com/86648892/197134617-98fbc448-a040-479d-94e9-f9084b935002.png)
+![delete_review](https://user-images.githubusercontent.com/86648892/197149436-ac4c6216-0c2c-4334-9223-dffb14246727.png)
+5-bc46-fdbef7c0c831.png)
+
+```python
+@api_view(['GET', 'PUT', 'DELETE'])
+def review_detail(request, review_pk):
+    review = get_object_or_404(Review, pk=review_pk)
+    # GET
+    if request.method == 'GET':
+        serializer = ReviewDetailSerializer(review)
+        return Response(serializer.data)
+
+    # PUT
+    if request.method == 'PUT':
+        serializer = ReviewDetailSerializer(review, data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data)
+
+    # DELETE
+    if request.method == 'DELETE':
+        review.delete()
+        data = {
+            'delete': f'review {review_pk} is deleted',
+        }
+        return Response(data, status=status.HTTP_204_NO_CONTENT)
+```
+
+#### 리뷰 생성
+![post_review](https://user-images.githubusercontent.com/86648892/197134622-4c5a4568-f519-4f15-bc46-fdbef7c0c831.png)
+
+```python
+@api_view(['POST'])
+def create_review(request, movie_pk):
+    movie = get_object_or_404(Movie, pk=movie_pk)
+    serializer = ReviewDetailSerializer(data=request.data)
+    if serializer.is_valid(raise_exception=True):
+        serializer.save(movie=movie)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+```
+
+---
+
+### 후기 및 느낀 점
+
+- 모델에서 serializer를 통하여 필요한 정보를 빼오고, CRUD하는 과정에 어느정도 익숙해진 것 같다.
+
+- Django로 template 파일 작성하는 부분이 개인적으로 달갑지 않은 작업이었는데, 이제 하지 않아도 되서 좋다.
+
+- 필요한 정보를 그때 그때 맞게 출력하기 위해 serializer를 계속 새로 정의해주는 작업이 있었는데, 이 방법이 최선인가라는 궁금증이 들었다.
+
+- serializer 내에서 참조하는 모델의 필드명과 동일한 이름의 속성을 정의하면 해당 속성으로 override된다.
 
 ---
