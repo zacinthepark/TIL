@@ -963,7 +963,7 @@ function 함수명() {
 ```
 
 ```jsx
-functino add(num1, num2) {
+function add(num1, num2) {
 	return num1 + num2
 }
 
@@ -1100,7 +1100,7 @@ console.log(typeof sub) // function
 ```jsx
 add(2, 7) // 9
 
-functino add (num1, num2) {
+function add (num1, num2) {
 	return num1 + num2
 }
 ```
