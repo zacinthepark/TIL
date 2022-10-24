@@ -526,7 +526,7 @@ typeof null // "object"
 typeof undefined // "undefined"
 ```
 
-- null이 원시타입임에도 불구하고 object로 출력되는 이유는 JavaScript 설계 당시의 버글르 지금까지 해결하지 못한 것
+- null이 원시타입임에도 불구하고 object로 출력되는 이유는 JavaScript 설계 당시의 버그를 지금까지 해결하지 못한 것
     - 출력상의 버그임
     - 쉽게 해결할 수 없는 이유는 이미 null 타입에 의존성을 갖는 많은 프로그램들이 망가질 수 있기 때문 (하위 호환 유지)
 
