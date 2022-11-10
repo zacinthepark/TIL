@@ -1096,13 +1096,68 @@ class Article(models.Model):
 
 ---
 
-# QuerySet API를 활용한 CRUD 구현
+# QuerySet API METHODS (CRUD)
 
 ## CRUD
 
 - Create, Read, Update, Delete
     - 생성, 조회, 수정, 삭제
 - 대부분의 컴퓨터 소프트웨어가 가지는 기본적인 데이터 처리 기능 4가지를 지칭
+
+---
+
+## READ
+
+- 데이터 조회
+    - QuerySet API methods that “return new querysets”
+    - QuerySet API methods that “do not return querysets”
+
+### `all()`
+
+- QuerySet return
+- 전체 데이터 조회
+
+<img width="1096" alt="dj_50" src="https://user-images.githubusercontent.com/86648892/188498051-1b43737c-5ae7-4a91-9254-0d8d431ebe51.png">
+
+### `get()`
+
+- 유니크한 데이터, 고유성(uniqueness)을 보장하는 조회에서 사용해야함
+    - 대표적으로 primary key
+- 단일 데이터 조회
+- 객체를 찾을 수 없으면 DoesNotExist 예외를 발생시키고, 둘 이상의 객체를 찾으면 MultipleObjectsReturned 예외를 발생시킴
+
+<img width="970" alt="dj_51" src="https://user-images.githubusercontent.com/86648892/188498055-4cc49318-6668-4901-908a-22174b97a2a9.png">
+
+### `filter()`
+
+- QuerySet return
+- 지정된 조회 매개 변수와 일치하는 객체를 포함하는 새 QuerySet을 반환
+- 항상 QuerySet으로 반환함
+    - 없으면 빈 QuerySet
+    - 단일 객체도 QuerySet으로
+- pk에는 부적합
+    - QuerySet으로 주기에 한번 더 벗겨내야하는 불편함
+    - 데이터를 조회했는데 없음에도 불구하고 빈 QuerySet을 반환해버림
+        - 예외처리가 어려움
+
+<img width="1099" alt="dj_52" src="https://user-images.githubusercontent.com/86648892/188498056-f5113ac0-6945-491b-a435-6d15582c3979.png">
+
+## Field lookups
+
+- 조건을 설정하여 조회하는 것
+    - SQL WHERE 절의 상세한 조건을 지정하는 방법
+- 특정 레코드에 대한 조건을 설정하는 방법
+- QuerySet method `filter()`, `exclude()` 및 `get()` 에 대한 키워드 인자로 지정됨
+- 문법 규칙
+    - 필드명 뒤에 "double-underscore" 이후 작성함
+    - `field__lookuptype=value`
+- 참고 문서
+    - [QuerySet API Reference](https://docs.djangoproject.com/en/4.1/ref/models/querysets/)
+    - [QuerySet Field Lookups Reference](https://www.w3schools.com/django/django_ref_field_lookups.php)
+
+<img width="646" alt="dj_53" src="https://user-images.githubusercontent.com/86648892/188498058-8983af76-f9ab-4a0c-96b1-7381fa010b66.png">
+
+---
 
 ## CREATE
 
@@ -1177,50 +1232,7 @@ def create(request):
     return render(request, 'articles/create.html')
 ```
 
-## READ
-
-- 데이터 조회
-    - QuerySet API methods that “return new querysets”
-    - QuerySet API methods that “do not return querysets”
-
-### `all()`
-
-- QuerySet return
-- 전체 데이터 조회
-
-<img width="1096" alt="dj_50" src="https://user-images.githubusercontent.com/86648892/188498051-1b43737c-5ae7-4a91-9254-0d8d431ebe51.png">
-
-### `get()`
-
-- 유니크한 데이터, 고유성(uniqueness)을 보장하는 조회에서 사용해야함
-    - 대표적으로 primary key
-- 단일 데이터 조회
-- 객체를 찾을 수 없으면 DoesNotExist 예외를 발생시키고, 둘 이상의 객체를 찾으면 MultipleObjectsReturned 예외를 발생시킴
-
-<img width="970" alt="dj_51" src="https://user-images.githubusercontent.com/86648892/188498055-4cc49318-6668-4901-908a-22174b97a2a9.png">
-
-### `filter()`
-
-- QuerySet return
-- 지정된 조회 매개 변수와 일치하는 객체를 포함하는 새 QuerySet을 반환
-- 항상 QuerySet으로 반환함
-    - 없으면 빈 QuerySet
-    - 단일 객체도 QuerySet으로
-- pk에는 부적합
-    - QuerySet으로 주기에 한번 더 벗겨내야하는 불편함
-    - 데이터를 조회했는데 없음에도 불구하고 빈 QuerySet을 반환해버림
-        - 예외처리가 어려움
-
-<img width="1099" alt="dj_52" src="https://user-images.githubusercontent.com/86648892/188498056-f5113ac0-6945-491b-a435-6d15582c3979.png">
-
-### Field lookups
-
-- 조건을 설정하여 조회하는 것
-- 특정 레코드에 대한 조건을 설정하는 방법
-- QuerySet method `filter()`, `exclude()` 및 `get()` 에 대한 키워드 인자로 지정됨
-- [QuerySet methods](https://docs.djangoproject.com/en/4.1/ref/models/querysets/)
-
-<img width="646" alt="dj_53" src="https://user-images.githubusercontent.com/86648892/188498058-8983af76-f9ab-4a0c-96b1-7381fa010b66.png">
+---
 
 ## UPDATE
 
@@ -1230,6 +1242,8 @@ def create(request):
             - `save()` 인스턴스 메서드 호출
 
 <img width="613" alt="dj_54" src="https://user-images.githubusercontent.com/86648892/188498060-96aa0d6c-9d99-44ec-a405-cd02270908ed.png">
+
+---
 
 ## DELETE
 
