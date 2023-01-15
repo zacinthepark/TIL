@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1-1. 아래 코드를 object destructuring을 활용해 리팩토링 하시오.
+    const savedFile = {
+      name: 'profile',
+      extension: 'jpg',
+      size: 29930,
+
+      fileSummary() {
+        console.log(`The file ${this.name}.${this.extension} is size of ${this.size} bytes.`)
+      }
+    }
+
+    // function fileSummary(file) {
+    //   console.log(`The file ${file.name}.${file.extension} is size of ${file.size} bytes.`)
+    // }
+
+    savedFile.fileSummary()
+
+
+    // 1-2. 아래 코드를 object destructuring을 활용해 리팩토링 하시오.
+    const data = {
+      username: 'myName',
+      password: 'myPassword',
+      email: 'my@mail.com',
+    }
+
+    // a) 기존 방법 (직접 접근)
+    // const username = data.username
+    // const password = data.password
+    // const email = data.email
+
+    // b) 객체 분해하여 해당 키값 요소만 변수에 할당
+    // const { username } = data
+    // const { password } = data
+    // const { email } = data
+    // console.log(username, password, email)
+
+    // c) 한번에 묶어서 변수에 할당
+    const {username, password, email} = data
+    console.log(username, password, email)
+
+
+    // 2. Rest operator를 활용해 아래 코드를 리팩토링 하시오.
+
+    // function addNumbers(a, b, c, d, e) {
+    //   const numbers = [a, b, c, d, e];
+    //   return numbers.reduce((sum, number) => {
+    //     return sum + number
+    //   }, 0)
+    // }
+
+    function addNumbers(...numbers) {
+      return numbers.reduce((sum, number) => {
+        return sum + number
+      }, 0)
+    }
+
+    console.log(addNumbers(1, 2))           // 3
+    console.log(addNumbers(1, 2, 3, 4, 5))  // 15
+
+
+    // 3-1. Spread operator를 활용해 아래 코드를 리팩토링 하시오.
+    const defaultColors = ['red', 'green', 'blue'];
+    const favoriteColors = ['navy', 'black', 'gold', 'white']
+    
+    // .concat() 활용
+    // const palette = defaultColors.concat(favoriteColors);
+    // console.log(palette)
+
+    // Spread operator 활용
+    const palette = [...defaultColors, ...favoriteColors]
+    console.log(palette)
+
+
+    // 3-2. Spread operator를 활용해 아래 코드를 리팩토링 하시오.
+
+    // Object.assign(target, ...sources) 활용
+    const info1 = { name: 'Tom', age: 30 }
+    const info2 = { isMarried: true, balance: 3000 }
+    // const fullInfo = Object.assign(info1, info2)
+
+    // Spread operator 활용
+    const fullInfo = {...info1, ...info2}
+    console.log(fullInfo)
+  </script>
+</body>
+
+</html>
