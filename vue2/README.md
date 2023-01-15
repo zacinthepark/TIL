@@ -6,6 +6,8 @@
 - [Vue Router and Navigation Guard](#vue-router-and-navigation-guard)
 - [Vue with DRF](#vue-with-drf)
 
+---
+
 # Vue CDN and Directives
 
 - Vue Intro with CDN
