@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 공통 스타일링 */
+    div {
+      box-sizing: border-box;
+      height: 100px;
+      border: 1px solid black;
+
+      /* 박스 안 텍스트 가로/세로 가운데 정렬 */
+      /* text-align: center;
+      line-height: 100px;
+      vertical-align: center; */
+    }
+
+    .parent {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+    }
+
+    .brother {
+      width: 100px;
+      background-color: crimson;
+    }
+    
+    .sibling {
+      width: 100px;
+      background-color: deepskyblue;
+    }
+
+    /* 개별 클래스 */
+    .absolute {
+      position: absolute;
+      top: 100px;
+      left: 100px;
+    }
+
+    .relative {
+      position: relative;
+      top: 100px;
+      left: 100px;
+    }
+    h1 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- 기본 확인 -->
+  <h1>Nomal</h1>
+  <div class="parent">
+    <div class="brother">형</div>
+    <div class="sibling">동생</div>
+  </div>
+  <hr>
+  <!-- absolute 확인 -->
+  <h1>absolute</h1>
+  <div class="parent">
+    <div class="absolute brother">형</div>
+    <div class="sibling">동생</div>
+  </div>
+  <hr>
+  <!-- relative 확인 -->
+  <h1>relative</h1>
+  <div class="parent">
+    <div class="relative brother">형</div>
+    <div class="sibling">동생</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input[type="checkbox"] {
+      display: inline;
+    }
+    input[type="radio"] {
+      display: inline;
+    }
+  </style>
+</head>
+<body>
+  <form action="">
+    <div>
+      <input type="submit" value="제출 확인해보기">
+    </div>
+    <!-- 일반 입력 -->
+    <div>
+      <p>text</p>
+      <input type="text" autofocus>
+      <hr>
+    </div>
+    <div>
+      <p>password</p>
+      <input type="password">
+      <hr>
+    </div>
+    <div>
+      <p>email</p>
+      <input type="email">
+      <hr>
+    </div>
+    <div>
+      <p>number</p>
+      <input type="number">
+      <hr>
+    </div>
+    <div>
+      <p>file</p>
+      <input type="file">
+      <hr>
+    </div>
+    <!-- 항목 중 선택 -->
+    <div>
+      <p>checkbox</p>
+      <input id="html" type="checkbox" name="language" value="html">
+      <label for="html">HTML</label>
+      <input id="python" type="checkbox" name="language" value="python">
+      <label for="python">파이썬</label>
+      <input id="python" type="checkbox" name="language" value="java">
+      <label for="java">자바</label>
+      <hr>
+    </div>
+    <div>
+      <p>radio button</p>
+      <input id="happy" type="radio" name="mood" value="happy">
+      <label for="happy">행복</label>
+      <input id="sadness" type="radio" name="mood" value="sadness">
+      <label for="sadness">슬픔</label>
+      <input id="neutral" type="radio" name="mood" value="neutral">
+      <label for="neutral">중립</label>
+      <hr>
+    </div>
+    <!-- 기타 -->
+    <div>
+      <p>color</p>
+      <input type="color">
+      <hr>
+    </div>
+    <div>
+      <p>date</p>
+      <input type="date">
+      <hr>
+    </div>
+    <div>
+      <p>hidden</p>
+      <input type="hidden">
+      <hr>
+    </div>
+  </form>
+</body>
+</html>
+```html
+<section class="container">
+  <form class="form-control">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">이메일</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">비밀번호</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="btn btn-primary">로그인</button>
+  </form>
+</section>
+```
+
+<div class="dropdown">
+  <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    옵션 선택하기
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li class="dropdown-item">메뉴1</li>
+    <li class="dropdown-item">메뉴2</li>
+    <li class="dropdown-item">메뉴3</li>
+  </ul>
+</div>

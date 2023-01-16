@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>학생 건강 설문</title>
+</head>
+<body>
+  <header>
+    <!-- 싸피 홈페이지로 이동하는 링크 -->
+    <a href="https://www.ssafy.com">
+      <img src="ssafy.png" alt="싸피 로고">
+    </a>
+    <h1>학생 건강 설문</h1>
+  </header>
+
+  <section>
+    <!-- 건강 설문 작성 form -->
+    <form action="#">
+      <div>
+        <label for="name">이름을 기재해주세요.</label><br>
+        <input type="text" id="name" autofocus>
+      </div>
+      <div>
+        <label for="region">지역을 선택해주세요.</label><br>
+        <select name="region" id="region">
+          <option value="서울" disabled>서울</option>
+          <option value="대전">대전</option>
+          <option value="광주">광주</option>
+          <option value="구미">구미</option>
+        </select>
+      </div>
+      <div>
+        <p>오늘의 체온을 선택해주세요.</p>
+        <input type="radio" id="normal" name="body-heat" value="normal" checked>
+        <label for="normal">37.5도 미만</label>
+        <input type="radio" id="warning" name="body-heat" value="warning">
+        <label for="warning">37.5도 이상</label>
+      </div>
+      <input type="submit" value="전송!!">
+    </form>
+  </section>
+
+  <footer>
+    Google 설문지를 통해 비밀번호를 제출하지 마시오.
+  </footer>
+</body>
+</html>
