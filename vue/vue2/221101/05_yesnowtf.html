@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>yes or no</title>
+</head>
+<body>
+  <div id="watch-example">
+    <p>
+      yes / no 질문을 물어보세요:
+      <input v-model="question" type="text">
+    </p>
+    <p>{{ answer }}</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    const watchExampleVM = new Vue({
+      el: '#watch-example',
+      data: {
+        question: '',
+        answer: '질문을 하기 전까지는 대답할 수 없습니다.'
+      },
+      methods: {
+        getAnswer: function() {
+          if (this.question.indexOf('?') === -1) {
+            this.answer = '질문에 물음표를 작성해주세요 :)'
+            return
+          }
+
+          this.answer = '생각중...'
+          const vm = this
+
+          axios.get('https://yesno.wtf/api')
+            .then(function (response) {
+              vm.answer = _.capitalize(response.data.answer)
+            })
+            .catch(function (error) {
+              vm.answer = 'API 요청에 오류가 있습니다. ' + error
+            })
+        }
+      },
+      created: function() {
+        // _.debounce(func, [wait=0], [options={}])
+        // creates a debounced function
+        /*
+        _.debounce는 lodash가 제공하는 기능으로, 특히 시간이 많이 소요되는 작업을 실행할 수 있는 빈도를 제한
+        이 경우에는 yesno.wtf/api에 액세스하는 빈도를 제한하고, 사용자가 ajax 요청을 하기 전에 타이핑을 완전히 마칠 때까지 기다리길 바란다
+        _.debounce 함수, 혹은 이와 유사한 _.throttle에 대한 추가 정보는 https://lodash.com/docs#debounce
+        */
+        this.debouncedGetAnswer = _.debounce(this.getAnswer, 500)
+      },
+      watch: {
+        // 질문이 변경될 때마다 해당 기능 실행
+        question: function() {
+          this.answer = '입력을 기다리는 중...'
+          this.debouncedGetAnswer()
+        }
+      }
+    })
+  </script>
+</body>
+</html>

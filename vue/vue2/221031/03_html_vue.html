@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 1) input type의 값이 2) data: message: 값을 변경하고 이 값이 3) p 태그의  {{ message }} 값을 변경 -->
+  <!-- View -->
+  <div id="app">
+    <p id="name">name : {{ message }}</p>
+    <input id="inputName" type="text" v-model="message">
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    // CODE HERE
+    // View Model
+    const app = new Vue({
+      el: '#app',
+      data: {
+        // Model
+        message: '',
+      }
+    })
+  </script>
+</body>
+</html>

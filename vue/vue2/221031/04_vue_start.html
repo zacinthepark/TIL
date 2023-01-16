@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    {{ message }}
+  </div>
+
+  <div>
+    {{ message }}
+  </div>
+
+  <!-- Vue CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    // CODE HERE
+    // 1. Vue instance constructor
+    // const vm = new Vue()
+    // console.log(vm)
+
+    // 2. el
+    const app = new Vue({
+      el: '#app',   // element, VM과 HTML의 DOM을 연결해주는 속성 // id가 app인 element를 연결(마운트)하겠다는 뜻
+
+      // 3. data (MVVM의 Model을 담당)
+      data: {
+        message: 'Hello, Vue!'
+      },
+
+      // 4. methods
+      methods: {
+        print: function () {
+          // console.log(this.$data.message)  // 구조상으로는 이렇게 접근하는게 정석 (Vue에 정해진 속성값들에 접근할 때는 구분을 위해 $가 붙음)
+          // 편의상 $data는 shorthand로 빼고 접근 가능
+          console.log(this.message) // this는 메서드를 호출하는 객체(new Vue()에 해당)
+        },
+        // this.message의 값을 바꾸는 메서드
+        bye: function () {
+          this.message = 'Bye, Vue!'
+        },
+      // arrow function으로 선언하면 this가 app 객체의 상위 스코프인 window를 가리키게 됨
+      // 그러므로 호출은 가능하나 Vue 객체의 data를 변경하지는 못함
+        // 4-1. arrow function
+        arrowBye: () => {
+          this.message = 'Arrow Function?'  // window 객체에 message라는 전역 변수를 만든 것이 됨
+          console.log(this)
+        }
+      }
+    })
+    console.log(app)
+  </script>
+</body>
+</html>

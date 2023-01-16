@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <h2>LUNCHBOX</h2>
+    <button @click="pickOne">Pick One</button>
+    <p>{{ choice }}</p>
+
+    <hr>
+
+    <h2>LOTTO</h2>
+    <button @click="getLuckyNumbers">Get Lucky Numbers</button>
+    <p v-if="luckyNumbers.length">{{ luckyNumbers }}</p>
+  </div>
+
+  <!-- lodash cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  <!-- vue2 cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        menus: ['국밥', '편백찜', '가락국수', '냉면', '햄버거', '팥죽', '곰탕', '초밥', '설렁탕', '간짜장', '짬뽕'],
+        choice: '',
+        luckyNumbers: [],
+      },
+      methods: {
+        pickOne: function() {
+          const randomIndex = _.random(this.menus.length-1)
+          this.choice = this.menus[randomIndex]
+        },
+        getLuckyNumbers: function() {
+          const numbers = _.range(1, 45)
+          this.luckyNumbers = _.sampleSize(numbers, 6)
+        }
+      }
+    })
+  </script>
+</body>
+</html>
