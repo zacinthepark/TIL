@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>hello {{info.name}}!</h1>
+
+  <h1>{{foods|join:', '}}</h1>
+
+  <h1>today's dinner is {{pick}}, letter length is {{pick|length}}</h1>
+
+  <h3>MENUS</h3>
+  <ul>
+    {% for food in foods %}
+      <li>{{food}}</li>
+    {% endfor %}
+  </ul>
+
+  <a href="{% url 'articles:greeting' %}">to greeting</a><br>
+  <a href="{% url 'articles:index' %}">to index</a>
+{% endblock content %}

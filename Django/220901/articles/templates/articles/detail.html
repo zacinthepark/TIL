@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>글 상세</h1>
+  <h3>{{ article.pk }}번째 글</h3>
+  <hr>
+  <p>제목: {{ article.title }}</p>
+  <p>내용: {{ article.content }}</p>
+  <p>생성시간: {{ article.created_at }}</p>
+  <p>수정시간: {{ article.updated_at }}</p>
+  <hr>
+
+  {% comment %} 단순히 수정 페이지로 이동하는 것이므로 a태그 사용 {% endcomment %}
+  <a href="{% url 'articles:edit' article.pk %}">수정</a>
+  {% comment %} delete url로 이동하면 -> views의 delete 호출 -> delete 함수가 index 페이지로 redirect {% endcomment %}
+  <form action="{% url 'articles:delete' article.pk %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="삭제">
+  </form>
+  <a href="{% url 'articles:index' %}">글 목록 보기</a>
+{% endblock content %}

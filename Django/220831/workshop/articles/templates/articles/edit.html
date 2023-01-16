@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1 class="fw-bold">EDIT</h1>
+  <form action="{% url 'articles:update' article.pk %}" method="POST">
+    {% csrf_token %}
+    <label for="title">Title: </label>
+    <input type="text" id="title" name="title"  value="{{article.title}}"><br>
+
+    <label for="content">Content: </label>
+    <textarea type="text" name="content" id="content" rows="2" cols="30">{{article.content}}</textarea><br>
+
+    <input type="submit" value="Submit"><br>
+    <hr>
+    <a href="{% url 'articles:index' %}">[back]</a>
+  </form>
+{% endblock content %}

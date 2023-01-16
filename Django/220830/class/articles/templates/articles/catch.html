@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>CATCH!</h1>
+  <h3>received message: {{data}}</h3>
+  
+  <a href="{% url 'articles:throw' %}">SEND MESSAGE AGAIN</a>
+{% endblock content %}

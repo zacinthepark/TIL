@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>hello</h1>
+  <h3>this is an index page</h3>
+  <a href="{% url 'articles:greeting' %}">to greeting</a><br>
+  <a href="{% url 'articles:dinner' %}">to dinner</a><br>
+  <a href="{% url 'articles:throw' %}">to throw</a><br>
+  <a href="{% url 'articles:fake_google' %}">to Google Search</a><br>
+{% endblock content %}

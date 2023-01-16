@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+  <h1>CREATE</h1>
+  <form action="{% url 'articles:create' %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    {% comment %}
+    <label for="title">Title: </label>
+    <input type="text" name="title" id="title"><br>
+    <label for="content">Content: </label>
+    <textarea name="content" id="content"></textarea><br>
+    {% endcomment %}
+    <input type="submit">
+  </form>
+  <hr>
+  <a href="{% url 'articles:index' %}" class="text-decoration-none">[index]</a>
+
+  {% comment %}
+  custom form layout (views.create에서 받아온 form에서 여러 속성들을 나누어 배치할 수 있음)
+  {% endcomment %}
+  <hr>
+  <h2>Rendering fields manually</h2>
+  <form action="#">
+    <div>
+      {{form.title.errors}}
+      {{form.title.label_tag}}
+      {{form.title}}
+    </div>
+    <div>
+      {{form.content.errors}}
+      {{form.content.label_tag}}
+      {{form.content}}
+    </div>
+  </form>
+
+  {% comment %}
+  form을 순회하면 각 field로 접근
+  {% endcomment %}
+  <hr>
+  <h2>Looping over the form's fields</h2>
+  <form action="#">
+    {% for field in form %}
+      {{field.errors}}
+      {{field.label_tag}}
+      {{field}}
+    {% endfor %}
+  </form>
+
+  {% comment %}
+  boostrap v5 (문서 참고) (bootstrap_form에 나의 form을 넣어주겠다는 뜻) (bootstrap에서 알아서 렌더링)
+  {% endcomment %}
+  <hr>
+  <h2>bootstrap v5 quickstart</h2>
+  <form action="#">
+    {% bootstrap_form form %}
+    {% buttons %}
+      <button type="submit" class="btn btn-primary">Submit</button>
+    {% endbuttons %}
+  </form>
+
+{% endblock content %}

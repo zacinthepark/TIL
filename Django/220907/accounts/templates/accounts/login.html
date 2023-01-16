@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>LOGIN</h1>
+  {% comment %}
+    action을 비워놓으면 현재 브라우저의 url로 요청
+  {% endcomment %}
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit">
+  </form>
+{% endblock content %}

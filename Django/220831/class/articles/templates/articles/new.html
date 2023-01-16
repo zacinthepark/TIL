@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>NEW</h1>
+  <form action="{% url 'articles:create' %}" method='GET'>
+    <label for="title">Title: </label>
+    {% comment %} name은 url querystring에 들어갈 키 명칭 {% endcomment %}
+    <input type="text" name="title" id="title"><br>
+    <label for="content">Content: </label>
+    <input type="text" name="content" id="content"><br>
+    <input type="submit">
+  </form>
+  <hr>
+  <a href="{% url 'articles:index' %}">Go Back to Index</a>
+{% endblock content %}

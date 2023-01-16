@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>THROW!</h1>
+
+  <form action="{% url 'articles:catch' %}", method="GET">
+    <label for="message">message</label>
+    <input type="text" id="message" name="message">
+    <input type="submit">
+  </form>
+  
+  <a href="{% url 'articles:index' %}">to index</a>
+{% endblock content %}
