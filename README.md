@@ -8,9 +8,10 @@
 - [HTML and CSS](html-css/README.md)
 - [JavaScript](Javascript/README.md)
 - [Django](django/README.md)
-- [Django Practices](Django_Practices/README.md)
 - [Vue2](vue/vue2/README.md)
 - [Clutters](clutters/README.md)
+
+---
 
 ![zones](https://user-images.githubusercontent.com/86648892/184500125-9d4ee401-9e69-46f5-8456-ac7ef49ccf15.png)
 
