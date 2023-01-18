@@ -2,14 +2,14 @@
 
 ## Index
 
-- [Python](python/README.md)
+- [PYTHON](python/README.md)
 - [Algorithm](Algorithm/README.md)
 - [Algorithm Practices](Algorithm_Practices/README.md)
-- [HTML and CSS](html-css/README.md)
-- [JavaScript](Javascript/README.md)
-- [Django](django/README.md)
-- [Vue2](vue/vue2/README.md)
-- [Clutters](clutters/README.md)
+- [HTML-CSS](html-css/README.md)
+- [JAVASCRIPT](Javascript/README.md)
+- [DJANGO](django/README.md)
+- [VUE2](vue/vue2/README.md)
+- [CLUTTERS](clutters/README.md)
 
 ---
 
