@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>REVIEW DETAIL</h1>
+  <hr>
+  <p>POSTED BY: {{ review.user }}</p>
+  <p>TITLE: {{ review.title }}</p>
+  <p>CONTENT: {{ review.content }}</p>
+  <p>CREATED AT: {{ review.created_at }}</p>
+  <p>UPDATED AT: {{ review.updated_at }}</p>
+  <hr>
+  <h4>COMMENTS FOR THIS REVIEW!</h4>
+  {% if comments %}
+    <p>current comment counts: {{ comments|length }}</p>
+  {% endif %}
+  <ul>
+    {% for comment in comments %}
+      <li>
+        {{ comment.user }}: {{ comment.content }}
+      </li>
+    {% endfor %}
+  </ul>
+  <hr>
+  {% if request.user.is_authenticated %}
+    <form action="{% url 'community:create_comment' review.pk %}" method="POST">
+      {% csrf_token %}
+      {{ comment_form }}
+      <input type="submit">
+    </form>
+  {% else %}
+    <a href="{% url 'accounts:login' %}">LOGIN REQUIRED!</a>
+  {% endif %}
+  <hr>
+  <a href="{% url 'community:index' %}">
+    <button type="button" class="btn btn-primary">GO TO REVIEWS LIST</button>
+  </a>
+{% endblock content %}

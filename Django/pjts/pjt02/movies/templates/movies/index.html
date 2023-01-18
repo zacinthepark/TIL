@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<div>
+  <h1 class='text-center' style='font-weight: bolder'>INDEX</h1>
+  <a href="{% url 'movies:create' %}">
+    <button type="button" class="btn btn-primary">CREATE</button>
+  </a>
+</div>
+<hr>
+
+<div class='row row-cols-1 row-cols-md-5 g-4'>
+  {% for movie in movies %}
+    <div class='col'>
+      <div class='card h-200'>
+        <a href="{% url 'movies:detail' movie.pk %}">
+          <img src="{{ movie.poster_url }}" class='card-img-top' alt="그림">
+        </a>
+        <div class='card-body'>
+          <h5 class='text-center' style='font-weight: bold'>{{ movie.title }}</h5>
+          <h6 class='text-center' style='font-weight: bold'>{{ movie.genre }} / {{ movie.score }}</h6>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock content %}

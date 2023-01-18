@@ -1,12 +1,14 @@
 # INDEX
 
-[Django Practice 1](#django-practice-1-templates-views-models-admin-account)<br>
-[Django Practice 2](#django-practice-2-modeling-db-bootstrap)<br>
-[Django Practice 3](#django-rest-framework를-통한-restful-api-서버-구현)<br>
+- [pjt01: Django Framework를 통한 데이터베이스 활용 및 영화 페이지 구현](#pjt01)<br>
+- [pjt02: Django Framework를 통한 DB CRUD 및 영화 페이지 구현](#pjt02)<br>
+- [pjt03: DRF를 통한 RESTful API 서버 구현](#pjt03)<br>
+- [pjt04: 알고리즘을 이용한 영화 서버 및 페이지 구현](#pjt04)<br>
+- [pjt05: vue-cli, vuex, router를 활용한 영화 페이지 구현](#pjt05)<br>
 
 ---
 
-# Django Practice 1 (Templates, Views, Models, admin account)
+# pjt01
 
 ## Django Framework를 통한 데이터베이스 활용 및 영화 페이지 구현
 
@@ -655,392 +657,12 @@ def delete(request, pk):
 
 ---
 
-# Django Practice 2 (models, ModelForm, CRUD, DB, css, bootstrap)
-
-## DB를 활용한 웹 페이지 구현
-
-- Modeling에 대한 이해
-    - `models.py`
-    - `forms.py`
-- Django Framework를 활용한 CRUD 구현
-    - MTV Structure
-- Bootstrap 및 CSS 활용한 페이지 꾸미기
-
----
-
-## 결과 사진
-
----
-
-### 영화 목록 페이지 (전체 영화 데이터를 조회)
-### /movies/index.html
-
-<img width="1343" alt="index" src="https://user-images.githubusercontent.com/86648892/194557989-4e89d0e4-a759-4e05-a081-5098d0c89397.png">
-
----
-
-### 영화 생성 페이지 (생성 페이지 렌더링 및 새로운 영화 데이터 생성)
-### /movies/create.html
-
-<img width="1352" alt="create1" src="https://user-images.githubusercontent.com/86648892/194557963-7517a74e-bb7d-42c8-b3e4-b552bea217a0.png">
-<img width="1335" alt="create2" src="https://user-images.githubusercontent.com/86648892/194557969-147125f4-5bba-4f79-9dd6-5f75a1f84faa.png">
-
----
-
-### 영화 상세정보 페이지 (선택한 영화의 상세정보)
-### /movies/detail.html
-
-<img width="1405" alt="detail1" src="https://user-images.githubusercontent.com/86648892/194557972-a38600f9-3995-4b77-bcda-50b01134b285.png">
-<img width="1391" alt="detail2" src="https://user-images.githubusercontent.com/86648892/194557988-6bf29749-b4ba-49a1-963e-aac2e09456d0.png">
-
----
-
-### 영화 정보수정 페이지 (기존 영화 데이터 수정)
-### /movies/update.html
-
-<img width="1379" alt="update1" src="https://user-images.githubusercontent.com/86648892/194557996-f2e5fdde-2f3d-4303-8731-9dd1aa3c76b9.png">
-<img width="1364" alt="update2" src="https://user-images.githubusercontent.com/86648892/194558000-6063678d-2533-483d-82c9-8a0d4c0a5288.png">
-
----
-
-## 핵심 코드
-
----
-
-### /movies/models.py
-
-```python
-from django.db import models
-
-class Movie(models.Model):
-    title = models.CharField(max_length=20) # 영화 제목
-    audience = models.IntegerField()        # 관객 수
-    release_date = models.DateField()       # 개봉일
-    genre = models.CharField(max_length=30) # 장르
-    score = models.FloatField()             # 평점
-    poster_url = models.TextField()         # 포스터 경로
-    description = models.TextField()        # 줄거리
-
-    def __str__(self):
-        return self.title
-```
-
----
-
-### /movies/forms.py
-
-```python
-from django import forms
-from .models import Movie
-
-class MovieForm(forms.ModelForm):
-
-    class Meta:
-        model = Movie
-        fields = '__all__'
-
-    # 영화제목 위젯
-    title = forms.CharField(
-        label='영화 제목',
-        widget=forms.TextInput(
-            attrs={
-                'class': 'form-control',
-                'placeholder': '제목을 입력하세요.',
-                'max_length': 20,
-            }
-        ),
-    )
-
-    # 관객수 위젯
-    audience = forms.CharField(
-        label='관객 수',
-        widget=forms.NumberInput(
-            attrs={
-                'class': 'form-control',
-                'placeholder': '관객 수를 입력하세요.',
-            }
-        ),
-    )
-
-    # 개봉일 위젯
-    release_date = forms.DateField(
-        label='개봉일',
-        widget=forms.DateInput(
-            format=('%Y-%m-%d'),
-            attrs={
-                'class': 'form-control',
-                'type': 'date',
-            }
-        ),
-    )
-
-    # 장르 위젯
-    GENRE = [
-        ('Comedy', '코미디'),
-        ('Horror', '호러'),
-        ('Romance', '로맨스'),
-        ('Drama', '드라마'),
-        ('Action', '액션'),
-        ('SF', 'SF'),
-        ('Noir', '느와르'),
-    ]
-    genre = forms.ChoiceField(
-        choices=GENRE,
-        label='장르',
-        widget=forms.Select(
-            attrs={
-                'class': 'form-control',
-            }
-        ),
-    )
-
-    # 평점 위젯
-    score = forms.CharField(
-        label='평점',
-        widget=forms.NumberInput(
-            attrs={
-                'step': 0.5,
-                'min': 0,
-                'max': 5,
-                'class': 'form-control',
-                'placeholder': '0점~5점 중 평점을 입력하세요.',
-            }
-        ),
-    )
-
-    # 포스터 경로 위젯
-    poster_url = forms.CharField(
-        label='포스터 경로',
-        initial='https://web.yonsei.ac.kr/_ezaid/board/_skin/albumRecent/3/no_image.gif',
-        widget=forms.Textarea(
-            attrs={
-                'class': 'form-control',
-            }
-        ),
-    )
-
-    # 줄거리 위젯
-    description = forms.CharField(
-        label='줄거리',
-        widget=forms.Textarea(
-            attrs={
-                'class': 'form-control',
-                'placeholder': '줄거리를 입력하세요.',
-            }
-        ),
-    )
-```
-
----
-
-### /movies/views.py
-
-```python
-from django.shortcuts import render, redirect
-from django.views.decorators.http import require_http_methods, require_safe, require_POST
-from .models import Movie
-from .forms import MovieForm
-
-
-@require_safe
-def index(request):
-    movies = Movie.objects.all()
-    context = {
-        'movies': movies,
-    }
-    return render(request, 'movies/index.html', context)
-
-
-@require_http_methods(['GET', 'POST'])
-def create(request):
-    if request.method=="POST":
-        form = MovieForm(request.POST)
-        if form.is_valid():
-            movie = form.save()
-            return redirect('movies:detail', movie.pk)
-    else:
-        form = MovieForm()
-    context = {
-        'form': form,
-    }
-    return render(request, 'movies/create.html', context)
-
-
-@require_safe
-def detail(request, pk):
-    movie = Movie.objects.get(pk=pk)
-    context = {
-        'movie': movie,
-    }
-    return render(request, 'movies/detail.html', context)
-
-
-@require_http_methods(['GET', 'POST'])
-def update(request, pk):
-    movie = Movie.objects.get(pk=pk)
-    if request.method == "POST":
-        form = MovieForm(request.POST, instance=movie)
-        if form.is_valid():
-            form.save()
-            return redirect('movies:detail', movie.pk)
-    else:
-        form = MovieForm(instance=movie)
-    context = {
-        'form': form,
-        'movie': movie,
-    }
-    return render(request, 'movies/update.html', context)
-
-
-@require_POST
-def delete(request, pk):
-    movie = Movie.objects.get(pk=pk)
-    movie.delete()
-    return redirect('movies:index')
-```
-
----
-
-### /movies/index.html
-
-```html
-{% extends 'base.html' %}
-
-{% block content %}
-<br>
-<div>
-  <h1 class='text-center' style='font-weight: bolder'>INDEX</h1>
-  <a href="{% url 'movies:create' %}">
-    <button type="button" class="btn btn-primary">CREATE</button>
-  </a>
-</div>
-<hr>
-
-<div class='row row-cols-1 row-cols-md-5 g-4'>
-  {% for movie in movies %}
-    <div class='col'>
-      <div class='card h-200'>
-        <a href="{% url 'movies:detail' movie.pk %}">
-          <img src="{{ movie.poster_url }}" class='card-img-top' alt="그림">
-        </a>
-        <div class='card-body'>
-          <h5 class='text-center' style='font-weight: bold'>{{ movie.title }}</h5>
-          <h6 class='text-center' style='font-weight: bold'>{{ movie.genre }} / {{ movie.score }}</h6>
-        </div>
-      </div>
-    </div>
-  {% endfor %}
-</div>
-{% endblock content %}
-```
-
----
-
-### /movies/create.html
-
-```html
-{% extends 'base.html' %}
-
-{% block content %}
-  <h1>CREATE</h1>
-
-  <form action="{% url 'movies:create' %}" method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="CREATE" style="background-color:rgb(0, 100, 255)">
-  </form>
-  <hr>
-
-  <a href="{% url 'movies:index' %}">
-    <button type="button" class="btn btn-warning">BACK</button>
-  </a>
-{% endblock content %}
-```
-
----
-
-### /movies/detail.html
-
-```html
-{% extends 'base.html' %}
-
-{% block content %}
-  <h1 class='text-center' style="margin:100 auto">DETAIL</h1>
-  <hr>
-
-  <div class='container row' style="margin:100 auto;">
-    <div class="col-md-5" style="margin:0 auto;">
-      <img src="{{ movie.poster_url }}" class="align-items-center" style="width: 30rem;" alt="사진">
-      <hr>
-      <h4 style='font=weight: bold'> {{ movie.title }}</h4><br>
-      <p> Audience : {{ movie.audience }}</p>
-      <p> Release Dates : {{ movie.release_date }}</p>
-      <p> Genre : {{ movie.genre }}</p>
-      <p> Score : {{ movie.score }}</p>
-      <p> {{ movie.description }} </p>
-      <hr>
-
-      <a href="{% url 'movies:update' movie.pk %}" style="margin:1%;">
-        <button type="button" style="background-color:rgb(0, 100, 255)">UPDATE</button>
-      </a>
-      <form action="{% url 'movies:delete' movie.pk %}" method='POST' style="margin:1%;">
-        {% csrf_token %}
-        <input type="submit" value="DELETE" style="background-color:rgb(255, 0, 50)">
-      </form>
-      <hr>
-
-      <a href="{% url 'movies:index' %}" style="margin:1%;;">
-        <button type="button" class="btn btn-warning">BACK</button>
-      </a>
-    </div>
-  </div>
-{% endblock content %}
-```
-
----
-
-### /movies/update.html
-
-```html
-{% extends 'base.html' %}
-
-{% block content %}
-  <h1>UPDATE</h1>
-
-  <form action="{% url 'movies:update' movie.pk %}" method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="UPDATE" style="background-color:rgb(0, 100, 255)">
-    <input type="reset" value="CANCEL" style="background-color:rgb(0, 100, 255)">
-  </form>
-  <hr>
-
-  <a href="{% url 'movies:detail' movie.pk %}">
-    <button type="button" class="btn btn-warning">BACK</button>
-  </a>
-{% endblock content %}
-```
-
----
-
-## 후기 및 느낀 점
-
-- 버튼을 구현하는 과정에 있어서 단순히 링크를 이동하는 `<a>` 태그에 `<button>` 태그를 넣어서 버튼 모양을 구현하고, 여기에 bootstrap class를 활용한 버튼 스타일을 구현했다.
-
-- 반면 DB를 건드리게 되는 POST 요청을 수행하는 버튼들의 경우 `<form>` 태그 내의 `<input type="submit">` 태그로 구현했다. POST 요청을 하지 않는 버튼과 달리 bootstrap class를 통해 구현하려고 했을 때는 정상작동하지 않았다.
-
-- ModelForm의 다양한 위젯을 활용해볼 수 있었다. 문서를 조금 더 찾아보자.
-
-- css나 bootstrap 활용이 아직 미숙한 것 같다. 개인적으로 django를 통해 모델링하고, crud하는 과정이 더 재밌게 느껴진다.
-
-- 전체 영화 데이터를 조회하는 목록 페이지의 경우 bootstrap의 card component를 활용하였다.
-
----
-
-# Django Practice 2 (Modeling, DB, Bootstrap)
+# pjt02
 
 ## Django Framework를 통한 DB CRUD 및 영화 페이지 구현
 
+---
+
 - Modeling에 대한 이해
     - `models.py`
     - `forms.py`
@@ -1419,9 +1041,9 @@ def delete(request, pk):
 
 ---
 
-# Django Practice 3
+# pjt03
 
-## Django REST Framework를 통한 RESTful API 서버 구현
+## DRF를 통한 RESTful API 서버 구현
 
 ---
 
@@ -1705,5 +1327,760 @@ def create_review(request, movie_pk):
 - 필요한 정보를 그때 그때 맞게 출력하기 위해 serializer를 계속 새로 정의해주는 작업이 있었는데, 이 방법이 최선인가라는 궁금증이 들었다.
 
 - serializer 내에서 참조하는 모델의 필드명과 동일한 이름의 속성을 정의하면 해당 속성으로 override된다.
+
+---
+
+# pjt04
+
+## 알고리즘을 이용한 영화 서버 및 페이지 구현
+
+---
+
+### 프로젝트 목표
+
+- Django MTV 구조 recap
+- Django를 통한 영화 데이터 관리
+- Axios를 활용한 AJAX 요청을 통해 좋아요 및 팔로잉 구현
+- 페어 프로젝트 경험
+
+---
+
+### 모델링
+
+#### movies/models.py
+
+```python
+from django.db import models
+
+# Create your models here.
+class Genre(models.Model):
+    name = models.CharField(max_length=50)
+
+
+class Movie(models.Model):
+    genres = models.ManyToManyField(Genre, related_name="movies")
+    title = models.CharField(max_length=100)
+    release_date = models.DateField()
+    popularity = models.FloatField()
+    vote_count = models.IntegerField()
+    vote_average = models.FloatField()
+    overview = models.TextField()
+    poster_path = models.CharField(max_length=200)
+```
+
+#### community/models.py
+
+```python
+from django.db import models
+from django.conf import settings
+
+
+# Create your models here.
+class Review(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="like_reviews")
+    title = models.CharField(max_length=100)
+    movie_title = models.CharField(max_length=50)
+    rank = models.IntegerField()
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+
+class Comment(models.Model):
+    review = models.ForeignKey(Review, on_delete=models.CASCADE) 
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    content = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.content
+```
+
+#### accounts/models.py
+
+```python
+from django.db import models
+from django.contrib.auth.models import AbstractUser
+
+# Create your models here.
+class User(AbstractUser):
+    followings = models.ManyToManyField('self', symmetrical=False, related_name="followers")
+```
+
+---
+
+### URL 구성
+
+```python
+
+# mypjt/urls.py
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('movies/', include('movies.urls')),
+    path('community/', include('community.urls')),
+    path('accounts/', include('accounts.urls')),
+]
+
+# movies/urls.py
+
+from django.contrib import admin
+from django.urls import path
+from . import views
+
+app_name='movies'
+urlpatterns = [
+    path('', views.index, name='index'),
+    path('<int:movie_pk>/', views.detail, name='detail'),
+    path('recommended/', views.recommended, name='recommended'),
+]
+
+# community/urls.py
+
+from django.contrib import admin
+from django.urls import path
+from . import views
+
+app_name='community'
+urlpatterns = [
+    path('', views.index, name='index'),
+    path('create/', views.create, name='create'),
+    path('<int:review_pk>/', views.detail, name='detail'),
+    path('<int:review_pk>/comments/create/', views.create_comment, name='create_comment'),
+    path('<int:review_pk>/likes/', views.likes, name='likes'),
+]
+
+# accounts/urls.py
+
+from django.contrib import admin
+from django.urls import path
+from . import views
+
+app_name='accounts'
+urlpatterns = [
+    path('signup/', views.signup, name='signup'),
+    path('login/', views.login, name='login'),
+    path('logout/', views.logout, name='logout'),
+    path('<str:username>/', views.profile, name='profile'),
+    path('<int:user_pk>/follow/', views.follow, name='follow'),
+]
+```
+
+---
+
+### View Functions
+
+![movie_index](https://user-images.githubusercontent.com/86648892/199936151-f1092456-4a65-4218-84f4-6650fea52ff5.png)
+
+![movie_detail](https://user-images.githubusercontent.com/86648892/199936163-cfeaf543-473f-4403-9a62-a1b91616642b.png)
+
+![movie_recommend](https://user-images.githubusercontent.com/86648892/199936159-e1b93e79-a8cc-44aa-bb67-415d0b94faa9.png)
+
+#### movies/views.py
+
+```python
+from django.shortcuts import render
+from django.views.decorators.http import require_safe
+from .models import Movie
+
+
+# Create your views here.
+@require_safe
+def index(request):
+    movies = Movie.objects.all()
+    context = {
+        'movies': movies,
+    }
+    return render(request,'movies/index.html', context)
+
+
+@require_safe
+def detail(request, movie_pk):
+    movie = Movie.objects.get(pk=movie_pk)
+    objects = list(movie.genres.all())
+    genres = []
+    for genre in objects:
+        genres.append(genre.name)
+    context = {
+        'movie': movie,
+        'genres': genres,
+    }
+    return render(request,'movies/detail.html', context)
+
+
+@require_safe
+def recommended(request):
+    movies = Movie.objects.order_by('?')[:10]
+    context = {
+        'movies': movies,
+    }
+    return render(request,'movies/recommended.html', context)
+```
+
+![review_list](https://user-images.githubusercontent.com/86648892/199936166-ae8f318d-915d-49e7-aa95-65f31a32b402.png)
+
+![review_detail](https://user-images.githubusercontent.com/86648892/199936170-e4f76eae-a34a-4bf1-94ae-abc99dcdc4fe.png)
+
+#### community/views.py
+
+```python
+from django.shortcuts import render, redirect
+from django.views.decorators.http import require_http_methods, require_POST, require_safe
+from django.contrib.auth.decorators import login_required
+from .models import Review
+from .forms import ReviewForm, CommentForm
+from django.http import JsonResponse
+
+
+# Create your views here.
+@require_safe
+def index(request):
+    reviews = Review.objects.all()
+    context = {
+        'reviews' : reviews
+    }
+    return render(request, 'community/index.html', context)
+
+
+@login_required
+@require_http_methods(['GET', 'POST'])
+def create(request):
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = request.user
+            review.save()
+            return redirect('community:detail', review.pk)
+    else:
+        form = ReviewForm()
+    context = {
+        'form':form,
+    }
+    return render(request, 'community/create.html', context)
+
+
+@require_safe
+def detail(request,review_pk):
+    review = Review.objects.get(pk=review_pk)
+    comment_form = CommentForm()
+    comments = review.comment_set.all()
+    context = {
+        'review' : review,
+        'comment_form' : comment_form,
+        'comments' : comments,
+    }
+    return render(request, 'community/detail.html', context)
+
+
+@require_POST
+def create_comment(request,review_pk):
+    if request.user.is_authenticated:
+        review = Review.objects.get(pk=review_pk)
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.review = review
+            comment.user = request.user
+            comment.save()
+        return redirect('community:detail', review.pk)
+    return redirect('accounts:login')
+
+
+@require_POST
+def likes(request,review_pk):
+    if request.user.is_authenticated:
+        review = Review.objects.get(pk=review_pk)
+        if review.like_users.filter(pk=request.user.pk).exists():
+            review.like_users.remove(request.user)
+            is_liked = False
+        else:
+            review.like_users.add(request.user)
+            is_liked = True
+        context = {
+            'is_liked': is_liked,
+            'likes_count': review.like_users.count()
+        }
+        return JsonResponse(context)
+    return redirect('accounts:login')
+```
+
+![profile](https://user-images.githubusercontent.com/86648892/199936171-7f501ee9-1a65-4e0f-8879-dd1308e73d27.png)
+
+#### accounts/views.py
+
+```python
+from django.contrib.auth import login as auth_login
+from django.contrib.auth import logout as auth_logout
+from django.contrib.auth.forms import AuthenticationForm
+from django.shortcuts import redirect, render
+from django.views.decorators.http import require_http_methods, require_POST
+from django.contrib.auth import get_user_model
+from .forms import CustomUserCreationForm
+from django.http import JsonResponse
+
+
+# Create your views here.
+@require_http_methods(['GET', 'POST'])
+def signup(request):
+    if request.user.is_authenticated:
+        return redirect('community:index')
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            auth_login(request, user)
+            return redirect('community:index')
+    else:
+        form = CustomUserCreationForm()
+    context = {
+        'form': form,
+    }
+    return render(request, 'accounts/signup.html', context)
+
+
+@require_http_methods(['GET', 'POST'])
+def login(request):
+    if request.user.is_authenticated:
+        return redirect('community:index')
+    if request.method == 'POST':
+        form = AuthenticationForm(request, request.POST)
+        if form.is_valid():
+            auth_login(request, form.get_user())
+            return redirect(request.GET.get('next') or 'community:index')
+    else:
+        form = AuthenticationForm()
+    context = {
+        'form' : form,
+    }
+    return render(request, 'accounts/login.html', context)
+
+
+@require_POST
+def logout(request):
+    if request.user.is_authenticated:
+        auth_logout(request)
+    return redirect('community:index')
+
+
+def profile(request, username):
+    User = get_user_model()
+    person = User.objects.get(username=username)
+    context = {
+        'person' : person,
+    }
+    return render(request, 'accounts/profile.html', context)
+
+
+@require_POST
+def follow(request, user_pk):
+    if request.user.is_authenticated:
+        User = get_user_model()
+        me = request.user
+        you = User.objects.get(pk=user_pk)
+        if me != you:
+            if you.followers.filter(pk=me.pk).exists():
+                you.followers.remove(me)
+                is_followed = True
+            else:
+                you.followers.add(me)
+                is_followed = False
+            context = {
+                'is_followed': is_followed,
+                'followers_count': you.followers.count(),
+                'followings_count': you.followings.count(),
+            }
+            return JsonResponse(context)
+        return redirect('accounts:profile', you.username)
+    return redirect('accounts:login')
+```
+
+---
+
+### 목표에 대한 결과
+
+- Django MTV 구조 recap
+
+  - 모델링부터 시작하여 마이그레이션, URL 구성, 그에 따른 view 함수 구성 및 template 구성 등 전반적인 Django 활용에 대한 복습이 가능했다.
+
+- Django를 통한 영화 데이터 관리
+
+  - fixtures 파일을 통해 쉽게 데이터를 로드하는 법을 다시 한번 연습할 수 있었다.
+
+- Axios를 활용한 AJAX 요청을 통해 좋아요 및 팔로잉 구현
+
+  - 좋아요와 팔로우 기능에 대해 새로운 페이지를 새로고침하는 것에서 벗어나 axios를 통한 비동기 요청 및 JsonResponse 활용을 통해, 페이지의 새로고침없이 LIKE 버튼과 FOLLOW 버튼의 상태 변경 및 좋아요, 팔로워, 팔로잉 숫자 변경이 가능하도록 구현했다.
+
+- 페어 프로젝트 경험
+
+  - driver와 navigator로서의 역할을 모두 수행해본 결과, 어느 한쪽 다 쉬운 역할이 없다고 생각하였다. navigator는 조금 더 상세하게 안내를 하고, drvier로서는 수동적인 태도가 아닌 어느정도 navigator의 호흡에 잘 맞춰야 한다고 느꼈다. 협업이 익숙치 않아 아직 오히려 작업 속도가 더딘 기분이었지만, 익숙해진다면 훨씬 개발하는데 있어 생산성이 높아질 것이며, 부족한 부분도 보완할 수 있다고 생각한다.
+
+---
+
+# pjt05
+
+## vue-cli, vuex, router를 활용한 영화 페이지 구현
+
+---
+
+### 프로젝트 목표
+
+- 영화 정보를 제공하는 SPA 제작
+- AJAX 통신과 JSON 구조에 대한 이해
+- Vue CLI, Vue Router 플러그인 활용
+
+### API
+
+- [TMDBAPI - Top Rated Movies](https://developers.themoviedb.org/3/movies/get-top-rated-movies)
+- [OpenWeatherMapAPI - Current Weather by city name](https://openweathermap.org/current#name)
+
+### 참고 링크
+
+- [Vue CLI Bootstrap 적용하기](https://velog.io/@gillog/Vue.js-Bootstrap-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0)
+- [Vue CLI Bootstrap Card Component 활용](https://carrotweb.tistory.com/174)
+
+### 구현 기능
+
+- 최고 평점 영화 출력 (MovieView)
+- 최고 평점 영화 중 랜덤 영화 한 개 출력 (RandomView)
+  - OpenWeatherMap으로부터 받아온 현재 날씨도 함께 출력
+- 보고싶은 영화 등록 및 삭제 (WatchListView)
+
+---
+
+## MovieView and MovieCard
+
+<img width="1909" alt="MovieView" src="https://user-images.githubusercontent.com/86648892/201368472-9d2b32a4-e1d1-418b-b29c-e42ebf94a4ff.png">
+
+### Code Snippets
+
+#### MovieView.vue
+
+```jsx
+<template>
+  <div>
+    <h1>MovieView</h1>
+    <div class="py-5">
+      <div class="c">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+          <MovieCard
+            v-for="movieCard in movieCards"
+            :key="movieCard.id"
+            :movieCard="movieCard"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import MovieCard from "@/components/MovieCard"
+
+export default {
+  name: "MovieView",
+  components: {
+    MovieCard,
+  },
+  computed: {
+    movieCards() {
+      return this.$store.state.movieCards
+    },
+  },
+  created: function () {
+    this.$store.dispatch("loadMovieCards")
+  },
+}
+</script>
+
+<style>
+.c {
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+}
+</style>
+```
+
+#### MovieCard.vue
+
+```jsx
+<template>
+  <div>
+    <div class="col">
+      <div class="card h-100 m-3">
+        <img :src="posterPath" class="card-img-top" alt="" />
+        <div class="card-body">
+          <h5 class="text-center" style="font-weight: bold">
+            {{ movieCard.title }}
+          </h5>
+          <div class="card-text">{{ movieCard.overview }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "MovieCard",
+  props: {
+    movieCard: Object,
+  },
+  computed: {
+    posterPath() {
+      return "https://image.tmdb.org/t/p/w500" + this.movieCard.poster_path
+    },
+  },
+}
+</script>
+
+<style>
+.card {
+  max-width: 100%;
+}
+.card-text {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  text-align: justify;
+  text-indent: 7px;
+  line-height: 2rem;
+}
+.card-img-top {
+  width: 100%;
+  height: 30rem;
+  object-fit: cover;
+}
+</style>
+```
+
+- TMDBAPI의 최고 평점 영화들을 axios 요청을 통해 가져온 뒤 Bootstrap Card Component를 활용하여 출력하였다.
+
+- axios 요청을 통해 영화 데이터를 가져오는 것은 수월하게 진행되었으나 v-for directive를 통해 MovieView에서 하위 컴포넌트인 MovieCard로 각 영화 데이터를 넘겨주는 과정에서 각 row마다 3개씩의 영화 카드를 삽입할지에 대해 잠시 막혔었다. 시도 끝에 위와 같이 구현하였다.
+
+---
+
+## RandomView and OpenWeatherMap API
+
+### Code Snippets
+
+#### RandomView.vue
+
+<img width="1915" alt="RandomView" src="https://user-images.githubusercontent.com/86648892/201368489-4e49ad41-010c-4b9b-b9b2-b006f6b7eca5.png">
+
+```jsx
+<template>
+  <div>
+    <h2>오늘의 날씨는 {{ currentWeather }}! 이런 영화 어때요?</h2>
+    <div style="width: 50%; width: 315px; margin: auto">
+      <button
+        class="btn btn-success"
+        @click="pickMovie"
+        style="display: block; width: 315px"
+      >
+        PICK
+      </button>
+      <div class="card h-200" v-if="isSelected">
+        <img
+          :src="`https://image.tmdb.org/t/p/original${this.movie.poster_path}`"
+          class="card-img-top"
+        />
+        <div class="card-body">
+          <h5 class="text-center" style="font-weight: bold; margin: 0px">
+            {{ movie.title }}
+          </h5>
+        </div>
+      </div>
+    </div>
+    <img src="" alt="" />
+  </div>
+</template>
+
+<script>
+import _ from "lodash"
+
+export default {
+  name: "RandomView",
+  data() {
+    return {
+      movie: null,
+      isSelected: false,
+    }
+  },
+  methods: {
+    pickMovie() {
+      this.isSelected = true
+      const rand_idx = _.random(0, 19)
+      const selectedMovie = this.$store.state.movieCards[rand_idx]
+      this.movie = selectedMovie
+    },
+  },
+  computed: {
+    currentWeather() {
+      return this.$store.state.currentWeather
+    }
+  },
+}
+</script>
+
+<style></style>
+```
+
+- lodash를 통해 랜덤한 영화 추천을 구현하였다. TMDB API 검토 중 poster_path의 끝이 original로 끝나는 url로 요청하면 더 좋은 해상도의 이미지를 가져올 수 있음을 확인하였다.
+
+- OpenWeatherMap API의 현재 날씨 정보를 가져오는 방법을 공식 문서를 통해 확인하여 axios 요청을 통해 현재 날씨 정보의 description 키에 담겨 있는 값을 가져와 함께 출력해주었다. 해당 데이터가 담겨있도록 lifecycle hooks 중 created를 활용하여 App.vue가 생성될 때 해당 데이터를 가져오도록 설정하였다.
+
+---
+
+## WatchListView and WatchListForm and WatchListItem
+
+<img width="1917" alt="WatchListView" src="https://user-images.githubusercontent.com/86648892/201368497-f9db4a1d-217d-473f-ade2-42d1429b0de8.png">
+
+### Code Snippets
+
+#### WatchListView.vue
+
+```jsx
+<template>
+  <div>
+    <WatchListForm />
+    <WatchListItem
+      v-for="(list, index) in watchList"
+      :key="index"
+      :list="list"
+    />
+    <button @click="loadList">저장했던 것 불러오기</button>
+  </div>
+</template>
+
+<script>
+import WatchListForm from "@/components/WatchListForm"
+import WatchListItem from "@/components/WatchListItem"
+
+export default {
+  name: "WatchListView",
+  components: {
+    WatchListForm,
+    WatchListItem,
+  },
+  computed: {
+    watchList() {
+      return this.$store.state.watchList
+    },
+  },
+  methods:{
+    loadList(){
+      this.$store.dispatch('loadList')
+    }
+  }
+}
+</script>
+```
+
+#### WatchListForm.vue
+
+```jsx
+<template>
+  <div class="watchform" style="padding: 35px">
+    <h1><label for="title">보고싶은 영화</label></h1>
+    <input type="text" id="title" v-model="title" @keyup.enter="addmovie" />
+    <button @click="addmovie">add</button>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "WatchListForm",
+  data() {
+    return {
+      title: null,
+    }
+  },
+  methods: {
+    addmovie() {
+      const title = this.title
+      if (this.title) {
+        this.$store.dispatch("createWatchList", title)
+      }
+      this.title = null
+    },
+  },
+}
+</script>
+
+<style>
+.watchform {
+  background-color: rgb(228, 242, 253) !important;
+}
+</style>
+```
+
+#### WatchListItem.vue
+
+```jsx
+<template>
+  <div
+    :class="{ 'is-completed': list.isCompleted }"
+    style="padding: 10px; border: 0.1px black solid"
+  >
+    <span @click="updateStatus()">
+      {{ list.title }}
+    </span>
+    <button @click="deleteList">삭제</button>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "WatchListItem",
+  props: {
+    list: Object,
+  },
+  computed: {
+    watchlist() {
+      return this.$store.state.WatchList
+    },
+  },
+  methods: {
+    updateStatus() {
+      this.$store.dispatch("updatedWatchList", this.list)
+    },
+    deleteList() {
+      this.$store.dispatch("deleteList", this.list)
+    },
+  },
+}
+</script>
+
+<style>
+.is-completed {
+  text-decoration: line-through;
+  background-color: rgb(238, 238, 238);
+}
+</style>
+```
+
+- WatchListView의 하위 컴포넌트로 보고싶은 영화를 추가할 수 있는 컴포넌트인 WatchListForm과 추가한 영화들을 볼 수 있는 컴포넌트인 WatchListItem을 만들었다.
+
+- Local Storage를 활용하여 기존에 추가했던 영화를 유지할 수 있도록 하였다.
+
+- WatchListItem의 경우 각 영화 아이템들을 style의 border를 통해 구분할 수 있도록 하였고, 이미 본 영화로 처리할 경우 제목에 line-through로 표시하는 것과 함께 해당 셀은 회색으로 변경되도록 처리하였다.
+
+- 사실 이미 본 영화에 대해 line-through style만을 적용하고, 기존에 영화 아이템들을 추가할 때 흰색과 회색을 번갈아가며 주고 싶었는데 원하는대로 잘 진행되지 않아서 위와 같이 하도록 조원들과 타협을 봤다.
+
+---
+
+## 전반적인 후기
+
+- 첫 페어 프로그래밍에는 혼자 작업하는 것에 비해 작업 속도가 더디고, 약간 답답하다는 느낌을 조금은 받았던 것 같다. 하지만 금번 페어 프로그래밍에서는 오히려 협업을 통해 동일 시간 내에 혼자 할 수 없던 작업을 할 수 있다는 것을 느낀 시간이었다. 더불어 함께 해야할 일들을 리스트업하고, 문제를 해결하는 과정에서 즐거움을 느낄 수 있었다.
+
+- vue-cli 활용 및 axios를 통한 API 요청을 연습하고 적용해보면서 더 익숙해질 수 있는 시간이었다.
 
 ---

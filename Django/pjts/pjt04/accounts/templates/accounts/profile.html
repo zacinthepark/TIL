@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ person.username }}</h1>
+  <div>
+    <b>Followers : <span id="followers-count">{{ person.followers.all|length }}</span></b>  /
+    <b>Followings : <span id="followings-count">{{ person.followings.all|length }}</span></b>
+  </div>
+
+  {% if request.user != person %}
+    <div style="margin-top: 10px;">
+      <form id="follow-form" data-user-id="{{ person.pk }}">
+        {% csrf_token %}
+        {% if request.user in person.followers.all %}
+          <input type="submit" value="UNFOLLOW">
+        {% else %}
+          <input type="submit" value="FOLLOW">
+        {% endif %}
+      </form>
+    <div>
+  {% endif %}
+
+  <hr>
+
+  <h4>REVIEWS BY {{ person.username }}</h4>
+  {% for review in person.review_set.all %}
+    <div>
+      <li>{{ review.content }}</li>
+    </div>
+  {% endfor %}
+
+  <hr>
+
+  <h4>COMMENTS BY {{ person.username }}</h4>
+  {% for comment in person.comment_set.all %}
+    <div>
+      <li>{{ comment.content }}</li>
+    </div>
+  {% endfor %}
+
+  <hr>
+
+  <h4>REVIEWS LIKED BY {{ person.username }}</h4>
+  {% for review in person.like_reviews.all %}
+    <div>
+      <li>{{ review.content }}</li>
+    </div>
+  {% endfor %}
+
+  <hr>
+  <a href="{% url 'community:index' %}">
+    <button type="button" class="btn btn-primary">GO TO REVIEWS LIST</button>
+  </a>
+{% endblock content %}
+
+{% block script %}
+  <script>
+    const form = document.querySelector('#follow-form')
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value
+    form.addEventListener('submit', function (event) {
+      event.preventDefault()
+      const userId = event.target.dataset.userId
+      axios({
+        method: 'post',
+        url: `/accounts/${userId}/follow/`,
+        headers: {'X-CSRFToken': csrftoken},
+      })
+        .then((response) => {
+          const isFollowed = response.data.is_followed
+          const followBtn = document.querySelector('#follow-form > input[type=submit]')
+          if (isFollowed === true) {
+            followBtn.value = 'FOLLOW'
+          } else {
+            followBtn.value = 'UNFOLLOW'
+          }
+          const followersCountTag = document.querySelector('#followers-count')
+          const followingsCountTag = document.querySelector('#followings-count')
+          const followersCount = response.data.followers_count
+          const followingsCount = response.data.followings_count
+          followersCountTag.innerText = followersCount
+          followingsCountTag.innerText = followingsCount
+        })
+        .catch((error) => {
+          console.log(error.response)
+        })
+    })
+  </script>
+{% endblock script %}

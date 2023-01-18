@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>REVIEWS</h1>
+  {% if request.user.is_authenticated %}
+    <a href="{% url 'community:create' %}">
+      <button type="button" class="btn btn-primary">CREATE REVIEW</button>
+    </a>
+  {% endif %}
+  <hr>
+  {% for review in reviews %}
+    <p>
+      <b>POSTED BY: <a href="{% url 'accounts:profile' review.user %}" class="text-decoration-none">{{ review.user }}</a></b>
+    </p>
+    <p>
+      <b>MOVIE TITLE: {{review.movie_title}}</b>
+    </p>
+    <p>
+      <b>CLICK HERE FOR MORE INFO: <a href="{% url 'community:detail' review.pk %}" class="text-decoration-none">{{ review.title }}</a></b>
+    </p>
+    <form class="like-forms" data-review-id="{{ review.pk }}">
+      {% csrf_token %}
+      {% if request.user in review.like_users.all %}
+        <div>
+          <input type="submit" value="UNLIKE" id="like-{{ review.pk }}">
+          <p id="likes-count-{{ review.pk }}" style="margin-top: 10px;">
+            LIKED BY {{ review.like_users.all|length}} USERS
+          </p>
+        </div>
+      {% else %}
+        <input type="submit" value="LIKE" id="like-{{ review.pk }}">
+        <p id="likes-count-{{ review.pk }}" style="margin-top: 10px;">
+          LIKED BY {{ review.like_users.all|length}} USERS
+        </p>
+      {% endif %}
+    </form>
+    <hr>
+  {% endfor %}
+{% endblock content %}
+
+{% block script %}
+  <script>
+    const forms = document.querySelectorAll('.like-forms')
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value
+    forms.forEach((form) => {
+      form.addEventListener('submit', function (event) {
+        event.preventDefault()
+        const reviewId = event.target.dataset.reviewId
+        axios({
+          method: 'post',
+          url: `/community/${reviewId}/likes/`,
+          headers: {'X-CSRFToken': csrftoken},
+        })
+          .then((response) => {
+            const isLiked = response.data.is_liked
+            const likeBtn = document.querySelector(`#like-${reviewId}`)
+            if (isLiked === true) {
+              likeBtn.value = 'UNLIKE'
+            } else {
+              likeBtn.value = 'LIKE'
+            }
+            const likesTag = document.querySelector(`#likes-count-${reviewId}`)
+            const likesCount = response.data.likes_count
+            likesTag.innerText = `LIKED BY ${likesCount} USERS`
+          })
+          .catch((error) => {
+            console.log(error.response)
+          })
+      })
+    })
+  </script>
+{% endblock script %}

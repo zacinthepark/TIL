@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark my-3">
+
+    <div class="container-fluid">
+      <h1 class="fw-bold text-white me-4">DETAIL</h1>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'movies:edit' movie.pk %}">
+              <h5 class="mx-3">[EDIT details]</h5>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'movies:index' %}">
+              <h5 class="mx-3">[BACK to movies]</h5>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </nav>
+
+  <img src="{{movie.poster_url}}" alt=""><br>
+  <h5 class="fw-bold my-3">{{movie.title}}</h5>
+  <p class="fw-semibold">Audience: {{movie.audience}}</p>
+  <p class="fw-semibold">Release Dates: {{movie.release_date}}</p>
+  <p class="fw-semibold">Genre: {{movie.genre}}</p>
+  <p class="fw-semibold">Score: {{movie.score}}</p>
+  <p class="fw-semibold fst-italic">{{movie.description}}</p>
+  <hr>
+
+  <div class="my-2">
+    <form action="{% url 'movies:delete' movie.pk %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="DELETE">
+    </form>
+  </div>
+
+  <footer>
+    <div class="d-flex fixed-bottom justify-content-center mx-auto">
+      <p>DJANGO PJT, by JINWOO PARK</p>
+    </div>
+  </footer>
+{% endblock content %}

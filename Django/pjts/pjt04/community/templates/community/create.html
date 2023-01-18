@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>CREATE YOUR REVIEW!</h1>
+  <hr>
+  <form action="{% url 'community:create' %}" method='POST'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="CREATE REVIEW">
+  </form>
+  <hr>
+  <a href="{% url 'community:index' %}">
+    <button type="button" class="btn btn-primary">GO TO REVIEWS LIST</button>
+  </a>
+  <hr>
+{% endblock content %}

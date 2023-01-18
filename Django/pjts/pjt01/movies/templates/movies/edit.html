@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark my-3">
+
+    <div class="container-fluid">
+      <h1 class="fw-bold text-white">EDIT</h1>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'movies:index' %}">
+              <h5 class="mx-3">[BACK to movies]</h5>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </nav>
+  
+  <form action="{% url 'movies:update' movie.pk %}" method="POST">
+
+    {% csrf_token %}
+
+    <div class = 'my-3'>
+      <label for="title" class="me-5">TITLE: </label>
+      <input type="text" id="title" name="title" value="{{movie.title}}">
+    </div>
+
+    <div class="my-3">
+      <label for="audience" class="me-2">AUDIENCE: </label>
+      <input type="text" id="audience" name="audience" value="{{movie.audience}}">
+    </div>
+
+    <div class="my-3">
+      <label for="release_date" class="me-3">RELEASE_DATE: </label>
+      <input type="date" id="release_date" name="release_date" value="{{movie.release_date|date:'Y-m-d'}}">
+    </div>
+
+    <div class="my-3">
+      <label for="genre" class="me-4">GENRE: </label>
+      <select name="genre" id="genre">
+        <option value="{{movie.genre}}" selected>{{movie.genre}}</option>
+        <option value="액션">액션</option>
+        <option value="스릴러">스릴러</option>
+        <option value="로맨스">로맨스</option>
+        <option value="판타지">판타지</option>
+        <option value="다큐멘터리">다큐멘터리</option>
+        <option value="전쟁">전쟁</option>
+        <option value="애니메이션">애니메이션</option>
+        <option value="코미디">코미디</option>
+        <option value="드라마">드라마</option>
+        <option value="SF">SF</option>
+        <option value="범죄">범죄</option>
+        <option value="공포">공포</option>
+        <option value="뮤지컬">뮤지컬</option>
+      </select>
+    </div>
+
+    <div class="my-3">
+      <label for="score" class="me-4">SCORE: </label>
+      <input type="text" id="score" name="score" value="{{movie.score}}">
+    </div>
+
+    <div class="my-3">
+      <label for="poster_url" class="me-3">POSTER_URL: </label>
+      <input type="text" id="poster_url" name="poster_url" value="{{movie.poster_url}}">
+    </div>
+
+    <div class="my-3 d-flex align-items-start">
+      <label for="description" class="me-3">DESCRIPTION: </label>
+      <textarea name="description" id="description" cols="21" rows="3">{{movie.description}}</textarea>
+    </div>
+
+    <input type="reset" value="Reset">
+    <input type="submit" value="Submit">
+
+  </form>
+  <hr>
+
+  <footer>
+    <div class="d-flex fixed-bottom justify-content-center mx-auto">
+      <p>DJANGO PJT, by JINWOO PARK</p>
+    </div>
+  </footer>
+{% endblock content %}
