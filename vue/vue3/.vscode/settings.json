@@ -1,0 +1,16 @@
+{
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    // "html",  // 삭제
+    "vue",
+    "markdown"
+  ],
+  // vscode를 저장할 때 eslint의 규칙을 적용하라는 옵션
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.tabSize": 2,
+}
