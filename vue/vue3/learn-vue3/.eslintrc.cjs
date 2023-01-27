@@ -16,6 +16,7 @@ module.exports = {
 	},
 	// custom rules
 	rules: {
+		// 'vue/comment-directive': 'off',
 		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 		'no-unused-vars': 'off',
 		'prettier/prettier': [
