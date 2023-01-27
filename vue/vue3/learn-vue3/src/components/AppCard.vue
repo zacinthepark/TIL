@@ -31,7 +31,7 @@ export default {
 		},
 		contents: {
 			type: String,
-			required: true,
+			// required: true,
 		},
 		isLike: {
 			type: Boolean,
@@ -43,7 +43,7 @@ export default {
 		},
 	},
 	setup(props) {
-		console.log('props.title: ', props.title);
+		// console.log('props.title: ', props.title);
 		const isLikeClass = computed(() =>
 			props.isLike ? 'btn-danger' : 'btn-outline-danger',
 		);
