@@ -1,44 +1,58 @@
 <template>
 	<div class="card">
 		<div class="card-body">
-			<h5 class="card-title red">Card title</h5>
+			<!-- type : news, notice -->
+			<span class="badge bg-secondary">{{ typeName }}</span>
+			<h5 class="card-title red mt-2">{{ title }}</h5>
 			<!-- <p class="card-text" :class="classes.red"> -->
 			<p class="card-text">
-				Some quick example text to build on the card title and make up the bulk
-				of the card's content.
+				{{ contents }}
 			</p>
-			<a href="#" class="btn btn-primary">Go somewhere</a>
+			<a href="#" class="btn" :class="isLikeClass">좋아요</a>
 		</div>
 	</div>
 </template>
 
 <script>
-import { ref, useCssModule } from 'vue';
+import { computed } from 'vue';
 
 export default {
-	setup() {
-		// const style = useCssModule();
-		// console.log('style: ', style);
-		const color = ref('red');
-		color.value = 'blue';
-		return { color };
+	props: {
+		type: {
+			type: String,
+			default: 'news',
+			validator: value => {
+				return ['news', 'notice'].includes(value);
+			},
+		},
+		title: {
+			type: String,
+			required: true,
+		},
+		contents: {
+			type: String,
+			required: true,
+		},
+		isLike: {
+			type: Boolean,
+			default: false,
+		},
+		obj: {
+			type: Object,
+			default: () => ({}),
+		},
+	},
+	setup(props) {
+		console.log('props.title: ', props.title);
+		const isLikeClass = computed(() =>
+			props.isLike ? 'btn-danger' : 'btn-outline-danger',
+		);
+		const typeName = computed(() =>
+			props.type === 'news' ? '뉴스' : '공지사항',
+		);
+		return { isLikeClass, typeName };
 	},
 };
 </script>
 
-<style>
-.red {
-	color: v-bind(color) !important;
-}
-</style>
-<!-- <style module="classes">
-.red {
-	color: red !important;
-}
-</style> -->
-
-<!-- <style scoped>
-.red {
-	color: red !important;
-}
-</style> -->
+<style></style>
