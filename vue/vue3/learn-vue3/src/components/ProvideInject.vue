@@ -5,7 +5,7 @@
 			<div class="card-body">
 				<button @click="count++">Click</button>
 				<p>appMessage: {{ appMessage }}</p>
-				<Child></Child>
+				<ChildExample></ChildExample>
 			</div>
 		</div>
 	</div>
@@ -13,11 +13,11 @@
 
 <script>
 import { inject, readonly, provide, ref } from 'vue';
-import Child from './Child.vue';
+import ChildExample from './ChildExample.vue';
 
 export default {
 	components: {
-		Child,
+		ChildExample,
 	},
 	setup() {
 		const staticMessage = ref('static message');

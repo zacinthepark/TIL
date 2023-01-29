@@ -2,17 +2,17 @@
 	<div class="card">
 		<div class="card-header">Child Component</div>
 		<div class="card-body">
-			<DeepChild></DeepChild>
+			<DeepChildExample></DeepChildExample>
 		</div>
 	</div>
 </template>
 
 <script>
-import DeepChild from './DeepChild.vue';
+import DeepChildExample from './DeepChildExample.vue';
 
 export default {
 	components: {
-		DeepChild,
+		DeepChildExample,
 	},
 	setup() {
 		return {};
