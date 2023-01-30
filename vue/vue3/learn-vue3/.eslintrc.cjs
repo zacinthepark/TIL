@@ -12,6 +12,7 @@ module.exports = {
 		ecmaVersion: 'latest',
 	},
 	env: {
+		// script setup의 매크로 함수 사용 가능하게 하는 옵션
 		'vue/setup-compiler-macros': true,
 	},
 	// custom rules
