@@ -6,9 +6,11 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "db": "json-server --watch db.json"
   },
   "dependencies": {
+    "axios": "^1.2.6",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.3",
     "vue": "^3.2.45",
@@ -21,6 +23,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^8.33.0",
     "eslint-plugin-vue": "^9.3.0",
+    "json-server": "^0.17.1",
     "prettier": "^2.7.1",
     "vite": "^4.0.0"
   }
