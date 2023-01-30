@@ -9,7 +9,7 @@ export function getPosts(params) {
 // }
 
 export function getPostById(id) {
-	return posts.get(id);
+	return posts.get(`/${id}`);
 }
 // export function getPostById(id) {
 // 	return axios.get(`http://localhost:3000/posts/${id}`);
@@ -23,7 +23,7 @@ export function createPost(data) {
 // }
 
 export function updatePost(id, data) {
-	return posts.put(id, data);
+	return posts.put(`/${id}`, data);
 }
 // export function updatePost(id, data) {
 // 	return axios.put(`http://localhost:3000/posts/${id}`, data);
