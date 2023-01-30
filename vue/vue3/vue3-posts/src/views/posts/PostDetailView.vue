@@ -3,9 +3,9 @@
 		<!-- <p>params: {{ $route.params }}</p> -->
 		<!-- <p>query: {{ $route.query }}</p> -->
 		<!-- <p>hash: {{ $route.hash }}</p> -->
-		<h2>제목</h2>
-		<p>내용</p>
-		<p class="text-muted">2023-01-30</p>
+		<h2>{{ form.title }}</h2>
+		<p>{{ form.content }}</p>
+		<p class="text-muted">{{ form.createdAt }}</p>
 		<hr class="my-4" />
 		<div class="row g-2">
 			<div class="col-auto">
@@ -31,17 +31,34 @@
 </template>
 
 <script setup>
-import { useRoute, useRouter } from 'vue-router';
+import { reactive } from 'vue';
+import { useRouter } from 'vue-router';
+import { getPostById } from '../../api/posts';
 
-const route = useRoute();
+const props = defineProps({
+	id: Number,
+});
+
+// const route = useRoute();
 const router = useRouter();
-const id = route.params.id;
+// const id = route.params.id;
+// const form = ref({});
+let form = reactive({});
+// console.log('post: ', getPostById(id));
+const fetchPost = () => {
+	const data = getPostById(props.id);
+	// form.value = { ...data };
+	form.title = data.title;
+	form.content = data.content;
+	form.createdAt = data.createdAt;
+};
+fetchPost();
 
 const goListPage = () => {
 	router.push({ name: 'PostList' });
 };
 const goEditPage = () => {
-	router.push({ name: 'PostEdit', params: { id } });
+	router.push({ name: 'PostEdit', params: { id: props.id } });
 };
 </script>
 
