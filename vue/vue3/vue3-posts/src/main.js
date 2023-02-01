@@ -3,8 +3,16 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from '@/router';
+import funcPlugins from './plugins/func';
+import objPlugins from './plugins/obj';
+import person from './plugins/person';
 
-createApp(App).use(router).mount('#app');
+const app = createApp(App);
+app.use(funcPlugins);
+app.use(objPlugins, { name: 'zac' });
+app.use(person, { name: '홍길동' });
+app.use(router);
+app.mount('#app');
 import 'bootstrap/dist/js/bootstrap.js';
 
 // 현재 구동되는 어플리케이션이 개발모드인지, 혹은 어떤모드인지
