@@ -8,6 +8,7 @@ import router from '@/router';
 // import person from './plugins/person';
 import globalComponents from './plugins/global-components';
 import globalDirectives from './plugins/global-directives';
+import dayjs from './plugins/dayjs';
 // import focus from '@/directives/focus';
 
 const app = createApp(App);
@@ -17,6 +18,7 @@ const app = createApp(App);
 // app.directive('focus', focus);
 app.use(globalComponents);
 app.use(globalDirectives);
+app.use(dayjs);
 app.use(router);
 app.mount('#app');
 import 'bootstrap/dist/js/bootstrap.js';

@@ -2,7 +2,7 @@
 	<header>
 		<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#">ZACINTHEPARK</a>
+				<a class="navbar-brand" href="#">ZVC</a>
 				<button
 					class="navbar-toggler"
 					type="button"
