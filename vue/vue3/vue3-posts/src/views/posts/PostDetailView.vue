@@ -1,5 +1,9 @@
 <template>
-	<div>
+	<AppLoading v-if="loading" />
+
+	<AppError v-else-if="error" :message="error.message" />
+
+	<div v-else>
 		<!-- <p>params: {{ $route.params }}</p> -->
 		<!-- <p>query: {{ $route.query }}</p> -->
 		<!-- <p>hash: {{ $route.hash }}</p> -->
@@ -9,6 +13,7 @@
 			{{ $dayjs(post.createdAt).format('YYYY. MM. DD. HH:mm:ss') }}
 		</p>
 		<hr class="my-4" />
+		<AppError v-if="removeError" :message="removeError.message" />
 		<div class="row g-2">
 			<div class="col-auto">
 				<button class="btn btn-outline-dark">이전글</button>
@@ -26,7 +31,21 @@
 				</button>
 			</div>
 			<div class="col-auto">
-				<button class="btn btn-outline-danger" @click="remove">삭제</button>
+				<button
+					class="btn btn-outline-danger"
+					@click="remove"
+					:disabled="removeLoading"
+				>
+					<template v-if="removeLoading">
+						<span
+							class="spinner-border spinner-border-sm"
+							role="status"
+							aria-hidden="true"
+						></span>
+						<span class="visually-hidden">Loading...</span>
+					</template>
+					<template v-else> 삭제 </template>
+				</button>
 			</div>
 		</div>
 	</div>
@@ -47,12 +66,19 @@ const router = useRouter();
 const post = ref({});
 // let post = reactive({});
 // console.log('post: ', getPostById(id));
+
+const error = ref(null);
+const loading = ref(false);
+
 const fetchPost = async () => {
 	try {
+		loading.value = true;
 		const { data } = await getPostById(props.id);
 		setPost(data);
-	} catch (error) {
-		console.error(error);
+	} catch (err) {
+		error.value = err;
+	} finally {
+		loading.value = false;
 	}
 	// post.value = { ...data };
 	// post.title = data.title;
@@ -65,15 +91,21 @@ const setPost = ({ title, content, createdAt }) => {
 	post.value.createdAt = createdAt;
 };
 fetchPost();
+
+const removeError = ref(null);
+const removeLoading = ref(false);
 const remove = async () => {
 	try {
 		if (confirm('삭제하시겠습니까?') === false) {
 			return;
 		}
+		removeLoading.value = true;
 		await deletePost(props.id);
 		router.push({ name: 'PostList' });
-	} catch (error) {
-		console.error(error);
+	} catch (err) {
+		removeError.value = err;
+	} finally {
+		removeLoading.value = false;
 	}
 };
 

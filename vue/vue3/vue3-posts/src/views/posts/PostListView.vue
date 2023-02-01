@@ -10,17 +10,23 @@
 
 		<hr class="my-4" />
 
-		<AppGrid :items="posts">
-			<template v-slot="{ item }">
-				<PostItem
-					:title="item.title"
-					:content="item.content"
-					:created-at="item.createdAt"
-					@click="goPage(item.id)"
-					@modal="openModal(item)"
-				></PostItem>
-			</template>
-		</AppGrid>
+		<AppLoading v-if="loading" />
+
+		<AppError v-else-if="error" :message="error.message" />
+
+		<template v-else>
+			<AppGrid :items="posts">
+				<template v-slot="{ item }">
+					<PostItem
+						:title="item.title"
+						:content="item.content"
+						:created-at="item.createdAt"
+						@click="goPage(item.id)"
+						@modal="openModal(item)"
+					></PostItem>
+				</template>
+			</AppGrid>
+		</template>
 
 		<AppPagination
 			:current-page="params._page"
@@ -57,6 +63,10 @@ import { useRouter } from 'vue-router';
 
 const router = useRouter();
 const posts = ref([]);
+
+const error = ref(null);
+const loading = ref(false);
+
 const params = ref({
 	_sort: 'createdAt',
 	_order: 'desc',
@@ -72,11 +82,14 @@ const pageCount = computed(() =>
 
 const fetchPosts = async () => {
 	try {
+		loading.value = true;
 		const { data, headers } = await getPosts(params.value);
 		posts.value = data;
 		totalCount.value = headers['x-total-count'];
-	} catch (error) {
-		console.error(error);
+	} catch (err) {
+		error.value = err;
+	} finally {
+		loading.value = false;
 	}
 	// const response = await getPosts();
 	// console.dir(response);
