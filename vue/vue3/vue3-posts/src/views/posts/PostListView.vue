@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div v-if="response">
 		<h2>게시글 목록</h2>
 		<hr class="my-4" />
 
@@ -57,15 +57,15 @@ import PostItem from '../../components/posts/PostItem.vue';
 import PostDetailView from './PostDetailView.vue';
 import PostFilter from '../../components/posts/PostFilter.vue';
 import PostModal from '../../components/posts/PostModal.vue';
-import { computed, ref, watchEffect } from 'vue';
-import { getPosts } from '@/api/posts';
+import { computed, ref } from 'vue';
+// import { getPosts } from '@/api/posts';
 import { useRouter } from 'vue-router';
+import { useAxios } from '@/hooks/useAxios';
 
 const router = useRouter();
-const posts = ref([]);
-
-const error = ref(null);
-const loading = ref(false);
+// const posts = ref([]);
+// const error = ref(null);
+// const loading = ref(false);
 
 const params = ref({
 	_sort: 'createdAt',
@@ -74,34 +74,41 @@ const params = ref({
 	_limit: 3,
 	title_like: '',
 });
+const {
+	response,
+	data: posts,
+	error,
+	loading,
+} = useAxios('/posts', { params });
+
 // pagination
-const totalCount = ref(0);
+const totalCount = computed(() => response.value.headers['x-total-count']);
 const pageCount = computed(() =>
 	Math.ceil(totalCount.value / params.value._limit),
 );
 
-const fetchPosts = async () => {
-	try {
-		loading.value = true;
-		const { data, headers } = await getPosts(params.value);
-		posts.value = data;
-		totalCount.value = headers['x-total-count'];
-	} catch (err) {
-		error.value = err;
-	} finally {
-		loading.value = false;
-	}
-	// const response = await getPosts();
-	// console.dir(response);
-	// getPosts()
-	// 	.then(response => {
-	// 		console.log('response: ', response);
-	// 	})
-	// 	.catch(error => {
-	// 		console.log('error: ', error);
-	// 	});
-};
-watchEffect(fetchPosts);
+// const fetchPosts = async () => {
+// 	try {
+// 		loading.value = true;
+// 		const { data, headers } = await getPosts(params.value);
+// 		posts.value = data;
+// 		totalCount.value = headers['x-total-count'];
+// 	} catch (err) {
+// 		error.value = err;
+// 	} finally {
+// 		loading.value = false;
+// 	}
+// 	// const response = await getPosts();
+// 	// console.dir(response);
+// 	// getPosts()
+// 	// 	.then(response => {
+// 	// 		console.log('response: ', response);
+// 	// 	})
+// 	// 	.catch(error => {
+// 	// 		console.log('error: ', error);
+// 	// 	});
+// };
+// watchEffect(fetchPosts);
 // fetchPosts();
 
 const goPage = id => {

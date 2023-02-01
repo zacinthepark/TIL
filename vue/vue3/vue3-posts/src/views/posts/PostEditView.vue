@@ -40,40 +40,41 @@
 <script setup>
 import { ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { getPostById, updatePost } from '../../api/posts';
+import { updatePost } from '../../api/posts';
 import PostForm from '../../components/posts/PostForm.vue';
 import { useAlert } from '../../composables/alert';
+import { useAxios } from '../../hooks/useAxios';
 
 const route = useRoute();
 const router = useRouter();
 const id = route.params.id;
 
-const form = ref({
-	title: null,
-	content: null,
-});
+// const form = ref({
+// 	title: null,
+// 	content: null,
+// });
+// const error = ref(null);
+// const loading = ref(false);
 
-const error = ref(null);
-const loading = ref(false);
+const { data: form, error, loading } = useAxios(`/posts/${id}`);
 
-const fetchPost = async () => {
-	try {
-		loading.value = true;
-		const { data } = await getPostById(id);
-		setForm(data);
-	} catch (err) {
-		vAlert(err.message);
-		error.value = err;
-	} finally {
-		loading.value = false;
-	}
-};
-const setForm = ({ title, content }) => {
-	form.value.title = title;
-	form.value.content = content;
-};
-
-fetchPost();
+// const fetchPost = async () => {
+// 	try {
+// 		loading.value = true;
+// 		const { data } = await getPostById(id);
+// 		setForm(data);
+// 	} catch (err) {
+// 		vAlert(err.message);
+// 		error.value = err;
+// 	} finally {
+// 		loading.value = false;
+// 	}
+// };
+// const setForm = ({ title, content }) => {
+// 	form.value.title = title;
+// 	form.value.content = content;
+// };
+// fetchPost();
 
 const editError = ref(null);
 const editLoading = ref(false);
