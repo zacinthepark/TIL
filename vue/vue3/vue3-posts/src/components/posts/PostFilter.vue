@@ -4,7 +4,7 @@
 			<div class="col">
 				<input
 					:value="title"
-					@input="$emit('update:title', $event.target.value)"
+					@input="changeTitle"
 					type="text"
 					class="form-control"
 					placeholder="제목으로 검색해주세요"
@@ -16,9 +16,9 @@
 					@input="$emit('update:limit', $event.target.value)"
 					class="form-select"
 				>
-					<option value="3">3개씩 보기</option>
 					<option value="6">6개씩 보기</option>
-					<option value="9">9개씩 보기</option>
+					<option value="12">12개씩 보기</option>
+					<option value="18">18개씩 보기</option>
 				</select>
 			</div>
 		</div>
@@ -28,9 +28,14 @@
 <script setup>
 defineProps({
 	title: String,
-	limit: Number,
+	limit: [String, Number],
 });
-defineEmits(['update:title', 'update:limit']);
+const emit = defineEmits(['update:title', 'update:limit']);
+const changeTitle = event => {
+	setTimeout(() => {
+		emit('update:title', event.target.value);
+	}, 500);
+};
 </script>
 
 <style lang="scss" scoped></style>
