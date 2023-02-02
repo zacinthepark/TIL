@@ -17,10 +17,14 @@
 		<AppError v-if="removeError" :message="removeError.message" />
 		<div class="row g-2">
 			<div class="col-auto">
-				<button class="btn btn-outline-dark">이전글</button>
+				<button class="btn btn-outline-dark" @click="$router.push('/posts/10')">
+					이전글
+				</button>
 			</div>
 			<div class="col-auto">
-				<button class="btn btn-outline-dark">다음글</button>
+				<button class="btn btn-outline-dark" @click="$router.push('/posts/11')">
+					다음글
+				</button>
 			</div>
 			<div class="col-auto me-auto"></div>
 			<div class="col-auto">
@@ -55,7 +59,7 @@
 <script setup>
 import { computed, ref, toRef, toRefs } from 'vue';
 
-import { useRouter } from 'vue-router';
+import { onBeforeRouteLeave, onBeforeRouteUpdate, useRouter } from 'vue-router';
 import { deletePost } from '../../api/posts';
 import { useAlert } from '../../composables/alert';
 import { useNumber } from '../../composables/number';
@@ -150,6 +154,20 @@ const goListPage = () => {
 };
 const goEditPage = () => {
 	router.push({ name: 'PostEdit', params: { id: props.id } });
+};
+
+onBeforeRouteUpdate(() => {
+	console.log('onBeforeRouteUpdate');
+});
+onBeforeRouteLeave(() => {
+	console.log('onBeforeRouteLeave');
+});
+</script>
+<script>
+export default {
+	beforeRouteEnter() {
+		console.log('beforeRouteEnter');
+	},
 };
 </script>
 
