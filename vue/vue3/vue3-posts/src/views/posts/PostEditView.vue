@@ -58,6 +58,31 @@ const id = route.params.id;
 
 const { data: form, error, loading } = useAxios(`/posts/${id}`);
 
+const {
+	error: editError,
+	loading: editLoading,
+	execute,
+} = useAxios(
+	`/posts/${id}`,
+	{ method: 'patch' },
+	{
+		immediate: false,
+		onSuccess: () => {
+			vSuccess('수정이 완료되었습니다!');
+			router.push({ name: 'PostDetail', params: { id } });
+		},
+		onError: err => {
+			vAlert(err.message);
+		},
+	},
+);
+
+const edit = () => {
+	execute({
+		...form.value,
+	});
+};
+
 // const fetchPost = async () => {
 // 	try {
 // 		loading.value = true;
@@ -76,21 +101,21 @@ const { data: form, error, loading } = useAxios(`/posts/${id}`);
 // };
 // fetchPost();
 
-const editError = ref(null);
-const editLoading = ref(false);
-const edit = async () => {
-	try {
-		editLoading.value = true;
-		await updatePost(id, { ...form.value });
-		router.push({ name: 'PostDetail', params: { id } });
-		vSuccess('수정이 완료되었습니다!');
-	} catch (err) {
-		vAlert(err.message);
-		editError.value = err;
-	} finally {
-		editLoading.value = false;
-	}
-};
+// const editError = ref(null);
+// const editLoading = ref(false);
+// const edit = async () => {
+// 	try {
+// 		editLoading.value = true;
+// 		await updatePost(id, { ...form.value });
+// 		router.push({ name: 'PostDetail', params: { id } });
+// 		vSuccess('수정이 완료되었습니다!');
+// 	} catch (err) {
+// 		vAlert(err.message);
+// 		editError.value = err;
+// 	} finally {
+// 		editLoading.value = false;
+// 	}
+// };
 
 const goDetailPage = () => {
 	router.push({ name: 'PostDetail', params: { id } });

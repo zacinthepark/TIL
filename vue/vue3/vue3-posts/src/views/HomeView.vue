@@ -1,8 +1,8 @@
 <template>
 	<div>
 		<h2>Home View</h2>
-		<p>{{ $route.path }}</p>
-		<p>{{ $route.name }}</p>
+		<!-- <p>{{ $route.path }}</p> -->
+		<!-- <p>{{ $route.name }}</p> -->
 		<button class="btn btn-primary" @click="goAboutPage">About으로 이동</button>
 		<hr class="my-4" />
 		<AppGrid :items="items" v-slot="{ item }" col-class="col-6">
@@ -32,7 +32,7 @@ const goAboutPage = () => {
 	router.push('/about');
 };
 
-const items = ref(['사과', '딸기', '포도', '바나나']);
+const items = ref(['김민경', '김호준', '박이령', '박진우', '이성희', '황영준']);
 
 // const person = inject('person');
 // console.log('person.name: ', person.name);
