@@ -8,6 +8,7 @@
 		<!-- <p>query: {{ $route.query }}</p> -->
 		<!-- <p>hash: {{ $route.hash }}</p> -->
 		<h2>{{ post.title }}</h2>
+		<p>{{ props.id }}, isOdd: {{ isOdd }}</p>
 		<p>{{ post.content }}</p>
 		<p class="text-muted">
 			{{ $dayjs(post.createdAt).format('YYYY. MM. DD. HH:mm:ss') }}
@@ -52,14 +53,18 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { computed, ref, toRef, toRefs } from 'vue';
 
 import { useRouter } from 'vue-router';
 import { deletePost } from '../../api/posts';
 import { useAlert } from '../../composables/alert';
+import { useNumber } from '../../composables/number';
 import { useAxios } from '../../hooks/useAxios';
 
 const { vAlert, vSuccess } = useAlert();
+// const idRef = toRef(props, 'id');
+const { id: idRef } = toRefs(props);
+const { isOdd } = useNumber(idRef);
 
 const props = defineProps({
 	id: [String, Number],
@@ -73,7 +78,8 @@ const router = useRouter();
 // const error = ref(null);
 // const loading = ref(false);
 
-const { error, loading, data: post } = useAxios(`/posts/${props.id}`);
+const url = computed(() => `/posts/${props.id}`);
+const { error, loading, data: post } = useAxios(url);
 
 // const fetchPost = async () => {
 // 	try {
