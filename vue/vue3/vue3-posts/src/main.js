@@ -3,6 +3,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from '@/router';
+import { createPinia } from 'pinia';
 // import funcPlugins from './plugins/func';
 // import objPlugins from './plugins/obj';
 // import person from './plugins/person';
@@ -20,6 +21,7 @@ app.use(globalComponents);
 app.use(globalDirectives);
 app.use(dayjs);
 app.use(router);
+app.use(createPinia());
 app.mount('#app');
 import 'bootstrap/dist/js/bootstrap.js';
 
