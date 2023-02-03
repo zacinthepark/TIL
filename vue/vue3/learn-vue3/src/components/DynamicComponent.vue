@@ -11,8 +11,8 @@
 		</button>
 		<hr />
 		<component :is="currentComp" />
-		<p>{{ obj1 }}</p>
-		<p>{{ obj2 }}</p>
+		<!-- <p>{{ obj1 }}</p> -->
+		<!-- <p>{{ obj2 }}</p> -->
 	</div>
 </template>
 
