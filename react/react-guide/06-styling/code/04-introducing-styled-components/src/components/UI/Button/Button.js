@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+// styled.button method
+// tagged template literal(default javascript syntax)
+// &은 styled-components에서 지원하는 pseudo-selectors (예를 들어 이 버튼에 focus가 있다면 해당 스타일을 지정해달라는 것)
 const Button = styled.button`
   font: inherit;
   padding: 0.5rem 1.5rem;
