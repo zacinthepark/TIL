@@ -44,7 +44,7 @@ const ExpenseForm = (props) => {
 
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,   // 가격을 문자열이 아닌 숫자로 추가
       date: new Date(enteredDate),
     };
 
