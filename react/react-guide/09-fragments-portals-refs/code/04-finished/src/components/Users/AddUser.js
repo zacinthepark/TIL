@@ -31,6 +31,8 @@ const AddUser = (props) => {
       return;
     }
     props.onAddUser(enteredName, enteredUserAge);
+    // ref를 이용해 값을 읽는 것이 아닌 DOM을 조작하는 것은 rare한 경우이긴 하나, 여기서는 간단한 작업이기에 ok
+    // input 재설정과 같이 DOM 조작의 경우 보통은 state 기반 로직을 활용하는 것을 추천
     nameInputRef.current.value = '';
     ageInputRef.current.value = '';
   };
