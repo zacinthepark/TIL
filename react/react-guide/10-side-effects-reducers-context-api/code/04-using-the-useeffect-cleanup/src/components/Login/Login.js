@@ -14,11 +14,13 @@ const Login = (props) => {
   useEffect(() => {
     const identifier = setTimeout(() => {
       console.log('Checking form validity!');
+      // Debouncing
       setFormIsValid(
         enteredEmail.includes('@') && enteredPassword.trim().length > 6
       );
     }, 500);
 
+    // Cleanup Function (1. useEffect 함수가 처음 실행되기 전에는 실행되지 않음 2. 이후 useEffect 함수가 실행되기 전마다 클린업 함수가 먼저 실행 2. 이펙트를 특정한 컴포넌트가 DOM에서 unmount될 때마다 실행, 컴포넌트가 재사용될 때마다)
     return () => {
       console.log('CLEANUP');
       clearTimeout(identifier);

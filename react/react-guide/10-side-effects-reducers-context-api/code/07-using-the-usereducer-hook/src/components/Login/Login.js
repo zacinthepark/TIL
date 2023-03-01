@@ -49,6 +49,7 @@ const Login = (props) => {
   // }, [enteredEmail, enteredPassword]);
 
   const emailChangeHandler = (event) => {
+    // 식별자는 string, number 등도 될 수도 있지만 주로 identifier를 가지고 있는 객체, payload도 전달 가능
     dispatchEmail({type: 'USER_INPUT', val: event.target.value});
 
     setFormIsValid(

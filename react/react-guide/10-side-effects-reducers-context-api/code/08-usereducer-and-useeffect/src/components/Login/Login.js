@@ -48,6 +48,10 @@ const Login = (props) => {
     };
   }, []);
 
+  // useEffect 최적화를 위한 작업
+  // 객체 구조분해할당으로 뽑아내어 emailIsValid, passwordIsValid라는 alias에 할당
+  // useEffect의 의존성을 모든 props가 아닌 특정 prop의 변경으로 하고싶을 때도 위와 같이 destructuring 활용
+
   const { isValid: emailIsValid } = emailState;
   const { isValid: passwordIsValid } = passwordState;
 
