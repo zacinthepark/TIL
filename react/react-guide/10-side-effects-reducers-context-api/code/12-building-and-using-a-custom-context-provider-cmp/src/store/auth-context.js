@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const AuthContext = React.createContext({
+  // 기본 dummy 값을 추가하면 자동완성에 도움됨
   isLoggedIn: false,
   onLogout: () => {},
   onLogin: (email, password) => {}
