@@ -4,6 +4,7 @@
 
 ### Render UI & React to User Input
 - Tasks
+  - Pursues Declarative Programming (<=> Imperative Programming)
   - Evaluate & Render JSX
   - Manage State & Props
   - React to (User) Events & Input
@@ -26,6 +27,17 @@
   - Porting to different place in DOM
 - Refs
   - `useRef()`
+    - Refer to DOM element
+  - `useImperativeHandle()`
+    - Allows to interact with component imperatively
+      - Not by passing some states(WHAT), then change something in the component
+      - But by calling a function inside of the component(HOW)
+    - Not a Typical React Pattern
+  - `forwardRef()`
+    - Allows to use ref for functional component
+  - `useImperativeHandle()` and `forwardRef()`
+    - Can expose functionalities or values from a react component to its parent component -> use the component in the parent component through refs -> and trigger certain functionalities or get values from the child
+    - focusing, scrolling, ...
 - Context Api
   - Solve props drilling
     - `React.createContext()`
