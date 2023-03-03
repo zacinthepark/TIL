@@ -4,7 +4,7 @@
 
 ### Render UI & React to User Input
 - Tasks
-  - Pursues Declarative Programming (<=> Imperative Programming)
+  - Pursues Declarative Programming(WHAT) (<=> Imperative Programming(HOW))
   - Evaluate & Render JSX
   - Manage State & Props
   - React to (User) Events & Input
