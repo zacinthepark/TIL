@@ -161,6 +161,12 @@ setInterval(tick, 1000);
   - Great if state updates are easy and limited to a few kinds of updates
 - `useReducer()`
   - `const [state, dispatchFn] = useReducer(reducerFn, initialState, initFn)`
+    - `dispatchFn(info)`
+      - triggers the reducer function
+      - info can be a string or number, but typically an object that identifies the action inside of your reducer function
+      - `dispatchFn({type: '', val: null})`
+    - `reducerFn()`
+      - `reducerFn(state, action) => { return newStateSnapshot }`
   - Great if you need "more power"
     - More complex state update logic where you are always guaranteed to work with the latest state snapshot
     - Can also move more complex logic out of your component function body into a separate reducer function
@@ -181,14 +187,17 @@ setInterval(tick, 1000);
     - Not a Typical React Pattern
   - `forwardRef()`
     - Allows to use ref for functional component
+    - Forwarding the ref to DOM elements inside custom components
   - `useImperativeHandle()` and `forwardRef()`
     - Can expose functionalities or values from a react component to its parent component -> use the component in the parent component through refs -> and trigger certain functionalities or get values from the child
     - focusing, scrolling, ...
 - Context Api
   - Solve props drilling
     - `React.createContext()`
-    - `.Provider`, `value`
-    - `.Consumer`, `useContext()`
+    - `.Provider` with `value`
+      - Manages the specific context and provide the value to other components
+    - `.Consumer` or `useContext(contextName)`
+      - The component will be re-evaluated by React whenever the context changes
   - React Context is NOT optimized for high frequency changes
     - Redux
   - React Context also shouldn't be used to replace ALL component communications and props
