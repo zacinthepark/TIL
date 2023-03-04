@@ -5,32 +5,33 @@
 ---
 
 ### Create React App
-- > `npx create-react-app project-name`
-  - > `npx create-react-app .`
-  - > `npx create-react-app --template typescript`
-- > `npm install`
-- > `npm start`
+- `npx create-react-app project-name`
+  - `npx create-react-app .`
+  - `npx create-react-app --template typescript`
+- `npm install`
+- `npm start`
 
 ### ESLint
-- > `npx eslint --init`
-- > `.eslintrc.json`
+- `npx eslint --init`
+- `.eslintrc.json`
+  - > env: javascript 코드가 동작하는 환경을 설정
+  - > extends: 미리 만들어진 설정파일을 불러와서 사용할 수 있도록 해주는 옵션. package.json의 devDependencies에 설치된 모듈들을 extends 옵션에 추가하여 미리 만들어져 있는 설정값 사용 가능
+  - > parserOptions: 사용하고자 하는 javascript 버전을 지정하는 옵션
+  - > plugins: 미리 만들어진 rules를 불러와서 사용할 수 있도록 해주는 옵션. extends 옵션과 비슷하지만, plugins 옵션은 설정 파일의 rules만 불러온다는 점에서 다름
+  - > rules: ESLint가 검사할 규칙들
 ```json
 {
-    // javascript 코드가 동작하는 환경을 설정
     "env": {
         "browser": true,
         "es2021": true,
         "node": true
     },
-    // 미리 만들어진 설정파일을 불러와서 사용할 수 있도록 해주는 옵션
-    // package.json의 devDependencies에 설치된 모듈들을 extends 옵션에 추가하여 미리 만들어져 있는 설정값 사용 가능
     "extends": [
         "plugin:react/recommended",
         "airbnb"
     ],
     "overrides": [
     ],
-    // 사용하고자 하는 javascript 버전을 지정하는 옵션
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -38,19 +39,16 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    // 미리 만들어진 rules를 불러와서 사용할 수 있도록 해주는 옵션
-    // extends 옵션과 비슷하지만, plugins 옵션은 설정 파일의 rules만 불러온다는 점에서 다름
     "plugins": [
         "react"
     ],
-    // ESLint가 검사할 규칙들
     "rules": {
         "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
         "react/no-unescaped-entities": 0
     }
 }
 ```
-- > ESLint VSCode Extension 설치하여 vscode editor 상에 에러 보이도록 설정
+- **ESLint VSCode Extension** 설치하여 vscode editor 상에 에러 보이도록 설정
 
 ### Prettier
 - > `npm install --save-dev --save-exact prettier`
@@ -70,8 +68,6 @@
 - `settings.json`
 ```json
 {
-  // ...
-
   "eslint.workingDirectories": [
     {"mode": "auto"}
     ],
@@ -80,7 +76,6 @@
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    // "html",  // 삭제
     "vue",
     "markdown"
   ],
@@ -88,8 +83,6 @@
     "source.fixAll.eslint": true
   },
   "eslint.codeActionsOnSave.rules": null,
-
-  // ...
 }
 ```
 
