@@ -158,6 +158,11 @@ setInterval(tick, 1000);
 ### Virtual DOM Diffing
 <img width="1060" alt="react4" src="https://user-images.githubusercontent.com/86648892/222943018-5884f8ae-34f4-4f7f-8226-36f3e11833c8.png">
 
+### State Management with Scheduling Updates
+<img width="1119" alt="behind-the-scene1" src="https://user-images.githubusercontent.com/86648892/222958112-5d900db1-9925-4e1f-8d5d-fc9194584c2f.png">
+
+<img width="989" alt="behind-the-scene2" src="https://user-images.githubusercontent.com/86648892/222958102-6ab257f9-4b46-461a-a41d-2cc1e7105b4d.png">
+
 ## Guides
 
 ---
@@ -231,3 +236,113 @@ setInterval(tick, 1000);
     - When you want to run the code once at the first rendering
   - With dependencies
     - When you want to deal with code that should be executed in response to something
+
+### Rendering Optimization
+
+- `useState()` makes a tie between component and state
+  - React remembers this tie, and after initialization of the state(when the component is first rendered, or re-rendered after the component was unmounted from DOM), React does not re-initialize the state, but only manages the state updates
+  - State Update Scheduling
+    - State Update Detected -> Schedule State Update (Does not immediately change the state value) -> Re-render the component with the updated state
+      - Multiple state update scheduled?
+        - For state updates in the same code block, React badges the state updates with One update schedule
+        - If not, we should guarantee the latest state snapshot
+          - When working with same state, use function form `setState((prevState) => newState)`
+          - When working with different state, use `useEffect()` with dependency
+- `React.memo()`
+  - Re-render component when there is props change
+    - When parent component re-renders, but there is no change in children component, `export default React.memo(children-component)` can save unnecessary child components rendering
+      - Since this process needs saving previous props info and comparing with current props info, you should decide which costs more
+- `useCallback(()=>{}, [dependencies])`
+  - When a component re-renders, functions inside the component are also newly made. By using `useCallBack()`, you can store the funciton in the same memory
+  - Due to the characteristics of closures in javascript, you should declare dependencies for changes
+  - Sample code
+    ```jsx
+    import React, { useState, useCallback } from 'react';
+    import Button from './components/UI/Button/Button';
+    import DemoOutput from './components/Demo/DemoOutput';
+    import './App.css';
+
+    function App() {
+      const [showParagraph, setShowParagraph] = useState(false);
+      const [allowToggle, setAllowToggle] = useState(false);
+
+      console.log('APP RUNNING');
+
+      const toggleParagraphHandler = useCallback(() => {
+        if (allowToggle) {
+          setShowParagraph((prevShowParagraph) => !prevShowParagraph);
+        }
+      }, [allowToggle]);
+
+      const allowToggleHandler = () => {
+        setAllowToggle(true);
+      };
+
+      return (
+        <div className="app">
+          <h1>Hi there!</h1>
+          <DemoOutput show={showParagraph} />
+          <Button onClick={allowToggleHandler}>Allow Toggling</Button>
+          <Button onClick={toggleParagraphHandler}>Toggle Paragraph!</Button>
+        </div>
+      );
+    }
+
+    export default App;
+    ```
+- `useMemo(()=>{return storedData}, [dependencies])`
+  - Like `useCallback()`, you can store data, especially referece type such as an array, by using `useMemo()`
+  - Sample Code
+    ```jsx
+    // App.js
+    import React, { useState, useCallback, useMemo } from 'react';
+    import './App.css';
+    import DemoList from './components/Demo/DemoList';
+    import Button from './components/UI/Button/Button';
+
+    function App() {
+      const [listTitle, setListTitle] = useState('My List');
+
+      const changeTitleHandler = useCallback(() => {
+        setListTitle('New Title');
+      }, []);
+
+      const listItems = useMemo(() => [5, 3, 1, 10, 9], []);
+
+      return (
+        <div className="app">
+          <DemoList title={listTitle} items={listItems} />
+          <Button onClick={changeTitleHandler}>Change List Title</Button>
+        </div>
+      );
+    }
+
+    export default App;
+
+    // DemoList.js
+    import React, { useMemo } from 'react';
+    import classes from './DemoList.module.css';
+
+    const DemoList = (props) => {
+      const { items } = props;
+
+      const sortedList = useMemo(() => {
+        console.log('Items sorted');
+        return items.sort((a, b) => a - b);
+      }, [items]); 
+      console.log('DemoList RUNNING');
+
+      return (
+        <div className={classes.list}>
+          <h2>{props.title}</h2>
+          <ul>
+            {sortedList.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      );
+    };
+
+    export default React.memo(DemoList);
+    ```

@@ -12,7 +12,7 @@ function App() {
   const toggleParagraphHandler = useCallback(() => {
     setShowParagraph((prevShowParagraph) => !prevShowParagraph);
   }, []);
- 
+
   return (
     <div className="app">
       <h1>Hi there!</h1>
