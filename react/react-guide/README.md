@@ -86,7 +86,7 @@
 }
 ```
 
-## Guides
+## How Does React Work?
 
 ---
 
@@ -146,6 +146,21 @@ setInterval(tick, 1000);
 >Virtual DOM은 브라우저 화면에 표시되는 것이 아니라 내용이 메모리에 저장만 되고 있기 때문에 Virtual DOM을 새로 만드는 것은 비용이 큰 연산이 아닙니다. 하지만 Virtual DOM을 새로 만들고 실제 DOM과 달라진 부분을 찾아냄으로써 비용이 큰 실제 DOM 조작을 줄일 수 있습니다.
 
 >React를 사용하지 않고 javascript로 실제 DOM을 바꾸려면 document 객체의 `createElement()`, `appendChild()` 등의 함수들을 통해서 일일이 코드 작성을 해줘야 했지만 React를 사용하면 DOM 조작은 Virtual DOM, `ReactDOM.render()` 함수에게 맡기고 어떤 데이터를 어떤 형태로 화면에 보여줄 것인지만 신경 쓰면 됩니다.
+
+### React and ReactDOM
+<img width="1038" alt="react1" src="https://user-images.githubusercontent.com/86648892/222943013-4b6c5947-1a58-4990-b873-f9811eaca2b3.png">
+
+<img width="930" alt="react2" src="https://user-images.githubusercontent.com/86648892/222943014-f766b642-c75a-498c-a3c3-b54f5adf81ea.png">
+
+### Re-Evaluating Components !== Re-Rendering the DOM
+<img width="1055" alt="react3" src="https://user-images.githubusercontent.com/86648892/222943017-12237149-57ec-4c16-bac7-e927bd7da2c5.png">
+
+### Virtual DOM Diffing
+<img width="1060" alt="react4" src="https://user-images.githubusercontent.com/86648892/222943018-5884f8ae-34f4-4f7f-8226-36f3e11833c8.png">
+
+## Guides
+
+---
 
 ### Render UI & React to User Input
 
