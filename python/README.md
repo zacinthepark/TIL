@@ -1,4 +1,4 @@
-# Python #1
+# INDEX 1
 - variable
 - datatype
 - 연산자
@@ -821,7 +821,7 @@ name = '
     - 암시적 형변환은 의도적으로 사용하면 안됨
         - 반드시 명시적 형변환으로 작성하여 코드를 작성
 ---
-# Python #2
+# INDEX 2
 - 제어문
 - 함수
 - 모듈
@@ -2272,7 +2272,7 @@ zac
 '''
 ```
 ---
-# Python #3
+# INDEX 3
 - method
 - shallow copy
 - deep copy
@@ -3225,7 +3225,7 @@ print(f'a = {a}, b = {b}') # a = 5, b = 3
     - get(key)는 해당 키가 없더라도 KeyError가 발생하지 않고 None을 반환
     - get(key, n)을 통해 key가 없을 시 n을 반환하도록 설정 역시 가능
 ---
-# Python #4
+# INDEX 4
 - OOP
 - class / instance
 - abstraction / inheritance / polymorphism / encapsulation
