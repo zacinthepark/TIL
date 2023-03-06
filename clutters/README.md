@@ -1,15 +1,15 @@
-# Filled with Clutters💡
+# Filled with Clutters:bulb:
 
 - [Command Line Interface](#cli)
 - [Various Cheat Sheets](#cheat-sheets)
 - [Markdown](#markdown-1)
 - [Git](#git)
 
----
-
 # CLI
 
 ## CLI?
+
+---
 
 - Command Line Interface
   - 명령어를 통해 사용자와 컴퓨터가 상호 작용하는 방식
@@ -42,9 +42,9 @@
     - window는 명령어 체계가 다름
       - PowerShell은 이러한 명령어 체계를 사용할 수 있도록 패치하여 만든 것
 
----
-
 ## CLI 명령어
+
+---
 
 - touch: 파일을 생성하는 명령어
 - mkdir: 새 폴더를 생성하는 명령어
@@ -61,29 +61,29 @@
   - -r 옵션의 의미는 recursive
 - clear: 화면 지우기
 
----
-
 # Cheat Sheets
 
 ## WINDOW
+
+---
 
 - window + 방향키
   - 화면 분할
 - window + shift + S
   - 부분 캡쳐
 
----
-
 ## MARKDOWN
+
+---
 
 - tab
   - 들여쓰기
 - shift + tab
   - 내어쓰기
 
----
-
 ## CLI (GIT BASH)
+
+---
 
 - 위아래 화살표 누르기
   - 이전에 내렸던 명령 히스토리들이 뜸
@@ -96,9 +96,9 @@
   - vi 파일명
   - i → 수정 → esc → :wq
 
----
-
 ## VSCODE
+
+---
 
 - 새로운 파일 생성
   - 왼쪽 위 아이콘 클릭
@@ -126,9 +126,9 @@
 - 시작화면
   - ctrl + k → f
 
----
-
 ## HTML / CSS
+
+---
 
 - [Emmet Documentation](https://docs.emmet.io/cheat-sheet/)
 - ‘!’ + tab
@@ -142,9 +142,9 @@
 - shift + 스크롤
   - 옆으로 스크롤
 
----
-
 ## PyCharm
+
+---
 
 ### 디버거 실행
 
@@ -172,11 +172,11 @@
 - 디버거 세션의 재실행은 `ctrl + F5`
 - 디버거 세션의 종료는 `ctrl + F2`
 
----
-
 # Markdown
 
 ## Markdown
+
+---
 
 - 텍스트 기반의 가벼운 마크업(markup) 언어
 - 마크업(markup): 태그(tag)를 이용해서 문서의 구조를 나타내는 것
@@ -214,26 +214,28 @@
 
 ## Why Markdown?
 
+---
+
 - Github 문서의 시작과 끝이다!
 - README.md
   - 오픈소스의 공식 문서 작성
   - 매일 학습한 내용 정리
   - 마크다운을 이용한 블로그 운영
 
----
-
 ## TIL (Today I Learned)
+
+---
 
 - 매일 내가 배운 것을 마크다운으로 정리해서 문서화하는 것
 - 신입 개발자에게 필요한 소양
 - Github 관리에 있어 첫걸음 및 장기 프로젝트
 - SSAFY에서 제공하는 자료나 과제는 깃헙에 올리지 말 것
 
----
-
 # GIT
 
 ## GIT 이란?
+
+---
 
 - 분산 버전 관리 프로그램
 - 분산 버전 관리 프로그램
@@ -252,9 +254,9 @@
     - Junior Developer에게 보는 소양 1)성실함 2)커뮤니케이션 능력
   - Social Coding
 
----
-
 ## GIT 개념
+
+---
 
 ### Repository
 
@@ -301,6 +303,8 @@
 
 ## .gitignore
 
+---
+
 - 여기에 올라가있는 파일들은 git이 더이상 버전관리하지 않겠다는 것
 - repo를 최초로 생성할 때 아무것도 안 적더라도 꼭 만들자
 
@@ -346,6 +350,8 @@
 
 ## gitignore.io
 
+---
+
 - 프로그램을 사용하다보면 다양한 부산물들이 생긴다
   - window, python, mac, django…등등
 - 위와 같이 공유하지 않을 파일을 지정하는 경우 외에 이러한 부산물들 역시 tracking하지 않고싶을 때 우리는 gitignore.io에 공유된 .gitignore 파일을 사용할 수 있다
@@ -357,9 +363,9 @@
 - 이처럼 검색하고, 파일 전체선택(ctrl + a), 복사(ctrl + c), .gitignore에 붙여넣기(ctrl + v), 그리고 저장(ctrl + s)하면 끝이다
 - 따로 지정해서 무시하고 싶은 파일의 경우 복사한 gitignore 파일 위에 적어놓는다
 
----
-
 ## Git 명령어
+
+---
 
 - git status
   - 현재 git 상태 알려줌
@@ -396,8 +402,6 @@
   - start . → 현재 위치 폴더 열어줌
 - git pull
 
----
-
 # Git Undoing
 
 - Working Direcory 작업 단계
@@ -411,9 +415,9 @@
   - 커밋을 완료한 파일을 Staging Area로 되돌리기
   - `git commit --amend`
 
----
-
 ## Working Directory 작업 단계 되돌리기
+
+---
 
 ### `git restore`
 
@@ -449,6 +453,8 @@
 
 ## Repository 작업 단계 되돌리기
 
+---
+
 ### `git commit --amend`
 
 - 커밋을 완료한 파일을 Staging Area로 되돌리기
@@ -472,11 +478,11 @@
 - `vi {파일 이름}`
   - 해당 파일을 vim 편집기로 편집
 
----
-
 # Git reset & revert
 
 ## Git reset
+
+---
 
 - 프로젝트를 특정 커밋(버전) 상태로 되돌림
 - 특정 커밋으로 되돌아갔을 때, 해당 커밋 이후로 쌓았던 커밋들은 전부 사라짐
@@ -508,14 +514,14 @@
 
 ## Git revert
 
+---
+
 - 과거를 없었던 일로 만드는 행위로, 이전 커밋을 취소한다는 새로운 커밋을 생성함
 - `git revert {커밋 ID}`
   - 커밋 ID는 취소하고싶은 커밋 ID를 작성
 - 커밋 기록은 그대로 남은 채로
   - 해당 커밋의 행위는 취소하고
     - 취소했다는 사실을 새로운 커밋으로 남김
-
----
 
 # Git Branch
 
@@ -528,6 +534,8 @@
 - Git은 브랜치를 만드는 속도가 굉장히 빠르고, 적은 용량을 소모함
 
 ## git branch
+
+---
 
 - 브랜치의 조회, 생성, 삭제와 관련된 git 명령어
 - 조회
@@ -549,6 +557,8 @@
 
 ## git switch
 
+---
+
 - 현재 브랜치에서 다른 브랜치로 이동하는 명령어
 - `git switch {브랜치 이름}`
   - 다른 브랜치로 이동
@@ -561,11 +571,15 @@
 
 ## [참고] HEAD
 
+---
+
 - “This is a pointer to the local branch you’re currently on”
 - HEAD는 현재 브랜치를 가리키고, 각 브랜치는 자신의 최신 커밋을 가리키므로 결국 HEAD가 현재 브랜치의 최신 커밋을 가리킨다고 할 수 있음
 - `git log` 혹은 `cat .git/HEAD`를 통해서 현재 HEAD가 어떤 브랜치를 가리키는지 알 수 있음
 
 ## git merge
+
+---
 
 - 분기된 브랜치들을 하나로 합치는 명령어
 - master 브랜치가 사용이므로, 주로 master 브랜치에 병합
@@ -581,11 +595,11 @@
     3. Merge Conflict
        - 충돌이 발생한 부분은 작성자가 직접 해결
 
----
-
 # Git workflow
 
 ## Git 브랜치 전략
+
+---
 
 ### Git-Flow
 
@@ -606,5 +620,3 @@
 - 어떤 브랜치 전략을 사용할 것인지는 팀에서 정하는 문제
 - git, github, gitlab 브랜치 전략이 아닌 우리 팀 고유의 브랜치 전략도 가능
 - 브랜치를 자주 생성하는 것을 강력히 권장하며, main(master) 브랜치 하나로만 작업하는 형태는 지양해야함
-
----
