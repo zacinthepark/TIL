@@ -54,7 +54,7 @@
 - 이전까지는 사용자의 요청에 대해 적절한 페이지 별 template을 반환
 - SPA는 서버에서 최초 1장의 HTML만 전달받아 모든 요청에 대응하는 방식
   - 어떻게 한 페이지로 모든 요청에 대응할 수 있을까?
-  - **_CSR(Client Side Rendering) 방식_**으로 요청을 처리하기 때문
+  - **CSR(Client Side Rendering) 방식**으로 요청을 처리하기 때문
     - SSR(Server Side Rendering)은 Django와 같은 서버에서 렌더링을 해서 넘겨줌
 
 ### [참고] SSR(Server Side Rendering)
@@ -216,8 +216,8 @@
 <img width="738" alt="vue5" src="https://user-images.githubusercontent.com/86648892/212526785-cc3ac28c-cb73-45dc-b4c0-ba3b182285ac.png">
 
 - 소프트웨어 아키텍쳐 패턴의 일종
-- 마크업 언어로 구현하는 그래픽 사용자 인터페이스(**_view_**)의 개발을
-  - Back-End(**_model_**)로부터 분리시켜
+- 마크업 언어로 구현하는 그래픽 사용자 인터페이스(**view**)의 개발을
+  - Back-End(**model**)로부터 분리시켜
     - view가 어느 특정한 모델 플랫폼에 종속되지 않도록 함
 - View는 우리 눈에 보이는 부분 (DOM)
   - Model은 실제 데이터 (JSON)
@@ -232,7 +232,7 @@
 
 ## MVVM Pattern 정리
 
-- ViewModel의 핵심은 **_변경사항_**에 대한 **_반응형_**이라는 것
+- ViewModel의 핵심은 **변경사항**에 대한 **반응형**이라는 것
 - MVC 패턴에서 Controller를 제외하고 View Model을 넣은 패턴
 - View는 Model을 모르고, Model도 View를 모른다
   - DOM은 Data를 모르고, Data도 DOM을 모른다
@@ -303,15 +303,15 @@
 - `el`
   - element
   - Vue Instance와 DOM을 mount(연결)하는 옵션
-    - **_View와 Model을 연결하는 역할_**
-    - HTML **_id 혹은 class_**와 마운트 가능
-  - **_Vue Instance와 연결되지 않은 DOM 외부는 Vue의 영향을 받지 않음_**
+    - **View와 Model을 연결하는 역할**
+    - HTML **id 혹은 class**와 마운트 가능
+  - **Vue Instance와 연결되지 않은 DOM 외부는 Vue의 영향을 받지 않음**
     - Vue 속성 및 메서드 사용 불가
 - `data`
-  - Vue Instance의 **_데이터 객체_** 혹은 **_인스턴스 속성_**
-  - 데이터 객체는 반드시 기본 객체 **_{ }(Object)_**이어야 함
+  - Vue Instance의 **데이터 객체** 혹은 **인스턴스 속성**
+  - 데이터 객체는 반드시 기본 객체 **{ }(Object)**이어야 함
   - 객체 내부의 아이템들은 value로 모든 타입의 객체를 가질 수 있음
-  - 정의된 속성은 **_interpolation {{ }}_**을 통해 view에 렌더링 가능함
+  - 정의된 속성은 **interpolation {{ }}**을 통해 view에 렌더링 가능함
   - data의 값들은 `this.dataName` 형태로 접근 가능
 - `{{  }}`
   - 선언적 렌더링
@@ -357,7 +357,7 @@ const member3 = new Member("isaac", 21, 2022654321)
 ## Template Syntax
 
 - Vue 2 Guide > Template Syntax 참고
-- **_렌더링된 DOM_**을 기본 Vue Instance의 data에 **_선언적으로 바인딩_**할 수 있는 **_HTML 기반 template syntax_**를 사용
+- **렌더링된 DOM_**을 기본 Vue Instance의 data에 **선언적으로 바인딩**할 수 있는 **HTML 기반 template syntax**를 사용
   - 렌더링된 DOM
     - 브라우저에 의해 보기 좋게 그려질 HTML 코드
   - HTML 기반 template syntax
@@ -471,7 +471,7 @@ const member3 = new Member("isaac", 21, 2022654321)
 - v-접두사가 있는 특수 속성
   - 여기에는 변수 값을 할당할 수 있음
     - 여기에 들어가는 값은 단순한 문자열이 아니라 JS 표현식이 들어감
-      - 역할은 **_표현식의 값_**이 **_변경_**될 때 **_반응적_**으로 DOM에 어떠한 일을 할지 결정함
+      - 역할은 **표현식의 값**이 **변경**될 때 **반응적**으로 DOM에 어떠한 일을 할지 결정함
 
 ![vue8](https://user-images.githubusercontent.com/86648892/212526780-9bb4c9fc-e08d-4e55-8f91-edb97c320486.png)
 
@@ -500,8 +500,8 @@ const member3 = new Member("isaac", 21, 2022654321)
 
 - 표현식에 작성된 값에 따라 element를 보여줄 것인지 결정
   - boolean 값이 변경될 때마다 반응
-  - 대상 element의 display 속성을 **_기본 속성과 none_**으로 toggle
-  - **_요소 자체는 항상 DOM에 렌더링됨_**
+  - 대상 element의 display 속성을 **기본 속성과 none**으로 toggle
+  - **요소 자체는 항상 DOM에 렌더링됨**
     - 화면에서만 사라졌을 뿐 (display 속성이 변경되었을 뿐)
 
 ### v-if directive
@@ -594,7 +594,7 @@ const member3 = new Member("isaac", 21, 2022654321)
   - 문자열
   - 배열
 
-    - **_특수 속성 key_**
+    - **특수 속성 key**
       - 반복이 돌고 있는 주체들이 변경되었을 때 그 값을 보장하기 위해 내부적으로 쓰이는 값
         - 우리가 무엇인가를 하기 위함이 아니라 각각의 v-for가 서로에게 영향을 받지 않고 내부적으로 올바르게 동작하게 하기 위함
       - 다른 v-for와 key가 중복되어서는 안됨
@@ -773,7 +773,7 @@ const member3 = new Member("isaac", 21, 2022654321)
 </body>
 ```
 
-- Vue Instance와 DOM의 **_양방향 바인딩_**
+- Vue Instance와 DOM의 **양방향 바인딩**
 - v-on을 통해 이벤트와 연결하는 것 없이 바로 데이터와 연결해주는 것
   - 즉, 데이터에 직접적으로 연결해주는 것
 - 한글과 같이 조합형 문자의 경우 입력기 방식으로 인해 v-model의 실시간 양방향 바인딩 적용이 어려움
@@ -3295,7 +3295,7 @@ export default {
 
 ## Server
 
-- 클라이언트에게 **_정보_**와 **_서비스_**를 제공하는 컴퓨터 시스템
+- 클라이언트에게 **정보**와 **서비스**를 제공하는 컴퓨터 시스템
 - 서비스 전체를 제공
   - Django Web Service
     ![vue109](https://user-images.githubusercontent.com/86648892/212540524-91a346a5-577c-4c84-b6f1-48a959910128.png)
@@ -3310,13 +3310,13 @@ export default {
 
 ## Client
 
-- **_Server가 제공하는 서비스에 적절한 요청_**을 통해 **_Server로부터 반환받은 응답을 사용자에게 표현_**하는 기능을 가진 프로그램 혹은 시스템
+- **Server가 제공하는 서비스에 적절한 요청**을 통해 **Server로부터 반환받은 응답을 사용자에게 표현**하는 기능을 가진 프로그램 혹은 시스템
 - Server가 제공하는 서비스에 적절한 요청
   - Server가 정의한 방식대로 요청 인자를 넘겨 요청
   - Server는 정상적인 요청에 적합한 응답 제공
 - Server로부터 반환받은 응답을 사용자에게 표현
   ![vue111](https://user-images.githubusercontent.com/86648892/212540521-3ca1d832-288b-4b6c-be11-4f0152de55e6.png)
-  - 사용자의 요청에 적합한 data를 server에 요청하여 응답받은 결과로 **_적절한 화면을 구성_**
+  - 사용자의 요청에 적합한 data를 server에 요청하여 응답받은 결과로 **적절한 화면을 구성**
 
 ## 정리
 
@@ -3363,12 +3363,12 @@ export default {
 - 브라우저가 요청을 보내고 서버의 응답이 브라우저에 도착
   - Server의 log는 200(정상) 반환
     - 즉, Server는 정상적으로 응답했지만 브라우저가 막은 것
-- 보안상의 이유로 브라우저는 **_동일 출처 정책(SOP)_**에 의해 다른 출처의 리소스와 상호작용하는 것을 제한함
+- 보안상의 이유로 브라우저는 **동일 출처 정책(SOP)**에 의해 다른 출처의 리소스와 상호작용하는 것을 제한함
 
 ### SOP (Same Origin Policy)
 
 - “동일 출처 정책”
-- 불러온 문서나 스크립트가 **_다른 출처_**에서 가져온 리소스와 상호작용하는 것을 제한하는 보안 방식
+- 불러온 문서나 스크립트가 **다른 출처**에서 가져온 리소스와 상호작용하는 것을 제한하는 보안 방식
 - 잠재적으로 해로울 수 있는 문서를 분리함으로써 공격받을 수 있는 경로를 줄임
 - [https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)
 
@@ -3382,11 +3382,11 @@ export default {
 
 ### CORS (교차 출처 리소스 공유)
 
-- 추가 **_HTTP Header_**를 사용하여
-  - 특정 출처에서 실행 중인 웹 어플리케이션이 **_다른 출처의 자원에 접근할 수 있는 권한_**을 부여하도록 **_브라우저에 알려주는_** 체제
-    - 어떤 출처에서 자신의 컨텐츠를 불러갈 수 있는지 **_서버에 지정_**할 수 있는 방법
+- 추가 **HTTP Header**를 사용하여
+  - 특정 출처에서 실행 중인 웹 어플리케이션이 **다른 출처의 자원에 접근할 수 있는 권한**을 부여하도록 **브라우저에 알려주는** 체제
+    - 어떤 출처에서 자신의 컨텐츠를 불러갈 수 있는지 **서버에 지정**할 수 있는 방법
 - 리소스가 자신의 출처와 다를 때 교차 출처 HTTP 요청을 실행
-  - 만약 다른 출처의 리소스를 가져오기 위해서는 이를 제공하는 서버가 브라우저에게 **_다른 출처지만 접근해도 된다는 사실을 알려야 함_**
+  - 만약 다른 출처의 리소스를 가져오기 위해서는 이를 제공하는 서버가 브라우저에게 **다른 출처지만 접근해도 된다는 사실을 알려야 함**
   - “교차 출처 리소스 공유 정책 (CORS policy)”
 
 ### CORS policy (교차 출처 리소스 공유 정책)

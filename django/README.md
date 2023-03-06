@@ -81,13 +81,13 @@
         - 스프레드 시트 자체를 데이터베이스라 부를 수는 없지만 데이터베이스로 가는 길목 정도로 생각할 수 있음
       - Database
         - 스프레드 시트와 달리 프로그램이 언어를 사용해 작동시킬 수 있음
-        - 많은 형태 중 **_RDB(Relational Database)_**, **_관계형 데이터베이스_**가 가장 많이 사용됨
+        - 많은 형태 중 **RDB(Relational Database)**, **관계형 데이터베이스**가 가장 많이 사용됨
         - 데이터베이스의 종류는 크게 관계형 데이터베이스(RDB)와 NoSQL 데이터베이스 2종류로 나뉨
-          - **_관계형 DB(RDB)는 테이블 형식으로 저장_**
+          - **관계형 DB(RDB)는 테이블 형식으로 저장**
             - 즉, 하나의 데이터베이스 안에 여러 개의 테이블이 존재한다!
             - 관계형 DB를 조작하는 대표적인 프로그램이 MySQL, Sqlite, PostgreSQL, Oracle 등
-              - 이러한 프로그램들을 **_DBMS(Database Management System)_**라 함
-              - DBMS에서 DB를 조작할 때 사용하는 언어가 **_SQL_**
+              - 이러한 프로그램들을 **DBMS(Database Management System)**라 함
+              - DBMS에서 DB를 조작할 때 사용하는 언어가 **SQL**
             - NoSQL DB는 Key-Value 형식으로 저장
 
 ### “데이터베이스에 데이터를 어떻게 입력하고, 어떻게 출력하는가”
@@ -100,13 +100,13 @@
 ## Database 정의
 
 - 체계화된 데이터의 모임
-- 여러 사람이 공유하고 사용할 목적으로 통합 관리되는 **_정보의 집합_**
-- 검색, 구조화같은 작업을 보다 쉽게하기 위해 **_조직화된 데이터_**를 수집하는 저장 시스템
-  - 내용을 고도로 구조화함으로써 **_검색과 갱신의 효율화_**를 꾀한 것
-  - 즉, 자료 파일을 조직적으로 통합하여 자료 항목의 중복을 없애고 구조화하여 기억시켜놓은 **_자료의 집합체_**
-- 이러한 Database를 조작하는 프로그램 = **_DBMS(Database Management System)_**
+- 여러 사람이 공유하고 사용할 목적으로 통합 관리되는 **정보의 집합**
+- 검색, 구조화같은 작업을 보다 쉽게하기 위해 **조직화된 데이터**를 수집하는 저장 시스템
+  - 내용을 고도로 구조화함으로써 **검색과 갱신의 효율화**를 꾀한 것
+  - 즉, 자료 파일을 조직적으로 통합하여 자료 항목의 중복을 없애고 구조화하여 기억시켜놓은 **자료의 집합체**
+- 이러한 Database를 조작하는 프로그램 = **DBMS(Database Management System)**
   - Oracle, MySQL, SQLite 등이 모두 DBMS
-  - DBMS에서 Database를 조작하기위해 사용하는 언어를 **_SQL_**이라함
+  - DBMS에서 Database를 조작하기위해 사용하는 언어를 **SQL**이라함
 - 웹 개발에서 대부분의 데이터베이스는 ‘관계형 데이터베이스 관리 시스템(RDBMS)’을 사용하여 SQL로 데이터와 프로그래밍을 구성
 
 ---
@@ -114,8 +114,8 @@
 # RDB
 
 - Relational Database (관계형 데이터베이스)
-- 데이터를 **_테이블_**, 행, 열 등으로 나누어 구조화하는 방식
-- 자료를 여러 테이블로 나누어서 관리하고, 이 **_테이블 간 관계를 설정_**해 여러 데이터를 쉽게 조작할 수 있다는 장점
+- 데이터를 **테이블**, 행, 열 등으로 나누어 구조화하는 방식
+- 자료를 여러 테이블로 나누어서 관리하고, 이 **테이블 간 관계를 설정**해 여러 데이터를 쉽게 조작할 수 있다는 장점
 - SQL을 사용하여 데이터를 조회하고 조작
 
 ### [참고] 테이블 간 관계 설정 예시
@@ -159,7 +159,7 @@
 
 ## SQLite
 
-- 응용 프로그램에 **_파일 형식_**으로 넣어 사용하는 비교적 가벼운 데이터베이스
+- 응용 프로그램에 **파일 형식**으로 넣어 사용하는 비교적 가벼운 데이터베이스
 - 안드로이드, iOS, macOS에 기본적으로 탑재되어 있으며 임베디드 소프트웨어에서도 많이 활용됨
 - 오픈소스 프로젝트이기에 자유롭게 사용 가능
 - 장점
@@ -178,7 +178,7 @@
 
 - “Structured Query Language”
   - 구조 명령 언어
-- RDBMS 데이터를 관리하기위해 설계된 **_특수 목적의 프로그래밍 언어_**
+- RDBMS 데이터를 관리하기위해 설계된 **특수 목적의 프로그래밍 언어**
 - RDBMS에서 데이터베이스 스키마를 생성 및 수정할 수 있으며
   - 테이블에서의 자료 검색 및 관리도 할 수 있음
 - 데이터베이스 객체에 대한 처리를 관리하거나 접근 권한을 설정하여 허가된 사용자만 RDBMS를 관리할 수 있도록 할 수 있음
@@ -306,8 +306,8 @@
 ## SQLite Datatypes 특징
 
 1. SQLite는 다른 모든 SQL 데이터베이스 엔진(MySQL, PostgreSQL 등)의 정적이고 엄격한 타입(static, rigid typing)이 아닌
-   - **_“동적 타입 시스템(dynamic type system)”_**을 사용
-     - 컬럼에 선언된 데이터 타입에 의해서가 아니라 **_컬럼에 저장된 값에 따라 데이터 타입이 결정_**됨
+   - **“동적 타입 시스템(dynamic type system)”**을 사용
+     - 컬럼에 선언된 데이터 타입에 의해서가 아니라 **컬럼에 저장된 값에 따라 데이터 타입이 결정**됨
    - 타입을 선언하여 정적 타입 시스템을 사용할 수도, 선언하지 않고 동적 타입 시스템을 사용할 수도 있음
 2. 테이블을 생성할 때 컬럼에 대해 특정 데이터 타입을 선언하지 않아도 됨
    - 예를 들어 동일한 컬럼에 정수 1을 넣을 경우 INTEGER로 타입이 지정되고
@@ -315,7 +315,7 @@
    - 이러한 SQLite의 동적 타입 시스템을 사용하면 기존의 엄격하게 타입이 지정된 데이터베이스에서는 불가능한 작업을 유연하게 수행할 수 있음
    - 또한 정적 타입 시스템이 지정된 데이터베이스에서 작동하는 SQL문이 SQLite에서 동일한 방식으로 작동
      - 즉, 정적 타입 시스템이 하지 못하는 작업을 할 수도 있으면서, 정적 타입 시스템에서 작동하는 것을 동일하게 작동할 수 있다는 것
-   - 그러나, 다른 데이터베이스와의 호환성 문제가 있기 때문에 테이블 생성 시 **_데이터 타입을 지정하는 것을 권장_**
+   - 그러나, 다른 데이터베이스와의 호환성 문제가 있기 때문에 테이블 생성 시 **데이터 타입을 지정하는 것을 권장**
 3. 데이터 타입을 지정하게 되면 SQLite는 데이터의 타입을 지정된 데이터 타입으로 변환
 
    - 예를 들어, TEXT 타입 컬럼에 정수 1을 저장할 경우 문자 타입의 ‘1’로 저장됨
@@ -349,7 +349,7 @@
 - 입력하는 자료에 대해 제약을 정함
 - 제약에 맞지 않다면 입력이 거부됨
 - 사용자가 원하는 조건의 데이터만 유지하기 위한
-  - 즉, **_데이터의 무결성_**을 유지하기 위한 보편적인 방법으로
+  - 즉, **데이터의 무결성**을 유지하기 위한 보편적인 방법으로
     - 테이블의 특정 컬럼에 설정하는 제약
       - 데이터의 무결성?
         - 데이터베이스 내의 데이터에 대한 정확성, 일관성을 보장하기 위해 데이터 변경 혹은 수정 시 여러 제한을 두어 데이터의 정확성을 보증하는 것
@@ -373,7 +373,7 @@
 
    <img width="476" alt="db19" src="https://user-images.githubusercontent.com/86648892/212545588-35b72922-ce1f-49f1-a156-14888a08196f.png">
 
-   - **_주의) INTEGER 타입에만 사용 가능 (INT BIGINT 등 불가능)_**
+   - **주의! INTEGER 타입에만 사용 가능 (INT BIGINT 등 불가능)**
 
 4. `AUTOINCREMENT`
    - 사용되지 않은 값이나 이전에 삭제된 행의 값을 재사용하는 것을 방지
@@ -403,8 +403,8 @@
   - Limits in SQLite
     - [https://www.sqlite.org/limits.html](https://www.sqlite.org/limits.html)
 - 만약 꽉 찬 상태의 테이블에 데이터를 넣는다면?
-  - 데이터가 최대 값에 도달하고 새 행을 삽입하려고 하면 SQLite는 **_사용되지 않는 정수를 찾아 사용_**
-  - SQLite가 사용되지 않은 정수를 찾을 수 없으면 **_SQLITE_FULL 에러_**가 발생
+  - 데이터가 최대 값에 도달하고 새 행을 삽입하려고 하면 SQLite는 **사용되지 않는 정수를 찾아 사용**
+  - SQLite가 사용되지 않은 정수를 찾을 수 없으면 **SQLITE_FULL 에러**가 발생
     - 또한 일부 행을 삭제하고 새 행을 삽입하면 SQLite는 삭제된 행에서의 rowid 값을 재사용하려고 시도
       - AUTOINCREMENT가 없다면 pk는 기본적으로 삭제되었을 때 재사용하려고 시도됨
 
@@ -568,7 +568,7 @@
   - `SELECT DISTINCT country FROM users ORDER BY country;`
 - 이름과 지역이 중복없이 모든 이름과 지역 조회하기
   - `SELECT DISTINCT first_name, country FROM users;`
-    - 각 컬럼의 중복을 따로 계산하는 것이 아니라 **_두 컬럼을 하나의 집합으로 보고 중복을 제거_**
+    - 각 컬럼의 중복을 따로 계산하는 것이 아니라 **두 컬럼을 하나의 집합으로 보고 중복을 제거**
       - 두 쌍이 모두 같은 경우만 제거
 - 이름과 지역 중복없이 지역 순으로 오름차순 정렬하여 모든 이름과 지역 조회하기
   - `SELECT DISTINCT first_name, country FROM users ORDER BY country;`
@@ -609,10 +609,10 @@
 
 <img width="835" alt="db31" src="https://user-images.githubusercontent.com/86648892/212545769-4581a4f5-7970-442f-9bb4-6cf718c66a00.png">
 
-- `%` 은 **_0개 이상의 문자_**가 올 수 있음을 의미
+- `%` 은 **0개 이상의 문자**가 올 수 있음을 의미
   - `‘김%’`
     - 김치냉장고, 김치, 김밥, 김밥먹자, 김김김
-- `_` 는 **_단일(1개) 문자_**가 있음을 의미
+- `_` 는 **단일(1개) 문자**가 있음을 의미
   - `‘김_’`
     - 김밥, 김치, 김씨
 
@@ -1041,8 +1041,8 @@ DELETE FROM classmates;
     - `.order_by(*fields)`
       - QuerySet의 정렬을 재정의
         - 기본적으로 오름차순으로 정렬하며
-        - **_필드명에 hyphen(`-`)을 작성하면 내림차순으로 정렬_**
-          - **_인자로 (`?`)를 입력하면 랜덤으로 정렬_**
+        - **필드명에 hyphen(`-`)을 작성하면 내림차순으로 정렬**
+          - **인자로 (`?`)를 입력하면 랜덤으로 정렬**
     - order_by 주의사항
       - `User.objects.order_by('balance').order_by('-age')`
         - 다음과 같이 작성할 경우 앞의 호출은 모두 지워지고 마지막 호출만 적용됨
@@ -1159,7 +1159,7 @@ User.objects.filter(Q(age=30) | Q(last_name='김'))
 - “Aggregate calculates values for the entire queryset”
 - 전체 queryset에 대한 값을 계산
 - 특정 필드 전체의 합, 평균, 개수 등을 계산할 때 사용
-- **_딕셔너리를 반환_**
+- **딕셔너리를 반환**
 - Aggregate Functions
   - `Avg` , `Count` , `Max` , `Min` , `Sum` 등
   - [https://docs.djangoproject.com/en/4.1/topics/db/aggregation/#](https://docs.djangoproject.com/en/4.1/topics/db/aggregation/#)
@@ -1317,14 +1317,14 @@ Article.objects.annotate(
 
 - 웹 사용자의 인터넷에 연결된 장치 (wi-fi에 연결된 컴퓨터 또는 모바일 등)
 - Chrome 또는 Firefox와 같은 웹 브라우저
-- **_서비스를 요청하는 주체_**
+- **서비스를 요청하는 주체**
 
 ### 서버
 
 - 웹 페이지, 사이트 또는 앱을 저장하는 컴퓨터
 - 클라이언트가 웹 페이지에 접근하려고할 때
   - 서버에서 클라이언트 컴퓨터로 웹 페이지 데이터를 응답해 사용자의 웹 브라우저에 표시됨
-- **_요청에 대해 서비스를 응답하는 주체_**
+- **요청에 대해 서비스를 응답하는 주체_**
 
 ### 클라이언트-서버
 
@@ -1362,7 +1362,7 @@ Article.objects.annotate(
   - 사용자와 요청에 따라 웹 페이지에 추가적인 수정이 되어 클라이언트에게 전달되는 웹 페이지
     - 웹 페이지의 내용을 바꿔주는 주체가 서버(server)
       - 서버에서 동작하고 있는 프로그램이 웹 페이지를 변경해줌
-  - **_사용자의 요청에 따라 적절한 응답을 만들어주는 프로그램_**을 만들어야한다!
+  - **사용자의 요청에 따라 적절한 응답을 만들어주는 프로그램**을 만들어야한다!
     - 파일을 처리하고, 데이터베이스와 상호작용
     - 이를 쉽게 할 수 있도록 도와주는 프레임워크가 Django
 
@@ -1417,7 +1417,7 @@ Article.objects.annotate(
 ### Model
 
 - 데이터와 관련된 로직을 관리
-- 프로그램의 **_데이터 구조를 정의_**하고, **_데이터베이스의 기록을 관리_**
+- 프로그램의 **데이터 구조를 정의**하고, **데이터베이스의 기록을 관리**
 
 ### Template
 
@@ -1437,7 +1437,7 @@ Article.objects.annotate(
 
 # Django 환경설정
 
-- **_설치 전 가상환경 설정 및 활성화를 마치고 진행_**
+- **설치 전 가상환경 설정 및 활성화를 마치고 진행**
 
 ## Virtual Environment
 
@@ -1618,7 +1618,7 @@ Article.objects.annotate(
   - context는 data라고 생각하자
   - `settings.py` 에 TEMPLATES
     - 여기에 `APP_DIRS` 에 `True` 가 기본값으로 설정되어있어 articles 앱 내부의 template을 인식할 수 있음
-    - **_그 외 따로 디렉토리를 만들어 인식시켜주고 싶을 경우 `DIRS`에 정의_**
+    - **그 외 따로 디렉토리를 만들어 인식시켜주고 싶을 경우 `DIRS`에 정의**
 
 ### Templates
 
@@ -1680,7 +1680,7 @@ Article.objects.annotate(
 ## Django Template
 
 - Template System의 기본 목표를 숙지하자
-  - **_데이터 표현을 제어하는 도구이자 표현에 관련된 로직_**
+  - **데이터 표현을 제어하는 도구이자 표현에 관련된 로직**
   - Django Template을 이용한 HTML 정적 부분과 동적 컨텐츠 삽입
 
 ## DTL(Django Template Language)
@@ -1689,7 +1689,7 @@ Article.objects.annotate(
   - html 파일을 조금 더 쉽게 만들어주는 Django만의 문법
     - 실무에서는 잘 사용하지 않는다
 - 조건, 반복, 변수 치환, 필터 등의 기능을 제공
-  - Python처럼 일부 프로그래밍 구조(if, for 등)를 사용할 수 있지만 이것은 **_Python 코드로 실행되는 것이 아님_**
+  - Python처럼 일부 프로그래밍 구조(if, for 등)를 사용할 수 있지만 이것은 **Python 코드로 실행되는 것이 아님**
   - Django 템플릿 시스템은 단순히 Python이 아닌 HTML에 포함된 것이 아니니 주의
 - 프로그래밍적 로직이 아니라 프레젠테이션을 표현하기위한 것임을 명심할 것
 
@@ -1809,15 +1809,15 @@ Article.objects.annotate(
 
 - 웹은 기본적으로 클라이언트-서버 아키텍처를 사용
   - 클라이언트(일반적으로 웹 브라우저)가 서버에 요청을 보내고, 서버는 클라이언트의 요청에 응답
-- 클라이언트 측에서 **_HTML form_**은 HTTP 요청을 서버에 보내는 가장 편리한 방법
-- 이를 통해 **_사용자는 HTTP 요청에서 전달할 정보를 제공_**할 수 있음
+- 클라이언트 측에서 **HTML form**은 HTTP 요청을 서버에 보내는 가장 편리한 방법
+- 이를 통해 **사용자는 HTTP 요청에서 전달할 정보를 제공**할 수 있음
 
 ## Sending form data (Client)
 
 ### HTML <form> element
 
 - 데이터가 전송되는 방법을 정의
-- 웹에서 사용자 정보를 입력하는 여러 방식(text, button, submit 등)을 제공하고, **_사용자로부터 할당된 데이터를 서버로 전송_**하는 역할을 담당
+- 웹에서 사용자 정보를 입력하는 여러 방식(text, button, submit 등)을 제공하고, **사용자로부터 할당된 데이터를 서버로 전송**하는 역할을 담당
 - “데이터를 어디(action)로 어떤 방식(method)으로 보낼지”
   - 핵심 속성
     - action
@@ -1825,11 +1825,11 @@ Article.objects.annotate(
 
 ### HTML form’s attributes
 
-1. **_action_**
+1. **action**
    - 입력 데이터가 전송될 URL을 지정
    - 데이터를 어디로 보낼 것인지 지정하는 것이며 이 값은 반드시 유효한 URL이어야함
    - 만약 이 속성을 지정하지 않으면 데이터는 현재 form이 있는 페이지의 URL로 보내짐
-2. **_method_**
+2. **method**
    - 데이터를 어떻게 보낼 것인지 정의
    - 입력 데이터의 HTTP request methods를 지정
      - HTML form 데이터는 GET, POST 2가지 방법으로만 전송할 수 있음
@@ -1860,10 +1860,10 @@ Article.objects.annotate(
   - 자원에 대한 행위(수행하고자 하는 동작)을 정의
   - GET, POST, PUT, DELETE
   - GET
-    - 서버로부터 정보를 **_조회_**하는데 사용
+    - 서버로부터 정보를 **조회**하는데 사용
       - 즉, 서버에게 리소스를 요청하기 위해 사용
-    - **_데이터를 가져올 때만 사용해야함_**
-    - **_데이터를 서버로 전송할 때 Query String Parameters를 통해 전송_**
+    - **데이터를 가져올 때만 사용해야함**
+    - **데이터를 서버로 전송할 때 Query String Parameters를 통해 전송**
       - 데이터는 URL에 포함되어 서버로 보내짐
 
 ### Query String parameters
@@ -1985,7 +1985,7 @@ Article.objects.annotate(
 
 - ‘다소 독선적’
   - 양쪽 모두에게 최선의 결과를 준다고 강조
-- 결국 하고자 하는 말은 현대 개발에 있어서 가장 중요한 것들 중 하나는 **_‘생산성’_**
+- 결국 하고자 하는 말은 현대 개발에 있어서 가장 중요한 것들 중 하나는 **‘생산성’**
 - 프레임워크는 우리가 하는 개발을 방해하기위해 규칙, 제약을 만들어놓은 것이 아님
 - 우리가 온전히 만들고자하는 것에만 집중할 수 있게 도와주는 것
 - “수레바퀴를 다시 만들지말라”
@@ -2038,14 +2038,14 @@ Article.objects.annotate(
 
 ## Database의 구조
 
-1. **_스키마 (Schema)_**
+1. **스키마 (Schema)**
 
    - 뼈대
    - 데이터베이스에서 자료의 구조, 표현 방법, 관계 등을 정의한 구조
 
    <img width="404" alt="dj_38" src="https://user-images.githubusercontent.com/86648892/188498017-d0daf2cb-5752-425b-ac49-88c12eefc995.png">
 
-2. **_테이블 (Table)_**
+2. **테이블 (Table)**
 
    - 필드(field)와 레코드(record)를 사용해 조직된 데이터 요소들의 집합
      - 필드(field)
@@ -2094,7 +2094,7 @@ Article.objects.annotate(
 
 ## `models.py`
 
-- 모델 클래스를 작성하는 것은 **_데이터베이스 테이블의 스키마를 정의_**하는 것
+- 모델 클래스를 작성하는 것은 **데이터베이스 테이블의 스키마를 정의**하는 것
   - 모델 클래스 == 테이블 스키마
 - 장고의 모델과 데이터베이스가 같은 것은 아니다
   - 장고에서 제공하는 모델을 통해 데이터베이스에 간접적으로 소통
@@ -2255,7 +2255,7 @@ class Article(models.Model):
 ## MIGRATIONS 정리
 
 1. `models.py` 변경
-   - 데이터를 **_구조화_**하고 **_조작_**하기 위한 도구
+   - 데이터를 **구조화**하고 **조작**하기 위한 도구
 2. 설계도 생성 (makemigrations)
 3. 설계도 DB 반영 (migrate)
 
@@ -2353,8 +2353,8 @@ class Article(models.Model):
     - iterable함
     - index로 접근 가능
 - Django ORM을 통해 만들어진 자료형이며, 필터를 걸거나 정렬 등을 수행할 수 있음
-- “objects” manager를 사용하여 **_복수의 데이터_**를 가져오는 queryset method를 사용할 때 반환되는 객체
-  - **_단일한 객체 반환 시에는 모델의 인스턴스를 반환_**
+- “objects” manager를 사용하여 **복수의 데이터**를 가져오는 queryset method를 사용할 때 반환되는 객체
+  - **단일한 객체 반환 시에는 모델의 인스턴스를 반환**
 
 <img width="1169" alt="dj_49" src="https://user-images.githubusercontent.com/86648892/188498047-fe72b8ae-57af-44e7-b7a4-5ffb2bb8276d.png">
 
@@ -2584,11 +2584,11 @@ def create(request):
          - 서버에 요청은 도달했으나 서버가 접근을 거부할 때 반환됨
          - Django 입장에서 작성자가 누구인지 모르기에 함부로 작성할 수 없다는 의미
          - 모델(DB)을 조작하는 것은 단순 조회와 달리 최소한의 신원 확인이 필요
-           - 즉, POST 요청을 할 때는 **_CSRF Token_**이 필요하다
-             - **_CSRF_**
+           - 즉, POST 요청을 할 때는 **CSRF Token**이 필요하다
+             - **CSRF**
                - Cross-Site-Request-Forgery (사이트 간 요청 위조)
                  - 사용자가 자신의 의지와 무관하게 공격자가 의도한 행동을 하여 특정 웹페이지를 보안에 취약하게 하거나 수정, 삭제 등의 작업을 하게 만드는 공격 방법 (2008년 옥션 해킹 사건)
-             - **_CSRF Token_**
+             - **CSRF Token**
                - Security Token 사용 방식
                  - 사용자의 데이터에 임의의 난수 값(token)을 부여해 매 요청마다 해당 난수 값을 포함시켜 전송시키도록 함
                  - 이후 서버에서 요청을 받을 때마다 전달된 token값이 유효한지 검증
@@ -2615,9 +2615,9 @@ def create(request):
 - `POST`
   - 서버로 데이터를 전송할 때 사용
   - 서버에 변경사항을 만듬
-  - 리소스를 생성, 변경하기 위해 데이터를 **_HTTP body_**에 담아 전송
+  - 리소스를 생성, 변경하기 위해 데이터를 **HTTP body**에 담아 전송
     - 개발자도구 - NETWORK 탭 - Payload 탭의 Form-Data 확인
-  - `GET` 의 Query String Parameter와 다르게 **_URL로 보내지지 않음_**
+  - `GET` 의 Query String Parameter와 다르게 **URL로 보내지지 않음**
   - CRUD 중 C, U, D 역할을 담당
   - ex) 로그인
 
@@ -2871,7 +2871,7 @@ index 페이지로 redirect {% endcomment %}
 
 # Admin Site
 
-- **_Django의 가장 강력한 기능 중 하나인 automatic admin interface_**
+- **Django의 가장 강력한 기능 중 하나인 automatic admin interface**
 - “관리자 페이지”
   - 사용자가 아닌 서버의 관리자가 활용하기 위한 페이지
   - 모델 class를 `admin.py` 에 등록하고 관리
@@ -2928,9 +2928,9 @@ index 페이지로 redirect {% endcomment %}
 
 ## Django Form
 
-- HTML `<input>` 태그를 직접 사용하지 않고 **_Django Form_**이라는 프레임워크를 통해 사용자로부터 데이터를 받자
+- HTML `<input>` 태그를 직접 사용하지 않고 **Django Form**이라는 프레임워크를 통해 사용자로부터 데이터를 받자
 - WHY?
-  - **_유효성 검증_**
+  - **유효성 검증**
     - 사용자의 요청 중에는 비정상적인 혹은 악의적인 요청이 있음
     - 사용자가 입력한 데이터가 우리가 원하는 데이터 형식에 맞는지 유효성 검증이 필요
       - 이러한 유효성 검증은 많은 부가적인 것들을 고려해서 구현해야 하는데, 이는 개발 생산성을 늦추고, 쉽지도 않음
@@ -2939,9 +2939,9 @@ index 페이지로 redirect {% endcomment %}
 
 ### Form에 대한 Django의 역할
 
-- Form은 Django의 **_유효성 검사 도구 중 하나로 외부의 악의적 공격 및 데이터 손상에 대한 중요한 방어 수단_**
-- Django는 Form과 관련한 유효성 검사를 **_단순화하고 자동화_**할 수 있는 기능을 제공하여, 개발자가 직접 작성하는 코드보다 더 안전하고 빠르게 수행하는 코드를 작성할 수 있음
-  - **_개발자가 필요한 핵심 부분만 집중_**할 수 있도록 돕는 프레임워크의 특성
+- Form은 Django의 **유효성 검사 도구 중 하나로 외부의 악의적 공격 및 데이터 손상에 대한 중요한 방어 수단**
+- Django는 Form과 관련한 유효성 검사를 **단순화하고 자동화**할 수 있는 기능을 제공하여, 개발자가 직접 작성하는 코드보다 더 안전하고 빠르게 수행하는 코드를 작성할 수 있음
+  - **개발자가 필요한 핵심 부분만 집중_**할 수 있도록 돕는 프레임워크의 특성
 - Django는 Form과 관련한 작업의 3가지 부분을 처리해줌
   1. 렌더링을 위한 데이터 준비 및 재구성
   2. 데이터에 대한 HTML forms 생성
@@ -2990,13 +2990,13 @@ index 페이지로 redirect {% endcomment %}
 
 - 그런데 `{{ form }}` 과 같이 한 덩어리로 묶어서 렌더링하면 안에 세부적인 처리를 어떻게 할 것인가에 대한 의문이 생김
 - Django의 2가지 HTML input 요소 표현
-  1. **_Form fields_**
+  1. **Form fields**
      - ex) `forms.CharField()`
-     - **_입력에 대한 유효성 검사 로직을 처리_**
+     - **입력에 대한 유효성 검사 로직을 처리**
      - 템플릿에서 직접 사용됨
-  2. **_Widgets_**
+  2. **Widgets**
      - ex) `forms.CharField(widget=forms.Textarea)`
-     - 웹 페이지의 **_HTML input 요소 렌더링을 담당_**
+     - 웹 페이지의 **HTML input 요소 렌더링을 담당**
        - 단순히 HTML 렌더링, 출력을 처리하는 것이며 유효성 검증과 아무런 관계가 없음
          - “웹 페이지에서 input element의 단순 raw한 렌더링만을 처리하는 것일 뿐”
      - Widgets은 반드시 form fields에 할당됨
@@ -3067,7 +3067,7 @@ class ArticleForm(forms.Form):
     - 참조값과 반환값
   - `fields = '__all__'`
 
-    - 모델의 **_입력받아야 할_** 모든 필드를 포함
+    - 모델의 **입력받아야 할** 모든 필드를 포함
     - 필드 중 사용자가 입력하지 않는 필드는 포함하지 않음
 
       - ex) `auto_now_add = True` 인 `created_at` 이나 `auto_add = True` 인 `updated_at` 등
@@ -3182,9 +3182,9 @@ class ArticleForm(forms.Form):
 
 - Form과 ModelForm은 모델을 기반으로 안하냐의 차이
 - 누가 더 좋은 것이 아니라 역할이 다른 것
-  - **_사용자로부터 받는 데이터가 DB에 영향을 미치는가 여부_**
-    - **_로그인은 사용자의 데이터를 받아 인증 과정에서만 사용 후 별도로 DB에 저장하지 않으므로 Form_**
-    - **_회원가입으로 유저 데이터를 추가하거나, 게시판 글 작성처럼 아티클 데이터를 추가하는 경우 ModelForm_**
+  - **사용자로부터 받는 데이터가 DB에 영향을 미치는가 여부**
+    - **로그인은 사용자의 데이터를 받아 인증 과정에서만 사용 후 별도로 DB에 저장하지 않으므로 Form**
+    - **회원가입으로 유저 데이터를 추가하거나, 게시판 글 작성처럼 아티클 데이터를 추가하는 경우 ModelForm**
 
 ### Form
 
@@ -3263,7 +3263,7 @@ class ArticleForm(forms.Form):
       - `@require_safe` 시 GET 요청일 때만 허용
     - `import require_POST`
       - `@require_POST` 시 POST 요청일 때만 허용
-- 일치하지 않는 메서드 요청이라면 **_405 Method Not Allowed_**를 반환
+- 일치하지 않는 메서드 요청이라면 **405 Method Not Allowed**를 반환
   - 405 Method Not Allowed
     - 요청 방법이 서버에게 전달되었으나 사용 불가능한 상태
 
@@ -3395,7 +3395,7 @@ class ArticleForm(forms.Form):
 - 유저 인증과 관련된 앱
   - `$ python manage.py startapp accounts`
     - INSTALLED_APPS에 추가
-    - **_auth와 관련한 경로나 키워드들은 Django 내부적으로 accounts라는 이름으로 사용하고 있기에 되도록 accounts로 지정하는 것을 권장_**
+    - **auth와 관련한 경로나 키워드들은 Django 내부적으로 accounts라는 이름으로 사용하고 있기에 되도록 accounts로 지정하는 것을 권장**
     - 다른 이름으로 설정해도 되지만 나중에 추가 설정을 해야할 일들이 생김
   - url 분리 및 매핑 실행
 
@@ -3403,13 +3403,13 @@ class ArticleForm(forms.Form):
 
 # Substituting a custom User model
 
-- “Custom User Model”로 **_대체_**하기
+- “Custom User Model”로 **대체**하기
 - 기본 User Model을 Custom User Model로 대체할 것을 권장
   - Django에서는 기본적인 인증 시스템과 여러가지 필드가 포함된 User Model을 제공, 대부분의 개발 환경에서는 기본 User Model을 Custom User Model로 대체함
     - 개발자들이 작성하는 일부 프로젝트에서는 Django에서 제공하는 built-in User Model의 기본 인증 요구사항이 적절하지 않을 수 있음
       - ex) 내 서비스의 회원가입 시 username 대신 email을 식별 값으로 사용하는 것이 더 적합한 사이트인 경우, Django의 User Model은 기본적으로 username을 식별 값으로 사용하기 때문에 적합하지 않음
 - Django는 현재 프로젝트에서 사용할 User Model을 결정하는 **AUTH_USER_MODEL** 설정 값으로 Default User Model을 재정의(override)할 수 있도록 함
-- **_첫 migrations를 진행하기 전에 대체 작업을 진행해야함_**
+- **첫 migrations를 진행하기 전에 대체 작업을 진행해야함**
   - migrations 과정에서 기본 user model도 포함되기 때문
 
 ## `AUTH_USER_MODEL`
@@ -3456,7 +3456,7 @@ class ArticleForm(forms.Form):
 
 - “관리자 권한과 함께 완전한 기능을 가지고 있는 User model을 구현하는 추상 기본클래스”
   - Abstract이 붙는 클래스는 테이블에 생성되는 것이 아닌 기본 클래스로서 존재
-- **_Abstract Base Classes (추상 기본 클래스)_**
+- **Abstract Base Classes (추상 기본 클래스)**
   - 몇가지 공통 정보를 여러 다른 모델에 넣을 때 사용하는 클래스
   - 데이터베이스 테이블을 만드는데 사용되지 않으며, 대신 다른 모델의 기본클래스로 사용되는 경우 해당 필드가 하위 클래스의 필드에 추가됨
   - [Python Docs - Abstract Base Classes](https://docs.python.org/3/library/abc.html)
@@ -3499,19 +3499,19 @@ class ArticleForm(forms.Form):
 
 ## 요청과 응답
 
-- **_요청(requests)_**
+- **요청(requests)**
   - 클라이언트(브라우저)에 의해 전송되는 메세지
-- **_응답(response)_**
+- **응답(response)**
   - 서버에서 응답으로 전송되는 메세지
 
 ## HTTP 특징
 
-1. **_비연결지향(connectionless)_**
+1. **비연결지향(connectionless)**
    - 연결되어있는 상태가 아니라 요청이 있을 때만 응답을 주고 끝
    - 서버는 요청에 대한 응답을 보낸 후 연결을 끊음
      - ex) 우리가 네이버 메인 페이지를 보고 있을 때 우리는 네이버 서버와 연결되어 있는 것이 아님
        - 네이버 서버는 우리에게 메인 페이지를 응답하고 연결을 끊은 것
-2. **_무상태(stateless)_**
+2. **무상태(stateless)**
    - 비연결지향에 의해 상태 정보가 유지되지 않음
    - 연결을 끊는 순간 클라이언트와 서버 간의 통신이 끝나며 상태 정보가 유지되지 않음
    - 클라이언트와 서버가 주고받는 메세지들은 서로 완전히 독립적
@@ -3522,7 +3522,7 @@ class ArticleForm(forms.Form):
   - “쿠키와 세션"으로 로그인 상태를 유지할 수 있음
 - 비연결지향에 의해 무상태가 나오고
   - 이를 해결하기 위한 기술이 쿠키와 세션
-- **_서버와 클라이언트 간 지속적인 상태 유지를 위해 “쿠키와 세션"이 존재_**
+- **서버와 클라이언트 간 지속적인 상태 유지를 위해 “쿠키와 세션"이 존재**
 
 # 쿠키(Cookie)
 
@@ -3535,7 +3535,7 @@ class ArticleForm(forms.Form):
     - KEY-VALUE 형태로 저장
 - 사용자가 웹사이트를 방문할 경우 해당 웹사이트의 서버를 통해 사용자의 컴퓨터에 설치되는 작은 기록 정보 파일
   1. 브라우저(클라이언트)는 쿠키를 로컬에 KEY-VALUE의 데이터 형식으로 저장
-  2. 이렇게 쿠키를 저장해 놓았다가, **_동일한 서버에 재요청 시 저장된 쿠키를 함께 전송_**
+  2. 이렇게 쿠키를 저장해 놓았다가, **동일한 서버에 재요청 시 저장된 쿠키를 함께 전송**
 - 쿠키는 두 요청이 동일한 브라우저에서 들어왔는지 아닌지를 판단할 때 주로 사용됨
   - 이를 이용해 사용자의 로그인 상태를 유지할 수 있음
     - 쿠키에 “나 로그인된 사용자야"라는 정보를 담아 매 요청마다 서버에 전송하는 것
@@ -3585,16 +3585,16 @@ class ArticleForm(forms.Form):
 
 ### 쿠키 Lifetime(수명)
 
-1. **_Session cookie_**
+1. **Session cookie**
    - 현재 세션(current session)이 종료되면 삭제됨
    - 브라우저 종료와 함께 세션이 삭제됨
-2. **_Persistent cookies_**
+2. **Persistent cookies**
    - Expires 속성에 지정된 날짜 혹은 Max-Age 속성에 지정된 기간이 지나면 삭제됨
 
 ## Session in Django
 
-- Django는 **_database-backed sessions 저장 방식_**을 기본값으로 사용
-  - session 정보는 Django DB의 **_django_session 테이블_**에 저장됨
+- Django는 **database-backed sessions 저장 방식**을 기본값으로 사용
+  - session 정보는 Django DB의 **django_session 테이블**에 저장됨
   - 설정을 통해 다른 저장 방식으로 변경 가능
     - [Django Docs - How to use sessions](https://docs.djangoproject.com/en/4.1/topics/http/sessions/)
 - Django는 특정 session id를 포함하는 쿠키를 사용해서 각각의 브라우저와 사이트가 연결된 session을 알아냄
@@ -3611,7 +3611,7 @@ class ArticleForm(forms.Form):
 
 # Login
 
-- 로그인은 **_Session을 Create_**하는 과정
+- 로그인은 **Session을 Create**하는 과정
 
 ## AuthenticationForm
 
@@ -3667,7 +3667,7 @@ class ArticleForm(forms.Form):
 
 - context 데이터가 없는데 user 변수를 어떻게 사용할 수 있을까?
 
-  - `settings.py`의 **_context processors_** 설정값 때문
+  - `settings.py`의 **context processors** 설정값 때문
   - `context_processors`
 
     - 템플릿이 렌더링될 때 호출 가능한 컨텍스트 데이터 목록
@@ -3682,7 +3682,7 @@ class ArticleForm(forms.Form):
 
 # Logout
 
-- 로그아웃은 **_Session을 Delete_**하는 과정
+- 로그아웃은 **Session을 Delete**하는 과정
   - 클라이언트(sessionid)와 서버에 있는 세션 정보를 삭제
   - 유저 정보 삭제가 아님
     - 유저 정보 삭제는 회원탈퇴
@@ -3700,7 +3700,7 @@ class ArticleForm(forms.Form):
 
 # 회원 가입
 
-- 회원가입은 User를 **_Create_**하는 것이며 **_UserCreationForm_**이라는 built-in form 사용
+- 회원가입은 User를 **Create**하는 것이며 **UserCreationForm**이라는 built-in form 사용
 
 ## UserCreationForm
 
@@ -3757,7 +3757,7 @@ class ArticleForm(forms.Form):
 
 ### `get_user_model()`
 
-- **_현재 프로젝트에서 활성화된 사용자 모델(active user model)_**을 반환
+- **현재 프로젝트에서 활성화된 사용자 모델(active user model)**을 반환
 - 직접 커스텀 유저 모델을 import해서 참조할 수도 있으나
   - Django는 User 클래스를 직접 참조하는 대신 `get_user_model()` 을 사용해 참조해야한다고 강조함
 - 직접 참조하지 않는 이유
@@ -3775,7 +3775,7 @@ class ArticleForm(forms.Form):
 
 # 회원 탈퇴
 
-- 회원 탈퇴는 DB에서 유저 모델을 **_Delete_**하는 것
+- 회원 탈퇴는 DB에서 유저 모델을 **Delete**하는 것
 
 <img width="517" alt="dj_102" src="https://user-images.githubusercontent.com/86648892/189502207-a78c2b8a-583a-465c-80bf-1ee0bc1d89e0.png">
 
@@ -3794,7 +3794,7 @@ class ArticleForm(forms.Form):
 
 # 회원정보 수정
 
-- 회원정보 수정은 User를 **_Update_**하는 것이며 **_UserChangeForm_** built-in form을 사용
+- 회원정보 수정은 User를 **Update**하는 것이며 **UserChangeForm** built-in form을 사용
 
 ## UserChangeForm
 
@@ -3903,7 +3903,7 @@ class ArticleForm(forms.Form):
   - `LOGIN_URL`의 기본값은 `/accounts/login/`
   - app 이름을 accounts로 했던 이유 중 하나!
   - `/articles/create/` 로 강제 접속을 시도해보면 로그인 페이지로 리다이렉트 후 `/accounts/login/?next=/articles/create/` url을 확인할 수 있음
-    - **_인증 성공 시 사용자가 redirect되어야하는 경로는 “next”라는 쿼리 문자열 매개 변수에 저장됨_**
+    - **인증 성공 시 사용자가 redirect되어야하는 경로는 “next”라는 쿼리 문자열 매개 변수에 저장됨**
 
 ### login_required 적용
 
@@ -4062,9 +4062,9 @@ PASSWORD_HASHERS = [
 - 참조하는 테이블의 행 1개의 값은, 참조되는 측 테이블의 행 값에 대응됨
   - 즉, 참조하는 테이블의 행에는, 참조되는 테이블에 나타나지 않는 값을 포함할 수 없음
 - 참조하는 테이블 행 여러 개가, 참조되는 테이블의 동일한 행을 참조할 수 있음
-- **_부모 테이블의 유일한 값을 참조_**
-  - **_참조 무결성_**
-  - **_외래 키의 값이 반드시 부모 테이블의 Primary Key일 필요는 없지만 유일한 값이어야 함_**
+- **부모 테이블의 유일한 값을 참조**
+  - **참조 무결성**
+  - **외래 키의 값이 반드시 부모 테이블의 Primary Key일 필요는 없지만 유일한 값이어야 함**
 
 ### [참고] 참조 무결성
 
@@ -4076,8 +4076,8 @@ PASSWORD_HASHERS = [
 - A many-to-one relationship을 담당하는 Django의 모델 필드 클래스
 - Django 모델에서 관계형 데이터베이스의 외래 키 속성을 담당
 - 2개의 필수 위치 인자가 필요
-  1. **_참조하는 model class_**
-  2. `***on_delete` 옵션\*\*\*
+  1. **참조하는 model class**
+  2. `***on_delete` 옵션
      - 외래 키가 참조하는 객체가 사라졌을 때, 외래 키를 가진 객체를 어떻게 처리할지 정의
      - 데이터 무결성을 위해 매우 중요한 설정
      - `on_delete` 옵션 값
@@ -4107,7 +4107,7 @@ PASSWORD_HASHERS = [
 - Django는 모델 간 N:1 혹은 M:N 관계가 설정되면 `역참조` 할 때에 사용할 수 있는 manager를 생성
   - 이전에 모델 생성 시 `objects` 라는 매니저를 통해 queryset api를 사용했던 것처럼
     - Related manager를 통해 queryset api를 사용할 수 있게 됨
-- N:1 관계에서 생성되늰 Related manager 이름은 참조하는 **_“모델명\_set”_** 이름 규칙으로 만들어짐
+- N:1 관계에서 생성되늰 Related manager 이름은 참조하는 **“모델명_set”** 이름 규칙으로 만들어짐
   - `ForeignKey()` 설정 시 `related_name` 옵션을 통해 역참조 시 사용할 매니저 이름을 설정 가능
     - 작성 후 migration 과정 필요
     - 설정 시 기존의 `modelName_set` 은 더이상 사용할 수 없고, 대체됨
@@ -4132,14 +4132,14 @@ PASSWORD_HASHERS = [
    - 문자열을 반환
      - 반환값은 ‘accounts.User’ (문자열)
    - User 모델에 대한 외래 키 또는 M:N 관계를 정의할 때 사용
-   - **_`models.py`의 모델 필드에서 User 모델을 참조할 때 사용_**
+   - **`models.py`의 모델 필드에서 User 모델을 참조할 때 사용**
      - 장고 내부적인 동작순서에 따라 아직 유저 객체가 생성되지 않은 시점에서 `models.py` 가 임시로 참조할 수 있도록 문자열을 주는 것
 2. `get_user_model()`
    - 객체를 반환
      - 반환값은 User Object (객체)
    - 현재 활성화(Active)된 User 모델을 반환
      - 커스터마이징한 User 모델이 있을 경우는 Custom User 모델, 그렇지 않으면 User를 반환
-   - **_`models.py` 가 아닌 다른 모든 곳에서 유저 모델을 참조할 때 사용_**
+   - **`models.py` 가 아닌 다른 모든 곳에서 유저 모델을 참조할 때 사용**
 
 ---
 
@@ -4486,20 +4486,20 @@ class Reservation(models.Model):
 
 - Django는 다대다 관계를 나타내는 중개 테이블을 생성
 - ManyToManyField는 중개 테이블에 별도 생성되는 것이며 기존 모델 테이블에 컬럼이 추가되지 않음
-  - 중개 테이블 이름은 **_appname_ManyToManyField를 포함한 modelname_ManyToManyFieldname_**
+  - 중개 테이블 이름은 **appname_ManyToManyField를 포함한 modelname_ManyToManyFieldname**
     - ex) `articles_article_like_users`
     - `db_table` arguments를 사용하여 중개 테이블의 이름을 변경할 수도 있음
   - 중개 테이블의 컬럼 이름
     - source model과 target model이 다른 경우
       - id
-      - **_<containing_model>\_id_**
+      - **<containing_model>\_id**
         - 참조하는 모델 이름
-      - **_<other_model>\_id_**
+      - **<other_model>\_id**
         - 역참조하는 모델 이름
     - 동일한 모델의 관계인 경우
       - id
-      - **_from\_<model>\_id_**
-      - **_to\_<model>\_id_**
+      - **from\_<model>\_id**
+      - **to\_<model>\_id**
 
 ## ManyToManyField Arguments
 
@@ -4531,12 +4531,12 @@ class Reservation(models.Model):
 ### `symmetrical` argument
 
 - 기본값은 True
-- **_ManyToManyField가 동일한 모델(on self)을 가리키는 정의_**에서만 사용
+- **ManyToManyField가 동일한 모델(on self)을 가리키는 정의**에서만 사용
 - 재귀 참조 (self 참조)
   <img width="833" alt="dj_169" src="https://user-images.githubusercontent.com/86648892/212547774-196ab395-d15f-464b-b960-1a30529cb380.png">
 
 - `symmetrical=True` 일 경우
-  - \_set 매니저를 추가하지 않음
+  - set 매니저를 추가하지 않음
   - source 모델의 인스턴스가 target 모델의 인스턴스를 참조하면
     - 자동으로 target 모델 인스턴스도 source 모델 인스턴스를 참조하도록 함 (대칭)
       - 쉽게 말해 1-2의 관계가 추가된다면, 2-1의 관계도 추가됨
@@ -4589,7 +4589,7 @@ class Reservation(models.Model):
 - 그러나 이전 N:1 (Aritcle-User) 관계에서 이미 해당 매니저를 사용 중
   - `user.article_set.all()`
     - 해당 유저가 작성한 모든 게시글 조회
-  - **_user가 작성한 글들(`user.article_set`)과 user가 좋아요를 누른 글(`user.article_set`)을 구분할 수 없게 됨_**
+  - **user가 작성한 글들(`user.article_set`)과 user가 좋아요를 누른 글(`user.article_set`)을 구분할 수 없게 됨**
   - 이런 경우 user와 관계된 ForeignKey 혹은 ManyToManyField 중 하나에 `related_name` 을 작성해야 함
 
 <img width="1022" alt="dj_172" src="https://user-images.githubusercontent.com/86648892/212547765-07fbe386-c6af-4cdb-bb0c-3257d092b1d8.png">
@@ -4707,8 +4707,8 @@ class Reservation(models.Model):
 
 - `app_name/fixtures/` 가 기본 경로
   - Django는 설치된 모든 app의 디렉토리에서 fixtures 폴더 이후의 경로로 fixtures 파일을 찾음
-- **_fixtures 파일은 직접 만드는 것이 아니라 dumpdata를 사용하여 생성하는 것이다_**
-  - **_dumpdata의 출력 결과물은 loaddata의 입력으로 사용됨_**
+- **fixtures 파일은 직접 만드는 것이 아니라 dumpdata를 사용하여 생성하는 것이다**
+  - **dumpdata의 출력 결과물은 loaddata의 입력으로 사용됨**
 
 ### 생성 (데이터 추출)
 
@@ -4964,7 +4964,7 @@ def index_4(request):
 
 - 응답할 때 별도의 처리없이 파일 내용을 그대로 보여주면 되는 파일
   - 사용자의 요청에 따라 내용이 바뀌는 것이 아니라 요청한 것을 그대로 보여주는 파일
-- **_파일 자체가 고정_**되어있고, 서비스 중에도 추가되거나 **_변경되지않고 고정_**되어있음
+- **파일 자체가 고정**되어있고, 서비스 중에도 추가되거나 **변경되지않고 고정**되어있음
   - ex) 웹 사이트는 일반적으로 이미지, JS, CSS와 같은 미리 준비된 추가 파일(움직이지 않는)을 제공해야함
 - Django에서는 이러한 파일들을 “static file”이라함
   - Django는 `staticfiles` 앱을 통해 정적 파일과 관련된 기능을 제공
@@ -4983,7 +4983,7 @@ def index_4(request):
   - 특정 위치(URL)에 있는 자원을 요청(HTTP request)받아서
     - 응답(HTTP response)을 처리하고 제공(serving)하는 것
 - 즉, “자원과 자원에 접근 가능한 주소가 있다”
-  - ex) 사진 파일은 자원이고, 해당 **_사진 파일을 얻기 위한 경로인 웹 주소(URL)_**가 존재함
+  - ex) 사진 파일은 자원이고, 해당 **사진 파일을 얻기 위한 경로인 웹 주소(URL)**가 존재함
 - 웹 서버는 요청받은 URL로 서버에 존재하는 정적 자원(static resource)을 제공함
 
 ## Static files 구성하기
@@ -5020,7 +5020,7 @@ def index_4(request):
 - `collectstatic`
   - 배포를 위해 정적 파일을 수집하는 디렉토리의 절대 경로
   - admin 폴더에는 기본적으로 생성되는 admin 페이지 관련 내장 정적 파일들이 들어있음
-- **_개발 과정에서 settings.py의 DEBUG 값이 True로 설정되어 있으면 해당 값은 작용되지 않음_**
+- **개발 과정에서 settings.py의 DEBUG 값이 True로 설정되어 있으면 해당 값은 작용되지 않음**
 - 실 서비스 환경(배포 환경)에서 Django의 모든 정적 파일을 다른 웹 서버가 직접 제공하기위해 사용
 - 배포 환경에서는 Django를 직접 실행하는 것이 아니라
   - 다른 서버에 의해 실행되기 때문에
@@ -5074,7 +5074,7 @@ def index_4(request):
 
 ### 2. 추가 경로에 있는 static file 가져오기
 
-- **_추가 경로 작성_**
+- **추가 경로 작성**
 
 <img width="716" alt="dj_203" src="https://user-images.githubusercontent.com/86648892/212550651-be461fa8-7af6-40d6-bc1b-02c463943ef3.png">
 
@@ -5096,7 +5096,7 @@ def index_4(request):
       - img src의 경로에서 서버 내부적으로 인식하는 경로를 확인할 수 있음
     - Network 탭에서 Request URL 확인
       - 클라이언트에게 이미지를 응답하기 위한 요청 URL을 만든 것
-  - **_“STATIC_URL + static file 경로”_**로 설정됨
+  - **“STATIC_URL + static file 경로”**로 설정됨
     - `/static/` 이 STATIC_URL에서 정의한 부분
     - 클라이언트는 이 URL로 요청을 해야 해당 이미지를 볼 수 있음
 
@@ -5118,8 +5118,8 @@ def index_4(request):
 - FileField를 상속받는 서브클래스로서 FileField의 모든 속성 및 메서드를 사용 가능함과 더불어
   - 사용자에 의해 업로드된 파일이 유효한 이미지인지 검사
 - ImageField의 인스턴스는 DB에 이미지 덩어리로서 들어가지 않는다
-  - 최대 길이가 100자인 **_문자열로 DB에 생성_**되며
-    - **_업로드된 파일의 경로가 저장_**됨
+  - 최대 길이가 100자인 **문자열로 DB에 생성**되며
+    - **업로드된 파일의 경로가 저장**됨
     - max_length 인자를 사용하여 최대 길이를 변경할 수 있음
 
 ## `FileField()`
@@ -5143,7 +5143,7 @@ def index_4(request):
 
 - Default: ‘’ (Empty String)
 - 사용자가 업로드한 파일(미디어 파일)들을 보관할 디렉토리의 절대경로
-  - 즉, 사용자가 파일을 업로드했을 때 **_실제 파일을 어디에 둘 것인지_** 정의
+  - 즉, 사용자가 파일을 업로드했을 때 **실제 파일을 어디에 둘 것인지** 정의
 - Django는 성능을 위해 업로드 파일은 데이터베이스에 저장하지 않음
   - 데이터베이스에 저장되는 것은 “파일 경로”
 - MEDIA_ROOT는 STATIC_ROOT와 반드시 다른 경로로 지정해야함
@@ -5153,7 +5153,7 @@ def index_4(request):
 ## `MEDIA_URL`
 
 - Default: ‘’ (Empty String)
-- **_MEDIA_ROOT에서 제공되는 미디어 파일을 처리하는 URL_**
+- **MEDIA_ROOT에서 제공되는 미디어 파일을 처리하는 URL**
 - 업로드된 파일의 주소(URL)를 만들어주는 역할
   - 웹 서버 사용자가 사용하는 public URL
 - 비어있지 않은 값으로 설정한다면 반드시 slash(`/`)로 끝나야함
@@ -5166,8 +5166,8 @@ def index_4(request):
 <img width="720" alt="dj_210" src="https://user-images.githubusercontent.com/86648892/212550634-8dc88134-5b1a-4eb6-841f-4780b9adaa50.png">
 
 - 사용자로부터 업로드된 파일이 프로젝트에 업로드 되고나서, 실제로 사용자에게 제공하기 위해서는 업로드된 파일의 URL이 필요함
-  - 업로드된 **_파일의 URL_** == `settings.MEDIA_URL`
-  - 위 **_URL을 통해 참조하는 파일의 실제 위치_** == `settings.MEDIA_ROOT`
+  - 업로드된 **파일의 URL** == `settings.MEDIA_URL`
+  - 위 **URL을 통해 참조하는 파일의 실제 위치** == `settings.MEDIA_ROOT`
 
 ---
 
@@ -5195,7 +5195,7 @@ def index_4(request):
 ## null 관련 주의사항
 
 - ImageField에는 왜 blank 옵션을 줄까?
-  - **_“CharField, TextField와 같은 문자열 기반 필드에는 null 옵션 사용을 피해야함”_**
+  - **“CharField, TextField와 같은 문자열 기반 필드에는 null 옵션 사용을 피해야함”**
     - 문자열 기반 필드들은 빈 문자열을 통해 빈 값이라는 의미를 가짐
     - 문자열 필드가 아닌 다른 필드들은 NULL이라는 값을 통해 빈 값이라는 의미를 가짐
     - 문자열 기반 필드에서 `null=True` 로 설정 시 데이터 없음에 대한 표현이 “빈 문자열”과 “NULL” 2가지 모두 가능하게 됨
@@ -5534,22 +5534,22 @@ class Comment(models.Model):
 
 - HTTP 요청의 대상을 리소스(resource)라고 함
   - 리소스는 문서, 사진 또는 기타 어떤 것이든 될 수 있음
-    - 각 리소스는 식별을 위해 **_URI_**로 식별됨
+    - 각 리소스는 식별을 위해 **URI**로 식별됨
 - 자원의 식별자 (URI)
-  - 자원의 **_위치_**로 자원을 식별 (URL)
-  - 고유한 **_이름_**으로 자원을 식별 (URN)
+  - 자원의 **위치**로 자원을 식별 (URL)
+  - 고유한 **이름**으로 자원을 식별 (URN)
 
 ## URI
 
 - Uniform Resource Identifier
   - 통합 자원 식별자
 - 인터넷에서 하나의 리소스를 가리키는 문자열
-- **_URL_**
+- **URL**
   - 가장 일반적인 URL는 웹 주소로 알려진 URL
 
 ![dj_239](https://user-images.githubusercontent.com/86648892/212551498-8af5bd3b-3dfb-41ef-9974-bd813e368851.png)
 
-- **_URN_**
+- **URN**
   - 특정 이름공간에서 이름으로 리소스를 식별하는 URI는 URN
 
 ![dj_240](https://user-images.githubusercontent.com/86648892/212551497-404f8f1b-7c57-4a42-b785-bd06a0b3e02d.png)
@@ -5566,21 +5566,21 @@ class Comment(models.Model):
 
 ### URL 구조
 
-- **_Scheme (or protocol)_**
+- **Scheme (or protocol)**
   - 브라우저가 리소스를 요청하는데 사용해야 하는 프로토콜
   - URL의 첫 부분은 브라우저가 어떤 규약을 사용하는지를 나타냄
   - 기본적으로 웹은 HTTP(S)를 요구하며 메일을 열기 위한 `mailto:`, 파일을 전송하기 위한 `ftp:` 등 다른 프로토콜도 존재
     ![dj_242](https://user-images.githubusercontent.com/86648892/212551493-cdf340f3-792b-454f-9e9a-ea7816674425.png)
-- **_Authority_**
+- **Authority**
   - Scheme 다음으로 문자 패턴 `://` 으로 구분된 Authority(권한)이 작성됨
   - Authority는 domain과 port를 모두 포함하며 둘은 `:` (colon)으로 구분됨
     ![dj_243](https://user-images.githubusercontent.com/86648892/212551492-66fde450-cb27-4bed-ab37-50662b72c61d.png)
-  - **_Domain Name_**
+  - **Domain Name**
     - `www.example.com`
     - 요청 중인 웹 서버를 나타냄
     - 어떤 웹 서버가 요구되는지를 가리키며 직접 IP 주소를 사용하는 것도 가능
       - ex) 도메인 google.com의 IP 주소는 142.251.42.142
-  - **_Port_**
+  - **Port**
     - `80`
     - 웹 서버의 리소스에 접근하는데 사용되는 기술적인 문 (Gate)
     - HTTP 프로토콜의 표준 포트는 다음과 같고 생략 가능 (나머지는 생략 불가)
@@ -5589,17 +5589,17 @@ class Comment(models.Model):
       - HTTPS
         - 443
     - Django의 경우 8000(80+00)이 기본 포트로 설정되어 있음
-- **_Path_**
+- **Path**
   - 웹 서버의 리소스 경로
   - 초기에는 실제 파일이 위치한 물리적 위치를 나타냈지만
     - 오늘날은 실제 위치가 아닌 추상화된 형태의 구조를 표현 - ex) `/articles/create/` 가 실제 articles 폴더 안의 create 폴더 안을 나타내는 것은 아님
       ![dj_244](https://user-images.githubusercontent.com/86648892/212551491-cd332a29-034e-4be4-9898-70061fab280d.png)
-- **_Parameters_**
+- **Parameters**
   - 웹 서버에 제공하는 추가적인 데이터
   - `&` 기호로 구분되는 key-value 쌍 목록
   - 서버는 리소스를 응답하기 전에 이러한 파라미터를 사용하여 추가 작업을 수행할 수 있음
     ![dj_245](https://user-images.githubusercontent.com/86648892/212551490-af5a135c-d465-4450-95ae-ee3e78d3bae9.png)
-- **_Anchor_**
+- **Anchor**
   - 리소스의 다른 부분에 대한 앵커
     - 하이퍼링크와 비슷한 기능을 하는 인터넷 상의 다른 문서와 연결된 문자 혹은 그림
   - 리소스 내부 일종의 “북마크”를 나타내며 브라우저의 해당 북마크 지점에 있는 컨텐츠를 표시
@@ -5663,37 +5663,37 @@ class Comment(models.Model):
   - 2000년 로이 필딩의 박사학위 논문에서 처음으로 소개된 후 네트워킹 문화에 널리 퍼짐
 - “A group of software architecture design constraints”
   - 소프트웨어 아키텍쳐 디자인 제약 모음
-- REST 원리는 따르는 시스템을 **_RESTful_**하다고 부름
+- REST 원리는 따르는 시스템을 **RESTful**하다고 부름
 - REST의 기본적은 근간은 리소스(자원)
   - 자원을 정의하고 자원에 대한 주소를 지정하는 전반적인 방법을 서술
-  - **_자원을 어떻게 할 것인가_**
-    - **_자원을 어떻게 정의할 것_**인가
+  - **자원을 어떻게 할 것인가**
+    - **자원을 어떻게 정의할 것**인가
       - 어떤 식으로 설계하고 표현할 것인가
-    - **_주소를 어떤 식으로 지정할 것_**인가
+    - **주소를 어떤 식으로 지정할 것**인가
 
 ### REST에서 자원을 정의하고 주소를 지정하는 방법
 
-1. 자원의 **_식별_**
-   - **_URI_**
+1. 자원의 **식별**
+   - **URI**
      - URI로 자원을 식별한다
-2. 자원의 **_행위_**
-   - **_HTTP Method_**
+2. 자원의 **행위**
+   - **HTTP Method**
      - GET, POST, PUT, DELETE
        - 이 메소드들로 자원의 행위를 결정한다
-3. 자원의 **_표현_**
-   - 자원과 행위를 통해 궁극적으로 표현되는 (추상화된) **_결과물_**
+3. 자원의 **표현**
+   - 자원과 행위를 통해 궁극적으로 표현되는 (추상화된) **결과물**
    - JSON으로 표현된 데이터를 제공
      - JSON으로 자원을 표현한다
 
-- **_즉, RESTful API란 자원을 URI로 식별하고, 자원의 행동을 HTTP Method로 결정하고, 해당 자원의 최종적인 표현을 JSON으로 표현하자는 방법론을 약속으로 지키는 API를 의미_**
+- **즉, RESTful API란 자원을 URI로 식별하고, 자원의 행동을 HTTP Method로 결정하고, 해당 자원의 최종적인 표현을 JSON으로 표현하자는 방법론을 약속으로 지키는 API를 의미**
 
 ## JSON
 
 - JSON is a lightweight data-interchange format
-- JavaScript의 표기법을 따른 **_단순 문자열_**
+- JavaScript의 표기법을 따른 **단순 문자열**
 - 파이썬의 dictionary, 자바스크립트의 object처럼
   - C 계열의 언어가 갖고 있는 자료구조로 쉽게 변환할 수 있는
-    - **_key-value 형태의 구조_**를 갖고 있음
+    - **key-value 형태의 구조**를 갖고 있음
 - 사람이 읽고 쓰기 쉽고
   - 기계가 파싱(해석&분석)하고 만들어내기 쉽기 때문에
     - 현재 API에서 가장 많이 사용하는 데이터 타입
@@ -5714,13 +5714,13 @@ class Comment(models.Model):
 - 설계 방법론은 지키지 않았을 때 잃는 것보다 지켰을 때 얻는 것이 훨씬 많음
   - 단, 설계 방법론을 지키지 않더라도 동작 여부에 큰 영향을 미치지는 않음
   - 말 그대로 방법론일 뿐이며 규칙이나 규약은 아님
-- **_RESTful한 서버를 만든다는 것은 결국 해당 데이터베이스에 대한 클라이언트의 요청과 관련하여_**
-  - **_JSON으로 응답을 반환하고_**
-    - **_해당 요청 자원은 URL로 식별 가능하며_**
-      - **_그 과정에 있어서 HTTP Methods를 사용하는 서버를 뜻한다고 이해하자_**
+- **RESTful한 서버를 만든다는 것은 결국 해당 데이터베이스에 대한 클라이언트의 요청과 관련하여**
+  - **JSON으로 응답을 반환하고**
+    - **해당 요청 자원은 URL로 식별 가능하며**
+      - **그 과정에 있어서 HTTP Methods를 사용하는 서버를 뜻한다고 이해하자**
 - RESTful API는 결국
-  1. **_행위는 method로_**
-  2. **_자원은 path로_**
+  1. **행위는 method로**
+  2. **자원은 path로**
   - 다룬다는 2가지 규칙을 지키는 것을 의미한다
 
 ---
@@ -5750,8 +5750,8 @@ class Comment(models.Model):
 - 다양한 방법으로 JSON 데이터 응답해보기
   1. HTML 응답
   2. `JsonResponse()` 를 사용한 JSON 응답
-  3. **_Django Serializer_**를 사용한 JSON 응답
-  4. **_Django REST framework_**를 사용한 JSON 응답
+  3. **Django Serializer**를 사용한 JSON 응답
+  4. **Django REST framework**를 사용한 JSON 응답
 
 ## ‘Content-Type’ entity header
 
@@ -6271,20 +6271,20 @@ def comment_create(request, article_pk):
 # N:1 역참조 데이터 조회
 
 1. 특정 게시글에 작성된 댓글 목록 출력하기
-   - **_기존 필드 override_**
+   - **기존 필드 override**
 2. 특정 게시글에 작성된 댓글의 개수 출력하기
-   - **_새로운 필드 추가_**
+   - **새로운 필드 추가**
 
 ## 특정 게시글에 작성된 댓글 목록 출력하기
 
 ### 기존 필드 Override (역참조 덮어씌우기)
 
-1. **_PrimaryKeyRelatedField()_**
+1. **PrimaryKeyRelatedField()**
    - `comment_set = serializers.PrimaryKeyRelatedField(many=True, read_only=True)`
 
 <img width="1455" alt="dj_273" src="https://user-images.githubusercontent.com/86648892/212551759-a42410eb-4376-4f4e-af99-3b14a21e9b5b.png">
 
-1. **_Nested Relationships_**
+1. **Nested Relationships**
    - `comment_set = CommentSerializer(many=True, read_only=True)`
      - 역참조 시 pk말고 CommentSerializer에서 출력하는 모든 정보 출력 가능
 
