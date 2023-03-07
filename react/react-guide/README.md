@@ -852,3 +852,192 @@ const TaskForm = (props) => {
 export default TaskForm;
 
 ```
+
+## Working with Forms with Validation Logic
+
+---
+
+### When To Validate?
+
+<img width="1128" alt="when-to-validate" src="https://user-images.githubusercontent.com/86648892/223484461-dcbf0c42-4aa5-42a3-8a7d-bee3039eb3cc.png">
+
+### Creating a Custom useInput Hook
+
+```jsx
+// use-input.js
+
+import { useReducer } from 'react';
+
+const initialInputState = {
+  value: '',
+  isTouched: false,
+};
+
+const inputStateReducer = (state, action) => {
+  if (action.type === 'INPUT') {
+    return { value: action.value, isTouched: state.isTouched };
+  }
+  if (action.type === 'BLUR') {
+    return { isTouched: true, value: state.value };
+  }
+  if (action.type === 'RESET') {
+    return { isTouched: false, value: '' };
+  }
+  return initialInputState;
+};
+
+const useInput = (validateValue) => {
+  const [inputState, dispatch] = useReducer(
+    inputStateReducer,
+    initialInputState
+  );
+
+  const valueIsValid = validateValue(inputState.value);
+  const hasError = !valueIsValid && inputState.isTouched;
+
+  const valueChangeHandler = (event) => {
+    dispatch({ type: 'INPUT', value: event.target.value });
+  };
+
+  const inputBlurHandler = (event) => {
+    dispatch({ type: 'BLUR' });
+  };
+
+  const reset = () => {
+    dispatch({ type: 'RESET' });
+  };
+
+  return {
+    value: inputState.value,
+    isValid: valueIsValid,
+    hasError,
+    valueChangeHandler,
+    inputBlurHandler,
+    reset,
+  };
+};
+
+export default useInput;
+
+```
+
+```jsx
+// BasicForm.js
+
+import useInput from '../hooks/use-input';
+
+const isNotEmpty = (value) => value.trim() !== '';
+const isEmail = (value) => value.includes('@');
+
+const BasicForm = (props) => {
+  const {
+    value: firstNameValue,
+    isValid: firstNameIsValid,
+    hasError: firstNameHasError,
+    valueChangeHandler: firstNameChangeHandler,
+    inputBlurHandler: firstNameBlurHandler,
+    reset: resetFirstName,
+  } = useInput(isNotEmpty);
+  const {
+    value: lastNameValue,
+    isValid: lastNameIsValid,
+    hasError: lastNameHasError,
+    valueChangeHandler: lastNameChangeHandler,
+    inputBlurHandler: lastNameBlurHandler,
+    reset: resetLastName,
+  } = useInput(isNotEmpty);
+  const {
+    value: emailValue,
+    isValid: emailIsValid,
+    hasError: emailHasError,
+    valueChangeHandler: emailChangeHandler,
+    inputBlurHandler: emailBlurHandler,
+    reset: resetEmail,
+  } = useInput(isEmail);
+
+  let formIsValid = false;
+
+  if (firstNameIsValid && lastNameIsValid && emailIsValid) {
+    formIsValid = true;
+  }
+
+  const submitHandler = event => {
+    event.preventDefault();
+
+    if (!formIsValid) {
+      return;
+    }
+
+    console.log('Submitted!');
+    console.log(firstNameValue, lastNameValue, emailValue);
+
+    resetFirstName();
+    resetLastName();
+    resetEmail();
+  };
+
+  const firstNameClasses = firstNameHasError ? 'form-control invalid' : 'form-control';
+  const lastNameClasses = lastNameHasError ? 'form-control invalid' : 'form-control';
+  const emailClasses = emailHasError ? 'form-control invalid' : 'form-control';
+
+  return (
+    <form onSubmit={submitHandler}>
+      <div className='control-group'>
+        <div className={firstNameClasses}>
+          <label htmlFor='name'>First Name</label>
+          <input
+            type='text'
+            id='name'
+            value={firstNameValue}
+            onChange={firstNameChangeHandler}
+            onBlur={firstNameBlurHandler}
+          />
+          {firstNameHasError && <p className="error-text">Please enter a first name.</p>}
+        </div>
+        <div className={lastNameClasses}>
+          <label htmlFor='name'>Last Name</label>
+          <input
+            type='text'
+            id='name'
+            value={lastNameValue}
+            onChange={lastNameChangeHandler}
+            onBlur={lastNameBlurHandler}
+          />
+          {lastNameHasError && <p className="error-text">Please enter a last name.</p>}
+        </div>
+      </div>
+      <div className={emailClasses}>
+        <label htmlFor='name'>E-Mail Address</label>
+        <input
+          type='text'
+          id='name'
+          value={emailValue}
+          onChange={emailChangeHandler}
+          onBlur={emailBlurHandler}
+        />
+        {emailHasError && <p className="error-text">Please enter a valid email address.</p>}
+      </div>
+      <div className='form-actions'>
+        <button disabled={!formIsValid}>Submit</button>
+      </div>
+    </form>
+  );
+};
+
+export default BasicForm;
+
+```
+
+### Creating a Custom useForm Hook
+
+- [Creating a Custom useForm Hook](https://academind.com/tutorials/reactjs-a-custom-useform-hook)
+- Creating a custom hook to manage forms in React without relying on any library
+- Refer to sample codes in 16-working-with-forms-advanced
+
+### Formik
+
+- [Formik Docs](https://formik.org/docs/overview)
+  - Third-party Library for working with forms
+    - More complex forms and validations
+  - More using components than hooks
+  - Core idea is that you don't have to write much state management logic, but instead you write your validation logic, you define your fields, and then let Formik do the rest
