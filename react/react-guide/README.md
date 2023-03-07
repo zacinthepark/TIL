@@ -859,7 +859,15 @@ export default TaskForm;
 
 ### When To Validate?
 
-<img width="1128" alt="when-to-validate" src="https://user-images.githubusercontent.com/86648892/223484461-dcbf0c42-4aa5-42a3-8a7d-bee3039eb3cc.png">
+- When form is **submitted**
+  - Allows the user to enter a valid value before warning him or her
+  - Avoid unnecessary warnings but maybe present feedback "too late"
+- When a input is **losing focus**
+  - Allows the user to enter a valid value before warning him or her
+  - Very useful for untouched forms
+- On **every keystroke**
+  - Warns user before he or she had a chance of entering valid values
+  - If applied only on invalid inputs, has the potential of providing more direct feedback
 
 ### Creating a Custom useInput Hook
 
@@ -1032,12 +1040,12 @@ export default BasicForm;
 
 - [Creating a Custom useForm Hook](https://academind.com/tutorials/reactjs-a-custom-useform-hook)
 - Creating a custom hook to manage forms in React without relying on any library
-- Refer to sample codes in 16-working-with-forms-advanced
+- Refer to sample codes in *16-working-with-forms-advanced*
 
 ### Formik
 
 - [Formik Docs](https://formik.org/docs/overview)
-  - Third-party Library for working with forms
-    - More complex forms and validations
-  - More using components than hooks
-  - Core idea is that you don't have to write much state management logic, but instead you write your validation logic, you define your fields, and then let Formik do the rest
+- Third-party Library for working with forms
+  - More complex forms and validations
+- More using components than hooks
+- Core idea is that you don't have to write much state management logic, but instead you write your validation logic, you define your fields, and then let Formik do the rest
