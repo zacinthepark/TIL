@@ -26,7 +26,14 @@ const Cart = (props) => {
   };
 
   const submitOrderHandler = (userData) => {
-    fetch('https://react-http-6b4a6.firebaseio.com/orders.json', {
+    // fetch('https://react-http-6b4a6.firebaseio.com/orders.json', {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     user: userData,
+    //     orderedItems: cartCtx.items
+    //   })
+    // });
+    fetch('https://react-http-aa6ec-default-rtdb.firebaseio.com/orders.json', {
       method: 'POST',
       body: JSON.stringify({
         user: userData,

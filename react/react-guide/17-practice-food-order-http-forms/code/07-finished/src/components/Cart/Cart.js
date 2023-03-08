@@ -29,7 +29,14 @@ const Cart = (props) => {
 
   const submitOrderHandler = async (userData) => {
     setIsSubmitting(true);
-    await fetch('https://react-http-6b4a6.firebaseio.com/orders.json', {
+    // await fetch('https://react-http-6b4a6.firebaseio.com/orders.json', {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     user: userData,
+    //     orderedItems: cartCtx.items,
+    //   }),
+    // });
+    await fetch('https://react-http-aa6ec-default-rtdb.firebaseio.com/orders.json', {
       method: 'POST',
       body: JSON.stringify({
         user: userData,
