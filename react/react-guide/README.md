@@ -1049,3 +1049,32 @@ export default BasicForm;
   - More complex forms and validations
 - More using components than hooks
 - Core idea is that you don't have to write much state management logic, but instead you write your validation logic, you define your fields, and then let Formik do the rest
+
+## Redux
+
+---
+
+### What is Redux?
+
+- Third-party Library for React
+- A **state management system** for **cross-component or app-wide state**
+  - Local State
+    - State that belongs to a single component
+    - e.g. listening to user input in a input field; toggling a "show more" details field
+    - Should be managed component-internal with `useState()` or `useReducer()`
+  - Cross-Component State
+    - State that affects multiple components
+    - e.g. open, closed state of a modal overlay
+    - Requires "prop chains" or "prop drilling"
+  - App-Wide State
+    - State that affects the entire app (most or all components)
+    - e.g. user authentication status
+    - Requires "prop chains" or "prop drilling"
+- Alternatives for prop chains
+  - Context Api
+  - **Redux**
+
+### Redux vs Context Api
+
+- Can mix both ways in one app
+- Potential Disadvantages of React Context
