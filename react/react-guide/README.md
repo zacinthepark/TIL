@@ -1102,6 +1102,7 @@ export default BasicForm;
 ![core-redux-concepts](https://user-images.githubusercontent.com/86648892/223892078-e43fd5a1-d169-4529-9701-a53c8e40e367.png)
 
 - `npm install redux`
+- `npm install react-redux`
   - `createStore()` deprecated
     - `npm install redux@4.1.2 react-redux`
 - The Reducer Function
@@ -1110,3 +1111,130 @@ export default BasicForm;
     - Same input leads to same output
     - There should be no side effects inside of this function
       - e.g. http requests, writing, fetching to or from local storage
+```jsx
+// redux-demo.js
+
+// import redux
+const redux = require('redux')
+
+// define reducer
+// both reducer and subscriber function will be executed by redux
+// we don't execute, just point at it
+const counterReducer = (state = { counter: 0 }, action) => {
+  // Do actions based on type
+  if (action.type === 'increment') {
+    return {
+      counter: state.counter + 1
+    };
+  }
+  if (action.type === 'decrement') {
+    return {
+      counter: state.counter -1
+    };
+  }
+  // return new state object
+  return state;
+};
+
+// create central store
+const store = redux.createStore(counterReducer);
+// console.log(store.getState());
+
+// set subscription
+const counterSubscriber = () => {
+  const latestState = store.getState(); // gives us latest state snapshot after it was updated
+  console.log(latestState);
+};
+store.subscribe(counterSubscriber);
+
+// dispatch action with type and payload
+store.dispatch( { type: 'increment' } );
+store.dispatch( { type: 'decrement' } );
+```
+
+### Working with Redux in React
+
+- redux manages things about store
+- react-redux manages things between react components and store
+- create store file from redux `createStore()`
+- wrap with `<Provider></Provider>` from react-redux
+- notice which store to be provided
+  ```jsx
+  import React from 'react';
+  import ReactDOM from 'react-dom/client';
+  import { Provider } from 'react-redux';
+  import App from './App';
+  import store from './store/index';
+  const root = ReactDOM.createRoot(document.getElementById('root'));
+  root.render(
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
+  ```
+- react-redux hooks
+  - `useSelector()`
+    - access to store and select parts of overall state object
+    - react-redux automatically setup a subscription to the redux store for the component
+      - your component will be updated and will receive the latest data automatically whenever the data changes
+    - `const result : any = useSelector(selector : Function, equalityFn? : Function)`
+      - `selectorFn(state managed by redux => part of the state you want to extract)`
+  - `useStore()`
+    - access to store
+  - `useDispatch()`
+    - `const dispatch = useDispatch();`
+    - dispatch an action to the store
+
+### Redux in Class-Based Components
+
+```jsx
+import { Component } from 'react';
+import { connect } from 'react-redux';
+
+class Counter extends Component {
+  incrementHandler() {
+    this.props.increment();
+  }
+
+  decrementHandler() {
+    this.props.decrement();
+  }
+
+  toggleCounterHandler() {}
+
+  render() {
+    return (
+      <main className={classes.counter}>
+        <h1>Redux Counter</h1>
+        <div className={classes.value}>{this.props.counter}</div>
+        <div>
+          <button onClick={this.incrementHandler.bind(this)}>Increment</button>
+          <button onClick={this.decrementHandler.bind(this)}>Decrement</button>
+        </div>
+        <button onClick={this.toggleCounterHandler}>Toggle Counter</button>
+      </main>
+    );
+  }
+}
+
+// store states in props
+const mapStateToProps = state => {
+  return {
+    counter: state.counter
+  };
+}
+
+// store dispatch functions in props
+const mapDispatchToProps = dispatch => {
+  return {
+    increment: () => dispatch({ type: 'increment' }),
+    decrement: () => dispatch({ type: 'decrement' }),
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+
+```
+- `connect(fn1, fn2)(Component)`
+  - `connect()` returns new function
+  - To the returned function, pass the component
