@@ -1078,3 +1078,35 @@ export default BasicForm;
 
 - Can mix both ways in one app
 - Potential Disadvantages of React Context
+  - Complex Setup and Management
+    > In more complex apps, managing React Context can lead to deeply nested JSX code or huge 'Context Provider' components
+    ```jsx
+    return (
+      <AuthContextProvider>
+        <ThemeContextProvider>
+          <UIInteractionContextProvider>
+            <MultiStepFormContextProvider>
+              <UserRegistration />
+            </MultiStepFormContextProvider>
+          </UIInteractionContextProvider>
+        </ThemeContextProvider>
+      </AuthContextProvider>
+    )
+    ```
+    ![contextprovider](https://user-images.githubusercontent.com/86648892/223889201-8fe90150-b44f-4942-a5af-8092bc800ace.png)
+  - Performance
+  > React Context is not optimized for high-frequency state changes
+
+### Core Redux Concepts
+
+![core-redux-concepts](https://user-images.githubusercontent.com/86648892/223892078-e43fd5a1-d169-4529-9701-a53c8e40e367.png)
+
+- `npm install redux`
+  - `createStore()` deprecated
+    - `npm install redux@4.1.2 react-redux`
+- The Reducer Function
+  > Inputs: Old State + Dispatched Action => Output: New State Object
+  - Should be a pure function
+    - Same input leads to same output
+    - There should be no side effects inside of this function
+      - e.g. http requests, writing, fetching to or from local storage
