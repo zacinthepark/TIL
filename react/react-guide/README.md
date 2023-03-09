@@ -1159,23 +1159,10 @@ store.dispatch( { type: 'decrement' } );
 - create store file from redux `createStore()`
 - wrap with `<Provider></Provider>` from react-redux
 - notice which store to be provided
-  ```jsx
-  import React from 'react';
-  import ReactDOM from 'react-dom/client';
-  import { Provider } from 'react-redux';
-  import App from './App';
-  import store from './store/index';
-  const root = ReactDOM.createRoot(document.getElementById('root'));
-  root.render(
-    <Provider store={store}>
-      <App />
-    </Provider>
-  );
-  ```
 - react-redux hooks
   - `useSelector()`
     - access to store and select parts of overall state object
-    - react-redux automatically setup a subscription to the redux store for the component
+    - react-redux **automatically setup a subscription** to the redux store for the component
       - your component will be updated and will receive the latest data automatically whenever the data changes
     - `const result : any = useSelector(selector : Function, equalityFn? : Function)`
       - `selectorFn(state managed by redux => part of the state you want to extract)`
@@ -1183,7 +1170,114 @@ store.dispatch( { type: 'decrement' } );
     - access to store
   - `useDispatch()`
     - `const dispatch = useDispatch();`
+    - `dispatch(payload)`
     - dispatch an action to the store
+- New state object returned by redux reducer will NOT be merged with the existing state, BUT override the existing state
+  - Because Objects and Arrays are **REFERENCE VALUES** in Javascript, it's easy to accidentally override and change the existing state
+  - **YOU SHOULD NEVER MUTATE THE EXISTING STATE**
+    - Can lead to bugs, unpredictable behavior, and make debugging your app harder
+  - **INSTEAD ALWAYS OVERRIDE IT BY RETURNING A BRAND NEW STATE**
+
+#### Sample Codes
+
+```jsx
+// store/index.js
+import { createStore } from 'redux';
+
+const initialState = { counter: 0, showCounter: true };
+
+const counterReducer = (state = initialState, action) => {
+  if (action.type === 'increment') {
+    return {
+      counter: state.counter + 1,
+      showCounter: state.showCounter,
+    };
+  }
+
+  if (action.type === 'increase') {
+    return {
+      counter: state.counter + action.amount,
+      showCounter: state.showCounter,
+    };
+  }
+
+  if (action.type === 'decrement') {
+    return {
+      counter: state.counter - 1,
+      showCounter: state.showCounter,
+    };
+  }
+
+  if (action.type === 'toggle') {
+    return {
+      showCounter: !state.showCounter,
+      counter: state.counter,
+    };
+  }
+
+  return state;
+};
+
+const store = createStore(counterReducer);
+
+export default store;
+```
+```jsx
+// index.js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import App from './App';
+import store from './store/index';
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
+```
+```jsx
+// Counter.js
+import { useSelector, useDispatch } from 'react-redux';
+import classes from './Counter.module.css';
+
+const Counter = () => {
+  const dispatch = useDispatch();
+  const counter = useSelector((state) => state.counter);
+  const show = useSelector((state) => state.showCounter);
+
+  const incrementHandler = () => {
+    dispatch({ type: 'increment' });
+  };
+
+  const increaseHandler = () => {
+    dispatch({ type: 'increase', amount: 10 });
+  };
+
+  const decrementHandler = () => {
+    dispatch({ type: 'decrement' });
+  };
+
+  const toggleCounterHandler = () => {
+    dispatch({ type: 'toggle' });
+  };
+
+  return (
+    <main className={classes.counter}>
+      <h1>Redux Counter</h1>
+      {show && <div className={classes.value}>{counter}</div>}
+      <div>
+        <button onClick={incrementHandler}>Increment</button>
+        <button onClick={increaseHandler}>Increase by 10</button>
+        <button onClick={decrementHandler}>Decrement</button>
+      </div>
+      <button onClick={toggleCounterHandler}>Toggle Counter</button>
+    </main>
+  );
+};
+
+export default Counter;
+```
 
 ### Redux in Class-Based Components
 
@@ -1234,7 +1328,55 @@ const mapDispatchToProps = dispatch => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);
 
+// Using Functional Component
+// import { useSelector, useDispatch } from 'react-redux';
+// import classes from './Counter.module.css';
+
+// const Counter = () => {
+//   const dispatch = useDispatch();
+//   const counter = useSelector(state => state.counter);
+
+//   const incrementHandler = () => {
+//     dispatch({ type: 'increment' });
+//   };
+
+//   const decrementHandler = () => {
+//     dispatch({ type: 'decrement' });
+//   };
+
+//   const toggleCounterHandler = () => {};
+
+//   return (
+//     <main className={classes.counter}>
+//       <h1>Redux Counter</h1>
+//       <div className={classes.value}>{counter}</div>
+//       <div>
+//         <button onClick={incrementHandler}>Increment</button>
+//         <button onClick={decrementHandler}>Decrement</button>
+//       </div>
+//       <button onClick={toggleCounterHandler}>Toggle Counter</button>
+//     </main>
+//   );
+// };
+
+// export default Counter;
 ```
 - `connect(fn1, fn2)(Component)`
   - `connect()` returns new function
+    - fn1 maps redux state to props of the component
+    - fn2 stores dispatchFns in props
   - To the returned function, pass the component
+
+## Redux Toolkit
+
+---
+
+- Extra package which makes working with Redux more convenient and easier
+- Potential problems with Redux when managing more and more states
+  1. Clashing between action type identifiers
+    - Solution: `const INCREMENT = 'increment'` and export
+  2. Have to copy a lot of states, making the reducer function longer, and making redux file unmaintainably big
+    - Solution: splitting reducer into multiple smaller reducers
+  3. Easy to accidentally change the existing state
+    - Solution: Third-party packages that allow you to automatically copy state
+- Redux Toolkit provides more convenient ways for the potential problems
