@@ -1165,7 +1165,7 @@ store.dispatch( { type: 'decrement' } );
     - react-redux **automatically setup a subscription** to the redux store for the component
       - your component will be updated and will receive the latest data automatically whenever the data changes
     - `const result : any = useSelector(selector : Function, equalityFn? : Function)`
-      - `selectorFn(state managed by redux => part of the state you want to extract)`
+      - `selectorFn((state managed by redux) => part of the state you want to extract)`
   - `useStore()`
     - access to store
   - `useDispatch()`
@@ -1371,6 +1371,11 @@ export default connect(mapStateToProps, mapDispatchToProps)(Counter);
 
 ---
 
+#### Install
+- `npm install @reduxjs/toolkit`
+  - uninstall the existing redux package
+
+#### What and Why React Toolkit?
 - Extra package which makes working with Redux more convenient and easier
 - Potential problems with Redux when managing more and more states
   1. Clashing between action type identifiers
@@ -1380,3 +1385,68 @@ export default connect(mapStateToProps, mapDispatchToProps)(Counter);
   3. Easy to accidentally change the existing state
     - Solution: Third-party packages that allow you to automatically copy state
 - Redux Toolkit provides more convenient ways for the potential problems
+
+#### Features
+
+![react-toolkit](https://user-images.githubusercontent.com/86648892/224208182-6d767a6b-1a04-4007-b0df-c7d1bc95656d.png)
+  x
+- `createSlice({ name, initialState, reducers })`
+  - create different slices of state
+    > reducer 함수와 action creator를 포함한 객체
+  - `name: 'identifier'`
+    > 해당 모듈의 이름 작성
+  - `initialState: { ... }`
+    > 해당 모듈의 초기값 세팅
+  - `reducers: { method1(state, action?){}, method2(state, action?){}, ... }`
+    > 리듀서 작성, 이때 **해당 리듀서의 키값으로 액션함수가 자동으로 생성**
+    >> createSlice의 actions 속성, 즉 `.actions`를 통해 action creator를 호출하면 같은 이름의 리듀서 함수에게 action을 dispatch함
+    ```jsx
+    // Sample Code
+
+    // src/store/index.js
+    export const counterActions = counterSlice.actions;
+
+    // src/components/Counter.js
+    import { useDispatch } from 'react-redux';
+    import { counterActions } from '../store/index';
+
+    const Counter = () => {
+      const dispatch = useDispatch();
+      const incrementHandler = () => {
+        dispatch(counterActions.increment());
+      }
+      const increaseHandler = () => {
+        // 10 is a payload
+        // { type: SOME_UNIQUE_IDENTIFIER, payload: 10 }
+        dispatch(counterActions.increase(10))
+      }
+    }
+    ```
+    - No more if checks for action type
+      - Methods will automatically be called depending on which action was triggered
+    - In the reducers method, we are **allowed to mutate** the state
+      - Actually, we are not really mutating the existing state
+      - Redux Toolkit internally uses package called **'immer'**, and detects codes that try to change existing state, and automatically clones the existing state, creates a new state object, keeps all the state which we are not editing, and **overrides the state which we are editing in a IMMUTABLE WAY**
+  - extraReducers
+    > 액션함수가 자동으로 생성되지 않는 별도의 액션함수가 존재하는 리듀서를 정의
+
+- `combineReducers()`
+  > - 각 reducer를 호출하여 초기 상태를 검색
+  > - 초기 상태를 정리하여 초기 상태 트리르 만
+  > - reducer의 처리를 정리한 combination 함수를 돌려줌
+  ```jsx
+  const rootReducer = combineReducers({
+    a: aSlice.reducer,
+    b: bSlice.reducer,
+    ...
+  });
+  ```
+
+- `configureStore({ reducer: })`
+  > - Reducer에서 반환한 새로운 state을 Store라는 객체로 정리해 관리하는 곳
+  > - Store는 Redux Toolkit configureStore에 객체 형식으로 reducer를 전달하여 만들 수 있음
+  ```jsx
+  const store = configureStore({
+    reducer: rootReducer,
+  });
+  ```
