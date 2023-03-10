@@ -1450,3 +1450,8 @@ export default connect(mapStateToProps, mapDispatchToProps)(Counter);
     reducer: rootReducer,
   });
   ```
+
+## Redux Middleware
+
+---
+
