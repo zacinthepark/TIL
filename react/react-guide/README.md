@@ -1454,4 +1454,3 @@ export default connect(mapStateToProps, mapDispatchToProps)(Counter);
 ## Redux Middleware
 
 ---
-
