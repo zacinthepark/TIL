@@ -1895,6 +1895,9 @@ export default App;
   const navigation = useNavigation();
   // navigation.state: idle, loading, submitting
   ```
+
+#### Error Handling
+
 - `useRouterError()`
   - get data from thrown error inside of the component that is being rendered as an `errorElement `
   ```jsx
