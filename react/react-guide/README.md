@@ -1733,6 +1733,6 @@ export default App;
 
 ```
 
-## Routing
+## React Router
 
 ---
