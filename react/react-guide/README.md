@@ -1769,6 +1769,7 @@ const router = createBrowserRouter([
     path: '/',
     element: <RootLayout />,
     errorElement: <ErrorPage />,
+    // child routes are rendered in <Outlet />
     children: [
       // { path: '', element: <HomePage /> },
       { index: true, element: <HomePage /> },
@@ -1820,10 +1821,112 @@ export default App;
   const navigate = useNavigate();
   function navigateHandler() {
     navigate('/...')
-  }
+  };
   ```
 
 ### Dynamic Routing
 - `const params = useParams()`
 - access to the identifier after colon(`:`) in the route definition
 
+### Fetching and Sending Data by React Router
+
+#### Loader
+
+- loader is a property that wants a function as a value
+  - this function will be executed by react router whenever you are about to visit the route (before rendering the page)
+  - return data to be used
+    - browser response example
+      ```jsx
+      const res = new Response('any data', { status: 201 });
+      return res;
+      ```
+    - react-router package extracts the data(in here, 'any data') from your response when using `useLoaderData()`
+      - this **automatic data extraction** is useful for fetch API
+      - fetch API returns Promise that resolves to Response
+      ```jsx
+      import { useLoaderData } from 'react-router-dom';
+      import EventsList from '../components/EventsList';
+
+      function EventsPage() {
+        // const events = useLoaderData();
+        const data = useLoaderData();
+        // if (data.isError) {
+          // return <p>{ data.message }</p>;
+        // }
+        const events = data.events;
+
+        return <EventsList events={events} />;
+      }
+
+      export default EventsPage;
+
+      export async function loader() {
+        const response = await fetch('http://localhost:8080/events');
+
+        if (!response.ok) {
+          // error handling
+          // 1) return custom error object (cannot use status)
+          // return { isError: true, message: 'Could not fetch events.' };
+
+          // 2) throw an error (can use status property)
+          // first argument can be accessed by error.data, second argument is about configuration, and error.status is possible
+          // when an error gets thrown in a loader, react-router will simply render the closest error element
+          throw new Response(JSON.stringify({ message: 'Could not fetch events.' }), { 
+            status: 500 
+          });
+        } else {
+
+          // instead of manually extracting data from response
+          const resData = await response.json()
+          return resData;
+
+          // you can just return response (react)
+          return response;
+        }
+      }
+      ```
+- `useLoaderData()`
+  - get access to the **closest loader data**
+  - can use `useLoaderData()` in the element that's assigned to a route AND in all components that might be used inside that element
+- put your loader logic in the page component and import it in the routing definition (RECOMMENDED)
+- `useNavigation()`
+  - check current route transition state
+  ```jsx
+  const navigation = useNavigation();
+  // navigation.state: idle, loading, submitting
+  ```
+- `useRouterError()`
+  - get data from thrown error inside of the component that is being rendered as an `errorElement `
+  ```jsx
+  import { useRouteError } from 'react-router-dom';
+  import MainNavigation from '../components/MainNavigation';
+  import PageContent from '../components/PageContent';
+
+  function ErrorPage() {
+    const error = useRouteError();
+
+    let title = 'An error occurred!';
+    let message = 'Something went wrong!';
+
+    if (error.status === 500) {
+      message = JSON.parse(error.data).message;
+    }
+
+    // default status set by react-router if you enter path that is not supported
+    if (error.status === 404) {
+      title = 'Not found!';
+      message = 'Could not find resource or page.';
+    }
+
+    return (
+      <>
+        <MainNavigation />
+        <PageContent title={title}>
+          <p>{message}</p>
+        </PageContent>
+      </>
+    );
+  }
+
+  export default ErrorPage;
+  ```
