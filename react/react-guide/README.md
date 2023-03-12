@@ -1461,8 +1461,8 @@ export default connect(mapStateToProps, mapDispatchToProps)(Counter);
 
 ### Thunk Action Creators
 
-- A function that delays an action until later
-- An action creator function that does NOT return the action itself but another function which eventually returns the action
+- **A function that delays an action until later**
+- An **action creator function** that **does NOT return the action itself** but **another function which eventually returns the action**
 
 ### Sample Codes
 
