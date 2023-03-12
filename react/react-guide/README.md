@@ -1736,3 +1736,94 @@ export default App;
 ## React Router
 
 ---
+
+> [React Router Docs](https://reactrouter.com/en/main)
+
+### Defining Routes
+- `npm install react-router-dom`
+```jsx
+import {
+  createBrowserRouter,
+  // createRoutesFromElements,
+  RouterProvider,
+  // Route,
+} from 'react-router-dom';
+
+import ErrorPage from './pages/Error';
+import HomePage from './pages/Home';
+import ProductDetailPage from './pages/ProductDetail';
+import ProductsPage from './pages/Products';
+import RootLayout from './pages/Root';
+
+// React Router < 6.4
+// const routeDefinitions = createRoutesFromElements(
+//   <Route>
+//     <Route path="/" element={<HomePage />} />
+//     <Route path="/products" element={<ProductsPage />} />
+//   </Route>
+// );
+
+const router = createBrowserRouter([
+  {
+    // absolute path (starts with slash, added after the domain)
+    path: '/',
+    element: <RootLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      // { path: '', element: <HomePage /> },
+      { index: true, element: <HomePage /> },
+      // relative path (added after the current path)
+      { path: 'products', element: <ProductsPage /> },
+      { path: 'products/:productId', element: <ProductDetailPage /> }
+    ],
+  }
+]);
+
+// const router = createBrowserRouter(routeDefinitions);
+
+function App() {
+  return <RouterProvider router={router} />;
+}
+
+export default App;
+
+```
+
+### Routing through Links
+- `<Link to='/...'></Link>`
+  - renders anchor element at DOM by React
+  - unlike `<a/>` tag, this does not re-render the whole single page
+  - <Link to='..' relative='route'>Back</Link>
+    - go to parent route in the definition
+  - <Link to='..' relative='path'>Back</Link>
+    - simply remove one segment of the currently active path
+- `<NavLink to '...'></NavLink>`
+  - support convenience to the links
+  - className prop is a function which returns the class property to be used, and the parameter is what provided by react-router-dom
+    - e.g. get isActive by object destructuring `{ isActive }`
+  ```jsx
+  <NavLink
+    to="/"
+    className={({ isActive }) =>
+      isActive ? classes.active : undefined
+    }
+    // style={({ isActive }) => ({
+    //   textAlign: isActive ? 'center' : 'left',
+    // })}
+    end={ true }
+  >
+  ```
+
+### Navigating Programatically
+- `useNavigate()`
+  ```jsx
+  const navigate = useNavigate();
+  function navigateHandler() {
+    navigate('/...')
+  }
+  ```
+
+### Dynamic Routing
+- `const params = useParams()`
+- access to the identifier after colon(`:`) in the route definition
+
