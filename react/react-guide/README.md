@@ -1451,6 +1451,288 @@ export default connect(mapStateToProps, mapDispatchToProps)(Counter);
   });
   ```
 
-## Redux Middleware
+## Side Effects, Async Tasks with Redux
+
+---
+
+<img width="1069" alt="redux-async" src="https://user-images.githubusercontent.com/86648892/224492065-854598bb-593d-49f3-8d0f-b3feda623fbb.png">
+
+<img width="1084" alt="where-should-the-logic-go" src="https://user-images.githubusercontent.com/86648892/224506037-1959939e-a3ce-4bde-8abb-501bb4f44238.png">
+
+### Thunk Action Creators
+
+- A function that delays an action until later
+- An action creator function that does NOT return the action itself but another function which eventually returns the action
+
+### Sample Codes
+
+#### `store/cart-actions.js`
+- **custom action creator**
+- work as a middleware
+- instead of returning action object, this returns another function that finally returns action object
+- dispatch argument is automatically given
+```jsx
+import { uiActions } from './ui-slice';
+import { cartActions } from './cart-slice';
+
+export const fetchCartData = () => {
+  return async (dispatch) => {
+    const fetchData = async () => {
+      const response = await fetch(
+        'https://react-http-aa6ec-default-rtdb.firebaseio.com/cart.json'
+      );
+
+      if (!response.ok) {
+        throw new Error('Could not fetch cart data!');
+      }
+
+      const data = await response.json();
+
+      return data;
+    };
+
+    try {
+      const cartData = await fetchData();
+      dispatch(
+        cartActions.replaceCart({
+          items: cartData.items || [],
+          totalQuantity: cartData.totalQuantity,
+        })
+      );
+    } catch (error) {
+      dispatch(
+        uiActions.showNotification({
+          status: 'error',
+          title: 'Error!',
+          message: 'Fetching cart data failed!',
+        })
+      );
+    }
+  };
+};
+
+export const sendCartData = (cart) => {
+  return async (dispatch) => {
+    dispatch(
+      uiActions.showNotification({
+        status: 'pending',
+        title: 'Sending...',
+        message: 'Sending cart data!',
+      })
+    );
+
+    const sendRequest = async () => {
+      const response = await fetch(
+        'https://react-http-aa6ec-default-rtdb.firebaseio.com/cart.json',
+        {
+          method: 'PUT',
+          body: JSON.stringify({
+            items: cart.items,
+            totalQuantity: cart.totalQuantity,
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error('Sending cart data failed.');
+      }
+    };
+
+    try {
+      await sendRequest();
+
+      dispatch(
+        uiActions.showNotification({
+          status: 'success',
+          title: 'Success!',
+          message: 'Sent cart data successfully!',
+        })
+      );
+    } catch (error) {
+      dispatch(
+        uiActions.showNotification({
+          status: 'error',
+          title: 'Error!',
+          message: 'Sending cart data failed!',
+        })
+      );
+    }
+  };
+};
+
+```
+
+#### `store/cart-slice.js`
+```jsx
+import { createSlice } from '@reduxjs/toolkit';
+
+const cartSlice = createSlice({
+  name: 'cart',
+  initialState: {
+    items: [],
+    totalQuantity: 0,
+    changed: false,
+  },
+  reducers: {
+    replaceCart(state, action) {
+      state.totalQuantity = action.payload.totalQuantity;
+      state.items = action.payload.items;
+    },
+    addItemToCart(state, action) {
+      const newItem = action.payload;
+      const existingItem = state.items.find((item) => item.id === newItem.id);
+      state.totalQuantity++;
+      state.changed = true;
+      if (!existingItem) {
+        state.items.push({
+          id: newItem.id,
+          price: newItem.price,
+          quantity: 1,
+          totalPrice: newItem.price,
+          name: newItem.title,
+        });
+      } else {
+        existingItem.quantity++;
+        existingItem.totalPrice = existingItem.totalPrice + newItem.price;
+      }
+    },
+    removeItemFromCart(state, action) {
+      const id = action.payload;
+      const existingItem = state.items.find((item) => item.id === id);
+      state.totalQuantity--;
+      state.changed = true;
+      if (existingItem.quantity === 1) {
+        state.items = state.items.filter((item) => item.id !== id);
+      } else {
+        existingItem.quantity--;
+        existingItem.totalPrice = existingItem.totalPrice - existingItem.price;
+      }
+    },
+  },
+});
+
+// return action object { type: '', payload: ... };
+export const cartActions = cartSlice.actions;
+
+export default cartSlice;
+
+```
+
+#### `store/ui-slice.js`
+```jsx
+import { createSlice } from '@reduxjs/toolkit';
+
+const uiSlice = createSlice({
+  name: 'ui',
+  initialState: { cartIsVisible: false, notification: null },
+  reducers: {
+    toggle(state) {
+      state.cartIsVisible = !state.cartIsVisible;
+    },
+    showNotification(state, action) {
+      state.notification = {
+        status: action.payload.status,
+        title: action.payload.title,
+        message: action.payload.message,
+      };
+    },
+  },
+});
+
+export const uiActions = uiSlice.actions;
+
+export default uiSlice;
+
+```
+
+#### `store/index.js`
+```jsx
+import { configureStore } from '@reduxjs/toolkit';
+
+import uiSlice from './ui-slice';
+import cartSlice from './cart-slice';
+
+const store = configureStore({
+  reducer: { ui: uiSlice.reducer, cart: cartSlice.reducer },
+});
+
+export default store;
+
+```
+
+#### `src/index.js`
+```jsx
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+
+import store from './store/index';
+import './index.css';
+import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
+
+```
+
+#### `src/App.js`
+```jsx
+import { Fragment, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import Cart from './components/Cart/Cart';
+import Layout from './components/Layout/Layout';
+import Products from './components/Shop/Products';
+import Notification from './components/UI/Notification';
+import { sendCartData, fetchCartData } from './store/cart-actions';
+
+let isInitial = true;
+
+function App() {
+  const dispatch = useDispatch();
+  const showCart = useSelector((state) => state.ui.cartIsVisible);
+  const cart = useSelector((state) => state.cart);
+  const notification = useSelector((state) => state.ui.notification);
+
+  useEffect(() => {
+    dispatch(fetchCartData());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (isInitial) {
+      isInitial = false;
+      return;
+    }
+
+    if (cart.changed) {
+      dispatch(sendCartData(cart));
+    }
+  }, [cart, dispatch]);
+
+  return (
+    <Fragment>
+      {notification && (
+        <Notification
+          status={notification.status}
+          title={notification.title}
+          message={notification.message}
+        />
+      )}
+      <Layout>
+        {showCart && <Cart />}
+        <Products />
+      </Layout>
+    </Fragment>
+  );
+}
+
+export default App;
+
+```
+
+## Routing
 
 ---

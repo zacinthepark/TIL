@@ -43,7 +43,11 @@ const cartSlice = createSlice({
   },
 });
 
+// custom action creator
+// work as a middleware
 export const sendCartData = (cart) => {
+  // instead of returning action object, this returns another function that finally returns action object
+  // dispatch argument is automatically given
   return async (dispatch) => {
     dispatch(
       uiActions.showNotification({
@@ -53,9 +57,10 @@ export const sendCartData = (cart) => {
       })
     );
 
+    // 'https://react-http-6b4a6.firebaseio.com/cart.json',
     const sendRequest = async () => {
       const response = await fetch(
-        'https://react-http-6b4a6.firebaseio.com/cart.json',
+        'https://react-http-aa6ec-default-rtdb.firebaseio.com/cart.json',
         {
           method: 'PUT',
           body: JSON.stringify(cart),
@@ -89,6 +94,7 @@ export const sendCartData = (cart) => {
   };
 };
 
+// return action object { type: '', payload: ...};
 export const cartActions = cartSlice.actions;
 
 export default cartSlice;
