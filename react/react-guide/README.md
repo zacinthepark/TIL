@@ -1828,9 +1828,11 @@ export default App;
 - `const params = useParams()`
 - access to the identifier after colon(`:`) in the route definition
 
-### Fetching Data by React Router
+## Fetching Data by React Router
 
-#### Loader
+---
+
+### Loader
 
 - loader is a property that wants a function as a value
   - this function will be executed by react router whenever you are about to visit the route (before rendering the page)
@@ -1897,7 +1899,7 @@ export default App;
   // navigation.state: idle, loading, submitting
   ```
 
-#### Error Handling
+### Error Handling
 
 - `useRouteError()`
   - get data from thrown error inside of the component that is being rendered as an `errorElement`
@@ -2015,7 +2017,7 @@ export default App;
 
   ```
 
-#### Json Helper Function
+### Json Helper Function
 - `json()`
   - `import { json } from 'react-router-dom'`
   - a helper function that simplifies creating a Response object that includes data in json format
@@ -2042,7 +2044,7 @@ export default App;
   }
   ```
 
-#### Loader in Dynamic Routes
+### Loader in Dynamic Routes
 
 ```jsx
 // EventDetail.js
@@ -2076,7 +2078,7 @@ export async function loader({request, params}) {
 
 ```
 
-#### `useRouteLoaderData()`
+### `useRouteLoaderData()`
 
 - `useRouteLoaderData('routeId')`
   - this hook makes the data at any currently rendered route available anywhere in the tree
@@ -2225,9 +2227,11 @@ export default EventForm;
 
 ```
 
-### Sending Data by React Router
+## Sending Data by React Router
 
-#### React `<Form>` tag and `action`
+---
+
+### React `<Form>` tag and `action`
 
 - For data submission, you can create a function that handles http request inside the component, but there is a better way
   - You can use `action` property to the route
@@ -2411,7 +2415,7 @@ export default EventForm;
 
 ```
 
-#### `useSubmit()` and action
+### `useSubmit()` and action
 
 - Besides Form tag, you can also trigger route action programmatically by `useSubmit()`
 - First argument is the data you want to submit
@@ -2577,7 +2581,7 @@ export default EventItem;
 
 ```
 
-#### `useNavigation()` and form submission state
+### `useNavigation()` and form submission state
 
 - `const navigation = useNavigation()`
   - This hook tells you everything you need to know about a page navigation to build pending navigation indicators and optimistic UI on data mutations
