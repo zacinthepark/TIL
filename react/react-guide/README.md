@@ -17,6 +17,7 @@
 - **[Fetching Data by React Router](#fetching-data-by-react-router)**
 - **[Sending Data by React Router](#sending-data-by-react-router)**
 - **[Other Features in React Router](#other-features-in-react-router)**
+- **[Authentication](#authentication)**
 
 ## Settings
 
@@ -3184,6 +3185,7 @@ export default EditEventPage;
 - **[useFetcher](#usefetcher)**
 - **[defer](#defer)**
 - **[Await](#await)**
+- **[defer and Await](#defer-and-await)**
 
 ### `useFetcher`
 
@@ -3783,3 +3785,7 @@ export async function action({ params, request }) {
 }
 
 ```
+
+## Authentication
+
+---
