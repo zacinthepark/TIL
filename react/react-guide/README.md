@@ -2579,3 +2579,117 @@ export default EventItem;
 
 #### `useNavigation()` and form submission state
 
+- `const navigation = useNavigation()`
+  - This hook tells you everything you need to know about a page navigation to build pending navigation indicators and optimistic UI on data mutations
+  - `navigation.state`
+    - **idle**: There is no navigation pending
+    - **submitting**: A route action is being called due to a form submission using POST, PUT, PATCH, or DELETE
+    - **loading**: The loaders for the next routes are being called to render the next page
+    > Normal navigations and GET form submissions transition
+    >> idle -> loading -> idle
+
+    > Form submissions with POST, PUT, PATCH, or DELETE transition
+    >> idle -> submitting -> loading -> idle
+
+  - `navigation.formData`
+  > Any POST, PUT, PATCH, or DELETE navigation that started from a `<Form>` or `useSubmit` will have your form's submission data attached to it. This is primarily useful to build "Optimistic UI" with the submission.formData FormData object.
+
+  >In the case of a GET form submission, formData will be empty and the data will be reflected in navigation.location.search.
+
+  - `navigation.location`
+  > This tells you what the next location is going to be.
+
+  > Note that this link will not appear "pending" if a form is being submitted to the URL the link points to, because we only do this for "loading" states. The form will contain the pending UI for when the state is "submitting", once the action is complete, then the link will go pending.
+
+- Sample Codes
+```jsx
+import { useNavigation } from "react-router-dom";
+
+function SomeComponent() {
+  const navigation = useNavigation();
+  navigation.state;
+  navigation.location;
+  navigation.formData;
+  navigation.formAction;
+  navigation.formMethod;
+}
+```
+```jsx
+function SubmitButton() {
+  const navigation = useNavigation();
+
+  const text =
+    navigation.state === "submitting"
+      ? "Saving..."
+      : navigation.state === "loading"
+      ? "Saved!"
+      : "Go";
+
+  return <button type="submit">{text}</button>;
+}
+```
+```jsx
+// Is this just a normal load?
+let isNormalLoad =
+  navigation.state === "loading" &&
+  navigation.formData == null;
+
+// Are we reloading after an action?
+let isReloading =
+  navigation.state === "loading" &&
+  navigation.formData != null &&
+  navigation.formAction === navigation.location.pathname;
+
+// Are we redirecting after an action?
+let isRedirecting =
+  navigation.state === "loading" &&
+  navigation.formData != null &&
+  navigation.formAction !== navigation.location.pathname;
+```
+
+```jsx
+// EventForm.js
+
+import { Form, useNavigate, useNavigation } from 'react-router-dom';
+import classes from './EventForm.module.css';
+
+function EventForm({ method, event }) {
+  const navigate = useNavigate();
+  const navigation = useNavigation();
+
+  const isSubmitting = navigation.state === 'submitting';
+
+  function cancelHandler() {
+    navigate('..');
+  }
+
+  return (
+    <Form method="post" className={classes.form}>
+      <p>
+        <label htmlFor="title">Title</label>
+        <input
+          id="title"
+          type="text"
+          name="title"
+          required
+          defaultValue={event ? event.title : ''}
+        />
+      </p>
+      ...
+      ...
+      ...
+      <div className={classes.actions}>
+        <button type="button" onClick={cancelHandler} disabled={isSubmitting}>
+          Cancel
+        </button>
+        <button disabled={isSubmitting}>
+          {isSubmitting ? 'Submitting...' : 'Save'}
+        </button>
+      </div>
+    </Form>
+  );
+}
+
+export default EventForm;
+
+```
