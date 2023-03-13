@@ -1794,9 +1794,9 @@ export default App;
 - `<Link to='/...'></Link>`
   - renders anchor element at DOM by React
   - unlike `<a/>` tag, this does not re-render the whole single page
-  - <Link to='..' relative='route'>Back</Link>
+  - `<Link to='..' relative='route'>Back</Link>`
     - go to parent route in the definition
-  - <Link to='..' relative='path'>Back</Link>
+  - `<Link to='..' relative='path'>Back</Link>`
     - simply remove one segment of the currently active path
 - `<NavLink to '...'></NavLink>`
   - support convenience to the links
@@ -1828,7 +1828,7 @@ export default App;
 - `const params = useParams()`
 - access to the identifier after colon(`:`) in the route definition
 
-### Fetching and Sending Data by React Router
+### Fetching Data by React Router
 
 #### Loader
 
@@ -1887,6 +1887,7 @@ export default App;
       ```
 - `useLoaderData()`
   - get access to the **closest loader data**
+    - highest level at which it looks for data is the route defintion of the route for which the component is loaded
   - can use `useLoaderData()` in the element that's assigned to a route AND in all components that might be used inside that element
 - put your loader logic in the page component and import it in the routing definition (RECOMMENDED)
 - `useNavigation()`
@@ -1898,9 +1899,11 @@ export default App;
 
 #### Error Handling
 
-- `useRouterError()`
-  - get data from thrown error inside of the component that is being rendered as an `errorElement `
+- `useRouteError()`
+  - get data from thrown error inside of the component that is being rendered as an `errorElement`
   ```jsx
+  // Error.js
+
   import { useRouteError } from 'react-router-dom';
   import MainNavigation from '../components/MainNavigation';
   import PageContent from '../components/PageContent';
@@ -1932,4 +1935,647 @@ export default App;
   }
 
   export default ErrorPage;
+
   ```
+  ```jsx
+  // Events.js
+  import { useLoaderData } from 'react-router-dom';
+  import EventsList from '../components/EventsList';
+
+  function EventsPage() {
+    const data = useLoaderData();
+
+    // if (data.isError) {
+    //   return <p>{data.message}</p>;
+    // }
+    const events = data.events;
+
+    return <EventsList events={events} />;
+  }
+
+  export default EventsPage;
+
+  export async function loader() {
+    const response = await fetch('http://localhost:8080/events');
+
+    if (!response.ok) {
+      // return { isError: true, message: 'Could not fetch events.' };
+      throw new Response(JSON.stringify({ message: 'Could not fetch events.' }), {
+        status: 500,
+      });
+    } else {
+      return response;
+    }
+  }
+
+  ```
+  ```jsx
+  // App.js
+
+  import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+  import EditEventPage from './pages/EditEvent';
+  import ErrorPage from './pages/Error';
+  import EventDetailPage from './pages/EventDetail';
+  import EventsPage, { loader as eventsLoader } from './pages/Events';
+  import EventsRootLayout from './pages/EventsRoot';
+  import HomePage from './pages/Home';
+  import NewEventPage from './pages/NewEvent';
+  import RootLayout from './pages/Root';
+
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <RootLayout />,
+      errorElement: <ErrorPage />,
+      children: [
+        { index: true, element: <HomePage /> },
+        {
+          path: 'events',
+          element: <EventsRootLayout />,
+          children: [
+            {
+              index: true,
+              element: <EventsPage />,
+              loader: eventsLoader,
+            },
+            { path: ':eventId', element: <EventDetailPage /> },
+            { path: 'new', element: <NewEventPage /> },
+            { path: ':eventId/edit', element: <EditEventPage /> },
+          ],
+        },
+      ],
+    },
+  ]);
+
+  function App() {
+    return <RouterProvider router={router} />;
+  }
+
+  export default App;
+
+  ```
+
+#### Json Helper Function
+- `json()`
+  - `import { json } from 'react-router-dom'`
+  - a helper function that simplifies creating a Response object that includes data in json format
+  - In the first argument, simply pass the data that should be included in the Response
+  - In the second argument, you can set extra response meta data (e.g. status)
+  ```jsx
+  export async function loader() {
+    const response = await fetch('http://localhost:8080/events');
+
+    if (!response.ok) {
+      // return { isError: true, message: 'Could not fetch events.' };
+      // throw new Response(JSON.stringify({ message: 'Could not fetch events.' }), {
+      //   status: 500,
+      // });
+      throw json(
+        { message: 'Could not fetch events.' },
+        {
+          status: 500,
+        }
+      );
+    } else {
+      return response;
+    }
+  }
+  ```
+
+#### Loader in Dynamic Routes
+
+```jsx
+// EventDetail.js
+
+import { useLoaderData, json } from 'react-router-dom';
+import EventItem from '../components/EventItem';
+
+function EventDetailPage() {
+  const data = useLoaderData();
+
+  return (
+    <EventItem event={data.event} />
+  );
+}
+
+export default EventDetailPage;
+
+export async function loader({request, params}) {
+  const id = params.eventId;
+
+  const response = await fetch('http://localhost:8080/events/' + id);
+
+  if (!response.ok) {
+    throw json({message: 'Could not fetch details for selected event.'}, {
+      status: 500
+    })
+  } else {
+    return response;
+  }
+}
+
+```
+
+#### `useRouteLoaderData()`
+
+- `useRouteLoaderData('routeId')`
+  - this hook makes the data at any currently rendered route available anywhere in the tree
+  - useful for components deep in the tree needing data from routes much farther up, as well as parent routes needing the data of child routes deeper in the tree
+```jsx
+// App.js
+
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import EditEventPage from './pages/EditEvent';
+import ErrorPage from './pages/Error';
+import EventDetailPage, {
+  loader as eventDetailLoader,
+} from './pages/EventDetail';
+import EventsPage, { loader as eventsLoader } from './pages/Events';
+import EventsRootLayout from './pages/EventsRoot';
+import HomePage from './pages/Home';
+import NewEventPage from './pages/NewEvent';
+import RootLayout from './pages/Root';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      { index: true, element: <HomePage /> },
+      {
+        path: 'events',
+        element: <EventsRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <EventsPage />,
+            loader: eventsLoader,
+          },
+          {
+            path: ':eventId',
+            id: 'event-detail',
+            loader: eventDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <EventDetailPage />,
+              },
+              { path: 'edit', element: <EditEventPage /> },
+            ],
+          },
+          { path: 'new', element: <NewEventPage /> },
+        ],
+      },
+    ],
+  },
+]);
+
+function App() {
+  return <RouterProvider router={router} />;
+}
+
+export default App;
+
+```
+
+```jsx
+// EditEvent.js
+
+import { useRouteLoaderData } from 'react-router-dom';
+import EventForm from '../components/EventForm';
+
+function EditEventPage() {
+  const data = useRouteLoaderData('event-detail');
+
+  return <EventForm event={data.event} />;
+}
+
+export default EditEventPage;
+
+```
+
+```jsx
+// EventForm.js
+// defaultValue
+// fills the form with default values
+
+import { useNavigate } from 'react-router-dom';
+import classes from './EventForm.module.css';
+
+function EventForm({ method, event }) {
+  const navigate = useNavigate();
+  function cancelHandler() {
+    navigate('..');
+  }
+
+  return (
+    <form className={classes.form}>
+      <p>
+        <label htmlFor="title">Title</label>
+        <input
+          id="title"
+          type="text"
+          name="title"
+          required
+          defaultValue={event ? event.title : ''}
+        />
+      </p>
+      <p>
+        <label htmlFor="image">Image</label>
+        <input
+          id="image"
+          type="url"
+          name="image"
+          required
+          defaultValue={event ? event.image : ''}
+        />
+      </p>
+      <p>
+        <label htmlFor="date">Date</label>
+        <input
+          id="date"
+          type="date"
+          name="date"
+          required
+          defaultValue={event ? event.date : ''}
+        />
+      </p>
+      <p>
+        <label htmlFor="description">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          rows="5"
+          required
+          defaultValue={event ? event.description : ''}
+        />
+      </p>
+      <div className={classes.actions}>
+        <button type="button" onClick={cancelHandler}>
+          Cancel
+        </button>
+        <button>Save</button>
+      </div>
+    </form>
+  );
+}
+
+export default EventForm;
+
+```
+
+### Sending Data by React Router
+
+#### React `<Form>` tag and `action`
+
+- For data submission, you can create a function that handles http request inside the component, but there is a better way
+  - You can use `action` property to the route
+  - This gives you the simple mental model of **HTML + HTTP** (where the browser handles the asynchrony and revalidation)
+
+- `action({ request, params })`
+  - Route actions are the "writes" to route loader "reads"
+  - Actions are **called whenever the app sends a non-get submission ("post", "put", "delete") to your route**
+  - `request.formData()` to access the submitted data
+  - `data.get('input-name-property')` to access the the input data
+
+- `<Form>` component provided by React
+  - This form tag will make sure the browser default of sending a request to backend will be omitted
+  - Instead, it will take that request that would have sent, and give it to your action
+  - Useful because that request will contain all the data that was submitted as part of the form
+  - If you want to trigger action defined in another route, not the current route, you can add action property to the Form
+    - `<Form method='post' action='/any-other-path' className={classes.form}>`
+
+```jsx
+// App.js
+
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import EditEventPage from './pages/EditEvent';
+import ErrorPage from './pages/Error';
+import EventDetailPage, {
+  loader as eventDetailLoader,
+} from './pages/EventDetail';
+import EventsPage, { loader as eventsLoader } from './pages/Events';
+import EventsRootLayout from './pages/EventsRoot';
+import HomePage from './pages/Home';
+import NewEventPage, { action as newEventAction } from './pages/NewEvent';
+import RootLayout from './pages/Root';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      { index: true, element: <HomePage /> },
+      {
+        path: 'events',
+        element: <EventsRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <EventsPage />,
+            loader: eventsLoader,
+          },
+          {
+            path: ':eventId',
+            id: 'event-detail',
+            loader: eventDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <EventDetailPage />,
+              },
+              { path: 'edit', element: <EditEventPage /> },
+            ],
+          },
+          { path: 'new', element: <NewEventPage />, action: newEventAction },
+        ],
+      },
+    ],
+  },
+]);
+
+function App() {
+  return <RouterProvider router={router} />;
+}
+
+export default App;
+
+```
+
+```jsx
+// NewEvent.js
+
+import { json, redirect } from 'react-router-dom';
+import EventForm from '../components/EventForm';
+
+function NewEventPage() {
+  return <EventForm />;
+}
+
+export default NewEventPage;
+
+export async function action({ request, params }) {
+  const data = await request.formData();
+
+  const eventData = {
+    title: data.get('title'),
+    image: data.get('image'),
+    date: data.get('date'),
+    description: data.get('description'),
+  };
+
+  const response = await fetch('http://localhost:8080/events', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(eventData),
+  });
+
+  if (!response.ok) {
+    throw json({ message: 'Could not save event.' }, { status: 500 });
+  }
+
+  return redirect('/events');
+}
+
+```
+
+```jsx
+// EventForm.js
+
+import { useNavigate } from 'react-router-dom';
+import classes from './EventForm.module.css';
+
+function EventForm({ method, event }) {
+  const navigate = useNavigate();
+  function cancelHandler() {
+    navigate('..');
+  }
+
+  return (
+    <Form method='post' className={classes.form}>
+      <p>
+        <label htmlFor="title">Title</label>
+        <input
+          id="title"
+          type="text"
+          name="title"
+          required
+          defaultValue={event ? event.title : ''}
+        />
+      </p>
+      <p>
+        <label htmlFor="image">Image</label>
+        <input
+          id="image"
+          type="url"
+          name="image"
+          required
+          defaultValue={event ? event.image : ''}
+        />
+      </p>
+      <p>
+        <label htmlFor="date">Date</label>
+        <input
+          id="date"
+          type="date"
+          name="date"
+          required
+          defaultValue={event ? event.date : ''}
+        />
+      </p>
+      <p>
+        <label htmlFor="description">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          rows="5"
+          required
+          defaultValue={event ? event.description : ''}
+        />
+      </p>
+      <div className={classes.actions}>
+        <button type="button" onClick={cancelHandler}>
+          Cancel
+        </button>
+        <button>Save</button>
+      </div>
+    </Form>
+  );
+}
+
+export default EventForm;
+
+```
+
+#### `useSubmit()` and action
+
+- Besides Form tag, you can also trigger route action programmatically by `useSubmit()`
+- First argument is the data you want to submit
+  - Can extract with `request.formData()` method
+- Second argument is other configurations
+  - same values we could set on the form
+  - action key to different path if you want to
+```jsx
+// ...
+const submit = useSubmit();
+
+function startDeleteHandler() {
+  const proceed = window.confirm('Are you sure?');
+  if (proceed) {
+    submit(null, { method: 'delete', actions: '/a-different-path' })
+  }
+}
+// ...
+```
+
+```jsx
+// App.js
+
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import EditEventPage from './pages/EditEvent';
+import ErrorPage from './pages/Error';
+import EventDetailPage, {
+  loader as eventDetailLoader,
+  action as deleteEventAction,
+} from './pages/EventDetail';
+import EventsPage, { loader as eventsLoader } from './pages/Events';
+import EventsRootLayout from './pages/EventsRoot';
+import HomePage from './pages/Home';
+import NewEventPage, { action as newEventAction } from './pages/NewEvent';
+import RootLayout from './pages/Root';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      { index: true, element: <HomePage /> },
+      {
+        path: 'events',
+        element: <EventsRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <EventsPage />,
+            loader: eventsLoader,
+          },
+          {
+            path: ':eventId',
+            id: 'event-detail',
+            loader: eventDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <EventDetailPage />,
+                action: deleteEventAction,
+              },
+              { path: 'edit', element: <EditEventPage /> },
+            ],
+          },
+          { path: 'new', element: <NewEventPage />, action: newEventAction },
+        ],
+      },
+    ],
+  },
+]);
+
+function App() {
+  return <RouterProvider router={router} />;
+}
+
+export default App;
+
+```
+
+```jsx
+// EventDetail.js
+
+import { useRouteLoaderData, json, redirect } from 'react-router-dom';
+import EventItem from '../components/EventItem';
+
+function EventDetailPage() {
+  const data = useRouteLoaderData('event-detail');
+
+  return <EventItem event={data.event} />;
+}
+
+export default EventDetailPage;
+
+export async function loader({ request, params }) {
+  const id = params.eventId;
+
+  const response = await fetch('http://localhost:8080/events/' + id);
+
+  if (!response.ok) {
+    throw json(
+      { message: 'Could not fetch details for selected event.' },
+      {
+        status: 500,
+      }
+    );
+  } else {
+    return response;
+  }
+}
+
+export async function action({ params, request }) {
+  const eventId = params.eventId;
+  const response = await fetch('http://localhost:8080/events/' + eventId, {
+    method: request.method,
+  });
+
+  if (!response.ok) {
+    throw json(
+      { message: 'Could not delete event.' },
+      {
+        status: 500,
+      }
+    );
+  }
+  return redirect('/events');
+}
+
+```
+
+```jsx
+// EventItem.js
+
+import { Link, useSubmit } from 'react-router-dom';
+import classes from './EventItem.module.css';
+
+function EventItem({ event }) {
+  const submit = useSubmit();
+
+  function startDeleteHandler() {
+    const proceed = window.confirm('Are you sure?');
+
+    if (proceed) {
+      submit(null, { method: 'delete' });
+    }
+  }
+
+  return (
+    <article className={classes.event}>
+      <img src={event.image} alt={event.title} />
+      <h1>{event.title}</h1>
+      <time>{event.date}</time>
+      <p>{event.description}</p>
+      <menu className={classes.actions}>
+        <Link to="edit">Edit</Link>
+        <button onClick={startDeleteHandler}>Delete</button>
+      </menu>
+    </article>
+  );
+}
+
+export default EventItem;
+
+```
+
+#### `useNavigation()` and form submission state
+
