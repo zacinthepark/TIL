@@ -2248,6 +2248,108 @@ export default EventForm;
 
 ---
 
+### Action
+
+> This feature only works if using a data router like `createBrowserRouter`
+```jsx
+<Route
+  path="/song/:songId/edit"
+  element={<EditSong />}
+  action={async ({ params, request }) => {
+    let formData = await request.formData();
+    return fakeUpdateSong(params.songId, formData);
+  }}
+  loader={({ params }) => {
+    return fakeGetSong(params.songId);
+  }}
+/>
+```
+> Actions are called whenever the app sends a non-get submission ("post", "put", "patch", "delete") to your route. This can happen in a few ways:
+```jsx
+// forms
+<Form method="post" action="/songs" />;
+<fetcher.Form method="put" action="/songs/123/edit" />;
+
+// imperative submissions
+let submit = useSubmit();
+submit(data, {
+  method: "delete",
+  action: "/songs/123",
+});
+fetcher.submit(data, {
+  method: "patch",
+  action: "/songs/123/edit",
+});
+```
+
+#### `params`
+> Route params are parsed from **dynamic segments** and passed to your action. This is useful for figuring out which resource to mutate:
+```jsx
+<Route
+  path="/projects/:projectId/delete"
+  action={({ params }) => {
+    return fakeDeleteProject(params.projectId);
+  }}
+/>
+```
+
+#### `request`
+> This is a Fetch Request instance being sent to your route. The most common use case is to parse the FormData from the request
+```jsx
+<Route
+  action={async ({ request }) => {
+    let formData = await request.formData();
+    // ...
+  }}
+/>
+```
+> It might seem odd at first that actions receive a "request". Have you ever written this line of code?
+```jsx
+<form
+  onSubmit={(event) => {
+    event.preventDefault();
+    // ...
+  }}
+/>
+```
+> What exactly are you preventing?
+
+> Without JavaScript, just plain HTML and an HTTP web server, that default event that was prevented is actually pretty great. Browsers will serialize all the data in the form into `FormData` and send it as the body of a new request to your server. Like the code above, **React Router `<Form>` prevents the browser from sending that request and instead sends the request to your route action!** This enables highly dynamic web apps with the simple model of HTML and HTTP.
+
+> Remember that the values in the `formData` are automatically serialized from the form submission, so your inputs need a `name`.
+```jsx
+<Form method="post">
+  <input name="songTitle" />
+  <textarea name="lyrics" />
+  <button type="submit">Save</button>
+</Form>;
+
+// accessed by the same names
+formData.get("songTitle");
+formData.get("lyrics");
+```
+
+#### Returning Responses
+> While you can return anything you want from an action and get access to it from `useActionData`, you can also return a web `Response`.
+
+#### Throwing in Actions
+> You can `throw` in your action to break out of the current call stack (stop running the current code) and React Router will start over down the "error path".
+```jsx
+<Route
+  action={async ({ params, request }) => {
+    const res = await fetch(
+      `/api/properties/${params.id}`,
+      {
+        method: "put",
+        body: await request.formData(),
+      }
+    );
+    if (!res.ok) throw res;
+    return { ok: true };
+  }}
+/>
+```
+
 ### React `<Form>` tag and `action`
 
 - For data submission, you can create a function that handles http request inside the component, but there is a better way
@@ -2849,3 +2951,228 @@ function EventForm({ method, event }) {
 export default EventForm;
 
 ```
+
+### Reusing Action (CREATE and EDIT)
+
+#### `EventForm.js`
+```jsx
+import {
+  Form,
+  useNavigate,
+  useNavigation,
+  useActionData,
+  json,
+  redirect
+} from 'react-router-dom';
+
+import classes from './EventForm.module.css';
+
+function EventForm({ method, event }) {
+  const data = useActionData();
+  const navigate = useNavigate();
+  const navigation = useNavigation();
+
+  const isSubmitting = navigation.state === 'submitting';
+
+  function cancelHandler() {
+    navigate('..');
+  }
+
+  return (
+    <Form method={method} className={classes.form}>
+      {data && data.errors && (
+        <ul>
+          {Object.values(data.errors).map((err) => (
+            <li key={err}>{err}</li>
+          ))}
+        </ul>
+      )}
+      <p>
+        <label htmlFor="title">Title</label>
+        <input
+          id="title"
+          type="text"
+          name="title"
+          required
+          defaultValue={event ? event.title : ''}
+        />
+      </p>
+      <p>
+        <label htmlFor="image">Image</label>
+        <input
+          id="image"
+          type="url"
+          name="image"
+          required
+          defaultValue={event ? event.image : ''}
+        />
+      </p>
+      <p>
+        <label htmlFor="date">Date</label>
+        <input
+          id="date"
+          type="date"
+          name="date"
+          required
+          defaultValue={event ? event.date : ''}
+        />
+      </p>
+      <p>
+        <label htmlFor="description">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          rows="5"
+          required
+          defaultValue={event ? event.description : ''}
+        />
+      </p>
+      <div className={classes.actions}>
+        <button type="button" onClick={cancelHandler} disabled={isSubmitting}>
+          Cancel
+        </button>
+        <button disabled={isSubmitting}>
+          {isSubmitting ? 'Submitting...' : 'Save'}
+        </button>
+      </div>
+    </Form>
+  );
+}
+
+export default EventForm;
+
+export async function action({ request, params }) {
+  const method = request.method;
+  const data = await request.formData();
+
+  const eventData = {
+    title: data.get('title'),
+    image: data.get('image'),
+    date: data.get('date'),
+    description: data.get('description'),
+  };
+
+  let url = 'http://localhost:8080/events';
+
+  if (method === 'PATCH') {
+    const eventId = params.eventId;
+    url = 'http://localhost:8080/events/' + eventId;
+  }
+
+  const response = await fetch(url, {
+    method: method,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(eventData),
+  });
+
+  if (response.status === 422) {
+    return response;
+  }
+
+  if (!response.ok) {
+    throw json({ message: 'Could not save event.' }, { status: 500 });
+  }
+
+  return redirect('/events');
+}
+
+```
+
+#### `App.js`
+```jsx
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+
+import EditEventPage from './pages/EditEvent';
+import ErrorPage from './pages/Error';
+import EventDetailPage, {
+  loader as eventDetailLoader,
+  action as deleteEventAction,
+} from './pages/EventDetail';
+import EventsPage, { loader as eventsLoader } from './pages/Events';
+import EventsRootLayout from './pages/EventsRoot';
+import HomePage from './pages/Home';
+import NewEventPage from './pages/NewEvent';
+import RootLayout from './pages/Root';
+import { action as manipulateEventAction } from './components/EventForm';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      { index: true, element: <HomePage /> },
+      {
+        path: 'events',
+        element: <EventsRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <EventsPage />,
+            loader: eventsLoader,
+          },
+          {
+            path: ':eventId',
+            id: 'event-detail',
+            loader: eventDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <EventDetailPage />,
+                action: deleteEventAction,
+              },
+              {
+                path: 'edit',
+                element: <EditEventPage />,
+                action: manipulateEventAction,
+              },
+            ],
+          },
+          {
+            path: 'new',
+            element: <NewEventPage />,
+            action: manipulateEventAction,
+          },
+        ],
+      },
+    ],
+  },
+]);
+
+function App() {
+  return <RouterProvider router={router} />;
+}
+
+export default App;
+
+```
+
+#### `NewEvent.js`
+```jsx
+import EventForm from '../components/EventForm';
+
+function NewEventPage() {
+  return <EventForm method="post" />;
+}
+
+export default NewEventPage;
+
+```
+
+#### `EditEvent.js`
+```jsx
+import { useRouteLoaderData } from 'react-router-dom';
+import EventForm from '../components/EventForm';
+
+function EditEventPage() {
+  const data = useRouteLoaderData('event-detail');
+
+  return <EventForm method="patch" event={data.event} />;
+}
+
+export default EditEventPage;
+
+```
+
