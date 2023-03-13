@@ -1,5 +1,22 @@
 # React Guide
 
+## INDEX
+
+---
+
+- **[Settings](#settings)**
+- **[How Does React Work?](#how-does-react-work)**
+- **[Guides](#guides)**
+- **[React Lifecycle](#react-lifecycle)**
+- **[Custom Hooks](#custom-hooks)**
+- **[Working with Forms with Validation Logic](#working-with-forms-with-validation-logic)**
+- **[Redux](#redux)**
+- **[Redux Toolkit](#redux-toolkit)**
+- **[Side Effects, Async Tasks with Redux](#side-effects-async-tasks-with-redux)**
+- **[React Router](#react-router)**
+- **[Fetching Data by React Router](#fetching-data-by-react-router)**
+- **[Sending Data by React Router](#sending-data-by-react-router)**
+
 ## Settings
 
 ---
@@ -1371,11 +1388,11 @@ export default connect(mapStateToProps, mapDispatchToProps)(Counter);
 
 ---
 
-#### Install
+### Install
 - `npm install @reduxjs/toolkit`
   - uninstall the existing redux package
 
-#### What and Why React Toolkit?
+### What and Why React Toolkit?
 - Extra package which makes working with Redux more convenient and easier
 - Potential problems with Redux when managing more and more states
   1. Clashing between action type identifiers
@@ -1386,7 +1403,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Counter);
     - Solution: Third-party packages that allow you to automatically copy state
 - Redux Toolkit provides more convenient ways for the potential problems
 
-#### Features
+### Features
 
 ![react-toolkit](https://user-images.githubusercontent.com/86648892/224208182-6d767a6b-1a04-4007-b0df-c7d1bc95656d.png)
   x
