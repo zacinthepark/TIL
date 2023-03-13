@@ -3789,3 +3789,52 @@ export async function action({ params, request }) {
 ## Authentication
 
 ---
+
+<img width="950" alt="getting-permission" src="https://user-images.githubusercontent.com/86648892/224759209-35405cf8-cb7a-4951-9b12-9d0d58a44db7.png">
+
+### Query Parameters
+
+- `const [searchParams, setSearchParams] = useSearchParams()`
+  - object that gives us access to the currently set query parameters
+  - function that allows to update the currently set query parameters
+- Query Parameters are officially called search parameters
+
+```jsx
+import { Form, Link, useSearchParams } from 'react-router-dom';
+import classes from './AuthForm.module.css';
+
+function AuthForm() {
+  const [searchParams] = useSearchParams();
+  const isLogin = searchParams.get('mode') === 'login';
+
+  // localhost:3000/auth/?mode=signup
+  // localhost:3000/auth/?mode=login
+  return (
+    <>
+      <Form method="post" className={classes.form}>
+        <h1>{isLogin ? 'Log in' : 'Create a new user'}</h1>
+        <p>
+          <label htmlFor="email">Email</label>
+          <input id="email" type="email" name="email" required />
+        </p>
+        <p>
+          <label htmlFor="image">Password</label>
+          <input id="password" type="password" name="password" required />
+        </p>
+        <div className={classes.actions}>
+          <Link to={`?mode=${isLogin ? 'signup' : 'login'}`}>
+            {isLogin ? 'Create new user' : 'Login'}
+          </Link>
+          <button>Save</button>
+        </div>
+      </Form>
+    </>
+  );
+}
+
+export default AuthForm;
+
+```
+
+### Signup, Login, Validation
+
