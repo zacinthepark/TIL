@@ -4,8 +4,11 @@ import { useLoaderData, json, defer, Await } from 'react-router-dom';
 import EventsList from '../components/EventsList';
 
 function EventsPage() {
+  // this data is now an object with the deferred value keys
+  // The values are Promise
   const { events } = useLoaderData();
 
+  // Now we don't directly render component that needs the data
   return (
     <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
       <Await resolve={events}>
@@ -38,6 +41,8 @@ async function loadEvents() {
 }
 
 export function loader() {
+  // pass an object that bundles all the different HTTP requests on this page
+  // give request a key, and store Promise value from async function
   return defer({
     events: loadEvents(),
   });

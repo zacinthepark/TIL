@@ -3181,6 +3181,10 @@ export default EditEventPage;
 
 ---
 
+- **[useFetcher](#usefetcher)**
+- **[defer](#defer)**
+- **[Await](#await)**
+
 ### `useFetcher`
 
 - `useFetcher()` hook is a tool you should use if you want to interact with action or loader without transitioning
@@ -3269,6 +3273,33 @@ function App() {
 }
 
 export default App;
+
+```
+
+```jsx
+// Newsletter.js
+
+import NewsletterSignup from '../components/NewsletterSignup';
+import PageContent from '../components/PageContent';
+
+function NewsletterPage() {
+  return (
+    <PageContent title="Join our awesome newsletter!">
+      <NewsletterSignup />
+    </PageContent>
+  );
+}
+
+export default NewsletterPage;
+
+export async function action({ request }) {
+  const data = await request.formData();
+  const email = data.get('email');
+
+  // send to backend newsletter server ...
+  console.log(email);
+  return { message: 'Signup successful!' };
+}
 
 ```
 
@@ -3511,4 +3542,244 @@ fetcher.formAction; // "mark-as-read"
 
 // when the form is submitting
 fetcher.formMethod; // "post"
+```
+
+### `defer`
+
+- defer when data is loaded
+- defer loading and tell react-router that we want to render a component even though the data is not fully there yet
+
+> This utility allows you to defer values returned from loaders by passing promises instead of resolved values.
+```jsx
+async function loader() {
+  let product = await getProduct();
+  let reviews = getProductReviews();
+  return defer({ product, reviews });
+}
+```
+
+### `<Await>`
+
+> Used to render **deferred** values with automatic error handling.
+>> Note: `<Await>` expects to be rendered inside of a `<React.Suspense>` or `<React.SuspenseList>` parent to enable the fallback UI.
+
+```jsx
+import { Await, useLoaderData } from "react-router-dom";
+
+function Book() {
+  const { book, reviews } = useLoaderData();
+  return (
+    <div>
+      <h1>{book.title}</h1>
+      <p>{book.description}</p>
+      <React.Suspense fallback={<ReviewsSkeleton />}>
+        <Await
+          resolve={reviews}
+          errorElement={
+            <div>Could not load reviews 😬</div>
+          }
+          children={(resolvedReviews) => (
+            <Reviews items={resolvedReviews} />
+          )}
+        />
+      </React.Suspense>
+    </div>
+  );
+}
+```
+
+#### `children`
+
+> Can either be React elements or a function.
+
+> When using a function, the value is provided as the only parameter.
+
+```jsx
+<Await resolve={reviewsPromise}>
+  {(resolvedReviews) => <Reviews items={resolvedReviews} />}
+</Await>
+```
+
+> When using React elements, `useAsyncValue` will provide the data:
+```jsx
+<Await resolve={reviewsPromise}>
+  <Reviews />
+</Await>;
+
+function Reviews() {
+  const resolvedReviews = useAsyncValue();
+  return <div>{/* ... */}</div>;
+}
+```
+
+#### `errorElement`
+
+> The error element renders instead of the children when the promise rejects. You can access the error with `useAsyncError`.
+
+> If the promise rejects, you can provide an optional `errorElement` to handle that error in a contextual UI via the `useAsyncError` hook.
+
+```jsx
+<Await
+  resolve={reviewsPromise}
+  errorElement={<ReviewsError />}
+>
+  <Reviews />
+</Await>;
+
+function ReviewsError() {
+  const error = useAsyncError();
+  return <div>{error.message}</div>;
+}
+```
+
+> If you do not provide an errorElement, the rejected value will bubble up to the nearest route-level `errorElement` and be accessible via the `useRouteError` hook.
+
+#### `resolve`
+
+> Takes a promise returned from a deferred loader value to be resolved and rendered.
+
+```jsx
+import {
+  defer,
+  Route,
+  useLoaderData,
+  Await,
+} from "react-router-dom";
+
+// given this route
+<Route
+  loader={async () => {
+    let book = await getBook();
+    let reviews = getReviews(); // not awaited
+    return defer({
+      book,
+      reviews, // this is a promise
+    });
+  }}
+  element={<Book />}
+/>;
+
+function Book() {
+  const {
+    book,
+    reviews, // this is the same promise
+  } = useLoaderData();
+  return (
+    <div>
+      <h1>{book.title}</h1>
+      <p>{book.description}</p>
+      <React.Suspense fallback={<ReviewsSkeleton />}>
+        <Await
+          // and is the promise we pass to Await
+          resolve={reviews}
+        >
+          <Reviews />
+        </Await>
+      </React.Suspense>
+    </div>
+  );
+}
+```
+
+### `defer` and `<Await>`
+
+#### Sample Code
+
+```jsx
+// EventDetail.js
+
+import { Suspense } from 'react';
+import {
+  useRouteLoaderData,
+  json,
+  redirect,
+  defer,
+  Await,
+} from 'react-router-dom';
+import EventItem from '../components/EventItem';
+import EventsList from '../components/EventsList';
+
+function EventDetailPage() {
+  const { event, events } = useRouteLoaderData('event-detail');
+
+  return (
+    <>
+      <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
+        <Await resolve={event}>
+          {(loadedEvent) => <EventItem event={loadedEvent} />}
+        </Await>
+      </Suspense>
+      <Suspense fallback={<p style={{ textAlign: 'center' }}>Loading...</p>}>
+        <Await resolve={events}>
+          {(loadedEvents) => <EventsList events={loadedEvents} />}
+        </Await>
+      </Suspense>
+    </>
+  );
+}
+
+export default EventDetailPage;
+
+async function loadEvent(id) {
+  const response = await fetch('http://localhost:8080/events/' + id);
+
+  if (!response.ok) {
+    throw json(
+      { message: 'Could not fetch details for selected event.' },
+      {
+        status: 500,
+      }
+    );
+  } else {
+    const resData = await response.json();
+    return resData.event;
+  }
+}
+
+async function loadEvents() {
+  const response = await fetch('http://localhost:8080/events');
+
+  if (!response.ok) {
+    // return { isError: true, message: 'Could not fetch events.' };
+    // throw new Response(JSON.stringify({ message: 'Could not fetch events.' }), {
+    //   status: 500,
+    // });
+    throw json(
+      { message: 'Could not fetch events.' },
+      {
+        status: 500,
+      }
+    );
+  } else {
+    const resData = await response.json();
+    return resData.events;
+  }
+}
+
+export async function loader({ request, params }) {
+  const id = params.eventId;
+
+  return defer({
+    event: await loadEvent(id),
+    events: loadEvents(),
+  });
+}
+
+export async function action({ params, request }) {
+  const eventId = params.eventId;
+  const response = await fetch('http://localhost:8080/events/' + eventId, {
+    method: request.method,
+  });
+
+  if (!response.ok) {
+    throw json(
+      { message: 'Could not delete event.' },
+      {
+        status: 500,
+      }
+    );
+  }
+  return redirect('/events');
+}
+
 ```

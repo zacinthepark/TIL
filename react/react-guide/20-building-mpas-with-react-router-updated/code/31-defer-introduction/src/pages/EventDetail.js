@@ -71,6 +71,8 @@ export async function loader({ request, params }) {
   const id = params.eventId;
 
   return defer({
+    // await을 붙이면 해당 데이터가 로딩될 때까지 렌더링을 기다리라는 것
+    // await이 없으면 컴포넌트 렌더링 후 로딩 가능
     event: await loadEvent(id),
     events: loadEvents(),
   });
