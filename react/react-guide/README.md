@@ -3836,5 +3836,681 @@ export default AuthForm;
 
 ```
 
-### Signup, Login, Validation
+### Signup and Login
 
+- Pass form data for signup and login
+- Update UI with validation and submitting state
+- Store token in the localStorage
+- Attach token to other http requests
+
+```jsx
+// Authentication.js
+
+import { json, redirect } from 'react-router-dom';
+import AuthForm from '../components/AuthForm';
+
+function AuthenticationPage() {
+  return <AuthForm />;
+}
+
+export default AuthenticationPage;
+
+export async function action({ request }) {
+  const searchParams = new URL(request.url).searchParams;
+  const mode = searchParams.get('mode') || 'login';
+
+  if (mode !== 'login' && mode !== 'signup') {
+    throw json({ message: 'Unsupported mode.' }, { status: 422 });
+  }
+
+  const data = await request.formData();
+  const authData = {
+    email: data.get('email'),
+    password: data.get('password'),
+  };
+
+  const response = await fetch('http://localhost:8080/' + mode, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(authData),
+  });
+
+  if (response.status === 422 || response.status === 401) {
+    return response;
+  }
+
+  if (!response.ok) {
+    throw json({ message: 'Could not authenticate user.' }, { status: 500 });
+  }
+
+  // store the token
+  const resData = await response.json();
+  const token = resData.token;
+
+  localStorage.setItem('token', token);
+
+  return redirect('/');
+}
+
+```
+
+```jsx
+// AuthForm.js
+
+import {
+  Form,
+  Link,
+  useSearchParams,
+  useActionData,
+  useNavigation,
+} from 'react-router-dom';
+import classes from './AuthForm.module.css';
+
+function AuthForm() {
+  const data = useActionData(); // for user input validation
+  const navigation = useNavigation();
+
+  const [searchParams] = useSearchParams();
+  const isLogin = searchParams.get('mode') === 'login';
+  const isSubmitting = navigation.state === 'submitting'; // for submitting state
+
+  return (
+    <>
+      <Form method="post" className={classes.form}>
+        <h1>{isLogin ? 'Log in' : 'Create a new user'}</h1>
+        {data && data.errors && (
+          <ul>
+            {Object.values(data.errors).map((err) => (
+              <li key={err}>{err}</li>
+            ))}
+          </ul>
+        )}
+        {data && data.message && <p>{data.message}</p>}
+        <p>
+          <label htmlFor="email">Email</label>
+          <input id="email" type="email" name="email" required />
+        </p>
+        <p>
+          <label htmlFor="image">Password</label>
+          <input id="password" type="password" name="password" required />
+        </p>
+        <div className={classes.actions}>
+          <Link to={`?mode=${isLogin ? 'signup' : 'login'}`}>
+            {isLogin ? 'Create new user' : 'Login'}
+          </Link>
+          <button disabled={isSubmitting}>
+            {isSubmitting ? 'Submitting...' : 'Save'}
+          </button>
+        </div>
+      </Form>
+    </>
+  );
+}
+
+export default AuthForm;
+
+```
+
+```jsx
+// auth.js
+
+export function getAuthToken() {
+  const token = localStorage.getItem('token');
+  return token;
+}
+
+```
+
+```jsx
+// EventForm.js
+
+import {
+  Form,
+  useNavigate,
+  useNavigation,
+  useActionData,
+  json,
+  redirect
+} from 'react-router-dom';
+import { getAuthToken } from '../util/auth';
+import classes from './EventForm.module.css';
+
+function EventForm({ method, event }) {
+  // ...
+}
+
+export default EventForm;
+
+export async function action({ request, params }) {
+  const method = request.method;
+  const data = await request.formData();
+
+  const eventData = {
+    title: data.get('title'),
+    image: data.get('image'),
+    date: data.get('date'),
+    description: data.get('description'),
+  };
+
+  let url = 'http://localhost:8080/events';
+
+  if (method === 'PATCH') {
+    const eventId = params.eventId;
+    url = 'http://localhost:8080/events/' + eventId;
+  }
+
+  const token = getAuthToken();
+  const response = await fetch(url, {
+    method: method,
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    },
+    body: JSON.stringify(eventData),
+  });
+
+  if (response.status === 422) {
+    return response;
+  }
+
+  if (!response.ok) {
+    throw json({ message: 'Could not save event.' }, { status: 500 });
+  }
+
+  return redirect('/events');
+}
+
+```
+
+### Logout
+
+- Make an empty component, and export an action function that removes token
+- Add new route with the action defined
+- Wrap a logout button with React `<Form>`
+
+```jsx
+// Logout.js
+import { redirect } from 'react-router-dom';
+
+export function action() {
+  localStorage.removeItem('token');
+  return redirect('/');
+}
+
+```
+
+```jsx
+// MainNavigation.js
+
+// ...
+
+<li>
+  <Form action="/logout" method="post">
+    <button>Logout</button>
+  </Form>
+</li>
+
+// ...
+```
+
+```jsx
+// App.js
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+// ...
+import { action as logoutAction } from './pages/Logout';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      { index: true, element: <HomePage /> },
+      {
+        path: 'events',
+        element: <EventsRootLayout />,
+        children: [
+          // ...
+        ],
+      },
+      {
+        path: 'auth',
+        element: <AuthenticationPage />,
+        action: authAction,
+      },
+      {
+        path: 'newsletter',
+        element: <NewsletterPage />,
+        action: newsletterAction,
+      },
+      {
+        path: 'logout',
+        action: logoutAction,
+      },
+    ],
+  },
+]);
+
+function App() {
+  return <RouterProvider router={router} />;
+}
+
+export default App;
+
+```
+
+### Updating UI based on Token
+
+- Update token for every navigation by setting loader in the root route
+- Use `useRouteLoaderData()` to check the token
+
+```jsx
+// auth.js
+
+export function getAuthToken() {
+  const token = localStorage.getItem('token');
+  return token;
+}
+
+export function tokenLoader() {
+  return getAuthToken();
+}
+
+```
+
+```jsx
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+// ...
+import { tokenLoader } from './util/auth';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />,
+    errorElement: <ErrorPage />,
+    id: 'root',
+    loader: tokenLoader,
+    children: [
+      { index: true, element: <HomePage /> },
+      // ...
+    ],
+  },
+]);
+
+function App() {
+  return <RouterProvider router={router} />;
+}
+
+export default App;
+
+```
+
+```jsx
+// MainNavigation.js
+
+import { Form, NavLink, useRouteLoaderData } from 'react-router-dom';
+
+import classes from './MainNavigation.module.css';
+import NewsletterSignup from './NewsletterSignup';
+
+function MainNavigation() {
+  const token = useRouteLoaderData('root');
+
+  return (
+    <header className={classes.header}>
+      <nav>
+        <ul className={classes.list}>
+          <li>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+              end
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/events"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              Events
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/newsletter"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              Newsletter
+            </NavLink>
+          </li>
+          {!token && (
+            <li>
+              <NavLink
+                to="/auth?mode=login"
+                className={({ isActive }) =>
+                  isActive ? classes.active : undefined
+                }
+              >
+                Authentication
+              </NavLink>
+            </li>
+          )}
+          {token && (
+            <li>
+              <Form action="/logout" method="post">
+                <button>Logout</button>
+              </Form>
+            </li>
+          )}
+        </ul>
+      </nav>
+      <NewsletterSignup />
+    </header>
+  );
+}
+
+export default MainNavigation;
+
+```
+
+### Route Protection
+
+- Utilize a loader that simply checks if we have a token
+- If we don't have a token, redirect to another page(typically, login page)
+
+```jsx
+// auth.js
+
+import { redirect } from 'react-router-dom';
+
+export function getAuthToken() {
+  const token = localStorage.getItem('token');
+  return token;
+}
+
+export function tokenLoader() {
+  return getAuthToken();
+}
+
+export function checkAuthLoader() {
+  const token = getAuthToken();
+
+  if (!token) {
+    return redirect('/auth');
+  }
+
+  return null;
+}
+
+```
+
+```jsx
+// App.js
+
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import EditEventPage from './pages/EditEvent';
+import ErrorPage from './pages/Error';
+import EventDetailPage, {
+  loader as eventDetailLoader,
+  action as deleteEventAction,
+} from './pages/EventDetail';
+import EventsPage, { loader as eventsLoader } from './pages/Events';
+import EventsRootLayout from './pages/EventsRoot';
+import HomePage from './pages/Home';
+import NewEventPage from './pages/NewEvent';
+import RootLayout from './pages/Root';
+import { action as manipulateEventAction } from './components/EventForm';
+import NewsletterPage, { action as newsletterAction } from './pages/Newsletter';
+import AuthenticationPage, {
+  action as authAction,
+} from './pages/Authentication';
+import { action as logoutAction } from './pages/Logout';
+import { checkAuthLoader, tokenLoader } from './util/auth';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />,
+    errorElement: <ErrorPage />,
+    id: 'root',
+    loader: tokenLoader,
+    children: [
+      { index: true, element: <HomePage /> },
+      {
+        path: 'events',
+        element: <EventsRootLayout />,
+        children: [
+          {
+            index: true,
+            element: <EventsPage />,
+            loader: eventsLoader,
+          },
+          {
+            path: ':eventId',
+            id: 'event-detail',
+            loader: eventDetailLoader,
+            children: [
+              {
+                index: true,
+                element: <EventDetailPage />,
+                action: deleteEventAction,
+              },
+              {
+                path: 'edit',
+                element: <EditEventPage />,
+                action: manipulateEventAction,
+                loader: checkAuthLoader,
+              },
+            ],
+          },
+          {
+            path: 'new',
+            element: <NewEventPage />,
+            action: manipulateEventAction,
+            loader: checkAuthLoader,
+          },
+        ],
+      },
+      {
+        path: 'auth',
+        element: <AuthenticationPage />,
+        action: authAction,
+      },
+      {
+        path: 'newsletter',
+        element: <NewsletterPage />,
+        action: newsletterAction,
+      },
+      {
+        path: 'logout',
+        action: logoutAction,
+      },
+    ],
+  },
+]);
+
+function App() {
+  return <RouterProvider router={router} />;
+}
+
+export default App;
+
+```
+
+### Token Expiration
+
+- store the expiration time in the localStorage when we first get a token
+
+```jsx
+// Authentication.js
+
+import { json, redirect } from 'react-router-dom';
+import AuthForm from '../components/AuthForm';
+
+function AuthenticationPage() {
+  return <AuthForm />;
+}
+
+export default AuthenticationPage;
+
+export async function action({ request }) {
+  const searchParams = new URL(request.url).searchParams;
+  const mode = searchParams.get('mode') || 'login';
+
+  if (mode !== 'login' && mode !== 'signup') {
+    throw json({ message: 'Unsupported mode.' }, { status: 422 });
+  }
+
+  const data = await request.formData();
+  const authData = {
+    email: data.get('email'),
+    password: data.get('password'),
+  };
+
+  const response = await fetch('http://localhost:8080/' + mode, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(authData),
+  });
+
+  if (response.status === 422 || response.status === 401) {
+    return response;
+  }
+
+  if (!response.ok) {
+    throw json({ message: 'Could not authenticate user.' }, { status: 500 });
+  }
+
+  const resData = await response.json();
+  const token = resData.token;
+
+  localStorage.setItem('token', token);
+  // 토큰 유효 기간이 1시간이므로, 나중에 비교를 위해 토큰 생성 시간 기준 1시간 뒤의 날짜 객체를 생성 및 localStorage에 저장
+  const expiration = new Date();
+  expiration.setHours(expiration.getHours() + 1);
+  localStorage.setItem('expiration', expiration.toISOString());
+
+  return redirect('/');
+}
+
+```
+
+- get token duration by comparing expiration date and now
+- set the token duration as a logout time out
+- also check if token is expired, and if it is, logout
+- remove expiration date stored in the localStorage when logging out
+
+```jsx
+// auth.js
+
+import { redirect } from 'react-router-dom';
+
+export function getTokenDuration() {
+  const storedExpirationDate = localStorage.getItem('expiration');
+  const expirationDate = new Date(storedExpirationDate);
+  const now = new Date();
+  // getTime() gives time value in milliseconds
+  const duration = expirationDate.getTime() - now.getTime();
+  return duration;
+}
+
+export function getAuthToken() {
+  const token = localStorage.getItem('token');
+
+  if (!token) {
+    return null;
+  }
+
+  const tokenDuration = getTokenDuration();
+
+  if (tokenDuration < 0) {
+    return 'EXPIRED';
+  }
+
+  return token;
+}
+
+export function tokenLoader() {
+  const token = getAuthToken();
+  return token;
+}
+
+export function checkAuthLoader() {
+  const token = getAuthToken();
+
+  if (!token) {
+    return redirect('/auth');
+  }
+}
+
+```
+
+```jsx
+// Root.js
+
+import { useEffect } from 'react';
+import { Outlet, useLoaderData, useSubmit } from 'react-router-dom';
+import MainNavigation from '../components/MainNavigation';
+import { getTokenDuration } from '../util/auth';
+
+function RootLayout() {
+  const token = useLoaderData();
+  const submit = useSubmit();
+  // const navigation = useNavigation();
+  useEffect(() => {
+    if (!token) {
+      return;
+    }
+
+    if (token === 'EXPIRED') {
+      submit(null, { action: '/logout', method: 'post' });
+      return;
+    }
+
+    const tokenDuration = getTokenDuration();
+    console.log(tokenDuration);
+
+    setTimeout(() => {
+      submit(null, { action: '/logout', method: 'post' });
+    }, tokenDuration);
+  }, [token, submit]);
+
+  return (
+    <>
+      <MainNavigation />
+      <main>
+        {/* {navigation.state === 'loading' && <p>Loading...</p>} */}
+        <Outlet />
+      </main>
+    </>
+  );
+}
+
+export default RootLayout;
+
+```
+
+```jsx
+// Logout.js
+
+import { redirect } from 'react-router-dom';
+
+export function action() {
+  localStorage.removeItem('token');
+  localStorage.removeItem('expiration');
+  return redirect('/');
+}
+
+```

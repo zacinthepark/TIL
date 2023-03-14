@@ -9,12 +9,12 @@ import {
 import classes from './AuthForm.module.css';
 
 function AuthForm() {
-  const data = useActionData();
+  const data = useActionData(); // for user input validation
   const navigation = useNavigation();
 
   const [searchParams] = useSearchParams();
   const isLogin = searchParams.get('mode') === 'login';
-  const isSubmitting = navigation.state === 'submitting';
+  const isSubmitting = navigation.state === 'submitting'; // for submitting state
 
   return (
     <>
