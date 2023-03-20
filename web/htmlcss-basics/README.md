@@ -3,7 +3,9 @@
 - 웹의 경우 경험을 많이 해보는 것이 중요하다
 - 시각적인 부분이 많이 작동하기에 코드 작성 틈틈이 화면을 확인하여 원리를 이해하자
 
-# HTML / CSS
+## HTML / CSS
+
+---
 
 - Web이란?
     - 웹 사이트의 구성 요소
@@ -20,11 +22,9 @@
     - CSS Display
     - CSS Position
 
----
-
-# Web?
-
 ## 웹 사이트의 구성 요소
+
+---
 
 - 웹 사이트란 브라우저를 통해서 접속하는 웹 페이지(문서)들의 모음
 - 웹 페이지는 글, 그림, 동영상 등 여러가지 정보를 담고 있으며, 마우스로 클릭하면 다른 웹 페이지로 이동하는 ‘링크'들이 있음
@@ -42,6 +42,8 @@
 
 ## 브라우저
 
+---
+
 - 웹 사이트는 브라우저를 통해 동작함
     - 브라우저 안에는 HTML 문서를 실행하기 위한 기능들이 들어가 있음
         - .hwp, .doc 등의 파일들이 HTML 문서라면 msword, 한컴오피스 등은 브라우저와 같은 개념
@@ -50,6 +52,8 @@
 - 이에 대한 해결책으로 웹 표준이 등장함
 
 ## 웹 표준
+
+---
 
 - 웹에서 표준적으로 사용되는 기술이나 규칙
 - 크로스 브라우징
@@ -63,9 +67,9 @@
 - [caniuse](https://caniuse.com/)
     - 사용하고 싶은 기술을 검색하면 브라우저 호환성을 확인할 수 있음
 
----
+## 개발환경 설정(Chrome)
 
-# 개발환경 설정(Chrome)
+---
 
 - VSCode Extensions 추천
     - open in browser
@@ -84,17 +88,19 @@
             - 해당 요소에 적용된 이벤트 (Javascript)
     - Sources, Network, Performance, Application, Security, Audits 등
 
+# HTML
+
+## HTML(Hyper Text Markup Language)
+
 ---
 
-# HTML(Hyper Text Markup Language)
-
-## Hyper Text?
+### Hyper Text?
 
 - 참조(하이퍼링크)를 통해 사용자가 한 문서에서 다른 문서로 즉시 접근할 수 있는 텍스트
 - 팀 버너스 리가 기획한 이론
     - 이 문서에서 다른 문서로 즉시 접근할 수 있는 것이 이 세상의 텍스트를 초월한 것과 같다하여 하이퍼 텍스트라 이해하자
 
-## Markup Language
+### Markup Language
 
 - 태그 등을 이용하여 문서나 데이터의 구조를 명시하는 언어
 - 태그 + 구조!
@@ -103,6 +109,8 @@
 <img width="1137" alt="html_3" src="https://user-images.githubusercontent.com/86648892/183297276-2e5ed0e9-ddf2-4b6e-aaeb-20c4481da5f6.png">
 
 ## HTML
+
+---
 
 - 웹 페이지를 작성(구조화)하기 위한 언어
 - .html
@@ -113,7 +121,7 @@
         - 브라우저로 실행하는 문서
             - **태그, 구조, 브라우저, 문서**
 
-## HTML 기본 구조
+### HTML 기본 구조
 
 - html: 문서의 최상위(root) 요소
     - html 태그로 문서를 열고 닫음
@@ -124,7 +132,7 @@
 - body: 문서 본문 요소
     - 실제 화면 구성과 관련된 내용
 
-## head 예시
+### head 예시
 
 - `<title>` : 브라우저 상단 타이틀
 - `<meta>` : 문서 레벨 메타데이터 요소
@@ -136,7 +144,7 @@
 
 <img width="612" alt="html_5" src="https://user-images.githubusercontent.com/86648892/183297279-5b9dcff5-48fb-4d5a-9300-164e0fac2f96.png">
 
-## head의 또 다른 예시 : Open Graph Protocol
+### head의 또 다른 예시 : Open Graph Protocol
 
 - 메타데이터를 표현하는 새로운 규약
     - HTML 문서의 메타데이터를 통해 문서의 정보를 전달
@@ -147,7 +155,7 @@
 
 <img width="494" alt="html_6" src="https://user-images.githubusercontent.com/86648892/183297282-7b7178ea-65de-40eb-bfca-0f6977c5ab62.png">
 
-## HTML 요소(element)
+### HTML 요소(element)
 
 - HTML 요소 == 태그와 내용
 
@@ -173,7 +181,7 @@
 
 <img width="824" alt="html_7" src="https://user-images.githubusercontent.com/86648892/183297284-1403b96f-f827-44df-a164-28bacdaf98ec.png">
 
-## HTML 속성(attribute)
+### HTML 속성(attribute)
 
 ```html
 <a href="https://google.com"></a>
@@ -191,7 +199,7 @@
 - HTML Global Attribute
     - 태그와 상관없이 사용 가능한 속성들도 있음
 
-## HTML Global Attribute
+### HTML Global Attribute
 
 - 모든 HTML 요소가 공통으로 사용할 수 있는 대표적인 속성 (몇몇 요소에는 아무 효과가 없을 수 있음)
     - id : 문서 전체에서 유일한 고유 식별자 지정
@@ -205,7 +213,7 @@
 
 <img width="639" alt="html_8" src="https://user-images.githubusercontent.com/86648892/183297286-f8f18222-24f0-412e-97a4-ae2c00e92159.png">
 
-## HTML 코드 예시
+### HTML 코드 예시
 
 ```html
 <!DOCTYPE html>
@@ -228,6 +236,8 @@
 <img width="707" alt="html_9" src="https://user-images.githubusercontent.com/86648892/183297289-d166855c-9295-41ba-a529-4e0cb0957372.png">
 
 ## 시맨틱 태그
+
+---
 
 - HTML 태그가 특정 목적, 역할 및 의미적 가치(semantic value)를 가지는 것
     - 예를 들어 h1 태그는 “이 페이지에서 최상위 제목"인 텍스트를 감싸는 역할(또는 의미)을 나타냄
@@ -261,7 +271,7 @@
 
 <img width="892" alt="html_15" src="https://user-images.githubusercontent.com/86648892/183297296-ea5e241d-7912-4a43-88e3-892e49fcc35e.png">
 
-## WHY 시맨틱 태그?
+### WHY 시맨틱 태그?
 
 - 의미론적 마크업
     - 개발자 및 사용자 뿐만 아니라 검색엔진 등에 의미있는 정보의 그룹을 태그로 표현
@@ -271,10 +281,14 @@
 
 ## 렌더링(Rendering)
 
+---
+
 - 텍스트로 작성된 코드가 어떻게 웹 사이트가 되는걸까?
 - 웹사이트 코드를 사용자가 보게 되는 웹사이트로 바꾸는 과정을 렌더링이라 한다
 
 ## DOM(Document Object Model) 트리
+
+---
 
 - 텍스트 파일인 HTML 문서를 브라우저에서 렌더링하기 위한 구조
     - HTML 문서에 대한 모델을 구성함
@@ -285,18 +299,18 @@
 
 <img width="888" alt="html_17" src="https://user-images.githubusercontent.com/86648892/183297300-e8c4f002-4717-4efc-8257-2ad250879f00.png">
 
+## HTML 문서 구조화
+
 ---
 
-# HTML 문서 구조화
-
-## 인라인 / 블록 요소
+### 인라인 / 블록 요소
 
 - HTML 요소는 크게 인라인 / 블록 요소로 나눔
 - 인라인 요소는 글자처럼 취급
 - 블록 요소는 한 줄 모두 사용
-- <태그>내용</태그>로 표현되는 HTML 요소를 분류하자면 인라인, 블록 요소로 구분할 수 있다는 것이다
+- `<태그>내용</태그>`로 표현되는 HTML 요소를 분류하자면 인라인, 블록 요소로 구분할 수 있다는 것이다
 
-## 텍스트 요소(Inline)
+### 텍스트 요소(Inline)
 
 ```html
 <!-- 태그 -->
@@ -328,7 +342,7 @@
 
 <img width="541" alt="html_18" src="https://user-images.githubusercontent.com/86648892/183297302-2cb61fe9-a928-4672-aa73-2e09fd05610a.png">
 
-## 그룹 컨텐츠(Block)
+### 그룹 컨텐츠(Block)
 
 ```html
 <!-- 태그 -->
@@ -361,7 +375,7 @@
 
 - div와 span은 다른 작업을 위한 일종의 투명한 쇼핑백과 같은 것이다
 
-## form
+### form
 
 - `<form>`은 정보(데이터)를 서버에 제출하기 위해 사용하는 태그
     - 즉, 사용자가 브라우저를 통해 서버에 데이터를 전송하고 싶을 때 사용
@@ -427,13 +441,13 @@
 
 ### input 유형 (종합)
 
-- <input> 요소의 동작은 type에 따라 달라지므로, 각각의 내용을 숙지할 것
+- `<input>` 요소의 동작은 type에 따라 달라지므로, 각각의 내용을 숙지할 것
 - 지정하지 않을 경우 기본값은 `text`
 - [MDN docs input](https://developer.mozilla.org/ko/docs/Web/HTML/Element/Input)
 
----
-
 ## HTML 마크업 예시
+
+---
 
 ```html
 <!DOCTYPE html>
@@ -548,8 +562,6 @@
 
 <img width="357" alt="html_25" src="https://user-images.githubusercontent.com/86648892/183297312-ef6d7ed3-942e-4d35-b7fb-ee5398c6f6bb.png">
 
----
-
 # CSS
 
 - Cascading Styel Sheets
@@ -563,6 +575,8 @@
 <img width="812" alt="html_26" src="https://user-images.githubusercontent.com/86648892/183297313-9c8749ef-3df0-4e71-ad25-169e924f7d92.png">
 
 ## CSS 정의 방법
+
+---
 
 - 인라인(inline)
     - html 요소 태그 안에 직접 `<style>` 지정
@@ -580,9 +594,9 @@
 - Styles: 해당 요소에 선언된 모든 CSS
 - Computed: 해당 요소에 최종 계산된 CSS
 
----
-
 ## CSS Selectors
+
+---
 
 ### 선택자(Selector) 유형
 
@@ -688,9 +702,9 @@
 
 <img width="482" alt="html_27" src="https://user-images.githubusercontent.com/86648892/183297314-bcbd1322-1f61-413e-b918-e1b2fbc2a888.png">
 
----
-
 ## Selectors 심화
+
+---
 
 ### 결합자(Combinators)
 
@@ -713,9 +727,9 @@
 
 <img width="1036" alt="html_30" src="https://user-images.githubusercontent.com/86648892/183297317-fff0bc59-91cd-4faa-b0a2-2671ae28fa74.png">
 
----
-
 ## CSS 적용 우선순위 (cascading order)
+
+---
 
 ### 범위가 좁을수록 강하다
 
@@ -766,9 +780,9 @@ p {
 <!-- 5는 id 우선 적용으로 빨강, 7은 인라인 우선 적용으로 노랑 -->
 ```
 
----
-
 ## CSS 상속
+
+---
 
 - CSS는 상속을 통해 부모 요소의 속성을 자식에게 상속
     - 속성(프로퍼티) 중에는 상속이 되는 것과 되지 않는 것들이 있음
@@ -782,9 +796,9 @@ p {
 
 <img width="1107" alt="html_31" src="https://user-images.githubusercontent.com/86648892/183297319-61534e1e-5323-49d4-ac73-1acd8a1afc79.png">
 
----
-
 ## CSS 기본 스타일
+
+---
 
 ### 크기 단위
 
@@ -844,9 +858,9 @@ p {
 - 기타 HTML 태그별 스타일링
     - 목록(li), 표(table)
 
----
-
 ## CSS Box model
+
+---
 
 - 모든 HTML 요소는 박스 모델이고
     - 하나의 박스는 4가지 영역으로 구성
@@ -881,6 +895,8 @@ p {
 
 ## shorthand 문법
 
+---
+
 ### margin and padding
 
 - 하나만 쓰면
@@ -912,9 +928,9 @@ p {
 
 <img width="1160" alt="html_39" src="https://user-images.githubusercontent.com/86648892/183297330-fe4004cd-43c5-43e8-93f4-387350355449.png">
 
----
-
 ## CSS Display
+
+---
 
 - Display에 따라 크기와 배치가 달라진다
 - 네모로 쌓인 박스들을 디스플레이에 따라 배치
@@ -961,9 +977,9 @@ p {
 
 - 중간에 흰색 공간은 3이 공간을 차지하고 있는 것
 
----
-
 ## CSS Position
+
+---
 
 - 레이아웃 관련
 - 문서 상 요소의 위치를 지정
@@ -1003,9 +1019,9 @@ p {
 
 <img width="993" alt="html_45" src="https://user-images.githubusercontent.com/86648892/183297342-cc3fb217-d4ca-4d2a-ad7b-1a590f7c490e.png">
 
----
-
 ## CSS 원칙 정리
+
+---
 
 - CSS 원칙
     - I : Normal Flow
@@ -1019,11 +1035,11 @@ p {
             - fixed: 화면의 위치
             - sticky: 기본적으로 static이지만 스크롤 이동에 따라 fixed로 변경
 
----
-
 # 추가 정리
 
-### HTML
+## HTML
+
+---
 
 - HTML 기본 구조를 채워주지 않으면 브라우저가 필요한 부분을 알아서 채워줬음을 알 수 있다
 - ‘!’ + tab
@@ -1053,7 +1069,9 @@ p {
         - 브라우저는 이러한 html 문서를 렌더링하려면 구조를 잡아야 함
         - 선택자를 통해 바꿔줄 수 있는 이유는 브라우저가 DOM 트리를 통해 구조를 기억하고 있기 때문
 
-### HTML 문서 구조화
+## HTML 문서 구조화
+
+---
 
 - 인라인 요소는 딱 그 자리만 차지하는 요소
 - 블록 요소는 한 줄을 전부 차지하는 요소
@@ -1080,6 +1098,8 @@ p {
 
 ## CSS
 
+---
+
 - DOM 트리 구조에 따라 상위에 있는 스타일이 폭포처럼 흘러내린다해서 cascading
 - 결국 2 steps
     - 선택하고
@@ -1087,7 +1107,9 @@ p {
 - 세미 콜론(;)으로 스타일 속성 구분
 - 내부 참조는 html 파일이 길어져서 잘 쓰지 않는다
 
-### CSS Selectors
+## CSS Selectors
+
+---
 
 - 선택자 유형은 기본 선택자와 결합자 수준에서 거의 끝난다
     - 속성 선택자는 `button[type = “submit”] {}` 과 같이 선언할 수 있음
@@ -1111,7 +1133,9 @@ p {
     - rem은 최상위 요소(html)의 사이즈를 기준으로 배수 단위를 가짐
     - 최상위 요소도 `html {}` 과 같이 스타일 지정 가능
 
-### CSS 기본 스타일
+## CSS 기본 스타일
+
+---
 
 - 1vw와 1vh
     - 현재 보고 있는 화면(viewport)의 100분의 1
@@ -1129,7 +1153,9 @@ p {
         
 - RGB 색상의 경우 마지막에 투명도 추가 가능
 
-### CSS Box Model
+## CSS Box Model
+
+---
 
 - 웹에서 보고 있는 모든 것은 박스 모델
 - 왼쪽 상단에서부터 정렬됨
@@ -1149,7 +1175,9 @@ p {
 - box-sizing은 기본적으로 content-box
     - border-box로 하고 싶다면 따로 설정
 
-### CSS Display
+## CSS Display
+
+---
 
 - 대표적인 블록 레벨 요소
     - div, p, hr, form
@@ -1159,7 +1187,9 @@ p {
 - `display: none`은 코드에는 있는데, element에 생성도 안됨
     - `visibility: hidden`은 DOM 트리 내부 element에 생성은 되어 공간은 차지하지만, 보이지는 않는 것
 
-### CSS Position
+## CSS Position
+
+---
 
 - mdn position으로 확인해보자
 - static
@@ -1176,9 +1206,7 @@ p {
 - sticky
     - 처음 내가 생성된 위치를 기준으로 해서 화면상에 그대로 stick!
 
----
-
-# 목차
+# CSS Layout and Responsive Web
 
 - CSS Layout
     - float
@@ -1188,11 +1216,19 @@ p {
     - bootstrap grid system
 - Responsive web
 
+## CHECK THESE SITES!
+
 ---
 
-# CSS Layout
+- [CSS Diner](https://flukeout.github.io/)
+- [Flexbox Froggy](https://flexboxfroggy.com/#ko)
+- [CSS Layout 정리](https://ko.learnlayout.com/display.html)
+- [Grid System 정리](https://roseee.tistory.com/entry/Bootstrap-%EA%B7%B8%EB%A6%AC%EB%93%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C-Grid-System)
+- [Emmet Cheatsheet](https://docs.emmet.io/cheat-sheet/)
 
 ## CSS Layout Techniques
+
+---
 
 - Display
 - Position
@@ -1202,15 +1238,15 @@ p {
 - 기타
     - Responsive Web Design (2010), Media Queries (2012)
 
----
+## Float
 
-# Float
+---
 
 - 박스를 왼쪽 혹은 오른쪽으로 이동시켜 텍스트를 포함한 인라인 요소들이 주변을 wrapping하도록 함
 - 그 주변을 물 흐르듯이 감싸라는 것
 - 요소가 Normal flow를 벗어나도록 함
 
-## Float 속성
+### Float 속성
 
 - none: 기본값
 - left: 요소를 왼쪽으로 띄움
@@ -1220,9 +1256,9 @@ p {
 
 <img width="474" alt="html_47" src="https://user-images.githubusercontent.com/86648892/183298291-96b28ff9-8bc3-4a09-a27d-f93e31f85d7d.png">
 
----
+## Flexbox
 
-# Flexbox
+---
 
 - 행과 열 형태로 아이템들을 배치하는 1차원 레이아웃 모델
     - z-index는 차원 간 배치
@@ -1235,7 +1271,7 @@ p {
     - 이전까지 Normal Flow를 벗어나는 수단은 Float 혹은 Position
     - 수동값 부여없이 수직정렬이나 아이템 간 간격 등을 동일하게 배치하는 것이 어려웠음
 
-## Flexbox 구성 요소
+### Flexbox 구성 요소
 
 - Flex Container (부모 요소)
     - 부모 요소에 flex를 적용함!
@@ -1251,7 +1287,7 @@ p {
     - 인라인과 블록의 차이처럼 요소의 테두리가 줄어듬
     - 인라인처럼 사용할 수 있고, 내용물의 크기만큼만 차지
 
-## Flex 속성
+### Flex 속성
 
 - 배치 설정
     - flex-direction
@@ -1263,7 +1299,7 @@ p {
     - align-items (모든 아이템을 cross axis 기준으로)
     - align-self (개별 아이템)
 
-## Flex 속성: flex-direction
+### Flex 속성: flex-direction
 
 - `flex-direction`
     - 요소를 배치할 방향
@@ -1275,7 +1311,7 @@ p {
 
 <img width="1205" alt="html_48" src="https://user-images.githubusercontent.com/86648892/183298292-b0952e0f-80f4-41c4-a2e9-c6a1608e232c.png">
 
-## Flex 속성: flex-wrap
+### Flex 속성: flex-wrap
 
 - `flex-wrap`
     - 아이템이 컨테이너를 벗어나는 경우의 설정
@@ -1288,25 +1324,25 @@ p {
             <img width="755" alt="html_49" src="https://user-images.githubusercontent.com/86648892/183298295-e837be2d-ca62-4683-94a6-cb021f079c2a.png">
             
 
-## Flex 속성: flex-flow (direction + wrap)
+### Flex 속성: flex-flow (direction + wrap)
 
 - `flex-flow: row nowrap;`
 - direction과 wrap 속성의 shorthand
     - flex-direction과 flex-wrap에 대한 설정을 차례로 작성
 
-## Flex 속성: justify-content
+### Flex 속성: justify-content
 
 - Main axis를 기준으로 공간 배분
 
 <img width="1173" alt="html_50" src="https://user-images.githubusercontent.com/86648892/183298296-3d0ae692-b0cb-4f89-817e-16405fb589cd.png">
 
-## Flex 속성: align-content
+### Flex 속성: align-content
 
 - Cross axis를 기준으로 공간 배분 (아이템이 한 줄로 배치되는 경우 확인할 수 없음)
 
 <img width="999" alt="html_51" src="https://user-images.githubusercontent.com/86648892/183298297-cd548a61-82d5-45f1-8f30-a6d5e5a1508c.png">
 
-## Flex 속성: justify-content & align-content
+### Flex 속성: justify-content & align-content
 
 - 공간 배분
     - flex-start
@@ -1323,20 +1359,20 @@ p {
     - space-evenly
         - 전체 영역에서 아이템 간 간격을 균일하게 분배
 
-## Flex 속성: align-items
+### Flex 속성: align-items
 
 - 모든 아이템을 Cross axis 기준으로 정렬
 
 <img width="1152" alt="html_52" src="https://user-images.githubusercontent.com/86648892/183298298-68296744-f7cb-4fb2-9467-3fe6584927ad.png">
 
-## Flex 속성: align-self
+### Flex 속성: align-self
 
 - 개별 아이템을 Cross axis 기준으로 정렬
 - 주의! 해당 속성은 컨테이너에 적용하는 것이 아니라 개별 아이템에 적용하는 것
 
 <img width="1172" alt="html_53" src="https://user-images.githubusercontent.com/86648892/183298300-91a2f43f-a0b0-45ba-bd70-812abe8fa8c7.png">
 
-## Flex 속성: align-items & align-self
+### Flex 속성: align-items & align-self
 
 - Cross axis를 중심으로
     - stretch
@@ -1351,7 +1387,7 @@ p {
     - baseline
         - 텍스트 baseline에 기준선을 맞춤
 
-## Flex 기타 속성
+### Flex 기타 속성
 
 - flex-grow
     - 남은 영역을 아이템에 분배
@@ -1365,6 +1401,8 @@ p {
 
 ## Flexbox 활용
 
+---
+
 ### 수직 수평 가운데 정렬
 
 <img width="831" alt="html_55" src="https://user-images.githubusercontent.com/86648892/183298302-e1a802df-9b6c-4c55-bd41-80a3f95b3c91.png">
@@ -1373,9 +1411,9 @@ p {
 
 <img width="940" alt="html_56" src="https://user-images.githubusercontent.com/86648892/183298304-ecce7748-2da6-401c-9083-66d04f478adc.png">
 
----
+## Bootstrap
 
-# Bootstrap
+---
 
 - 정형화된 css 컨텐츠를 편리하게 사용할 수 있도록 모아놓은 것
     - 쉽게 말해 css 코드 덩어리다
@@ -1388,7 +1426,7 @@ p {
 - Prebuilt Components
     - 다양한 component 사용 가능
 
-## CDN via jsDelivr
+### CDN via jsDelivr
 
 - Content Delivery(Distribution) Network
     - 컨텐츠(CSS, JS, Image, Text 등)을 효율적으로 전달하기 위해 여러 노드에 가진 네트워크에 데이터를 제공하는 시스템
@@ -1400,11 +1438,11 @@ p {
     - script는 `</body>` 앞에
         - 코드의 실행 속도를 위해
 
+## Bootstrap의 기본 원리
+
 ---
 
-# Bootstrap의 기본 원리
-
-## Spacing (margin and padding)
+### Spacing (margin and padding)
 
 - css는 부트스트랩 개발자들이 만들어놓았기에 클래스 지정만 하면됨
 - mt-3
@@ -1430,7 +1468,7 @@ p {
 
 <img width="809" alt="html_61" src="https://user-images.githubusercontent.com/86648892/183298311-13101685-1bf4-4f40-a208-34ddce99c95d.png">
 
-## Color
+### Color
 
 - 텍스트 컬러, 백그라운드 컬러 모두 적용 가능
 
@@ -1438,11 +1476,11 @@ p {
 
 <img width="1084" alt="html_63" src="https://user-images.githubusercontent.com/86648892/183298313-087004bb-ba89-49ad-a4af-5cc01f266550.png">
 
-## Text
+### Text
 
 <img width="850" alt="html_64" src="https://user-images.githubusercontent.com/86648892/183298316-12b6904b-7dd9-4808-8a23-7664c5236e23.png">
 
-## Display
+### Display
 
 <img width="1095" alt="html_65" src="https://user-images.githubusercontent.com/86648892/183298317-8750b7fc-33c8-428a-a8b2-c8ba407bd5c2.png">
 
@@ -1457,13 +1495,13 @@ p {
             - 반응형
             - grid system 기준 md까지 보이지 않다가 xl부터 보임
 
-## Position
+### Position
 
 <img width="589" alt="html_66" src="https://user-images.githubusercontent.com/86648892/183298318-4a824fc0-869f-4381-82b7-df2df617c53b.png">
 
----
-
 ## Bootstrap Components
+
+---
 
 ### Components
 
@@ -1541,11 +1579,11 @@ p {
 - 예시
     - Media Queries, Flexbox, Bootstrap Grid System, The viewport meta tag
 
+## Bootstrap Grid System
+
 ---
 
-# Bootstrap Grid System
-
-## Grid System
+### Grid System
 
 - 요소들의 디자인 및 배치에 도움을 주는 시스템
 - 기본 요소
@@ -1553,7 +1591,7 @@ p {
     - Gutter: 칼럼과 칼럼 사이의 공간 (사이 간격)
     - Container: Column들을 담고 있는 공간
 
-## Bootstrap Grid System
+### Bootstrap Grid System
 
 - Bootstrap Grid system은 flexbox로 제작됨
 - container, rows, columns로 컨텐츠를 배치하고 정렬
@@ -1563,7 +1601,7 @@ p {
 
 <img width="459" alt="html_80" src="https://user-images.githubusercontent.com/86648892/183298338-4cfbe979-6d06-462d-a520-8c5891c3acca.png">
 
-## Grid system breakpoints
+### Grid system breakpoints
 
 <img width="754" alt="html_81" src="https://user-images.githubusercontent.com/86648892/183298339-9c2a2680-e63e-444c-b219-1ca9836e11a4.png">
 
@@ -1600,9 +1638,9 @@ p {
 
 <img width="769" alt="html_93" src="https://user-images.githubusercontent.com/86648892/183298355-2311d9bf-aea7-489f-bfcd-a9bb79ff5bd3.png">
 
----
+## 추가 정리
 
-# 추가 정리
+---
 
 - 레이아웃을 따로 지정하지 않으면 normal flow로 인라인 요소는 좌에서 우로, 블록 요소는 위에서 아래로 배치
 - html의 모든 요소는 box model
@@ -1634,9 +1672,9 @@ p {
 - 수직 정렬을 위해서 `line-height: ;` 속성 사용 가능
 - margin이 겹칠 경우 값이 더 큰 것을 줌
 
----
+## box를 통한 positioning 연습
 
-### box를 통한 positioning 연습
+---
 
 ```html
 <!DOCTYPE html>
@@ -1698,9 +1736,9 @@ p {
 
 <img width="1062" alt="html_94" src="https://user-images.githubusercontent.com/86648892/183298357-04168023-7b45-49b5-9ff2-8517686180b7.png">
 
----
-
 ## web page practice
+
+---
 
 <img width="1089" alt="html_95" src="https://user-images.githubusercontent.com/86648892/183300044-d27bacf1-7115-4e3d-a16a-8a5d077e8f4e.png">
 <img width="950" alt="html_96" src="https://user-images.githubusercontent.com/86648892/183300050-f763570d-f00f-4037-a220-a74a19c2ee31.png">
@@ -1714,9 +1752,9 @@ p {
 <img width="1150" alt="html_104" src="https://user-images.githubusercontent.com/86648892/183300067-36eb6cd1-ffe2-4b5e-95a6-b736921d7c53.png">
 <img width="1136" alt="html_105" src="https://user-images.githubusercontent.com/86648892/183300072-a9ba4025-bcf4-4369-a469-231dbb935965.png">
 
----
-
 ## nth-child와 nth-of-type
+
+---
 
 ### 1) 아래의 코드를 작성하고 결과를 확인하시오.
 ```html
@@ -1767,8 +1805,9 @@ p {
 ### 3) 작성한 코드를 참고하여 nth-child()와 nth-of-type()의 차이점을 작성하시오.
 nth-child()는 자식 요소 중 유형을 고려하지 않은 것이며, nth-of-type()은 자식 요소 중 유형을 고려한 순서를 뜻한다. `#ssafy > p:nth-child(2)`는 ssafy라는 id를 가진 태그의 두번째 자식이 p태그이면 해당 태그에 정의된 css를 적용해달라는 것이다. 만약 두번째 자식이 p태그가 아니라면 해당 css는 적용되지 않는다. 반면 `#ssafy > p:nth-of-type(2)`는 ssafy라는 id를 가진 태그의 자식들 중 두번째로 나오는 p태그에 해당 css를 적용해달라는 것이다.
 
----
 ## Bootstrap Components 예제 코드 (Button, Navbar, Pagination 만들기)
+
+---
 
 ### 1.Button 만들기 
 
@@ -1779,8 +1818,6 @@ nth-child()는 자식 요소 중 유형을 고려하지 않은 것이며, nth-of
 ```html
 <button type="submit" class="btn btn-primary" width="40rem;">Submit</button>
 ```
-
-
 
 ### 2. NavBar 만들기
 
@@ -1851,8 +1888,6 @@ nth-child()는 자식 요소 중 유형을 고려하지 않은 것이며, nth-of
 </html>
 ```
 
-
-
 ### 3. PageNation 만들기
 
 ##### (a) - `pagination`
@@ -1879,9 +1914,10 @@ nth-child()는 자식 요소 중 유형을 고려하지 않은 것이며, nth-of
   </nav>
 ```
 
+## Web Page Build Practice
+
 ---
 
-## Web Page Build Practice
 <img width="1897" alt="html_106" src="https://user-images.githubusercontent.com/86648892/183303666-a5ac2acc-81d2-4dbc-a026-d465e9358642.png">
 <img width="1897" alt="html_107" src="https://user-images.githubusercontent.com/86648892/183303672-37a48639-267a-43f0-8881-c0d4ca6bd025.png">
 
@@ -1943,9 +1979,9 @@ nth-child()는 자식 요소 중 유형을 고려하지 않은 것이며, nth-of
 </html>
 ```
 
----
-
 ## Web Page Build Practice 2
+
+---
 
 ```css
 @import url('https://fonts.googleapis.com/css2?family=Merienda+One&family=Nunito:wght@200;300;400;500;600&display=swap');
@@ -2344,9 +2380,9 @@ body {
 </html>
 ```
 
----
-
 ## Grid Breakpoint Practice
+
+---
 
 <img width="1319" alt="html_113" src="https://user-images.githubusercontent.com/86648892/183305234-10b33cbe-6363-43b2-ae3f-0b7837995e61.png">
 
@@ -2576,12 +2612,3 @@ body {
 </html>
 
 ```
-
----
-
-# CHECK THESE SITES!
-- [CSS Diner](https://flukeout.github.io/)
-- [Flexbox Froggy](https://flexboxfroggy.com/#ko)
-- [CSS Layout 정리](https://ko.learnlayout.com/display.html)
-- [Grid System 정리](https://roseee.tistory.com/entry/Bootstrap-%EA%B7%B8%EB%A6%AC%EB%93%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C-Grid-System)
-- [Emmet Cheatsheet](https://docs.emmet.io/cheat-sheet/)

@@ -1,238 +1,3 @@
-# Filled with Clutters:bulb:
-
-- [Command Line Interface](#cli)
-- [Various Cheat Sheets](#cheat-sheets)
-- [Markdown](#markdown-1)
-- [Git](#git)
-
-# CLI
-
-## CLI?
-
----
-
-- Command Line Interface
-  - 명령어를 통해 사용자와 컴퓨터가 상호 작용하는 방식
-- ↔ GUI (Graphic User Interface)
-  - 그래픽을 통해 사용자와 컴퓨터가 상호 작용하는 방식
-- CLI / GUI 모두 컴퓨터에 명령을 내리는 것
-  - WHY CLI?
-  - 컴퓨터의 리소스 절약
-  - 할 수 있는게 더 많음
-  - 수많은 서버 / 개발 시스템이 CLI를 통한 조작 환경을 제공
-- 절대경로? 상대경로?
-  - 절대경로
-    - C:/Users/ssafy/Desktop
-    - 루트 디렉토리부터 목적 지점까지 거치는 모든 경로를 전부 작성한 것
-  - 상대경로
-    - 현재 작업하고 있는 디렉토리를 기준으로 계산된 상대적 위치를 작성한 것
-    - 현재 작업하고 있는 디렉토리가 C:/Users일 때 윈도우 바탕화면으로의 상대 경로는 ssafy/Desktop
-    - ./ : 현재 작업하고 있는 폴더
-    - ../ : 현재 작업하고 있는 폴더의 부모 폴더
-    - start . : 내가 있는 위치에서 window를 열어달라는 것, 이 역시도 상대경로
-  - 절대경로 상대경로 설정을 잘못하여 에러가 나는 경우도 있다
-- ~: 현재 작업 중인 위치 중 자주 접근하는 곳! 홈 디렉토리 부분 C: / Users / username
-  ![CLI_1](https://user-images.githubusercontent.com/86648892/181915858-4843a73f-843a-4a1f-b1f6-7989c5be5227.png)
-  - 바탕화면도 폴더이다
-  - desktop.ini 같은 것은 숨겨져 있는 것
-    ![CLI_2](https://user-images.githubusercontent.com/86648892/181915871-bd5912ab-6db4-465c-8cb2-6555d554bdaa.png)
-  - CLI의 근본은 Linux / Unix에서 나옴
-    - mac OS는 이 명령어를 그대로 차용
-      - OS 자체가 터미널 친화적
-    - window는 명령어 체계가 다름
-      - PowerShell은 이러한 명령어 체계를 사용할 수 있도록 패치하여 만든 것
-
-## CLI 명령어
-
----
-
-- touch: 파일을 생성하는 명령어
-- mkdir: 새 폴더를 생성하는 명령어
-- ls: 현재 작업 중인 디렉토리의 폴더 / 파일 목록을 보여주는 명령어
-- cd: change directory / 현재 작업 중인 디렉토리를 변경하는 명령어
-  - cd 경로이름 치다가 tab 누르면 ls에서 검색한 목록 중 가장 근접한 것으로 자동완성
-  - cd .. 은 하나 상위 폴더로 이동
-- start / open: 폴더 / 파일을 여는 명령어 / window는 start, mac은 open
-  - 폴더 path가 너무 길 경우 GUI로 바로 짠 열어줄 수 있음
-  - start . : 현재 위치를 열어줌
-  - start : CLI 환경 열어줌
-- rm: 파일을 삭제하는 명령어 / -r 옵션을 주면 폴더 삭제 가능
-  - rm 파일명 일부 + tab 2번 치면 해당 명칭이 포함된 것들 보여줌 → 이 중 골라서 삭제
-  - -r 옵션의 의미는 recursive
-- clear: 화면 지우기
-
-# Cheat Sheets
-
-## WINDOW
-
----
-
-- window + 방향키
-  - 화면 분할
-- window + shift + S
-  - 부분 캡쳐
-
-## MARKDOWN
-
----
-
-- tab
-  - 들여쓰기
-- shift + tab
-  - 내어쓰기
-
-## CLI (GIT BASH)
-
----
-
-- 위아래 화살표 누르기
-  - 이전에 내렸던 명령 히스토리들이 뜸
-- code .
-  - 현재 위치에서 vscode 열기
-- python del.py
-  - del.py 파일 실행
-  - python은 ~~~~pyhton.exe에 대한 환경변수
-- CLI에서 파일 수정
-  - vi 파일명
-  - i → 수정 → esc → :wq
-
-## VSCODE
-
----
-
-- 새로운 파일 생성
-  - 왼쪽 위 아이콘 클릭
-  - ctrl + n → ctrl + s
-- 전체선택
-  - ctrl + a
-- 주석처리
-  - ctrl + /
-- 전체 주석처리
-  - ctrl + a → ctrl + /
-- 커서를 위아래 여러 줄로 확장
-  - alt + ctrl + 위아래 화살표
-- 줄 바꿈
-  - alt + 위아래 화살표
-- 줄 복사
-  - alt + shift + 위아래 화살표
-- 특정 단어 replace
-  - ctrl + d
-- 파일 settings
-  - ctrl + ,
-- 전체 settings
-  - ctrl + shift + p
-- 터미널 열기
-  - ctrl + shift + `
-- 시작화면
-  - ctrl + k → f
-
-## HTML / CSS
-
----
-
-- [Emmet Documentation](https://docs.emmet.io/cheat-sheet/)
-- ‘!’ + tab
-  - html document 구조 생성
-- tag’\*’숫자
-  - 숫자만큼 태그 생성
-- tag1‘>’tag2
-  - tag1 아래 하위 tag2 생성
-- ctrl + ‘/’
-  - 주석 처리
-- shift + 스크롤
-  - 옆으로 스크롤
-
-## PyCharm
-
----
-
-### 디버거 실행
-
-- `shift + F9`
-
-### Stepping Tools
-
-- 디버깅을 수행할 때 유용한 다양한 도구
-
-![aps_31](https://user-images.githubusercontent.com/86648892/184479545-17d7412e-a520-45d9-8c67-9998c689dfbd.png)
-
-| 번호 | 도구의 기능          | 단축키             | 설명                                                                                                                                                   |
-| ---- | -------------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1    | Show Execution Point | `Alt + F10`        | 현재 실행 지점을 가리킴                                                                                                                                |
-| 2    | Step Over            | `F8`               | 현재 실행 지점이 있는 경우 해당 함수(메서드) 또는 파일의 다음 줄까지 이동<br>함수를 만나면 함수 안으로 들어가지 않고 함수의 실행 결과 뒷줄로 바로 이동 |
-| 3    | Step Into            | `F7`               | 디버거가 순차적으로 실행되다가 함수(메서드)를 만나면 해당 함수 내부로 들어감                                                                           |
-| 4    | Step Into My Code    | `Alt + Shift + F7` | 라이브러리 소스 코드가 아닌 내가 작성한 코드의 라인만 디버거를 실행하고 싶은 경우                                                                      |
-| 5    | Force Step Into      | `Alt + Shift + F7` |                                                                                                                                                        |
-| 6    | Step Out             | `Shift + F8`       | 현재 함수(메서드) 바로 뒤에 실행되는 줄로 이동<br>함수 안으로 들어갔는데 해당 밖으로 밖으로 나오고 싶은 경우 사용                                      |
-| 7    | Run to Cursor        | `Alt + F9`         | 현재 커서가 위치한 줄로 바로 이동<br>단, 중간에 다른 Breakpoint가 있는 경우 해당 위치에서 멈추게 됨                                                    |
-| 8    | Evaluate Expression  | `Alt + F8`         |                                                                                                                                                        |
-
-### 재실행 및 종료
-
-- 디버거 세션의 재실행은 `ctrl + F5`
-- 디버거 세션의 종료는 `ctrl + F2`
-
-# Markdown
-
-## Markdown
-
----
-
-- 텍스트 기반의 가벼운 마크업(markup) 언어
-- 마크업(markup): 태그(tag)를 이용해서 문서의 구조를 나타내는 것
-- 문서의 구조와 내용을 같이 쉽고 빠르게 적고자 탄생 // 시초는 신문기사 등을 빠르게 적기 위해 탄생
-- jupyter, notion, typora
-  - Typora
-    - [Markdown Cheat-sheet](https://www.markdownguide.org/cheat-sheet)
-    - Heading
-      - '#' + spacebar
-      - 문서의 제목이나 소제목으로 사용
-      - #의 개수에 따라 제목의 수준을 구별 (1~6)
-      - 문서 구조의 기본
-      - 단순히 글자 크기를 사용하지 마라
-    - Ordered List
-      - '1. 2. 3.' + spacebar
-    - Unorderd List
-      - '\*' + spacebar
-    - Code Block
-      - ` 키를 3번 눌러주고 엔터
-    - Inline Code Block
-      - ` 키로 감싸주면 됨
-    - Link
-      - '[string]' + (url)
-      - string 부분에 보여지는 이름, url 부분에 링크 주소
-    - Image
-      - '![string]' + (img_url)
-      - '![string]' + (filepath\image.jpg)
-    - Text Emphasis
-      - bold: 글씨 양 옆에 '\*' 2개씩
-      - italic: 글씨 양 옆에 '\*' 1개씩
-      - strikethrough: 글씨 양 옆에 '~' 2개씩
-    - Horizontal Line
-      - -(hyphen) 3개 + enter
-      - hyphen 대신 \_ or \* 역시 가능
-
-## Why Markdown?
-
----
-
-- Github 문서의 시작과 끝이다!
-- README.md
-  - 오픈소스의 공식 문서 작성
-  - 매일 학습한 내용 정리
-  - 마크다운을 이용한 블로그 운영
-
-## TIL (Today I Learned)
-
----
-
-- 매일 내가 배운 것을 마크다운으로 정리해서 문서화하는 것
-- 신입 개발자에게 필요한 소양
-- Github 관리에 있어 첫걸음 및 장기 프로젝트
-- SSAFY에서 제공하는 자료나 과제는 깃헙에 올리지 말 것
-
-# GIT
-
 ## GIT 이란?
 
 ---
@@ -367,9 +132,9 @@
 
 ---
 
-- git status
+- `git status`
   - 현재 git 상태 알려줌
-- git add
+- `git add`
   - untracked → staged
   - git add .
     - 모든 파일 staging area로 옮김
@@ -377,32 +142,34 @@
   - 여러 줄의 commit message를 남길 수 있는 장점
   - 그러나 굳이?
   - :q로 나감
-- git commit -m “message”
+- `git commit -m “message”`
   - message라는 이름의 커밋 메세지를 남김
-- git log
+- `git log`
   - 커밋 기록 확인 가능
-- git diff ab12 cd34
+- `git diff ab12 cd34`
   - ab12, cd34는 git log에서 확인한 커밋값 앞 4자리
   - ab12에 비해서 cd34가 어떻게 변했는지 알려줌
-- git remote add origin {remote_repo}
+- `git remote add origin {remote_repo}`
   - origin: remote_repo의 별명
   - remote_repo: remote repo의 주소
   - 하나의 로컬저장소가 여러개의 remote repo를 바라볼 수 있긴함 but 잘안씀
-- git push origin master
+- `git push origin master`
   - local의 commit을 remote으로 올리는 것을 push라 함
     ![git_10](https://user-images.githubusercontent.com/86648892/181916328-96dd4a37-8132-4ab7-a340-a84d85cfd72a.png)
   - 최초 push의 경우 권한 인증 필요
-- git push —set-upstream origin master
+- `git push —set-upstream origin master`
   - 이후 git push만 누르면 master로 푸쉬됨
   - git push -u origin master
-- git clone {remote_repo}
+- `git clone {remote_repo}`
   - 최초의 커밋을 깃헙이 찍은 상태로 만들어줌
   - cd desktop
   - git clone https://github.com/zacinthepark/clone_test.git
   - start . → 현재 위치 폴더 열어줌
-- git pull
+- `git pull`
 
-# Git Undoing
+## Git Undoing
+
+---
 
 - Working Direcory 작업 단계
   - Working Directory에서 수정한 파일 내용을 이전 커밋 상태로 되돌리기
@@ -428,6 +195,8 @@
   - [참고] git 2.23.0 버전 이전에는 `git checkout -- {파일 이름}`
 
 ## Staging Area 작업 단계 되돌리기
+
+---
 
 - Staging Area에 반영된 파일을 Working Directory로 되돌리기
 - root-commit 여부에 따라 2가지 명령어로 나뉨
@@ -478,9 +247,7 @@
 - `vi {파일 이름}`
   - 해당 파일을 vim 편집기로 편집
 
-# Git reset & revert
-
-## Git reset
+## `git reset`
 
 ---
 
@@ -506,13 +273,13 @@
     - 사용 시 주의할 것!
   - 기존의 Untracked 파일은 사라지지 않고 Untracked로 남아있음
 
-### [참고] git reflog
+### [참고] `git reflog`
 
 - git reset의 hard 옵션은 Working Directory 내용까지 삭제하므로 위험할 수 있음
 - `git reflog` 명령어를 이용하면 reset하기 전의 과거 커밋 내역을 모두 조회 가능
 - 이후 해당 커밋으로 reset하면 hard 옵션으로 삭제된 파일도 복구 가능
 
-## Git revert
+## `git revert`
 
 ---
 
@@ -523,7 +290,9 @@
   - 해당 커밋의 행위는 취소하고
     - 취소했다는 사실을 새로운 커밋으로 남김
 
-# Git Branch
+## Git Branch
+
+---
 
 - “Branch는 Commit을 가리키는 Pointer임”
 
@@ -533,9 +302,7 @@
 - 하나의 작업은 하나의 브랜치로 나누어 진행되므로 체계적인 개발이 가능함
 - Git은 브랜치를 만드는 속도가 굉장히 빠르고, 적은 용량을 소모함
 
-## git branch
-
----
+### `git branch`
 
 - 브랜치의 조회, 생성, 삭제와 관련된 git 명령어
 - 조회
@@ -555,9 +322,7 @@
   - `git branch -D {브랜치 이름}`
     - 강제 삭제
 
-## git switch
-
----
+### `git switch`
 
 - 현재 브랜치에서 다른 브랜치로 이동하는 명령어
 - `git switch {브랜치 이름}`
@@ -569,17 +334,13 @@
 - switch하기 전에, 해당 브랜치의 변경 사항을 반드시 커밋해야함을 주의할 것!
   - 다른 브랜치에서 파일을 만들고 커밋하지 않은 상태에서 switch를 하면 브랜치를 이동했음에도 불구하고 해당 파일이 그대로 남아있게됨
 
-## [참고] HEAD
-
----
+### [참고] HEAD
 
 - “This is a pointer to the local branch you’re currently on”
 - HEAD는 현재 브랜치를 가리키고, 각 브랜치는 자신의 최신 커밋을 가리키므로 결국 HEAD가 현재 브랜치의 최신 커밋을 가리킨다고 할 수 있음
 - `git log` 혹은 `cat .git/HEAD`를 통해서 현재 HEAD가 어떤 브랜치를 가리키는지 알 수 있음
 
-## git merge
-
----
+### `git merge`
 
 - 분기된 브랜치들을 하나로 합치는 명령어
 - master 브랜치가 사용이므로, 주로 master 브랜치에 병합
@@ -595,9 +356,7 @@
     3. Merge Conflict
        - 충돌이 발생한 부분은 작성자가 직접 해결
 
-# Git workflow
-
-## Git 브랜치 전략
+## Git Workflow
 
 ---
 
