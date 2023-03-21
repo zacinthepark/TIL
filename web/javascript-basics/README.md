@@ -3666,7 +3666,7 @@ console.log("3. 다른 작업 실행")
 ## JS Runtime
 
 - JavaScript 자체는 Single Thread이므로 비동기 처리를 할 수 있도록 도와주는 환경이 필요
-- 특정 언어가 동작할 수 있는 환경을 **런타임(Runtime)**이라함
+- 특정 언어가 동작할 수 있는 환경을 "런타임(Runtime)"이라함
 - JS에서 **비동기와 관련한 작업은 브라우저 또는 Node 환경에서 처리**
   - 브라우저 환경에서의 비동기 동작은 크게 다음의 요소들로 구성됨
     1. JS Engine의 **Call Stack**
