@@ -272,7 +272,7 @@ setInterval(tick, 1000);
     - When parent component re-renders, but there is no change in children component, `export default React.memo(children-component)` can save unnecessary child components rendering
       - Since this process needs saving previous props info and comparing with current props info, you should decide which costs more
 - `useCallback(()=>{}, [dependencies])`
-  - When a component re-renders, functions inside the component are also newly made. By using `useCallBack()`, you can store the funciton in the same memory
+  - When a component re-renders, functions inside the component are also newly made. By using `useCallBack()`, you can store the function in the same memory
   - Due to the characteristics of closures in javascript, you should declare dependencies for changes
   - Sample code
     ```jsx
