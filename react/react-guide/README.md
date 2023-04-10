@@ -18,6 +18,7 @@
 - **[Sending Data by React Router](#sending-data-by-react-router)**
 - **[Other Features in React Router](#other-features-in-react-router)**
 - **[Authentication](#authentication)**
+- **[Optimization and Deployment](#optimization-and-deployment)**
 
 ## Settings
 
@@ -4512,5 +4513,77 @@ export function action() {
   localStorage.removeItem('expiration');
   return redirect('/');
 }
+
+```
+
+## Optimization and Deployment
+
+---
+
+### Lazy Loading
+
+- Load code only when it's needed
+- `import` returns `Promise`
+- A function is only a valid component if it returns jsx code
+  - Because `import` returns `Promise`, wrap it with `lazy()`
+- Wrap the element with `<Suspense>` component
+  - Show `fallback` property until the element is loaded
+- Change `loader` to be executed after `import`
+
+```jsx
+import { lazy, Suspense } from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+// import BlogPage, { loader as postsLoader } from './pages/Blog';
+import HomePage from './pages/Home';
+// import PostPage, { loader as postLoader } from './pages/Post';
+import RootLayout from './pages/Root';
+
+const BlogPage = lazy(() => import('./pages/Blog'));
+const PostPage = lazy(() => import('./pages/Post'));
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootLayout />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
+      {
+        path: 'posts',
+        children: [
+          {
+            index: true,
+            element: (
+              <Suspense fallback={<p>Loading...</p>}>
+                <BlogPage />
+              </Suspense>
+            ),
+            loader: () =>
+              import('./pages/Blog').then((module) => module.loader()),
+          },
+          {
+            path: ':id',
+            element: (
+              <Suspense fallback={<p>Loading...</p>}>
+                <PostPage />
+              </Suspense>
+            ),
+            loader: (meta) =>
+              import('./pages/Post').then((module) => module.loader(meta)),
+          },
+        ],
+      },
+    ],
+  },
+]);
+
+function App() {
+  return <RouterProvider router={router} />;
+}
+
+export default App;
 
 ```
