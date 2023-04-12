@@ -1,48 +1,43 @@
-function square(num: number) {
-  return num * num
+// Function parameter type annotations:
+const doSomething = (person: string, age: number, isFunny: boolean) => {};
+
+// Return type annotation:
+function greet(person: string = "stranger"): string {
+  return `Hi there, ${person}!`;
 }
 
-function greet(person: string = 'stranger'): string {
-  return `Hi there, ${person}`
+function square(num: number): number {
+  return num * num;
 }
 
-const doSomething = (person: string, age:number, isFunny: boolean) => {}
+square(3);
+greet("Tonya Harding");
+doSomething("ChickenFace", 78, true);
 
-greet()
-greet('Tom Hardy')
-doSomething('Tom', 26, true)
-
-function rando(num: number) {
-  if (Math.random() < 0.5) {
-    return num.toString()
-  }
-  return num
-}
-
+// Arrow function:
 const add = (x: number, y: number): number => {
-  return x + y
-}
+  return x + y;
+};
 
-const colors = ['red', 'orange', 'yellow']
-colors.map(color => {
-  return color.toUpperCase()
-})
+// Contextual Type Clues
+const colors = ["red", "orange", "yellow"];
+colors.map((color) => {
+  return color.toUpperCase();
+});
 
+// Void
 function printTwice(msg: string): void {
-  console.log(msg)
-  console.log(msg)
+  console.log(msg);
+  console.log(msg);
 }
 
-// Never Type
-
-// exception
+// Never
 function makeError(msg: string): never {
-  throw new Error(msg)
+  throw new Error(msg);
 }
 
-// infinite loop
 function gameLoop(): never {
-  while(true) {
-    console.log('GAME LOOP RUNNING!')
+  while (true) {
+    console.log("GAME LOOP RUNNING!");
   }
 }

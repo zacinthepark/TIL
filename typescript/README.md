@@ -9,6 +9,7 @@ null * 213 // 0
 undefined * 8976 // NaN
 const shape = { width: 14, height: 12 };
 shape.heigth // undefined
+
 ```
 
 > Typescript is a static type checker. Detects errors in our code without running it. Javascript compiles and runs the code.
@@ -27,52 +28,48 @@ shape.heigth // undefined
 
 ---
 
-### Type Annotation
-
 ```ts
-let movieTitle: string = 'Amadeus'
-movieTitle = 'Arrival'
-// movieTitle = 9
-movieTitle.toUpperCase()
+// String Variable With Explicit Annotation
+let movieTitle: string = "Amadeus";
+movieTitle = "Arrival";
+movieTitle = 9; //This results in an error!
+movieTitle.toUpperCase();
 
-let numCatLives: number = 42
-numCatLives = 60
-numCatLives += 1
-// numCatLives = 'Hello'
+// Number Variable with explicit annotation
+let numCatLives: number = 9;
+numCatLives += 1;
+numCatLives = "zero"; //Error!
 
-let gameOver: boolean = false
-gameOver = true
-// gameOver = 'true'
-```
+// Explicitly typed boolean variable:
+let gameOver: boolean = false;
+gameOver = true;
+gameOver = "true"; //error!!
 
-### Type Inference
+// Type Inference
+let tvShow = "Olive Kitteridge";
+tvShow = "The Other Two";
+tvShow = false;
 
-```ts
-let tvShow = 'Olive Kitteridge'
-tvShow = 'The Other Two'
-// tvShow = false
-```
+let isFunny = false;
+isFunny = true;
+isFunny = "asd";
 
-### Any Type
+// the any type
+let thing: any = "hello"; //This is not a great idea!
+thing = 1;
+thing = false;
+thing();
+thing.toUpperCase();
 
-```ts
-let thing: any = 'hello'
-thing = 1
-thing = false
-thing()
-thing.toUpperCase()
-```
+const movies = ["Arrival", "The Thing", "Aliens", "Amadeus"];
+let foundMovie: string;
 
-### Implicit Typing
-
-```ts
-const movies = ['Arrival', 'The Thing', 'Aliens', 'Amadeus']
-let foundMovie: string
 for (let movie of movies) {
-  if (movie === 'Amadeus') {
-    foundMovie = 'Amadeus'
+  if (movie === "Amadeus") {
+    foundMovie = "Amadeus";
   }
 }
+
 ```
 
 ## 함수
@@ -80,54 +77,50 @@ for (let movie of movies) {
 ---
 
 ```ts
-function square(num: number) {
-  return num * num
+// Function parameter type annotations:
+const doSomething = (person: string, age: number, isFunny: boolean) => {};
+
+// Return type annotation:
+function greet(person: string = "stranger"): string {
+  return `Hi there, ${person}!`;
 }
 
-function greet(person: string = 'stranger'): string {
-  return `Hi there, ${person}`
+function square(num: number): number {
+  return num * num;
 }
 
-const doSomething = (person: string, age:number, isFunny: boolean) => {}
+square(3);
+greet("Tonya Harding");
+doSomething("ChickenFace", 78, true);
 
-greet()
-greet('Tom Hardy')
-doSomething('Tom', 26, true)
-
-function rando(num: number) {
-  if (Math.random() < 0.5) {
-    return num.toString()
-  }
-  return num
-}
-
+// Arrow function:
 const add = (x: number, y: number): number => {
-  return x + y
-}
+  return x + y;
+};
 
-const colors = ['red', 'orange', 'yellow']
-colors.map(color => {
-  return color.toUpperCase()
-})
+// Contextual Type Clues
+const colors = ["red", "orange", "yellow"];
+colors.map((color) => {
+  return color.toUpperCase();
+});
 
+// Void
 function printTwice(msg: string): void {
-  console.log(msg)
-  console.log(msg)
+  console.log(msg);
+  console.log(msg);
 }
 
-// Never Type
-
-// exception
+// Never
 function makeError(msg: string): never {
-  throw new Error(msg)
+  throw new Error(msg);
 }
 
-// infinite loop
 function gameLoop(): never {
-  while(true) {
-    console.log('GAME LOOP RUNNING!')
+  while (true) {
+    console.log("GAME LOOP RUNNING!");
   }
 }
+
 ```
 
 ## 객체 타입
@@ -233,7 +226,6 @@ const user: User = {
 
 // 교차 타입(Intersection Type)
 
-
 type Circle = {
   radius: number
 }
@@ -264,4 +256,45 @@ const christy: CatDog = {
   breed: 'Husky',
   age: 9
 }
+
 ```
+
+## 배열
+
+---
+
+```ts
+// String array
+const activeUsers: string[] = [];
+activeUsers.push("Tony");
+
+// Array of numbers
+const ageList: number[] = [45, 56, 13];
+ageList[0] = 99;
+
+// Alternate Syntax:
+// const bools: Array<boolean> = []
+const bools: boolean[] = [];
+
+type Point = {
+  x: number;
+  y: number;
+};
+
+const coords: Point[] = [];
+coords.push({ x: 23, y: 8 });
+
+// Multi-dimensional string array
+const board: string[][] = [
+  ["X", "O", "X"],
+  ["X", "O", "X"],
+  ["X", "O", "X"],
+];
+
+const demo: number[][][] = [[[1]]]
+
+```
+
+## 유니온 타입
+
+---
