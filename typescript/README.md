@@ -63,7 +63,7 @@ thing()
 thing.toUpperCase()
 ```
 
-### Lazy Initialization
+### Implicit Typing
 
 ```ts
 const movies = ['Arrival', 'The Thing', 'Aliens', 'Amadeus']
@@ -79,3 +79,4 @@ for (let movie of movies) {
 
 ---
 
+ 

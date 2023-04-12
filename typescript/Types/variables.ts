@@ -28,7 +28,7 @@ thing = false
 thing()
 thing.toUpperCase()
 
-// lazy initialization
+// Implicit Typing
 
 const movies = ['Arrival', 'The Thing', 'Aliens', 'Amadeus']
 let foundMovie: string
