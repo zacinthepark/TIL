@@ -359,3 +359,6 @@ type DayOfWeek =
 let today: DayOfWeek = "Sunday";
 
 ```
+
+## 튜플(Tuple)과 Enum
+
