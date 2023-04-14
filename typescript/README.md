@@ -362,3 +362,4 @@ let today: DayOfWeek = "Sunday";
 
 ## 튜플(Tuple)과 Enum
 
+Tuples are arrays of fixed lengths and ordered with specific types
