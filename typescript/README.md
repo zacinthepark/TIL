@@ -737,3 +737,128 @@ const pierre: Engineer = {
   - TypeScript는 document 객체 및 해당 프로퍼티와 메서드를 인지한다
   - 브라우저에서 `console.dir(document)`을 통해 객체를 상세히 확인 가능
   - TypeScript의 경우 Go To Type Definition (형식 정의로 이동)을 통해 더 자세히 확인 가능
+- TypeScript의 `lib` 옵션은 기본값이 built-in JS APIs, browser environments (DOM APIs) 등으로 설정되어 있다
+- `lib: ["DOM"]`
+
+### TypeScript의 Non-Null 단언 연산자 (Non-Null Assertion Operator)
+
+```ts
+const btn = document.getElementById('btn') // 타입은 HTMLElement | null
+
+// 1) 자바스크립트 옵셔널 체이닝으로 해결
+// 해당 id의 버튼이 있는 경우에만 동작
+btn?.addEventListener('click', function() {
+  alert('CLICKED!!!')
+})
+
+// 2) 타입스크립트 Non-Null 단언 연산자 활용
+
+const btn = document.getElementById('btn')! // null이 아닐 것이라 단언 (타입은 HTMLElement)
+btn.addEventListener('click', function() {
+  alert('CLICKED!!!')
+})
+
+```
+
+### 타입 단언
+
+- 타입스크립트에 직접 타입을 설정
+```ts
+let mystery: unknown = 'Hello World!'
+const numChars = (mystery as string).length // undefined이지만 런타임 이전을 관여하는 타입스크립트에서는 문제 없음
+
+```
+- DOM으로 타입 단언하기
+```ts
+const btn = document.getElementById("btn")! as HTMLButtonElement
+const input = document.getElementById("todoinput")! as HTMLInputElement
+
+btn.addEventListener('click', function() {
+  alert(input.value)
+  input.value = ''
+})
+
+```
+
+### 이벤트 다루기
+
+```ts
+const form = document.querySelector('form')!
+
+// 이런 식으로 콜백으로 부른 경우 타입스크립트는 context clues를 활용하여 e의 타입이 SubmitEvent임을 안다
+form.addEventListener('submit', function(e) {
+  e.preventDefault()
+  console.log('SUBMITTED!')
+})
+
+// 그러나 따로 분리하면 e의 타입을 추론하지 못한다 (타입 명시 필요)
+function handleSubmit(e: SubmitEvent) {
+  e.preventDefault()
+  console.log('SUBMITTED!')
+}
+
+form.addEventListener('submit', handleSubmit)
+
+```
+
+### Todo List 만들기
+
+```ts
+interface Todo {
+  text: string;
+  completed: boolean;
+}
+
+const btn = document.getElementById("btn")! as HTMLButtonElement; //Type assertion
+const input = document.getElementById("todoinput")! as HTMLInputElement;
+const form = document.querySelector("form")!;
+const list = document.getElementById("todolist")!;
+
+const todos: Todo[] = readTodos();
+todos.forEach(createTodo);
+
+// Load todos from local storage
+function readTodos(): Todo[] {
+  const todosJSON = localStorage.getItem("todos");
+  if (todosJSON === null) return [];
+  return JSON.parse(todosJSON);
+}
+
+// Save todos to local storage
+function saveTodos() {
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+function handleSubmit(e: SubmitEvent) {
+  e.preventDefault();
+  const newTodo: Todo = {
+    text: input.value,
+    completed: false,
+  };
+  createTodo(newTodo);
+  todos.push(newTodo);
+
+  saveTodos();
+  input.value = "";
+}
+
+// DOM에 todo li 추가
+function createTodo(todo: Todo) {
+  const newLI = document.createElement("li");
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.checked = todo.completed;
+
+  checkbox.addEventListener("change", function () {
+    todo.completed = checkbox.checked;
+    saveTodos();
+  });
+
+  newLI.append(todo.text);
+  newLI.append(checkbox);
+  list.append(newLI);
+}
+
+form.addEventListener("submit", handleSubmit);
+
+```
