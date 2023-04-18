@@ -716,3 +716,24 @@ const pierre: Engineer = {
 }
 
 ```
+
+## DOM and TypeScript
+
+---
+
+### package manager 설치
+- `npm init -y`
+  - package.json 생성
+
+### lite-server 설치 및 커맨드 설정
+- `npm install lite-server`
+- package.json 파일에 `"scripts": { "start": "lite-server" }` 정의
+  - npm start 시 lite-server 실행
+  - 자동 새로 고침
+
+### DOM 다루기
+
+- document
+  - TypeScript는 document 객체 및 해당 프로퍼티와 메서드를 인지한다
+  - 브라우저에서 `console.dir(document)`을 통해 객체를 상세히 확인 가능
+  - TypeScript의 경우 Go To Type Definition (형식 정의로 이동)을 통해 더 자세히 확인 가능
