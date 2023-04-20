@@ -930,14 +930,14 @@ class Player {
 
 class AdminPlayer extends Player {
   constructor(first, last, powers) {
-    super()
+    super(first, last)
     this.powers = powers
   }
 
   isAdmin = true
 }
 
-const admin = new AdminPlayer(["delete", "restore world"])
+const admin = new AdminPlayer('admin', 'mCadmin', ["delete", "restore world"])
 console.log('admin: ', admin)
 
 const player1 = new Player('blue', 'steele')
@@ -965,3 +965,8 @@ const player2 = new Player('charlie', 'brown')
 console.log('player2: ', player2)
 
 ```
+
+## TypeScript 클래스
+
+---
+
