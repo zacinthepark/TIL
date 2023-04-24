@@ -970,3 +970,120 @@ console.log('player2: ', player2)
 
 ---
 
+- public, private 프로퍼티 설정 가능
+- protected 제어자는 상속과 관련된 것으로, private은 해당 클래스 내에서만 접근 가능한 것과 달리 protected는 자식 클래서에서는 접근 가능
+- `implements`는 해당 규칙을 준수한다는 것
+- `abstract` 클래스는 인스턴스화 할 수 없음
+  - 패턴을 정의하고 자식 클래스에서 시행되어야 하는 메서드를 정의하는데 사용
+  - `interface`와의 차이점은 interface는 객체의 형태만 설명하는데 반해, abstract 클래스의 경우 그 자체 클래스에서 기능과 데이터를 정의할 수 있음
+  - 해당 클래스는 extends할 경우 기능을 상속할 수도 있으며, `abstract`를 불인 부분을 충족시키도록 제약도 거는 것임
+
+```ts
+class Player {
+  // public readonly first: string
+  // public readonly last: string
+  // private score: number = 0
+  // constructor(first: string, last: string) {
+  //   this.first = first
+  //   this.last = last
+  //   this.secretMethod()
+  // }
+  constructor(
+    public first: string,
+    public last: string,
+    protected _score: number
+  ) {}
+
+  private secretMethod(): void {
+    console.log("SECRET METHOD!!");
+  }
+
+  get fullName(): string {
+    return `${this.first} ${this.last}`;
+  }
+
+  get score(): number {
+    return this._score;
+  }
+
+  set score(newScore: number) {
+    if (newScore < 0) {
+      throw new Error("Score cannot be negative!");
+    }
+    this._score = newScore;
+  }
+}
+
+class SuperPlayer extends Player {
+  public isAdmin: boolean = true;
+  maxScore() {
+    this._score = 99999999;
+  }
+}
+
+const elton = new Player("Elton", "Steele", 100);
+elton.fullName;
+// elton.score = "23";
+
+// Classes With Interfaces!
+interface Colorful {
+  color: string;
+}
+
+interface Printable {
+  print(): void;
+}
+
+class Bike implements Colorful {
+  constructor(public color: string) {}
+}
+
+class Jacket implements Colorful, Printable {
+  constructor(public brand: string, public color: string) {}
+
+  print() {
+    console.log(`${this.color} ${this.brand} jacket`);
+  }
+}
+
+const bike1 = new Bike("red");
+const jacket1 = new Jacket("Prada", "black");
+
+abstract class Employee {
+  constructor(public first: string, public last: string) {}
+  abstract getPay(): number;
+  greet() {
+    console.log("HELLO!");
+  }
+}
+
+class FullTimeEmployee extends Employee {
+  constructor(first: string, last: string, private salary: number) {
+    super(first, last);
+  }
+  getPay(): number {
+    return this.salary;
+  }
+}
+
+class PartTimeEmployee extends Employee {
+  constructor(
+    first: string,
+    last: string,
+    private hourlyRate: number,
+    private hoursWorked: number
+  ) {
+    super(first, last);
+  }
+  getPay(): number {
+    return this.hourlyRate * this.hoursWorked;
+  }
+}
+
+const betty = new FullTimeEmployee("Betty", "White", 95000);
+console.log(betty.getPay());
+
+const bill = new PartTimeEmployee("Bill", "Billerson", 24, 1100);
+console.log(bill.getPay());
+
+```

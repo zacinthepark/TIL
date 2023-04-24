@@ -5,6 +5,7 @@ class Player {
   // constructor(first: string, last: string) {
   //   this.first = first
   //   this.last = last
+  //   this.secretMethod()
   // }
   constructor(
     public first: string,
@@ -102,5 +103,4 @@ const betty = new FullTimeEmployee("Betty", "White", 95000);
 console.log(betty.getPay());
 
 const bill = new PartTimeEmployee("Bill", "Billerson", 24, 1100);
-
 console.log(bill.getPay());
