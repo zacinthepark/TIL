@@ -34,6 +34,8 @@ shape.heigth // undefined
 - **[Type Narrowing](#type-narrowing)**
 - **[Type Declaration and Third-party Library](#type-declaration-and-third-party-library)**
 - **[모듈](#모듈)**
+- **[Webpack과 TypeScript](#webpack과-typescript)**
+- **[React와 TypeScript](#react와-typescript)**
 
 ## 설치 및 설정
 
@@ -1512,4 +1514,48 @@ function printUser(user: User) {
 
 ## Webpack과 TypeScript
 
+---
+
+### Webpack 기초구성
+
+- `npm install --save-dev webpack webpack-cli typescript ts-loader`
+  - webpack은 모듈 번들러
+  - webpack-cli는 webpack의 cli interface
+  - typescript를 다시 설치하는 이유는 devDependencies에 타입스크립트를 사용하고 있음을 확실히 보여주기 위해
+  - ts-loader는 타입스크립트와 웹팩의 중간자 역할
+    - 타입스크립트를 자바스크립트로 컴파일하여 웹팩으로 전달하는 역할
+- webpack.config.js 설정
+- import 시 .js로 되어있는 부분을 인식하지 못할 수 있으니 .js 제거
+- package.json의 scripts에 build 옵션 webpack 설정해주고 빌드
+- index.html에 bundle.js를 연결
+
+### 소스 맵 추가하기
+
+- 소스 맵은 단순화되어 있는 번들을 가지고 역매핑을 통해 빌드 전의 상태를 보여줌으로써 번들을 구성하고 있는 코드가 어디서 오는지를 보여줌
+- tsconfig.json 파일 내에 sourceMap을 true로 설정
+- webpack.config.js 파일 내의 Webpack에게 해당 소스 맵을 추출해 최종 번들에 포함하라고 지시
+  - `devtool: 'inline-source-map'`
+- 개발자 도구 Sources 탭에서 webpack_ts 확인 가능
+
+### Webpack 개발서버
+
+- `mode: "development"` 옵션 추가
+- 이 경우에는 번들 시 경량화되지 않음
+- `npm install --save-dev webpack-dev-server`
+  - 라이브 서버로 번들링도 백그라운드, 메모리에서 처리
+  - 매번 별도의 번들 파일로 만들어 dist에 쓰는 대신 개발 과정 동안 메모리에 번들을 보관
+- scripts에 `"serve": "webpack serve"`
+
+### 프로덕션 구성
+
+- 개발용과 프로덕션용 configuration을 구분해보자
+- webpack.prod.js라는 별도의 웹팩 설정 파일 생성
+  - `mode: "production"`
+- scripts에서 `"build": "webpack --config webpack.prod.js"`
+- `npm install --save-dev clean-webpack-plugin`
+  - webpack 환경설정 파일에 `const { CleanWebpackPlugin } = require("clean-webpack-plugin")`, `plugins: [new CleanWebpackPlugin()]` 추가
+  - `filename: "[contenthash]bundle.js"`와 같이 파일 변동사항이 있을 때 다른 번들 파일들이 계속 생겨나게 되는데, clean-webpack-plugin은 빌드용 폴더를 최신 번들만 남기고 정리해줌
+
 ## React와 TypeScript
+
+---
