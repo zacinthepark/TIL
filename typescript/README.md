@@ -32,7 +32,8 @@ shape.heigth // undefined
 - **[TypeScript 클래스](#typescript-클래스)**
 - **[제네릭](#제네릭)**
 - **[Type Narrowing](#type-narrowing)**
-- [Type Declaration and Third-party Library]
+- **[Type Declaration and Third-party Library](#type-declaration-and-third-party-library)**
+- **[모듈](#모듈)**
 
 
 ## 설치 및 설정
@@ -1431,5 +1432,71 @@ console.log(getFarmAnimalSound(stevie));
 ```
 
 ## Type Declaration and Third-party Library
+
+---
+
+- `.d.ts` files
+  - declaration files contain *only* type information
+  - these files don't produce `.js` outputs
+- type declaration file이 없는 라이브러리의 경우 `@types/`를 붙여 패키지 설치
+  - [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)
+  - `index.d.ts` 파일 확인
+
+```ts
+import axios from "axios";
+import _ from "lodash";
+interface User {
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  address: {
+    street: string;
+    suite: string;
+    city: string;
+    zipcode: string;
+    geo: {
+      lat: string;
+      lng: string;
+    };
+  };
+  phone: string;
+  website: string;
+  company: {
+    name: string;
+    catchPhrase: string;
+    bs: string;
+  };
+}
+
+axios
+  .get<User>("https://jsonplaceholder.typicode.com/users/1")
+  .then((res) => {
+    console.log("WOO!!!");
+    printUser(res.data);
+  })
+  .catch((e) => {
+    console.log("ERROR!", e);
+  });
+
+axios
+  .get<User[]>("https://jsonplaceholder.typicode.com/users")
+  .then((res) => {
+    console.log("WOO!!!");
+    res.data.forEach(printUser);
+  })
+  .catch((e) => {
+    console.log("ERROR!", e);
+  });
+
+function printUser(user: User) {
+  console.log(user.name);
+  console.log(user.email);
+  console.log(user.phone);
+}
+
+```
+
+## 모듈
 
 ---
