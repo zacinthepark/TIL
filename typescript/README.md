@@ -35,7 +35,6 @@ shape.heigth // undefined
 - **[Type Declaration and Third-party Library](#type-declaration-and-third-party-library)**
 - **[모듈](#모듈)**
 
-
 ## 설치 및 설정
 
 ---
@@ -1500,3 +1499,17 @@ function printUser(user: User) {
 ## 모듈
 
 ---
+
+- Non-modules 작동 방식도 가능하긴 하다
+  - 타입스크립트는 `export`하지 않는 파일들에 대해서 모듈이 아닌 스크립트 파일로 인식하며, 스크립트 파일들끼리는 동일한 전역 스코프에 있다고 간주함
+  - 이를 자바스크립트로 컴파일했을 때 알맞은 순서대로 스크립트가 실행되도록 개발자가 처리할 것이라 생각하는 것
+- module 파일 컴파일 시 옵션을 `CommonJS`로 하면 Node 환경에서는 실행이 되나, 브라우저에서는 에러 발생
+  - `tsconfig` 파일에서 `module` 옵션을 `ES6` 등으로 변경
+- `<script type="module" src="./dist/index.js"></script>`
+- type을 import할 경우
+  - `import type { Person }, ... from "./types.js"`
+  - `import { type Person, ... } from "./types.js"`
+
+## Webpack과 TypeScript
+
+## React와 TypeScript
