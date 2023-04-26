@@ -1559,3 +1559,10 @@ function printUser(user: User) {
 ## React와 TypeScript
 
 ---
+
+### TypeScript로 React 앱 만들기
+
+Create React App
+- `npx create-react-app my-app --template typescript`
+- `yarn create react-app my-app --template typescript`
+- CRA의 Webpack이 tsx의 컴파일을 대신해줌
