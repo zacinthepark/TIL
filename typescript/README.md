@@ -1566,3 +1566,156 @@ Create React App
 - `npx create-react-app my-app --template typescript`
 - `yarn create react-app my-app --template typescript`
 - CRA의 Webpack이 tsx의 컴파일을 대신해줌
+
+### props
+
+```tsx
+// App.tsx
+
+function App() {
+  return (
+    <div className="App">
+      <Greeter person='Colt' />
+      <Greeter person='Blue' />
+      <Greeter person='Elton' />
+    </div>
+  );
+}
+
+// Greeter.tsx
+
+import React from 'react'
+
+// 1
+function Greeter(props: { person: string }): JSX.Element {
+  return <h1>Hello {props.person}!</h1>
+}
+
+// 2
+interface GreeterProps {
+  person: string
+}
+
+function Greeter(props: GreeterProps): JSX.Element {
+  return <h1>Hello {props.person}!</h1>
+}
+
+// 3
+interface GreeterProps {
+  person: string
+}
+
+function Greeter({ person }: GreeterProps): JSX.Element {
+  return <h1>Hello {person}!</h1>
+}
+
+// React Functional Component의 다른 선언법
+// const Greeter: React.FC = () => {
+//   return <h1>Hello!</h1>
+// }
+
+export default Greeter
+
+```
+
+### useState, useRef
+
+- useState, useRef와 같은 훅들은 제네릭으로 구현되어있음
+- useState는 어떤 타입의 자료를 다룰 것인지, useRef는 어떤 타입의 DOM element를 다룰 것인지 지정
+
+```tsx
+// App.tsx
+
+import React, {useState} from 'react';
+// import Greeter from './components/Greeter';
+import ShoppingList from './components/ShoppingList';
+import ShoppingListForm from './components/ShoppingListForm';
+import Item from './models/items';
+import { v4 as getId } from 'uuid';
+import './App.css';
+
+function App() {
+  const [items, setItems] = useState<Item[]>([])
+  const addItem = (product: string, quantity: number) => {
+    console.log('MADE IT TO THE APP COMPONENT!')
+    setItems([...items, {id: getId(), product: product, quantity: quantity}])
+  }
+  // const items = [
+  //   {id: 1, product: 'Lemon', quantity: 3},
+  //   {id: 2, product: 'Chicken Breast', quantity: 2}
+  // ]
+  return (
+    <div>
+      <ShoppingList items={items} />
+      <ShoppingListForm onAddItem={addItem} />
+    </div>
+  );
+}
+
+export default App;
+
+// ./components/ShoppingList.tsx
+
+import React from "react";
+import Item from '../models/items'
+
+interface ShoppingListProps {
+  items: Item[]
+}
+
+function ShoppingList(props: ShoppingListProps): JSX.Element {
+  return (
+    <div>
+      <h1>Shopping List</h1>
+      {props.items && <ul>
+        {props.items.map((item) => (
+          <li key={item.id}>{item.product} - {item.quantity}</li>
+        ))}
+      </ul>}
+    </div>
+  )
+}
+
+export default ShoppingList
+
+// ./components/ShoppingListForm.tsx
+
+import React, { useRef } from "react";
+
+interface ShoppingListFormProps {
+  onAddItem: (item: string, quantity: number) => void;
+}
+
+function ShoppingListForm({ onAddItem }: ShoppingListFormProps): JSX.Element {
+  const productInputRef = useRef<HTMLInputElement>(null)
+  const quantityInputRef = useRef<HTMLInputElement>(null)
+
+  function handleSubmit(event: React.FormEvent) {
+    event.preventDefault()
+    const newProduct = productInputRef.current!.value
+    const quantity = parseInt(quantityInputRef.current!.value)
+    onAddItem(newProduct, quantity)
+    productInputRef.current!.value = ''
+    quantityInputRef.current!.value = '1'
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="text" placeholder="Product Name" ref={productInputRef} />
+      <input type="number" min={0} ref={quantityInputRef} />
+      <button type="submit">Add Item</button>
+    </form>
+  )
+}
+
+export default ShoppingListForm
+
+// ./models/items.ts
+
+export default interface Item {
+  id: string,
+  product: string,
+  quantity: number
+}
+
+```
