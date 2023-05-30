@@ -6,7 +6,7 @@ This repository is for stacking what I learned.
 
 For Contact: zacinthepark@gmail.com
 
-## :pushpin: Language
+## Language
 
 ---
 
@@ -25,7 +25,7 @@ For Contact: zacinthepark@gmail.com
 - Typescript
     - [Typescript with Webpack and React](./typescript/README.md)
 
-## :pushpin: Web
+## Web
 
 ---
 
@@ -33,20 +33,20 @@ For Contact: zacinthepark@gmail.com
 - [css 기초](./web/css%20%EA%B8%B0%EC%B4%88.md)
 - [css 참고사이트](./web/%EC%B0%B8%EA%B3%A0%EC%82%AC%EC%9D%B4%ED%8A%B8.md)
 
-## :pushpin: React
+## React
 
 ---
 
 - [React Complete Guide](./react/react-guide/README.md)
 
-## :pushpin: Vue
+## Vue
 
 ---
 
 - [Vue 2 기초](./vue/vue2/README.md)
 - [Vue 3 기초](./vue/vue3/README.md)
 
-## :pushpin: Django
+## Django
 
 ---
 
