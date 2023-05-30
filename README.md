@@ -1,13 +1,14 @@
-## TIL
+## Today I Learned
 
 ---
 
-### :white_check_mark: Today I Learned :white_check_mark:
+This repository is for stacking what I learned.
 
-- **[git](./git/README.md)**
-- **[cheatsheets](./cheatsheets/README.md)**
-- **[cli](./cli/README.md)**
-- **[markdown](./markdown/README.md)**
+For Contact:
+
+:pushpin: zacinthepark@gmail.com
+
+
 - **[python](./python/README.md)**
 - **[django](./django/README.md)**
 - **[htmlcss](./htmlcss/README.md)**
@@ -15,3 +16,12 @@
 - **[typescript](./typescript/README.md)**
 - **[react](./react/react-guide/README.md)**
 - **[vue](./vue/vue2/README.md)**
+
+## Miscellaneous
+
+---
+
+- [Git](./git/README.md)
+- [CLI](./cli//README.md)
+- [Markdown](./markdown//README.md)
+- [Cheatsheets](./cheatsheets//README.md)

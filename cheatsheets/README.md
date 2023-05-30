@@ -2,79 +2,48 @@
 
 ---
 
-- window + 방향키
-  - 화면 분할
-- window + shift + S
-  - 부분 캡쳐
-
-## MARKDOWN
-
----
-
-- tab
-  - 들여쓰기
-- shift + tab
-  - 내어쓰기
+- `window + 방향키`: 화면 분할
+- `window + shift + S`: 부분 캡쳐
 
 ## CLI (GIT BASH)
 
 ---
 
-- 위아래 화살표 누르기
-  - 이전에 내렸던 명령 히스토리들이 뜸
-- code .
-  - 현재 위치에서 vscode 열기
-- python del.py
-  - del.py 파일 실행
-  - python은 ~~~~pyhton.exe에 대한 환경변수
-- CLI에서 파일 수정
-  - vi 파일명
-  - i → 수정 → esc → :wq
+- `위아래 화살표 누르기`: 이전에 내렸던 명령 히스토리들이 뜸
+- `code .`: 현재 위치에서 vscode 열기
+- `python del.py`: del.py 파일 실행 (python은 python.exe에 대한 환경변수)
+- `vi 파일명`, `i → 수정 → esc → :wq`: CLI에서 파일 수정
 
 ## VSCODE
 
 ---
 
-- 새로운 파일 생성
-  - 왼쪽 위 아이콘 클릭
-  - ctrl + n → ctrl + s
-- 전체선택
-  - ctrl + a
-- 주석처리
-  - ctrl + /
-- 전체 주석처리
-  - ctrl + a → ctrl + /
-- 커서를 위아래 여러 줄로 확장
-  - alt + ctrl + 위아래 화살표
-- 줄 바꿈
-  - alt + 위아래 화살표
-- 줄 복사
-  - alt + shift + 위아래 화살표
-- 특정 단어 replace
-  - ctrl + d
-- 파일 settings
-  - ctrl + ,
-- 전체 settings
-  - ctrl + shift + p
-- 터미널 열기
-  - ctrl + shift + `
-- 시작화면
-  - ctrl + k → f
+- `ctrl + n → ctrl + s` (왼쪽 위 아이콘 클릭 후): 새로운 파일 생성
+- `ctrl + a`: 전체선택
+- `ctrl + /`: 주석처리
+- `alt + ctrl + 위아래 화살표`: 커서를 위아래 여러 줄로 확장
+- `alt + 위아래 화살표`: 줄 바꿈
+- `alt + shift + 위아래 화살표`: 줄 복사
+- `ctrl + d`: 특정 단어 replace
+- `ctrl + ,`: 파일 settings
+- `ctrl + shift + p`: 전체 settings
+- `ctrl + shift + 백틱`: 현재 디렉토리에서 터미널 열기
+- `ctrl + k → f`: 시작화면
 
 ## HTML / CSS
 
 ---
 
 - [Emmet Documentation](https://docs.emmet.io/cheat-sheet/)
-- ‘!’ + tab
+- `! + tab`
   - html document 구조 생성
-- tag’\*’숫자
+- `tag * 숫자`
   - 숫자만큼 태그 생성
-- tag1‘>’tag2
+- `tag1 > tag2`
   - tag1 아래 하위 tag2 생성
-- ctrl + ‘/’
+- `ctrl + /`
   - 주석 처리
-- shift + 스크롤
+- `shift + 스크롤`
   - 옆으로 스크롤
 
 ## PyCharm
@@ -104,5 +73,5 @@
 
 ### 재실행 및 종료
 
-- 디버거 세션의 재실행은 `ctrl + F5`
-- 디버거 세션의 종료는 `ctrl + F2`
+- `ctrl + F5`: 디버거 세션의 재실행
+- `ctrl + F2`: 디버거 세션의 종료
