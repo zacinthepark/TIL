@@ -18,24 +18,24 @@ shape.heigth // undefined
 
 ---
 
-- **[설치 및 설정](#설치-및-설정)**
-- **[타입 애너테이션 기초](#타입-애너테이션-기초)**
-- **[함수](#함수)**
-- **[객체 타입](#객체-타입)**
-- **[배열](#배열)**
-- **[유니온 타입](#유니온-타입)**
-- **[튜플(Tuple)과 Enum](#튜플tuple과-enum)**
-- **[인터페이스](#인터페이스)**
-- **[Typescript 컴파일러](#typescript-컴파일러)**
-- **[DOM and TypeScript](#dom-and-typescript)**
-- **[JavaScript 클래스](#javascript-클래스)**
-- **[TypeScript 클래스](#typescript-클래스)**
-- **[제네릭](#제네릭)**
-- **[Type Narrowing](#type-narrowing)**
-- **[Type Declaration and Third-party Library](#type-declaration-and-third-party-library)**
-- **[모듈](#모듈)**
-- **[Webpack과 TypeScript](#webpack과-typescript)**
-- **[React와 TypeScript](#react와-typescript)**
+- [설치 및 설정](#설치-및-설정)
+- [타입 애너테이션 기초](#타입-애너테이션-기초)
+- [함수](#함수)
+- [객체 타입](#객체-타입)
+- [배열](#배열)
+- [유니온 타입](#유니온-타입)
+- [튜플(Tuple)과 Enum](#튜플tuple과-enum)
+- [인터페이스](#인터페이스)
+- [Typescript 컴파일러](#typescript-컴파일러)
+- [DOM and TypeScript](#dom-and-typescript)
+- [JavaScript 클래스](#javascript-클래스)
+- [TypeScript 클래스](#typescript-클래스)
+- [제네릭](#제네릭)
+- [Type Narrowing](#type-narrowing)
+- [Type Declaration and Third-party Library](#type-declaration-and-third-party-library)
+- [모듈](#모듈)
+- [Webpack과 TypeScript](#webpack과-typescript)
+- [React와 TypeScript](#react와-typescript)
 
 ## 설치 및 설정
 

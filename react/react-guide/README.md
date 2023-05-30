@@ -4,21 +4,21 @@
 
 ---
 
-- **[Settings](#settings)**
-- **[How Does React Work?](#how-does-react-work)**
-- **[Guides](#guides)**
-- **[React Lifecycle](#react-lifecycle)**
-- **[Custom Hooks](#custom-hooks)**
-- **[Working with Forms with Validation Logic](#working-with-forms-with-validation-logic)**
-- **[Redux](#redux)**
-- **[Redux Toolkit](#redux-toolkit)**
-- **[Side Effects, Async Tasks with Redux](#side-effects-async-tasks-with-redux)**
-- **[React Router](#react-router)**
-- **[Fetching Data by React Router](#fetching-data-by-react-router)**
-- **[Sending Data by React Router](#sending-data-by-react-router)**
-- **[Other Features in React Router](#other-features-in-react-router)**
-- **[Authentication](#authentication)**
-- **[Optimization and Deployment](#optimization-and-deployment)**
+- [Settings](#settings)
+- [How Does React Work?](#how-does-react-work)
+- [Guides](#guides)
+- [React Lifecycle](#react-lifecycle)
+- [Custom Hooks](#custom-hooks)
+- [Working with Forms with Validation Logic](#working-with-forms-with-validation-logic)
+- [Redux](#redux)
+- [Redux Toolkit](#redux-toolkit)
+- [Side Effects, Async Tasks with Redux](#side-effects-async-tasks-with-redux)
+- [React Router](#react-router)
+- [Fetching Data by React Router](#fetching-data-by-react-router)
+- [Sending Data by React Router](#sending-data-by-react-router)
+- [Other Features in React Router](#other-features-in-react-router)
+- [Authentication](#authentication)
+- [Optimization and Deployment](#optimization-and-deployment)
 
 ## Settings
 
