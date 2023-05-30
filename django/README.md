@@ -13,7 +13,9 @@
 - [프로젝트 설정](#django-프로젝트-설정)
 - [Django Template, DTL Syntax](#django-template)
 - [Sending and Retrieving Form Data](#sending-and-retrieving-form-data)
-- [Variable Routing](#variable-routing)
+- [URL](#url)
+- [Modeling](#modeling)
+- [Migrations](#migrations)
 
 ### Django의 설계 철학 (Templates System)
 
@@ -560,13 +562,15 @@
 - 그리고 해당하는 적절한 view 함수를 로드하고 HttpRequest를 첫번째 인자로 전달
 - 마지막으로 view 함수는 HttpResponse object를 반환
 
-## Variable Routing
+## URL
 
 ---
 
+### Variable Routing
+
 - URL 주소를 변수로 사용하는 것을 의미
   - URL의 일부를 변수로 지정하여 view 함수의 인자로 넘길 수 있음
-    - 즉, 변수 값에 따라 하나의 `path()` 에 여러 페이지를 연결시킬 수 있음
+  - 즉, 변수 값에 따라 하나의 `path()` 에 여러 페이지를 연결시킬 수 있음
 - Routing(라우팅)이란 어떤 네트워크 안에서 통신 데이터를 보낼 때 최적의 경로를 선택하는 과정을 뜻함
 - `<type: name>`
   - 변수는 `<>` 에 정의하며 view 함수의 인자로 할당됨
@@ -583,9 +587,7 @@
 
 <img width="498" alt="dj_29" src="https://user-images.githubusercontent.com/86648892/188303772-17be78b7-95df-4fd5-a4ba-9e12ebda86cc.png">
 
----
-
-# App URL Mapping
+### App URL Mapping
 
 - 앱이 많아졌을 때 `urls.py` 를 각 app에 매핑하는 방법
   - app의 view 함수가 많아지면서 사용하는 `path()` 가 많아지고, app 또한 더 많이 작성되기에 프로젝트의 `urls.py` 에서 모두 관리하는 것은 프로젝트 유지보수에 좋지 않음
@@ -602,15 +604,11 @@
 
 <img width="864" alt="dj_32" src="https://user-images.githubusercontent.com/86648892/188303775-20940db2-319d-4b7a-8647-a62a22ab5d7f.png">
 
----
-
-# Naming URL patterns
+### Naming URL patterns
 
 - 분기된 url 주소를 모두 하나하나 주소를 바꿔줘야 하는가?
 - 너무 번거롭다
 - 각 url 주소에 이름을 붙여주자
-
-## Naming URL patterns
 
 - `path()` 함수의 `name` 인자 활용
   - 정의된 `name` 은 향후 `{% url ' ' %}` DTL 태그를 활용하여 접근 가능
@@ -621,13 +619,9 @@
 
 <img width="1169" alt="dj_34" src="https://user-images.githubusercontent.com/86648892/188303778-9e0d4410-9028-4c04-84d1-2a94ce890dcf.png">
 
----
+### Namespace
 
-
-
----
-
-# Namespace
+### 1. URL Namespace
 
 - 이름 중복을 쉽게 구분 및 접근하기 위한 구조 설계
 - URL Namespace
@@ -636,8 +630,6 @@
 - Template Namespace
   - `articles` 앱과 `pages` 앱에 동일하게 `index.html` 이 있다면?
     - 샌드위치 구조로 해결
-
-## URL namespace
 
 - URL namespace를 사용하면 서로 다른 앱에서 동일한 URL 이름을 사용하는 경우에도 이름이 지정된 URL을 고유하게 사용할 수 있음
 - `app_name` attribute을 작성해 URL namespace를 설정
@@ -652,7 +644,7 @@
 
 <img width="1209" alt="dj_36" src="https://user-images.githubusercontent.com/86648892/188498007-82fbf91f-feb9-40c3-828e-61250b6a18e7.png">
 
-## Template namespace
+### 2. Template namespace
 
 - Django는 기본적으로 `app_name/templates/` 경로에 있는 templates 파일들만 찾을 수 있으며, `settings.py` 의 INSTALLED_APPS에 작성한 app 순서로 template을 검색 후 렌더링함
   - `settings.py` 의 TEMPLATES 내부 `APP_DIRS: True` 가 해당 경로를 활성화하고 있음
@@ -663,17 +655,13 @@
 
 <img width="1151" alt="dj_37" src="https://user-images.githubusercontent.com/86648892/188498013-b999a577-cc83-4e34-a4ba-a6b3e7b96962.png">
 
----
-
-
+## Modeling
 
 ---
-
-# Model
 
 - Django는 웹 어플리케이션의 데이터를 구조화하고 조작하기 위한 모델을 제공함
   - Model을 사용하지 않고는 데이터를 저장할 수 없음
-    - Model을 통해 데이터에 접속하고 관리
+  - Model을 통해 데이터에 접속하고 관리
 - 단일한 데이터에 대한 정보를 가짐
 - 사용자가 저장하는 데이터들의 필수적인 필드들과 동작들을 포함
 - 저장된 데이터베이스의 구조(layout)
@@ -682,7 +670,7 @@
 
 <img width="1046" alt="dj_40" src="https://user-images.githubusercontent.com/86648892/188498024-f64a025e-c1a1-43a8-8c29-058eb07120c4.png">
 
-## `models.py`
+### `models.py`
 
 - 모델 클래스를 작성하는 것은 **데이터베이스 테이블의 스키마를 정의**하는 것
   - 모델 클래스 == 테이블 스키마
@@ -709,13 +697,13 @@ class Article(models.Model):
 - `id` 컬럼은 테이블 생성 시 Django가 자동으로 생성
 - 각 모델은 `django.models.Model` 클래스의 서브클래스로 표현됨
   - 즉, 각 모델은 `django.models.Model` 클래스를 상속받음
-    - 클래스 상속 기반 형태의 Django 프레임워크 개발
+  - 클래스 상속 기반 형태의 Django 프레임워크 개발
 - 클래스 변수명
   - `title`, `content`
-    - DB 필드를 나타냄
+  - DB 필드를 나타냄
 - 클래스 변수값
   - `models.CharField()` , `models.TextField()`
-    - DB 필드의 데이터 타입을 나타냄
+  - DB 필드의 데이터 타입을 나타냄
 
 ## Django Model Field
 
@@ -731,7 +719,7 @@ class Article(models.Model):
   - CharField의 필수 인자
   - 데이터베이스와 Django의 유효성 검사에서 활용됨
     - 사용자는 말을 듣지 않는다
-      - 유효성 검사가 필요
+    - 유효성 검사가 필요
 
 ### `TextField(**options)`
 
@@ -753,9 +741,9 @@ class Article(models.Model):
     - 최종 수정 일자 (Useful for “last-modified” timestamps)
     - Django ORM이 save를 할 때마다 현재 날짜와 시간으로 갱신
 
----
+## Migrations
 
-# Migrations
+---
 
 - 작성한 모델의 클래스를 실제 데이터베이스에 반영하는 과정
 - `models.py` 에서 작성한 것이 테이블의 스키마라고 할 때, DB에 직접 만들 테이블의 설계도가 migrations 파일들
@@ -764,7 +752,7 @@ class Article(models.Model):
   - `$ python manage.py migrate`
     - 해당 설계도 파일을 바탕으로 DB에 동기화
 
-## makemigrations
+### 1. makemigrations
 
 - `$ python manage.py makemigrations`
 - 모델을 작성 혹은 변경한 것에 기반한 새로운 migration(설계도, 청사진, 혹은 마이그레이션)을 만들 때 사용
@@ -774,17 +762,17 @@ class Article(models.Model):
 
 - `migrations/0001_initial.py` 모습
   - “파이썬으로 작성된 최종 설계도”
-    - blueprint
-    - 아직 DB에 테이블이 생긴 것은 아님
+  - blueprint
+  - 아직 DB에 테이블이 생긴 것은 아님
 
-## migrate
+### 2. migrate
 
 - `$ python manage.py migrate`
 - “모델과 DB의 동기화”
 - makemigrations로 만든 설계도를 실제 `db.sqlite3` DB 파일에 반영하는 과정
   - `db.sqlite3` 라는 파일로서 데이터베이스가 존재
-    - migrate되었을 때 여기가 채워짐
-    - 확인하기 위해서는 SQLite 확장프로그램 설치
+  - migrate되었을 때 여기가 채워짐
+  - 확인하기 위해서는 SQLite 확장프로그램 설치
 
 <img width="878" alt="dj_42" src="https://user-images.githubusercontent.com/86648892/188498030-8a64362d-3739-4da3-9492-b437d28b90f6.png">
 
@@ -797,15 +785,15 @@ class Article(models.Model):
     - Django를 구동하기 위한 기본 내장 앱에 대한 설계도가 내부적으로 존재함
     - 처음 migrate할 때는 이 설계도를 같이 migrate함
 
-## 기타 명령어
+### 기타 명령어
 
-### showmigrations
+### 1. showmigrations
 
 - `$ python manage.py showmigrations`
   - migrations 파일들이 migrate 됐는지 안됐는지 여부를 확인하는 용도
   - [x] 표시가 있으면 migrate가 완료되었음을 의미
 
-### sqlmigrate
+### 2. sqlmigrate
 
 - `$ python manage.py sqlmigrate articles 0001`
   - 해당 migrations 파일이 SQL문으로 어떻게 해석될지 미리 확인할 수 있음
@@ -814,9 +802,7 @@ class Article(models.Model):
 
 <img width="839" alt="dj_44" src="https://user-images.githubusercontent.com/86648892/188498034-73ba9285-8cf1-4e30-b506-829bb9eb39f4.png">
 
----
-
-## 추가 필드 정의 (추가 migrations)
+### 추가 필드 정의 (추가 migrations)
 
 - `models.py` 에 변경사항이 생긴다면
   - 추가 모델 필드 작성 후 다시 한번 migrations 진행
@@ -825,12 +811,12 @@ class Article(models.Model):
   - 추가되는 칼럼에 대한 기본값을 설정해야함
 - 데이터베이스 원칙 중 무결성의 원칙
   - 빈 값을 데이터베이스에 추가할 수 없다
-    - 기본값이 NOT NULL
+  - 기본값이 NOT NULL
 
 <img width="1084" alt="dj_45" src="https://user-images.githubusercontent.com/86648892/188498035-9165adde-f2ba-4b0d-a6c3-dc2f45caf40b.png">
 
-- 1)은 현재 이 대화에서 입력하는 값을 넣겠다
-- 2)는 대화에서 나가서 코드상 default값을 넣어서 다시 makemigrations
+- (1)은 현재 이 대화에서 입력하는 값을 넣겠다
+- (2)는 대화에서 나가서 코드상 default값을 넣어서 다시 makemigrations
 - 1이 enter로 해결할 수 있기에 더 편하다
 - 0002 설계도 확인
   - `dependencies` 에 0001 initial 설계도가 있음
@@ -840,18 +826,15 @@ class Article(models.Model):
   - 모델이 망가졌을 때 망한 설계도를 버리고 잘 돌아갔던 시점에서 다시 누적하기 위함
 - migrate를 통해 다시 반영
 
----
+### MIGRATIONS 정리
 
-## MIGRATIONS 정리
-
-1. `models.py` 변경
-   - 데이터를 **구조화**하고 **조작**하기 위한 도구
+1. `models.py` 변경: 데이터를 **구조화**하고 **조작**하기 위한 도구
 2. 설계도 생성 (makemigrations)
 3. 설계도 DB 반영 (migrate)
 
----
+## ORM
 
-# ORM
+---
 
 ## 그런데 설계도는 어떻게, 누가 해석할까?
 
