@@ -20,6 +20,10 @@ For Contact: zacinthepark@gmail.com
 
 - Javascript
 
+    - [기초 문법](./javascript/basics.md)
+    - [DOM and Event](./javascript/dom-event.md)
+    - [Async, Axios, and Promise](./javascript/async-axios-promise.md)
+
 - Typescript
 
 ## :pushpin: Web
@@ -30,7 +34,6 @@ For Contact: zacinthepark@gmail.com
     - [HTML 기초](./web/html%20%EA%B8%B0%EC%B4%88.md)
     - [CSS 기초](./web/css%20%EA%B8%B0%EC%B4%88.md)
     - [참고사이트](./web/%EC%B0%B8%EA%B3%A0%EC%82%AC%EC%9D%B4%ED%8A%B8.md)
-
 
 - **[python](./python/README.md)**
 - **[django](./django/README.md)**
