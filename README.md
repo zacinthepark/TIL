@@ -26,6 +26,9 @@ For Contact: zacinthepark@gmail.com
 
 - Typescript
 
+    - [Typescript with Webpack and React](./typescript/README.md)
+    - [참고 슬라이드](./typescript/TypeScript%2BSlides.pdf)
+
 ## :pushpin: Web
 
 ---
