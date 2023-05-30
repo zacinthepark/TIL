@@ -1,14 +1,10 @@
 ## Today I Learned
 
----
-
 This repository is for stacking what I learned.
 
 For Contact: zacinthepark@gmail.com
 
 ## Language
-
----
 
 - Python
     - [변수, 타입, 연산자, 슬라이싱](./python/%EB%B3%80%EC%88%98-%ED%83%80%EC%9E%85-%EC%97%B0%EC%82%B0%EC%9E%90-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EC%8B%B1.md)
@@ -27,28 +23,11 @@ For Contact: zacinthepark@gmail.com
 
 ## Web
 
----
-
 - [html 기초](./web/html%20%EA%B8%B0%EC%B4%88.md)
 - [css 기초](./web/css%20%EA%B8%B0%EC%B4%88.md)
 - [css 참고사이트](./web/%EC%B0%B8%EA%B3%A0%EC%82%AC%EC%9D%B4%ED%8A%B8.md)
 
-## React
-
----
-
-- [React Complete Guide](./react/react-guide/README.md)
-
-## Vue
-
----
-
-- [Vue 2 기초](./vue/vue2/README.md)
-- [Vue 3 기초](./vue/vue3/README.md)
-
 ## Django
-
----
 
 - [데이터베이스 기초](./django/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%20%EA%B8%B0%EC%B4%88.md)
 - [QuerySet API](./django/%EC%BF%BC%EB%A6%AC%EC%85%8B%20API.md)
@@ -56,9 +35,16 @@ For Contact: zacinthepark@gmail.com
 - [초기 데이터](./django/%EC%B4%88%EA%B8%B0%20%EB%8D%B0%EC%9D%B4%ED%84%B0.md)
 - [Django Static Files](./django/django-static-files.md)
 
-## ETC
+## React
 
----
+- [React Complete Guide](./react/react-guide/README.md)
+
+## Vue
+
+- [Vue 2 기초](./vue/vue2/README.md)
+- [Vue 3 기초](./vue/vue3/README.md)
+
+## ETC
 
 - [Git](./git/README.md)
 - [CLI](./cli//README.md)
