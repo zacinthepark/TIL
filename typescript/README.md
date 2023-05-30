@@ -14,7 +14,7 @@ shape.heigth // undefined
 
 > Typescript is a static type checker. Detects errors in our code without running it. Javascript compiles and runs the code.
 
-## INDEX
+## Index
 
 ---
 

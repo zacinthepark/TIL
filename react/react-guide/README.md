@@ -1,6 +1,4 @@
-# React Guide
-
-## INDEX
+## Index
 
 ---
 
