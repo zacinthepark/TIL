@@ -1,4 +1,6 @@
-# Vue 2
+## Vue 2
+
+---
 
 - [Vue CDN and Directives](#vue-cdn-and-directives)
 - [Vue CLI and Components](#vue-cli-and-components)
@@ -6,9 +8,9 @@
 - [Vue Router and Navigation Guard](#vue-router-and-navigation-guard)
 - [Vue with DRF](#vue-with-drf)
 
----
+## Vue CDN and Directives
 
-# Vue CDN and Directives
+---
 
 - Vue Intro with CDN
 - Why Vue
@@ -16,11 +18,11 @@
 - Basic of Syntax
 - Vue Advanced
 
+## Vue CDN
+
 ---
 
-# Vue CDN
-
-## 사전 준비 사항
+### 사전 준비 사항
 
 - VSCode Vetur extension 설치
   - 문법 하이라이팅, 자동완성, 디버깅 기능 제공
@@ -34,21 +36,21 @@
 
 <img width="751" alt="vue1" src="https://user-images.githubusercontent.com/86648892/212526791-ab2099e3-ab6f-49a5-b810-1fac1e6d8fc5.png">
 
-## Front-End Development
+### Front-End Development
 
 - Front-End(FE) 개발이란?
   - 사용자에게 보여주는 화면 만들기
 - Web App(SPA)을 만들 때 사용하는 도구
   - SPA - Single Page Application
 
-## Web App이란?
+### Web App이란?
 
 - 웹 브라우저에서 실행되는 어플리케이션 소프트웨어
 - 개발자 도구 > 디바이스 모드
   - 웹 페이지가 그대로 보이는 것이 아닌 디바이스에 설치된 App처럼 보임
   - 웹 페이지가 디바이스에 맞는 적절한 UX, UI로 표현되는 형태
 
-## SPA(Single Page Application)
+### SPA(Single Page Application)
 
 - Web App과 함께 자주 등장하는 용어 SPA
 - 이전까지는 사용자의 요청에 대해 적절한 페이지 별 template을 반환
@@ -64,7 +66,7 @@
 - Server가 사용자의 요청에 적합한 HTML을 렌더링하여 제공하는 방식
 - 전달받은 새 문서를 보여주기 위해 브라우저는 새로고침을 진행
 
-## CSR(Client Side Rendering)
+### CSR(Client Side Rendering)
 
 <img width="767" alt="vue3" src="https://user-images.githubusercontent.com/86648892/212526787-36a6b4bd-9201-4410-a312-24ca2aeddb57.png">
 
@@ -120,7 +122,7 @@
   - React의 Next.js
   - Angular Universal 등
 
-## 여러가지 Front-End Framework
+### 여러가지 Front-End Framework
 
 <img width="730" alt="vue4" src="https://user-images.githubusercontent.com/86648892/212526786-7c43bbd4-e324-43d2-a2c3-1c1a537ef9fb.png">
 
@@ -132,9 +134,9 @@
   - FE 프레임워크 시장의 변화가 빠르기 때문이라 답변
 - 대부분의 기업에서는 생산성과 협업을 위해 Framework를 사용해서 개발
 
----
+## Why Vue?
 
-# Why Vue?
+---
 
 - 타 프레임워크에 비해 입문자가 시작하기에 좋은 프레임워크
 - 구글의 Angular 개발자 출신 Evan You
@@ -142,7 +144,7 @@
   - 2014년 Vue 발표
 - Vue의 구조는 매우 직관적임
 
-## 코드 비교
+### 코드 비교
 
 ### Vanila JS
 
@@ -207,11 +209,11 @@
   - 사용된 기간이 긴 만큼 상대적으로 많은 문서의 양과 참고자료 등
   - 안정성의 측면에서는 아직 Vue 2가 우세한 편
 
+## Vue Instance
+
 ---
 
-# Vue Instance
-
-## MVVM Pattern
+### MVVM Pattern
 
 <img width="738" alt="vue5" src="https://user-images.githubusercontent.com/86648892/212526785-cc3ac28c-cb73-45dc-b4c0-ba3b182285ac.png">
 
@@ -230,7 +232,7 @@
   - DOM으로부터 이벤트를 듣고
     - Directive를 사용하여 DOM을 조작
 
-## MVVM Pattern 정리
+### MVVM Pattern 정리
 
 - ViewModel의 핵심은 **변경사항**에 대한 **반응형**이라는 것
 - MVC 패턴에서 Controller를 제외하고 View Model을 넣은 패턴
@@ -239,7 +241,7 @@
     - 독립성 증가 및 적은 의존성
 - View에서 데이터를 변경하면 View Model의 데이터가 변경되고, 연관된 다른 View도 함께 변경된다
 
-## Vue Instance
+### Vue Instance
 
 ```jsx
 <body>
@@ -350,11 +352,11 @@ function Member(name, age, sId) {
 const member3 = new Member("isaac", 21, 2022654321)
 ```
 
+## Basic of Syntax
+
 ---
 
-# Basic of Syntax
-
-## Template Syntax
+### Template Syntax
 
 - Vue 2 Guide > Template Syntax 참고
 - **렌더링된 DOM_**을 기본 Vue Instance의 data에 **선언적으로 바인딩**할 수 있는 **HTML 기반 template syntax**를 사용
@@ -466,7 +468,7 @@ const member3 = new Member("isaac", 21, 2022654321)
   ```
   - `<p *v-html*="html"></p>`
 
-## Directives
+### Directives
 
 - v-접두사가 있는 특수 속성
   - 여기에는 변수 값을 할당할 수 있음
@@ -780,11 +782,11 @@ const member3 = new Member("isaac", 21, 2022654321)
   - [https://ko.wikipedia.org/wiki/입력기](https://ko.wikipedia.org/wiki/%EC%9E%85%EB%A0%A5%EA%B8%B0)
   - v-on을 통한 이벤트 바인딩 방식으로 대체
 
+## Vue Advanced
+
 ---
 
-# Vue Advanced
-
-## computed
+### computed
 
 - Vue Instance가 가진 options 중 하나
 - computed 객체에 정의한 함수를 페이지가 최초로 렌더링될 때 호출하여 계산
@@ -792,7 +794,7 @@ const member3 = new Member("isaac", 21, 2022654321)
 - data 속성의 확장이라 이해하자
   - 어떤 data에 가공이 필요한 경우
 
-## methods and computed
+### methods and computed
 
 ### methods
 
@@ -891,7 +893,7 @@ const member3 = new Member("isaac", 21, 2022654321)
 </html>
 ```
 
-## watch
+### watch
 
 - 감시자
   - 특정 데이터의 변화를 감지하는 기능
@@ -966,7 +968,7 @@ const member3 = new Member("isaac", 21, 2022654321)
 
 <img width="1913" alt="vue12" src="https://user-images.githubusercontent.com/86648892/212526776-0a0ab734-fae3-4af8-b2a0-d64b6f6a9267.png">
 
-## filters
+### filters
 
 - 텍스트 형식화를 적용할 수 있는 필터
 - interpolation 혹은 v-bind를 이용할 때 사용 가능
@@ -1008,9 +1010,9 @@ const member3 = new Member("isaac", 21, 2022654321)
 </body>
 ```
 
----
+## Vue Style Guide
 
-# Vue Style Guide
+---
 
 - [https://v2.vuejs.org/v2/style-guide/](https://v2.vuejs.org/v2/style-guide/)
 - v-for 사용 시 key 사용해주기
@@ -1070,11 +1072,11 @@ const member3 = new Member("isaac", 21, 2022654321)
 </body>
 ```
 
+## Vue CDN Practice 1
+
 ---
 
-# Vue CDN Practice 1
-
-## Lodash
+### Lodash
 
 - [https://lodash.com/docs/4.17.15#random](https://lodash.com/docs/4.17.15#random)
 - [https://lodash.com/docs/4.17.15#range](https://lodash.com/docs/4.17.15#range)
@@ -1130,9 +1132,9 @@ const member3 = new Member("isaac", 21, 2022654321)
 </html>
 ```
 
----
+## Vue CDN Practice 2
 
-# Vue CDN Practice 2
+---
 
 - [https://wormwlrm.github.io/2018/12/29/Understanding-Vue-Lifecycle-hooks.html](https://wormwlrm.github.io/2018/12/29/Understanding-Vue-Lifecycle-hooks.html)
 - [https://wormwlrm.github.io/2018/12/29/Understanding-Vue-Lifecycle-hooks.html](https://wormwlrm.github.io/2018/12/29/Understanding-Vue-Lifecycle-hooks.html)
@@ -1198,9 +1200,9 @@ const member3 = new Member("isaac", 21, 2022654321)
 </html>
 ```
 
----
+## Vue CDN Practice 3
 
-# Vue CDN Practice 3
+---
 
 ```jsx
 <!DOCTYPE html>
@@ -1316,9 +1318,9 @@ const member3 = new Member("isaac", 21, 2022654321)
 </html>
 ```
 
----
+## Vue CDN Practice 4
 
-# Vue CDN Practice 4
+---
 
 ```jsx
 <!DOCTYPE html>
@@ -1390,17 +1392,17 @@ const member3 = new Member("isaac", 21, 2022654321)
 </html>
 ```
 
----
+## Vue CLI and Components
 
-# Vue CLI and Components
+---
 
 - Vue CLI
 - SFC
 - Pass Props & Emit Events
 
----
+## Node.js
 
-# Node.js
+---
 
 - JS는 브라우저를 조작하는 유일한 언어
   - 하지만 브라우저 밖에서는 구동할 수 없었음
@@ -1408,7 +1410,7 @@ const member3 = new Member("isaac", 21, 2022654321)
   - Chrome V8 엔진을 제공하여 여러 OS 환경에서 실행할 수 있는 환경을 제공
   - 브라우저만 조작 가능했으나, Server-Side-Programming 또한 가능해짐
 
-## NPM (Node Package Manager)
+### NPM (Node Package Manager)
 
 - JS 패키지 관리자
   - Python에 pip가 있다면 Node.js에는 npm
@@ -1416,16 +1418,16 @@ const member3 = new Member("isaac", 21, 2022654321)
 - Node.js의 기본 패키지 관리자
 - Node.js 설치 시 함께 설치됨
 
----
+## Vue CLI
 
-# Vue CLI
+---
 
 - Vue 개발을 위한 표준 도구
 - 프로젝트의 구성을 도와주는 역할
 - 확장 플러그인, GUI, Babel 등 다양한 tool 제공
 - 브라우저 환경이 아닌 단독적인 런타임 환경에서 실행
 
-## 설치 및 시작
+### 설치 및 시작
 
 - 설치
   - `npm install -g @vue/cli`
@@ -1441,7 +1443,7 @@ const member3 = new Member("isaac", 21, 2022654321)
   - package-lock.json이 있는 위치에서 `npm install`
     - 해당 프로젝트의 package-lock.json에 따라 node_modules를 설치해줌
 
-## Vue CLI 프로젝트 구조
+### Vue CLI 프로젝트 구조
 
 <img width="796" alt="vue13" src="https://user-images.githubusercontent.com/86648892/212527153-578970e0-68ed-4e39-a04a-7b666d872e0a.png">
 
@@ -1517,7 +1519,7 @@ const member3 = new Member("isaac", 21, 2022654321)
         - 여기가 Vue와 연결된 것
           - App.Vue가 여기에 렌더링되는 것
 
-## `src/`
+### `src/`
 
 - `src/assets`
   - 정적 파일을 저장하는 디렉토리
@@ -1531,11 +1533,11 @@ const member3 = new Member("isaac", 21, 2022654321)
   - `public/index.html` 과 `src/App.vue` 를 연결시키는 작업이 이루어지는 곳
   - Vue 전역에서 활용할 모듈을 등록할 수 있는 파일
 
+## SFC
+
 ---
 
-# SFC
-
-## Component
+### Component
 
 <img width="786" alt="vue18" src="https://user-images.githubusercontent.com/86648892/212527146-44425cbf-3428-4c8e-ba3e-aa45e40c0cde.png">
 
@@ -1547,21 +1549,21 @@ const member3 = new Member("isaac", 21, 2022654321)
     - Vue에서는 `src/App.vue` 를 root node로 하는 tree 구조
 - 컴포넌트는 유지보수를 쉽게 만들어주며, 재사용성의 측면에서도 매우 강력한 기능을 제공
 
-## component in Vue
+### component in Vue
 
 - Vue에서의 component
   - 이름이 있는 재사용 가능한 Vue Instance
     - `const app = new Vue()` 에서 app은 하나의 컴포넌트
 
-## SFC (Single File Component)
+### SFC (Single File Component)
 
 - 하나의 `.vue` 파일이 하나의 Vue instance이고, 하나의 컴포넌트이다
 - Vue Instance를 기능 단위로 작성하는 것이 핵심
 - 컴포넌트 기반 개발의 핵심 기능
 
----
+## Vue Component
 
-# Vue Component
+---
 
 - 웹을 구성하는 3가지 언어의 코드가 하나의 파일 안에 작성된다
   - template(HTML)
@@ -1578,7 +1580,7 @@ const member3 = new Member("isaac", 21, 2022654321)
 - `public/index.html` 페이지 하나에 계속 그려나가는 것
   - 이것이 SPA
 
-## component 등록
+### component 등록
 
 ### component 생성
 
@@ -1608,11 +1610,11 @@ const member3 = new Member("isaac", 21, 2022654321)
 
 <img width="476" alt="vue21" src="https://user-images.githubusercontent.com/86648892/212527142-0f9989bd-d151-4b63-937a-66710f02a60d.png">
 
+## Pass Props & Emit Events
+
 ---
 
-# Pass Props & Emit Events
-
-## Data in components
+### Data in components
 
 - 동적 웹페이지에서는 데이터가 필요
 - 한 페이지에서 여러 컴포넌트들이 데이터를 공유해야함
@@ -1629,7 +1631,7 @@ const member3 = new Member("isaac", 21, 2022654321)
     - 자식 → 부모
       - emit events
 
-## Pass Props
+### Pass Props
 
 - [https://v2.vuejs.org/v2/guide/components-props.html#Prop-Validation](https://v2.vuejs.org/v2/guide/components-props.html#Prop-Validation)
 - 요소의 속성(property)을 사용하여 데이터 전달
@@ -1670,7 +1672,7 @@ const member3 = new Member("isaac", 21, 2022654321)
   - 하위 컴포넌트가 실수로 상위 컴포넌트 상태를 변경하여 앱의 데이터 흐름을 이해하기 힘들게 만드는 것을 방지
   - 하위 컴포넌트에서 prop을 변경하려고 시도해서는 안되며 그렇게 하면 Vue는 콘솔에서 경고를 출력함
 
-## Emit Event
+### Emit Event
 
 - 자식 컴포넌트에서 부모 컴포넌트로 데이터를 전달할 때는 이벤트를 발생시킴
 - 이벤트에 담아서 간접적으로 부모가 청취할 수 있도록 하는 방식
@@ -1720,14 +1722,14 @@ const member3 = new Member("isaac", 21, 2022654321)
    - 함수의 인자로 전달된 데이터가 포함되어있음
 4. 호출된 함수에서 `console.log` 실행
 
-## Emit Event 정리
+### Emit Event 정리
 
 - 자식 컴포넌트에서 부모 컴포넌트로 이벤트를 발생시킴
   - 이벤트에 데이터를 담아 전달 가능
 - 부모 컴포넌트에서 자식 컴포넌트의 이벤트를 청취
   - 전달받은 데이터는 이벤트 핸들러 함수의 인자로 사용
 
-## pass props and emit event 컨벤션
+### pass props and emit event 컨벤션
 
 - HTML 요소에서 사용할 때는 kebab-case
 - JS에서 사용할 때는 camelCase
@@ -1742,9 +1744,9 @@ const member3 = new Member("isaac", 21, 2022654321)
   - 메서드, 변수명 등은 JS에서 사용함
     - camelCase
 
----
+## Props and Emit Practice
 
-# Props and Emit Practice
+---
 
 <img width="737" alt="vue30" src="https://user-images.githubusercontent.com/86648892/212527131-15dc26f5-e50f-42b4-909c-8a4a050b1c10.png">
 
@@ -1889,23 +1891,23 @@ export default {
 </style>
 ```
 
----
+## Vue Lifecycle Hooks and Vuex
 
-# Vue Lifecycle Hooks and Vuex
+---
 
 - Vuex
 - Lifecycle Hooks
 - Todo with Vuex
 
----
+## Vuex
 
-# Vuex
+---
 
 - 상태 관리(State Management)란 무엇인가?
 - Vuex는 무엇이고 왜 필요한가?
 - Vuex 기본 문법
 
-# State Management (상태 관리)
+### State Management (상태 관리)
 
 - 상태(State)란?
   - 현재에 대한 정보(data)
@@ -1917,7 +1919,7 @@ export default {
       - 여러 개의 component가 같은 상태(data)를 유지할 필요가 있음
         - 상태 관리(State Management)가 필요!
 
-## Pass Props & Emit Event
+### Pass Props & Emit Event
 
 ![vue31](https://user-images.githubusercontent.com/86648892/212527451-26316ece-4c0a-4d84-a9a3-c5bdc375f172.png)
 
@@ -1926,7 +1928,7 @@ export default {
   - 공통의 상태를 유지해야 하는 컴포넌트가 많아지면 데이터 전달 구조가 복잡해지는 한계
     - 중앙 저장소를 만들자!
 
-## Centralized Store
+### Centralized Store
 
 ![vue32](https://user-images.githubusercontent.com/86648892/212527450-02e43667-a279-4110-aa53-1950782bd74d.png)
 
@@ -1936,7 +1938,7 @@ export default {
 - 중앙 저장소의 데이터가 변경되면 각각의 component는 해당 데이터의 변화에 반응하여 새로 변경된 데이터를 반영함
 - 규모가 크거나 컴포넌트 중첩이 깊은 프로젝트의 관리가 매우 편리
 
-## Vuex
+### Vuex
 
 - “state management pattern + Library” for vue.js
   - 상태 관리 패턴 + 라이브러리
@@ -1945,9 +1947,9 @@ export default {
   - Vue의 반응성을 효율적으로 사용하는 상태 관리 기능을 제공
 - Vue의 공식 도구로써 다양한 기능을 제공
 
----
+## Vuex Project
 
-# Vuex Project
+---
 
 ```bash
 $ vue create vuex-app // Vue 프로젝트 생성
@@ -1959,7 +1961,7 @@ $ vue add vuex // Vue CLI를 통해 vuex plugin 적용
 
 ![vue34](https://user-images.githubusercontent.com/86648892/212527448-f08854e4-8a4d-42cb-99a0-7d9a447611ff.png)
 
-## 1. State
+### 1. State
 
 - vue 인스턴스의 data에 해당
 - 중앙에서 관리하는 모든 상태 정보
@@ -1970,14 +1972,14 @@ $ vue add vuex // Vue CLI를 통해 vuex plugin 적용
 
 ![vue35](https://user-images.githubusercontent.com/86648892/212527447-1c2d7738-e744-4e77-b508-d626e572945a.png)
 
-## 2. Mutations
+### 2. Mutations
 
 - 실제로 state를 변경하는 유일한 방법
 - vue 인스턴스의 methods에 해당하지만 Mutations에서 호출되는 핸들러(handler) 함수는 반드시 동기적이어야 함
   - 비동기 로직으로 mutations를 사용해서 state를 변경하는 경우, state의 변화의 시기를 특정할 수 없기 때문
 - 첫번째 인자로 `state` 를 받으며, component 혹은 Actions에서 `commit()` 메서드로 호출됨
 
-## 3. Actions
+### 3. Actions
 
 - mutations의 역할 외의 역할들을 담당
 - mutations와 비슷하지만 비동기 작업을 포함할 수 있다는 차이가 있음
@@ -1986,7 +1988,7 @@ $ vue add vuex // Vue CLI를 통해 vuex plugin 적용
   - 즉, state를 직접 변경할 수 있지만 하지 않아야 함
 - component에서 `dispatch()` 메서드에 의해 호출됨
 
-## 4. Getters
+### 4. Getters
 
 - vue 인스턴스의 computed에 해당
 - state를 활용하여 계산된 값을 얻고자 할 때 사용
@@ -1996,13 +1998,13 @@ $ vue add vuex // Vue CLI를 통해 vuex plugin 적용
 - 첫번째 인자로 state, 두번째 인자로 getter를 받음
   - state를 기반으로 값을 계산, 추가로 다른 getters가 만든 값도 사용하는 경우도 있음
 
-## 모든 데이터를 Vuex에서 관리해야 할까?
+### 모든 데이터를 Vuex에서 관리해야 할까?
 
 - Vuex를 사용한다고 해서 모든 데이터를 state에 넣어야 하는 것은 아님
 - Vuex에서도 여전히 pass props, emit event를 사용하여 상태를 관리할 수 있음
 - 개발 환경에 따라 적절하게 사용하는 것이 필요함
 
-## 정리
+### 정리
 
 - `state`
   - 중앙에서 관리하는 **모든 상태 정보**
@@ -2117,9 +2119,9 @@ $ vue add vuex // Vue CLI를 통해 vuex plugin 적용
 
 ![vue49](https://user-images.githubusercontent.com/86648892/212527429-bcb4247b-476e-4090-8ca0-b2dbd1608bea.png)
 
----
+## Lifecycle Hooks
 
-# Lifecycle Hooks
+---
 
 - 각 Vue 인스턴스는 생성과 소멸의 과정 중 단계별 초기화 과정을 거침
   - Vue 인스턴스가 생성된 경우, 인스턴스를 DOM에 마운트하는 경우, 데이터가 변경되어 DOM를 업데이트하는 경우 등
@@ -2128,7 +2130,7 @@ $ vue add vuex // Vue CLI를 통해 vuex plugin 적용
 
 ![vue50](https://user-images.githubusercontent.com/86648892/212527428-add37e99-6d47-4eb6-835a-0b0ce3e35ea8.png)
 
-## Lifecycle Hooks 맛보기
+### Lifecycle Hooks 맛보기
 
 ![vue51](https://user-images.githubusercontent.com/86648892/212527427-22b56368-6753-49a2-a1a7-12af4dfa2594.png)
 
@@ -2136,7 +2138,7 @@ $ vue add vuex // Vue CLI를 통해 vuex plugin 적용
 
 ![vue53](https://user-images.githubusercontent.com/86648892/212527425-f2dd9621-bb6b-4ab3-af45-c3b937cc4cbc.png)
 
-## created
+### created
 
 - Vue instance가 생성된 후 호출됨
 - data, computed 등의 설정이 완료된 상태
@@ -2151,7 +2153,7 @@ $ vue add vuex // Vue CLI를 통해 vuex plugin 적용
   - ⇒ created 함수에 강아지 사진을 가져오는 함수를 추가
     ![vue55](https://user-images.githubusercontent.com/86648892/212527422-43436c5c-203b-416b-9b0d-eef71aa914f4.png)
 
-## mounted
+### mounted
 
 - Vue instance가 요소에 mount된 후 호출됨
 - mount된 요소를 조작할 수 있음
@@ -2163,13 +2165,13 @@ $ vue add vuex // Vue CLI를 통해 vuex plugin 적용
 
 ![vue57](https://user-images.githubusercontent.com/86648892/212527420-2ebad463-2166-41f7-a8c6-e5976da4af1b.png)
 
-## updated
+### updated
 
 - 데이터가 변경되어 DOM에 변화를 줄 때 호출됨
 
 ![vue58](https://user-images.githubusercontent.com/86648892/212527419-ecce5479-20d8-4874-9fb4-a622c1b6046b.png)
 
-## Lifecycle Hooks 특징
+### Lifecycle Hooks 특징
 
 - instance마다 각각의 Lifecycle을 가지고 있음
 
@@ -2184,9 +2186,9 @@ $ vue add vuex // Vue CLI를 통해 vuex plugin 적용
 - 부착 여부가 부모-자식 관계에 따라 순서를 가지고 있지 않은 것
 - **instance마다 각각의 Lifecycle을 가지고 있기 때문**
 
----
+## Simple Todo App with Vuex
 
-# Simple Todo App with Vuex
+---
 
 - Vuex를 사용한 Todo 프로젝트 만들기
 - 구현 기능
@@ -2196,7 +2198,7 @@ $ vue add vuex // Vue CLI를 통해 vuex plugin 적용
     - 완료된 Todo
     - 미완료된 Todo
 
-## CRUD
+### CRUD
 
 ### READ Todo
 
@@ -2218,7 +2220,7 @@ $ vue add vuex // Vue CLI를 통해 vuex plugin 적용
 
 - isCompleted 값을 true와 false로 toggle
 
-## Components
+### Components
 
 ### App.vue
 
@@ -2479,14 +2481,14 @@ export default new Vuex.Store({
 })
 ```
 
----
+## Local Storage
 
-# Local Storage
+---
 
 - 브라우저의 Local Storage에 데이터를 저장하여 브라우저를 종료하고 다시 실행해도 데이터가 보존될 수 있도록 하기
 - vuex-persistedstate 라이브러리를 활용하여 편리하게 데이터를 보존해보기
 
-## Window.localStorage
+### Window.localStorage
 
 - 브라우저에서 제공하는 저장공간 중 하나인 Local Storage에 관련된 속성
 - 만료되지 않고 브라우저를 종료하고 다시 실행해도 데이터가 보존됨
@@ -2497,7 +2499,7 @@ export default new Vuex.Store({
   - `getItem(key)`
     - key에 해당하는 데이터 조회
 
-## Local Storage 실습
+### Local Storage 실습
 
 ![vue61](https://user-images.githubusercontent.com/86648892/212527416-b083d4da-193d-46f9-a170-a3df4974d972.png)
 
@@ -2529,9 +2531,9 @@ export default new Vuex.Store({
 
 ![vue68](https://user-images.githubusercontent.com/86648892/212527407-a210e5c0-3698-4940-af44-9b65238247f9.png)
 
----
-
 ## vuex-persistedstate
+
+---
 
 - Vuex state를 자동으로 브라우저의 Local Storage에 저장해주는 라이브러리 중 하나
 - 페이지가 새로고침 되어도 Vuex state를 유지시킴
@@ -2567,19 +2569,19 @@ export default new Vuex.Store({
 - 이제는 불러오기 버튼 없이 자동으로 저장된 데이터를 불러올 수 있음
   ![vue69](https://user-images.githubusercontent.com/86648892/212527406-bce545af-d5d0-418b-b4b0-7a69af739429.png)
 
----
+## Vue Router and Navigation Guard
 
-# Vue Router and Navigation Guard
+---
 
 - Vue Router
 - Navigation Guard
 - Articles app with Vue
 
+## Vue Router
+
 ---
 
-# Vue Router
-
-## Routing
+### Routing
 
 - 네트워크에서 경로를 선택하는 프로세스
 - 웹 서비스에서의 라우팅
@@ -2589,7 +2591,7 @@ export default new Vuex.Store({
   - 어디로 보내줄 것인가?
 - Vue에서는 url 대신 route라고 불러준다
 
-## Routing in SSR
+### Routing in SSR
 
 - Server가 모든 라우팅을 통제
   - `return render`
@@ -2598,14 +2600,14 @@ export default new Vuex.Store({
   - Django로 보낸 요청의 응답 HTML은 완성본인 상태였음
 - 결론적으로, Routing(URL)에 대한 결정권을 서버가 가짐
 
-## Routing in SPA and CSR
+### Routing in SPA and CSR
 
 - 서버는 하나의 HTML(index.html)만을 제공
 - 이후에 모든 동작은 하나의 HTML 문서 위에서 JavaScript 코드를 활용
   - DOM을 그리는데 필요한 추가적인 데이터가 있다면 axios와 같은 AJAX 요청을 보낼 수 있는 도구를 사용하여 데이터를 가져오고 처리
 - 즉, **하나의 URL만 가질 수 있음**
 
-## Why routing?
+### Why routing?
 
 - 그럼 도작에 따라 URL이 반드시 바뀌어야 하는가?
   - 그렇지는 않으나
@@ -2617,7 +2619,7 @@ export default new Vuex.Store({
     - 링크를 공유할 시 처음 페이지만 공유 가능
   - 브라우저의 뒤로가기 기능을 사용할 수 없음
 
-## Vue Router
+### Vue Router
 
 - Vue 공식 라우터
 - SPA 상에서 라우팅을 쉽게 개발할 수 있는 기능을 제공
@@ -2663,7 +2665,7 @@ $ vue add router            // Vue CLI를 통해 router plugin 적용
 
 <img width="867" alt="vue72" src="https://user-images.githubusercontent.com/86648892/212530240-8a8c7b54-52ca-4f90-8638-ff04178c0e84.png">
 
-## router-link
+### router-link
 
 - a 태그와 비슷한 기능
   - URL을 이동시킴
@@ -2675,7 +2677,7 @@ $ vue add router            // Vue CLI를 통해 router plugin 적용
 
 <img width="827" alt="vue73" src="https://user-images.githubusercontent.com/86648892/212530236-6d90934f-a689-4c5f-aba1-2c08ef91e7f1.png">
 
-## router-view
+### router-view
 
 - 주어진 URL에 대해 일치하는 컴포넌트를 렌더링하는 컴포넌트
 - 실제 컴포넌트가 DOM에 부착되어 보이는 자리를 의미
@@ -2686,7 +2688,7 @@ $ vue add router            // Vue CLI를 통해 router plugin 적용
 
 <img width="569" alt="vue74" src="https://user-images.githubusercontent.com/86648892/212530234-ec4eed59-cf12-4308-87c7-770d1b820585.png">
 
-## `src/router/index.js`
+### `src/router/index.js`
 
 - 라우터에 관련된 정보 및 설정이 작성되는 곳
 - Django에서의 urls.py에 해당
@@ -2694,7 +2696,7 @@ $ vue add router            // Vue CLI를 통해 router plugin 적용
 
 <img width="483" alt="vue75" src="https://user-images.githubusercontent.com/86648892/212530231-b1d4fedd-d4f0-4fcf-8ddb-5a647fa5d320.png">
 
-## `src/Views`
+### `src/Views`
 
 - router-view에 들어갈 component 작성
 - 기존에 컴포넌트를 작성하던 곳은 components 폴더 뿐이었지만 이제 두 폴더로 나뉘어짐
@@ -2709,16 +2711,16 @@ $ vue add router            // Vue CLI를 통해 router plugin 적용
     - routes에 매핑된 컴포넌트의 하위 컴포넌트를 모아두는 폴더
       - ex) HomeView 컴포넌트 내부의 HelloWorld 컴포넌트
 
----
+## Vue Router 실습
 
-# Vue Router 실습
+---
 
 ### 주소를 이동하는 2가지 방법
 
 1. 선언적 방식 navigation
 2. 프로그래밍 방식 navigation
 
-## 선언적 방식 네비게이션
+### 선언적 방식 네비게이션
 
 - router-link의 `to` 속성으로 주소 전달
   - routes에 등록된 주소와 매핑된 컴포넌트로 이동
@@ -2728,7 +2730,7 @@ $ vue add router            // Vue CLI를 통해 router plugin 적용
     <img width="275" alt="vue77" src="https://user-images.githubusercontent.com/86648892/212530225-4deb8c58-c874-4f5a-a9a4-d6a361adcf53.png">
     <img width="586" alt="vue78" src="https://user-images.githubusercontent.com/86648892/212530224-71878f55-cfb9-4b7a-afd8-d9c572265319.png">
 
-## 프로그래밍 방식 네비게이션
+### 프로그래밍 방식 네비게이션
 
 - Vue 인스턴스 내부에서 라우터 인스턴스에 `$router` 로 접근할 수 있음
 - 다른 URL로 이동하려면 `this.$router.push` 를 사용
@@ -2762,9 +2764,9 @@ $ vue add router            // Vue CLI를 통해 router plugin 적용
 
 <img width="1473" alt="vue84" src="https://user-images.githubusercontent.com/86648892/212530217-e34140e7-ea15-4112-900a-8bc4480ab115.png">
 
----
+## Navigation Guard
 
-# Navigation Guard
+---
 
 - Vue router를 통해 특정 URL에 접근할 때 다른 URL로 리다이렉트하거나 해당 URL로의 접근을 막는 방법
   - ex) 사용자의 인증 정보가 없으면 특정 페이지에 접근하지 못하게 함
@@ -2775,9 +2777,9 @@ $ vue add router            // Vue CLI를 통해 router plugin 적용
 - 컴포넌트 가드
   - 라우터 컴포넌트 안에 정의
 
----
-
 ## 전역 가드
+
+---
 
 ### Global Before Guard
 
@@ -2835,9 +2837,9 @@ $ vue add router            // Vue CLI를 통해 router plugin 적용
 
 <img width="856" alt="vue93" src="https://user-images.githubusercontent.com/86648892/212530516-6cf7bd54-6abe-4004-8fe9-06f7d22515e4.png">
 
----
-
 ## 라우터 가드
+
+---
 
 - 전체 route가 아닌 특정 route에 대해서만 가드를 설정하고 싶을 때 사용
 - `beforeEnter()`
@@ -2859,9 +2861,9 @@ $ vue add router            // Vue CLI를 통해 router plugin 적용
 - 이런 식으로 특정 라우트만 따로 가드를 하고 싶은 경우에는 라우터 가드를 사용
 - `isLoggedIn = false` 로 변경하면 Login 페이지로 정상 이동 가능
 
----
-
 ## 컴포넌트 가드
+
+---
 
 - 특정 컴포넌트 내에서 가드를 지정하고 싶을 때 사용
 - `beforeRouteUpdate()`
@@ -2888,9 +2890,9 @@ $ vue add router            // Vue CLI를 통해 router plugin 적용
 
 <img width="475" alt="vue98" src="https://user-images.githubusercontent.com/86648892/212530510-fb58aabe-1703-407b-983b-9977ee9a26f5.png">
 
----
-
 ## 404 Not Found
+
+---
 
 ### 요청한 리소스가 존재하지 않는 경우
 
@@ -2922,11 +2924,11 @@ $ vue add router            // Vue CLI를 통해 router plugin 적용
 
 <img width="1272" alt="vue107" src="https://user-images.githubusercontent.com/86648892/212530495-74ededf9-82ac-4fb0-9da1-3b96ebd4341f.png">
 
+## Articles with Vue
+
 ---
 
-# Articles with Vue
-
-## 프로젝트 시작
+### 프로젝트 시작
 
 ```bash
 $ vue create articles
@@ -3038,7 +3040,7 @@ export default new Vuex.Store({
 })
 ```
 
-## views
+### views
 
 ### App.vue
 
@@ -3270,9 +3272,9 @@ export default {
 </style>
 ```
 
----
+## Vue with DRF
 
-# Vue with DRF
+---
 
 - Vue with DRF
 - CORS
@@ -3280,20 +3282,20 @@ export default {
 - DRF Auth with Vue
 - DRF spectacular
 
----
+## Vue with DRF
 
-# Vue with DRF
+---
 
 - Server와 Client의 통신 방법 이해하기
 - CORS 이슈 이해하고 해결하기
 - DRF Auth System 이해하기
 - Vue와 API server 통신하기
 
+## Server and Client
+
 ---
 
-# Server and Client
-
-## Server
+### Server
 
 - 클라이언트에게 **정보**와 **서비스**를 제공하는 컴퓨터 시스템
 - 서비스 전체를 제공
@@ -3308,7 +3310,7 @@ export default {
   - Django를 통해 관리하는 정보만을 클라이언트에 제공
   - DRF를 사용하여 JSON으로 변환
 
-## Client
+### Client
 
 - **Server가 제공하는 서비스에 적절한 요청**을 통해 **Server로부터 반환받은 응답을 사용자에게 표현**하는 기능을 가진 프로그램 혹은 시스템
 - Server가 제공하는 서비스에 적절한 요청
@@ -3318,7 +3320,7 @@ export default {
   ![vue111](https://user-images.githubusercontent.com/86648892/212540521-3ca1d832-288b-4b6c-be11-4f0152de55e6.png)
   - 사용자의 요청에 적합한 data를 server에 요청하여 응답받은 결과로 **적절한 화면을 구성**
 
-## 정리
+### 정리
 
 - Server는 정보와 서비스를 제공
   - DB와 통신하며 데이터를 CRUD하는 것을 담당
@@ -3327,9 +3329,9 @@ export default {
   - Server에게 정보(데이터)를 요청
   - 응답받은 정보를 가공하여 화면에 표현
 
----
+## Vue with DRF 사전작업
 
-# Vue with DRF 사전작업
+---
 
 ![vue112](https://user-images.githubusercontent.com/86648892/212540519-ee476041-65f2-4fea-868d-7d8870bb48ca.png)
 
@@ -3345,9 +3347,9 @@ export default {
   $ npm run serve
   ```
 
----
+## CORS (Cross-Origin Resource Sharing)
 
-# CORS (Cross-Origin Resource Sharing)
+---
 
 ![vue113](https://user-images.githubusercontent.com/86648892/212540518-b4874294-62fe-4857-b831-7e299e0d75be.png)
 
@@ -3358,7 +3360,7 @@ export default {
   - 데이터를 확인할 수 없는 이유
     - CORS policy에 의해 blocked되었기 때문
 
-## What Happened?
+### What Happened?
 
 - 브라우저가 요청을 보내고 서버의 응답이 브라우저에 도착
   - Server의 log는 200(정상) 반환
@@ -3397,7 +3399,7 @@ export default {
 - 다른 출처의 리소스를 불러오려면 그 출처에서 올바른 CORS header를 포함한 응답을 반환해야 한다
 - [https://developer.mozilla.org/ko/docs/Web/HTTP/CORS](https://developer.mozilla.org/ko/docs/Web/HTTP/CORS)
 
-## How to set CORS
+### How to set CORS
 
 - CORS 표준에 의해 추가된 HTTP Response Header를 통해 이를 통제 가능
 - HTTP Response Header 예시
@@ -3424,11 +3426,11 @@ export default {
     - 응답에 Access-Control-Allow-Origin 헤더가 있는 것을 확인
       ![vue118](https://user-images.githubusercontent.com/86648892/212540510-8929569b-6f06-46a0-ab87-320b4b0b7108.png)
 
+## DRF Auth System
+
 ---
 
-# DRF Auth System
-
-## Authentication and Authorization
+### Authentication and Authorization
 
 ### Authentication
 
@@ -3532,9 +3534,9 @@ export default {
      - 회원정보 수정
      - 비밀번호 변경 등
 
----
+## dj-rest-auth
 
-# dj-rest-auth
+---
 
 - Token을 생성하기 위해 사용할 라이브러리
 - 회원가입, 인증(소셜미디어 인증 포함), 비밀번호 재설정, 사용자 세부 정보 검색, 회원정보 수정 등을 위한 REST API end point 제공
@@ -3607,9 +3609,9 @@ export default {
 
 <img width="1391" alt="vue140" src="https://user-images.githubusercontent.com/86648892/212531344-e23dc2f1-06f1-48fb-a5c0-98be052c24a2.png">
 
----
-
 ## Permission Setting
+
+---
 
 <img width="1329" alt="vue141" src="https://user-images.githubusercontent.com/86648892/212531342-1845425f-17c4-4b9b-b2ad-d835530d53d1.png">
 
@@ -3633,9 +3635,7 @@ export default {
 
 <img width="1251" alt="vue148" src="https://user-images.githubusercontent.com/86648892/212531333-a8f23c70-17ab-48a5-8071-968bb4144d19.png">
 
----
-
-## 정리
+### 정리
 
 1. 인증 방법 설정
    - `DEFAULT_AUTHENTICATION_CLASSES`
@@ -3646,9 +3646,9 @@ export default {
    - `@permission_classes`
 4. 인증 방법은 다양한 방법이 있으므로 내 서비스에 적합한 방식을 선택
 
----
+## DRF Auth with Vue
 
-# DRF Auth with Vue
+---
 
 ### 인증과 권한에 대한 요청을 Vue가 담당
 
@@ -3762,18 +3762,18 @@ export default {
 
 <img width="1457" alt="vue181" src="https://user-images.githubusercontent.com/86648892/212531284-3b2d91a5-ef70-4a8f-8d19-8d61a69d6280.png">
 
----
+## swagger
 
-# swagger
+---
 
 - 스웨거(Swagger)는 개발자가 REST 웹 서비스를 설계, 빌드, 문서화, 소비하는 일을 도와주는 오픈 소스 소프트웨어 프레임워크
   - 즉, API를 설계하고 문서화 하는데 도움을 주는 라이브러리
 
 <img width="512" alt="vue182" src="https://user-images.githubusercontent.com/86648892/212531282-6e45f422-815f-44ed-85fe-72c3e3e8af4d.png">
 
----
+## drf-spectacular
 
-# drf-spectacular
+---
 
 ### 다양한 DRF API
 
