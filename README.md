@@ -56,9 +56,13 @@
     - [[Django] 초기 데이터](./django/%EC%B4%88%EA%B8%B0%20%EB%8D%B0%EC%9D%B4%ED%84%B0.md)
     - [[Django] Django Static Files](./django/django-static-files.md)
 
+## Tools
+
+- [Git](./tools/git/README.md)
+- [Jira 및 JQL 활용](./tools/jira/JIRA%20%EB%B0%8F%20JQL%20%ED%99%9C%EC%9A%A9.md)
+
 ## ETC
 
-- [Git](./git/README.md)
-- [CLI](./cli//README.md)
-- [Markdown](./markdown//README.md)
-- [Cheatsheets](./cheatsheets//README.md)
+- [CLI](./etc/cli//README.md)
+- [Markdown](./etc/markdown//README.md)
+- [Cheatsheets](./etc/cheatsheets//README.md)
