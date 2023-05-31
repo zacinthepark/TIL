@@ -48,11 +48,11 @@
     - [[Django] Djang REST Framework and Serializer](./server/django/DRF.md)
     - [[Django] 초기 데이터](./server/django/%EC%B4%88%EA%B8%B0%20%EB%8D%B0%EC%9D%B4%ED%84%B0.md)
     - [[Django] Django Static Files](./server/django/django-static-files.md)
-- [MSA란]
+- [MSA란](./server/MSA%EB%9E%80.md)
 
 ## Database
 
-- [DB 설계와 정규화]
+- [DB 설계와 정규화](./database/DB%20%EC%84%A4%EA%B3%84%EC%99%80%20%EC%A0%95%EA%B7%9C%ED%99%94.md)
 
 ## Tools
 
