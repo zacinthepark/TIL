@@ -23,7 +23,7 @@
 
     - [[Typescript] Typescript with Webpack and React](./typescript/README.md)
 
-## FE
+## Frontend
 
 - React
 
@@ -40,7 +40,7 @@
     - [css 기초](./web/css%20%EA%B8%B0%EC%B4%88.md)
     - [css 참고사이트](./web/%EC%B0%B8%EA%B3%A0%EC%82%AC%EC%9D%B4%ED%8A%B8.md)
 
-## BE
+## Backend
 
 - Django
 
@@ -49,6 +49,8 @@
     - [[Django] MTV 기초](./django/MTV%20%EA%B8%B0%EC%B4%88.md)
     - [[Django] Form and ModelForm](./django/form-and-modelform.md)
     - [[Django] Django Authentication](./django/django-authentication.md)
+    - [[Django] N:1 Relationship](./django/n-1-relationship.md)
+    - [[Django] M:N Relationship](./django/m-n-relationship.md)
     - [[Django] REST API](./django/REST%20API.md)
     - [[Django] Djang REST Framework and Serializer](./django/DRF.md)
     - [[Django] 초기 데이터](./django/%EC%B4%88%EA%B8%B0%20%EB%8D%B0%EC%9D%B4%ED%84%B0.md)
