@@ -29,7 +29,7 @@
 ## Django
 
 - [데이터베이스 기초](./django/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%20%EA%B8%B0%EC%B4%88.md)
-- [QuerySet API](./django/%EC%BF%BC%EB%A6%AC%EC%85%8B%20API.md)
+- [QuerySet API](./django/queryset-api.md)
 - [Form and ModelForm]
 - [Django Authentication]
 - [REST API](./django/REST%20API.md)
