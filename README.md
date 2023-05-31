@@ -63,6 +63,7 @@
 
 ## ETC
 
+- [Project Management](./etc/project-management.md)
 - [CLI](./etc/cli//README.md)
 - [Markdown](./etc/markdown//README.md)
 - [Cheatsheets](./etc/cheatsheets//README.md)
