@@ -1,3 +1,253 @@
+## ORM
+
+---
+
+### 그런데 설계도는 어떻게, 누가 해석할까?
+
+- Django(i speak python) —> DB(i speak SQL)
+- 중간에 SQL 언어로 번역해주는 친구가 필요함
+
+### ORM
+
+- Object-Relational-Mapping
+- Django Framework는 내장된 Django ORM이 있음
+    - 한 마디로 SQL을 사용하지 않고 데이터베이스를 조작할 수 있게 만들어주는 매개체
+- 객체지향 프로그래밍 언어를 사용하여 호환되지 않는 유형의 시스템 간에 데이터를 변환하는 프로그래밍 기술
+    - 객체지향 프로그래밍에서 데이터베이스를 연동할 때, 데이터베이스와 객체지향 프로그래밍 언어 간의 호환되지 않는 데이터를 변환하는 프로그래밍 기법
+
+<img width="1125" alt="dj_46" src="https://user-images.githubusercontent.com/86648892/188498037-a31c3dd8-7e77-4cdb-9514-0debe061338c.png">
+
+### ORM 장점
+
+- SQL을 잘 알지 못해도 객체지향 언어로 DB 조작이 가능
+- 객체지향적 접근으로 인한 높은 생산성
+- “생산성”: 현시대 개발의 키워드
+
+### ORM 단점
+
+- ORM만으로 완전한 서비스를 구현하기 어려운 경우가 있음
+
+### [참고] Shell이란?
+
+- 운영체제 상에서 다양한 기능과 서비스를 구현하는 인터페이스를 제공하는 프로그램
+- 셸(껍데기)은 사용자와 운영체제 내부 사이의 인터페이스를 감싸는 층이기 때문에 그러한 이름이 붙음
+- “사용자" ↔ 셸 ↔ ”운영체제”
+- 코드 테스트할 때 유용
+- python shell 실행 명령어
+    - git bash (windows)
+        - `$ python -i`
+    - zsh (macOS)
+        - `$ python`
+- django shell
+    - `$ pip install django-extensions`
+    - `$ python manage.py shell_plus`
+        - django-extension이 제공하는 shell_plus
+        - 자주 사용하는 모듈을 자동으로 import해줌
+        - 없다면 `$ python manage.py shell`
+- shell 종료 시 `exit()`
+
+<img width="1005" alt="dj_47" src="https://user-images.githubusercontent.com/86648892/188498039-8d7305fb-bd82-4429-9ba9-992c4a42d811.png">
+
+## QuerySet API
+
+---
+
+- ORM이 사용하는 라이브러리 이름
+- Django가 기본적으로 ORM을 제공함에 따라 DB를 편하게 조작할 수 있도록 도움
+- Model을 만들면 Django는 객체들을 만들고, 읽고, 수정하고, 지울 수 있는 (CRUD) DB API를 자동으로 만듬
+
+<img width="905" alt="dj_48" src="https://user-images.githubusercontent.com/86648892/188498044-f5c93166-6381-4f9d-819b-411813e21a8e.png">
+
+- `Article.objects.all()`
+    - 전체 데이터를 조회하는 ORM 코드
+    - DB에게 전체 데이터 다 내놓으라고 하는 것
+    - 결과가 QuerySet이라는 객체로 나옴
+- Queryset API 부분에서 CRUD
+
+### objects manager
+
+- 다양한 Queryset API를 제공해주는 친구
+    - “DB를 Python class로 조작할 수 있도록 여러 메서드를 제공하는 manager”
+- Django 모델이 데이터베이스 쿼리 작업을 가능하게 하는 인터페이스
+- Django는 기본적으로 모든 Django 모델 클래스에 대해 objects라는 Manager 객체를 자동으로 추가함
+- 이 Manager(objects)를 통해 특정 데이터를 조작(메서드)할 수 있음
+
+### Query
+
+- 데이터베이스에 날리는 요청
+    - “쿼리문을 작성한다”
+    - 원하는 데이터를 얻기 위해 데이터베이스에 요청을 보낼 코드를 작성한다
+- 이에 대한 응답으로 QuerySet이라는 자료형이 돌아옴
+- `Client → python(query) → ORM → SQL → Database → SQL → ORM → python(QuerySet)`
+
+### QuerySet
+
+- 데이터베이스에게서 전달받은 객체 목록 (데이터 모음)
+    - 리스트는 아니지만 리스트와 같은 특성을 가짐
+        - iterable함
+        - index로 접근 가능
+- Django ORM을 통해 만들어진 자료형이며, 필터를 걸거나 정렬 등을 수행할 수 있음
+
+- “objects” manager를 사용하여 **복수의 데이터**를 가져오는 queryset method를 사용할 때 반환되는 객체
+- **단일한 객체 반환 시에는 모델의 인스턴스를 반환**
+
+<img width="1169" alt="dj_49" src="https://user-images.githubusercontent.com/86648892/188498047-fe72b8ae-57af-44e7-b7a4-5ffb2bb8276d.png">
+
+## QuerySet API METHODS (CRUD)
+
+---
+
+### 1. READ
+
+- 데이터 조회
+- QuerySet API methods that “return new querysets”
+- QuerySet API methods that “do not return querysets”
+
+### `all()`
+
+- `QuerySet` return
+- 전체 데이터 조회
+
+<img width="1096" alt="dj_50" src="https://user-images.githubusercontent.com/86648892/188498051-1b43737c-5ae7-4a91-9254-0d8d431ebe51.png">
+
+### `get()`
+
+- 유니크한 데이터, 고유성(uniqueness)을 보장하는 조회에서 사용해야함
+    - 대표적으로 primary key
+- 단일 데이터 조회
+- 객체를 찾을 수 없으면 DoesNotExist 예외를 발생시키고, 둘 이상의 객체를 찾으면 MultipleObjectsReturned 예외를 발생시킴
+
+<img width="970" alt="dj_51" src="https://user-images.githubusercontent.com/86648892/188498055-4cc49318-6668-4901-908a-22174b97a2a9.png">
+
+### `filter()`
+
+- `QuerySet` return
+- 지정된 조회 매개 변수와 일치하는 객체를 포함하는 새 QuerySet을 반환
+- 항상 QuerySet으로 반환함
+    - 없으면 빈 QuerySet
+    - **단일 객체도 QuerySet으로**
+- pk에는 부적합
+    - QuerySet으로 주기에 한번 더 벗겨내야하는 불편함
+    - 데이터를 조회했는데 없음에도 불구하고 빈 QuerySet을 반환해버림
+    - 예외처리가 어려움
+
+<img width="1099" alt="dj_52" src="https://user-images.githubusercontent.com/86648892/188498056-f5113ac0-6945-491b-a435-6d15582c3979.png">
+
+### Field lookups
+
+- 조건을 설정하여 조회하는 것
+- SQL WHERE 절의 상세한 조건을 지정하는 방법
+- 특정 레코드에 대한 조건을 설정하는 방법
+- QuerySet method `filter()`, `exclude()` 및 `get()` 에 대한 키워드 인자로 지정됨
+- 문법 규칙
+    - 필드명 뒤에 "double-underscore" 이후 작성함
+    - `field__lookuptype=value`
+- 참고 문서
+    - [QuerySet API Reference](https://docs.djangoproject.com/en/4.1/ref/models/querysets/)
+    - [QuerySet Field Lookups Reference](https://www.w3schools.com/django/django_ref_field_lookups.php)
+
+<img width="646" alt="dj_53" src="https://user-images.githubusercontent.com/86648892/188498058-8983af76-f9ab-4a0c-96b1-7381fa010b66.png">
+
+### 2. CREATE
+
+### 데이터 객체 생성 방법
+
+1. `article = Article()`
+    - 클래스를 통한 인스턴스 생성
+    - `article.title = 'x'`
+        - 클래스 변수명과 같은 이름의 인스턴스 변수를 생성 후 값 할당
+    - `article.save()`
+        - 인스턴스로 save 메서드 호출
+        - `article.save()` 해야 DB에 등록됨
+2. `article = Article(title = 'x')`
+    - `article.save()`
+3. `Article.objects.create(title = ‘x’)`
+    - QuerySet API 중 `create()` 메서드 활용
+        - `save()` 필요없음
+        - save 이전에 유효성 검사를 하지 못하므로 좋은 것은 아니다
+
+### `.save()`
+
+- “Saving object”
+- 객체를 데이터베이스에 저장함
+- 데이터 생성 시 save를 호출하기 전에는 객체의 id값은 None
+    - id 값은 Django가 아니라 데이터베이스에서 계산되기 때문
+- 단순히 모델 클래스를 통해 인스턴스를 생성하는 것은 DB에 영향을 미치지 않기 때문에 반드시 save를 호출해야 테이블에 레코드가 생성됨
+
+### 예시 코드
+
+```html
+{% extends 'base.html' %} {% block content %}
+<h1>NEW</h1>
+<form action="{% url 'articles:create' %}" method="GET">
+    <label for="title">Title: </label>
+    {% comment %} name은 url querystring에 들어갈 키 명칭 {% endcomment %}
+    <input type="text" name="title" id="title" /><br />
+    <label for="content">Content: </label>
+    <input type="text" name="content" id="content" /><br />
+    <input type="submit" />
+</form>
+<hr />
+<a href="{% url 'articles:index' %}">Go Back to Index</a>
+{% endblock content %}
+```
+
+```python
+# new page의 input에서 쏴준 request 속에 데이터가 있다
+# 요청에 대한 모든 데이터는 request에 있다
+# input에 정의한 name이 key
+def create(request):
+    # 사용자의 데이터를 받아서 DB에 저장
+    # 데이터 받기
+    title = request.GET.get('title')
+    content = request.GET.get('content')
+
+    # DB에 저장
+    #1
+    # article = Article()
+    # article.title = title
+    # article.content = content
+    # article.save()
+
+    #2 (왼쪽이 DB의 필드, 오른쪽이 요청에서 받아온 변수)
+    article = Article(title=title, content=content)
+    article.save()
+
+    # #3
+    # Article.objects.create(title=title, content=content)
+
+    return render(request, 'articles/create.html')
+```
+
+### 3. UPDATE
+
+- update 과정
+- 수정하고자 하는 인스턴스 객체를 조회 후 반환 값을 저장
+- 인스턴스 객체의 인스턴스 변수 값을 새로운 값으로 할당
+- `save()` 인스턴스 메서드 호출
+
+<img width="613" alt="dj_54" src="https://user-images.githubusercontent.com/86648892/188498060-96aa0d6c-9d99-44ec-a405-cd02270908ed.png">
+
+### 4. DELETE
+
+- 삭제하고자 하는 인스턴스 객체를 조회 후 반환 값을 저장
+- `delete()` 인스턴스 메서드 호출
+
+<img width="622" alt="dj_55" src="https://user-images.githubusercontent.com/86648892/188498061-ccfe2eed-b555-413c-9c94-6672c600c4b9.png">
+
+- 그렇다면 pk 1번이 삭제되고 새로 추가되는 항목은 pk 1번에 들어갈까? 끝 순서로 들어갈까?
+- 끝 순서로 들어간다
+- 대부분의 데이터베이스는 삭제된 값을 재사용하지 않는다
+
+### 출력 참고
+
+<img width="614" alt="dj_56" src="https://user-images.githubusercontent.com/86648892/188498063-8fe75887-df99-4b42-92c8-5be7bec33a23.png">
+
+<img width="1515" alt="dj_57" src="https://user-images.githubusercontent.com/86648892/188498065-4d337d1c-05ff-4e01-8715-e8496a0dd9aa.png">
+
+- migrations?
+- DB에 영향을 끼치는 변경이 아니기에 새롭게 생성할 migrations가 없다!
+
 ## CRUD
 
 ---

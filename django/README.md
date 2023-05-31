@@ -11,11 +11,15 @@
 
 - [MTV Design Pattern](#mtv-design-pattern)
 - [프로젝트 설정](#django-프로젝트-설정)
-- [Django Template, DTL Syntax](#django-template)
-- [Sending and Retrieving Form Data](#sending-and-retrieving-form-data)
-- [URL](#url)
-- [Modeling](#modeling)
-- [Migrations](#migrations)
+- Template
+  - [Django Template, DTL Syntax](#django-template)
+  - [Sending and Retrieving Form Data](#sending-and-retrieving-form-data)
+  - [URL](#url)
+- Model
+  - [Modeling](#modeling)
+  - [Migrations](#migrations)
+- View
+  - [CRUD with view functions](#crud-with-view-functions)
 
 ### Django의 설계 철학 (Templates System)
 
@@ -832,289 +836,21 @@ class Article(models.Model):
 2. 설계도 생성 (makemigrations)
 3. 설계도 DB 반영 (migrate)
 
-## ORM
+## CRUD with view functions
 
 ---
-
-## 그런데 설계도는 어떻게, 누가 해석할까?
-
-- Django(i speak python) —> DB(i speak SQL)
-- 중간에 SQL 언어로 번역해주는 친구가 필요함
-
-## ORM
-
-- Object-Relational-Mapping
-- Django Framework는 내장된 Django ORM이 있음
-  - 한 마디로 SQL을 사용하지 않고 데이터베이스를 조작할 수 있게 만들어주는 매개체
-- 객체지향 프로그래밍 언어를 사용하여 호환되지 않는 유형의 시스템 간에 데이터를 변환하는 프로그래밍 기술
-  - 객체지향 프로그래밍에서 데이터베이스를 연동할 때, 데이터베이스와 객체지향 프로그래밍 언어 간의 호환되지 않는 데이터를 변환하는 프로그래밍 기법
-
-<img width="1125" alt="dj_46" src="https://user-images.githubusercontent.com/86648892/188498037-a31c3dd8-7e77-4cdb-9514-0debe061338c.png">
-
-## ORM 장단점
-
-### 장점
-
-- SQL을 잘 알지 못해도 객체지향 언어로 DB 조작이 가능
-- 객체지향적 접근으로 인한 높은 생산성
-  - “생산성”
-    - 현시대 개발의 키워드
-
-### 단점
-
-- ORM만으로 완전한 서비스를 구현하기 어려운 경우가 있음
-
----
-
-## [참고] Shell이란?
-
-- 운영체제 상에서 다양한 기능과 서비스를 구현하는 인터페이스를 제공하는 프로그램
-- 셸(껍데기)은 사용자와 운영체제 내부 사이의 인터페이스를 감싸는 층이기 때문에 그러한 이름이 붙음
-- “사용자" ↔ 셸 ↔ ”운영체제”
-- 코드 테스트할 때 유용
-- python shell 실행 명령어
-  - git bash (windows)
-    - `$ python -i`
-  - zsh (macOS)
-    - `$ python`
-- django shell
-  - `$ pip install django-extensions`
-  - `$ python manage.py shell_plus`
-    - django-extension이 제공하는 shell_plus
-    - 자주 사용하는 모듈을 자동으로 import해줌
-    - 없다면 `$ python manage.py shell`
-- shell 종료 시 `exit()`
-
-<img width="1005" alt="dj_47" src="https://user-images.githubusercontent.com/86648892/188498039-8d7305fb-bd82-4429-9ba9-992c4a42d811.png">
-
----
-
-# QUERYSET API
-
-- ORM이 사용하는 라이브러리 이름
-- Django가 기본적으로 ORM을 제공함에 따라 DB를 편하게 조작할 수 있도록 도움
-- Model을 만들면 Django는 객체들을 만들고, 읽고, 수정하고, 지울 수 있는 (CRUD) DB API를 자동으로 만듬
-
-<img width="905" alt="dj_48" src="https://user-images.githubusercontent.com/86648892/188498044-f5c93166-6381-4f9d-819b-411813e21a8e.png">
-
-- `Article.objects.all()`
-  - 전체 데이터를 조회하는 ORM 코드
-    - DB에게 전체 데이터 다 내놓으라고 하는 것
-    - 결과가 QuerySet이라는 객체로 나옴
-- Queryset API 부분에서 CRUD
-
-## objects manager
-
-- 다양한 Queryset API를 제공해주는 친구
-  - “DB를 Python class로 조작할 수 있도록 여러 메서드를 제공하는 manager”
-- Django 모델이 데이터베이스 쿼리 작업을 가능하게 하는 인터페이스
-- Django는 기본적으로 모든 Django 모델 클래스에 대해 objects라는 Manager 객체를 자동으로 추가함
-- 이 Manager(objects)를 통해 특정 데이터를 조작(메서드)할 수 있음
-
-## Query
-
-- 데이터베이스에 날리는 요청
-  - “쿼리문을 작성한다”
-    - 원하는 데이터를 얻기 위해 데이터베이스에 요청을 보낼 코드를 작성한다
-- 이에 대한 응답으로 QuerySet이라는 자료형이 돌아옴
-- Client → python(query) → ORM → SQL → Database → SQL → ORM → python(QuerySet)
-
-## QuerySet
-
-- 데이터베이스에게서 전달받은 객체 목록 (데이터 모음)
-  - 리스트는 아니지만 리스트와 같은 특성을 가짐
-    - iterable함
-    - index로 접근 가능
-- Django ORM을 통해 만들어진 자료형이며, 필터를 걸거나 정렬 등을 수행할 수 있음
-- “objects” manager를 사용하여 **복수의 데이터**를 가져오는 queryset method를 사용할 때 반환되는 객체
-  - **단일한 객체 반환 시에는 모델의 인스턴스를 반환**
-
-<img width="1169" alt="dj_49" src="https://user-images.githubusercontent.com/86648892/188498047-fe72b8ae-57af-44e7-b7a4-5ffb2bb8276d.png">
-
----
-
-# QuerySet API METHODS (CRUD)
-
-## CRUD
-
-- Create, Read, Update, Delete
-  - 생성, 조회, 수정, 삭제
-- 대부분의 컴퓨터 소프트웨어가 가지는 기본적인 데이터 처리 기능 4가지를 지칭
-
----
-
-## READ
-
-- 데이터 조회
-  - QuerySet API methods that “return new querysets”
-  - QuerySet API methods that “do not return querysets”
-
-### `all()`
-
-- QuerySet return
-- 전체 데이터 조회
-
-<img width="1096" alt="dj_50" src="https://user-images.githubusercontent.com/86648892/188498051-1b43737c-5ae7-4a91-9254-0d8d431ebe51.png">
-
-### `get()`
-
-- 유니크한 데이터, 고유성(uniqueness)을 보장하는 조회에서 사용해야함
-  - 대표적으로 primary key
-- 단일 데이터 조회
-- 객체를 찾을 수 없으면 DoesNotExist 예외를 발생시키고, 둘 이상의 객체를 찾으면 MultipleObjectsReturned 예외를 발생시킴
-
-<img width="970" alt="dj_51" src="https://user-images.githubusercontent.com/86648892/188498055-4cc49318-6668-4901-908a-22174b97a2a9.png">
-
-### `filter()`
-
-- QuerySet return
-- 지정된 조회 매개 변수와 일치하는 객체를 포함하는 새 QuerySet을 반환
-- 항상 QuerySet으로 반환함
-  - 없으면 빈 QuerySet
-  - 단일 객체도 QuerySet으로
-- pk에는 부적합
-  - QuerySet으로 주기에 한번 더 벗겨내야하는 불편함
-  - 데이터를 조회했는데 없음에도 불구하고 빈 QuerySet을 반환해버림
-    - 예외처리가 어려움
-
-<img width="1099" alt="dj_52" src="https://user-images.githubusercontent.com/86648892/188498056-f5113ac0-6945-491b-a435-6d15582c3979.png">
-
-## Field lookups
-
-- 조건을 설정하여 조회하는 것
-  - SQL WHERE 절의 상세한 조건을 지정하는 방법
-- 특정 레코드에 대한 조건을 설정하는 방법
-- QuerySet method `filter()`, `exclude()` 및 `get()` 에 대한 키워드 인자로 지정됨
-- 문법 규칙
-  - 필드명 뒤에 "double-underscore" 이후 작성함
-  - `field__lookuptype=value`
-- 참고 문서
-  - [QuerySet API Reference](https://docs.djangoproject.com/en/4.1/ref/models/querysets/)
-  - [QuerySet Field Lookups Reference](https://www.w3schools.com/django/django_ref_field_lookups.php)
-
-<img width="646" alt="dj_53" src="https://user-images.githubusercontent.com/86648892/188498058-8983af76-f9ab-4a0c-96b1-7381fa010b66.png">
-
----
-
-## CREATE
-
-### 데이터 객체 생성 방법
-
-1. `article = Article()`
-   - 클래스를 통한 인스턴스 생성
-     - `article.title = 'x'`
-       - 클래스 변수명과 같은 이름의 인스턴스 변수를 생성 후 값 할당
-         - `article.save()`
-           - 인스턴스로 save 메서드 호출
-             - `article.save()` 해야 DB에 등록됨
-2. `article = Article(title = 'x')`
-   - `article.save()`
-3. `Article.objects.create(title = ‘x’)`
-   - QuerySet API 중 `create()` 메서드 활용
-     - `save()` 필요없음
-       - save 이전에 유효성 검사를 하지 못하므로 좋은 것은 아니다
-
-### `.save()`
-
-- “Saving object”
-- 객체를 데이터베이스에 저장함
-- 데이터 생성 시 save를 호출하기 전에는 객체의 id값은 None
-  - id 값은 Django가 아니라 데이터베이스에서 계산되기 때문
-- 단순히 모델 클래스를 통해 인스턴스를 생성하는 것은 DB에 영향을 미치지 않기 때문에 반드시 save를 호출해야 테이블에 레코드가 생성됨
-
-### 예시 코드
-
-```html
-{% extends 'base.html' %} {% block content %}
-<h1>NEW</h1>
-<form action="{% url 'articles:create' %}" method="GET">
-  <label for="title">Title: </label>
-  {% comment %} name은 url querystring에 들어갈 키 명칭 {% endcomment %}
-  <input type="text" name="title" id="title" /><br />
-  <label for="content">Content: </label>
-  <input type="text" name="content" id="content" /><br />
-  <input type="submit" />
-</form>
-<hr />
-<a href="{% url 'articles:index' %}">Go Back to Index</a>
-{% endblock content %}
-```
-
-```python
-# new page의 input에서 쏴준 request 속에 데이터가 있다
-# 요청에 대한 모든 데이터는 request에 있다
-# input에 정의한 name이 key
-def create(request):
-    # 사용자의 데이터를 받아서 DB에 저장
-    # 데이터 받기
-    title = request.GET.get('title')
-    content = request.GET.get('content')
-
-    # DB에 저장
-    #1
-    # article = Article()
-    # article.title = title
-    # article.content = content
-    # article.save()
-
-    #2 (왼쪽이 DB의 필드, 오른쪽이 요청에서 받아온 변수)
-    article = Article(title=title, content=content)
-    article.save()
-
-    # #3
-    # Article.objects.create(title=title, content=content)
-
-    return render(request, 'articles/create.html')
-```
-
----
-
-## UPDATE
-
-- update 과정
-  - 수정하고자 하는 인스턴스 객체를 조회 후 반환 값을 저장
-    - 인스턴스 객체의 인스턴스 변수 값을 새로운 값으로 할당
-      - `save()` 인스턴스 메서드 호출
-
-<img width="613" alt="dj_54" src="https://user-images.githubusercontent.com/86648892/188498060-96aa0d6c-9d99-44ec-a405-cd02270908ed.png">
-
----
-
-## DELETE
-
-- 삭제하고자 하는 인스턴스 객체를 조회 후 반환 값을 저장
-  - `delete()` 인스턴스 메서드 호출
-
-<img width="622" alt="dj_55" src="https://user-images.githubusercontent.com/86648892/188498061-ccfe2eed-b555-413c-9c94-6672c600c4b9.png">
-
-- 그렇다면 pk 1번이 삭제되고 새로 추가되는 항목은 pk 1번에 들어갈까? 끝 순서로 들어갈까?
-  - 끝 순서로 들어간다
-- 대부분의 데이터베이스는 삭제된 값을 재사용하지 않는다
-
-## 출력 참고
-
-<img width="614" alt="dj_56" src="https://user-images.githubusercontent.com/86648892/188498063-8fe75887-df99-4b42-92c8-5be7bec33a23.png">
-
-<img width="1515" alt="dj_57" src="https://user-images.githubusercontent.com/86648892/188498065-4d337d1c-05ff-4e01-8715-e8496a0dd9aa.png">
-
-- migrations?
-  - DB에 영향을 끼치는 변경이 아니기에 새롭게 생성할 migrations가 없다!
-
----
-
-# CRUD with view functions
 
 ### 고려사항
 
 - `GET` method는 Read(조회)에만 사용
   - `GET` 은 Query String Parameter로 데이터를 보내기에 url을 통해 데이터를 보냄
-    - ex) `/articles/create/?title=11&content=22`
+  - ex) `/articles/create/?title=11&content=22`
 - Create(생성), Update(수정), Delete(삭제)과 같이 데이터 조작하는 경우 `POST` method
 - 페이지에서 입력을 받아 데이터를 생성한 경우(Create)
   - 생성되었다는 페이지를 따로 render하지 말고 목록 페이지로 redirect
 - 개별 게시글 상세 페이지(detail page)의 경우 개별 게시글마다 뷰 함수와 템플릿 파일을 만들 수 없음
   - 글의 번호(pk)를 활용하여 하나의 뷰 함수와 템플릿 파일로 대응
-    - Variable Routing 활용
+  - Variable Routing 활용
 
 ### 요구사항
 
@@ -1136,8 +872,8 @@ def create(request):
 - 동작 원리 (하기 코드 참고)
   - 클라이언트가 create url로 요청을 보냄
     - create view 함수의 redirect 함수가 302 status code를 응답
-      - 응답받은 브라우저는 redirect 인자에 담긴 주소(index)로 사용자를 이동시키기 위해 index url로 Django에 재요청
-        - index page를 정상적으로 응답받음 (200 status code)
+    - 응답받은 브라우저는 redirect 인자에 담긴 주소(index)로 사용자를 이동시키기 위해 index url로 Django에 재요청
+    - index page를 정상적으로 응답받음 (200 status code)
 
 ### HTTP response code
 
@@ -1148,27 +884,25 @@ def create(request):
     1. Information responses (1xx)
     2. Successful responses (2xx)
     3. Redirection messages (3xx)
-       - 302 Found
-         - 해당 상태 코드를 응답받으면 브라우저는 사용자를 해당 URL의 페이지로 이동시킴
+      - 302 Found
+      - 해당 상태 코드를 응답받으면 브라우저는 사용자를 해당 URL의 페이지로 이동시킴
     4. Client error response (4xx)
-
-       - 403 Forbidden
-         - 서버에 요청이 전달되었지만, 권한때문에 거절되었다는 것을 의미
-         - 서버에 요청은 도달했으나 서버가 접근을 거부할 때 반환됨
-         - Django 입장에서 작성자가 누구인지 모르기에 함부로 작성할 수 없다는 의미
-         - 모델(DB)을 조작하는 것은 단순 조회와 달리 최소한의 신원 확인이 필요
-           - 즉, POST 요청을 할 때는 **CSRF Token**이 필요하다
-             - **CSRF**
-               - Cross-Site-Request-Forgery (사이트 간 요청 위조)
-                 - 사용자가 자신의 의지와 무관하게 공격자가 의도한 행동을 하여 특정 웹페이지를 보안에 취약하게 하거나 수정, 삭제 등의 작업을 하게 만드는 공격 방법 (2008년 옥션 해킹 사건)
-             - **CSRF Token**
-               - Security Token 사용 방식
-                 - 사용자의 데이터에 임의의 난수 값(token)을 부여해 매 요청마다 해당 난수 값을 포함시켜 전송시키도록 함
-                 - 이후 서버에서 요청을 받을 때마다 전달된 token값이 유효한지 검증
-                 - 일반적으로 데이터 변경이 가능한 `POST` , `PATCH` , `DELETE` Method 등에 적용
-                 - Django는 DTL에서 csrf_token 템플릿 태그를 제공 - `{% csrf_token %}` - 템플릿에서 내부 URL로 향하는 `POST` form을 사용하는 경우에 사용 - 해당 태그가 없으면 Django 서버는 요청에 대해 403 forbidden으로 응답 - 외부 URL로 향하는 `POST` form에 대해서는 CSRF 토큰이 유출되어 취약성을 유발할 수 있기에 사용하지 않음 - input type이 hidden으로 작성되며 value는 Django에서 생성한 hash 값으로 설정
-                   <img width="1216" alt="dj_58" src="https://user-images.githubusercontent.com/86648892/188498066-84442092-876e-4b23-a2af-3ae4af4bc352.png">
-
+      - 403 Forbidden
+        - 서버에 요청이 전달되었지만, 권한때문에 거절되었다는 것을 의미
+        - 서버에 요청은 도달했으나 서버가 접근을 거부할 때 반환됨
+        - Django 입장에서 작성자가 누구인지 모르기에 함부로 작성할 수 없다는 의미
+        - 모델(DB)을 조작하는 것은 단순 조회와 달리 최소한의 신원 확인이 필요
+          - 즉, POST 요청을 할 때는 **CSRF Token**이 필요하다
+            - **CSRF**
+              - Cross-Site-Request-Forgery (사이트 간 요청 위조)
+                - 사용자가 자신의 의지와 무관하게 공격자가 의도한 행동을 하여 특정 웹페이지를 보안에 취약하게 하거나 수정, 삭제 등의 작업을 하게 만드는 공격 방법 (2008년 옥션 해킹 사건)
+            - **CSRF Token**
+              - Security Token 사용 방식
+                - 사용자의 데이터에 임의의 난수 값(token)을 부여해 매 요청마다 해당 난수 값을 포함시켜 전송시키도록 함
+                - 이후 서버에서 요청을 받을 때마다 전달된 token값이 유효한지 검증
+                - 일반적으로 데이터 변경이 가능한 `POST` , `PATCH` , `DELETE` Method 등에 적용
+                - Django는 DTL에서 csrf_token 템플릿 태그를 제공 - `{% csrf_token %}` - 템플릿에서 내부 URL로 향하는 `POST` form을 사용하는 경우에 사용 - 해당 태그가 없으면 Django 서버는 요청에 대해 403 forbidden으로 응답 - 외부 URL로 향하는 `POST` form에 대해서는 CSRF 토큰이 유출되어 취약성을 유발할 수 있기에 사용하지 않음 - input type이 hidden으로 작성되며 value는 Django에서 생성한 hash 값으로 설정
+                  <img width="1216" alt="dj_58" src="https://user-images.githubusercontent.com/86648892/188498066-84442092-876e-4b23-a2af-3ae4af4bc352.png">
     5. Server error responses (5xx)
 
 - [HTTP CAT](https://http.cat/)
@@ -1194,9 +928,7 @@ def create(request):
   - CRUD 중 C, U, D 역할을 담당
   - ex) 로그인
 
----
-
-## Code Snippets
+### Code Snippets
 
 <img width="1573" alt="dj_59" src="https://user-images.githubusercontent.com/86648892/188498067-bcb242bb-0f9e-4b7d-bb81-11361579a7a5.png">
 
@@ -1440,9 +1172,9 @@ index 페이지로 redirect {% endcomment %}
 {% endblock content %}
 ```
 
----
+## Admin Site
 
-# Admin Site
+---
 
 - **Django의 가장 강력한 기능 중 하나인 automatic admin interface**
 - “관리자 페이지”
@@ -1454,8 +1186,8 @@ index 페이지로 redirect {% endcomment %}
 
 - `$ python manage.py createsuperuser`
   - username과 password를 입력해 관리자 계정 생성
-    - email은 선택사항이기에 입력하지 않고 enter를 입력하는 것이 가능
-    - 비밀번호 생성 시 보안상 터미널에 입력되지 않으니 무시하고 입력을 이어가도록 함
+  - email은 선택사항이기에 입력하지 않고 enter를 입력하는 것이 가능
+  - 비밀번호 생성 시 보안상 터미널에 입력되지 않으니 무시하고 입력을 이어가도록 함
 
 ### admin site 로그인
 
@@ -1470,8 +1202,6 @@ index 페이지로 redirect {% endcomment %}
 ### 데이터 CRUD in admin
 
 - admin 사이트에서 직접 CRUD 가능
-
----
 
 ## 정리
 
