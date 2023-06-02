@@ -1,7 +1,7 @@
 ## Today I Learned
 
 - This repository is for stacking what I learned.
-- For Contact: zacinthepark@gmail.com
+- For contact: zacinthepark@gmail.com
 
 ## Language
 
