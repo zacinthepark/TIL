@@ -286,7 +286,7 @@ def create(request):
 ### 나이가 어린 순으로 이름과 나이 조회
 
 - `User.objects.order_by('age').values('first_name', 'age')`
-    - `***order_by()***`
+    - `order_by()`
     - `.order_by(*fields)`
         - QuerySet의 정렬을 재정의
         - 기본적으로 오름차순으로 정렬하며
@@ -296,7 +296,7 @@ def create(request):
         - `User.objects.order_by('balance').order_by('-age')`
         - 다음과 같이 작성할 경우 앞의 호출은 모두 지워지고 마지막 호출만 적용됨
             - `User.objects.order_by('-age')` 와 같음
-    - `***values()***`
+    - `values()`
     - `.values(*fields, **expressions)`
         - 모델 인스턴스가 아닌 딕셔너리 요소들을 가진 QuerySet을 반환
         - `*fields` 는 선택인자이며, 조회하고자 하는 필드명을 가변인자로 받음
