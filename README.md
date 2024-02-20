@@ -6,28 +6,28 @@
 ## Language
 
 - Python
-    - [[Python] 변수, 타입, 연산자, 슬라이싱](./language/python/%EB%B3%80%EC%88%98-%ED%83%80%EC%9E%85-%EC%97%B0%EC%82%B0%EC%9E%90-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EC%8B%B1.md)
-    - [[Python] 제어문, 함수, 모듈, 가상환경](./language/python/%EC%A0%9C%EC%96%B4%EB%AC%B8-%ED%95%A8%EC%88%98-%EB%AA%A8%EB%93%88-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD.md)
-    - [[Python] 메서드, 얕은복사, 깊은복사](./language/python/%EB%A9%94%EC%84%9C%EB%93%9C-%EC%96%95%EC%9D%80%EB%B3%B5%EC%82%AC-%EA%B9%8A%EC%9D%80%EB%B3%B5%EC%82%AC.md)
-    - [[Python] OOP, 클래스, 인스턴스, 예외처리](./language/python/OOP-%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC.md)
-    - [[Python] 가상환경 설정](./language/python/%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD%20%EC%84%A4%EC%A0%95.md)
+    - [변수, 타입, 연산자, 슬라이싱](./language/python/%EB%B3%80%EC%88%98-%ED%83%80%EC%9E%85-%EC%97%B0%EC%82%B0%EC%9E%90-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EC%8B%B1.md)
+    - [제어문, 함수, 모듈, 가상환경](./language/python/%EC%A0%9C%EC%96%B4%EB%AC%B8-%ED%95%A8%EC%88%98-%EB%AA%A8%EB%93%88-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD.md)
+    - [메서드, 얕은복사, 깊은복사](./language/python/%EB%A9%94%EC%84%9C%EB%93%9C-%EC%96%95%EC%9D%80%EB%B3%B5%EC%82%AC-%EA%B9%8A%EC%9D%80%EB%B3%B5%EC%82%AC.md)
+    - [OOP, 클래스, 인스턴스, 예외처리](./language/python/OOP-%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC.md)
+    - [가상환경 설정](./language/python/%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD%20%EC%84%A4%EC%A0%95.md)
 
 - Javascript
-    - [[Javascript] 기초 문법](./language/javascript/basics.md)
-    - [[Javascript] DOM and Event](./language/javascript/dom-event.md)
-    - [[Javascript] async, axios, and promise](./language/javascript/async-axios-promise.md)
+    - [기초 문법](./language/javascript/basics.md)
+    - [DOM and Event](./language/javascript/dom-event.md)
+    - [async, axios, and promise](./language/javascript/async-axios-promise.md)
 
 - Typescript
-    - [[Typescript] Typescript with Webpack and React](./language/typescript/README.md)
+    - [Typescript with Webpack and React](./language/typescript/README.md)
 
 ## Client
 
 - React
-    - [[React] React Complete Guide](./client/react/react-guide/README.md)
+    - [React Complete Guide](./client/react/react-guide/README.md)
 
 - Vue
-    - [[Vue] Vue 2 기초](./client/vue/vue2/README.md)
-    - [[Vue] Vue 3 기초](./client/vue/vue3/README.md)
+    - [Vue 2 기초](./client/vue/vue2/README.md)
+    - [Vue 3 기초](./client/vue/vue3/README.md)
 
 - Web
     - [Html](./client//web/html%20%EA%B8%B0%EC%B4%88.md)
@@ -45,17 +45,17 @@
 ## Server
 
 - Django
-    - [[Django] 데이터베이스 기초](./server/django/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%20%EA%B8%B0%EC%B4%88.md)
-    - [[Django] QuerySet API](./server/django/queryset-api.md)
-    - [[Django] MTV 기초](./server/django/MTV%20%EA%B8%B0%EC%B4%88.md)
-    - [[Django] Form and ModelForm](./server/django/form-and-modelform.md)
-    - [[Django] Django Authentication](./server/django/django-authentication.md)
-    - [[Django] N:1 Relationship](./server/django/n-1-relationship.md)
-    - [[Django] M:N Relationship](./server/django/m-n-relationship.md)
-    - [[Django] REST API](./server/django/REST%20API.md)
-    - [[Django] Djang REST Framework and Serializer](./server/django/DRF.md)
-    - [[Django] 초기 데이터](./server/django/%EC%B4%88%EA%B8%B0%20%EB%8D%B0%EC%9D%B4%ED%84%B0.md)
-    - [[Django] Django Static Files](./server/django/django-static-files.md)
+    - [데이터베이스 기초](./server/django/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%20%EA%B8%B0%EC%B4%88.md)
+    - [QuerySet API](./server/django/queryset-api.md)
+    - [MTV 기초](./server/django/MTV%20%EA%B8%B0%EC%B4%88.md)
+    - [Form and ModelForm](./server/django/form-and-modelform.md)
+    - [Django Authentication](./server/django/django-authentication.md)
+    - [N:1 Relationship](./server/django/n-1-relationship.md)
+    - [M:N Relationship](./server/django/m-n-relationship.md)
+    - [REST API](./server/django/REST%20API.md)
+    - [Djang REST Framework and Serializer](./server/django/DRF.md)
+    - [초기 데이터](./server/django/%EC%B4%88%EA%B8%B0%20%EB%8D%B0%EC%9D%B4%ED%84%B0.md)
+    - [Django Static Files](./server/django/django-static-files.md)
 - [MSA란](./server/MSA%EB%9E%80.md)
 
 ## Database
