@@ -1,11 +1,11 @@
-Today I Learned
+## Today I Learned
 
 ---
 
 - This repository is for stacking what I learned.
 - For contact: zacinthepark@gmail.com
 
-Contents
+## Contents
 
 ---
 
