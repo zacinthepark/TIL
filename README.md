@@ -102,8 +102,9 @@
 
 ### Tools
 
-- [Git](./tools/git/README.md)
-- [Jira 및 JQL 활용](./tools/jira/JIRA%20%EB%B0%8F%20JQL%20%ED%99%9C%EC%9A%A9.md)
+- [Git](./tools/git/Git%20활용과%20Gitflow.md)
+- [Jira and JQL](./tools/jira/Jira와%20JQL%20활용.md)
+- [Jupyter Notebook](./tools/jupyternotebook/Jupyternotebook%20기본%20사용법.md)
 
 ### Miscellaneous
 
