@@ -81,11 +81,14 @@
 - [데이터 처리: 데이터프레임 결합](./da/데이터프레임%20결합.md)
 - [데이터 처리: 시계열 데이터 처리](./da/시계열%20데이터%20처리.md)
 - [데이터 분석: 데이터 분석 방법론](./da/데이터%20분석%20방법론.md)
+- [데이터 분석: 시각화 라이브러리](./da/시각화%20라이브러리.md)
+- [데이터 분석: 단변량 분석 숫자형 변수](./da/단변량%20분석%20숫자형%20변수.md)
+- [데이터 분석: 단변량 분석 범주형 변수](./da/단변량%20분석%20범주형%20변수.md)
 - [조작 - 데이터 선택](./da/데이터%20선택.md)
 - [조작 - 데이터 변경](./da/데이터%20변경.md)
 - [조작 - 데이터 합치기](./da/데이터%20합치기.md)
 - [조작 - 데이터 그룹핑](./da/데이터%20그룹핑.md)
-- [조작 - 시계열 데이터](./da/시계열%20데이터기초.md)
+- [조작 - 시계열 데이터](./da/시계열%20데이터%20기초.md)
 - [전처리 - 결측 데이터 처리](./da/데이터%20정제%20결측%20데이터%20처리.md)
 - [전처리 - 이상 데이터 처리](./da/데이터%20정제%20이상%20데이터%20처리.md)
 - [전처리 - 정규화, 구간화](./da/데이터%20변환%20정규화%20구간화.md)
@@ -111,15 +114,19 @@
 - [스타벅스 이디야 매장위치 비교하기](./da/스타벅스%20이디야%20매장위치%20비교하기.md)
 - [전국 도시공원 데이터로 다양한 전처리 해보기](./da/전국%20도시공원%20데이터로%20다양한%20전처리%20해보기.md)
 
+### CS
+
+- [네트워크 기초 이론 1](./cs/네트워크%20기초%20이론%201.md)
+
 ### Tools
 
-- [Git](./tools/git/Git%20활용과%20Gitflow.md)
-- [Jira and JQL](./tools/jira/Jira와%20JQL%20활용.md)
-- [Jupyter Notebook](./tools/jupyternotebook/Jupyternotebook%20기본%20사용법.md)
+- [Git 활용과 Gitflow](./tools/Git%20활용과%20Gitflow.md)
+- [Jira와 JQL 활용](./tools/Jira와%20JQL%20활용.md)
+- [Jupyternotebook 기본 사용법](./tools/Jupyternotebook%20기본%20사용법.md)
 
 ### Miscellaneous
 
-- [Project Management](./etc/project-management.md)
-- [CLI](./etc/cli//README.md)
-- [Markdown](./etc/markdown//README.md)
-- [Cheatsheets](./etc/cheatsheets//README.md)
+- [Project Management](./misc/project-management.md)
+- [CLI](./misc/cli.md)
+- [Markdown](./misc/markdown.md)
+- [Cheatsheets](./misc/cheatsheets.md)
