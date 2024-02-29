@@ -61,7 +61,7 @@
     - [Django Authentication](./server/django/django-authentication.md)
     - [N:1 Relationship](./server/django/n-1-relationship.md)
     - [M:N Relationship](./server/django/m-n-relationship.md)
-    - [REST API](./server/django/REST%20API.md)
+    - [Web, HTTP, Cookie, Session, URL, REST API](./server/django/REST%20API.md)
     - [Djang REST Framework and Serializer](./server/django/DRF.md)
     - [초기 데이터](./server/django/%EC%B4%88%EA%B8%B0%20%EB%8D%B0%EC%9D%B4%ED%84%B0.md)
     - [Django Static Files](./server/django/django-static-files.md)
