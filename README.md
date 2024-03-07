@@ -20,6 +20,7 @@
     - [메서드, 얕은복사, 깊은복사](./langs/python/메서드_얕은복사_깊은복사.md)
     - [OOP, 클래스, 인스턴스, 예외처리](./langs/python/OOP_클래스_인스턴스_예외처리.md)
     - [가상환경 설정](./langs/python/가상환경%20설정.md)
+    - [클래스 정리]
 
 - Javascript
     - [기초 문법](./langs/javascript/basics.md)
@@ -39,9 +40,10 @@
     - [Vue 3 기초](./client/vue/vue3/README.md)
 
 - Web
-    - [Html](./client//web/html%20%EA%B8%B0%EC%B4%88.md)
-    - [Css](./client/web/css%20%EA%B8%B0%EC%B4%88.md)
-    - [Css 참고사이트](./client/web/%EC%B0%B8%EA%B3%A0%EC%82%AC%EC%9D%B4%ED%8A%B8.md)
+    - [HTML 기초](./client//web/html%20%EA%B8%B0%EC%B4%88.md)
+    - [HTML 정리]
+    - [CSS 기초](./client/web/css%20%EA%B8%B0%EC%B4%88.md)
+    - [CSS Selector 정리]
     - [WebRTC](./client/web/WebRTC.md)
     - [multipart/form-data](./client/web/multipart-formdata.md)
     - [Promise](./client/web/Promise.md)
@@ -50,6 +52,17 @@
     - [번들러](./client/web/%EB%B2%88%EB%93%A4%EB%9F%AC.md)
     - [webpack과 vite](./client/web/webpack%EA%B3%BC%20vite.md)
     - [Access Token과 Refresh Token](./client/web/Access-Token%EA%B3%BC%20Refresh-Token.md)
+    - [공지사항 크롤링 해보기]
+    - [연속적인 크롤링 하기]
+    - [자동 로그인 및 주요 정보 추출하기]
+    - [네이버 자동 로그인 및 메일 정보 가져오기]
+    - [Crawling Naver Stock Data]
+    - [Crawling Daum Exchange]
+    - [Crawling Open API]
+    - [Zigbang 원룸 매물 데이터 수집]
+    - [네이버 연관 검색어 수집]
+    - [Gmarket 데이터 수집]
+    - [Selenium]
 
 ### Server
 
@@ -123,6 +136,13 @@
 - [프랜차이즈 분석](./da/프랜차이즈%20분석.md)
 - [스타벅스 이디야 매장위치 비교하기](./da/스타벅스%20이디야%20매장위치%20비교하기.md)
 - [전국 도시공원 데이터로 다양한 전처리 해보기](./da/전국%20도시공원%20데이터로%20다양한%20전처리%20해보기.md)
+- [구별 버스정류장 분석](./da/구별%20버스정류장%20분석.md)
+- [구별 유동인구 분석](./da/구별%20유동인구%20분석.md)
+- [구별 등록인구 분석](./da/구별%20등록인구%20분석.md)
+- [구별 업종 분석](./da/구별%20업종%20분석.md)
+- [서울시 대중교통 수요 분석](./da/서울시%20대중교통%20수요%20분석.md)
+- [서울시 공유자전거 따릉이 수요 예측 데이터 전처리](./da/서울시%20공유자전거%20따릉이%20수요%20예측%20데이터%20전처리.md)
+- [서울시 공유자전거 따릉이 수요 예측 EDA](./da/서울시%20공유자전거%20따릉이%20수요%20예측%20EDA.md)
 
 ### ML/DL
 

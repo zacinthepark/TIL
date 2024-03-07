@@ -20,7 +20,7 @@ Refresh Token은 “유효기간은 짧게 하면서 잦은 로그아웃은 필�
 
 이름은 다르지만 형태 자체는 Refresh Token은 Access Toekn과 똑같은 JWT이다. 단지 Access Token은 접근에 관여하는 토근이고, Refresh Token은 재발급에 관여하는 토큰으로 역할이 다르다.
 
-예를 들어 처음 로그인을 했을 떄, 서버는 로그인을 성공시키면서 클라이언트에게 Access Token과 Refresh Token을 동시에 발급한다. 서버는 데이터베이스에 Refresh Token을 저장하고, 클라이언트는 Access Token과 Refresh Token을 쿠키, 세션, 혹은 웹스토리지에 저장하고 요청이 있을 때마다 이 둘을 헤더에 담아서 보낸다. 이 Refresh Token은 긴 유효기간을 가지면서, Access Token이 만료되었을 때 새로 재발급해주는 열쇠가 된다. 따라서 만일 만료된 Access Token을 서버에 보내면, 서버는 같이 보내진 Refresh Token을 DB에 있는 것과 비교해서 일치하면 다시 Access Token을 재발급하는 간단한 원리이다. 그리고 사용자가 로그아웃을 하면 저장소에서 Refresh Token을 삭제하여 사용이 불가능하도록 하고 새로 로그인하면 서버에서 다시 재발급해서 DB에 저장한다.
+예를 들어 처음 로그인을 했을 때, 서버는 로그인을 성공시키면서 클라이언트에게 Access Token과 Refresh Token을 동시에 발급한다. 서버는 데이터베이스에 Refresh Token을 저장하고, 클라이언트는 Access Token과 Refresh Token을 쿠키, 세션, 혹은 웹스토리지에 저장하고 요청이 있을 때마다 이 둘을 헤더에 담아서 보낸다. 이 Refresh Token은 긴 유효기간을 가지면서, Access Token이 만료되었을 때 새로 재발급해주는 열쇠가 된다. 따라서 만일 만료된 Access Token을 서버에 보내면, 서버는 같이 보내진 Refresh Token을 DB에 있는 것과 비교해서 일치하면 다시 Access Token을 재발급하는 간단한 원리이다. 그리고 사용자가 로그아웃을 하면 저장소에서 Refresh Token을 삭제하여 사용이 불가능하도록 하고 새로 로그인하면 서버에서 다시 재발급해서 DB에 저장한다.
 
 ## Access and Refresh Token 재발급 원리
 
