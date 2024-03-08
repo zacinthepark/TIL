@@ -20,7 +20,7 @@
     - [메서드, 얕은복사, 깊은복사](./langs/python/메서드_얕은복사_깊은복사.md)
     - [OOP, 클래스, 인스턴스, 예외처리](./langs/python/OOP_클래스_인스턴스_예외처리.md)
     - [가상환경 설정](./langs/python/가상환경%20설정.md)
-    - [클래스 정리]
+    - [클래스 정리](./langs/python/클래스%20정리.md)
 
 - Javascript
     - [기초 문법](./langs/javascript/basics.md)
@@ -52,11 +52,11 @@
     - [번들러](./client/web/%EB%B2%88%EB%93%A4%EB%9F%AC.md)
     - [webpack과 vite](./client/web/webpack%EA%B3%BC%20vite.md)
     - [Access Token과 Refresh Token](./client/web/Access-Token%EA%B3%BC%20Refresh-Token.md)
-    - [Web and Crawling]
-    - [Crawling Naver Stock Data]
-    - [Crawling Daum Exchange]
-    - [Crawling Open API]
-    - [Zigbang 원룸 매물 데이터 수집]
+    - [Web and Crawling](./client/web/Web%20and%20Crawling.md)
+    - [Crawling Naver Stock Data](./client/web/Crawling%20Naver%20Stock%20Data.md)
+    - [Crawling Daum Exchange](./client/web/Crawling%20Daum%20Exchange.md)
+    - [Crawling Open API](./client/web/Crawling%20Open%20API.md)
+    - [Zigbang 원룸 매물 데이터 수집](./client/web/Crawling%20Zigbang%20Oneroom%20Data.md)
     - [네이버 연관 검색어 수집]
     - [Gmarket 데이터 수집]
     - [Selenium]
