@@ -52,10 +52,7 @@
     - [번들러](./client/web/%EB%B2%88%EB%93%A4%EB%9F%AC.md)
     - [webpack과 vite](./client/web/webpack%EA%B3%BC%20vite.md)
     - [Access Token과 Refresh Token](./client/web/Access-Token%EA%B3%BC%20Refresh-Token.md)
-    - [공지사항 크롤링 해보기]
-    - [연속적인 크롤링 하기]
-    - [자동 로그인 및 주요 정보 추출하기]
-    - [네이버 자동 로그인 및 메일 정보 가져오기]
+    - [Web and Crawling]
     - [Crawling Naver Stock Data]
     - [Crawling Daum Exchange]
     - [Crawling Open API]
@@ -63,6 +60,10 @@
     - [네이버 연관 검색어 수집]
     - [Gmarket 데이터 수집]
     - [Selenium]
+    - [공지사항 크롤링 해보기]
+    - [연속적인 크롤링 하기]
+    - [자동 로그인 및 주요 정보 추출하기]
+    - [네이버 자동 로그인 및 메일 정보 가져오기]
 
 ### Server
 
