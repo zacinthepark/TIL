@@ -2,7 +2,7 @@
 
 ---
 
-- This repository is for stacking what I learned.
+- This repository is for logging what I learned.
 - For contact: zacinthepark@gmail.com
 
 ## Contents
@@ -57,13 +57,14 @@
     - [Crawling Daum Exchange](./client/web/Crawling%20Daum%20Exchange.md)
     - [Crawling Open API](./client/web/Crawling%20Open%20API.md)
     - [Zigbang 원룸 매물 데이터 수집](./client/web/Crawling%20Zigbang%20Oneroom%20Data.md)
-    - [네이버 연관 검색어 수집]
-    - [Gmarket 데이터 수집]
-    - [Selenium]
+    - [Crawling Naver Relational Keywords](./client/web/Crawling%20Naver%20Relational%20Keywords.md)
+    - [Crawling Gmarket Best and Image Data](./client/web/Crawling%20Gmarket%20Best%20and%20Image%20Data.md)
+    - [Selenium](./client/web/selenium.md)
     - [공지사항 크롤링 해보기](./client/web/공지사항%20크롤링%20해보기.md)
     - [연속적인 크롤링 하기](./client/web/연속적인%20크롤링%20하기.md)
     - [자동 로그인 및 주요 정보 추출하기](./client/web/자동%20로그인%20및%20주요%20정보%20추출하기.md)
     - [네이버 자동 로그인 및 메일 정보 가져오기](./client/web/네이버%20자동%20로그인%20및%20메일%20정보%20가져오기.md)
+    - [크롤링 정책](./client/web/크롤링%20정책.md)
 
 ### Server
 

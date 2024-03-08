@@ -60,9 +60,9 @@ response = requests.get(url)
 response
 ```
 
-<pre>
+```
 <Response [200]>
-</pre>
+```
 
 ```python
 items = response.json()["items"]
@@ -89,9 +89,9 @@ response = requests.post(url, params)
 response
 ```
 
-<pre>
+```
 <Response [200]>
-</pre>
+```
 
 ```python
 pd.options.display.max_columns = 40

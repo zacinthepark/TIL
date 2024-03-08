@@ -53,17 +53,17 @@ response = requests.get(url)
 response
 ```
 
-<pre>
+```
 <Response [200]>
-</pre>
+```
 
 ```python
 response.text[:200]
 ```
 
-<pre>
+```
 '[{"localTradedAt":"2024-03-08","closePrice":"2,671.19","compareToPreviousClosePrice":"23.57","compareToPreviousPrice":{"code":"2","text":"상승","name":"RISING"},"fluctuationsRatio":"0.89","openPrice":"2'
-</pre>
+```
 
 #### 3. 서버에서 받은 데이터 파싱(데이터 형태를 변경) : json(str) > list, dict > DataFrame
 

@@ -28,9 +28,9 @@ response = requests.get(url, headers=headers)
 response
 ```
 
-<pre>
+```
 <Response [200]>
-</pre>
+```
 
 ```python
 # JSON Parsing

@@ -47,9 +47,9 @@ response = requests.post(url, json.dumps(params), headers=headers)
 response
 ```
 
-<pre>
+```
 <Response [200]>
-</pre>
+```
 
 ```python
 # 3. parsing
@@ -320,9 +320,9 @@ response = requests.post(url, data=json.dumps(params), headers=headers)
 response
 ```
 
-<pre>
+```
 <Response [200]>
-</pre>
+```
 
 ```python
 # 4. json(str) > list, dict : DataFrame
