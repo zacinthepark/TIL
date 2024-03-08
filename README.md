@@ -41,9 +41,9 @@
 
 - Web
     - [HTML 기초](./client//web/html%20%EA%B8%B0%EC%B4%88.md)
-    - [HTML 정리]
+    - [HTML 정리](./client/web/html%20정리.md)
     - [CSS 기초](./client/web/css%20%EA%B8%B0%EC%B4%88.md)
-    - [CSS Selector 정리]
+    - [CSS Selector 정리](./client/web/css%20selector%20정리.md)
     - [WebRTC](./client/web/WebRTC.md)
     - [multipart/form-data](./client/web/multipart-formdata.md)
     - [Promise](./client/web/Promise.md)

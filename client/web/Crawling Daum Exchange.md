@@ -1,4 +1,4 @@
-### Daum Exchange
+### Crawling Daum Exchange
 
 - `https://finance.daum.net`
 

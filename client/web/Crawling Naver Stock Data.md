@@ -1,4 +1,4 @@
-### Crwaling Naver Stock Data
+### Crawling Naver Stock Data
 
 - 네이버 증권 사이트에서 주가 데이터 수집
 
