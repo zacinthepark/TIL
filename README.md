@@ -12,16 +12,16 @@
 ### Langs
 
 - Python
-    - [변수, 타입, 연산자, 슬라이싱](./langs/python/변수_타입_연산자_슬라이싱.md)
-    - [자료형: 리스트, 딕셔너리, 튜플](./langs/python/자료형_리스트_딕셔너리_튜플.md)
-    - [제어문, 함수, 모듈, 가상환경](./langs/python/제어문_함수_모듈_가상환경.md)
-    - [제어문: 조건문, 반복문](./langs/python/제어문_조건문_반복문.md)
-    - [함수: 생성, 활용](./langs/python/함수%20생성%20및%20활용.md)
-    - [메서드, 얕은복사, 깊은복사](./langs/python/메서드_얕은복사_깊은복사.md)
-    - [OOP, 클래스, 인스턴스, 예외처리](./langs/python/OOP_클래스_인스턴스_예외처리.md)
+    - [변수 / 타입 / 연산자 / 슬라이싱](./langs/python/변수_타입_연산자_슬라이싱.md)
+    - [자료형: 리스트 / 딕셔너리 / 튜플](./langs/python/자료형_리스트_딕셔너리_튜플.md)
+    - [제어문 / 함수 / 모듈 / 가상환경](./langs/python/제어문_함수_모듈_가상환경.md)
+    - [제어문: 조건문 / 반복문](./langs/python/제어문_조건문_반복문.md)
+    - [함수: 생성 / 활용](./langs/python/함수%20생성%20및%20활용.md)
+    - [메서드 / 얕은복사 / 깊은복사](./langs/python/메서드_얕은복사_깊은복사.md)
+    - [OOP / 클래스 / 인스턴스 / 예외처리](./langs/python/OOP_클래스_인스턴스_예외처리.md)
     - [가상환경 설정](./langs/python/가상환경%20설정.md)
     - [클래스 정리](./langs/python/클래스%20정리.md)
-    - [힙 자료구조(heapq)](./langs/python/heapq.md)
+    - [힙 자료구조와 heapq](./langs/python/heapq.md)
 
 - Javascript
     - [기초 문법](./langs/javascript/basics.md)
@@ -77,7 +77,7 @@
     - [Django Authentication](./server/django/django-authentication.md)
     - [N:1 Relationship](./server/django/n-1-relationship.md)
     - [M:N Relationship](./server/django/m-n-relationship.md)
-    - [Web, HTTP, Cookie, Session, URL, REST API](./server/django/REST%20API.md)
+    - [Web / HTTP / Cookie / Session / URL / REST API](./server/django/REST%20API.md)
     - [Djang REST Framework and Serializer](./server/django/DRF.md)
     - [초기 데이터](./server/django/%EC%B4%88%EA%B8%B0%20%EB%8D%B0%EC%9D%B4%ED%84%B0.md)
     - [Django Static Files](./server/django/django-static-files.md)
