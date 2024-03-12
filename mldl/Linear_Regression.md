@@ -112,10 +112,10 @@ sns.boxplot(data=titanic_df, x='sex', y='age', hue='pclass')
 
 ### K-Fold Cross Validation
 
-![image](https://github.com/zacinthepark/TIL/assets/86648892/04f548a6-57d9-4470-87aa-52c4bafb71e8)
+![image](https://github.com/zacinthepark/TIL/assets/86648892/e6d81ec0-db4d-4047-a67d-254b024d940c)
 
-- 데이터의 개수가 너무 작을 경우, 트레이닝 데이터와 테스트 데이터가 어떻게 나눠지는가에 따라 학습된 모델과 성능 측정결과가 크게 달라질 수 있습니다.
+- 데이터의 개수가 너무 작을 경우, 트레이닝 데이터와 테스트 데이터가 어떻게 나눠지는가에 따라 학습된 모델과 성능 측정결과가 크게 달라질 수 있음
 
-- 따라서 이러한 문제를 해결하기 위해 **K-Fold Cross Validation (K-Fold 교차 검증)** 을 사용할 수 있습니다.
-    - K개의 나누는 개수를 지정하고
-    - 테스트를 진행할 때, train과 test를 나누는 것에 대해 k-fold개만큼 바꿔가면서 측정
+- 따라서 이러한 문제를 해결하기 위해 **K-Fold Cross Validation (K-Fold 교차 검증)** 을 사용할 수 있음
+
+- 데이터를 무작위로 k개의 fold로 나누어, 각각의 fold를 한 번씩 Validation Set, 나머지 fold를 Training Set으로 추출하여 K번 검증
