@@ -183,6 +183,11 @@ sns.boxplot(data=titanic_df, x='sex', y='age', hue='pclass')
     - 은행 대출의 경우 대출을 승인할지 말지 여부에서 임계값을 0.7로 올려 그 위는 1, 아래는 0으로 설정하면 더 엄격하게 심사를 하는 것이라 할 수 있음
 - 임계값을 낮추면 적극적으로 1을 판단(recall을 올리려는 시도), 임계값을 올리면 소극적으로 1을 판단
 
+### Random Search, Grid Search
+
+- Grid Search 범위를 적게 하여 찾은 값을 기준으로 파라미터 범위를 조정하여 Grid Search를 다시 해보는 것 고려
+- Random Search를 통해 찾은 값을 기준으로 파라미터 범위를 조정하여 Grid Search를 해보는 것도 고려
+
 ### Hyperparameter 튜닝
 
 > 1. 기본 모델 설정 (model_default)
