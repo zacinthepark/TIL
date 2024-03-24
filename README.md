@@ -155,7 +155,7 @@
 - [범주형 시각화 코드](./mldl/범주형%20시각화%20코드.md)
 - [성능 평가 회귀](./mldl/성능%20평가%20회귀.md)
 - [성능 평가 분류](./mldl/성능%20평가%20분류.md)
-- [클래스 불균형](./mldl/클래스%20불균형.md)
+- [Class Imbalance](./mldl/Class_Imbalance.md)
 - [Linear Regression](./mldl/Linear_Regression.md)
 - [K-Nearest Neighbor](./mldl/KNN.md)
 - [Decision Tree](./mldl/Decision_Tree.md)
@@ -163,6 +163,7 @@
 - [K Fold Cross Validation](./mldl/K_Fold_Cross_Validation.md)
 - [Hyperparameter, Random Search, Grid Search](./mldl/Hyperparameter_RandomSearch_GridSearch.md)
 - [Ensemble](./mldl/Ensemble.md)
+- [sklearn imports](./mldl/sklearn_imports.md)
 
 ### CS
 
