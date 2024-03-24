@@ -151,6 +151,7 @@
 
 - [머신러닝의 개념](./mldl/머신러닝의%20개념.md)
 - [패키지 복습](./mldl/패키지%20복습.md)
+- [데이터 전처리](./mldl/데이터%20전처리.md)
 - [K Fold Validation](./mldl/K_Fold_Validation.md)
 
 ### CS
