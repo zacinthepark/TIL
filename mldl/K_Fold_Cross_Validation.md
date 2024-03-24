@@ -12,15 +12,36 @@
 
 대부분의 ML 모델의 성능 평가는 **교차 검증 기반으로 1차 평가를 한 뒤에 최종적으로 테스트 데이터 세트에 적용해 평가하는 프로세스** 이다. ML에 사용되는 데이터 세트를 세분화해서 학습(Train), 검증(Validation), 테스트(Test) 데이터 세트로 나눌 수 있다. 즉, 기존에 학습 데이터를 다시 학습 데이터 + 검증 데이터(학습된 모델의 성능을 1차 평가)로 분할한다.
 
-### K 폴드 교차 검증 (K Fold Cross Validation)
+### K 분할 교차 검증 (K Fold Cross Validation)
 
-K 폴드 교차 검증은 가장 보편적으로 사용되는 교차 검증 기법으로, **K개의 데이터 폴드 세트를 만들어서 K번만큼 각 폴드 세트에 학습과 검증 평가를 반복적으로 수행하는 방법** 이다. 만약 K=5로 설정한다면 5 폴드 교차 검증 과정은 다음과 같다.
+> K개의 분할(Fold)에 대한 성능을 예측 -> 평균과 표준편차 계산 -> 일반화 성능
+
+> K가 10인 경우 최종 정확도 = Average(Round1, Round2, ... , Round10)
+
+- 모든 데이터가 **평가에 한 번, 학습에 k-1번 사용**
+
+- 데이터의 개수가 너무 작을 경우, 트레이닝 데이터와 테스트 데이터가 어떻게 나눠지는가에 따라 학습된 모델과 성능 측정결과가 크게 달라질 수 있음
+
+- 데이터를 무작위로 k개의 fold로 나누어, 각각의 fold를 한 번씩 Validation Set, 나머지 fold를 Training Set으로 추출하여 k번 검증
+
+- 단, k는 2 이상 (최소한 한 개씩의 학습용, 검증용 데이터가 필요)
+
+K 분할 교차 검증은 가장 보편적으로 사용되는 교차 검증 기법으로, **K개의 데이터 폴드 세트를 만들어서 K번만큼 각 폴드 세트에 학습과 검증 평가를 반복적으로 수행하는 방법** 이다. 만약 K=5로 설정한다면 5 폴드 교차 검증 과정은 다음과 같다.
 
 1. 데이터 세트를 5등분 한다.
 2. 1~4번째 등분을 학습 데이터로, 5번째 등분 하나를 검증 데이터 세트로 설정하고 평가를 수행한다.
 3. 1~3번 등분과 5번 등분을 학습 데이터로, 4번 등분을 검증 데이터 세트로 설정하고 평가를 수행한다.
 4. 학습 데이터 세트와 검증 데이터 세트를 점진적으로 변경하면서 5번째까지 검증을 수행한다.
 5. 5개의 예측 평가를 평균해 K 폴드 평과 결과로 반영한다.
+
+- 장점
+  - 모든 데이터를 학습과 평가에 사용할 수 있음
+  - 반복 학습과 평가를 통해 정확도 향상
+  - 데이터가 부족해서 발생하는 과소적합 문제 방지
+  - 평가에 사용되는 데이터 편향을 막을 수 있음
+  - 좀 더 일반화된 모델을 만들 수 있음
+- 단점
+  - 반복 횟수가 많아서 모델 학습과 평가에 많은 시간이 소요됨
 
 ```python
 import numpy as np
@@ -386,13 +407,163 @@ print(f'평균 검증 정확도 : {np.mean(cv_accuracy)}')
 
 정확도가 상승했음을 확인할 수 있다. Stratified K 폴드의 경우 원본 데이터의 레이블 분포도 특성을 반영한 학습 및 검증 데이터 세트를 만들 수 있으므로 **왜곡된 레이블 데이터 세트에서는 반드시 Stratified K 폴드를 이용해 교차 검증해야한다.** 일반적으로 분류(Classification)에서의 교차 검증에는 K 폴드가 아니라 Stratified K 폴드로 분할되어야한다. 그러나 회귀(Regression)에서는 Stratified K 폴드가 지원되지 않는데, **회귀의 결정값은 이산값 형태의 레이블이 아니라 연속된 숫자값이기에 결정값별로 분포를 정하는 의미가 없기 때문이다.**
 
+### Code
 
-### K-Fold Cross Validation
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import warnings
 
-![image](https://github.com/zacinthepark/TIL/assets/86648892/e6d81ec0-db4d-4047-a67d-254b024d940c)
+warnings.filterwarnings(action='ignore')
+%config InlineBackend.figure_format='retina'
+```
 
-- 데이터의 개수가 너무 작을 경우, 트레이닝 데이터와 테스트 데이터가 어떻게 나눠지는가에 따라 학습된 모델과 성능 측정결과가 크게 달라질 수 있음
+```python
+path = 'https://raw.githubusercontent.com/Jangrae/csv/master/diabetes.csv'
+data = pd.read_csv(path)
+```
 
-- 따라서 이러한 문제를 해결하기 위해 **K-Fold Cross Validation (K-Fold 교차 검증)** 을 사용할 수 있음
+**데이터설명**
 
-- 데이터를 무작위로 k개의 fold로 나누어, 각각의 fold를 한 번씩 Validation Set, 나머지 fold를 Training Set으로 추출하여 K번 검증
+- Pregnancies: 임신 횟수
+- Glucose: 포도당 부하 검사 수치
+- BloodPressure: 혈압(mm Hg)
+- SkinThickness: 팔 삼두근 뒤쪽의 피하지방 측정값(mm)
+- Insulin: 혈청 인슐린(mu U/ml)
+- BMI: 체질량지수(체중(kg)/키(m))^2
+- DiabetesPedigreeFunction: 당뇨 내력 가중치 값
+- Age: 나이
+- Outcome: 클래스 결정 값(0 또는 1)
+
+```python
+target = 'Outcome'
+
+x = data.drop(target, axis=1)
+y = data.loc[:, target]
+```
+
+```python
+from sklearn.model_selection import train_test_split
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=1)
+```
+
+```python
+from sklearn.preprocessing import MinMaxScaler
+
+scaler = MinMaxScaler()
+scaler.fit(x_train)
+x_train_s = scaler.transform(x_train)
+x_test_s = scaler.transform(x_test)
+```
+
+**K분할 교차 검증 방법으로 모델 성능을 예측**
+
+- `cross_val_score(model, x_train, y_train, cv=n)` 형태로 사용
+- `cv` 옵션에 `k값(분할 개수, 기본값=5)`을 지정
+- `cross_val_score` 함수는 넘파이 배열 형태의 값을 반환
+- `cross_val_score` 함수 반환 값의 평균을 해당 모델의 예측 성능으로 볼 수 있음
+
+**Decision Tree**
+
+```python
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import cross_val_score
+
+model = DecisionTreeClassifier(max_depth=5,  random_state=1)
+# cv_score = cross_val_score(model, x_train, y_train, cv=10, scoring='accuracy')
+cv_score = cross_val_score(model, x_train, y_train, cv=10)
+
+print(cv_score)
+print('평균:', cv_score.mean())
+print('표준편차:', cv_score.std())
+
+result = {}
+result['Decision Tree'] = cv_score.mean()
+```
+
+<pre>
+[0.66666667 0.75925926 0.74074074 0.64814815 0.7037037  0.74074074
+ 0.75925926 0.81132075 0.79245283 0.67924528]
+평균: 0.7301537386443047
+표준편차: 0.05141448587329709
+</pre>
+
+**KNN**
+
+```python
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.model_selection import cross_val_score
+
+model = KNeighborsClassifier()
+
+cv_score = cross_val_score(model, x_train_s, y_train, cv=10)
+
+print(cv_score)
+print('평균:', cv_score.mean())
+
+result['KNN'] = cv_score.mean()
+```
+
+<pre>
+[0.64814815 0.68518519 0.72222222 0.64814815 0.72222222 0.74074074
+ 0.68518519 0.66037736 0.77358491 0.60377358]
+평균: 0.6889587700908455
+</pre>
+
+**Logistic Regression**
+
+- LogisticRegression 사용시 발생하는 Warning을 없애려면 충분한 max_iter를 지정
+
+```python
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import cross_val_score
+
+model = LogisticRegression()
+
+cv_score = cross_val_score(model, x_train, y_train, cv=10)
+
+print(cv_score)
+print(cv_score.mean())
+
+result['Logistic Regression'] = cv_score.mean()
+```
+
+<pre>
+[0.7037037  0.72222222 0.85185185 0.74074074 0.83333333 0.81481481
+ 0.74074074 0.75471698 0.77358491 0.75471698]
+0.7690426275331936
+</pre>
+
+```python
+# 성능 시각화 비교
+plt.figure(figsize = (5, 3))
+plt.barh(y=list(result), width=result.values())
+plt.xlabel('Score')
+plt.ylabel('Model')
+plt.show()
+```
+
+![z_cv_score](https://github.com/zacinthepark/TIL/assets/86648892/ff2bcc50-723b-4483-8eae-a7461380cf4c)
+
+```python
+# 성능 평가
+from sklearn.metrics import classification_report
+
+model = LogisticRegression()
+model.fit(x_train, y_train)
+y_pred = model.predict(x_test)
+print(classification_report(y_test, y_pred))
+```
+
+<pre>
+              precision    recall  f1-score   support
+
+           0       0.79      0.90      0.84       146
+           1       0.78      0.58      0.66        85
+
+    accuracy                           0.78       231
+   macro avg       0.78      0.74      0.75       231
+weighted avg       0.78      0.78      0.78       231
+</pre>
