@@ -164,6 +164,8 @@
 - [Hyperparameter, Random Search, Grid Search](./mldl/Hyperparameter_RandomSearch_GridSearch.md)
 - [Ensemble](./mldl/Ensemble.md)
 - [sklearn imports](./mldl/sklearn_imports.md)
+- [미세먼지 농도 예측 데이터 분석](./mldl/미세먼지%20농도%20예측%20데이터%20분석.md)
+- [미세먼지 농도 예측 모델링](./mldl/미세먼지%20농도%20예측%20모델링.md)
 
 ### CS
 
