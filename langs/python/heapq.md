@@ -98,7 +98,7 @@ def solution(L, T):
 
   result = 0
 
-  while len(L) >= 2:    #IndexError 방지
+  while len(L) >= 2:    # IndexError 방지
       # 힙에서 최솟값 가져오기
       min_1 = heapq.heappop(L) 
       
