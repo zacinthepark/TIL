@@ -171,6 +171,7 @@
 - [장애인 콜택시 대기시간 예측 EDA](./mldl/장애인%20콜택시%20대기시간%20예측%20EDA.md)
 - [장애인 콜택시 대기시간 예측 모델링](./mldl/장애인%20콜택시%20대기시간%20예측%20모델링.md)
 - [딥러닝 구조와 학습절차](./mldl/딥러닝%20구조와%20학습절차.md)
+- [Batch Size, Epochs, Iterations](./mldl/Batch_Epoch_Iteration.md)
 - [Hidden Layer와 활성화 함수](./mldl/Hidden%20Layer와%20활성화%20함수.md)
 - [딥러닝 회귀 모델링](./mldl/딥러닝%20회귀%20모델링.md)
 
