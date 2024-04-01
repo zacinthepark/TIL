@@ -51,6 +51,13 @@ Non-trainable params: 0 (0.00 Byte)
 
 ### Hidden Layer와 Feature Representation
 
+#### 연결
+
+- Fully Connected: 모든 노드 간에 연결
+- Locally Connected: 노드의 연결을 제어
+
+#### 학습
+
 ![z_dl_2_1](https://github.com/zacinthepark/TIL/assets/86648892/236bca7e-16f6-4694-b7a7-c564886e5e6d)
 
 - 선언한 구조에 따라 연결 생성
