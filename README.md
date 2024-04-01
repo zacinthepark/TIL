@@ -174,6 +174,7 @@
 - [Batch Size, Epochs, Iterations](./mldl/Batch_Epoch_Iteration.md)
 - [경사하강법](./mldl/경사하강법.md)
 - [Hidden Layer와 활성화 함수](./mldl/Hidden%20Layer와%20활성화%20함수.md)
+- [Batch Normalization](./mldl/Batch_Normalization.md)
 - [딥러닝 회귀 모델링](./mldl/딥러닝%20회귀%20모델링.md)
 
 ### CS
@@ -185,7 +186,7 @@
 
 - [Git 활용과 Gitflow](./tools/Git%20활용과%20Gitflow.md)
 - [Jira와 JQL 활용](./tools/Jira와%20JQL%20활용.md)
-- [Jupyternotebook 기본 사용법](./tools/Jupyternotebook%20기본%20사용법.md)
+- [Jupyter Notebook 기본 사용법](./tools/Jupyter%20Notebook%20기본%20사용법.md)
 
 ### Miscellaneous
 
