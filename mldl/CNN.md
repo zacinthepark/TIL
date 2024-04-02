@@ -42,7 +42,7 @@ Average Pooling Layer: 해당 픽셀 영역의 정보를 골고루 반영
 
 - `Conv2D`
     - `filters`: 새롭게 제작하려는 feature map의 수
-    - `kernel_size`: Conv2D filter의 사이즈 (keras에서 depth는 보정)
+    - `kernel_size`: Conv2D filter의 사이즈 (이전 feature map의 depth는 keras에서 보정)
     - `strides`: Conv2D filter의 이동 보폭
     - `padding`: 이전 feature map의 크기(가로, 세로) 유지 + 외곽 정보 더 반영
     - `activation`: 빼먹지 않기
@@ -54,20 +54,100 @@ Average Pooling Layer: 해당 픽셀 영역의 정보를 골고루 반영
 
 ![lenet5](https://github.com/zacinthepark/TIL/assets/86648892/c12da7b9-b47c-492c-b1b5-b684d3814377)
 
-`filters`
-`pooling_size = (2, 2)`
-`strides = (2, 2)`
-400으로 flatten하여 120개의 노드를 가진 Dense Layer와 Fully Connected
+- Input: 32x32 크기의 흑백 채널 이미지
+
+- Layer 1
+    - Convolution
+        - `kernel_size = (5,5,1)`
+        - `strides = (1,1)`
+        - `padding = 'valid'`
+        - `filters = 6`
+- Layer 2
+    - Average Pooling
+        - `pool_size = (2,2)`
+        - `strides = (2,2)`
+- Layer 3
+    - Convolution
+        - `kernel_size = (5,5,6)`
+        - `strides = (1,1)`
+        - `padding = 'valid'`
+        - `filters = 16`
+- Layer 4
+    - Average Pooling
+        - `pool_size = (2,2)`
+        - `strides = (2,2)`
+
+- Layer 5
+    - Fully Connected Layer
+    - 연결 전 `Flatten()` 진행
+    - 400으로 flatten하여 120개의 노드를 가진 Dense Layer와 Fully Connected
 
 ### AlexNet
 
 ![alexnet](https://github.com/zacinthepark/TIL/assets/86648892/69a4a269-13c7-4b69-93f6-e24401c794b2)
 
-`filter_size = (11, 11, 3)`
-`filters = 96`
-`strides = (4, 4)`
+- Input: 227x227 크기의 RGB 3개 채널 이미지
 
-`pool_size = (3, 3)`
-`strides = (2, 2)`
+- Layer 1
+    - Convolution
+        - `kernel_size = (11,11,3)`
+        - `strides=(4,4)`
+            - 보폭을 크게 해도 특징을 잘 뽑아내서 (4,4)로 설정함
+        - `padding='valid'`
+        - `filters = 96`
+- Layer 2
+    - Max Pooling
+        - `pool_size = (3,3)`
+        - `strides = (2,2)`
+- Layer 3
+    - Convolution
+        - `kernel_size = (5,5,96)`
+        - `strides = (1,1)`
+        - `padding='same'`
+        - `filters = 256`
+- Layer 4
+    - Max Pooling
+        - `pool_size = (3,3)`
+        - `strides = (2,2)`
+- Layer 5
+    - Convolution
+        - `kernel_size = (3,3,256)`
+        - `strides = (1,1)`
+        - `padding='same'`
+        - `filters = 384`
+- Layer 6
+    - Convolution
+        - `kernel_size = (3,3,384)`
+        - `strides = (1,1)`
+        - `padding = 'same'`
+        - `filter = 384`
+    - **Layer 5와 비교했을 때 더 고수준이다**
+    - **기존에 없던 feature을 뽑아냈다**
+- Layer 7
+    - Convolution
+        - `kernel_size = (3,3,384)`
+        - `strides = (1,1)`
+        - `padding = 'same'`
+        - `filters = 256`
+- Layer 8
+    - Max Pooling
+        - `pool_size = (3,3)`
+        - `strides = (2,2)`
 
-ImageNet 대회 1000개 클래스 분류
+- Layer 9
+    - 9216으로 flatten하여 9216개의 노드를 가진 Dense Layer와 Fully Connected
+    - 이후 Dense Layer 추가 진행
+
+- Output: ImageNet 대회 1000개 클래스 분류
+
+### VGGNet
+
+![VGGNet](https://github.com/zacinthepark/TIL/assets/86648892/7e358552-ba4e-4230-9666-e1bd292be81c)
+
+- Input: 224x224 크기의 3개 채널 이미지
+
+- Layer 1
+    - `kernel_size = unknown`
+    - `strides = unknown`
+    - `padding = 'same'`
+    - `filters = 64`
