@@ -182,7 +182,7 @@
 - [딥러닝 다중분류 모델링](./mldl/딥러닝%20다중분류%20모델링.md)
 - [성능 관리: 과적합 방지하기, 모델 저장하기](./mldl/성능%20관리.md)
 - [Functional API](./mldl/Functional_API.md)
-- [딥러닝 시계열 모델링](./mldl/시계열%20모델링.md)
+- [딥러닝 시계열 모델링](./mldl/딥러닝%20시계열%20모델링.md)
 
 - [CNN](./mldl/CNN.md)
 - [Computer Vision Tasks and Datasets](./mldl/Computer_Vision_Tasks_Datasets.md)
