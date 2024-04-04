@@ -6,7 +6,11 @@
 
 참조 링크: https://keras.io/api/layers/convolution_layers/
 
-이미지 정보 구조를 파괴하지 않은 채로 Feature를 추출하는 것이 Conv Layer의 목적
+- 이미지 정보 구조를 파괴하지 않은 채로 Feature를 추출하는 것이 Conv Layer의 목적
+- Fully Connected 구조 &rarr; Convolutional Neural Network 구조: 위치 정보를 보존한 채로 feature 추출
+    - CIFAR-10 데이터와 같이 색 정보가 있는 이미지 데이터에서 특히 성능 차이가 발생함
+    - FC 모델: 60% 이하
+    - CNN 모델: 80% 근처
 
 ![convolutional_layer_filter](https://github.com/zacinthepark/TIL/assets/86648892/0bb49d3d-ec52-4405-8660-38da6c4fac97)
 
@@ -22,6 +26,7 @@ Zero Padding은 Feature Map의 크기를 이미지 크기에 맞게 유지하고
 
 각각의 Filter를 하나의 Feature라고 보면 쉽다
 filter 개수는 결과적으로는 출력층의 차원의 수로, 각 필터 별로 다른 가중치들을 통한 연산을 수행함
+가중치가 서로 다른 Filter들을 통해 Filter의 개수만큼 Feature Map을 생성
 학습을 하면서 구분이 잘 되는 필터들 쪽으로 최적화가 되면서 모델이 완성
 
 필터의 depth는 input의 channel, 혹은 이전 feature map의 depth size를 따라간다
@@ -37,6 +42,10 @@ Average Pooling Layer: 해당 픽셀 영역의 정보를 골고루 반영
 > 특징 추출(conv layer) > 사진 줄이기(pooling) > 특징 추출(conv layer) > 사진 줄이기(pooling) 반복
 
 > pooling을 통해 정보의 손실은 발생할 수 있으나 연산량을 줄일 수 있음
+
+#### Global Average Pooling
+
+![image](https://github.com/zacinthepark/TIL/assets/86648892/4b30a8e4-f828-4ba2-929f-7337a6618e57)
 
 ### from keras.layers import Conv2D, MaxPool2D
 

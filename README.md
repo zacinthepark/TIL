@@ -150,7 +150,7 @@
 ### ML/DL
 
 - [머신러닝의 개념](./mldl/머신러닝의%20개념.md)
-- [패키지 복습](./mldl/패키지%20복습.md)
+- [Numpy Pandas 복습](./mldl/Numpy_Pandas_복습.md)
 - [데이터 전처리](./mldl/데이터%20전처리.md)
 - [범주형 시각화 코드](./mldl/범주형%20시각화%20코드.md)
 - [성능 평가 회귀](./mldl/성능%20평가%20회귀.md)
@@ -171,11 +171,24 @@
 - [장애인 콜택시 대기시간 예측 EDA](./mldl/장애인%20콜택시%20대기시간%20예측%20EDA.md)
 - [장애인 콜택시 대기시간 예측 모델링](./mldl/장애인%20콜택시%20대기시간%20예측%20모델링.md)
 - [딥러닝 구조와 학습절차](./mldl/딥러닝%20구조와%20학습절차.md)
-- [Batch Size, Epochs, Iterations](./mldl/Batch_Epoch_Iteration.md)
-- [경사하강법](./mldl/경사하강법.md)
+- [Batch, Epochs, Iterations](./mldl/Batch_Epoch_Iteration.md)
+- [경사하강법과 가중치 조정](./mldl/경사하강법과%20가중치%20조정.md)
 - [Hidden Layer와 활성화 함수](./mldl/Hidden%20Layer와%20활성화%20함수.md)
+- [L1, L2 Regularization](./mldl/L1_L2_Regularization.md)
 - [Batch Normalization](./mldl/Batch_Normalization.md)
 - [딥러닝 회귀 모델링](./mldl/딥러닝%20회귀%20모델링.md)
+
+- [딥러닝 이진분류 모델링](./mldl/딥러닝%20이진분류%20모델링.md)
+- [딥러닝 다중분류 모델링](./mldl/딥러닝%20다중분류%20모델링.md)
+- [성능 관리: 과적합 방지하기, 모델 저장하기](./mldl/성능%20관리.md)
+- [Functional API](./mldl/Functional_API.md)
+- [딥러닝 시계열 모델링](./mldl/시계열%20모델링.md)
+
+- [CNN](./mldl/CNN.md)
+- [Computer Vision Tasks and Datasets](./mldl/Computer_Vision_Tasks_Datasets.md)
+- [Image Data Augmentation](./mldl/Image_Data_Augmentation.md)
+- [Transfer Learning](./mldl/Transfer_Learning.md)
+- [Object Detection](./mldl/Object_Detection.md)
 
 ### CS
 
