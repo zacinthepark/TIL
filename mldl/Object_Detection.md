@@ -45,3 +45,22 @@
 ### Precision, Recall, AP, mAP
 
 ### Annotation
+
+#### roboflow를 활용한 annotation
+
+- Create Project
+- Upload Image
+- Manual Labeling
+- Annotation 진행
+- Train, Valid, Test 비율 설정
+- Generate
+- Export Dataset
+
+#### ybat-master를 활용한 annotation
+
+- Images Upload
+- Classes Upload
+- Annotation 진행
+- Save YOLO
+    - Annotation한 정보에 대한 labels 생성
+- yaml 파일 생성
