@@ -177,6 +177,7 @@
 - [L1, L2 Regularization](./mldl/L1_L2_Regularization.md)
 - [Batch Normalization](./mldl/Batch_Normalization.md)
 - [딥러닝 회귀 모델링](./mldl/딥러닝%20회귀%20모델링.md)
+- [Entropy, Cross Entropy](./mldl/Entropy_CrossEntropy.md)
 
 - [딥러닝 이진분류 모델링](./mldl/딥러닝%20이진분류%20모델링.md)
 - [딥러닝 다중분류 모델링](./mldl/딥러닝%20다중분류%20모델링.md)
