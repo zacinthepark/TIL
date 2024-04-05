@@ -178,9 +178,9 @@
 - [Batch Normalization](./mldl/Batch_Normalization.md)
 - [딥러닝 회귀 모델링](./mldl/딥러닝%20회귀%20모델링.md)
 - [Entropy, Cross Entropy](./mldl/Entropy_CrossEntropy.md)
-
 - [딥러닝 이진분류 모델링](./mldl/딥러닝%20이진분류%20모델링.md)
 - [딥러닝 다중분류 모델링](./mldl/딥러닝%20다중분류%20모델링.md)
+
 - [성능 관리: 과적합 방지하기, 모델 저장하기](./mldl/성능%20관리.md)
 - [Functional API](./mldl/Functional_API.md)
 - [딥러닝 시계열 모델링](./mldl/딥러닝%20시계열%20모델링.md)
