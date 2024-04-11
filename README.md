@@ -183,8 +183,7 @@
 - [딥러닝 다중분류: MNIST](./mldl/딥러닝%20다중분류%20MNIST.md)
 - [딥러닝 성능 관리](./mldl/딥러닝%20성능%20관리.md)
 - [Functional API](./mldl/Functional_API.md)
-
-- [딥러닝 시계열 모델링](./mldl/딥러닝%20시계열%20모델링.md)
+- [딥러닝 시계열 모델링: SimpleRNN, LSTM](./mldl/Time_Series_RNN_LSTM.md)
 
 - [CNN](./mldl/CNN.md)
 - [Computer Vision Tasks and Datasets](./mldl/Computer_Vision_Tasks_Datasets.md)

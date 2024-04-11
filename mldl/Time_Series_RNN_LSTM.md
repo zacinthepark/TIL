@@ -1,22 +1,64 @@
-## 시계열 모델링
+## 딥러닝 시계열 모델링: SimpleRNN, LSTM
 
 ---
 
 ### Sequential Data
+
+<p align="center">
+    <img width="500" alt="sequential_data" src="https://github.com/zacinthepark/TIL/assets/86648892/27cb2ef8-f50f-4aff-871a-46194667b2ca">
+</p>
 
 - Sequential Data: 데이터의 분석단위끼리 순서가 있다
 - Time Series: Sequential Data + 시간의 등간격
 
 ### 시계열 데이터 분석
 
-- 통계적 시계열 모델링
-    - $y$ 의 흐름 분석
-    - ARIMA
-- ML 기반 시계열 모델링
-    - Feature Engineering을 통해 시간의 흐름을 $x$ 변수로 도출
-- DL 기반 시계열 모델링
-    - 시간흐름 구간(timesteps) 데이터들(2차원)이 분석 단위이므로 데이터셋은 3차원
-    - RNN Layer
+<p align="center">
+    <img width="500" alt="sd_analysis" src="https://github.com/zacinthepark/TIL/assets/86648892/be47379a-c069-44ab-a638-838dab29b838">
+</p>
+
+- **시간의 흐름에 따른 패턴** 을 분석하는 것
+- 흐름을 어떻게 정리할 것인지에 따라 모델링 방식이 달라진다
+    - 통계적 시계열 모델링
+    - ML 기반 시계열 모델링
+    - DL 기반 시계열 모델링
+
+#### 통계적 시계열 모델링
+
+> $y$의 이전 시점 데이터들로부터 흐름의 패턴을 추출하여 예측
+
+<p align="center">
+    <img width="500" alt="z_stat_modeling" src="https://github.com/zacinthepark/TIL/assets/86648892/46cb9b03-b4ff-443f-9f1d-86d455d901dd">
+</p>
+
+- $y$ 의 흐름 분석
+- ARIMA
+
+#### ML 기반 시계열 모델링
+
+> 특정 **시점** 데이터들(**1차원**)과 예측대상시점($y_{t+1}$)과의 관계로부터 패턴을 추출하여 예측
+
+<p align="center">
+    <img width="500" alt="z_ml_modeling" src="https://github.com/zacinthepark/TIL/assets/86648892/caf76d92-5fc6-4e0e-8416-57d926c25890">
+</p>
+
+- Feature Engineering을 통해 시간의 흐름을 $x$ 변수로 도출
+
+#### DL 기반 시계열 모델링
+
+> **시간흐름 구간(timesteps)** 데이터들(**2차원**)과 예측대상시점($y_{t+1}$과의 관계로부터 패턴을 추출하여 예측)
+
+<p align="center">
+    <img width="500" alt="z_dl_modeling" src="https://github.com/zacinthepark/TIL/assets/86648892/5cc09989-e9f7-4953-b11b-49da52b2c18c">
+</p>
+
+- 시간흐름 구간(timesteps) 데이터들(2차원)이 분석 단위이므로 데이터셋은 3차원
+- RNN Layer
+
+
+
+
+
 
 ### 시계열 모델링 절차
 
