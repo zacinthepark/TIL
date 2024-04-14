@@ -251,13 +251,34 @@ model = Sequential([SimpleRNN(16, input_shape=(timesteps, nfeatures), return_seq
                     Dense(1)])
 ```
 
-#### tanh
+#### RNN의 활성화 함수: `tanh` (hyperbolic tangent)
 
+<p align="center">
+    <img width="420" height="210" alt="image" src="https://github.com/zacinthepark/TIL/assets/86648892/21e479aa-6f02-4762-9ef6-e913f261846d">
+    <img width="420" height="210" alt="image" src="https://github.com/zacinthepark/TIL/assets/86648892/2bffd1f8-50dd-48a9-8949-c75971e356b9">
+</p>
 
+$$\Large
+sigmoid(x) = \sigma(x) = \frac{1}{1 + e^{-x}}
+$$
 
+$$\Large
+\text{tanh}(x) = \frac{1 - e^{-x}}{1 + e^{-x}} = \frac{2}{1 + e^{-2x}} = 2 * \sigma(2x) - 1
+$$
 
+- 가중치 조정 과정에 있어서 손실함수를 미분한 값(gradient)을 learning rate만큼 조정
+
+- $\frac{dL}{dw} = \frac{dL}{dy} * \frac{dy}{dz} * \frac{dz}{dw}$
+    - $\frac{dy}{dz}$는 계산값에 따라 출력값이 얼마나 변했는지 (활성화 함수가 값 변화에 준 영향)
+    - 활성화 함수의 도함수는 가중치에 따른 손실함수 기울기 계산에 영향을 끼침
+
+- sigmoid $\sigma(x)$를 활성화 함수로 사용할 경우 입력값 $x$가 크거나 작을 때 그 기울기가 0에 가까워, **역전파 시에 gradient가 작아져 학습이 어려워지는 현상인 기울기 소실 문제** 가 발생함
+
+- tanh 함수는 sigmoid에 비해 gradient를 좀 더 크게 유지하여 gradient 소실 문제를 완화시켜줌
 
 ---
+
+### RNN의 Vanishing Gradient 문제
 
 ### 시계열 LSTM
 
