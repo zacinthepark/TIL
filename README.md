@@ -149,6 +149,7 @@
 
 ### ML/DL
 
+- [텐서의 이해](./mldl/텐서의%20이해.md)
 - [머신러닝의 개념](./mldl/머신러닝의%20개념.md)
 - [Numpy Pandas 복습](./mldl/Numpy_Pandas_복습.md)
 - [데이터 전처리](./mldl/데이터%20전처리.md)
@@ -190,6 +191,8 @@
 - [Image Data Augmentation](./mldl/Image_Data_Augmentation.md)
 - [Transfer Learning](./mldl/Transfer_Learning.md)
 - [Object Detection](./mldl/Object_Detection.md)
+
+- [TF-IDF](./mldl/TF-IDF.md)
 
 ### CS
 
