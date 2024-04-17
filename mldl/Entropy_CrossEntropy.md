@@ -30,9 +30,13 @@ $ ~ 0 값으로 변환
 
 ### 평균 정보량 = 엔트로피
 
-$\Large{H(x) = \sum_{i=1}^{n} p(x_i)(-\log{p(x_i)}})$
+$$\Large
+{H(x) = \sum_{i=1}^{n} p(x_i)(-\log{p(x_i)}})
+$$
 
-![entropy](https://github.com/zacinthepark/TIL/assets/86648892/abd888c5-17d6-41c5-9015-a80e74eab80a)
+<p align="center">
+    <img width=700 alt="entropy" src="https://github.com/zacinthepark/TIL/assets/86648892/abd888c5-17d6-41c5-9015-a80e74eab80a">
+</p>
 
 - case 1은 불확실성 낮음, case 2는 불확실성 높음
 - 평균 정보량은 각각의 정보량에 대해 가중치를 곱하여 정보량, 혹은 불순도를 측정함
@@ -49,9 +53,13 @@ $\Large{H(x) = \sum_{i=1}^{n} p(x_i)(-\log{p(x_i)}})$
 
 ### 분류 모델과 cross entropy loss function
 
-![log_loss](https://github.com/zacinthepark/TIL/assets/86648892/b6117acf-c146-43d2-a98f-78ce67cd1831)
+<p align="center">
+    <img width=700 alt="log_loss" src="https://github.com/zacinthepark/TIL/assets/86648892/b6117acf-c146-43d2-a98f-78ce67cd1831">
+</p>
 
-$\Large{-\frac{1}{n} \sum y \log{\hat{y}} + (1 - y) \log{(1 - \hat{y})}}$
+$$\Large
+{-\frac{1}{n} \sum y \log{\hat{y}} + (1 - y) \log{(1 - \hat{y})}}
+$$
 
 - 예측값과 실제값에 대한 오차 계산?
     - ${y}$가 1이라면
