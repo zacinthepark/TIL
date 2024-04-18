@@ -207,7 +207,7 @@
 - [Jira와 JQL 활용](./tools/Jira와%20JQL%20활용.md)
 - [Jupyter Notebook 기본 사용법](./tools/Jupyter%20Notebook%20기본%20사용법.md)
 
-### Miscellaneous
+### Misc
 
 - [Project Management](./misc/project-management.md)
 - [CLI](./misc/cli.md)
