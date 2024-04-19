@@ -1,5 +1,6 @@
 Reinforcement Learning
 지속적인 action을 통해, action의 sequence를 통해 원하는 목적을 달성하고 싶을 때
+action을 통해 reward를 maximize한다
 
 Deep Reinforcement Learning
 
