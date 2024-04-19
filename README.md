@@ -195,6 +195,10 @@
 - [TF-IDF](./mldl/TF-IDF.md)
 - [정보검색과 추천시스템](./mldl/정보검색과%20추천시스템.md)
 - [ANN](./mldl/ANN.md)
+- [RNN](./mldl/RNN.md)
+- [GAN](./mldl/GAN.md)
+- [Reinforcement Learning](./mldl/Reinforcement_Learning.md)
+- [LLM](./mldl/LLM.md)
 
 ### CS
 

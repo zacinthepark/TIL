@@ -57,12 +57,22 @@ $\infty$
     - b: `[4]`, `[4]`, `[1]` 하여 총 9개의 bias 값
     - 총 41개의 값
 
-#### ANN의 단점
+#### ANN to DNN
 
-1. `sigmoid`를 활성화 함수로 사용하는 경우 기울기 소실 문제로 인해 레이어를 많이 쌓지 못한다
+<p align="center">
+    <img width="600" alt="ann_to_dnn" src="https://github.com/zacinthepark/TIL/assets/86648892/86acd8b8-1c4c-4c03-95e7-723ca6840b4b">
+</p>
 
-&rarr; ReLU(Rectified Linear Unit)을 통해 해결
+- 딥러닝은 다음의 한계점들을 극복하면서 발전해왔다
 
-2. Input이 2차원 이상 값이더라도, 가중치 행렬과의 곱 + bias를 통해 하나의 값이 되어 1차원 벡터 값으로 변환된다
+    - 데이터가 부족하다
+        - &rarr; 빅데이터 시대의 도래
 
-&rarr; CNN을 통해 해결
+    - 컴퓨팅 기술이 딥러닝 연산을 처리하기엔 느렸다
+        - &rarr; 그래픽을 위한 3차원 행렬 연산을 위해 등장했던 GPU가 딥러닝 행렬 연산에 사용
+
+    - input이 2차원 이상 값이더라도, 가중치 행렬과의 곱 + bias를 통해 하나의 값이 되어 1차원 벡터 값으로 변환된다
+        - &rarr; CNN을 통해 해결
+
+    - sigmoid를 활성화 함수로 사용하는 경우 기울기 소실 문제로 인해 레이어를 많이 쌓지 못한다
+        - &rarr; ReLU(Rectified Linear Unit)을 통해 해결
