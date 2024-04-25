@@ -12,7 +12,9 @@
     - FC 모델: 60% 이하
     - CNN 모델: 80% 근처
 
-![convolutional_layer_filter](https://github.com/zacinthepark/TIL/assets/86648892/0bb49d3d-ec52-4405-8660-38da6c4fac97)
+<p align="center">
+    <img width="300" alt="convolutional_layer_filter" src="https://github.com/zacinthepark/TIL/assets/86648892/0bb49d3d-ec52-4405-8660-38da6c4fac97">
+</p>
 
 CIFAR 데이터를 Flatten에서 학습시키면 위치 정보가 소실된다
 Convolutional Layer의 필터가 동작해서 파란색, 연두색, ... Feature Map 10개를 만들었다
@@ -20,7 +22,9 @@ Feature Map(Activation Map)은 Convolutional Layer를 거쳐 만들어진 서로
 3x3 Convolutional Layer Filter가 있다고 가정하면 Sliding 해가며 곱을 하고, 이를 통해 Feature Map을 생성
 합성곱 레이어의 Stride를 조정할 수 있고, 이는 Feature Map 크기에 영향을 준다
 
-![zero_padding](https://github.com/zacinthepark/TIL/assets/86648892/704eef58-0725-4249-9b94-4ac33ba3643d)
+<p align="center">
+    <img width="500" alt="zero_padding" src="https://github.com/zacinthepark/TIL/assets/86648892/704eef58-0725-4249-9b94-4ac33ba3643d">
+</p>
 
 Zero Padding은 Feature Map의 크기를 이미지 크기에 맞게 유지하고, 외곽 정보를 더 반영시키는 효과가 있다
 
@@ -45,7 +49,9 @@ Average Pooling Layer: 해당 픽셀 영역의 정보를 골고루 반영
 
 #### Global Average Pooling
 
-![image](https://github.com/zacinthepark/TIL/assets/86648892/4b30a8e4-f828-4ba2-929f-7337a6618e57)
+<p align="center">
+    <img width="500" alt="global_average_pooling" src="https://github.com/zacinthepark/TIL/assets/86648892/4b30a8e4-f828-4ba2-929f-7337a6618e57">
+</p>
 
 ### from keras.layers import Conv2D, MaxPool2D
 
@@ -61,7 +67,9 @@ Average Pooling Layer: 해당 픽셀 영역의 정보를 골고루 반영
 
 ### LeNet-5
 
-![lenet5](https://github.com/zacinthepark/TIL/assets/86648892/c12da7b9-b47c-492c-b1b5-b684d3814377)
+<p align="center">
+    <img width="500" alt="lenet5" src="https://github.com/zacinthepark/TIL/assets/86648892/c12da7b9-b47c-492c-b1b5-b684d3814377">
+</p>
 
 - Input: 32x32 크기의 흑백 채널 이미지
 
@@ -93,7 +101,9 @@ Average Pooling Layer: 해당 픽셀 영역의 정보를 골고루 반영
 
 ### AlexNet
 
-![alexnet](https://github.com/zacinthepark/TIL/assets/86648892/69a4a269-13c7-4b69-93f6-e24401c794b2)
+<p align="center">
+    <img width="500" alt="alexnet" src="https://github.com/zacinthepark/TIL/assets/86648892/69a4a269-13c7-4b69-93f6-e24401c794b2">
+</p>
 
 - Input: 227x227 크기의 RGB 3개 채널 이미지
 
@@ -151,7 +161,9 @@ Average Pooling Layer: 해당 픽셀 영역의 정보를 골고루 반영
 
 ### VGGNet
 
-![VGGNet](https://github.com/zacinthepark/TIL/assets/86648892/7e358552-ba4e-4230-9666-e1bd292be81c)
+<p align="center">
+    <img width="500" alt="VGGNet" src="https://github.com/zacinthepark/TIL/assets/86648892/7e358552-ba4e-4230-9666-e1bd292be81c">
+</p>
 
 - Input: 224x224 크기의 3개 채널 이미지
 
