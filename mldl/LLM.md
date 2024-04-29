@@ -19,7 +19,9 @@
 
 ### 트랜스포머
 
-Positional Encdoing
+Attention은 dot product 알고리즘을 활용하여 유사도를 비율로 판단
+
+Positional Encoding
 I am a boy 일 때 주요한 부분(I, boy)
 Feed Forward: 생성망 모델
 
