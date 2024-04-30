@@ -4,7 +4,9 @@
 
 ### KNN
 
-![knn_1](https://github.com/zacinthepark/TIL/assets/86648892/49780f89-5e35-4ebb-9b08-4c032e551c6c)
+<p align="center">
+  <img width="600" alt="knn_1" src="https://github.com/zacinthepark/TIL/assets/86648892/49780f89-5e35-4ebb-9b08-4c032e551c6c">
+</p>
 
 - 학습용 데이터에서 k개의 최근접 이웃의 값을 찾아 그 값들로 새로운 값을 예측하는 알고리즘
 - 회귀와 분류에 사용되는 간단한 지도학습 알고리즘
@@ -15,7 +17,9 @@
 
 ### K값의 중요성
 
-![knn_2](https://github.com/zacinthepark/TIL/assets/86648892/fe70ed8a-903c-4435-9686-e11f0bbcaf3e)
+<p align="center">
+  <img width="600" alt="knn_2" src="https://github.com/zacinthepark/TIL/assets/86648892/fe70ed8a-903c-4435-9686-e11f0bbcaf3e">
+</p>
 
 - k(탐색하는 이웃 개수)에 따라 데이터를 다르게 예측할 수도 있음
 - k값에 따라 예측값이 달라지므로 **적절한 k값** 을 찾는 것이 중요 (기본값 = 5)
@@ -26,9 +30,17 @@
 
 ### 거리 구하기와 Scaling의 필요성
 
-![knn_3](https://github.com/zacinthepark/TIL/assets/86648892/5859f0a8-56dd-4346-9222-0df6db1d8031)
-![knn_4](https://github.com/zacinthepark/TIL/assets/86648892/30cd9bb0-dd05-4918-ac64-68884dae16d3)
-![knn_5](https://github.com/zacinthepark/TIL/assets/86648892/f30762c9-c084-48c3-8d55-9bf9f6d904b8)
+<p align="center">
+  <img width="600" alt="knn_3" src="https://github.com/zacinthepark/TIL/assets/86648892/5859f0a8-56dd-4346-9222-0df6db1d8031">
+</p>
+
+<p align="center">
+  <img width="600" alt="knn_4" src="https://github.com/zacinthepark/TIL/assets/86648892/30cd9bb0-dd05-4918-ac64-68884dae16d3">
+</p>
+
+<p align="center">
+  <img width="600" alt="knn_5" src="https://github.com/zacinthepark/TIL/assets/86648892/f30762c9-c084-48c3-8d55-9bf9f6d904b8">
+</p>
 
 - 3개의 가장 가까운 이웃 별 색을 통해 검은별 색이 파랑인지 주황인지 분류
 - 변수의 범위에 따라 거리 계산에 있어 중요도가 달라질 수 있음
@@ -44,7 +56,9 @@ $$ \large x_{z}=\frac{x-x_{mean}}{x_{std}}$$
 
 ### 학습 데이터를 기준으로 정규화
 
-<img src = "https://github.com/Jangrae/img/blob/master/minmax.png?raw=true" width=600 align="center"/>
+<p align="center">
+  <img width=600 alt="minmax" src="https://github.com/Jangrae/img/blob/master/minmax.png?raw=true">
+</p>
 
 - 일관된 예측을 위해 학습용 데이터를 통해 정규화를 진행하고 이를 학습 데이터, 평가 데이터 모두에 적용
 - 평가용 데이터에도 학습용 데이터를 기준으로 스케일링을 수행함 (학습용 데이터의 최대값, 최소값, 평균 등을 사용)
@@ -124,7 +138,9 @@ plt.boxplot(x_train, vert=False, labels=list(x))
 plt.show()
 ```
 
-![z_knn_1_1](https://github.com/zacinthepark/TIL/assets/86648892/9160d07e-7d60-4b26-9490-f0911c8ffb01)
+<p align="center">
+  <img width="700" alt="z_knn_1_1" src="https://github.com/zacinthepark/TIL/assets/86648892/9160d07e-7d60-4b26-9490-f0911c8ffb01">
+</p>
 
 - 방법 1: 공식 사용
 
@@ -147,7 +163,9 @@ plt.boxplot(x_train, vert=False, labels=list(x))
 plt.show()
 ```
 
-![z_knn_1_2](https://github.com/zacinthepark/TIL/assets/86648892/fc5003da-4273-441e-ac8d-27c271799fa3)
+<p align="center">
+  <img width="700" alt="z_knn_1_2" src="https://github.com/zacinthepark/TIL/assets/86648892/fc5003da-4273-441e-ac8d-27c271799fa3">
+</p>
 
 - 방법 2: 함수 사용
 
@@ -188,7 +206,9 @@ plt.boxplot(x_train, vert=False, labels=list(x))
 plt.show()
 ```
 
-![z_knn_1_3](https://github.com/zacinthepark/TIL/assets/86648892/29af8bc2-042f-464a-a0a3-ca22b5a174ae)
+<p align="center">
+  <img width="700" alt="z_knn_1_3" src="https://github.com/zacinthepark/TIL/assets/86648892/29af8bc2-042f-464a-a0a3-ca22b5a174ae">
+</p>
 
 ```python
 from sklearn.neighbors import KNeighborsRegressor
@@ -213,7 +233,9 @@ plt.ylabel('Ozone')
 plt.show()
 ```
 
-![z_knn_1_4](https://github.com/zacinthepark/TIL/assets/86648892/c74a2879-e4a7-4a2c-b783-0cbf929914f3)
+<p align="center">
+  <img width="700" alt="z_knn_1_4" src="https://github.com/zacinthepark/TIL/assets/86648892/c74a2879-e4a7-4a2c-b783-0cbf929914f3">
+</p>
 
 ### Code: 분류
 
