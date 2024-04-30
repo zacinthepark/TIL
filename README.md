@@ -159,6 +159,7 @@
 - [Class Imbalance](./mldl/Class_Imbalance.md)
 - [Linear Regression](./mldl/Linear_Regression.md)
 - [K-Nearest Neighbor](./mldl/KNN.md)
+- [K-Means Clustering](./mldl/KMeans.md)
 - [Decision Tree](./mldl/Decision_Tree.md)
 - [Logistic Regression](./mldl/Logistic_Regression.md)
 - [K Fold Cross Validation](./mldl/K_Fold_Cross_Validation.md)
