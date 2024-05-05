@@ -162,6 +162,7 @@
 - [K-Means Clustering](./mldl/KMeans.md)
 - [Decision Tree](./mldl/Decision_Tree.md)
 - [Logistic Regression](./mldl/Logistic_Regression.md)
+- [Support Vector Machine](./mldl/SVM.md)
 - [K Fold Cross Validation](./mldl/K_Fold_Cross_Validation.md)
 - [Hyperparameter, Random Search, Grid Search](./mldl/Hyperparameter_RandomSearch_GridSearch.md)
 - [Ensemble](./mldl/Ensemble.md)
