@@ -1075,3 +1075,219 @@ print(mean_absolute_error(y_val, pred))
 4.157787496284589
 3.10843615064434
 </pre>
+
+### 다중출력 (참고)
+
+> 다중출력은 특별한 목적이 아니라면 권장하지 않는다.
+
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import *
+from sklearn.preprocessing import MinMaxScaler
+
+from keras.models import Sequential, Model
+from keras.layers import Input, Dense, concatenate
+from keras.backend import clear_session
+from keras.optimizers import Adam
+
+path = 'https://raw.githubusercontent.com/DA4BAM/dataset/master/Carseats.csv'
+data = pd.read_csv(path)
+data.head()
+```
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sales</th>
+      <th>CompPrice</th>
+      <th>Income</th>
+      <th>Advertising</th>
+      <th>Population</th>
+      <th>Price</th>
+      <th>ShelveLoc</th>
+      <th>Age</th>
+      <th>Education</th>
+      <th>Urban</th>
+      <th>US</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>9.50</td>
+      <td>138</td>
+      <td>73</td>
+      <td>11</td>
+      <td>276</td>
+      <td>120</td>
+      <td>Bad</td>
+      <td>42</td>
+      <td>17</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>11.22</td>
+      <td>111</td>
+      <td>48</td>
+      <td>16</td>
+      <td>260</td>
+      <td>83</td>
+      <td>Good</td>
+      <td>65</td>
+      <td>10</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10.06</td>
+      <td>113</td>
+      <td>35</td>
+      <td>10</td>
+      <td>269</td>
+      <td>80</td>
+      <td>Medium</td>
+      <td>59</td>
+      <td>12</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7.40</td>
+      <td>117</td>
+      <td>100</td>
+      <td>4</td>
+      <td>466</td>
+      <td>97</td>
+      <td>Medium</td>
+      <td>55</td>
+      <td>14</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4.15</td>
+      <td>141</td>
+      <td>64</td>
+      <td>3</td>
+      <td>340</td>
+      <td>128</td>
+      <td>Bad</td>
+      <td>38</td>
+      <td>13</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
+
+#### 전처리
+
+```python
+target1 = 'Sales'
+target2 = 'US'
+data[target2] = np.where(data[target2] == 'Yes', 1, 0)
+
+cat_cols = ['ShelveLoc', 'Education', 'Urban']
+data = pd.get_dummies(data, columns=cat_cols, drop_first=True)
+
+train, val = train_test_split(data, test_size=0.2, random_state=20)
+
+x_train = train.drop([target1, target2], axis=1)
+y_train1 = train.loc[:, target1]
+y_train2 = train.loc[:, target2]
+
+x_val = val.drop([target1, target2], axis=1)
+y_val1 = val.loc[:, target1]
+y_val2 = val.loc[:, target2]
+
+scaler = MinMaxScaler()
+x_train = scaler.fit_transform(x_train)
+x_val = scaler.transform(x_val)
+```
+
+#### 모델링
+
+```python
+nfeatures = x_train.shape[1]
+
+# 입력 레이어 정의
+il = Input(shape=(nfeatures,))
+
+# 은닉 레이어 정의
+hl1 = Dense(32, activation='relu')(il)
+hl2 = Dense(16, activation='relu')(hl1)
+
+# 첫 번째 출력 레이어 정의
+hl3_1 = Dense(4, activation='relu')(hl2)
+ol1 = Dense(1, name='output1')(hl3_1)
+
+# 두 번째 출력 레이어 정의
+hl3_2 = Dense(4, activation='relu')(hl2)
+ol2 = Dense(1, activation='sigmoid', name='output2')(hl3_2)
+
+# Model 클래스를 사용하여 모델 정의
+model = Model(inputs=il, outputs=[ol1, ol2])
+
+# 모델 컴파일
+model.compile(optimizer= Adam(0.01), 
+              # loss={'output1': 'mse', 'output2': 'binary_crossentropy'}) # 출력층 이름을 기반으로 딕셔너리로 지정
+              loss= ['mse', 'binary_crossentropy']) # 출력층 순서대로 리스트로 지정
+
+# 모델 학습
+model.fit(x_train, [y_train1, y_train2], epochs=50, validation_split=0.2)
+```
+
+```python
+# 모델 예측
+pred = model.predict(x_val)
+```
+
+```python
+# 평가 1: Sales: pred[0]
+pred1 = pred[0]
+print('-----Sales Prediction-----')
+print('RMSE: ', mean_squared_error(y_val1, pred1, squared=False))
+print('MAE: ', mean_absolute_error(y_val1, pred1))
+print('R2: ', r2_score(y_val1, pred1))
+```
+
+<pre>
+-----Sales Prediction-----
+RMSE:  1.4048940807468555
+MAE:  1.1274876688718796
+R2:  0.7789446797111473
+</pre>
+
+```python
+# 평가2: US: pred[1]
+pred2 = np.where(pred[1] > 0.5, 1, 0)
+print('-----US Prediction-----')
+print(confusion_matrix(y_val2, pred2))
+print(classification_report(y_val2, pred2))
+```
+
+<pre>
+-----US Prediction-----
+[[21 12]
+ [ 5 42]]
+
+              precision    recall  f1-score   support
+
+           0       0.81      0.64      0.71        33
+           1       0.78      0.89      0.83        47
+
+    accuracy                           0.79        80
+   macro avg       0.79      0.76      0.77        80
+weighted avg       0.79      0.79      0.78        80
+</pre>
