@@ -4,7 +4,9 @@
 
 ### 힙 자료구조
 
-![heap_data_structure](https://github.com/zacinthepark/TIL/assets/86648892/f7c811e2-e203-44ba-b224-813eb4b641d1)
+<p align="center">
+  <img width="700" alt="heap_data_structure" src="https://github.com/zacinthepark/TIL/assets/86648892/f7c811e2-e203-44ba-b224-813eb4b641d1">
+</p>
 
 - 힙은 특정한 규칙을 가지는 트리로, **최댓값과 최솟값을 찾는 연산** 을 빠르게 하기 위해 고안된 완전이진트리를 기본으로 함
 
