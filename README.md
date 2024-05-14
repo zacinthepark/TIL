@@ -21,6 +21,8 @@
     - [OOP / 클래스 / 인스턴스 / 예외처리](./langs/python/OOP_클래스_인스턴스_예외처리.md)
     - [가상환경 설정](./langs/python/가상환경%20설정.md)
     - [클래스 정리](./langs/python/클래스%20정리.md)
+    - [args, kwargs](./langs//python/args_kwargs.md)
+    - [decorator](./langs/python/decorator.md)
     - [힙 자료구조와 heapq](./langs/python/heapq.md)
 
 - Javascript
