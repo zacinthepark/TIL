@@ -213,6 +213,7 @@
 - [온프레미스와 가상화](./cs/온프레미스와%20가상화.md)
 
 - [클라우드](./cs/클라우드.md)
+- [쿠버네티스](./cs/쿠버네티스.md)
 
 ### Tools
 
@@ -220,9 +221,9 @@
 - [Jira와 JQL 활용](./tools/Jira와%20JQL%20활용.md)
 - [Jupyter Notebook 기본 사용법](./tools/Jupyter%20Notebook%20기본%20사용법.md)
 
-### Misc
+### ETC
 
-- [Project Management](./misc/project-management.md)
-- [CLI](./misc/cli.md)
-- [Markdown](./misc/markdown.md)
-- [Cheatsheets](./misc/cheatsheets.md)
+- [Project Management](./etc/project-management.md)
+- [CLI](./etc/cli.md)
+- [Markdown](./etc/markdown.md)
+- [Cheatsheets](./etc/cheatsheets.md)
