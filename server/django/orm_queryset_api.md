@@ -173,10 +173,6 @@ def create(request):
 
 #### 3. UPDATE
 
-<p align="center">
-    <img width="600" alt="dj_54" src="https://user-images.githubusercontent.com/86648892/188498060-96aa0d6c-9d99-44ec-a405-cd02270908ed.png">
-</p>
-
 - 수정하고자 하는 인스턴스 객체를 조회 후 반환 값을 저장
 
 - 인스턴스 객체의 인스턴스 변수 값을 새로운 값으로 할당
@@ -185,10 +181,6 @@ def create(request):
 
 
 ### 4. DELETE
-
-<p align="center">
-    <img width="600" alt="dj_55" src="https://user-images.githubusercontent.com/86648892/188498061-ccfe2eed-b555-413c-9c94-6672c600c4b9.png">
-</p>
 
 - 삭제하고자 하는 인스턴스 객체를 조회 후 반환 값을 저장
 
@@ -253,12 +245,6 @@ def create(request):
         - `*fields` 는 선택인자이며, 조회하고자 하는 필드명을 가변인자로 받음
         - 필드를 지정하면 각 딕셔너리에는 지정한 필드에 대한 key와 value만을 출력
         - 입력하지 않을 경우 각 딕셔너리에는 레코드의 모든 필드에 대한 key와 value를 출력
-
-    - values 사용 여부에 따른 출력 비교
-
-<p align="center">    
-    <img width="600" alt="db45" src="https://user-images.githubusercontent.com/86648892/212546081-5f88479f-6cd3-40f7-98b0-6162bcff4756.png">
-</p>
 
 #### 이름과 나이를 나이가 많은 순서대로 조회
 
