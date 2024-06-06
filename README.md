@@ -72,7 +72,17 @@
 ### Server
 
 - Django
-    - [sqlite3](./server//django/sqlite3.md)
+    - Project Settings
+        - [Design Pattern](./server/django/django_design_pattern.md)
+        - [Settings](./server//django/django_settings.md)
+        - [Project and Apps](./server//django/django_project_apps.md)
+    - Model
+        - [sqlite3](./server//django/sqlite3.md)
+        
+
+
+
+
     - [ORM and QuerySet API](./server/django/orm_queryset_api.md)
 
 
@@ -85,7 +95,6 @@
     - [M:N Relationship](./server/django/m-n-relationship.md)
     - [Web / HTTP / Cookie / Session / URL / REST API](./server/django/REST%20API.md)
     - [Django REST Framework and Serializer](./server/django/DRF.md)
-    - [초기 데이터](./server/django/%EC%B4%88%EA%B8%B0%20%EB%8D%B0%EC%9D%B4%ED%84%B0.md)
     - [Django Static Files](./server/django/django-static-files.md)
 
 - [DB 설계와 정규화](./server/DB%20설계와%20정규화.md)
