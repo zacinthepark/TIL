@@ -78,7 +78,9 @@
         - [Project and Apps](./server//django/django_project_apps.md)
     - Model
         - [sqlite3](./server//django/sqlite3.md)
-        
+        - [DB Settings](./server/django/django_db_settings.md)
+        - [Model Class and Fields](./server/django/django_model_class_fields.md)
+
 
 
 
