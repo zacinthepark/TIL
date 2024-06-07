@@ -49,3 +49,16 @@ DATABASES = {
 - https://sqlitebrowser.org/dl/
 
 - DB Browser를 통해서 데이터베이스 열어서 확인 가능
+
+### shell_plus
+
+- Shell이란 운영체제 상에서 다양한 기능과 서비스를 구현하는 인터페이스를 제공하는 프로그램 (User ↔ Shell ↔ OS)
+
+- Django Shell
+    - `pip install django-extensions`
+    - `python manage.py shell_plus`
+        - django-extension이 제공하는 shell_plus
+        - 자주 사용하는 모듈을 자동으로 import
+        - 없다면 `python manage.py shell`
+
+- shell 종료 시 `exit()`

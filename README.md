@@ -82,6 +82,7 @@
         - [Model Class and Fields](./server/django/django_model_class_fields.md)
         - [Model Relations](./server/django/django_model_relations.md)
         - [ORM and QuerySet API](./server/django/orm_queryset_api.md)
+        - [Improve Query](./server/django/django_improve_query.md)
 
 
     - [데이터베이스 기초](./server/django/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%20%EA%B8%B0%EC%B4%88.md)
