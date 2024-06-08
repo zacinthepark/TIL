@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8" />
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <style>
         html {position: relative; min-height: 100%}
         body{margin-bottom: 60px}
@@ -27,12 +27,12 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if not user.is_authenticated %}
-                        <li><a href="{% url 'signup' %}">회원 가입 </a> </li>
+                        <li><a href="{% url 'signup' %}">회원가입</a></li>
                         <li><a href="{% url 'login' %}?next={{request.path}}">로그인</a></li>
                     {% else %}
                         <li><a href="">{{user}}님!</a> </li> 
-                        <li><a href="{% url 'profile' %}">내정보</a> </li>
-                        <li><a href="{%  url 'logout' %}?next={{request.path}}">로그 아웃</a></li>
+                        <li><a href="{% url 'profile' %}">내정보</a></li>
+                        <li><a href="{% url 'logout' %}?next={{request.path}}">로그아웃</a></li>
                     {% endif %}
                  </ul>
                 </div>
@@ -54,7 +54,6 @@
             </div>            
         </div>
     </div>
-
     <div id="page-footer">
         <div class="container">
             <p class="text-muted">
