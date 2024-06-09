@@ -88,6 +88,10 @@
     - Template
         - [Template Settings](./server/django/django_template_settings.md)
         - [Template Response](./server//django/django_template_response.md)
+    - Form
+        - [HttpRequest](./server/django/django_http_request.md)
+        - [Form](./server/django/django_form.md)
+        - [ModelForm](./server/django/django_modelform.md)
 
 
 

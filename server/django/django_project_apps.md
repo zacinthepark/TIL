@@ -140,9 +140,79 @@ urlpatterns = [
     - 주어진 URL 패턴 이름 및 선택적 매개 변수와 일치하는 절대경로 주소를 반환
 
 - URL Namespace
-    - `app_name` attribute을 작성해 URL namespace를 설정
-    - `{% url 'app_name:url_name' %}`을 통해 템플릿에서 접근
-    - `app_name`을 지정한 이후에는 url 태그에서 반드시 'app_name:url_name' 형태로 사용해야하며 그렇지 않는다면 NoReverseMatch 에러가 발생
+    - urls.py 파일에서 `app_name` attribute을 작성해 URL namespace를 설정
+    - `{% url 'appName:urlName' %}`을 통해 템플릿에서 접근
+    - `app_name`을 지정한 이후에는 url 태그에서 반드시 'appName:urlName' 형태로 사용해야하며 그렇지 않는다면 NoReverseMatch 에러가 발생
+
+### URL Tag
+
+- 템플릿에서 URL 접근 시 사용
+    - `{% url 'appName:pathName' %}
+    - `{% url 'appName:pathName' 값1 값2 %}
+
+- `<a href="{% url 'blog:detail' post.id %}">{{post.title}}</a>`
+    - `<a hreft="/blog/{{post.id}}/">{{post.title}}</a>`와 동일
+
+#### URL Reverse
+
+- URL 패턴에 정의된 URL의 name을 바탕으로 역으로 URL에 접근
+
+- URL에 접근하고, 인자를 주어 동적으로 URL 생성 가능
+    - `reverse(appName:pathName)`
+    - `reverse(appName:pathName, args=[값1, 값2, ...])`
+    - `reverse(appName:pathName, kwargs={키1:값1, 키2:값2, ...})`
+
+#### redirect
+
+- 장고의 shortcuts 중 하나로 view 함수에서 사용
+    - `redirect('URL')`
+    - `redirect('appName:pathName')`
+    - `redirect('appName:pathName', 값1, 값2)`
+    - `redirect('appName:pathName, 키1=값1, 키2=값2)`
+
+- `redirect('blog:detail', id=1)`
+    - `<HttpResponseRedirect status_code=302, "text/html; charset=utf-8", url="/blog/1/">` 반환
+    - 응답받은 브라우저는 해당 주소로 재요청 및 정상적으로 응답받을 시 200 status code 반환
+
+#### get_absolute_url
+
+- 장고 모델 객체의 절대 URL 반환에 사용
+    - 객체가 생성되거나 업데이트된 후 리디렉션할 URL 지정하는데 유용
+    - 일반적으로 `reverse`와 함께 사용
+
+```python
+# models.py
+from django.db import models
+from django.urls import reverse
+
+class Post(models.Model):
+    body = models.TextField()
+    title = models.CharField(max_length=250)
+    tag = models.ManyToManyField('Tag', blank=True)
+    ip = models.GenericIPAddressField(null=True)
+
+    def __str__(self):
+        return self.title
+    
+    def get_absolute_url(self):
+        return reverse('blog:detail', args=[self.id])
+
+# views.py
+from django.shortcuts import render, redirect
+
+def post_create(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data)
+            post = Post.objects.create(**form.cleaned_data)
+            # redirect에서 내부적으로 post.get_absolute_url()한 결과로 redirect
+            return redirect(post)
+    else:
+        form = PostForm()
+        return render(request, 'blog/post_form.html', {'form': form})
+
+```
 
 ### 추가 설정
 
