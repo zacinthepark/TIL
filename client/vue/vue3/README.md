@@ -69,7 +69,7 @@
 
 ---
 
-먼저 HTML/CSS 결과물을 확인 하기 위해서 크롬 브라우저를 설치해 보도록 하겠습니다. 크롬 브라우저는 개발자에게 편리한 다양한 기능을 지원하고 있기 때문에 개발하는 과정에서 편리합니다. 😀
+먼저 HTML/CSS 결과물을 확인 하기 위해서 크롬 브라우저를 설치해 보도록 하겠습니다. 크롬 브라우저는 개발자에게 편리한 다양한 기능을 지원하고 있기 때문에 개발하는 과정에서 편리합니다.
 
 - [크롬 브라우저 설치](https://www.google.co.kr/chrome/?brand=IBEF&gclid=CjwKCAjwz_WGBhA1EiwAUAxIcYR9QVHF878AhQb5i7oQWrsxv9fkePuTxzHlpewgznBosx0VOsW5fRoCSZ4QAvD_BwE&gclsrc=aw.ds)
 
@@ -204,7 +204,7 @@ Vue는 User Interface 개발을 위한 자바스크립트 프레임워크 입니
 
 ---
 
-템플릿 구문 이외에도 다음과 같은 방법으로 엘리먼트 속성에 **데이터를 바인딩(연결)**할 수 있습니다.
+템플릿 구문 이외에도 다음과 같은 방법으로 엘리먼트 속성에 **데이터를 바인딩(연결)** 할 수 있습니다.
 
 ```html
 <!DOCTYPE html>
@@ -233,7 +233,7 @@ Vue는 User Interface 개발을 위한 자바스크립트 프레임워크 입니
 
 위 예제에서 `v-bind` 속성은 데이터(상태) 속성에 바인딩할 때 사용하는 특수 속성 입니다. 바인딩 된 DOM은 `placeholder` 속성을 Vue 인스턴스의 `message` 속성으로 최신 상태를 유지합니다. (반응형 동작)
 
-그리고 이렇게 `v-` 접두어가 붙은 특수 속성을 **디렉티브(directive)**라고 합니다.
+그리고 이렇게 `v-` 접두어가 붙은 특수 속성을 **디렉티브(directive)** 라고 합니다.
 
 ## 이벤트 핸들링(v-on)
 
@@ -347,11 +347,10 @@ data() {
 
 ---
 
-자바스크립트에서 재사용할 수 있도록 코드를 분리한 파일을 **모듈**이라고 하는데요. Vue에서도 마찬가지로 **UI(HTML, CSS, JS)를 재사용할 수 있도록 정의한 것**을 **컴포넌트**라고 ****합니다.
+자바스크립트에서 재사용할 수 있도록 코드를 분리한 파일을 **모듈** 이라고 하는데요. Vue에서도 마찬가지로 **UI(HTML, CSS, JS)를 재사용할 수 있도록 정의한 것** 을 **컴포넌트** 라고합니다.
 
 <aside>
 💡 JavaScript 코드를 재사용하는 모듈과 다르게, 컴포넌트는 JavaScript 뿐만아니라 HTML, CSS도 함께 캡슐화하여 재사용이 가능하게 합니다.
-
 </aside>
 
 ### 컴포넌트를 사용하는 이유
@@ -373,7 +372,7 @@ data() {
 
 컴포넌트 **어떤 방법으로 정의** 하느냐에 따라 `문자열 템플릿`, `Single File Component` 두 가지 방법이 있습니다.
 
-### **문자열 템플릿 (string** template**)**
+### **문자열 템플릿 (string template)**
 
 ```jsx
 // BookComponent.js 파일
@@ -432,7 +431,7 @@ export default {
 ```
 
 <aside>
-💡 실무에서는 `문자열 템플릿` 대신 `Single File Component`를 사용하고 있습니다.
+💡 실무에서는 문자열 템플릿 대신 Single File Component를 사용하고 있습니다.
 
 </aside>
 
@@ -497,7 +496,7 @@ export default {
 - 작은 의미 재사용 가능한 컴포넌트
 - 넓은 의미 모든 Vue 인스턴스는 컴포넌트이다.
 
-쉽게 말해서 Vue는 컴포넌트로 구서된 애플리케이션이다 라고 보셔도 될 만큼 중요하다라는 뜻입니다.
+쉽게 말해서 Vue는 컴포넌트로 구성된 애플리케이션이다 라고 보셔도 될 만큼 중요하다라는 뜻입니다.
 
 ![components](https://user-images.githubusercontent.com/86648892/226257448-685862b8-0d74-4365-a201-ed528c426f7c.png)
 
@@ -514,9 +513,9 @@ Vue를 설치할 수 있는 방법은 크게 3가지가 있습니다.
 - 공식 **CLI**를 사용하여 프로젝트를 scaffold하고, 최신 프론트엔드 워크플로우(예. hot-reload, lint-on-save 등)를 위한 batteries-included build를 제공합니다.
 
 <aside>
-💡 **scaffold**란? 개발을 용이하기 시작할 수 있는 발판을 제공해주는 것을 말합니다.
+💡 scaffold : 개발을 용이하기 시작할 수 있는 발판을 제공해주는 것
 
-**batteries-included**란? 외부 라이브러리를 더하지 않아도 기본적으로 제공하는 표준 라이브러리만으로도 시작하는데 문제 없다는 의미로 해석할 수 있습니다.
+**batteries-included** : 외부 라이브러리를 더하지 않아도 기본적으로 제공하는 표준 라이브러리만으로도 시작하는데 문제 없다는 의미로 해석할 수 있습니다.
 
 </aside>
 
@@ -540,7 +539,7 @@ npm install vue@next
 
 ### Vue CLI
 
-Vue CLI는 웹팩 기반 빌드도구 입니다. 하지만 Vue CLI는 현재 유지관리 모드에 있습니다. 특정 특정 웹팩 기능에 의존하지 않는한 Vite로 새 프로젝트를 시작하는 것이 좋습니다.
+Vue CLI는 웹팩 기반 빌드도구 입니다. 하지만 Vue CLI는 현재 유지관리 모드에 있습니다. 특정 웹팩 기능에 의존하지 않는한 Vite로 새 프로젝트를 시작하는 것이 좋습니다.
 
 Vue CLI를 사용하기 위해서는 `@vue/cli` v4.5 이상의 버전을 설치해야 합니다.
 
@@ -865,28 +864,28 @@ Composition API는 옵션(`data`, `methods`, `...`)을 선언하는 대신 가�
 
 ```jsx
 export default {
-	data() {
-		return {
-			counter: 0,
-			books: [],
-		};
-	},
-	methods: {
-		increment() {
-			this.counter++;
-		},
-		addBook(title, author) {
+  data() {
+    return {
+      counter: 0,
+      books: [],
+    };
+  },
+  methods: {
+    increment() {
+      this.counter++;
+    },
+    addBook(title, author) {
       this.books.push({ title, author });
     },
-	},
-	computed: {
+  },
+  computed: {
     firstBook() {
       return this.books[0];
     }
   }
-	mounted() {
-		console.log('애플리케이션이 마운트 되었습니다!');
-	},
+  mounted() {
+    console.log('애플리케이션이 마운트 되었습니다!');
+  },
 };
 ```
 
@@ -902,31 +901,31 @@ import { onMounted, reactive, ref } from 'vue';
 
 const counter = ref(0);
 const increment = () => {
-	counter.value++;
+  counter.value++;
 };
 
 const books = reactive([]);
 const addBook = (title, author) => {
-	books.push({ title, author });
+  books.push({ title, author });
 };
 
 onMounted(() => {
-	console.log('애플리케이션이 마운트 되었습니다!');
+  console.log('애플리케이션이 마운트 되었습니다!');
 });
 </script>
 ```
 
-Composition API를 사용하면 동일한 논리적 관심사 코드가 그룹화 되어 코드를 분석하기도 쉽고 유지보수가 용이해집니다. 또한 논리적 관심사 코드어 외부 유틸 파일로 추출하기가 쉽습니다.
+Composition API를 사용하면 동일한 논리적 관심사 코드가 그룹화 되어 코드를 분석하기도 쉽고 유지보수가 용이해집니다. 또한 논리적 관심사 코드를 외부 유틸 파일로 추출하기가 쉽습니다.
 
 ### 코드 재사용성
 
-Composition API의 가장 큰 장점은 **[Composable 함수](https://vuejs.org/guide/reusability/composables.html)**의 형태로 로직의 재사용이 가능하다는 것입니다. Options API의 기본 로직 재사용 메커니즘인 Mixins의 모든 단점을 해결합니다.
+Composition API의 가장 큰 장점은 **[Composable 함수](https://vuejs.org/guide/reusability/composables.html)** 의 형태로 로직의 재사용이 가능하다는 것입니다. Options API의 기본 로직 재사용 메커니즘인 Mixins의 모든 단점을 해결합니다.
 
-Composition API의 재사용 기능은 계속해서 증가하는 구성 가능한 유틸리티 모음인 [**VueUse**](https://vueuse.org/)와 같은 인상적인 커뮤니티 프로젝트를 탄생시켰습니다. 또한 **[immutable data](https://vuejs.org/guide/extras/reactivity-in-depth.html#immutable-data)**, **[state machines](https://vuejs.org/guide/extras/reactivity-in-depth.html#state-machines)**, **[RxJS](https://vueuse.org/rxjs/readme.html#vueuse-rxjs)**와 같은 상태 저장 타사 서비스 또는 라이브러리를 Vue의 **반응성 시스템(Reactivity system)**에 쉽게 통합하기 위한 깨끗한 메커니즘 역할을 합니다.
+Composition API의 재사용 기능은 계속해서 증가하는 구성 가능한 유틸리티 모음인 [**VueUse**](https://vueuse.org/) 와 같은 인상적인 커뮤니티 프로젝트를 탄생시켰습니다. 또한 **[immutable data](https://vuejs.org/guide/extras/reactivity-in-depth.html#immutable-data)** , **[state machines](https://vuejs.org/guide/extras/reactivity-in-depth.html#state-machines)** , **[RxJS](https://vueuse.org/rxjs/readme.html#vueuse-rxjs)** 와 같은 상태 저장 타사 서비스 또는 라이브러리를 Vue의 **반응성 시스템(Reactivity system)** 에 쉽게 통합하기 위한 깨끗한 메커니즘 역할을 합니다.
 
 - **Compositions API는 Options API가 가지고 있던 2가지 주요 제한 사항을 해결합니다.**
-    - **hook**를 사용하여 관련 **코드 조각을 함께 그룹화**합니다.
-    - **Composables**을 사용하면 애플리케이션 전체에서 **코드를 매우 쉽게 재사용**할 수 있습니다.
+    - **hook** 을 사용하여 관련 **코드 조각을 함께 그룹화** 합니다.
+    - **Composables** 을 사용하면 애플리케이션 전체에서 **코드를 매우 쉽게 재사용** 할 수 있습니다.
 
 ### TypeScript
 
@@ -934,11 +933,9 @@ Composition API의 재사용 기능은 계속해서 증가하는 구성 가능�
 
 ## [Options API와 관계](https://vuejs.org/guide/extras/composition-api-faq.html#does-composition-api-cover-all-use-cases)
 
-2022. 4. 19
-
 ### **Composition API로 기존 모든 사용 사례를 커버 가능?**
 
-Composition API를 사용할 때 여전히 필요할 수 있는 몇 가지 옵션(`props`, `emits`, `name` 및 `inheritAttrs`)만 있습니다. `<script setup>`을 사용하는 경우 `inheritAttrs` 옵션만 필요할 수 있는 유일한 옵션입니다.
+Composition API를 사용할 때 여전히 필요할 수 있는 몇 가지 옵션(`props`, `emits`, `name` 및 `inheritAttrs`)이 있습니다. `<script setup>`을 사용하는 경우 `inheritAttrs` 옵션이 필요할 수 있는 유일한 옵션입니다.
 
 ### 두 API를 함께 사용할 수 있습니까?
 
@@ -972,7 +969,7 @@ Composition API를 사용할 때 여전히 필요할 수 있는 몇 가지 옵�
 
 ## Composition API
 
-Composition API는 옵션(`data`, `methos`, `...`)을 선언하는 대신 가져온 함수(`ref`, `onMounted`, `...`)를 사용하여 Vue 컴포넌트를 작성할 수 있는 API 세트를 말합니다.
+Composition API는 옵션(`data`, `methods`, `...`)을 선언하는 대신 가져온 함수(`ref`, `onMounted`, `...`)를 사용하여 Vue 컴포넌트를 작성할 수 있는 API 세트를 말합니다.
 
 다음은 Composition API에서 각각의 API(`ref`, `onMounted`, `...`)들을 포괄하는 용어 입니다.
 
@@ -1001,47 +998,47 @@ Composition API는 옵션(`data`, `methos`, `...`)을 선언하는 대신 가져
 
 ```jsx
 <template>
-	<div>
-		<h2>반응형</h2>
-		<p>{{ reactiveMessage }}</p>
-		<button v-on:click="addReactiveMesssage">Add message</button>
-		<h2>일반</h2>
-		<p>{{ normalMessage }}</p>
-		<button v-on:click="addNormalMesssage">Add message</button>
-	</div>
+  <div>
+    <h2>반응형</h2>
+    <p>{{ reactiveMessage }}</p>
+    <button v-on:click="addReactiveMesssage">Add message</button>
+    <h2>일반</h2>
+    <p>{{ normalMessage }}</p>
+    <button v-on:click="addNormalMesssage">Add message</button>
+  </div>
 </template>
 
 <script>
 import { isRef, onUpdated, ref } from 'vue';
 
 export default {
-	setup() {
-		// 반응형 상태 선언
-		const reactiveMessage = ref('Reactive Message');
-		// 일반 변수 선언
-		let normalMessage = 'Normal Message';
+  setup() {
+    // 반응형 상태 선언
+    const reactiveMessage = ref('Reactive Message');
+    // 일반 변수 선언
+    let normalMessage = 'Normal Message';
 
-		console.log('isRef(reactiveMessage): ', isRef(reactiveMessage)); // true
-		console.log('isRef(normalMessage): ', isRef(normalMessage)); // false
+    console.log('isRef(reactiveMessage): ', isRef(reactiveMessage)); // true
+    console.log('isRef(normalMessage): ', isRef(normalMessage)); // false
 
-		const addReactiveMesssage = () => {
-			reactiveMessage.value = reactiveMessage.value + '!';
-		};
-		const addNormalMesssage = () => {
-			normalMessage = normalMessage + '!';
-		};
+    const addReactiveMesssage = () => {
+      reactiveMessage.value = reactiveMessage.value + '!';
+    };
+    const addNormalMesssage = () => {
+      normalMessage = normalMessage + '!';
+    };
 
-		onUpdated(() => {
-			console.log('update component');
-		});
+    onUpdated(() => {
+      console.log('update component');
+    });
 
-		return {
-			reactiveMessage,
-			normalMessage,
-			addReactiveMesssage,
-			addNormalMesssage,
-		};
-	},
+    return {
+      reactiveMessage,
+      normalMessage,
+      addReactiveMesssage,
+      addNormalMesssage,
+    };
+  },
 };
 </script>
 
@@ -1052,14 +1049,9 @@ export default {
 
 ### 라이프 사이클
 
-Vue 인스턴스나 컴포넌트가 생성될 때, 미리 사전에 정의된 몇 단계의 과정을 거치게 되는데 이를 **라이프사이클(Lifecycle)**이라 합니다.
+Vue 인스턴스나 컴포넌트가 생성될 때, 미리 사전에 정의된 몇 단계의 과정을 거치게 되는데 이를 **라이프사이클(Lifecycle)** 이라 합니다.
 
 쉽게 말해, Vue 인스턴스가 생성된 후 우리 눈에 보여지고, 사라지기까지의 단계를 말합니다.
-
-- 라이프사이클 다이어그램
-    
-    ![lifecycle.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e313fbe3-c77d-4dfd-a0d1-b96c095eeacc/lifecycle.png)
-    
 
 Vue 인스턴스는 크게 생성(create)되고, DOM에 부착(mount)되고, 업데이트(update)되며, 없어지는(destroy) 4가지 과정을 거치게 됩니다.
 
@@ -1190,7 +1182,7 @@ export default {
 
 ### 공공 자산 노출
 
-`expose`은 **[template refs](https://vuejs.org/guide/essentials/template-refs.html#ref-on-component)(템플릿 참조)**를 통해 상위 컴포넌트에서 컴포넌트의 인스턴스에 접근할 때 노출되는 속성을 명시적으로 제한하는 데 사용할 수 있는 함수입니다.
+`expose`은 **[template refs](https://vuejs.org/guide/essentials/template-refs.html#ref-on-component)(템플릿 참조)** 를 통해 상위 컴포넌트에서 컴포넌트의 인스턴스에 접근할 때 노출되는 속성을 명시적으로 제한하는 데 사용할 수 있는 함수입니다.
 
 ```jsx
 export default {
@@ -1224,7 +1216,7 @@ export default {
 
 render function을 반환하면 다른 것을 반환할 수 없습니다. 내부적으로는 문제가 되지 않지만 template refs(템플릿 참조)를 통해 이 컴포넌트의 메서드를 상위 컴포넌트에 노출하려는 경우 문제가 될 수 있습니다.
 
-이때 **`[expose()](https://vuejs.org/api/composition-api-setup.html#exposing-public-properties)`**를 호출하여 이 문제를 해결할 수 있습니다.
+이때 **[expose()](https://vuejs.org/api/composition-api-setup.html#exposing-public-properties)** 를 호출하여 이 문제를 해결할 수 있습니다.
 
 ```jsx
 import { h, ref } from 'vue'
@@ -1258,21 +1250,21 @@ export default {
 
 ```jsx
 <template>
-	<div>
-		<p>문자열 : {{ message }}</p>
-	</div>
+  <div>
+    <p>문자열 : {{ message }}</p>
+  </div>
 </template>
 
 <script>
 import { ref } from 'vue';
 
 export default {
-	setup() {
-		const message = ref('안녕하세요');
-		return {
-			message,
-		};
-	},
+  setup() {
+    const message = ref('안녕하세요');
+    return {
+      message,
+    };
+  },
 };
 </script>
 
@@ -1298,15 +1290,14 @@ export default {
 
 > **TIP**
 
-웹사이트에서 임의의 HTML을 동적으로 렌더링하면 **[XSS 취약점 (opens new window)](https://en.wikipedia.org/wiki/Cross-site_scripting)**
-(https://en.wikipedia.org/wiki/Cross-site_scripting)으로 쉽게 이어질 수 있고 이는 매우 위험할 소지가 있습니다. HTML 보간법은 반드시 **신뢰할 수 있는 콘텐츠에서만 사용**하고 **사용자가 제공한 콘텐츠에서는 절대** 사용하면 안 됩니다.
+웹사이트에서 임의의 HTML을 동적으로 렌더링하면 **[XSS 취약점 (opens new window)](https://en.wikipedia.org/wiki/Cross-site_scripting)** 으로 쉽게 이어질 수 있고 이는 매우 위험할 소지가 있습니다. HTML 보간법은 반드시 **신뢰할 수 있는 콘텐츠에서만 사용** 하고 **사용자가 제공한 콘텐츠에서는 절대** 사용하면 안 됩니다.
 > 
 
 ## 속성 바인딩 (v-bind)
 
 ---
 
-이중 중괄호는 HTML 속성에 사용할 수 없습니다. 대신 **`[v-bind` 디렉티브](https://v3.ko.vuejs.org/api/#v-bind)**를 사용하세요.
+이중 중괄호는 HTML 속성에 사용할 수 없습니다. 대신 **[v-bind 디렉티브](https://v3.ko.vuejs.org/api/#v-bind)** 를 사용하세요.
 
 ```html
 <div v-bind:title="dynamicTitle">마우스를 올려보세요.</div>
@@ -1331,7 +1322,7 @@ export default {
 
 ### 다중 속성 바인딩
 
-객여러 여러 속성을 한번에 바인딩할 수 있습니다.
+여러 속성을 한번에 바인딩할 수 있습니다.
 
 ```jsx
 const attrs = {
@@ -1341,7 +1332,7 @@ const attrs = {
 }
 ```
 
-`v-bind`를 **인수 없이 사용**하여 단일 요소에 바인딩할 수 있습니다.
+`v-bind`를 **인수 없이 사용** 하여 단일 요소에 바인딩할 수 있습니다.
 
 ```jsx
 <input v-bind="attrs" />
@@ -1374,7 +1365,7 @@ import { reactive } from 'vue'
 const state = reactive({ count: 0 })
 ```
 
-컴포넌트 `<template>`에서 반응형 객체를 사용하려면 `setup()`함수에서 **선언하고 리턴**해야 합니다.
+컴포넌트 `<template>`에서 반응형 객체를 사용하려면 `setup()`함수에서 **선언하고 리턴** 해야 합니다.
 
 - 반환된 상태는 반응형 객체입니다. 반응형 변환은 "깊습니다”
 - 컴포넌트의 `data()`에서 객체를 반환할 때, 이것은 내부적으로 `reactive()`에 의해 반응형으로 만들어집니다.
@@ -1409,7 +1400,7 @@ import { ref } from 'vue'
 const count = ref(0)
 ```
 
-`ref` 메서드는 변이가능한(mutable) 객체를 반환합니다. 이 객체 안에는 `value`라는 하나의 속성만 포함하는데요.  `value`값은 `ref()` 메서드에서 매개변수로 받은 값을 갖고 있습니다. 이 객체는 내부의 `value` 값에 대한 반응형 참조(**ref**erence) 역할을 합니다.
+`ref` 메서드는 변이가능한(mutable) 객체를 반환합니다. 이 객체 안에는 `value`라는 하나의 속성만 포함하는데요.  `value`값은 `ref()` 메서드에서 매개변수로 받은 값을 갖고 있습니다. 이 객체는 내부의 `value` 값에 대한 반응형 참조(**ref** erence) 역할을 합니다.
 
 ```jsx
 import { ref } from 'vue'
@@ -1423,7 +1414,7 @@ console.log(count.value) // 1
 
 ### 템플릿에서 사용
 
-템플릿에서 사용할 때는 자동으로 내부 값(`value`)을 풀어내기(Unwarpping) 때문에 `.value`를 추가할 필요없이 사용할 수 있습니다.
+템플릿에서 사용할 때는 자동으로 내부 값(`value`)을 풀어내기(Unwrapping) 때문에 `.value`를 추가할 필요없이 사용할 수 있습니다.
 
 ```html
 <template>
@@ -1460,7 +1451,7 @@ console.log(count.value) // 1
 console.log(state.count) // 1
 ```
 
-### ****배열 및 컬렉션의 참조 Unwarpping****
+### **배열 및 컬렉션의 참조 Unwarpping**
 
 반응형 객체와 달리 `ref`가 반응형 배열 또는 `Map`과 같은 기본 컬렉션 타입의 요소로 접근될 때 수행되는 래핑 해제가 없습니다.
 
@@ -1476,7 +1467,7 @@ console.log(map.get('count').value)
 
 ## 반응형 상태 구조 분해하기(Destructuring)
 
-큰 반응형 객체의 몇몇 속성을 사용하길 원할 때, 원하는 속성을 얻기 위해 **[ES6 구조 분해 할당](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)**을 사용하는 것은 매우 일반적입니다.
+큰 반응형 객체의 몇몇 속성을 사용하길 원할 때, 원하는 속성을 얻기 위해 **[ES6 구조 분해 할당](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)** 을 사용하는 것은 매우 일반적입니다.
 
 ```jsx
 import { reactive } from 'vue'
