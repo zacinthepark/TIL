@@ -1648,13 +1648,13 @@ export default {
 
 ### 객체 바인딩
 
-클래스를 동적으로 바인딩 하기위해선는 `:class`(`v-bind:class`)를 사용할 수 있습니다.
+클래스를 동적으로 바인딩하기 위해서는 `:class`(`v-bind:class`)를 사용할 수 있습니다.
 
 ```html
-<div
+<div?>
   class="text"
   :class="{ active: isActive, 'text-danger': hasError }"
-></div
+</div>
 ```
 
 위 예시처럼 `v-bind:class` 디렉티브는 일반 `class`속성과 공존할 수 있습니다. 그리고 객체를 반환하는 `computed`에 바인딩할 수도 있습니다.
@@ -1765,7 +1765,7 @@ const styleObject = reactive({
 
 ---
 
-여러개의 HTML요소를 `v-if` 디렉티브로 연결하고 싶다면 `[<template>](https://developer.mozilla.org/ko/docs/Web/HTML/Element/template)`을 사용할 수 있습니다.
+여러개의 HTML요소를 `v-if` 디렉티브로 연결하고 싶다면 [template](https://developer.mozilla.org/ko/docs/Web/HTML/Element/template)을 사용할 수 있습니다.
 
 ```html
 <template v-if="visible">
@@ -1786,7 +1786,7 @@ const styleObject = reactive({
 	<button @click="show = !show">toggle show</button>
 ```
 
-## ****`v-if` 대 `v-show`**
+## **`v-if` 대 `v-show`**
 
 ---
 
@@ -1798,15 +1798,15 @@ const styleObject = reactive({
 
 일반적으로 `v-if`는 전환 비용이 높은 반면, `v-show`는 초기 렌더링 비용이 높습니다. 그러므로 무언가를 자주 전환해야 한다면 `v-show`를 사용하는 게 좋고, 런타임 시 조건이 변경되지 않는다면 `v-if`를 사용하는 게 더 낫습니다.
 
-## ****`v-if` 와 `v-for`**
+## **`v-if` 와 `v-for`**
 
 ---
 
 > **TIP**
-`v-if`와 `v-for`를 함께 쓰는 것은 **권장하지 않습니다**. 자세한 내용은 **[스타일 가이드](https://v3.ko.vuejs.org/style-guide/#v-if%E1%84%8B%E1%85%AA-v-for-%E1%84%83%E1%85%A9%E1%86%BC%E1%84%89%E1%85%B5-%E1%84%89%E1%85%A1%E1%84%8B%E1%85%AD%E1%86%BC-%E1%84%91%E1%85%B5%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5-%E1%84%91%E1%85%B5%E1%86%AF%E1%84%89%E1%85%AE)**를 참고하세요.
+`v-if`와 `v-for`를 함께 쓰는 것은 **권장하지 않습니다**. 자세한 내용은 [스타일 가이드](https://v3.ko.vuejs.org/style-guide/#v-if%E1%84%8B%E1%85%AA-v-for-%E1%84%83%E1%85%A9%E1%86%BC%E1%84%89%E1%85%B5-%E1%84%89%E1%85%A1%E1%84%8B%E1%85%AD%E1%86%BC-%E1%84%91%E1%85%B5%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5-%E1%84%91%E1%85%B5%E1%86%AF%E1%84%89%E1%85%AE)를 참고하세요.
 > 
 
-동일한 엘리먼트에 `v-if`와 `v-for`를 함께 사용할 때, `v-if`가 더 높은 우선순위를 갖습니다. 자세한 내용은 **[리스트 렌더링 가이드](https://v3.ko.vuejs.org/guide/list#v-for-with-v-if)**를 참고하세요.
+동일한 엘리먼트에 `v-if`와 `v-for`를 함께 사용할 때, `v-if`가 더 높은 우선순위를 갖습니다. 자세한 내용은 [리스트 렌더링 가이드](https://v3.ko.vuejs.org/guide/list#v-for-with-v-if)를 참고하세요.
 
 ### 참고
 
@@ -1839,7 +1839,7 @@ const items = reactive([
 
 - `v-for=”item in items”` 문법을 사용해서 배열에서 항목을 순차적으로 할당합니다.
 - `v-for=”(item, index) in items”` 문법을 사용해서 배열 인덱스를 가져올 수 있습니다.
-- 항목을 나열할 때 각 `[:key](https://v3.ko.vuejs.org/api/special-attributes.html#key)` 속성에는 고유한 값을 지정해야 합니다. (vue 2.2.0 부터 필수)
+- 항목을 나열할 때 각 [:key](https://v3.ko.vuejs.org/api/special-attributes.html#key) 속성에는 고유한 값을 지정해야 합니다. (vue 2.2.0 부터 필수)
 
 ## `v-for` 객체
 
@@ -1869,7 +1869,7 @@ const myObject = reactive({
 
 디렉티브(directives)는 앞에서 말씀드렸던 것처럼 `v-`접두사가 있는 특수 속성입니다. 그리고 디렉티브(directives)는 그대로 직역하면 지시를 뜻 합니다. 즉, 디렉티브(directives)는 기능상에서 중요한 역할인 컴포넌트(또는 DOM 요소)에게 “**~~하게 작동하라”** 하고 지시를 해주는 지시문을 말합니다.
 
-Vue는 여러내장 디렉티브를 제공합니다.
+Vue는 여러 내장 디렉티브를 제공합니다.
 
 - `v-text`
 - `v-html`
@@ -1897,11 +1897,11 @@ Vue는 여러내장 디렉티브를 제공합니다.
 
 디렉티브는 다음과 같이 구성되어 있습니다.
 
-- `**디렉티브(directives)**` : `v-` 접두사가 있는 특수 속성으로 디렉티브의 `값(value)`이 변경될 때 특정 효과를 반응적으로 DOM에 적용하는 것을 말합니다.
-- `**전달인자(Argument)**` : 일부 디렉티브는 디렉티브명 뒤에 콜론(:)으로 표기되는 전달인자를 가질 수 있습니다. 예를 들어, `v-bind` 디렉티브는 반응적으로 HTML 속성을 갱신하는 데 사용합니다.
+- `디렉티브(directives)` : `v-` 접두사가 있는 특수 속성으로 디렉티브의 `값(value)`이 변경될 때 특정 효과를 반응적으로 DOM에 적용하는 것을 말합니다.
+- `전달인자(Argument)` : 일부 디렉티브는 디렉티브명 뒤에 콜론(:)으로 표기되는 전달인자를 가질 수 있습니다. 예를 들어, `v-bind` 디렉티브는 반응적으로 HTML 속성을 갱신하는 데 사용합니다.
     - `동적 전달인자` : 대괄호를 사용하여 전달인자를 동적으로 삽입할 수 있습니다.
     `<a v-bind:[attributeName]="url"> ... </a>`
-- `**수식어(Modifiers)**` : 수식어는 `점(.)`으로 표시되는 특수 접미사로 디렉티브가 특별한 방식으로 바인딩되어야 함을 나타냅니다.
+- `수식어(Modifiers)` : 수식어는 `점(.)`으로 표시되는 특수 접미사로 디렉티브가 특별한 방식으로 바인딩되어야 함을 나타냅니다.
 
 <img width="1000" alt="directive" src="https://user-images.githubusercontent.com/86648892/226269559-71783f86-10cf-4d74-831f-26349d3e6a15.png">
 
@@ -1970,7 +1970,7 @@ const printEventInfo2 = (message, event) => {
 
 우리는 이벤트를 조작할 때 이벤트 내부에서 `event.preventDefault()` 또는 `event.stopPropagation()` 메서드를 호출할 수 있습니다. 메소드에서 이러한 메소드의 호출은 어렵지 않지만 메소드 안에서 비즈니스 외에 이러한 코드는 비효율적입니다.
 
-이 문제를 해결하기 위해 Vue는 `v-on` 이벤트에 다양한 **이벤트 수식어(Modifiers)**를 제공합니다.
+이 문제를 해결하기 위해 Vue는 `v-on` 이벤트에 다양한 **이벤트 수식어(Modifiers)** 를 제공합니다.
 
 - `.stop` = `e.stopPropagation()`
 - `.prevent` = `e.preventDefault()`
@@ -2045,7 +2045,7 @@ const printEventInfo2 = (message, event) => {
 <div @click.ctrl="doSomething">Do something</div>
 ```
 
-## ****`.exact` 수식어**
+## **`.exact` 수식어**
 
 ---
 
@@ -2096,19 +2096,18 @@ const printEventInfo2 = (message, event) => {
 
 - `:value`, `@input`
     
-    ```html
-    <textarea
-      :value="textareaValue"
-      @input="(event) => (textareaValue = event.target.value)"
-    ></textarea>
-    ```
+```html
+<textarea>
+  :value="textareaValue"
+  @input="(event) => (textareaValue = event.target.value)"
+</textarea>
+```
     
 - `v-model`
     
-    ```html
-    <textarea v-model="textareaValue"></textarea>
-    ```
-    
+```html
+<textarea v-model="textareaValue"></textarea>
+```
 
 ## `checkbox`, `radio`, `select`
 
@@ -2123,53 +2122,53 @@ const printEventInfo2 = (message, event) => {
 ### checkbox
 
 - `:checked`, `@change`
-    
-    ```html
-    <input
-      type="checkbox"
-      :checked="checkboxValue"
-      @change="(event) => (checkboxValue = event.target.checked)"
-    />
-    ```
-    
+
+```html
+<input
+  type="checkbox"
+  :checked="checkboxValue"
+  @change="(event) => (checkboxValue = event.target.checked)"
+/>
+```
+
 - `v-model`
-    
-    ```html
-    <input
-      type="checkbox"
-    	v-model="checkboxValue"
-    />
-    ```
-    
+
+```html
+<input
+  type="checkbox"
+  v-model="checkboxValue"
+/>
+```
+
 
 ### radio
 
 - `v-model`
-    
-    ```html
-    <label>
-      <input type="radio" name="type" value="O" v-model="radioValue" />
-      O형
-    </label>
-    <label>
-      <input type="radio" name="type" value="A" v-model="radioValue" />
-      A형
-    </label>
-    ```
-    
+
+```html
+<label>
+  <input type="radio" name="type" value="O" v-model="radioValue" />
+  O형
+</label>
+<label>
+  <input type="radio" name="type" value="A" v-model="radioValue" />
+  A형
+</label>
+```
+
 
 ### select
 
 - `v-model`
-    
-    ```html
-    <select v-model="selectValue">
-      <option value="html">HTML 수업</option>
-      <option value="css">CSS 수업</option>
-      <option value="javascript">JavaScript 수업</option>
-    </select>
-    ```
-    
+
+```html
+<select v-model="selectValue">
+  <option value="html">HTML 수업</option>
+  <option value="css">CSS 수업</option>
+  <option value="javascript">JavaScript 수업</option>
+</select>
+```
+
 
 ## `checkbox`
 
@@ -2228,7 +2227,7 @@ const printEventInfo2 = (message, event) => {
 
 ### `.lazy`
 
-기본적으로, `v-model`은 각 `input` 이벤트 후 입력과 데이터를 동기화 합니다. (단, **[앞에서 설명](https://v3.ko.vuejs.org/guide/forms.html#vmodel-ime-tip)**한 IME 구성은 제외됩니다.). `lazy` 수식어를 추가하여 `change` 이벤트 이후에 동기화 할 수 있습니다.
+기본적으로, `v-model`은 각 `input` 이벤트 후 입력과 데이터를 동기화 합니다. (단, [앞에서 설명](https://v3.ko.vuejs.org/guide/forms.html#vmodel-ime-tip)한 IME 구성은 제외됩니다.). `lazy` 수식어를 추가하여 `change` 이벤트 이후에 동기화 할 수 있습니다.
 
 ```html
 <input v-model.lazy="text" />
@@ -2347,10 +2346,10 @@ watch(person, (newValue) => {
 
 ```jsx
 watch(
-	() => person.obj,
-	(newValue) => {
-		// 객체의 값이 바뀔 경우에만 트리거 됩니다.
-	}
+  () => person.obj,
+  (newValue) => {
+    // 객체의 값이 바뀔 경우에만 트리거 됩니다.
+  }
 );
 ```
 
@@ -2368,7 +2367,6 @@ watch(
 
 <aside>
 💡 deep 옵션은 큰 데이터 구조에서 사용할 때 비용이 많이 들 수 있습니다. 필요한 경우에만 사용하고 성능 영향에 주의하십시오.
-
 </aside>
 
 ## immediate 즉시실행
@@ -2392,7 +2390,7 @@ watch(
 );
 ```
 
-또는 함수를 외부에 선언하여 즉시실행 할 수 있음. (WatchEffect로 하면 더 단순화 할 수 있음)
+또는 함수를 외부에 선언하여 즉시실행 할 수 있음. (WatchEffect로 하면 더 단순화할 수 있음)
 
 ```jsx
 const message = ref('Hello World!');
@@ -2437,25 +2435,23 @@ reverseFn();
 
 - **computed**
     
-    Vue 인스턴스의 상태(ref, reactive 변수)의 종속 관계를 자동으로 세팅하고자 할 때는 `computed`로 구현하는 것이 좋다.
-    
-    위 예시 처럼 `reverseMessage`는 `message` 값에 따라 결정되어지는 종속관계에 있다.  이 종속관계 코드가 복잡해지면 `watch`로 구현할 경우 더 복잡해지거나 중복계산 또는 오류를 발생시킬 수 있다.
+  Vue 인스턴스의 상태(ref, reactive 변수)의 종속 관계를 자동으로 세팅하고자 할 때는 `computed`로 구현하는 것이 좋다.
+  
+  위 예시 처럼 `reverseMessage`는 `message` 값에 따라 결정되어지는 종속관계에 있다.  이 종속관계 코드가 복잡해지면 `watch`로 구현할 경우 더 복잡해지거나 중복계산 또는 오류를 발생시킬 수 있다.
     
 - **watch**
     
-    Vue 인트턴스의 상태(ref, reactive 변수)의 변경 시점에 특정 액션(call api, push route 등)을 취하고자 할때 적합하다.
-    
-    대게의 경우 `computed`로 구현 가능한 것이라면 `watch`가 아니라 `computed`로 구현하는게 대부분 옳다.
-    
+  Vue 인스턴스의 상태(ref, reactive 변수)의 변경 시점에 특정 액션(call api, push route 등)을 취하고자 할때 적합하다.
+  
+  대개의 경우 `computed`로 구현 가능한 것이라면 `watch`가 아니라 `computed`로 구현하는게 대부분 옳다.
 
 ## WatchEffect
 
 WatchEffect는 콜백 함수 안의 반응성 데이터에 변화가 감지되면 자동으로 반응하여 실행합니다. 그리고 WatchEffect의 코드는 컴포넌트가 생성될 때 즉시 실행됩니다.
 
-```html
+```jsx
 watchEffect(async () => {
-  const { data } =
-							await axios.get(`https://reqres.in/api/users?page=${page.value}`);
+  const { data } = await axios.get(`https://reqres.in/api/users?page=${page.value}`);
   items.value = data.data;
 });
 ```
@@ -2465,6 +2461,7 @@ watchEffect(async () => {
 `watch`와 `watchEffect` 둘 다 관련 작업(api call, push route 등)을 반응적으로 수행할 수 있게 해줍니다. 하지만 주요한 차이점은 관련된 반응형 데이터를 추적하는 방식입니다.
 
 - `watch`명시적으로 관찰된 소스만 추적합니다. 콜백 내에서 액세스한 항목은 추적하지 않습니다. 또한 콜백은 소스가 실제로 변경된 경우에만 트리거됩니다. `watch`종속성 추적을 부작용과 분리하여 콜백이 실행되어야 하는 시기를 보다 정확하게 제어할 수 있습니다.
+
 - `watchEffect`반면에 종속성 추적과 부작용을 한 단계로 결합합니다. 동기 실행 중에 액세스되는 모든 반응 속성을 자동으로 추적합니다. 이것은 더 편리하고 일반적으로 더 간결한 코드를 생성하지만 반응성 종속성을 덜 명시적으로 만듭니다.
 
 # Dynamic Components
@@ -2482,7 +2479,6 @@ watchEffect(async () => {
 - 등록된 컴포넌트의 문자열 이름 `string`
 - 실제 가져온 컴포넌트 객체 `object`
 
-
 > 💡 `<component :is=”...” />`를 사용하여 여러 컴포넌트간 전환하면 컴포넌트의 마운트가 매번 해제됩니다. 이때 `<KeepAlive> 내장 컴포넌트`를 사용하여 “비활성 컴포넌트"들의 “활성” 상태를 유지할 수 있도록 강제할 수 있습니다.
 
 # Bootstrap 5 설치
@@ -2496,7 +2492,7 @@ BootstrapVue는 Vue용 Bootstrap이라고 보시면 될 것 같습니다. Vue를
 - Vue3를 위한 BootstrapVue는 현재 알파 버전입니다.
 - 이번 강좌는 Vue3 문법을 배우는데 목적이 있기 때문에 최소한의 UI만 활용하는 일반 Bootstrap이 더 괜찮을것 같습니다.
 
-## Boostrap5 설치
+## Bootstrap5 설치
 
 ```bash
 npm install bootstrap
@@ -2579,50 +2575,49 @@ import TheView from './components/TheView.vue';
 ## Bootstrap Icons 설치
 
 1. bootstrap-icons 모듈 설치
-    
-    ```bash
-    npm i bootstrap-icons
-    ```
-    
+
+```bash
+npm i bootstrap-icons
+```
+
 2. main.js 에 bootstrap-icons.css 추가
-    
-    ```jsx
-    // main.js
-    import 'bootstrap-icons/font/bootstrap-icons.css';
-    ```
-    
+
+```jsx
+// main.js
+import 'bootstrap-icons/font/bootstrap-icons.css';
+```
+
 3. `i 태그` 를 활용한 아이콘 적용
-    
-    ```html
-    <template>
-    	<i class="bi bi-youtube"></i>
-    </template>
-    ```
-    
-    [Bootstrap Icons 바로가기](https://icons.getbootstrap.com/)
-    
+
+```html
+<template>
+  <i class="bi bi-youtube"></i>
+</template>
+```
+
+[Bootstrap Icons 바로가기](https://icons.getbootstrap.com/)
 
 ## 참고
 
 - Vue Style Guide
-    
-    [Style Guide - Vue.js](https://kr.vuejs.org/v2/style-guide/index.html#%EC%8B%B1%EA%B8%80-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%9D%B4%EB%A6%84-%EB%A7%A4%EC%9A%B0-%EC%B6%94%EC%B2%9C%ED%95%A8)
-    
+  
+  [Style Guide - Vue.js](https://kr.vuejs.org/v2/style-guide/index.html#%EC%8B%B1%EA%B8%80-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%9D%B4%EB%A6%84-%EB%A7%A4%EC%9A%B0-%EC%B6%94%EC%B2%9C%ED%95%A8)
+  
 - Vue3 프로젝트에 Bootstrap5 설치
-    
-    [How to install Bootstrap 5 in Vue 3](https://larainfo.com/blogs/how-to-install-bootstrap-5-in-vue-3)
-    
+  
+  [How to install Bootstrap 5 in Vue 3](https://larainfo.com/blogs/how-to-install-bootstrap-5-in-vue-3)
+  
 - Bootstrap Vue3 (현재 alpha version)
-    
-    [Introduction | BootstrapVue 3](https://cdmoro.github.io/bootstrap-vue-3/getting-started/#why-bootstrapvue3)
-    
+  
+  [Introduction | BootstrapVue 3](https://cdmoro.github.io/bootstrap-vue-3/getting-started/#why-bootstrapvue3)
+  
 - Vuetify3 (Titan Beta)
-    
-    [The Vuetify roadmap - Vuetify](https://next.vuetifyjs.com/en/introduction/roadmap/)
-    
+  
+  [The Vuetify roadmap - Vuetify](https://next.vuetifyjs.com/en/introduction/roadmap/)
+  
 - NPM Package Trands
-    
-    [bootstrap-vue vs quasar vs vuetify | npm trends](https://www.npmtrends.com/vuetify-vs-bootstrap-vue-vs-quasar)
+  
+  [bootstrap-vue vs quasar vs vuetify | npm trends](https://www.npmtrends.com/vuetify-vs-bootstrap-vue-vs-quasar)
 
 # 프로젝트 만들기
 
@@ -2676,10 +2671,10 @@ module.exports = {
   env: {
     'vue/setup-compiler-macros': true,
   },
-	parserOptions: {
-		ecmaVersion: '2022',
-		sourceType: 'module',
-	},
+  parserOptions: {
+    ecmaVersion: '2022',
+    sourceType: 'module',
+  },
   rules: {
     'prettier/prettier': [
       'error',
@@ -2691,7 +2686,7 @@ module.exports = {
         printWidth: 80,
         bracketSpacing: true,
         arrowParens: 'avoid',
-				endOfLine: 'auto', // 한줄 추가
+        endOfLine: 'auto', // 한줄 추가
       },
     ],
   },
@@ -2704,19 +2699,18 @@ Prettier 옵션은 [**공식 홈페이지**](https://prettier.io/docs/en/options
 
 ```json
 {
-	"eslint.validate": [
-	    "javascript",
-	    "javascriptreact",
-	    "typescript",
-	    "typescriptreact",
-	    // "html",  // 삭제
-	    "vue",
-	    "markdown"
-	],
-	"editor.codeActionsOnSave": {
-	    "source.fixAll.eslint": true
-	},
-	"editor.tabSize": 2
+  "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "vue",
+      "markdown"
+  ],
+  "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+  },
+  "editor.tabSize": 2
 }
 ```
 
@@ -2825,7 +2819,7 @@ export default {
     };
   },
   template: `
-	  <button @click="counter++">클릭 횟수 {{ counter }}</button>
+    <button @click="counter++">클릭 횟수 {{ counter }}</button>
   `,
 };
 ```
@@ -2835,14 +2829,14 @@ export default {
 
 ## 컴포넌트 등록
 
-Vue 컴포넌트는 `<template>`안에서 발견 되었을 때 Vue가 구현 위치를 알 수 있도록 **“등록"**을 해야합니다. 그리고 컴포넌트를 등록하는 방법는 **전역(Global)** 및 **지역(Local)** 두 가지가 있습니다.
+Vue 컴포넌트는 `<template>`안에서 발견 되었을 때 Vue가 구현 위치를 알 수 있도록 **“등록"** 을 해야합니다. 그리고 컴포넌트를 등록하는 방법는 **전역(Global)** 및 **지역(Local)** 두 가지가 있습니다.
 
 - **전역 등록(Global Registration)**
 - **지역 등록(Local Registration)**
 
 ### 전역 등록
 
-우리는 `app.component()` 메서드를 사용하여 **현재 Vue 애플리케이션에서 전역적으로 사용**할 수 있도록 할 수 있습니다.
+우리는 `app.component()` 메서드를 사용하여 **현재 Vue 애플리케이션에서 전역적으로 사용** 할 수 있도록 할 수 있습니다.
 
 ```jsx
 import { createApp } from 'vue';
@@ -2870,7 +2864,7 @@ app
 
 전역 등록은 편리하지만 다음과 같은 몇 가지 단점이 있다.
 
-1. Webpack(또는 Vite)과 같은 빌드 시스템을 사용하는 경우 컴포넌트를 전역 등록하는 것은 **컴포넌트를 사용하지 않더라도 계속해서 최종 빌드에 해당 컴포넌트가 포함**되는 것을 의미합니다. 이는 사용자가 다운로드하는 자바스크립트 파일의 크기를 불필요하게 증가시킵니다.
+1. Webpack(또는 Vite)과 같은 빌드 시스템을 사용하는 경우 컴포넌트를 전역 등록하는 것은 **컴포넌트를 사용하지 않더라도 계속해서 최종 빌드에 해당 컴포넌트가 포함** 되는 것을 의미합니다. 이는 사용자가 다운로드하는 자바스크립트 파일의 크기를 불필요하게 증가시킵니다.
 2. 전역 등록을 계속 하게 되면 애플리케이션의 컴포넌트간 종속 관계를 확인하기 힘듭니다. 상위 컴포넌트, 하위 컴포넌트 구분이 힘들면 유지보수를 하기게 매우 어려워지게 됩니다.
 
 지역 등록된 컴포넌트는 **현재 컴포넌트 영역 안에서만 사용할 수 있습니다.** Vue 컴포넌트 인스턴스의 `components` 옵션을 사용해서 등록할 수 있습니다.
@@ -2902,7 +2896,7 @@ export default {
 <ButtonCounter></ButtonCounter>
 ```
 
-그리고 **컴포넌트는 사용할 때마다 해당 컴포넌트의 새 인스턴스가 생성**됩니다. 즉, 사용할 때마다 `setup()` 함수 가 실행 된다는 것을 의미합니다.
+그리고 **컴포넌트는 사용할 때마다 해당 컴포넌트의 새 인스턴스가 생성** 됩니다. 즉, 사용할 때마다 `setup()` 함수 가 실행 된다는 것을 의미합니다.
 
 ### PascalCase
 
@@ -2920,7 +2914,7 @@ Single-File Commponent(SFC)에서는 기본 HTML요소와 구분하기 위해 �
 
 ---
 
-Vue에서 **S**ingle-**F**ile **C**omponent(**SFC**, `*.vue` 파일)는 Vue 컴포넌트의 **템플릿(template), 로직(script), 스타일(style)**을 하나의 파일로 캡슐화하는 특수 파일 형식 입니다. 확장자는 `*.vue`이며 다음은 **SFC**의 예입니다.
+Vue에서 **S** ingle-**F** ile **C** omponent(**SFC** , `*.vue` 파일)는 Vue 컴포넌트의 **템플릿(template), 로직(script), 스타일(style)** 을 하나의 파일로 캡슐화하는 특수 파일 형식 입니다. 확장자는 `*.vue`이며 다음은 **SFC** 의 예입니다.
 
 ```html
 <template>
@@ -2956,27 +2950,27 @@ export default {
 - 각 `*.vue` 파일은 한 번에 최대 하나의 `top-level <template>` 블록을 포함할 수 있습니다.
 - 콘텐츠는 추출되어 `@vue/compiler-dom`으로 전달되고, JavaScript 렌더 기능으로 사전 컴파일되고, `render` 옵션으로 내보내어 컴포넌트에 첨부됩니다.
 
-### ****`<script>`****
+### **`<script>`**
 
 - 각 `*.vue` 파일은 한 번에 최대 하나의 `<script>` 블록을 포함할 수 있습니다(`<script setup>` 제외).
 - 스크립트는 ES 모듈로 실행됩니다.
 - `default export`는 일반 객체 또는 `defineComponent`의 반환 값으로 Vue 컴포넌트 옵션 객체여야 합니다.
 
-### ****`<script setup>`****
+### **`<script setup>`**
 
 - 각 `*.vue` 파일은 한 번에 최대 하나의 `<script setup>` 블록을 포함할 수 있습니다(`normal <script>` 제외).
 - `<script setup>`은 사전에 처리되어 컴포넌트의 `setup()` 함수로 사용됩니다. **즉, 컴포넌트의 각 인스턴스에 대해 실행됩니다.** `<script setup>`의 최상위 바인딩은 템플릿에 자동으로 노출됩니다. 자세한 내용은 [`<script setup>` 전용 문서](https://vuejs.org/api/sfc-script-setup.html)를 참조하십시오.
 
-### ****`<style>`****
+### **`<style>`**
 
 - 단일 `*.vue` 파일에는 여러 `<style>` 태그가 포함될 수 있습니다.
-- `<style>` 태그는 현재 컴포넌트에 스타일을 캡슐화하는 데 도움이 되도록 `scoped` 또는 `module` 속성(자세한 내용은 [SFC 스타일 기능](https://vuejs.org/api/sfc-css-features.html) 참조)을 가질 수 있습니다. **캡슐화 모드**가 다른 여러 `<style>` 태그를 동일한 구성 요소에서 혼합할 수 있습니다.
+- `<style>` 태그는 현재 컴포넌트에 스타일을 캡슐화하는 데 도움이 되도록 `scoped` 또는 `module` 속성(자세한 내용은 [SFC 스타일 기능](https://vuejs.org/api/sfc-css-features.html) 참조)을 가질 수 있습니다. **캡슐화 모드** 가 다른 여러 `<style>` 태그를 동일한 구성 요소에서 혼합할 수 있습니다.
 
 ## Custom Blocks
 
 ---
 
-프로젝트별 요구사항에 따라 `*.vue` 파일에 **사용자 정의 블록**을 추가할 수 있습니다. 예를 들면 다음과 같은 사용자 정의 블록 예가 있습니다.
+프로젝트별 요구사항에 따라 `*.vue` 파일에 **사용자 정의 블록** 을 추가할 수 있습니다. 예를 들면 다음과 같은 사용자 정의 블록 예가 있습니다.
 
 - **[Gridsome: `<page-query>`](https://gridsome.org/docs/querying-data/)**
 - **[vite-plugin-vue-gql: `<gql>`](https://github.com/wheatjs/vite-plugin-vue-gql)**
@@ -2998,7 +2992,7 @@ export default {
 
 ```html
 <template lang="pug">
-p {{ msg }}
+  {{ msg }}
 </template>
 
 <style lang="scss">
@@ -3009,7 +3003,7 @@ p {{ msg }}
 </style>
 ```
 
-## Src 가져오기
+## src 가져오기
 
 ---
 
@@ -3032,7 +3026,7 @@ npm 종속성에서 리소스를 가져올 수 있습니다.
 <style src="todomvc-app-css/index.css" />
 ```
 
-src 가져오기는 사용자 정의 블록에서도 작동합니다. 예:
+src 가져오기는 사용자 정의 블록에서도 작동합니다.
 
 ```jsx
 <unit-test src="./unit-test.js">
@@ -3153,13 +3147,13 @@ export default {
 ---
 
 - Single File Component : Spec
-    
-    [SFC Syntax Specification | Vue.js](https://vuejs.org/api/sfc-spec.html)
-    
+
+  [SFC Syntax Specification | Vue.js](https://vuejs.org/api/sfc-spec.html)
+
 - Single File Component : `<script setup>`
-    
-    [| Vue.js](https://vuejs.org/api/sfc-script-setup.html)
-    
+
+  [| Vue.js](https://vuejs.org/api/sfc-script-setup.html)
+
 - Single File Component : CSS Features
 
 # Props
@@ -3170,17 +3164,13 @@ export default {
 
 ## Props 란?
 
-`**Props`란? 컴포넌트에 등록할 수 있는 사용자 정의 속성**입니다. 블로그 게시글 컴포넌트에 사용자 정의 속성을 선언하면 이 컴포넌트를 사용하는 부모 컴포넌트에서 데이터(속성)를 전달할 수 있습니다.
+`Props`란? 컴포넌트에 등록할 수 있는 사용자 정의 속성입니다. 블로그 게시글 컴포넌트에 사용자 정의 속성을 선언하면 이 컴포넌트를 사용하는 부모 컴포넌트에서 데이터(속성)를 전달할 수 있습니다.
 
 ## Props 선언
 
 Vue 컴포넌트에는 명시적 `props` 선언이 필요합니다. 왜냐하면 컴포넌트에 전달된 외부 props가 fallthrough 속성으로 처리되어야 함을 알 수 있습니다([다음 섹션](https://vuejs.org/guide/components/attrs.html)에서 설명함).
 
-<aside>
-💡 **fallthrough 속성**
-props 또는 emits에 명시적으로 선언되지 않은 속성 또는 이벤트
-
-</aside>
+`fallthrough`: props 또는 emits에 명시적으로 선언되지 않은 속성 또는 이벤트
 
 ### 문자열 배열 선언
 
@@ -3206,10 +3196,10 @@ export default {
     title: String,
     likes: Number
   },
-	setup(props) {
-		console.log(props.title)
-		console.log(props.likes)
-	}
+  setup(props) {
+    console.log(props.title)
+    console.log(props.likes)
+  }
 }
 ```
 
@@ -3272,65 +3262,64 @@ export default {
 ## Props 사용
 
 - 선언된 props를 `<template>`에서 바로 사용할 수 있습니다.
-    
-    ```jsx
-    <template>
-    	<p>{{ title }}</p>
-    </template>
-    ```
-    
+
+```jsx
+<template>
+  <p>{{ title }}</p>
+</template>
+```
+
 - `setup()` 함수의 첫 번째 매개변수로 props 객체를 받아 사용할 수 있습니다.
-    
-    ```jsx
-    export default {
-    	setup(props) {
-    		return { };
-    	},
-    };
-    ```
-    
+
+```jsx
+export default {
+  setup(props) {
+    return { };
+  },
+};
+```
+
 - 컴포넌트 인스턴스(this)의 `$props` 객체로 접근할 수 있습니다. **[(Options API)](https://vuejs.org/api/component-instance.html#props)**
     
-    ```jsx
-    <template>
-    	<p>{{ $props }}</p>
-    </template>
-    <script>
-    export default {
-    	created() {
-    		// 객체로 접근
-    		this.$props
-    
-    		// 
-    		this.title
-    	}
-    };
-    </script>
-    ```
-    
+```jsx
+<template>
+  <p>{{ $props }}</p>
+</template>
+<script>
+export default {
+  created() {
+    // 객체로 접근
+    this.$props
+
+    // 
+    this.title
+  }
+};
+</script>
+```
 
 ## Props Name Casing
 
 - `props` 선언시에는 camelCase를 사용하여 이름을 선언합니다. 이렇게 하면 속성 키로 사용할 때 따옴표를 사용할 필요가 없고 유효한 JavaScript 식별자이기 때문에 템플릿 표현식에서 직접 참조할 수 있기 때문입니다.
-    
-    ```jsx
-    export default {
-    	props: {
-    		greetingMessage: String
-    	}
-    }
-    ```
-    
-    ```html
-    <span>{{ greetingMessage }}</span>
-    ```
-    
+
+```jsx
+export default {
+  props: {
+    greetingMessage: String
+  }
+}
+```
+
+```html
+<span>{{ greetingMessage }}</span>
+```
+
 - 속성에 값을 전달할 때는 `kebab-case`를 사용하는 것을 [권장](https://vuejs.org/guide/components/props.html#props-declaration)합니다.
-    
-    ```html
-    <MyComponent greeting-message="hello"></MyComponent>
-    ```
-    
+
+```html
+<MyComponent greeting-message="hello"></MyComponent>
+```
+
 
 ## 객체를 사용하여 다중 속성 전달
 
@@ -3340,15 +3329,15 @@ export default {
 
 ```jsx
 export default {
-	setup() {
-		const post = ref({
-			id: 1,
-			title: 'Learn Vue3'
-		})
-		return {
-			post
-		}
-	}
+  setup() {
+    const post = ref({
+      id: 1,
+      title: 'Learn Vue3'
+    })
+    return {
+      post
+    }
+  }
 }
 ```
 
@@ -3365,61 +3354,61 @@ export default {
 
 ## 단방향 데이터 흐름
 
-모든 `props`는 상위 속성과 하위 속성간에 **단방향 바인딩**으로 형성되어 있습니다. 만약 상위 속성이 업데이트되면 하위 속성도 업데이트되지만 그 반대는 아닙니다. 이러한 성질은 하위 속성 변경 실수로 상위 속성을 변경하여 앱의 데이터 흐름을 이해하기 어렵게 만드는 것을 방지할 수 있습니다.
+모든 `props`는 상위 속성과 하위 속성간에 **단방향 바인딩** 으로 형성되어 있습니다. 만약 상위 속성이 업데이트되면 하위 속성도 업데이트되지만 그 반대는 아닙니다. 이러한 성질은 하위 속성 변경 실수로 상위 속성을 변경하여 앱의 데이터 흐름을 이해하기 어렵게 만드는 것을 방지할 수 있습니다.
 
 또한 상위 컴포넌트가 업데이트될 때마다 하위 컴포넌트의 모든 `props`는 최신 상태도 초기화 됩니다. 그렇기 때문에 **자식 컴포넌트 내부에서 `props`를 변경하지 않아야 합니다.**
 
 ```jsx
 export default {
-	props: ['title'],
-	setup(props) {
-		// ❌ warning, props are readonly!
-		props.title = 'changed title';
-	}
+  props: ['title'],
+  setup(props) {
+    // ❌ warning, props are readonly!
+    props.title = 'changed title';
+  }
 }
 ```
 
 **일반적으로 props를 하위 컴포넌트에서 변경하고 싶은 두 가지 경우가 있습니다.**
 
 1. **prop은 초기 값을 전달하는 데 사용됩니다. 자식 컴포넌트에서 속성 값을 로컬 데이터 속성으로 사용 하고자할 때 입니다.** 이 경우 prop을 초기 값으로 사용하는 로컬 변수를 선언하는 것이 가장 좋습니다.
-    
-    ```jsx
-    export default {
-    	props: ['initialWidth', 'initialHeight'],
-    	setup(props) {
-    		// width는 props.initialWidth 값으로 초기화 됩니다.
-    		// 향후 props 업데이트의 연결이 끊어집니다.
-    		const width = ref(props.initialWidth)
-    		const height = ref(props.initialHeight)
-    		return {
-    			width,
-    			height
-    		}
-    	}
-    }
-    ```
-    
-2. **prop**의 값의 변환이 필요할 때 입니다. 이 경우 `computed`를 사용하면 좋습니다. 그리고 상위 속성의 변경을 유지할 수 있습니다.
-    
-    ```jsx
-    export default {
-    	props: ['size'],
-    	setup(props) {
-    		// 향후 props 업데이트의 연결이 유지됩니다.끊어집니다.
-    		const rectangleSize = computed(() => props.size.trim().toUpperCase());
-    		return {
-    			rectangleSize
-    		}
-    	}
-    }
-    ```
-    
 
-### **객체 / 배열 Props 업데이트**
+```jsx
+export default {
+  props: ['initialWidth', 'initialHeight'],
+  setup(props) {
+    // width는 props.initialWidth 값으로 초기화 됩니다.
+    // 향후 props 업데이트의 연결이 끊어집니다.
+    const width = ref(props.initialWidth)
+    const height = ref(props.initialHeight)
+    return {
+      width,
+      height
+    }
+  }
+}
+```
+
+2. **prop**의 값의 변환이 필요할 때 입니다. 이 경우 `computed`를 사용하면 좋습니다. 그리고 상위 속성의 변경을 유지할 수 있습니다.
+
+```jsx
+export default {
+  props: ['size'],
+  setup(props) {
+    // 향후 props 업데이트의 연결이 유지됩니다.끊어집니다.
+    const rectangleSize = computed(() => props.size.trim().toUpperCase());
+    return {
+      rectangleSize
+    }
+  }
+}
+```
+
+
+### **객체 or 배열 Props 업데이트**
 
 객체(object)나 배열(array)이 props로 전달되면 자식 컴포넌트에서는 prop 바인딩(값 변경)을 변경할 수 없지만 객체 또는 배열의 중첩 속성은 변경할 수 있습니다. 이것은 JavaScript에서 객체와 배열이 참조 타입(Reference Type)으로 전달되고 Vue가 이러한 변경을 방지하는것은 부당한 비용이 들기 때문입니다.
 
-이러한 변경의 단점은 하위 컴포넌트가 상위 컴포넌트에 명확하지 않은 방식으로 상위 속성 업데이트 하게 되면 잠재적으로 향후 데이터 흐름을 추론하기 어렵게 만든다는 것입니다. 그렇기 때문에 가장 좋은 방법은 부모와 자식이 의도적으로 밀접하게 연관되어 있지 않는한 이러한 변경은 피하는 것입니다. 만약 변경이 필요하다면 자식 컴포넌트에서 `**emit`을 이용하여 부모 컴포넌트가 스스로 변경을 수행할 수 있도록** 이벤트를 내보내야 합니다.
+이러한 변경의 단점은 하위 컴포넌트가 상위 컴포넌트에 명확하지 않은 방식으로 상위 속성 업데이트 하게 되면 잠재적으로 향후 데이터 흐름을 추론하기 어렵게 만든다는 것입니다. 그렇기 때문에 가장 좋은 방법은 부모와 자식이 의도적으로 밀접하게 연관되어 있지 않는한 이러한 변경은 피하는 것입니다. 만약 변경이 필요하다면 자식 컴포넌트에서 `emit`을 이용하여 **부모 컴포넌트가 스스로 변경을 수행할 수 있도록** 이벤트를 내보내야 합니다.
 
 ## Boolean Casting
 
@@ -3427,9 +3416,9 @@ export default {
 
 ```jsx
 export default {
-	props: {
-		disabled: Boolean
-	}
+  props: {
+    disabled: Boolean
+  }
 }
 ```
 
@@ -3443,14 +3432,6 @@ export default {
 <MyComponent />
 ```
 
-## 반응형을 잃지 않는 구조분해 할당
-
----
-
-### `toRef`
-
-### `toRefs`
-
 # Events
 
 ## Events
@@ -3463,7 +3444,7 @@ export default {
 
 ```html
 <template>
-	<button @click="$emit('someEvent')">버튼</button>
+  <button @click="$emit('someEvent')">버튼</button>
 </template>
 ```
 
@@ -3485,7 +3466,7 @@ export default {
 
 ```html
 <template>
-	<button @click="$emit('someEvent', 'Hello', 'World', '!')">버튼</button>
+  <button @click="$emit('someEvent', 'Hello', 'World', '!')">버튼</button>
 </template>
 ```
 
@@ -3493,19 +3474,19 @@ export default {
 
 ```jsx
 <template>
-	<MyComponent @some-event="callFunction" />
+  <MyComponent @some-event="callFunction" />
 </template>
 
 <script setup>
 export default {
-	setup() {
-		const callFunction = (word1, word2, word3) => {
+  setup() {
+    const callFunction = (word1, word2, word3) => {
       alert(word1, word2, word3);
     };
-		return {
-			callFunction
-		}
-	}
+    return {
+      callFunction
+    }
+  }
 }
 </script>
 ```
@@ -3546,19 +3527,19 @@ export default {
 ```jsx
 export default {
   emits: {
-		// 유효성 검사가 없는 이벤트 선언
-		someEvent: null,
+    // 유효성 검사가 없는 이벤트 선언
+    someEvent: null,
 
-		// 유효성 검사가 있는 이벤트 선언
-		someSubmit: (result) => {
-			if (email && password) {
-	      return true
-	    } else {
-	      console.warn('result 값이 비어있습니다!')
-	      return false
-	    }
-		}
-	},
+    // 유효성 검사가 있는 이벤트 선언
+    someSubmit: (result) => {
+      if (email && password) {
+        return true
+      } else {
+        console.warn('result 값이 비어있습니다!')
+        return false
+      }
+    }
+  },
   setup(props, context) {
     context.emit('someEvent', 'Hello World!')
   }
@@ -3590,8 +3571,8 @@ export default {
 
 ```html
 <LabelInput
-	:modelValue="username"
-	@update:modelValue="newValue => username = newValue"
+  :modelValue="username"
+  @update:modelValue="newValue => username = newValue"
 />
 ```
 
@@ -3669,11 +3650,11 @@ const postFontSize = ref(1);
 
 ```html
 <div :style="{ fontSize: postFontSize + 'em' }">
-	<BlogPost
-		v-for="post in posts"
-		:key="post.id"
-		:title="post.title"
-	/>
+  <BlogPost
+    v-for="post in posts"
+    :key="post.id"
+    :title="post.title"
+  />
 </div>
 ```
 
@@ -3740,9 +3721,9 @@ export default {
       @input="$emit('update:title', $event.target.value)"
     />
   </article>
-</template>
-<script>
-export default {
+  </template>
+  <script>
+  export default {
   props: ['title'],
   emits: ['update:title'],
 };
@@ -3811,8 +3792,8 @@ export default {
     modelModifiers: { default: () => ({}) },
   },
   emits: ['update:modelValue'],
-	setup(props, context) {
-		// {capitalize: true} 출력
+  setup(props, context) {
+    // {capitalize: true} 출력
     console.log(props.modelModifiers);
   },
 };
@@ -3854,11 +3835,11 @@ export default {
 
 ## Non-Prop 속성 (fallthrough 속성)
 
-**Non-Prop 속성**은 `props` 또는 `event` 에 명시적으로 선언되지 않은 속성 또는 이벤트 입니다. 예를 들어 `class`, `style`, `id`와 같은 것들이 있습니다.
+**Non-Prop 속성** 은 `props` 또는 `event` 에 명시적으로 선언되지 않은 속성 또는 이벤트 입니다. 예를 들어 `class`, `style`, `id`와 같은 것들이 있습니다.
 
 ## 속성 상속
 
-컴포넌트가 단일 루트 요소로 구성되어 있으면 Non-Prop **속성**은 루트 요소의 속성에 자동으로 추가됩니다. 예를 들어 `<MyButton>` 이라는 컴포넌트가 있다고 가정해보겠습니다.
+컴포넌트가 단일 루트 요소로 구성되어 있으면 Non-Prop **속성** 은 루트 요소의 속성에 자동으로 추가됩니다. 예를 들어 `<MyButton>` 이라는 컴포넌트가 있다고 가정해보겠습니다.
 
 ```html
 <!-- template of <MyButton> -->
@@ -3905,7 +3886,7 @@ export default {
 
 ## 속성 상속 비활성화
 
-컴포넌트가 자동으로 Non-Prop **속성**을 상속하지 않도록 하려면 컴포넌트의 `inheritAttrs: false` 옵션을 설정할 수 있습니다.
+컴포넌트가 자동으로 Non-Prop **속성** 을 상속하지 않도록 하려면 컴포넌트의 `inheritAttrs: false` 옵션을 설정할 수 있습니다.
 
 ```html
 <template>
@@ -3918,7 +3899,7 @@ export default {
 </script>
 ```
 
-컴포넌트에 Non-Prop **속성**을 비활성화 하는 일반적인 경우는 자식 컴포넌트의 루트요소에 이외의 다른 요소에 Non-Prop **속성**을 적용하고 싶을 때 입니다.
+컴포넌트에 Non-Prop **속성** 을 비활성화 하는 일반적인 경우는 자식 컴포넌트의 루트요소에 이외의 다른 요소에 Non-Prop **속성** 을 적용하고 싶을 때 입니다.
 
 그리고 적용해야 하는 요소에 `<template>`에서 Non-Prop속성에 접근할 수 있는 내장 객체 `$attrs`로 직접 접근할 수 있습니다.
 
@@ -3932,12 +3913,12 @@ export default {
 
 몇 가지 참고 사항:
 
-- `props`와 달리 **Non-Prop 속성**은 JavaScript에서 원래 대소문자를 유지하므로 `foo-bar`와 같은 속성은 `$attrs[’foo-bar’]`로 접근해야 합니다.
+- `props`와 달리 **Non-Prop 속성** 은 JavaScript에서 원래 대소문자를 유지하므로 `foo-bar`와 같은 속성은 `$attrs[’foo-bar’]`로 접근해야 합니다.
 - `@click`과 같은 `v-on`리스너는 `$attrs.onClick`과 같이 함수로 접근할 수 있습니다.
 
 ### Non-Prop 속성을 특정 요소에 모두 적용하기
 
-`inheritAttrs: false`와 `$attrs`를 이용하면 **Non-Prop 속성**을 특정 요소에 모두 적용할 수 있습니다.
+`inheritAttrs: false`와 `$attrs`를 이용하면 **Non-Prop 속성** 을 특정 요소에 모두 적용할 수 있습니다.
 
 ```html
 <template>
@@ -3964,10 +3945,7 @@ export default {
 />
 ```
 
-<aside>
 💡 Vue 3에서 `$listeners` 객체가 제거되었습니다. 모든 리스너는 이제 `$attrs`의 일부가 되었습니다.
-
-</aside>
 
 ## Fragments
 
@@ -4003,7 +3981,7 @@ Vue3에서 컴포넌트는 다중 루트 노드 컴포넌트인 fragments를 공
 
 ## 여러 루트노드의 속성 상속
 
-**단일 루트 요소**가 있는 컴포넌트와 달리 **여러 루트 요소**가 있는 컴포넌트에는 자동으로 **Non-Prop 속성**이 상속되지 않습니다. 만약 명시적으로 `$attrs`를 바인딩 하지 않을 경우 런타입 경고가 발생됩니다.
+**단일 루트 요소** 가 있는 컴포넌트와 달리 **여러 루트 요소** 가 있는 컴포넌트에는 자동으로 **Non-Prop 속성** 이 상속되지 않습니다. 만약 명시적으로 `$attrs`를 바인딩 하지 않을 경우 런타입 경고가 발생됩니다.
 
 **자식 컴포넌트**
 
@@ -4022,7 +4000,7 @@ Vue3에서 컴포넌트는 다중 루트 노드 컴포넌트인 fragments를 공
 <CustomLayout id="custom-layout"></CustomLayout>
 ```
 
-$attrs이 명시적으로 바인딩된 경우 경고가 표시되지 않습니다.
+`$attrs`이 명시적으로 바인딩된 경우 경고가 표시되지 않습니다.
 
 ```html
 <!-- CustomLayout.vue -->
