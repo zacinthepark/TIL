@@ -5457,7 +5457,7 @@ const routes = [
 
 ### 참고
 
-- `**/`로 시작하는 중첩 경로는 루트 경로로 처리됩니다. 이를 통해 중첩 URL을 사용하지 않고도 컴포넌트 중첩을 활용할 수 있습니다.**
+- `**/`로 시작하는 중첩 경로는 루트 경로로 처리됩니다. 이를 통해 중첩 URL을 사용하지 않고도 컴포넌트 중첩을 활용할 수 있습니다.
 - 위 routes 설정으로 보면 `/users/alice`로 방문 했을 때 `User 컴포넌트`에 있는 중첩된 `<router-view>`에는 아무것도 렌더링 되지 않습니다.  이러한 경우 빈 중첩 경로를 제공할 수 있습니다.
 
 ```jsx
@@ -5647,8 +5647,8 @@ router.beforeEach((to, from) => {
 
 모든 가드 함수는 두 개의 인수를 받습니다.
 
-- `to`: 라우팅 되는 ****[RouteLocationNormalized](https://router.vuejs.org/api/#routelocationnormalized)** 객체 (라우트 위치 정보를 담고 있는 객체)
-- `from`: 라우팅 되기 전의 ****[RouteLocationNormalized](https://router.vuejs.org/api/#routelocationnormalized)** 객체 (라우트 위치 정보를 담고 있는 객체)
+- `to`: 라우팅 되는 **[RouteLocationNormalized](https://router.vuejs.org/api/#routelocationnormalized)** 객체 (라우트 위치 정보를 담고 있는 객체)
+- `from`: 라우팅 되기 전의 **[RouteLocationNormalized](https://router.vuejs.org/api/#routelocationnormalized)** 객체 (라우트 위치 정보를 담고 있는 객체)
 
 그리고 선택적으로 다음 값 중 하나를 반환할 수 있습니다.
 
@@ -5946,9 +5946,9 @@ Vue에서는 Transitions 이나 Animations을 쉽게할 수 있도록 도움을 
 ```jsx
 // install() 메서드를 갖고 있는 객체
 const objPlugin = {
-	install(app, options) {
-		
-	}
+  install(app, options) {
+    
+  }
 }
 
 // 단순히 설치 함수
