@@ -4032,37 +4032,37 @@ HTML 요소와 마찬가지로 우리가 만든 컴포넌트에 콘텐츠를 전
 ```html
 <!-- FancyButton.vue -->
 <template>
-	<button class="fancy-btn">
-		<slot></slot>
-	</button>
+  <button class="fancy-btn">
+    <slot></slot>
+  </button>
 </template>
 ```
 
 - Style
-    
-    ```css
-    .fancy-btn {
-    	color: #fff;
-    	background: linear-gradient(315deg, #42d392 25%, #647eff);
-    	border: none;
-    	padding: 5px 12px;
-    	margin: 5px;
-    	border-radius: 8px;
-    	cursor: pointer;
-    }
-    ```
-    
+
+```css
+.fancy-btn {
+  color: #fff;
+  background: linear-gradient(315deg, #42d392 25%, #647eff);
+  border: none;
+  padding: 5px 12px;
+  margin: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+```
+
 
 위에 정의한 컴포넌트를 부모 컴포넌트에서 사용해보겠습니다.
 
 ```html
 <FancyButton>
-	<!-- 슬롯 콘텐츠 -->
-	Click!!
+  <!-- 슬롯 콘텐츠 -->
+  Click!!
 </FancyButton>
 ```
 
-`**<slot>` 요소는 부모 컴포넌트에서 제공하는 콘텐츠를 나타내는 슬롯 콘텐츠 입니다.** 그리고 슬롯은 텍스트 뿐만아니라 HTML요소, 컴포넌트 등 다양한 모든 콘텐츠가 될 수 있습니다.
+`<slot>` 요소는 부모 컴포넌트에서 제공하는 콘텐츠를 나타내는 슬롯 콘텐츠 입니다. 그리고 슬롯은 텍스트 뿐만아니라 HTML요소, 컴포넌트 등 다양한 모든 콘텐츠가 될 수 있습니다.
 
 ```html
 <FancyButton>
@@ -4074,7 +4074,7 @@ HTML 요소와 마찬가지로 우리가 만든 컴포넌트에 콘텐츠를 전
 
 <img width="1000" alt="slots" src="https://user-images.githubusercontent.com/86648892/226271889-e5580ead-e4cc-4081-848e-330f4b5c5c27.png">
 
-## ****Fallback Content****
+## **Fallback Content**
 
 상위 컴포넌트에서 슬롯 콘텐츠가 제공되지 않을때 슬롯에 대한 폴백(기본 콘텐츠)을 지정할 수 있습니다.
 
@@ -4117,7 +4117,7 @@ HTML 요소와 마찬가지로 우리가 만든 컴포넌트에 콘텐츠를 전
   <BaseCard>
     <template v-slot:header>제목</template>
     <template v-slot:default>안녕하세요</template>
-		<template v-slot:footer>푸터</template>
+    <template v-slot:footer>푸터</template>
   </BaseCard>
 </template>
 ```
@@ -4132,7 +4132,7 @@ HTML 요소와 마찬가지로 우리가 만든 컴포넌트에 콘텐츠를 전
   <BaseCard>
     <template #header>제목</template>
     <template #default>안녕하세요</template>
-		<template #footer>푸터</template>
+    <template #footer>푸터</template>
   </BaseCard>
 </template>
 ```
@@ -4144,9 +4144,9 @@ HTML 요소와 마찬가지로 우리가 만든 컴포넌트에 콘텐츠를 전
 <template>
   <BaseCard>
     <template #header>제목</template>
-		<!-- 암시적으로 default slot -->
-		안녕하세요
-		<template #footer>푸터</template>
+    <!-- 암시적으로 default slot -->
+    안녕하세요
+    <template #footer>푸터</template>
   </BaseCard>
 </template>
 ```
@@ -4176,7 +4176,7 @@ HTML 요소와 마찬가지로 우리가 만든 컴포넌트에 콘텐츠를 전
 
 [Render Scope](https://www.notion.so/Slots-f72f67bf01b449e79358e12cc3a2beee)에서 언급했던 것처럼  슬롯 콘텐츠는 자식 컴포넌트의 데이터에 접근할 수 없습니다.
 
-하지만 **슬롯 콘텐츠**에서 **상위 컴포넌트와 하위 컴포넌트 데이터를 모두 사용**할 수 있다면 우리는 개발할 때 매우 유용합니다.
+하지만 **슬롯 콘텐츠** 에서 **상위 컴포넌트와 하위 컴포넌트 데이터를 모두 사용** 할 수 있다면 우리는 개발할 때 매우 유용합니다.
 
 이러한 방법으로 우리는 자식 컴포넌트에서 `<slot>` 요소를 사용할 때 props를 전달하는 것처럼 속성을 슬롯 콘텐츠에 전달할 수 있습니다.
 
@@ -4203,7 +4203,7 @@ export default {
 </script>
 ```
 
-`default` `<slot>`이 **하나 밖에 없는 경우**에는 `v-slot` 디렉티브를 사용하여 `props`를 전달 받을 수 있습니다.
+`default` `<slot>`이 **하나 밖에 없는 경우** 에는 `v-slot` 디렉티브를 사용하여 `props`를 전달 받을 수 있습니다.
 
 ```html
 <MyComponent v-slot="slotProps">
@@ -4227,13 +4227,13 @@ export default {
 
 ## Prop Drilling
 
-일반적을 부모 컴포넌트에서 자식 컴포넌트로 데이터를 전달해야 할 때 **props**를 사용합니다. 하지만 규모가 큰 컴포넌트 트리가 있고 깊이 중첩된 자손 컴포넌트에 데이터를 전달해야 한다면 해당 자손 컴포넌트와 연관된 모든 자식 컨포넌트에게 동일한 prop을 전달해야 합니다.
+일반적을 부모 컴포넌트에서 자식 컴포넌트로 데이터를 전달해야 할 때 **props** 를 사용합니다. 하지만 규모가 큰 컴포넌트 트리가 있고 깊이 중첩된 자손 컴포넌트에 데이터를 전달해야 한다면 해당 자손 컴포넌트와 연관된 모든 자식 컨포넌트에게 동일한 prop을 전달해야 합니다.
 
 <img width="1000" alt="propdrilling1" src="https://user-images.githubusercontent.com/86648892/226272145-5ce9d220-3735-4be4-a01b-ee5050ad2699.png">
 
 `<Root>`에서 `<DeepChild>` 컴포넌트에 데이터를 전달하기 위해서는 `<Footer>` 컴포넌트를 거쳐 데이터를 전달해야 합니. 만약 더 긴 상위 체인이 있으면 더 많은 상위 컴포넌트들이 영향을 받습니다. 이것을 “Prop Drilling”이라고 합니다.
 
-“Prop Drilling” 문제는 Vue3의 `provide`와 `inject`로 해결할 수 있습니다. `provide`와 `inject`를 사용하면 데이터를 제공하는 상위 컴포넌트는 **dependency provider** 역할을 합니다. 그리고 데이터를 받는 하위 컴포넌트는 깊이에 관계 없이 **dependency provider**가 제공하는 종속성(data, function 등)을 주입받을 수 있습니다.
+“Prop Drilling” 문제는 Vue3의 `provide`와 `inject`로 해결할 수 있습니다. `provide`와 `inject`를 사용하면 데이터를 제공하는 상위 컴포넌트는 **dependency provider** 역할을 합니다. 그리고 데이터를 받는 하위 컴포넌트는 깊이에 관계 없이 **dependency provider** 가 제공하는 종속성(data, function 등)을 주입받을 수 있습니다.
 
 <img width="1000" alt="propdrilling2" src="https://user-images.githubusercontent.com/86648892/226272150-84507be3-e0f9-479e-a8ff-c8762ba54c00.png">
 
@@ -4253,7 +4253,7 @@ export default {
 
 `provide()` 함수는 두 개의 파라미터를 받습니다.
 
-- 첫 번째 파라미터는 **주입 키** : ****`문자열` 또는 `Symbol`이 될 수 있습니다. **주입 키**는 하위 컴포넌트에서 주입된 값을 조회하는 데 사용됩니다.
+- 첫 번째 파라미터는 **주입 키** : **`문자열` 또는 `Symbol`이 될 수 있습니다. **주입 키**는 하위 컴포넌트에서 주입된 값을 조회하는 데 사용됩니다.
 - 두 번째 파라미터는 **제공된 값** : 값은 refs와 같은 반응성 데이터를 포함하여 모든 유형이 될 수 있습니다.
 
 ```jsx
@@ -4294,7 +4294,7 @@ export default {
 
 ### Injection 기본값
 
-만약에 `inject`로 주입된 키가 상위 체인 어디에서든 제공되지 않을경우 런타임 경고가 표시됩니다. 이 때 두 번째 인자로 **기본값(Default Value)**을 설정할 수 있습니다.
+만약에 `inject`로 주입된 키가 상위 체인 어디에서든 제공되지 않을경우 런타임 경고가 표시됩니다. 이 때 두 번째 인자로 기본값(Default Value)을 설정할 수 있습니다.
 
 ```jsx
 const defaultMessage = inject('defaultMessage', 'default message');
@@ -4387,7 +4387,7 @@ Vue2에서 컴포넌트 인스턴스 객체를 추가할 때 global property에 
 
 # Lifecycle Hooks
 
-각각의 Vue 컴포넌트 인스턴스는 생성되고 소멸될 때 사전에 정의된 몇 단계의 과정을 거치게 되는데 이를 **라이프사이클(lifecycle)**이라 합니다.
+각각의 Vue 컴포넌트 인스턴스는 생성되고 소멸될 때 사전에 정의된 몇 단계의 과정을 거치게 되는데 이를 **라이프사이클(lifecycle)** 이라 합니다.
 
 **라이프사이클 훅(Lifecycle hooks)은** 라이프사이클 단계에서 사용자가 자신의 코드를 추가할 수 있는 단계별 기능(function)입니다. 
 
@@ -4423,8 +4423,8 @@ export default {
 
 | Options API | setup 내부에서 사용 |
 | --- | --- |
-| beforeCreate | 필요하지 않음* |
-| created | 필요하지 않음* |
+| beforeCreate | 필요하지 않음 |
+| created | 필요하지 않음 |
 | beforeMount | onBeforeMount |
 | mounted | onMounted |
 | beforeUpdate | onBeforeUpdate |
@@ -4471,8 +4471,8 @@ export default {
   created() {
   },
   setup() {
-		// coding...
-	}
+    // coding...
+  }
 }
 ```
 
@@ -4602,18 +4602,18 @@ export default {
 import { ref, onMounted } from 'vue'
 
 export default {
-	setup() {
-		const list = ref([1, 2, 3])
-		
-		const itemRefs = ref([])
-		
-		onMounted(() => console.log(itemRefs.value))
-		
-		return {
-			list,
-			itemRefs
-		}
-	}
+  setup() {
+    const list = ref([1, 2, 3])
+    
+    const itemRefs = ref([])
+    
+    onMounted(() => console.log(itemRefs.value))
+    
+    return {
+      list,
+      itemRefs
+    }
+  }
 }
 </script>
 
@@ -4653,7 +4653,6 @@ export default {
 자식 컴포넌트를 정의해 보겠습니다.
 
 ```jsx
-// Child.vue
 <template>
   <div>Child Component</div>
 </template>
@@ -4678,7 +4677,6 @@ export default {
 부모 컴포넌트에서 자식 컴포넌트의 상태나 메서드에 접근할 수 있습니다.
 
 ```jsx
-// Child.vue
 <template>
   <button @click="child.sayHello()">child.sayHello()</button>
   <Child ref="child"></Child>
@@ -4737,7 +4735,7 @@ SFC와 Composition API를 사용하는 경우 `<script setup>`을 [사용하는 
 
 ### Top-level에 선언
 
-`<script setup>` 내부 최 상위에 선언된 변수, 함수, import 는 `<template>`에서 직접 사용할 수 있습니다.
+`<script setup>` 내부 최상위에 선언된 변수, 함수, import 는 `<template>`에서 직접 사용할 수 있습니다.
 
 ```html
 <script setup>
@@ -4750,7 +4748,7 @@ function log() {
 
 <template>
   <div @click="log">{{ msg }}</div>
-	<HelloComponent></HelloComponent>
+  <HelloComponent></HelloComponent>
 </template>
 ```
 
@@ -4763,7 +4761,7 @@ import HelloComponent from './components/HelloComponent.vue'
 </script>
 
 <template>
-	<HelloComponent></HelloComponent>
+  <HelloComponent></HelloComponent>
 </template>
 ```
 
@@ -4773,7 +4771,7 @@ import HelloComponent from './components/HelloComponent.vue'
 
 ```html
 <template>
-	<p>{{ message }}</p>
+  <p>{{ message }}</p>
 </template>
 <script setup>
 import { ref } from 'vue';
@@ -4802,7 +4800,7 @@ const emit = defineEmits(['change', 'delete'])
 - `defineProps`와 `defineEmits`에 전달된 옵션은 `setup()`에서 `모듈 영역(module scope)`으로 호이스트됩니다. 따라서 옵션은 `setup()` 영역에 선언된 지역 변수를 참조할 수 없습니다. 만약 그렇게 하면 컴파일 오류가 발생합니다.
 하지만 `import` 된 옵션은 사용할 수 있습니다. 왜냐하면 `import`도 모듈 영역으로 호이스트 되기 때문입니다.
 
-## ****defineExpose()****
+## **defineExpose()**
 
 `<script setup>`을 사용하는 컴포넌트는 기본적으로 **Template Refs**나 **$parent**와 같이 컴포넌트간 통신이 닫혀 있습니다.
 
@@ -4907,7 +4905,7 @@ const post = await fetch(`/api/post/1`).then((r) => r.json())
 
 `defineProps` 및 `defineEmits`와 같은 컴파일러 매크로는 `un-undef` 경고를 생성합니다.
 
-ESLint config 파일에서 컴파일러 매크로 환경을 활성화해야 합니다. 이러한 변수를 전역적으로 노출하지 않으려면 /* 전역 defineProps, defineEmits */를 대신 사용할 수 있습니다.
+ESLint config 파일에서 컴파일러 매크로 환경을 활성화해야 합니다. 이러한 변수를 전역적으로 노출하지 않으려면 *전역 defineProps, defineEmits* 를 대신 사용할 수 있습니다.
 
 # Vue-Router란?
 
@@ -4935,7 +4933,7 @@ npm install vue-router
 
 ## 시작하기
 
-`HomeView.vue`와 `AboutView.vue`라는 **페이지용 컴포넌트**를 만든후 `‘/’` 경로로 들어왔을 경우 `HomeView.vue` 페이지(컴포넌트)를 렌더링 하고 `‘/about’` 경로로 들어왔을 경우 `AboutView.vue` 페이지(컴포넌트)를 렌더링 하는 실습을 진행해 보도록 하겠습니다.
+`HomeView.vue`와 `AboutView.vue`라는 **페이지용 컴포넌트** 를 만든후 `‘/’` 경로로 들어왔을 경우 `HomeView.vue` 페이지(컴포넌트)를 렌더링 하고 `‘/about’` 경로로 들어왔을 경우 `AboutView.vue` 페이지(컴포넌트)를 렌더링 하는 실습을 진행해 보도록 하겠습니다.
 
 - `‘/’` → `HomeView.vue`
 - `‘/about’` → `AboutView.vue`
@@ -5049,34 +5047,35 @@ createApp(App).use(router).mount('#app');
 ```
 
 - `<RouterLink>`
-    
-    Vue Router 에서는 페이지를 이동할 때는 일반 `a`태그를 사용하는 대신 **커스텀 컴포넌트인** `<RouterLink>`를 사용하여 다른 페이지 링크를 만들어야 합니다.
-    
-    이를 통해 **Vue Router는 페이지를 리로딩 하지 않고 URL에 매핑된 페이지를 렌더링**할 수 있습니다.
-    
+
+  Vue Router 에서는 페이지를 이동할 때는 일반 `a`태그를 사용하는 대신 **커스텀 컴포넌트인** `<RouterLink>`를 사용하여 다른 페이지 링크를 만들어야 합니다.
+
+  이를 통해 **Vue Router는 페이지를 리로딩 하지 않고 URL에 매핑된 페이지를 렌더링**할 수 있습니다.
+
 - `<RouterView>`
-    
-    `<RouterView>`는 URL에 매핑된 컴포넌트를 화면에 표시합니다.
-    
+
+  `<RouterView>`는 URL에 매핑된 컴포넌트를 화면에 표시합니다.
+
 
 ### JavaScript
 
 위에서 `router`를 설정할 때 `app.use(router)`를 호출했습니다. 이렇게 호출 함으로써 모든 자식 컴포넌트에 `router`, `route` 같은 객체를 사용할 수 있습니다. 그리고 이러한 객체는 페이지 이동 또는 현재 활성 라우트(경로 매핑)정보 에 접근하는 데 사용할 수 있습니다.
 
 - `router`
-    
-    라우터 인스턴스로 JavaScript에서 다른 페이지(컴포넌트)로 이동할 수 있다.
-    
-    - Options API : **this.$router**
-    - Composition API : [**useRouter()**](https://router.vuejs.org/api/#userouter)
-    - template : $router
+
+  라우터 인스턴스로 JavaScript에서 다른 페이지(컴포넌트)로 이동할 수 있다.
+
+  - Options API : **this.$router**
+  - Composition API : [**useRouter()**](https://router.vuejs.org/api/#userouter)
+  - template : $router
+
 - `route`
-    
-    현재 활성 라우트 정보에 접근할 수 있다. (이 속성은 읽기 전용 입니다.)
-    
-    - Options API : **this.$route**
-    - Composition API : [**useRoute()**](https://router.vuejs.org/api/#useroute)
-    - template : $route
+
+  현재 활성 라우트 정보에 접근할 수 있다. (이 속성은 읽기 전용 입니다.)
+
+  - Options API : **this.$route**
+  - Composition API : [**useRoute()**](https://router.vuejs.org/api/#useroute)
+  - template : $route
 
 ```html
 <!-- HomeView.vue -->
@@ -5118,7 +5117,7 @@ const goAboutPage = () => router.push('/about');
 
 ## 동적 라우트 매칭
 
-주어진 패턴을 가진 라우트를 동일한 컴포넌트에 매핑해야하는 경우가 자주 있습니다. 예를 들어 **사용자 목록(User List)**은 `/users`와 같은 경로에 매핑되면 되지만 **사용자 상세(User Detail)**는 **사용자 식별자 별로 같은 컴포넌트에 매핑** 되어야 합니다. (예:  `/users/alice`, `/users/emma`, `...` → `UserComponent.vue`)
+주어진 패턴을 가진 라우트를 동일한 컴포넌트에 매핑해야하는 경우가 자주 있습니다. 예를 들어 **사용자 목록(User List)** 은 `/users`와 같은 경로에 매핑되면 되지만 **사용자 상세(User Detail)** 는 **사용자 식별자 별로 같은 컴포넌트에 매핑** 되어야 합니다. (예:  `/users/alice`, `/users/emma`, `...` → `UserComponent.vue`)
 
 이럴때 Vue Router에서는 경로에서 동적 세그먼트를 사용하여 해결할 수 있습니다. 이를 `param`이라고 합니다.
 
@@ -5258,7 +5257,7 @@ router.go(-100)
 router.go(100)
 ```
 
-## ****Params 변경 사항에 반응하기****
+## **Params 변경 사항에 반응하기**
 
 매개 변수와 함께 라우트를 사용할 때 주의 해야할 점은 사용자가 `/users/alice`에서 `/users/emma`로 이동할 때 **동일한 컴포넌트 인스턴스가 재사용된다는 것입니다.** 왜냐하면 두 라우트 모두 동일한 컴포넌트를 렌더링하므로 이전 인스턴스를 삭제 한 다음 새 인스턴스를 만드는 것보다 효율적입니다. **그러나 이는 또한 컴포넌트의 라이프 사이클 훅이 호출되지 않음을 의미합니다.**
 
@@ -5277,7 +5276,7 @@ const route = useRoute();
 watch(
   () => route.params,
   (toParams, previousParams) => {
-		// working
+    // working
   }
 );
 ```
@@ -5290,10 +5289,10 @@ watch(
 
 ```jsx
 export default {
-	beforeRouteUpdate(to, from) {
-		// working
-		this.userData = await fetchUser(to.params.id)
-	}
+  beforeRouteUpdate(to, from) {
+    // working
+    this.userData = await fetchUser(to.params.id)
+  }
 }
 ```
 
@@ -5387,14 +5386,14 @@ const router = createRouter({
 ```html
 <!-- App.vue -->
 <div id="app">
-	<router-view></router-view>
+  <router-view></router-view>
 </div>
 ```
 
 ```html
 <!-- User.vue -->
 <div class="user">
-	<h2>User {{ $route.params.id }}</h2>
+  <h2>User {{ $route.params.id }}</h2>
 </div>
 ```
 
@@ -5415,8 +5414,8 @@ const routes = [
 ```html
 <!-- User.vue -->
 <div class="user">
-	<h2>User {{ $route.params.id }}</h2>
-	<router-view></router-view>
+  <h2>User {{ $route.params.id }}</h2>
+  <router-view></router-view>
 </div>
 ```
 
@@ -5445,14 +5444,14 @@ const routes = [
 ```html
 <!-- UserProfile.vue -->
 <div class="user-profile">
-	User Profile
+  User Profile
 </div>
 ```
 
 ```html
 <!-- UserPosts.vue -->
 <div class="user-posts">
-	User Posts
+  User Posts
 </div>
 ```
 
@@ -5460,21 +5459,20 @@ const routes = [
 
 - `**/`로 시작하는 중첩 경로는 루트 경로로 처리됩니다. 이를 통해 중첩 URL을 사용하지 않고도 컴포넌트 중첩을 활용할 수 있습니다.**
 - 위 routes 설정으로 보면 `/users/alice`로 방문 했을 때 `User 컴포넌트`에 있는 중첩된 `<router-view>`에는 아무것도 렌더링 되지 않습니다.  이러한 경우 빈 중첩 경로를 제공할 수 있습니다.
-    
-    ```jsx
-    const routes = [
-      {
-        path: '/user/:id',
-        component: User,
-        children: [
-          { path: '', component: UserHome },
-    
-          // ...other sub routes
-        ],
-      },
-    ]
-    ```
-    
+
+```jsx
+const routes = [
+  {
+    path: '/user/:id',
+    component: User,
+    children: [
+      { path: '', component: UserHome },
+
+      // ...other sub routes
+    ],
+  },
+]
+```
 
 ## 라우트 컴포넌트에 속성 전달
 
@@ -5504,7 +5502,7 @@ const routes = [{ path: '/user/:id', component: User, props: true }]
 
 이를 통해 어디서나 컴포넌트를 사용할 수 있으므로 컴포넌트 재사용 및 테스트하기가 더 쉽습니다.
 
-### ****Boolean 모드****
+### **Boolean 모드**
 
 `props`를 `true`로 설정하면 `route.params`가 컴포넌트 `props`로 설정됩니다.
 
@@ -5554,15 +5552,15 @@ const routes = [
 
 Router 인스턴스를 생성할 때 `[history](https://router.vuejs.org/api/#history)` 옵션을 사용하면 다양한 history mode 중에서 선택할 수 있습니다.
 
-- Hash - ****[createWebHashHistory()](https://router.vuejs.org/api/#createwebhashhistory)**
-- History - ****[createWebHistory()](https://router.vuejs.org/api/#createwebhistory)****
-- Memory - ****[createMemoryHistory()](https://router.vuejs.org/api/#creatememoryhistory)****
+- Hash - **[createWebHashHistory()](https://router.vuejs.org/api/#createwebhashhistory)**
+- History - **[createWebHistory()](https://router.vuejs.org/api/#createwebhistory)**
+- Memory - **[createMemoryHistory()](https://router.vuejs.org/api/#creatememoryhistory)**
 
 ### Hash 모드
 
 Vue Router를 통해 URL로 페이지를 전환할 때 히스토리 관리 기법를 해시(`#`)형으로 쓸 수 있게 해줍니다.
 
-해시모드는 `[createWebHashHistory()](https://router.vuejs.org/api/#createwebhashhistory)`를 사용하여 생성됩니다.
+해시모드는 [createWebHashHistory()](https://router.vuejs.org/api/#createwebhashhistory)를 사용하여 생성됩니다.
 
 ```jsx
 import { createRouter, createWebHashHistory } from 'vue-router'
@@ -5575,13 +5573,13 @@ const router = createRouter({
 })
 ```
 
-내부적으로 전달되는 실제 URL 앞에 해시 문자(`#`)를 사용합니다. URL의 이 섹션은 서버로 전송되지 않으므로 서버 수준에서 특별한 처리가 필요하지 않습니다. **그러나 그것은 SEO에 나쁜 영향을 미칩니다** . 그게 걱정된다면 HTML5 모드(`createWebHistory()`****)****를 사용하세요.
+내부적으로 전달되는 실제 URL 앞에 해시 문자(`#`)를 사용합니다. URL의 이 섹션은 서버로 전송되지 않으므로 서버 수준에서 특별한 처리가 필요하지 않습니다. **그러나 그것은 SEO에 나쁜 영향을 미칩니다** . 그게 걱정된다면 HTML5 모드(`createWebHistory()`)를 사용하세요.
 
 ### History 모드 (HTML5 모드)
 
 Vue Router를 통해 URL로 페이지를 전환할 때 히스토리 관리 기법를 해시(`#`)없이 쓸 수 있게 해줍니다. Web API인 `history.pushState()`를 활용하여 페이지를 다시 로드하지 않고도 URL 탐색을 할 수 있습니다.
 
-HTML5 모드는 `[createWebHistory()](https://router.vuejs.org/api/#createwebhistory)`로 생성되며 권장 모드입니다.
+HTML5 모드는 [createWebHistory()](https://router.vuejs.org/api/#createwebhistory)로 생성되며 권장 모드입니다.
 
 ```jsx
 import { createRouter, createWebHistory } from 'vue-router'
@@ -5610,16 +5608,16 @@ const router = createRouter({
 ## 참고
 
 - Vue Router v4
-    
-    [Programmatic Navigation | Vue Router](https://router.vuejs.org/guide/essentials/navigation.html)
-    
+
+[Programmatic Navigation | Vue Router](https://router.vuejs.org/guide/essentials/navigation.html)
+
 - Vue Router v3 KR
-    
-    [중첩된 라우트 | Vue Router](https://v3.router.vuejs.org/kr/guide/essentials/nested-routes.html)
-    
+
+[중첩된 라우트 | Vue Router](https://v3.router.vuejs.org/kr/guide/essentials/nested-routes.html)
+
 - ref vs reactive
-    
-    [Vue 3 Composition API: ref() vs. reactive()](https://markus.oberlehner.net/blog/vue-3-composition-api-ref-vs-reactive/)
+
+[Vue 3 Composition API: ref() vs. reactive()](https://markus.oberlehner.net/blog/vue-3-composition-api-ref-vs-reactive/)
 
 # 네비게이션 가드
 
@@ -5627,7 +5625,7 @@ const router = createRouter({
 
 이름에서 알 수 있듯이 Vue Router에서 제공하는 네비게이션 가드는 주로 페이지 이동을 리다이렉션 하거나 취소하여 특정 페이지 진입을 보호하는 데 사용됩니다.
 
-라우트 탐색 프로세스에 연결하는 방법에는 **전역**, **라우트별** 또는 **컴포넌트**가 있습니다.
+라우트 탐색 프로세스에 연결하는 방법에는 **전역**, **라우트별** 또는 **컴포넌트** 가 있습니다.
 
 ## 전역가드
 
@@ -5704,7 +5702,7 @@ router.beforeResolve(async to => {
 
 데이터를 가져오거나 사용자가 페이지에 들어갈 수 없는 경우 피하고 싶은 다른 작업을 수행하기에 이상적인 장소입니다.
 
-### ****Global After Hooks****
+### **Global After Hooks**
 
 전역 훅을 등록 할 수도 있지만, 가드와 달리 이 훅은 `next` 함수를 얻지 못하며 네비게이션에 영향을 줄 수 없습니다.
 
@@ -5778,21 +5776,21 @@ const UserDetails = {
   template: `...`,
   beforeRouteEnter(to, from) {
     // 네비게이션 이동이 확정된 후 컴포넌트가 만들어 지기 전에 실행되는 가드입니다.
-		// `this` 구성 요소 인스턴스에 대한 액세스 권한이 없습니다.
-		// 이 가드가 호출될 때 아직 생성되지 않았기 때문입니다!
+    // `this` 구성 요소 인스턴스에 대한 액세스 권한이 없습니다.
+    // 이 가드가 호출될 때 아직 생성되지 않았기 때문입니다!
   },
   beforeRouteUpdate(to, from) {
-		// 이 컴포넌트를 렌더링하는 경로가 변경되면 호출됩니다.
-		// 하지만 이 구성 요소는 새 경로에서 재사용됩니다.
-		// 예를 들어 `/users/:id` 매개변수가 있는 경로가 주어지면
-		// `/users/1`과 `/users/2` 사이를 탐색합니다. 동일한 `UserDetails` 구성요소 인스턴스입니다.
-		// 재사용되며, 이 경우 이 후크가 호출됩니다.
-		// 이 과정에서 구성 요소가 마운트되기 때문에 탐색 가드는 `this` 구성 요소 인스턴스에 액세스할 수 있습니다.
+    // 이 컴포넌트를 렌더링하는 경로가 변경되면 호출됩니다.
+    // 하지만 이 구성 요소는 새 경로에서 재사용됩니다.
+    // 예를 들어 `/users/:id` 매개변수가 있는 경로가 주어지면
+    // `/users/1`과 `/users/2` 사이를 탐색합니다. 동일한 `UserDetails` 구성요소 인스턴스입니다.
+    // 재사용되며, 이 경우 이 후크가 호출됩니다.
+    // 이 과정에서 구성 요소가 마운트되기 때문에 탐색 가드는 `this` 구성 요소 인스턴스에 액세스할 수 있습니다.
   },
   beforeRouteLeave(to, from) {
-		// 라우트를 떠날 떄 실행되는 가드입니다.
-		// 멀리 탐색합니다.
-		// `beforeRouteUpdate`와 마찬가지로 `this` 구성 요소 인스턴스에 액세스할 수 있습니다.
+    // 라우트를 떠날 떄 실행되는 가드입니다.
+    // 멀리 탐색합니다.
+    // `beforeRouteUpdate`와 마찬가지로 `this` 구성 요소 인스턴스에 액세스할 수 있습니다.
   },
 }
 ```
@@ -5809,7 +5807,7 @@ beforeRouteEnter (to, from, next) {
 }
 ```
 
-`beforeRouteLeave` **가드**는 일반적으로 사용자가 저장하지 않은 편집으로 경로를 실수로 떠나는 것을 방지하는 데 사용됩니다 . `false`를 반환하여 탐색을 취소할 수 있습니다.
+`beforeRouteLeave` **가드** 는 일반적으로 사용자가 저장하지 않은 편집으로 경로를 실수로 떠나는 것을 방지하는 데 사용됩니다 . `false`를 반환하여 탐색을 취소할 수 있습니다.
 
 ```jsx
 beforeRouteLeave (to, from) {
@@ -5856,12 +5854,12 @@ export default {
 ## 참고
 
 - Vue Router v4
-    
-    [Programmatic Navigation | Vue Router](https://router.vuejs.org/guide/essentials/navigation.html)
-    
+
+[Programmatic Navigation | Vue Router](https://router.vuejs.org/guide/essentials/navigation.html)
+
 - Vue Router v3 KR
-    
-    [중첩된 라우트 | Vue Router](https://v3.router.vuejs.org/kr/guide/essentials/nested-routes.html)
+
+[중첩된 라우트 | Vue Router](https://v3.router.vuejs.org/kr/guide/essentials/nested-routes.html)
 
 # Transition
 
@@ -5888,7 +5886,7 @@ Vue에서는 Transitions 이나 Animations을 쉽게할 수 있도록 도움을 
 
 # Teleport
 
-`<Teleport>`는 컴포넌트는 템플릿의 일부분을 외부에 존재하는 다른 DOM 노드로 **'텔레포트(이동)'**할 수 있게 해주는 내장 컴포넌트 입니다.
+`<Teleport>`는 컴포넌트는 템플릿의 일부분을 외부에 존재하는 다른 DOM 노드로 **'텔레포트(이동)'** 할 수 있게 해주는 내장 컴포넌트 입니다.
 
 ## `<Teleport>` 사용하기
 
@@ -5943,7 +5941,7 @@ Vue에서는 Transitions 이나 Animations을 쉽게할 수 있도록 도움을 
 
 ## 플러그인 작성하기
 
-플러그인은 **install() 메서드를 갖고 있는 객체**나 **단순히 설치 함수**로 만들 수 있습니다.
+플러그인은 **install() 메서드를 갖고 있는 객체**나 **단순히 설치 함수** 로 만들 수 있습니다.
 
 ```jsx
 // install() 메서드를 갖고 있는 객체
@@ -5978,8 +5976,8 @@ app.mount('#app');
 
 ```jsx
 install: (app, options) => {
-	// app.provide, app.component 등 사용할 수 있는 전역 인스턴스
-	// app.use(plugin, { options }) 호출 시 전달한 두 번째 파라미터
+  // app.provide, app.component 등 사용할 수 있는 전역 인스턴스
+  // app.use(plugin, { options }) 호출 시 전달한 두 번째 파라미터
 }
 ```
 
@@ -5988,47 +5986,45 @@ install: (app, options) => {
 ### components.d.ts 등록
 
 - vite-plugin-components 옵션을 사용하여 한번에 체크 가능
-    - `ViteComponents()` : 자동 import
-    - `globalComponentsDeclaration: true` 옵션 componentd.d.ts 자동 등록
+  - `ViteComponents()` : 자동 import
+  - `globalComponentsDeclaration: true` 옵션 componentd.d.ts 자동 등록
 
-### ****Vue 3 Support - All In One****
+### **Vue 3 Support - All In One**
 
-- ****[Vue 3 Support - All In One](https://marketplace.visualstudio.com/items?itemName=Wscats.vue) 플러그인 사용**
+- **[Vue 3 Support - All In One](https://marketplace.visualstudio.com/items?itemName=Wscats.vue) 플러그인 사용**
 
 ## 참고
 
 - **Vue3 Plugins 공식문서**
-    
-    [Plugins | Vue.js](https://vuejs.org/guide/reusability/plugins.html#writing-a-plugin)
-    
+
+  [Plugins | Vue.js](https://vuejs.org/guide/reusability/plugins.html#writing-a-plugin)
+
 - **VSCode Volar Plugin**
-    - ****Vue Language Features (Volar)****
-        
-        [Vue Language Features (Volar) - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
-        
-    - ****Vue Volar extension Pack****
-        
-        [Vue Volar extension Pack - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=MisterJ.vue-volar-extention-pack)
-        
+  - ****Vue Language Features (Volar)****
+
+  [Vue Language Features (Volar) - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+
+  - ****Vue Volar extension Pack****
+
+    [Vue Volar extension Pack - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=MisterJ.vue-volar-extention-pack)
+
 - **vite-plugin-components**
-    
-    [📲 Vite 용 주문형 구성 요소 자동 가져 오기 - wenyanet](https://www.wenyanet.com/opensource/ko/60b92951a4f03f33442a9317.html)
-    
-    [unplugin-vue-components](https://www.npmjs.com/package/unplugin-vue-components)
-    
-- Vue3 global components not recognised
-    
-    [](https://youtrack.jetbrains.com/issue/WEB-48239/Vue-3-global-components-not-recognised)
-    
+
+  [📲 Vite 용 주문형 구성 요소 자동 가져 오기 - wenyanet](https://www.wenyanet.com/opensource/ko/60b92951a4f03f33442a9317.html)
+
+  [unplugin-vue-components](https://www.npmjs.com/package/unplugin-vue-components)
+
+- [Vue3 global componenets not recognised](https://youtrack.jetbrains.com/issue/WEB-48239/Vue-3-global-components-not-recognised)
+
 - **global component type PR**
-    
-    https://github.com/vuejs/core/pull/3399
+
+  https://github.com/vuejs/core/pull/3399
 
 # Custom Directives
 
 Vue 코어에서 기본으로 제공하는 디렉티브(`v-if` 또는 `v-for`와 같은) 외에도 Vue를 사용하면 직접 커스텀 지렉티브를 만들 수 있습니다.
 
-Vue에서는 [Component](https://vuejs.org/guide/essentials/component-basics.html)와 [Composables](https://vuejs.org/guide/reusability/composables.html) 두 가지 형태의 코드 재사용을 도입했습니다. 컴포넌트는 주요 **빌딩블록을 재사용** 하는 반면 컴포저블은 **stateful logic을 재사용**하는 데 중점을 둡니다. 반면에 커스텀 디렉티브는 주로 일반 요소에 대한 **low-level(저수준) DOM 접근과 관련된 로직을 재사용**하기 위한 것입니다.
+Vue에서는 [Component](https://vuejs.org/guide/essentials/component-basics.html)와 [Composables](https://vuejs.org/guide/reusability/composables.html) 두 가지 형태의 코드 재사용을 도입했습니다. 컴포넌트는 주요 **빌딩블록을 재사용** 하는 반면 컴포저블은 **stateful logic을 재사용** 하는데 중점을 둡니다. 반면에 커스텀 디렉티브는 주로 일반 요소에 대한 **low-level(저수준) DOM 접근과 관련된 로직을 재사용** 하기 위한 것입니다.
 
 ## `<script setup>` Directives
 
@@ -6094,26 +6090,26 @@ app.directive('focus', {
 
 ```jsx
 const myDirective = {
-	// 바인딩된 요소의 속성 전에 호출됨
-	// 또는 이벤트 리스너가 적용됨
-	created(el, binding, vnode, prevVnode) {
-	// 인수에 대한 자세한 내용은 아래를 참조하십시오.
-	},
-	// 요소가 DOM에 삽입되기 직전에 호출됩니다.
-	beforeMount() {},
-	// 바인딩된 요소의 부모 구성 요소가 있을 때 호출됩니다.
-	// 모든 자식이 마운트됩니다.
-	mounted() {},
-	// 상위 컴포넌트가 업데이트되기 전에 호출됨
-	beforeUpdate() {},
-	// 상위 컴포넌트 다음에 호출되고
-	// 모든 자식이 업데이트되었습니다.
-	updated() {},
-	// 상위 컴포넌트가 마운트 해제되기 전에 호출됨
-	beforeUnmount() {},
-	// 상위 컴포넌트가 마운트 해제될 때 호출됩니다.
-	unmounted() {}
-	}
+  // 바인딩된 요소의 속성 전에 호출됨
+  // 또는 이벤트 리스너가 적용됨
+  created(el, binding, vnode, prevVnode) {
+  // 인수에 대한 자세한 내용은 아래를 참조하십시오.
+  },
+  // 요소가 DOM에 삽입되기 직전에 호출됩니다.
+  beforeMount() {},
+  // 바인딩된 요소의 부모 구성 요소가 있을 때 호출됩니다.
+  // 모든 자식이 마운트됩니다.
+  mounted() {},
+  // 상위 컴포넌트가 업데이트되기 전에 호출됨
+  beforeUpdate() {},
+  // 상위 컴포넌트 다음에 호출되고
+  // 모든 자식이 업데이트되었습니다.
+  updated() {},
+  // 상위 컴포넌트가 마운트 해제되기 전에 호출됨
+  beforeUnmount() {},
+  // 상위 컴포넌트가 마운트 해제될 때 호출됩니다.
+  unmounted() {}
+  }
 }
 ```
 
@@ -6122,14 +6118,17 @@ const myDirective = {
 디렉티브 훅에는 다음과 같은 매개변수가 전달됩니다.
 
 - `el`: 디렉티브가 바인딩된 요소입니다. DOM을 직접 조작하는 데 사용할 수 있습니다.
+
 - `binding`: 다음 속성을 포함하는 개체입니다.
-    - `value`: 지시문에 전달된 값입니다. 예를 들어 `v-my-directive="1 + 1"`에서 값은 `2`입니다.
-    - `oldValue`: `beforeUpdate` 및 업데이트에서만 사용할 수 있는 이전 값입니다. 값이 변경되었는지 여부에 관계없이 사용 가능합니다.
-    - `arg`: 지시문에 전달된 인수(있는 경우). 예를 들어 `v-my-directive:foo`에서 인수는 `foo`입니다.
-    - `modifiers`: 수정자가 있는 경우 수정자를 포함하는 개체입니다. 예를 들어 `v-my-directive.foo.bar`에서 수정자 객체는 `{ foo: true, bar: true }`입니다.
-    - `instance`: 지시문이 사용되는 구성 요소의 인스턴스입니다.
-    - `dir`: 지시문 정의 개체.
+  - `value`: 지시문에 전달된 값입니다. 예를 들어 `v-my-directive="1 + 1"`에서 값은 `2`입니다.
+  - `oldValue`: `beforeUpdate` 및 업데이트에서만 사용할 수 있는 이전 값입니다. 값이 변경되었는지 여부에 관계없이 사용 가능합니다.
+  - `arg`: 지시문에 전달된 인수(있는 경우). 예를 들어 `v-my-directive:foo`에서 인수는 `foo`입니다.
+  - `modifiers`: 수정자가 있는 경우 수정자를 포함하는 개체입니다. 예를 들어 `v-my-directive.foo.bar`에서 수정자 객체는 `{ foo: true, bar: true }`입니다.
+  - `instance`: 지시문이 사용되는 구성 요소의 인스턴스입니다.
+  - `dir`: 지시문 정의 개체.
+
 - `vnode`: 바인딩된 요소를 나타내는 기본 VNode.
+
 - `prevNode`: 이전 렌더링에서 바인딩된 요소를 나타내는 VNode. `beforeUpdate` 및 `updated` 후크에서만 사용할 수 있습니다.
 
 예를 들어 다음 디렉티브가 있다고 가정해 보겠습니다.
@@ -6161,8 +6160,8 @@ const myDirective = {
 
 ```jsx
 app.directive('color', (el, binding) = {
-	// 이것은 `mounted`와 `updated` 모두에 대해 호출됩니다.
-	el.style.color = binding.value
+  // 이것은 `mounted`와 `updated` 모두에 대해 호출됩니다.
+  el.style.color = binding.value
 })
 ```
 
@@ -6213,9 +6212,9 @@ app.directive('demo', (el, binding) => {
 
 ## Composable 이란?
 
-Vue 애플리케이션에서 **“Composable”**은 **Vue Composition API를 활용하여 상태 저장 비즈니스 로직을 캡슐화 하고 재사용하는 기능**을 말합니다.
+Vue 애플리케이션에서 **“Composable”** 은 **Vue Composition API를 활용하여 상태 저장 비즈니스 로직을 캡슐화 하고 재사용하는 기능** 을 말합니다.
 
-프론트엔드 애플리케이션을 구축할 때 일반적인 로직을 재사용해야 하는 경우가 종종 있습니다. 예를 들어 여러 곳에서 날짜 형식을 지정해야 한다면 우리는 이러한 로직을 재사용 하기 위해서 함수(모듈)로 추출합니다. 이러한 함수는 **상태 비저장 로직을 캡슐화** 한 것입니다. 간단한 Input/Output만 있는 구조 입니다. 이러한 상태 비저장 로직를 재사용하기 위한 많은 라이브러리가 있으며, 예를 들어 **lodash**, **dayjs**와 같은 것들이 있습니다.
+프론트엔드 애플리케이션을 구축할 때 일반적인 로직을 재사용해야 하는 경우가 종종 있습니다. 예를 들어 여러 곳에서 날짜 형식을 지정해야 한다면 우리는 이러한 로직을 재사용 하기 위해서 함수(모듈)로 추출합니다. 이러한 함수는 **상태 비저장 로직을 캡슐화** 한 것입니다. 간단한 Input/Output만 있는 구조 입니다. 이러한 상태 비저장 로직를 재사용하기 위한 많은 라이브러리가 있으며, 예를 들어 **lodash**, **dayjs** 와 같은 것들이 있습니다.
 
 하지만 상태 저장 로직은 사용하면서 변경되는 상태 관리가 포함됩니다. 간단한 예는 페이지에서 마우스의 현재 위치를 추적하는 것입니다.
 
@@ -6282,11 +6281,11 @@ const { x, y } = useMouse();
 <template>마우스 위치: {{ x }}, {{ y }}</template>
 ```
 
-위 예시에서 볼 수 있듯이 핵심 로직은 그대로 유지됩니다. 우리가 해야 할 일은 **핵심 로직을 외부 함수로 추출**하고 컴포넌트에 **노출되어야 하는 상태를 반환**하는 것입니다.
+위 예시에서 볼 수 있듯이 핵심 로직은 그대로 유지됩니다. 우리가 해야 할 일은 **핵심 로직을 외부 함수로 추출** 하고 컴포넌트에 **노출되어야 하는 상태를 반환** 하는 것입니다.
 
 Composable 함수에서는 컴포넌트에서 내부에서 구현 했던것과 마찬가지로 Composable 함수 전체 범위에서 Composition API 기능을 사용할 수 있습니다. 이제 모든 컴포넌트에서 `useMouse()` 기능을 사용할 수 있습니다.
 
-그리고 Composable의 장점은 이러한 **Composable 함수를 중첩**해서 사용할 수 있다는 것입니다. 하나의 Composable 함수는 하나 이상의 다른 Composable 함수를 호출할 수 있습니다. 이를 통해 우리는 작은 로직의 단위를 사용하여 복잡한 로직을 구성할 수 있습니다. 이것은 마치 컴포넌트를 사용하여 전체 애플리케이션을 구성하는 것과 유사합니다. 이렇게 **재사용 로직 단위로 가능하기 때문에 이름이 Composition API** 입니다.
+그리고 Composable의 장점은 이러한 **Composable 함수를 중첩** 해서 사용할 수 있다는 것입니다. 하나의 Composable 함수는 하나 이상의 다른 Composable 함수를 호출할 수 있습니다. 이를 통해 우리는 작은 로직의 단위를 사용하여 복잡한 로직을 구성할 수 있습니다. 이것은 마치 컴포넌트를 사용하여 전체 애플리케이션을 구성하는 것과 유사합니다. 이렇게 **재사용 로직 단위로 가능하기 때문에 이름이 Composition API** 입니다.
 
 ```jsx
 // event.js
@@ -6475,8 +6474,8 @@ Composable 함수는 반응성에 의존하지 않더라도 ref 파라미터를 
 import { unref } from 'vue'
 
 function useFeature(maybeRef) {
-	// 만약 mayRef가 실제로 ref라면, 그것의 .value가 반환될 것입니다.
-	// 그렇지 않으면, mayRef는 있는 그대로 반환됩니다.
+  // 만약 mayRef가 실제로 ref라면, 그것의 .value가 반환될 것입니다.
+  // 그렇지 않으면, mayRef는 있는 그대로 반환됩니다.
   const value = unref(maybeRef)
 }
 ```
@@ -6511,7 +6510,7 @@ Composable 함수에서 다른 작업(DOM 이벤트 리스너 추가 또는 데�
 
 ### 사용 제한
 
-Composable 함수는 `<script setup>` 또는 `setup()` 훅 내에서 **동기적**으로 호출해야 합니다. 또는 경우에 따라 `onMounted()`와 같은 라이프사이클 훅에서 호출할 수도 있습니다.
+Composable 함수는 `<script setup>` 또는 `setup()` 훅 내에서 **동기적** 으로 호출해야 합니다. 또는 경우에 따라 `onMounted()`와 같은 라이프사이클 훅에서 호출할 수도 있습니다.
 
 # toRef, toRefs
 
@@ -6544,7 +6543,7 @@ const fooRef = ref(state.foo)
 
 위의 ref 객체(fooRef)는 프리미티브 값을 초기화 값으로 받기 때문에 `state.foo`와 동기화 되지 않습니다.
 
-### ****toRef 활용****
+### **toRef 활용**
 
 `toRef()`는 Composable 함수에 Props 참조를 전달하려는 경우에 유용합니다.
 
@@ -6565,7 +6564,7 @@ useSomeFeature(toRef(props, 'foo'))
 
 ## toRefs
 
-반응형 객체를 **구조분해 할당 후 반응형을 그대로 유지**하고 싶을 때 사용합니다.
+반응형 객체를 **구조분해 할당 후 반응형을 그대로 유지** 하고 싶을 때 사용합니다.
 
 반응형(reactive) 객체를 구조 분해하여 재할당 할 경우 반응형으로 동작하지 않습니다. 이렇게 반응형으로 동작하지 않는것은 매우 당연한 일입니다. (call by value)
 
@@ -6628,7 +6627,7 @@ Composable 함수에서 반환값을 `ref`로 반환해야 하는 컨벤션(규�
 
 ```jsx
 if (isRef(foo)) {
-	foo.value
+  foo.value
 }
 ```
 
@@ -6638,7 +6637,7 @@ if (isRef(foo)) {
 
 ```jsx
 function useFoo(x) {
-	const unwrapped = unref(x)
+  const unwrapped = unref(x)
 }
 ```
 
@@ -6696,7 +6695,7 @@ function increment() {
 
 - **state** - 컴포넌트내에 선언된 상태
 - **view** - 상태가 선언적으로 매핑된 템플릿
-- **actions** - **view**에서 사용자의 입력에 대한 반응으로 **state**를 변경할 수 있음
+- **actions** - **view** 에서 사용자의 입력에 대한 반응으로 **state** 를 변경할 수 있음
 
 컴포넌트의 단방향 데이터 흐름을 간단히 표현해보면 이렇습니다.
 
@@ -6704,7 +6703,7 @@ function increment() {
 
 하지만 컴포넌트간에 공통된 상태를 공유하려면 어떻게 해야 할까요?
 
-1. 공유하고자 하는 상태를 같은 부모 컴포넌트로 두고 **Props**로 전달하는 것입니다.
+1. 공유하고자 하는 상태를 같은 부모 컴포넌트로 두고 **Props** 로 전달하는 것입니다.
 → 그러나 이것은 깊은 계층구조를 가진 컴포넌트에서 [Prop Drilling 이라는 문제](https://vuejs.org/guide/components/provide-inject.html#prop-drilling)로 이어질 수 있습니다.
 2. Template Refs를 사용해서 부모/자식 인스턴스에 직접 접근하거나 Emits 이벤트를 통해 여러 복사본의 상태를 동기화 하는 것입니다.
 → 이러한 패턴은 유지 관리할 수 없는 코드로 이어집니다. 
@@ -6731,7 +6730,7 @@ import { store } from './store.js'
 </script>
 
 <template>
-	<div>From A: {{ store.count }}</div>
+  <div>From A: {{ store.count }}</div>
 </template>
 ```
 
@@ -6742,7 +6741,7 @@ import { store } from './store.js'
 </script>
 
 <template>
-	<div>From B: {{ store.count }}</div>
+  <div>From B: {{ store.count }}</div>
 </template>
 ```
 
@@ -6772,7 +6771,7 @@ export const store = reactive({
 
 ```jsx
 <button @click="store.increment()">
-	Component B: {{ store.count }}
+  Component B: {{ store.count }}
 </button>
 ```
 
@@ -6838,7 +6837,7 @@ Pinia는 Vue의 저장소 라이브러리로 컴포너트/페이지 간에 상�
 
 ## Vuex와 비교?
 
-- mutations는 더이상 존재하지 않습니다. 왜냐하면 mutatinos는 필요 이상으로 **장황하게 인식**되었기 때문입니다.
+- mutations는 더이상 존재하지 않습니다. 왜냐하면 mutatinos는 필요 이상으로 **장황하게 인식** 되었기 때문입니다.
 - TypeScript를 지원하기 위해 복잡한 사용자 지정 래퍼를 만들 필요가 없으며 모든 것이 입력되며 API는 TS 타입 추론을 최대한 활용하는 방식으로 설계되었습니다.
 - 강력한 autocompletion
 - 
@@ -6854,7 +6853,7 @@ npm install pinia
 ```
 
 > **Tip**
-앱이 Vue 2를 사용하는 경우 구성 `@vue/composition-api`도 설치해야 합니다 . Nuxt를 사용하는 경우 [다음 지침](https://pinia.vuejs.org/ssr/nuxt.html) 을 따라야 합니다 .
+앱이 Vue 2를 사용하는 경우 구성 `@vue/composition-api`도 설치해야 합니다 . Nuxt를 사용하는 경우 [다음 지침](https://pinia.vuejs.org/ssr/nuxt.html)을 따라야합니다.
 > 
 
 만약 Vue CLI를 사용하는 경우 이 **[비공식 플러그인](https://github.com/wobsoriano/vue-cli-plugin-pinia)** 을 대신 사용해 볼 수 있습니다.
@@ -6879,7 +6878,7 @@ Store에는 애플리케이션 전체에서 접근할 수 있는 데이터가 �
 
 # Store 정의
 
-Store는 `defineStore()`를 사용하여 정의합니다. 그리고 매개변수로 **유니크한 이름**을 전달해야 합니다.
+Store는 `defineStore()`를 사용하여 정의합니다. 그리고 매개변수로 **유니크한 이름** 을 전달해야 합니다.
 
 ```jsx
 import { defineStore } from 'pinia'
@@ -6922,7 +6921,7 @@ Store가 인스턴스화되면 `store`에서 직접 `state`, `getters`, `actions
 export default defineComponent({
   setup() {
     const store = useStore()
-		// ❌ 이것은 반응성을 깨뜨리기 때문에 작동하지 않습니다.
+    // ❌ 이것은 반응성을 깨뜨리기 때문에 작동하지 않습니다.
     const { name, doubleCount } = store
 
     name // "eduardo"
@@ -6949,10 +6948,10 @@ export default defineComponent({
   setup() {
     const store = useStore()
     // `name`과 `doubleCount`는 반응형 참조입니다.
-		// 플러그인에 의해 추가된 속성에 대한 참조도 생성됩니다.
-		// 그러나 모든 작업 또는 비반응성(비 참조/반응성) 속성을 건너뜁니다.
+    // 플러그인에 의해 추가된 속성에 대한 참조도 생성됩니다.
+    // 그러나 모든 작업 또는 비반응성(비 참조/반응성) 속성을 건너뜁니다.
     const { name, doubleCount } = storeToRefs(store)
-		// increment action은 그냥 추출될 수 있습니다.
+    // increment action은 그냥 추출될 수 있습니다.
     const { increment } = store
 
     return {
@@ -6975,7 +6974,7 @@ const useStore = defineStore('storeId', {
   // 전체 타입 추론에 권장되는 화살표 함수
   state: () => {
     return {
-			// 이 모든 속성은 자동으로 유형이 유추됩니다.
+      // 이 모든 속성은 자동으로 유형이 유추됩니다.
       counter: 0,
       name: 'Eduardo',
       isAdmin: true,
@@ -7092,7 +7091,7 @@ watch(
 
 - Vuex와 다르게 state를 직접 변경할 수 있다.
 - Vuex와 다르게 Mutations에 대한 개념이 없어졌다.
-    - 결구 개념이 더 단순해지고 구조가 간결해짐.
+- 결구 개념이 더 단순해지고 구조가 간결해짐.
 
 # State
 
@@ -7105,7 +7104,7 @@ const useStore = defineStore('storeId', {
   // 전체 타입 추론에 권장되는 화살표 함수
   state: () => {
     return {
-			// 이 모든 속성은 자동으로 유형이 유추됩니다.
+      // 이 모든 속성은 자동으로 유형이 유추됩니다.
       counter: 0,
       name: 'Eduardo',
       isAdmin: true,
@@ -7156,7 +7155,7 @@ import { useCounterStore } from '../stores/counterStore'
 export default {
   computed: {
     // 구성 요소 내부의 this.counter에 대한 액세스 권한을 부여합니다.
-		// store.counter에서 읽는 것과 동일
+    // store.counter에서 읽는 것과 동일
     ...mapState(useCounterStore, ['counter'])
     // 위와 같지만 this.myOwnName으로 등록
     ...mapState(useCounterStore, {
@@ -7293,9 +7292,9 @@ export const useStore = defineStore('main', {
     doubleCount(state) {
       return state.counter * 2
     },
-		// 리턴 타입은 **반드시** 명시적으로 설정되어야 합니다.
+    // 리턴 타입은 **반드시** 명시적으로 설정되어야 합니다.
     doublePlusOne(): number {
-			// 전체 Store에 대한 자동 완성 및 입력 ✨
+      // 전체 Store에 대한 자동 완성 및 입력 ✨
       return this.doubleCount + 1
     },
   },
@@ -7330,17 +7329,17 @@ export const useStore = defineStore('main', {
     counter: 0,
   }),
   getters: {
-		// `this`를 사용하지 않기 때문에 유형이 자동으로 유추됩니다.
+    // `this`를 사용하지 않기 때문에 유형이 자동으로 유추됩니다.
     doubleCount: (state) => state.counter * 2,
     // 여기에 유형을 직접 추가해야 합니다(JS에서 JSDoc 사용). 우리는 또한 할 수 있습니다
-		// 이것을 사용하여 getter를 문서화합니다.
-		/**
-		* 카운터 값 곱하기 2 더하기 1을 반환합니다.
-		*
-		* @returns {숫자}
-		*/
+    // 이것을 사용하여 getter를 문서화합니다.
+    /**
+    * 카운터 값 곱하기 2 더하기 1을 반환합니다.
+    *
+    * @returns {숫자}
+    */
     doubleCountPlusOne() {
-			// autocompletion ✨
+      // autocompletion ✨
       return this.doubleCount + 1
     },
   },
@@ -7508,7 +7507,7 @@ Actions은 메서드처럼 호출됩니다.
 export default defineComponent({
   setup() {
     const main = useMainStore()
-		// Store의 메소드로 action 호출
+    // Store의 메소드로 action 호출
     main.randomizeCounter()
 
     return {}
@@ -7587,10 +7586,10 @@ import { useCounterStore } from '../stores/counterStore'
 
 export default {
   methods: {
-		// 구성 요소 내부의 this.increment()에 대한 액세스를 제공합니다.
-		// store.increment()에서 호출하는 것과 동일
+    // 구성 요소 내부의 this.increment()에 대한 액세스를 제공합니다.
+    // store.increment()에서 호출하는 것과 동일
     ...mapActions(useCounterStore, ['increment'])
-		// 위와 같지만 this.myOwnName()으로 등록
+    // 위와 같지만 this.myOwnName()으로 등록
     ...mapActions(useCounterStore, { myOwnName: 'doubleCounter' }),
   },
 }
@@ -7605,19 +7604,19 @@ export default {
 ```jsx
 const unsubscribe = someStore.$onAction(
   ({
-		name, // 액션의 이름
-		store, // 인스턴스 저장, `someStore`와 동일
-		args, // 액션에 전달된 매개변수의 배열
-		after, // 액션이 반환되거나 해결된 후 후크
-		onError, // 액션이 throw되거나 거부되면 후크
+    name, // 액션의 이름
+    store, // 인스턴스 저장, `someStore`와 동일
+    args, // 액션에 전달된 매개변수의 배열
+    after, // 액션이 반환되거나 해결된 후 후크
+    onError, // 액션이 throw되거나 거부되면 후크
   }) => {
     // 이 특정 액션 호출을 위한 공유 변수
     const startTime = Date.now()
     // 이것은 `store`에 대한 작업이 실행되기 전에 트리거됩니다.
     console.log(`Start "${name}" with params [${args.join(', ')}].`)
 
-		// 작업이 성공하고 완전히 실행된 후에 트리거됩니다.
-		// 반환된 약속을 기다립니다.
+    // 작업이 성공하고 완전히 실행된 후에 트리거됩니다.
+    // 반환된 약속을 기다립니다.
     after((result) => {
       console.log(
         `Finished "${name}" after ${
@@ -7626,7 +7625,7 @@ const unsubscribe = someStore.$onAction(
       )
     })
 
-		// 액션이 거부하는 프라미스를 던지거나 반환하면 트리거됩니다.
+    // 액션이 거부하는 프라미스를 던지거나 반환하면 트리거됩니다.
     onError((error) => {
       console.warn(
         `Failed "${name}" after ${Date.now() - startTime}ms.\nError: ${error}.`
@@ -7650,7 +7649,7 @@ unsubscribe()
 - Store에 새로운 방법 추가
 - 기존 메서드 래핑
 - actions 변경 또는 취소
-- [로컬 스토리지](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) 와 같은 부작용 구현
+- [로컬 스토리지](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)와 같은 부작용 구현
 - 특정 Store**에만** 적용
 
 플러그인은 `pinia.use()`를 사용하여 pinia 인스턴스에 추가됩니다. 가장 간단한 예는 객체를 반환하여 모든 저장소에 정적 속성을 추가하는 것입니다.
@@ -7681,10 +7680,10 @@ Pinia 플러그인은 Store 추가할 속성을 선택적으로 반환하는 기
 
 ```jsx
 export function myPiniaPlugin(context) {
-	context.pinia // `createPinia()`로 생성된 pinia
-	context.app // `createApp()`으로 생성된 현재 앱(Vue 3만 해당)
-	context.store // 플러그인이 확장 중인 저장소
-	context.options // `defineStore()`에 전달된 저장소를 정의하는 옵션 객체
+  context.pinia // `createPinia()`로 생성된 pinia
+  context.app // `createApp()`으로 생성된 현재 앱(Vue 3만 해당)
+  context.store // 플러그인이 확장 중인 저장소
+  context.options // `defineStore()`에 전달된 저장소를 정의하는 옵션 객체
 }
 ```
 
@@ -7718,9 +7717,9 @@ pinia.use(({ store }) => {
 // 위의 예에서
 pinia.use(({ store }) => {
   store.hello = 'world'
-	// 번들러가 이것을 처리하는지 확인하십시오. webpack 및 vite는 기본적으로 수행해야 합니다.
+  // 번들러가 이것을 처리하는지 확인하십시오. webpack 및 vite는 기본적으로 수행해야 합니다.
   if (process.env.NODE_ENV === 'development') {
-		// 스토어에서 설정한 키를 추가합니다.
+    // 스토어에서 설정한 키를 추가합니다.
     store._customProperties.add('hello')
   }
 })
