@@ -5,6 +5,7 @@ import HelloView from "@/views/HelloView"
 import LoginView from "@/views/LoginView"
 import NotFound404 from "@/views/NotFound404"
 import DogView from "@/views/DogView"
+import UploadTest from "@/views/UploadTest.vue"
 
 Vue.use(VueRouter)
 
@@ -48,6 +49,11 @@ const routes = [
     path: "/dog/:breed",
     name: "dog",
     component: DogView,
+  },
+  {
+    path: "/test",
+    name: "test",
+    component: UploadTest,
   },
   {
     path: "*",

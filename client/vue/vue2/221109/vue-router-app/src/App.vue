@@ -4,7 +4,8 @@
       <router-link :to="{ name: 'home' }">Home</router-link> |
       <router-link :to="{ name: 'about' }">About</router-link> |
       <router-link :to="{ name: 'hello', params: { userName: 'Jinwoo' } }">Hello</router-link> |
-      <router-link :to="{ name: 'login' }">Login</router-link>
+      <!-- <router-link :to="{ name: 'login' }">Login</router-link> | -->
+      <router-link :to="{ name: 'test' }">Test</router-link>
     </nav>
     <router-view />
   </div>
